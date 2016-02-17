@@ -15,4 +15,6 @@ $(document).ready(function(){
         $("#"+tabNames[activeTabIndex]).addClass("active");
         return false;
     });
+    
+    $(".tab-menu > li").css('cursor', 'pointer');
 });
