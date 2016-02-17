@@ -11,6 +11,7 @@ Package: digabi-koe-ohje
 Architecture: all
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- yelp
+ yelp,
+ xdotool
 Description: End-user documentation for test-taker's device. The
  package contains both Finnish and Swedish documentation.

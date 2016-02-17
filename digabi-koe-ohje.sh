@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 IS_FI=`echo "$LANG" | grep -P "^fi"`
 IS_SV=`echo "$LANG" | grep -P "^sv"`
@@ -21,4 +21,25 @@ else
 	echo "No known language selected, defaults to ${DOC_LANG}"
 fi
 
-/usr/bin/yelp /usr/share/digabi-koe-ohje/${DOC_LANG}/index.html
+# Kill existing yelps
+pkill -INT -f "/usr/bin/yelp"
+
+# Start yelp
+/usr/bin/yelp /usr/share/digabi-koe-ohje/${DOC_LANG}/index.html &
+
+# Modify window size (get PID, Window ID and finally resize with xdotool)
+YELP_WID=
+try_count=0
+
+while [[ -z $YELP_WID && $try_count -lt 100 ]]; do
+	YELP_PID=`pgrep -f /usr/bin/yelp`
+	YELP_WID=`xdotool search --all --onlyvisible --pid ${YELP_PID} 2>/dev/null | grep -P "^\d+$" | head -n 1`
+	try_count=`expr ${try_count}+1`
+done
+
+
+if [ "${YELP_WID}" != "" ]; then
+	xdotool windowsize ${YELP_WID} 600 500
+	xdotool windowmove ${YELP_WID} 50 50
+	xdotool windowraise ${YELP_WID}
+fi
