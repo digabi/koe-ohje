@@ -34,12 +34,11 @@ try_count=0
 while [[ -z $YELP_WID && $try_count -lt 100 ]]; do
 	YELP_PID=`pgrep -f /usr/bin/yelp`
 	YELP_WID=`xdotool search --all --onlyvisible --pid ${YELP_PID} 2>/dev/null | grep -P "^\d+$" | head -n 1`
-	try_count=`expr ${try_count}+1`
+	let "try_count=${try_count}+1"
 done
 
 
 if [ "${YELP_WID}" != "" ]; then
-	xdotool windowsize ${YELP_WID} 600 500
-	xdotool windowmove ${YELP_WID} 50 50
-	xdotool windowraise ${YELP_WID}
+	xdotool windowsize --sync ${YELP_WID} 800 500
+	xdotool windowmove --sync ${YELP_WID} 25 25
 fi
