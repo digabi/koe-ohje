@@ -22,7 +22,7 @@ else
 fi
 
 # Kill existing yelps
-pkill -INT -f "/usr/bin/yelp"
+pkill -TERM -f "/usr/bin/yelp"
 
 # Start yelp
 /usr/bin/yelp /usr/share/digabi-koe-ohje/${DOC_LANG}/index.html &
