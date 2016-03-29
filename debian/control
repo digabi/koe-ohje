@@ -12,6 +12,7 @@ Architecture: all
 Depends: ${shlibs:Depends},
  ${misc:Depends},
  yelp,
- xdotool
+ xdotool,
+ gstreamer1.0-plugins-good
 Description: End-user documentation for test-taker's device. The
  package contains both Finnish and Swedish documentation.
