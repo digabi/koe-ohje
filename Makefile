@@ -13,8 +13,8 @@ install:
 	# Finnish documentation
 	cp -r fi $(DESTDIR)/usr/share/$(APPNAME)/
 
-	# Don't copy Swedish front page to make yelp fallback to Finnish
-	#cp -r sv $(DESTDIR)/usr/share/$(APPNAME)/
+	# Swedish documentation
+	cp -r sv $(DESTDIR)/usr/share/$(APPNAME)/
 
 	# Set perms
 	find $(DESTDIR)/usr/share/$(APPNAME) -type f -exec chmod 644 {} \;
