@@ -13,6 +13,7 @@ Depends: ${shlibs:Depends},
  ${misc:Depends},
  yelp,
  xdotool,
- gstreamer1.0-plugins-good
+ gstreamer1.0-plugins-good,
+ gstreamer1.0-plugins-ugly
 Description: End-user documentation for test-taker's device. The
  package contains both Finnish and Swedish documentation.
