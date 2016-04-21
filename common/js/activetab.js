@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var activeTabIndex = -1;
-    var tabNames = ["pika","eri","erim","muut"];
+    var tabNames = ["pika","eri","erim","muut","videos"];
 
     $(".tab-menu > li").click(function(e){
         for(var i=0;i<tabNames.length;i++) {
