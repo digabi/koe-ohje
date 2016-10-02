@@ -1,0 +1,9 @@
+/* CSS for Finnish page */
+
+.fi {
+	display: block !important;
+}
+
+.sv {
+	display: none !important;
+}

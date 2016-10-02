@@ -1,0 +1,9 @@
+/* CSS for Swedish page */
+
+.fi {
+	display: none !important;
+}
+
+.sv {
+	display: block !important;
+}

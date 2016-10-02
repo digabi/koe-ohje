@@ -3,6 +3,7 @@
 <meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8" />  
 <title>Tabs</title>
 <link rel="stylesheet" href="../common/css/tab.css" type="text/css" media="screen" />  
+<link rel="stylesheet" href="language.css" type="text/css" media="screen,print" />
 <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="../common/js/activetab.js"></script>
 </head>  
@@ -11,50 +12,73 @@
 <div id="tab-container">  
 	<div id="tab-menu-container">
 		<ul class="tab-menu">  
-			<li id="pika" class="active">Snabbtangenter</li>
-			<li id="eri">Specialtecken p&aring; PC</li>
-			<li id="erim">Specialtecken p&aring; Mac</li>
-			<li id="videos">Hj&auml;lpvideor</li>
+			<li id="pika-fi" class="fi active">Pikan&auml;pp&auml;imet</li>
+			<li id="pika-sv" class="sv active">Snabbtangenter</li>
+			<li id="eri-fi" class="fi">Erikoismerkit PC:ll&auml;</li>
+			<li id="eri-sv" class="sv">Specialtecken p&aring; PC</li>
+			<li id="erim-fi" class="fi">Erikoismerkit Mac:ll&auml;</li>
+			<li id="erim-sv" class="sv">Specialtecken p&aring; Mac</li>
+			<li id="videos-fi" class="fi">Ohjevideot</li>
+			<li id="videos-sv" class="sv">Hj&auml;lpvideor</li>
 		</ul>  
 		<div class="clear"></div>  
 		<div class="tab-top-border"></div>
     </div>
     <div id="pika-tab" class="tab-content active">
-        <h1>Snabbtangenter</h1>
+        <h1 class="fi">Pikan&auml;pp&auml;imet</h1>
+        <h1 class="sv">Snabbtangenter</h1>
 		<table>
 		<tr>
-			<td>Kopiera</td>
+			<td>
+				<span class="fi">Kopioi</span>
+				<span class="sv">Kopiera</span>
+			</td>
 			<td><img src="../common/pictures/ctrl.gif" alt="ctrl"/></td>
 			<td>+</td>
 			<td><img src="../common/pictures/c.gif" alt="c"/></td>
 
 		</tr>
 		<tr>			
-			<td>Klistra in</td>
+			<td>
+				<span class="fi">Liit&auml;</span>
+				<span class="sv">Klistra in</span>
+			</td>
 			<td><img src="../common/pictures/ctrl.gif" alt="ctrl"/></td>
 			<td>+</td>
 			<td><img src="../common/pictures/v.gif" alt="v"/></td>
 		</tr>
 		<tr>
-			<td>Klipp ut</td>
+			<td>
+				<span class="fi">Leikkaa</span>
+				<span class="sv">Klipp ut</span>
+			</td>
 			<td><img src="../common/pictures/ctrl.gif" alt="ctrl"/></td>
 			<td>+</td>
 			<td><img src="../common/pictures/x.gif" alt="x"/></td>
 		</tr>
 		<tr>
-			<td>V&auml;lj alla</td>
+			<td>
+				<span class="fi">Valitse kaikki</span>
+				<span class="sv">V&auml;lj alla</span>
+			</td>
 			<td><img src="../common/pictures/ctrl.gif" alt="ctrl"/></td>
 			<td>+</td>
 			<td><img src="../common/pictures/a.gif" alt="a"/></td>
 		</tr>
 		<tr>
-			<td>&Aring;ngra</td>
+			<td>
+				<span class="fi">Palauta</span>
+				<span class="sv">&Aring;ngra</span>
+			</td>
 			<td><img src="../common/pictures/ctrl.gif" alt="ctrl"/></td>
 			<td>+</td>
 			<td><img src="../common/pictures/z.gif" alt="z"/></td>
 		</tr>
 		<tr>
-			<td>G&ouml;r om</td>
+			<td>
+				<span class="fi">Tee uudelleen</span>
+				<span class="sv">G&ouml;r om</span>
+			</td>
 			<td><img src="../common/pictures/ctrl.gif" alt="ctrl"/></td>
 			<td>+</td>
 			<td><img src="../common/pictures/y.gif" alt="y"/></td>
@@ -62,7 +86,8 @@
 		</table>
     </div>
 	<div id="eri-tab" class="tab-content">
-		<h1>Specialtecken p&aring; PC-tangentbord</h1>
+		<h1 class="fi">Erikoismerkit PC-n&auml;pp&auml;imist&ouml;ll&auml;</h1>
+		<h1 class="sv">Specialtecken p&aring; PC-tangentbord</h1>
 		<table>
 			<tr>
 				<td class="firstcolumn">&ntilde;</td>
@@ -183,7 +208,8 @@
 				<td><img src="../common/pictures/a.gif" alt="a"/></td>
 			</tr>
 		</table>
-		<p class="note">Tangentkombinationer som produceras diakritiska tecken kan anv&auml;ndas &auml;ven med andra bokst&auml;ver.</p>
+		<p class="note fi">Tarkkeita/diakriittisi&auml; merkkej&auml; tuottavia n&auml;pp&auml;inyhdistelmi&auml; voidaan k&auml;ytt&auml;&auml; my&ouml;s muiden kirjainten kanssa.</p>
+		<p class="note sv">Tangentkombinationer som produceras diakritiska tecken kan anv&auml;ndas &auml;ven med andra bokst&auml;ver.</p>
 		<table>
 			<tr>
 				<td class="firstcolumn">&euml;</td>
@@ -210,7 +236,8 @@
 		</table>	
 	</div>
 	<div id="erim-tab" class="tab-content">
-		<h1>Specialtecken p&aring; Mac-tangentbord</h1>
+		<h1 class="fi">Erikoismerkit Mac-n&auml;pp&auml;imist&ouml;ll&auml;</h1>
+		<h1 class="sv">Specialtecken p&aring; Mac-tangentbord</h1>
 		<table>
 			<tr>
 				<td class="firstcolumn">@</td>
@@ -333,7 +360,8 @@
 				<td><img src="../common/pictures/a.gif" alt="a"/></td>
 			</tr>
 		</table>
-		<p class="note">Tangentkombinationer som produceras diakritiska tecken kan anv&auml;ndas &auml;ven med andra bokst&auml;ver.</p>
+		<p class="note fi">Tarkkeita/diakriittisi&auml; merkkej&auml; tuottavia n&auml;pp&auml;inyhdistelmi&auml; voidaan k&auml;ytt&auml;&auml; my&ouml;s muiden kirjainten kanssa.</p>
+		<p class="note sv">Tangentkombinationer som produceras diakritiska tecken kan anv&auml;ndas &auml;ven med andra bokst&auml;ver.</p>
 		<table>
 			<tr>
 				<td class="firstcolumn">&euml;</td>
@@ -360,24 +388,31 @@
 		</table>	
 	</div>
     <div id="videos-tab" class="tab-content">
-		<h1>Hj&auml;pvideor</h1>
-		<p>Ordna f&ouml;nster och flikar </p>
-		<video id="video-01" width="640" height="481" src="videos/1sv.webm" controls></video>
+		<h1 class="fi">Ohjevideot</h1>
+		<h1 class="sv">Hj&auml;pvideor</h1>
+		<p class="fi">Ikkunoiden ja v&auml;lilehtien j&auml;rjest&auml;minen</p>
+		<p class="sv">Ordna f&ouml;nster och flikar </p>
+		<video id="video-01" width="640" height="481" src="videos/1fi.webm" controls></video>
 		<p>&nbsp;</p>
-		<p>Bifoga en sk&auml;rmdump till svaret </p>
-		<video id="video-02" width="640" height="481" src="videos/2sv.webm" controls></video>
+		<p class="fi">Kuvankaappauksen liitt&auml;minen vastaukseen</p>
+		<p class="sv">Bifoga en sk&auml;rmdump till svaret </p>
+		<video id="video-02" width="640" height="481" src="videos/2fi.webm" controls></video>
 		<p>&nbsp;</p>
-		<p>Spara filer</p>
-		<video id="video-03" width="640" height="481" src="videos/3sv.webm" controls></video>
+		<p class="fi">Tiedostojen tallentaminen</p>
+		<p class="sv">Spara filer</p>
+		<video id="video-03" width="640" height="481" src="videos/3fi.webm" controls></video>
 		<p>&nbsp;</p>
-		<p>F&ouml;rstora svarsrutan </p>
-		<video id="video-04" width="640" height="481" src="videos/4sv.webm" controls></video>
+		<p class="fi">Vastauslaatikon suurentaminen</p>
+		<p class="sv">F&ouml;rstora svarsrutan </p>
+		<video id="video-04" width="640" height="481" src="videos/4fi.webm" controls></video>
 		<p>&nbsp;</p>
-		<p>&Aring;terst&auml;lla raderad text </p>
-		<video id="video-05" width="640" height="481" src="videos/5sv.webm" controls></video>
+		<p class="fi">Poistetun tekstin palauttaminen</p>
+		<p class="sv">&Aring;terst&auml;lla raderad text </p>
+		<video id="video-05" width="640" height="481" src="videos/5fi.webm" controls></video>
 		<p>&nbsp;</p>
-		<p>Genomf&ouml;ra ett ljudtest</p>
-		<video id="video-06" width="640" height="480" src="videos/6sv.webm" controls></video>
+		<p class="fi">&Auml;&auml;nitestin tekeminen</p>
+		<p class="sv">Genomf&ouml;ra ett ljudtest</p>
+		<video id="video-06" width="640" height="481" src="videos/6fi.webm" controls></video>
 	</div>
 </div>
 </body>
