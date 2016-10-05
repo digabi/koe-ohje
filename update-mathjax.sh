@@ -32,4 +32,14 @@ if [ -d "$TMPDIR" ]; then
 	rm -fR "$TMPDIR"
 fi
 
+if [ -d "$ORIGDIR/common/js/MathJax-master/fonts/HTML-CSS/TeX/png" ]; then
+	echo "Removing image fonts at $ORIGDIR/common/js/MathJax-master/fonts/HTML-CSS/TeX/png"
+	rm -fR "$ORIGDIR/common/js/MathJax-master/fonts/HTML-CSS/TeX/png"
+fi
+
+if [ -d "$ORIGDIR/common/js/MathJax-master/unpacked" ]; then
+	echo "Removing uncompressed JS source files at $ORIGDIR/common/js/MathJax-master/unpacked"
+	rm -fR "$ORIGDIR/common/js/MathJax-master/unpacked"
+fi
+
 echo "MathJax is successfully updated at $ORIGDIR/common/js"
