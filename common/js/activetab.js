@@ -1,3 +1,9 @@
+function tab_initialise (tab_name) {
+    if (tab_name == "tables") {
+        setSameHeights();
+    }
+}
+
 $(document).ready(function(){
     var activeTabIndex = -1;
     var tabNames = ["pika","eri","erim","muut","videos","tables"];
@@ -18,6 +24,9 @@ $(document).ready(function(){
         }
         $("#"+tabNames[activeTabIndex]+"-tab").fadeIn();
         $("#"+new_tab+'-'+new_lang).addClass("active");
+
+        tab_initialise(new_tab);
+
         return false;
     });
     
