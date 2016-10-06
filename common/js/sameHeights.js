@@ -37,4 +37,5 @@ if ('addEventListener' in window) {
 MathJax.Hub.Register.StartupHook("End",function () {
 	console.log("MathJax is ready");
 	setSameHeights();
+	$('#loading').hide();
 });
