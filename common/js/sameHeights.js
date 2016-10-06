@@ -7,7 +7,6 @@ function sameHeights(selector) {
 			$(this).children("td").each(function(index) {
 				if ($(this).height() > max_height) {
 					max_height = $(this).height();
-					console.log(max_height);
 				}
 			});
 			// Set row height for all elements in this row
