@@ -12,6 +12,12 @@ YTL ottaa vastaan muutosehdotuksia erityisesti kaavakokoelmaan. Muutosehdotukset
 
 Muutosehdotuksien tekijöiden on hyvä huomata, että kaavakokoelma on kaksikielinen.
 
+## Vinkkejä
+
+ * Varsinainen aputiedosto löytyy `content/index.html`. Tiedosto sisältää kaikki välilehdet.
+ * Muokatessasi tiedostoa voit luoda esikatseluversion (Linux: `make preview`, Windows: `make_preview.bat`). Esikatseluversiot
+   löytyvät `preview/fi/index.html`ja `preview/sv/index.html`.
+
 ## Lisenssi
 
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC-BY-NC-SA).
@@ -19,3 +25,4 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 ## Kiitämme
 
  * Peter Ahlroos: Videot
+ * Riitta Salmenoja: Mekaniikan kaavoja

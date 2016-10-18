@@ -23,3 +23,25 @@ install:
 	# Set perms
 	find $(DESTDIR)/usr/share/$(APPNAME) -type f -exec chmod 644 {} \;
 	find $(DESTDIR)/usr/share/$(APPNAME) -type d -exec chmod 755 {} \;
+
+preview-common: common/* common/css/* common/js/* common/pictures/*
+	# Copy files to preview
+	mkdir -p preview/common/
+	cp -r common/* preview/common/
+
+preview-fi: fi/* fi/videos/*
+	# Copy files to fi
+	mkdir -p preview/fi/
+	cp -r fi/* preview/fi/
+
+preview-sv: sv/* sv/videos/*
+	# Copy files to sv
+	mkdir -p preview/sv/
+	cp -r sv/* preview/sv/
+
+preview-content: content/*
+	# Copy content to fi and sv
+	cp -r content/* preview/fi/
+	cp -r content/* preview/sv/
+
+preview: preview-common preview-fi preview-sv preview-content
