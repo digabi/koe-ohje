@@ -1,2 +1,21 @@
 # koe-ohje
-Kokelaan käyttöympäristön ohje, joka näytetään kokelaalle yelp:llä.
+
+Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle [yelp](https://people.gnome.org/~bmsmith/build/yelp.html):llä.
+
+## Ohjeet muutosten ehdottamiseen
+
+YTL ottaa vastaan muutosehdotuksia erityisesti kaavakokoelmaan. Muutosehdotukset on tehtävä pull requestina:
+
+ 1. Tee tästä koodihakemistosta oma kopiosi (fork): (https://help.github.com/articles/fork-a-repo/)
+ 2. Tee muutokset omaan koodihakemistoosi ([clone](https://help.github.com/articles/cloning-a-repository/), [commit](https://github.com/abhikp/git-test/wiki/Committing-changes), [push](https://help.github.com/articles/pushing-to-a-remote/)): esim. [https://guides.github.com/activities/hello-world/](https://guides.github.com/activities/hello-world/)
+ 3. Lähetä muokkausehdotus (pull request): (https://help.github.com/articles/creating-a-pull-request/)
+
+Muutosehdotuksien tekijöiden on hyvä huomata, että kaavakokoelma on kaksikielinen.
+
+## Lisenssi
+
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC-BY-NC-SA).
+
+## Kiitämme
+
+ * Peter Ahlroos: Videot
