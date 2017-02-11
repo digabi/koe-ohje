@@ -10,7 +10,6 @@ from PyQt5.QtCore import *
 class SharedClass (QObject):
     @pyqtSlot(str)
     def copy_to_clipboard(self, value):
-        print("copy_to_clipboard: %s" % value)
         clipboard = QApplication.clipboard()
         clipboard.setText(value)
 

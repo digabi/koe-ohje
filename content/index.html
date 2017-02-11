@@ -17,6 +17,15 @@ MathJax.Hub.Config({
 <script type="text/javascript" src="../common/js/MathJax-master/MathJax.js?config=TeX-AMS_CHTML"></script>
 <script type="text/javascript" src="../common/js/activetab.js"></script>
 <script type="text/javascript" src="../common/js/sameHeights.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+    $(".btn").click(function () {
+        sharedclass.copy_to_clipboard($(this).attr('data-to-clipboard'));
+    });
+});
+
+</script>
 </head>
 <body>
 
@@ -107,7 +116,7 @@ MathJax.Hub.Config({
 
 		<table>
 			<tr>
-				<td class="firstcolumn">&aacute;</td>
+				<td class="firstcolumn"><a href="#" class="btn" data-to-clipboard="á">&aacute;</a></td>
 				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
 				<td>+</td>
 				<td><img src="../common/pictures/a.gif" alt="A"/></td>
@@ -115,7 +124,7 @@ MathJax.Hub.Config({
 		</table>
 		<table>
 			<tr>
-				<td class="firstcolumn">&Aacute;</td>
+				<td class="firstcolumn"><a href="#" class="btn" data-to-clipboard="Á">&Aacute;</a></td>
 				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
 				<td>+</td>
 				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
