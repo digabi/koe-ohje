@@ -1,6 +1,6 @@
 # koe-ohje
 
-Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle [yelp](https://people.gnome.org/~bmsmith/build/yelp.html):llä.
+Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle WebKit-selaimella (ks. `digabi-koe-browser.py`).
 
 ## Ohjeet muutosten ehdottamiseen
 
