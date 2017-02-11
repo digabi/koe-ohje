@@ -12,6 +12,7 @@ Architecture: all
 Depends: ${shlibs:Depends},
  ${misc:Depends},
  python-pyqt5.qtwebkit,
+ xubuntu-icon-theme,
  gstreamer1.0-plugins-good,
  gstreamer1.0-plugins-ugly,
  gstreamer1.0-libav

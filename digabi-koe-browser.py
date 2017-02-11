@@ -6,6 +6,9 @@ import argparse, sys
 from PyQt5.QtWebKitWidgets import QWebView
 from PyQt5.QtWidgets import QApplication,QWidget,QVBoxLayout
 from PyQt5.QtCore import *
+from PyQt5.QtGui import QIcon
+
+APP_ICON_PATH='/usr/share/icons/elementary-xfce/apps/128/help-browser.png'
 
 class SharedClass (QObject):
     @pyqtSlot(str)
@@ -42,7 +45,8 @@ def main():
 
     window.resize(args.width, args.height)
     window.move(args.posx, args.posy)
-    window.setWindowTitle(args.title)    
+    window.setWindowTitle(args.title)
+    window.setWindowIcon(QIcon(APP_ICON_PATH))
     
     window.load_url(args.url)
     window.show()
