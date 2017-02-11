@@ -5,6 +5,7 @@ IS_SV=`echo "$LANG" | grep -P "^sv"`
 
 # Defaults to Finnish
 DOC_LANG=fi
+TITLE=Apua
 
 if [ "${IS_FI}" != "" ]; then
 	echo "Finnish language selected"
@@ -12,27 +13,19 @@ if [ "${IS_FI}" != "" ]; then
 elif [ "${IS_SV}" != "" ]; then
 	echo "Swedish language selected"
 	DOC_LANG=sv
+	TITLE=Hjälp
 
 	if [ ! -f /usr/share/digabi-koe-ohje/${DOC_LANG}/index.html ]; then
 		echo "Oops, Swedish documentation is missing"
 		DOC_LANG=fi
+		TITLE=Apua
 	fi
 else
 	echo "$0: No known language selected, defaults to ${DOC_LANG}"
 fi
 
-# Kill existing yelps
-pkill -TERM -f "/usr/bin/yelp"
+# Kill existing browsers
+pkill -TERM -f "/usr/bin/digabi-koe-browser"
 
-# Overwrite existing yelp configuration
-if [ ! -d ~/.config/yelp/ ]; then
-	mkdir -p ~/.config/yelp/
-fi
-echo "[documents/file%3A%2F%2F%2Fusr%2Fshare%2Fdigabi-koe-ohje%2Ffi]" >~/.config/yelp/yelp.cfg
-echo "geometry=(800, 500)" >>~/.config/yelp/yelp.cfg
-echo "" >>~/.config/yelp/yelp.cfg
-echo "[documents/file%3A%2F%2F%2Fusr%2Fshare%2Fdigabi-koe-ohje%2Fsv]" >>~/.config/yelp/yelp.cfg
-echo "geometry=(800, 500)" >>~/.config/yelp/yelp.cfg
-
-# Start yelp
-/usr/bin/yelp /usr/share/digabi-koe-ohje/${DOC_LANG}/index.html &
+# Start browser
+/usr/bin/digabi-koe-browser -t "${TITLE}" -W 800 -H 500 -x 30 -y 30 file:///usr/share/digabi-koe-ohje/${DOC_LANG}/index.html &

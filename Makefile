@@ -4,6 +4,7 @@ all:
 
 install:
 	install -D -m 0755 digabi-koe-ohje.sh $(DESTDIR)/usr/bin/$(APPNAME)
+	install -D -m 0755 digabi-koe-browser.py $(DESTDIR)/usr/bin/digabi-koe-browser
 	install -d -m 0755 $(DESTDIR)/usr/share/$(APPNAME)
 	install -D -m 0644 digabi-koe-ohje.desktop $(DESTDIR)/usr/share/applications/digabi-koe-ohje.desktop
 

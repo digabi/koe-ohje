@@ -11,7 +11,7 @@ Package: digabi-koe-ohje
 Architecture: all
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- yelp,
+ python-pyqt5.qtwebkit,
  gstreamer1.0-plugins-good,
  gstreamer1.0-plugins-ugly,
  gstreamer1.0-libav
