@@ -20,6 +20,7 @@ class Window (QWidget):
         super(Window, self).__init__()
         self.view = QWebView(self)
         layout = QVBoxLayout(self)
+        layout.setContentsMargins(0,0,0,0)
         layout.addWidget(self.view)
 
         self.sharedclass = SharedClass(self)
