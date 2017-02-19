@@ -3,10 +3,9 @@
 
 import argparse, sys
 
-from PyQt5.QtWebKitWidgets import QWebView
-from PyQt5.QtWidgets import QApplication,QWidget,QVBoxLayout
-from PyQt5.QtCore import *
-from PyQt5.QtGui import QIcon
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
+from PyQt4.QtWebKit import *
 
 APP_ICON_PATH='/usr/share/icons/elementary-xfce/apps/128/help-browser.png'
 
@@ -25,10 +24,10 @@ class Window (QWidget):
 
         self.sharedclass = SharedClass(self)
         self.view.page().mainFrame().addToJavaScriptWindowObject("sharedclass", self.sharedclass)
-        
+
     def load_url (self, url):
         self.view.load(QUrl(url))
-    
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-W', '--width', dest='width', type=int, default=500, help='Browser window width')
@@ -37,9 +36,9 @@ def main():
     parser.add_argument('-y', '--positiony', dest='posy', type=int, default=1, help='Window position (Y)')
     parser.add_argument('-t', '--title', dest='title', type=str, default="Help", help='Window title')
     parser.add_argument('url', type=str, help='URL of the help file')
-    
+
     args = parser.parse_args()
-    
+
     app = QApplication(sys.argv)
     window = Window()
 
@@ -47,11 +46,10 @@ def main():
     window.move(args.posx, args.posy)
     window.setWindowTitle(args.title)
     window.setWindowIcon(QIcon(APP_ICON_PATH))
-    
+
     window.load_url(args.url)
     window.show()
     app.exec_()
 
 if __name__ == "__main__":
     main()
-
