@@ -37,15 +37,19 @@ def main():
     parser.add_argument('-y', '--positiony', dest='posy', type=int, default=1, help='Window position (Y)')
     parser.add_argument('-t', '--title', dest='title', type=str, default="Help", help='Window title')
     parser.add_argument('url', type=str, help='URL of the help file')
+    
 
     args = parser.parse_args()
+
+    # Encode window title to ISO-8859-15
+    window_title = args.title.decode('utf8').encode('iso8859-15')
 
     app = QApplication(sys.argv)
     window = Window()
 
     window.resize(args.width, args.height)
     window.move(args.posx, args.posy)
-    window.setWindowTitle(args.title)
+    window.setWindowTitle(window_title)
     window.setWindowIcon(QIcon(APP_ICON_PATH))
 
     window.load_url(args.url)
