@@ -21,11 +21,11 @@ MathJax.Hub.Config({
 	// Include different pages to the respective divs
 	
 	$(document).ready(function () {
-		$("#pika-tab").load("tab-pika.html");
-		$("#eri-tab").load("tab-eri.html");
-		$("#erim-tab").load("tab-erim.html");
-		$("#videos-tab").load("tab-video.html");
-		$("#tables-tab").load("tab-tables.html");
+		$("#tab-shortcut").load("tab-shortcut.html");
+		$("#tab-char_pc").load("tab-char_pc.html");
+		$("#tab-char_mac").load("tab-char_mac.html");
+		$("#tab-videos").load("tab-videos.html");
+		$("#tab-tables").load("tab-tables.html");
 	});
 </script>
 </head>
@@ -34,12 +34,12 @@ MathJax.Hub.Config({
 <div id="tab-container">
 	<div id="tab-menu-container">
 		<ul class="tab-menu">
-			<li id="pika-fi" class="fi active">Pikan&auml;pp&auml;imet</li>
-			<li id="pika-sv" class="sv active">Snabbtangenter</li>
-			<li id="eri-fi" class="fi">Erikoismerkit PC:ll&auml;</li>
-			<li id="eri-sv" class="sv">Specialtecken p&aring; PC</li>
-			<li id="erim-fi" class="fi">Erikoismerkit Mac:ll&auml;</li>
-			<li id="erim-sv" class="sv">Specialtecken p&aring; Mac</li>
+			<li id="shortcut-fi" class="fi active">Pikan&auml;pp&auml;imet</li>
+			<li id="shortcut-sv" class="sv active">Snabbtangenter</li>
+			<li id="char_pc-fi" class="fi">Erikoismerkit PC:ll&auml;</li>
+			<li id="char_pc-sv" class="sv">Specialtecken p&aring; PC</li>
+			<li id="char_mac-fi" class="fi">Erikoismerkit Mac:ll&auml;</li>
+			<li id="char_mac-sv" class="sv">Specialtecken p&aring; Mac</li>
 			<li id="videos-fi" class="fi">Ohjevideot</li>
 			<li id="videos-sv" class="sv">Hj&auml;lpvideor</li>
 			<li id="tables-fi" class="fi">Taulukoita</li>
@@ -48,15 +48,15 @@ MathJax.Hub.Config({
 		<div class="clear"></div>
 		<div class="tab-top-border"></div>
     </div>
-    <div id="pika-tab" class="tab-content active">
+    <div id="tab-shortcut" class="tab-content active">
     </div>
-	<div id="eri-tab" class="tab-content">
+	<div id="tab-char_pc" class="tab-content">
 	</div>
-	<div id="erim-tab" class="tab-content">
+	<div id="tab-char_mac" class="tab-content">
 	</div>
-    <div id="videos-tab" class="tab-content">
+    <div id="tab-videos" class="tab-content">
 	</div>
-    <div id="tables-tab" class="tab-content">
+    <div id="tab-tables" class="tab-content">
     </div>
 </div>
 <div id="loading">

@@ -14,7 +14,7 @@ Muutosehdotuksien tekijöiden on hyvä huomata, että kaavakokoelma on kaksikiel
 
 ## Vinkkejä
 
- * Varsinainen aputiedosto löytyy `content/index.html`. Tiedosto sisältää kaikki välilehdet.
+ * Varsinainen aputiedosto löytyy `content/index.html`. Välilehdet löytyvät `content/tab-*.html`.
  * Muokatessasi tiedostoa voit luoda esikatseluversion (Linux: `make preview`, Windows: `make_preview.bat`). Esikatseluversiot
    löytyvät `preview/fi/index.html`ja `preview/sv/index.html`.
 

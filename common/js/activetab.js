@@ -6,7 +6,7 @@ function tab_initialise (tab_name) {
 
 $(document).ready(function(){
     var activeTabIndex = -1;
-    var tabNames = ["pika","eri","erim","muut","videos","tables"];
+    var tabNames = ["shortcut","char_pc","char_mac","videos","tables"];
 
     $(".tab-menu > li").click(function(e){
         var curname_arr = e.target.id.split("-");
@@ -19,10 +19,10 @@ $(document).ready(function(){
                 activeTabIndex = i;
             } else {
                 $("#"+tabNames[i]+'-'+new_lang).removeClass("active");
-                $("#"+tabNames[i]+"-tab").css("display", "none");
+                $("#tab-"+tabNames[i]).css("display", "none");
             }
         }
-        $("#"+tabNames[activeTabIndex]+"-tab").fadeIn();
+        $("#tab-"+tabNames[activeTabIndex]).fadeIn();
         $("#"+new_tab+'-'+new_lang).addClass("active");
 
         tab_initialise(new_tab);
