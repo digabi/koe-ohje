@@ -11,38 +11,13 @@ install:
 	# Common files (images etc)
 	cp -r common $(DESTDIR)/usr/share/${APPNAME}/
 
-	# Finnish documentation
-	cp -r fi $(DESTDIR)/usr/share/$(APPNAME)/
-
-	# Swedish documentation
-	cp -r sv $(DESTDIR)/usr/share/$(APPNAME)/
-
 	# Common content to Finnish/Swedish documentation
-	cp -r content/* $(DESTDIR)/usr/share/$(APPNAME)/fi/
-	cp -r content/* $(DESTDIR)/usr/share/$(APPNAME)/sv/
+	cp -r content/ $(DESTDIR)/usr/share/$(APPNAME)/
+	
+	# Finnish/Swedish frontpage
+	cp content/index.html $(DESTDIR)/usr/share/$(APPNAME)/content/index-fi.html
+	cp content/index.html $(DESTDIR)/usr/share/$(APPNAME)/content/index-sv.html
 
 	# Set perms
 	find $(DESTDIR)/usr/share/$(APPNAME) -type f -exec chmod 644 {} \;
 	find $(DESTDIR)/usr/share/$(APPNAME) -type d -exec chmod 755 {} \;
-
-preview-common: common/* common/css/* common/js/* common/pictures/*
-	# Copy files to preview
-	mkdir -p preview/common/
-	cp -r common/* preview/common/
-
-preview-fi: fi/* fi/videos/*
-	# Copy files to fi
-	mkdir -p preview/fi/
-	cp -r fi/* preview/fi/
-
-preview-sv: sv/* sv/videos/*
-	# Copy files to sv
-	mkdir -p preview/sv/
-	cp -r sv/* preview/sv/
-
-preview-content: content/*
-	# Copy content to fi and sv
-	cp -r content/* preview/fi/
-	cp -r content/* preview/sv/
-
-preview: preview-common preview-fi preview-sv preview-content

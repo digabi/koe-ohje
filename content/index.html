@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Tabs</title>
 <link rel="stylesheet" href="../common/css/tab.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="language.css" type="text/css" media="screen,print" />
 <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -18,14 +17,53 @@ MathJax.Hub.Config({
 <script type="text/javascript" src="../common/js/activetab.js"></script>
 <script type="text/javascript" src="../common/js/sameHeights.js"></script>
 <script type="text/javascript">
-	// Include different pages to the respective divs
+	function set_video_url (language) {
+		$(".helpvideo").each( function() {
+			var src = language+"/"+$(this).attr('data-src');
+			$(this).attr('src', src);
+		});
+	}
+	
+	function set_language (language) {
+		if (language.toLowerCase() == "fi") {
+			console.log("Language set to Finnish");
+			$(".fi").css("display", "block");
+			$(".sv").css("display", "none");
+		}
+		else if (language.toLowerCase() == "sv") {
+			console.log("Language set to Swedish");
+			$(".fi").css("display", "none");
+			$(".sv").css("display", "block");
+		}
+		else {
+			console.log("Unknown language: "+language);
+		}
+	}
 	
 	$(document).ready(function () {
-		$("#tab-shortcut").load("tab-shortcut.html");
-		$("#tab-char_pc").load("tab-char_pc.html");
-		$("#tab-char_mac").load("tab-char_mac.html");
-		$("#tab-videos").load("tab-videos.html");
-		$("#tab-tables").load("tab-tables.html");
+		// Set current language accoring to various suggestions
+		var request = window.location.href;
+		var lang = "fi";
+		
+		if (request.lastIndexOf('?') > -1) {
+			var param = request.slice(request.lastIndexOf('?')+1);
+			lang = param.toLowerCase();
+		}
+		
+		if (request.indexOf('index-fi') > -1) {
+			lang = 'fi';
+		}
+		if (request.indexOf('index-sv') > -1) {
+			lang = 'sv';
+		}
+		
+		// Include different pages to the respective divs
+		$("#tab-shortcut").load("tab-shortcut.html", function () { set_language(lang); });
+		$("#tab-char_pc").load("tab-char_pc.html", function () { set_language(lang); });
+		$("#tab-char_mac").load("tab-char_mac.html", function () { set_language(lang); });
+		$("#tab-videos").load("tab-videos.html", function () { set_language(lang); set_video_url(lang); });
+		$("#tab-tables").load("tab-tables.html", function () { set_language(lang); });
+
 	});
 </script>
 </head>

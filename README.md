@@ -15,8 +15,8 @@ Muutosehdotuksien tekijöiden on hyvä huomata, että kaavakokoelma on kaksikiel
 ## Vinkkejä
 
  * Varsinainen aputiedosto löytyy `content/index.html`. Välilehdet löytyvät `content/tab-*.html`.
- * Muokatessasi tiedostoa voit luoda esikatseluversion (Linux: `make preview`, Windows: `make_preview.bat`). Esikatseluversiot
-   löytyvät `preview/fi/index.html`ja `preview/sv/index.html`.
+ * Voit katsoa tiedostoa lataamalla selaimeen `content/index.html`-tiedoston. Ruotsinkielisen tiedoston
+   voit ladata lisäämällä URL:iin `?sv` eli näin: `file:///polku-omalla-levyllasi/content/index.html?sv`
 
 ## Lisenssi
 
