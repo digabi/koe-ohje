@@ -64,6 +64,17 @@ MathJax.Hub.Config({
 		$("#tab-videos").load("tab-videos.html", function () { set_language(lang); set_video_url(lang); });
 		$("#tab-tables").load("tab-tables.html", function () { set_language(lang); });
 
+		// Initialise ActiveTab navigation
+		var main_tabs = Object.create(ActiveTab);
+		main_tabs.classPrefix = 'tab';
+		main_tabs.tabNames = ["shortcut","char_pc","char_mac","videos","tables"];
+
+		// Execute special initialisation when "tables" tab is activated
+		main_tabs.activeTabInitialise = {
+			'tables' : function () { setSameHeights(); }
+		};
+		main_tabs.activateTabs();
+
 	});
 </script>
 </head>
