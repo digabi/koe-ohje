@@ -7,7 +7,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyQt4.QtWebKit import *
 
-APP_ICON_PATH='/usr/share/icons/elementary-xfce/apps/128/help-browser.png'
+APP_ICON_PATH='/usr/share/digabi-koe-ohje/help-browser.png'
 
 class SharedClass (QObject):
     @pyqtSlot(str)
