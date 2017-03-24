@@ -6,22 +6,27 @@ var ActiveTab = {
 	activateTabs : function () {
 		var self = this;
 		
-		$("."+this.classPrefix+"-menu > li").click(function(e){
+		$("."+this.classPrefix+"-menu-option").click(function(e){
 			var curname_arr = e.target.id.split("-");
 
 			var new_tab = curname_arr[0];
 			var new_lang = curname_arr[1];
+			
+			// Show new menu entry
+			$("#"+self.classPrefix+"-menu #"+new_tab+'-'+new_lang).addClass(self.classPrefix+"-menu-option-active");
 
+			// Hide menu entry and tab content
 			for(var i=0; i < self.tabNames.length; i++) {
 				if(new_tab == self.tabNames[i]) {
 					self.activeTabIndex = i;
 				} else {
-					$("#"+self.tabNames[i]+'-'+new_lang).removeClass("active");
+					$("#"+self.classPrefix+"-menu #"+self.tabNames[i]+'-'+new_lang).removeClass(self.classPrefix+"-menu-option-active");
 					$("#"+self.classPrefix+"-"+self.tabNames[i]).css("display", "none");
 				}
 			}
-			$("#"+self.classPrefix+"-"+self.tabNames[self.activeTabIndex]).fadeIn();
-			$("#"+new_tab+'-'+new_lang).addClass("active");
+			
+			// Show new tab content
+			$("#"+self.classPrefix+"-"+self.tabNames[self.activeTabIndex]).css("display", "block");
 
 			// Execute possible tab-specific initialisation function
 			if (typeof(self.activeTabInitialise[new_tab]) == "function") {
@@ -31,7 +36,8 @@ var ActiveTab = {
 
 			return false;
 		});
-		
-		$("."+self.classPrefix+"-menu > li").css('cursor', 'pointer');
+	
+	// Show default tab content
+	$("."+this.classPrefix+"-content.active").css("display", "block");
 	}
 };

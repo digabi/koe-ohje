@@ -1,647 +1,670 @@
+<script language="JavaScript">
+	subpage_init['tab-char_pc'] = function () {
+		console.log('Init for tab-char_pc.html');
+		
+		// Initialise ActiveTab navigation
+		var charpc_tabs = Object.create(ActiveTab);
+		charpc_tabs.classPrefix = 'charpc';
+		charpc_tabs.tabNames = ["spanish","french","german","other"];
+
+		charpc_tabs.activateTabs();
+
+	};
+</script>
+
 <h1 class="fi">Erikoismerkit PC-n&auml;pp&auml;imist&ouml;ll&auml;</h1>
 <h1 class="sv">Specialtecken p&aring; PC-tangentbord</h1>
 
-<p class="note fi">espanja</p>
-<p class="note sv">spanska</p>
+<div id="charpc-container">
+	<div id="charpc-menu">
+		<div id="spanish-fi" class="charpc-menu-option fi charpc-menu-option-active">espanja</div>
+		<div id="spanish-sv" class="charpc-menu-option sv charpc-menu-option-active">spanska</div>
+		<div id="french-fi" class="charpc-menu-option fi">ranska</div>
+		<div id="french-sv" class="charpc-menu-option sv">franska</div>
+		<div id="german-fi" class="charpc-menu-option fi">saksa</div>
+		<div id="german-sv" class="charpc-menu-option sv">tyska</div>
+		<div id="other-fi" class="charpc-menu-option fi">muita merkkejä</div>
+		<div id="other-sv" class="charpc-menu-option sv">&ouml;vriga bokst&auml;ver</div>
+	</div>
+	<div id="charpc-spanish" class="charpc-content active">
+		<table>
+			<tr>
+				<td class="firstcolumn">&aacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/a.gif" alt="A"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Aacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/a.gif" alt="A"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&eacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Eacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&iacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/i.gif" alt="I"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Iacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/i.gif" alt="I"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&oacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/o.gif" alt="O"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Oacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/o.gif" alt="O"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&uacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Uacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&yacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/y.gif" alt="Y"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Yacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/y.gif" alt="Y"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&ntilde;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="tilde"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/n.gif" alt="N"/></td>
+			</tr>
+			<tr>
+				<td class="firstcolumn">&Ntilde;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="tilde"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/n.gif" alt="N"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&iuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="tilde"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/i.gif" alt="I"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&uuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="tilde"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Uuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="tilde"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&iexcl;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/exl.gif" alt="!"/></td>
+			</tr>
+			<tr>
+				<td class="firstcolumn">&iquest;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/que.gif" alt="?"/></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="charpc-french" class="charpc-content">
+		<table>
+			<tr>
+				<td class="firstcolumn">&agrave;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/a.gif" alt="A"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Agrave;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/a.gif" alt="A"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&acirc;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/a.gif" alt="A"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Acirc;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/a.gif" alt="A"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&aelig;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/ae.gif" alt="Ä"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&AElig;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/ae.gif" alt="Ä"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&ccedil;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/c.gif" alt="C"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Ccedil;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/c.gif" alt="C"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&eacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Eacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&egrave;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Egrave;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&ecirc;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Ecirc;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&euml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Euml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&icirc;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/i.gif" alt="I"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Icirc;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/i.gif" alt="I"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&iuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/i.gif" alt="I"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Iuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/i.gif" alt="I"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&ocirc;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/o.gif" alt="O"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Ocirc;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/o.gif" alt="O"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&oelig;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/o.gif" alt="O"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&OElig;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/o.gif" alt="O"/></td>
+			</tr>
+		</table>
 
-<table>
-	<tr>
-		<td class="firstcolumn">&aacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/a.gif" alt="A"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Aacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/a.gif" alt="A"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&eacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Eacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&iacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/i.gif" alt="I"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Iacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/i.gif" alt="I"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&oacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/o.gif" alt="O"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Oacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/o.gif" alt="O"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&uacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Uacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&yacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/y.gif" alt="Y"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Yacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/y.gif" alt="Y"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&ntilde;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="tilde"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/n.gif" alt="N"/></td>
-	</tr>
-	<tr>
-		<td class="firstcolumn">&Ntilde;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="tilde"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/n.gif" alt="N"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&iuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="tilde"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/i.gif" alt="I"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&uuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="tilde"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Uuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="tilde"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&iexcl;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/exl.gif" alt="!"/></td>
-	</tr>
-	<tr>
-		<td class="firstcolumn">&iquest;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/que.gif" alt="?"/></td>
-	</tr>
-</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&ugrave;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Ugrave;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&ucirc;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Ucirc;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&uuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Uuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
 
-<p class="note fi">ranska</p>
-<p class="note sv">franska</p>
+		<table>
+			<tr>
+				<td class="firstcolumn">&yuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/y.gif" alt="Y"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Yuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/y.gif" alt="Y"/></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="charpc-german" class="charpc-content">
+		<table>
+			<tr>
+				<td class="firstcolumn">&uuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Uuml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/u.gif" alt="U"/></td>
+			</tr>
+		</table>
 
-<table>
-	<tr>
-		<td class="firstcolumn">&agrave;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/a.gif" alt="A"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Agrave;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/a.gif" alt="A"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&acirc;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/a.gif" alt="A"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Acirc;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/a.gif" alt="A"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&aelig;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/ae.gif" alt="Ä"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&AElig;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/ae.gif" alt="Ä"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&ccedil;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/c.gif" alt="C"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Ccedil;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/c.gif" alt="C"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&eacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Eacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&egrave;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Egrave;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&ecirc;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Ecirc;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&euml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Euml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&icirc;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/i.gif" alt="I"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Icirc;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/i.gif" alt="I"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&iuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/i.gif" alt="I"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Iuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/i.gif" alt="I"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&ocirc;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/o.gif" alt="O"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Ocirc;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/o.gif" alt="O"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&oelig;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/o.gif" alt="O"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&OElig;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/o.gif" alt="O"/></td>
-	</tr>
-</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&szlig;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/s.gif" alt="S"/></td>
+			</tr>
+		</table>
 
-<table>
-	<tr>
-		<td class="firstcolumn">&ugrave;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Ugrave;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&ucirc;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Ucirc;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="sirkumfleksi"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&uuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Uuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
+	</div>
+	
+	<div id="charpc-other" class="charpc-content">
+		<table>
+			<tr>
+				<td class="firstcolumn">&scedil;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/s.gif" alt="S"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Scedil;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/s.gif" alt="S"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&scaron;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr" /></td>
+				<td>+</td>
+				<td><img src="../common/pictures/star.gif" alt="*"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/s.gif" alt="S"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Scaron;</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr" /></td>
+				<td>+</td>
+				<td><img src="../common/pictures/star.gif" alt="*"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/s.gif" alt="S"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&deg;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"></td>
+				<td>+</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/0.gif" alt="0"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&Hat;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td>
+					<span class="note fi">välilyönti</span>
+					<span class="note sv">mellanslag</span>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">@</td>
+				<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/atm.gif" alt="2"/></td>
+			</tr>
+		</table>
 
-<table>
-	<tr>
-		<td class="firstcolumn">&yuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/y.gif" alt="Y"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Yuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/y.gif" alt="Y"/></td>
-	</tr>
-</table>
+		<p class="note fi">Tarkkeita/diakriittisi&auml; merkkej&auml; tuottavia n&auml;pp&auml;inyhdistelmi&auml; voidaan k&auml;ytt&auml;&auml; my&ouml;s muiden kirjainten kanssa.</p>
+		<p class="note sv">Tangentkombinationer som produceras diakritiska tecken kan anv&auml;ndas &auml;ven med andra bokst&auml;ver.</p>
 
-<p class="note fi">saksa</p>
-<p class="note sv">tyska</p>
-
-<table>
-	<tr>
-		<td class="firstcolumn">&uuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Uuml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/u.gif" alt="U"/></td>
-	</tr>
-</table>
-
-<table>
-	<tr>
-		<td class="firstcolumn">&szlig;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/s.gif" alt="S"/></td>
-	</tr>
-</table>
-
-<p class="note fi">Muita merkkej&auml;</p>
-<p class="note sv">&Ouml;vriga bokst&auml;ver</p>
-
-<table>
-	<tr>
-		<td class="firstcolumn">&scedil;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/s.gif" alt="S"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Scedil;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/s.gif" alt="S"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&scaron;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr" /></td>
-		<td>+</td>
-		<td><img src="../common/pictures/star.gif" alt="*"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/s.gif" alt="S"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Scaron;</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr" /></td>
-		<td>+</td>
-		<td><img src="../common/pictures/star.gif" alt="*"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/s.gif" alt="S"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&deg;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"></td>
-		<td>+</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/0.gif" alt="0"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&Hat;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td>
-			<span class="note fi">välilyönti</span>
-			<span class="note sv">mellanslag</span>
-		</td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">@</td>
-		<td><img src="../common/pictures/alt_gr.gif" alt="Alt Gr"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/atm.gif" alt="2"/></td>
-	</tr>
-</table>
-
-<p class="note fi">Tarkkeita/diakriittisi&auml; merkkej&auml; tuottavia n&auml;pp&auml;inyhdistelmi&auml; voidaan k&auml;ytt&auml;&auml; my&ouml;s muiden kirjainten kanssa.</p>
-<p class="note sv">Tangentkombinationer som produceras diakritiska tecken kan anv&auml;ndas &auml;ven med andra bokst&auml;ver.</p>
-
-<table>
-	<tr>
-		<td class="firstcolumn">&euml;</td>
-		<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-	<tr>
-		<td class="firstcolumn">&eacute;</td>
-		<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td class="firstcolumn">&egrave;</td>
-		<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
-		<td>+</td>
-		<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
-		<td>,</td>
-		<td><img src="../common/pictures/e.gif" alt="E"/></td>
-	</tr>
-</table>
-
+		<table>
+			<tr>
+				<td class="firstcolumn">&euml;</td>
+				<td><img src="../common/pictures/tilde.gif" alt="treema"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+			<tr>
+				<td class="firstcolumn">&eacute;</td>
+				<td><img src="../common/pictures/acc.gif" alt="akuutti"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn">&egrave;</td>
+				<td><img src="../common/pictures/shift.gif" alt="Shift"/></td>
+				<td>+</td>
+				<td><img src="../common/pictures/acc.gif" alt="gravis"/></td>
+				<td>,</td>
+				<td><img src="../common/pictures/e.gif" alt="E"/></td>
+			</tr>
+		</table>
+	</div>
+		
+</div>

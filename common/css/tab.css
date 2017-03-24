@@ -50,61 +50,77 @@ button{
 	color: #9999A7;
     border-width: 1px;
 }
+
 #tab-container{
     font-family: Arial, Verdana, Helvetica, sans-serif;
 }
-#tab-container ul{
-    list-style: none;
-    list-style-position: outside;
+
+#tab-menu {
     width: 100%;
-}
-#tab-container ul.tab-menu li{
+    margin: 0;
+    padding: 0;
 	display: block;
     float: left;
     position: relative;
     font-size: 13px;
 	text-transform: uppercase;
-    margin: 10px 10px 0px 10px;
     background: #359BB7;
     color: #FFFFFF;
-    height: 22px;
-	border-style: solid;
-	border-width: 0px 0px 4px 0px;
-	border-bottom-width: 4px; 
-	border-bottom-color: #359BB7;
+	border-style: none;
 }
-#tab-container ul.tab-menu li.active{
-    background: #359BB7;
-    color: #1E5075;
+
+.tab-menu-option {
+	display: inline;
+    margin: 10px 10px 0 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.tab-menu-option-active {
 	font-weight: bold;
 	color: #FFFFFF;
 	border-width: 0px 0px 4px 0px;
-	border-bottom-width: 4px; 
 	border-bottom-color: #1E5075;
+	border-style: solid;
+	padding-bottom: 10px;
 }
-.tab-menu {
-	padding: 0px;
-	margin: 0px;
-	width: 100%;
-}
-#tab-menu-container {
-	width: 100%;
-	background: #359BB7;
-	border-style: none;
-	border-width: 0px;
-	padding-left: 10px;
-}
+
 .tab-content{
-    margin: 0 auto;
     background: #efefef;
     background: #fff;
     text-align: left;
     font-size: 20px;
     display: none;
     margin: 0px 30px 20px 20px;
+    padding: 30px 0 0 0;
 }
-#tab-container div.active{
-    display: block;
+
+#charpc-menu, #charmac-menu {
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    color: #359BB7;
+    font-size: 16px;
+}
+.charpc-menu-option, .charmac-menu-option {
+	color: #359BB7;
+	cursor: pointer;
+	display: inline;
+	margin: 0px 10px 0px 0px;
+}
+
+.charpc-menu-option-active, .charmac-menu-option-active {
+	border-width: 0px 0px 2px 0px;
+	border-bottom-color: #359BB7;
+	border-style: solid;
+}
+
+.charpc-content, .charmac-content {
+    background: #efefef;
+    background: #fff;
+    text-align: left;
+    font-size: 20px;
+    display: none;
+    margin: 0px 30px 20px 20px;
+    padding: 30px 0 0 0;
 }
 
 h1{

@@ -17,6 +17,9 @@ MathJax.Hub.Config({
 <script type="text/javascript" src="../common/js/activetab.js"></script>
 <script type="text/javascript" src="../common/js/sameHeights.js"></script>
 <script type="text/javascript">
+	// Handles for subpage initialisation functions
+	var subpage_init = {};
+	
 	function set_video_url (language) {
 		$(".helpvideo").each( function() {
 			var src = language+"/"+$(this).attr('data-src');
@@ -27,20 +30,32 @@ MathJax.Hub.Config({
 	function set_language (language) {
 		if (language.toLowerCase() == "fi") {
 			console.log("Language set to Finnish");
-			$(".fi").css("display", "block");
+			$(".fi").css("display", "t");
 			$(".sv").css("display", "none");
 		}
 		else if (language.toLowerCase() == "sv") {
 			console.log("Language set to Swedish");
 			$(".fi").css("display", "none");
-			$(".sv").css("display", "block");
+			$(".sv").css("display", "");
 		}
 		else {
 			console.log("Unknown language: "+language);
 		}
 	}
 	
+	function init_subpage (page_tag) {
+		if (typeof(subpage_init[page_tag]) == 'function') {
+			console.log('Running sub-page initialisation for '+page_tag);
+			subpage_init[page_tag]();
+		}
+		else {
+			console.log('Tried to run sub-page initialisation for '+page_tag+' but is is not defined');
+		}
+	}
+	
 	$(document).ready(function () {
+		
+		
 		// Set current language accoring to various suggestions
 		var request = window.location.href;
 		var lang = "fi";
@@ -58,11 +73,11 @@ MathJax.Hub.Config({
 		}
 		
 		// Include different pages to the respective divs
-		$("#tab-shortcut").load("tab-shortcut.html", function () { set_language(lang); });
-		$("#tab-char_pc").load("tab-char_pc.html", function () { set_language(lang); });
-		$("#tab-char_mac").load("tab-char_mac.html", function () { set_language(lang); });
-		$("#tab-videos").load("tab-videos.html", function () { set_language(lang); set_video_url(lang); });
-		$("#tab-tables").load("tab-tables.html", function () { set_language(lang); });
+		$("#tab-shortcut").load("tab-shortcut.html", function () { set_language(lang); init_subpage('tab-shortcut'); });
+		$("#tab-char_pc").load("tab-char_pc.html", function () { set_language(lang); init_subpage('tab-char_pc'); });
+		$("#tab-char_mac").load("tab-char_mac.html", function () { set_language(lang); init_subpage('tab-char_mac'); });
+		$("#tab-videos").load("tab-videos.html", function () { set_language(lang); set_video_url(lang); init_subpage('tab-videos'); });
+		$("#tab-tables").load("tab-tables.html", function () { set_language(lang); init_subpage('tab-tables'); });
 
 		// Initialise ActiveTab navigation
 		var main_tabs = Object.create(ActiveTab);
@@ -81,22 +96,19 @@ MathJax.Hub.Config({
 <body>
 
 <div id="tab-container">
-	<div id="tab-menu-container">
-		<ul class="tab-menu">
-			<li id="shortcut-fi" class="fi active">Pikan&auml;pp&auml;imet</li>
-			<li id="shortcut-sv" class="sv active">Snabbtangenter</li>
-			<li id="char_pc-fi" class="fi">Erikoismerkit PC:ll&auml;</li>
-			<li id="char_pc-sv" class="sv">Specialtecken p&aring; PC</li>
-			<li id="char_mac-fi" class="fi">Erikoismerkit Mac:ll&auml;</li>
-			<li id="char_mac-sv" class="sv">Specialtecken p&aring; Mac</li>
-			<li id="videos-fi" class="fi">Ohjevideot</li>
-			<li id="videos-sv" class="sv">Hj&auml;lpvideor</li>
-			<li id="tables-fi" class="fi">Taulukoita</li>
-			<li id="tables-sv" class="sv">Tabeller</li>
-		</ul>
-		<div class="clear"></div>
-		<div class="tab-top-border"></div>
-    </div>
+	<div id="tab-menu">
+		<div id="shortcut-fi" class="tab-menu-option fi tab-menu-option-active">Pikan&auml;pp&auml;imet</div>
+		<div id="shortcut-sv" class="tab-menu-option sv tab-menu-option-active">Snabbtangenter</div>
+		<div id="char_pc-fi" class="tab-menu-option fi">Erikoismerkit PC:ll&auml;</div>
+		<div id="char_pc-sv" class="tab-menu-option sv">Specialtecken p&aring; PC</div>
+		<div id="char_mac-fi" class="tab-menu-option fi">Erikoismerkit Mac:ll&auml;</div>
+		<div id="char_mac-sv" class="tab-menu-option sv">Specialtecken p&aring; Mac</div>
+		<div id="videos-fi" class="tab-menu-option fi">Ohjevideot</div>
+		<div id="videos-sv" class="tab-menu-option sv">Hj&auml;lpvideor</div>
+		<div id="tables-fi" class="tab-menu-option fi">Taulukoita</div>
+		<div id="tables-sv" class="tab-menu-option sv">Tabeller</div>
+	</div>
+
     <div id="tab-shortcut" class="tab-content active">
     </div>
 	<div id="tab-char_pc" class="tab-content">
