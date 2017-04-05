@@ -20,6 +20,24 @@ MathJax.Hub.Config({
 	// Handles for subpage initialisation functions
 	var subpage_init = {};
 	
+	function activate_copy_to_clipboard () {
+		$(".special-key").unbind("click");
+		
+		// Activate Digabi-specific copy feature
+		if (typeof(sharedclass) == 'object') {
+			// This is executed inside digabi-koe-browser.py
+			$(".special-key").click(function () {
+				sharedclass.copy_to_clipboard($(this).text());
+			});
+		}
+		else {
+			// This is executed in regular browser
+			$(".special-key").click(function () {
+				alert('Copying to clipboard is implemented for the Abitti environment ('+$(this).text()+')');
+			});
+		}
+	}
+	
 	function set_video_url (language) {
 		$(".helpvideo").each( function() {
 			var src = language+"/"+$(this).attr('data-src');
@@ -86,10 +104,12 @@ MathJax.Hub.Config({
 
 		// Execute special initialisation when "tables" tab is activated
 		main_tabs.activeTabInitialise = {
+			'char_pc': function () { activate_copy_to_clipboard(); },
+			'char_mac': function () { activate_copy_to_clipboard(); },
 			'tables' : function () { setSameHeights(); }
 		};
 		main_tabs.activateTabs();
-
+		
 	});
 </script>
 </head>
