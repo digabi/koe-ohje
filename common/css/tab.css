@@ -25,7 +25,6 @@ td {
 .firstcolumn{ 
 	font-family: Arial, Verdana, Helvetica, sans-serif;
 	font-size: 20px;
-	min-width: 25px;
 }
 .note { 
 	font-family: Arial, Verdana, Helvetica, sans-serif;
@@ -142,6 +141,18 @@ h3 {
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
 	font-size: 16px;
 	color: black;
+}
+
+.special-key {
+	color: #ffffff;
+	background-color: #359BB7;
+	text-align: center;
+	border-radius: 4px;
+	width: 40px;
+	height: 42px;
+	line-height: 42px;
+	display: block;
+	box-shadow: 2px 2px 5px rgba(0,0,0,.15);
 }
 
 .formulae table {
