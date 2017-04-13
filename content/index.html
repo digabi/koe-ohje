@@ -5,6 +5,7 @@
 <title>Abitti-apua / Abitti-hjälp</title>
 <link rel="stylesheet" href="../common/css/tab.css" type="text/css" media="screen" />
 <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="../common/clipboard.min.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
 	imageFont: null,
@@ -31,9 +32,16 @@ MathJax.Hub.Config({
 			});
 		}
 		else {
-			// This is executed in regular browser
+			// This is executed in regular browser (uses clipboard.js)
 			$(".special-key").click(function () {
-				alert('Copying to clipboard is implemented for the Abitti environment ('+$(this).text()+')');
+				clipboard.copy($(this).text()).then(
+					function () {
+						console.log("Copied to clipboard!");
+					},
+					function (err) {
+						alert("Copying to clipboard is not supported on your browser.");
+						console.log("Copying to clipboard failed:", err);
+					});
 			});
 		}
 	}

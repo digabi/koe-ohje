@@ -2,6 +2,9 @@ APPNAME = digabi-koe-ohje
 
 all:
 
+update-clipboardjs:
+	wget -O common/clipboard.min.js https://raw.githubusercontent.com/lgarron/clipboard.js/master/clipboard.min.js
+	
 install:
 	install -D -m 0755 digabi-koe-ohje.sh $(DESTDIR)/usr/bin/$(APPNAME)
 	install -D -m 0755 digabi-koe-browser.py $(DESTDIR)/usr/bin/digabi-koe-browser
