@@ -46,6 +46,17 @@ MathJax.Hub.Config({
 		}
 	}
 	
+	function write_to_stdout (message) {
+		if (typeof(sharedclass) == 'object') {
+			// This is executed inside digabi-koe-browser.py
+			sharedclass.write_to_stdout(message);
+		}
+		else {
+			// This is executed in regular browser (uses clipboard.js)
+			console.log(message);
+		}
+	}
+	
 	function set_video_url (language) {
 		$(".helpvideo").each( function() {
 			var src = language+"/"+$(this).attr('data-src');
@@ -112,9 +123,11 @@ MathJax.Hub.Config({
 
 		// Execute special initialisation when "tables" tab is activated
 		main_tabs.activeTabInitialise = {
-			'char_pc': function () { activate_copy_to_clipboard(); },
-			'char_mac': function () { activate_copy_to_clipboard(); },
-			'tables' : function () { setSameHeights(); }
+			'shortcut': function () { write_to_stdout('shortcut'); },
+			'char_pc': function () { write_to_stdout('char_pc'); activate_copy_to_clipboard(); },
+			'char_mac': function () { write_to_stdout('char_mac'); activate_copy_to_clipboard(); },
+			'videos': function () { write_to_stdout('videos'); },
+			'tables' : function () { write_to_stdout('tables'); setSameHeights(); }
 		};
 		main_tabs.activateTabs();
 		

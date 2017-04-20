@@ -14,6 +14,11 @@ class SharedClass (QObject):
     def copy_to_clipboard(self, value):
         clipboard = QApplication.clipboard()
         clipboard.setText(value)
+        
+    @pyqtSlot(str)
+    def write_to_stdout(self, value):
+        print("[digabi-koe-browser] %s" % (value))
+        sys.stdout.flush()
 
 class Window (QWidget):
     def __init__(self):
@@ -29,6 +34,11 @@ class Window (QWidget):
     def load_url (self, url):
         self.view.load(QUrl(url))
 
+sc = SharedClass()
+
+def appExiting ():
+    sc.write_to_stdout("exiting")
+    
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-W', '--width', dest='width', type=int, default=500, help='Browser window width')
@@ -41,10 +51,13 @@ def main():
 
     args = parser.parse_args()
 
+    sc.write_to_stdout("starting")
+	
     # Encode window title to ISO-8859-15
     window_title = args.title.decode('utf8').encode('iso8859-15')
 
     app = QApplication(sys.argv)
+    app.aboutToQuit.connect(appExiting)
     window = Window()
 
     window.resize(args.width, args.height)

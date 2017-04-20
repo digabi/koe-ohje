@@ -3,11 +3,18 @@
 		console.log('Init for tab-char_mac.html');
 		
 		// Initialise ActiveTab navigation
-		var charpc_tabs = Object.create(ActiveTab);
-		charpc_tabs.classPrefix = 'charmac';
-		charpc_tabs.tabNames = ["spanish","french","german","other"];
+		var charmac_tabs = Object.create(ActiveTab);
+		charmac_tabs.classPrefix = 'charmac';
+		charmac_tabs.tabNames = ["spanish","french","german","other"];
 
-		charpc_tabs.activateTabs();
+		charmac_tabs.activeTabInitialise = {
+			'spanish': function () { write_to_stdout('char_mac - spanish'); },
+			'french': function () { write_to_stdout('char_mac - french'); },
+			'german': function () { write_to_stdout('char_mac - german'); },
+			'other': function () { write_to_stdout('char_mac - other'); },
+		};
+		
+		charmac_tabs.activateTabs();
 
 	};
 </script>

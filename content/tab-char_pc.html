@@ -7,6 +7,13 @@
 		charpc_tabs.classPrefix = 'charpc';
 		charpc_tabs.tabNames = ["spanish","french","german","other"];
 
+		charpc_tabs.activeTabInitialise = {
+			'spanish': function () { write_to_stdout('char_pc - spanish'); },
+			'french': function () { write_to_stdout('char_pc - french'); },
+			'german': function () { write_to_stdout('char_pc - german'); },
+			'other': function () { write_to_stdout('char_pc - other'); },
+		};
+
 		charpc_tabs.activateTabs();
 
 	};
