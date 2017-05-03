@@ -1,0 +1,156 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8" />
+<meta charset="UTF-8">
+<title>Abitti-taulukot / Abitti-tabeller</title>
+<link rel="stylesheet" href="../../common/css/tab.css" type="text/css" media="screen" />
+<script type="text/javascript" src="../../common/js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="../../common/clipboard.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	imageFont: null,
+	CommonHTML: {
+		scale: 90
+	}
+});
+</script>
+<script type="text/javascript" src="../../common/js/MathJax-master/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script type="text/javascript" src="../../common/js/activetab.js"></script>
+<script type="text/javascript" src="../../common/js/sameHeights.js"></script>
+<script type="text/javascript">
+	// Handles for subpage initialisation functions
+	var subpage_init = {};
+	
+	function activate_copy_to_clipboard () {
+		$(".special-key").unbind("click");
+		
+		// Activate Digabi-specific copy feature
+		if (typeof(sharedclass) == 'object') {
+			// This is executed inside digabi-koe-browser.py
+			$(".special-key").click(function () {
+				sharedclass.copy_to_clipboard($(this).text());
+			});
+		}
+		else {
+			// This is executed in regular browser (uses clipboard.js)
+			$(".special-key").click(function () {
+				clipboard.copy($(this).text()).then(
+					function () {
+						console.log("Copied to clipboard!");
+					},
+					function (err) {
+						alert("Copying to clipboard is not supported on your browser.");
+						console.log("Copying to clipboard failed:", err);
+					});
+			});
+		}
+	}
+	
+	function write_to_stdout (message) {
+		if (typeof(sharedclass) == 'object') {
+			// This is executed inside digabi-koe-browser.py
+			sharedclass.write_to_stdout(message);
+		}
+		else {
+			// This is executed in regular browser (uses clipboard.js)
+			console.log(message);
+		}
+	}
+	
+	function set_video_url (language) {
+		$(".helpvideo").each( function() {
+			var src = language+"/"+$(this).attr('data-src');
+			$(this).attr('src', src);
+		});
+	}
+	
+	function set_language (language) {
+		if (language.toLowerCase() == "fi") {
+			console.log("Language set to Finnish");
+			$(".fi").css("display", "t");
+			$(".sv").css("display", "none");
+		}
+		else if (language.toLowerCase() == "sv") {
+			console.log("Language set to Swedish");
+			$(".fi").css("display", "none");
+			$(".sv").css("display", "");
+		}
+		else {
+			console.log("Unknown language: "+language);
+		}
+	}
+	
+	function init_subpage (page_tag) {
+		if (typeof(subpage_init[page_tag]) == 'function') {
+			console.log('Running sub-page initialisation for '+page_tag);
+			subpage_init[page_tag]();
+		}
+		else {
+			console.log('Tried to run sub-page initialisation for '+page_tag+' but is is not defined');
+		}
+	}
+	
+	$(document).ready(function () {
+		
+		
+		// Set current language accoring to various suggestions
+		var request = window.location.href;
+		var lang = "fi";
+		
+		if (request.lastIndexOf('?') > -1) {
+			var param = request.slice(request.lastIndexOf('?')+1);
+			lang = param.toLowerCase();
+		}
+		
+		if (request.indexOf('index-fi') > -1) {
+			lang = 'fi';
+		}
+		if (request.indexOf('index-sv') > -1) {
+			lang = 'sv';
+		}
+		
+		// Include different pages to the respective divs
+		$("#tab-math").load("tab-math.html", function () { set_language(lang); init_subpage('tab-math'); });
+		$("#tab-physics").load("tab-physics.html", function () { set_language(lang); init_subpage('tab-physics'); });
+		$("#tab-chemistry").load("tab-chemistry.html", function () { set_language(lang); init_subpage('tab-chemistry'); });
+
+		// Initialise ActiveTab navigation
+		var main_tabs = Object.create(ActiveTab);
+		main_tabs.classPrefix = 'tab';
+		main_tabs.tabNames = ["math", "physics", "chemistry"];
+
+		// Execute special initialisation when "tables" tab is activated
+		main_tabs.activeTabInitialise = {
+			'math': function () { write_to_stdout('math'); setSameHeights(); },
+			'physics': function () { write_to_stdout('physics'); setSameHeights(); },
+			'chemistry': function () { write_to_stdout('chemistry'); setSameHeights(); }
+		};
+		main_tabs.activateTabs();
+		
+	});
+</script>
+</head>
+<body>
+
+<div id="tab-container">
+	<div id="tab-menu">
+		<div id="math-fi" class="tab-menu-option fi tab-menu-option-active">Matematiikka</div>
+		<div id="math-sv" class="tab-menu-option sv tab-menu-option-active">Matematik</div>
+		<div id="physics-fi" class="tab-menu-option fi">Fysiikka</div>
+		<div id="physics-sv" class="tab-menu-option sv">Fysik</div>
+		<div id="chemistry-fi" class="tab-menu-option fi">Kemia</div>
+		<div id="chemistry-sv" class="tab-menu-option sv">Kemi</div>
+	</div>
+
+    <div id="tab-math" class="tab-content active">
+    </div>
+	<div id="tab-physics" class="tab-content">
+	</div>
+	<div id="tab-chemistry" class="tab-content">
+	</div>
+</div>
+<div id="loading">
+	<div id="loading-text"><span class="fi">Ladataan...</span><span class="sv">Laddas...</span></div>
+</div>
+</body>
+</html>
