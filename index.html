@@ -5,24 +5,41 @@
 <meta charset="UTF-8">
 <title>Abitti-apua / Abitti-hjälp</title>
 <link rel="stylesheet" href="common/css/tab.css" type="text/css" media="screen" />
+<script type="text/javascript" src="common/js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="common/js/activetab.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		// Initialise ActiveTab navigation
+		var main_tabs = Object.create(ActiveTab);
+		main_tabs.classPrefix = 'tab';
+		main_tabs.tabNames = ["menu_fi", "menu_sv"];
+		
+		main_tabs.activateTabs();
+	});
+</script>
 </head>
 <body>
 <div id="tab-container">
-	<div id="tab-menu-container">
-		<ul class="tab-menu">
-			<li>&nbsp;</li>
-		</ul>
-		<div class="clear"></div>
-		<div class="tab-top-border"></div>
+	<div id="tab-menu">
+		<div id="menu_fi-somelang" class="tab-menu-option tab-menu-option-active">Suomeksi</div>
+		<div id="menu_sv-somelang" class="tab-menu-option">På svenska</div>
 	</div>
 
-	<div id="tab-shortcut" class="tab-content active">
-		<h1>Abitti-apua / Abitti-hjälp</h1>
+    <div id="tab-menu_fi" class="tab-content active">
+		<h1>Abitti-tukimateriaali suomeksi</h1>
 		<table>
-			<tr><td><a href="content/index.html?fi">Abitin apusivut suomeksi</a></td></tr>
-			<tr><td><a href="content/index.html?sv">Abitti hjälpsidor på svenska</a></td></tr>
+			<tr><td><a href="content/taulukot/index.html?fi">Abitin taulukkoaineisto</a></td></tr>
+			<tr><td><a href="content/index.html?fi">Abitin apusivut</a></td></tr>
 		</table>
-	</div>
+    </div>
+
+    <div id="tab-menu_sv" class="tab-content">
+		<h1>Abitti-stödmaterial på svenska</h1>
+		<table>
+			<tr><td><a href="content/taulukot/index.html?sv">Abitti tabeller</a></td></tr>
+			<tr><td><a href="content/index.html?sv">Abitti hjälpsidor</a></td></tr>
+		</table>
+    </div>
 </div>
 </body>
 </html>
