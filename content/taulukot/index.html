@@ -118,13 +118,14 @@ MathJax.Hub.Config({
 		// Initialise ActiveTab navigation
 		var main_tabs = Object.create(ActiveTab);
 		main_tabs.classPrefix = 'tab';
-		main_tabs.tabNames = ["math", "physics", "chemistry"];
+		main_tabs.tabNames = ["math", "physics", "chemistry", "help"];
 
 		// Execute special initialisation when "tables" tab is activated
 		main_tabs.activeTabInitialise = {
 			'math': function () { write_to_stdout('math'); setSameHeights(); },
 			'physics': function () { write_to_stdout('physics'); setSameHeights(); },
-			'chemistry': function () { write_to_stdout('chemistry'); setSameHeights(); }
+			'chemistry': function () { write_to_stdout('chemistry'); setSameHeights(); },
+			'help': function () { write_to_stdout('tables_to_help'); window.open('../index.html?'+lang); }
 		};
 		main_tabs.activateTabs();
 		
@@ -141,6 +142,8 @@ MathJax.Hub.Config({
 		<div id="physics-sv" class="tab-menu-option sv">Fysik</div>
 		<div id="chemistry-fi" class="tab-menu-option fi">Kemia</div>
 		<div id="chemistry-sv" class="tab-menu-option sv">Kemi</div>
+		<div id="help-fi" class="tab-menu-option fi">Apua</div>
+		<div id="help-sv" class="tab-menu-option sv">Hjälp</div>
 	</div>
 
     <div id="tab-math" class="tab-content active">
@@ -148,6 +151,8 @@ MathJax.Hub.Config({
 	<div id="tab-physics" class="tab-content">
 	</div>
 	<div id="tab-chemistry" class="tab-content">
+	</div>
+	<div id="tab-help" class="tab-content">
 	</div>
 </div>
 <div id="loading">

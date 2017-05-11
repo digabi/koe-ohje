@@ -115,7 +115,6 @@ MathJax.Hub.Config({
 		$("#tab-char_pc").load("tab-char_pc.html", function () { set_language(lang); init_subpage('tab-char_pc'); });
 		$("#tab-char_mac").load("tab-char_mac.html", function () { set_language(lang); init_subpage('tab-char_mac'); });
 		$("#tab-videos").load("tab-videos.html", function () { set_language(lang); set_video_url(lang); init_subpage('tab-videos'); });
-		$("#tab-tables").load("tab-tables.html", function () { set_language(lang); init_subpage('tab-tables'); });
 
 		// Initialise ActiveTab navigation
 		var main_tabs = Object.create(ActiveTab);
@@ -128,7 +127,7 @@ MathJax.Hub.Config({
 			'char_pc': function () { write_to_stdout('char_pc'); activate_copy_to_clipboard(); },
 			'char_mac': function () { write_to_stdout('char_mac'); activate_copy_to_clipboard(); },
 			'videos': function () { write_to_stdout('videos'); },
-			'tables' : function () { write_to_stdout('tables'); setSameHeights(); }
+			'tables' : function () { write_to_stdout('help_to_tables'); window.open('taulukot/index.html?'+lang); }
 		};
 		main_tabs.activateTabs();
 		
