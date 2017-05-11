@@ -2,6 +2,10 @@
 
 Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle WebKit-selaimella (ks. `digabi-koe-browser.py`).
 
+## Kaavakokoelma ja taulukot
+
+Osoitteesta https://tables.abitti.fi/content/taulukot löytyy kaavakokoelma ja taulukot.
+
 ## Ohjeet muutosten ehdottamiseen
 
 YTL ottaa vastaan muutosehdotuksia erityisesti kaavakokoelmaan. Muutosehdotukset on tehtävä pull requestina:
