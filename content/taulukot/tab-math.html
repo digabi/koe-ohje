@@ -4,6 +4,205 @@
 <h2 class="fi">Matematiikka</h2>
 <h2 class="sv">Matematik</h2>
 
+
+<h3 class="fi">Integraalilaskenta</h3>
+<h3 class="sv">Integraalilaskenta ruotsiksi</h3>
+
+	<!-- \operatorname{d} is used for proper look -->
+<table class="formulae">
+	<tr>
+		<th>Määritelmä</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  & \int f(x)\operatorname{d} x = F(x) + C \text{, jossa } F'(x)=f(x)
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+	
+<table class="formulae">
+	<tr>
+		<th>Määräämättömän integraaliin liittyviä sääntöjä</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  & \mathbf{1.} \quad \int kf\operatorname{d} x = k \int f \operatorname{d} x && \mathbf{3.} \quad \int f'g \operatorname{d} x = f g - \int g' f \operatorname{d} x \\
+			  & \mathbf{2.} \quad \int (f+g) \operatorname{d} x = f \operatorname{d} x + \int g \operatorname{d} x && \mathbf{4.} \quad \int f'(x)g'(f(x))\operatorname{d} x = g(f(x)) + C
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+
+<table class="formulae">
+	<tr>
+		<th>Integroimiskaavoja</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  & \mathbf{5.} \quad \int 0 \operatorname{d} x = C 
+			  && \mathbf{14.} \quad \int \cot x \operatorname{d} x = \ln \lvert \sin x \rvert + C \\
+			  & \mathbf{6.} \quad \int k \operatorname{d} x = kx+C 
+			  && \mathbf{15.} \quad \int e^x \operatorname{d} x = e^x + C \\
+			  & \mathbf{7.} \quad \int x^n \operatorname{d} x = \frac{x^{n+1}}{n+1} + C\ (n \neq -1) 
+			  && \mathbf{16.} \quad \int f'e^f \operatorname{d} x = e^f + C \\
+			  & \mathbf{8.} \quad \int \frac 1x \operatorname{d} x = \ln \lvert x\rvert + C 
+			  && \mathbf{17.} \quad \int a^x \operatorname{d} x = \frac{a^x}{\ln a} + C \\
+			  & \mathbf{9.} \quad \int f'f^n \operatorname{d} x = \frac{f^{n+1}}{n+1} + C (n \neq -1) 
+			  && \mathbf{18.} \quad \int \ln \lvert x\rvert \operatorname{d} x = x \ln \lvert x\rvert - x + C \\
+			  & \mathbf{10.} \quad \int \frac{f'}{f} \operatorname{d} x = \ln \lvert f\rvert + C 
+			  && \mathbf{19.} \quad \int \log_a \lvert x\rvert \operatorname{d} x = \log_ae(x\ln \lvert x\rvert -x) + C\ (a>0,\ a\neq 1)\\
+			  & \mathbf{11.} \quad \int \sin x \operatorname{d} x = -\cos + C 
+			  && \mathbf{20.} \quad \int \frac{\operatorname{d} x}{1+x^2} = \arctan x + C \\
+			  & \mathbf{12.} \quad \int \cos x \operatorname{d} x = \sin x + C 
+			  && \mathbf{21.} \quad \int \frac{\operatorname{d} x}{1+x^2} = \arcsin x + C \\
+			  & \mathbf{13.} \quad \int \tan x \operatorname{d} x = -\ln \lvert \cos x\rvert + C 
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+
+<table class="formulae">
+	
+	<tr>
+		<th>Määrätty integraali</th>
+	</tr>
+		
+	<tr>
+		<td>\begin{align}
+			  \int_a^b \operatorname{d} x = 
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+
+<table class="formulae">
+	<tr>
+		<th></th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+
+<table class="formulae">
+	<tr>
+		<th>Käyrän kaaren pituus</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  S=\int_a^b\sqrt{1+[f'(x)]^2}\operatorname{d} x 
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+	
+<table class="formulae">
+	<tr>
+		<th>Pinta-alaintegraaleja</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  \mathbf{1.} \quad A=\int_a^b f(x) \operatorname{d} x,, \text{kun } f(x) \ge 0\\
+			  \mathbf{2.} \quad A=-\int_a^b f(x) \operatorname{d} x,, \text{kun } f(x) \le 0\\
+			  \mathbf{3.} \quad A=\int_a^b \lvert f(x)\rvert \operatorname{d} x = \int_a^c f(x) \operatorname{d} x - \int_b^c f(x) \operatorname{d} x \\
+			  \mathbf{4.} \quad A=\int_a^b [f(x)-g(x)] \operatorname{d} x,,\ \text{kun } f(x) \ge g(x)\\
+			  \mathbf{5.} \quad A=2\pi \int_a^b \lvert f(x)\rvert \sqrt{+[f'(x)]^2} \operatorname{d} x
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+
+<table class="formulae">
+	<tr>
+		<th>Tilavuusintegraaleja</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+
+	
+<h3 class="fi">Differentiaalilaskenta</h3>
+<h3 class="sv">Differentiaalilaskenta ruotsiksi</h3>
+
+<table class="formulae">
+	<tr>
+		<th>Derivaatan määritelmä</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  & f'(x) = \lim_{h\to 0}\frac{f(x + h)-f(x)}{h}	&& \text{funktion $f$ derivaattafunktio} \\
+			  & f'(x_0) = \lim_{h\to 0}\frac{f(x_0 + h)-f(x_0)}{h}= \lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0} && \text{derivaatta kohdassa } x_0 
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+	
+<table class="formulae">
+	<tr>
+		<th>Derivoimissääntöjä</th>
+	</tr>
+	<tr>
+		<!-- \operatorname{D} is used for proper look -->
+		<td>\begin{align}
+			  & \mathbf{1.} \quad \operatorname{D} k=0 \quad (k \text{ on vakio}) 
+			  && \mathbf{5.} \quad \operatorname{D} \frac fg = \frac{g \operatorname{D} f-f \operatorname{D} g}{g^2}\\
+			  & \mathbf{2.} \quad \operatorname{D} kf=k \operatorname{D} f 
+			  && \mathbf{6.} \quad \operatorname{D} g(f(x)) = g'(f(x))f'(x)\\
+			  & \mathbf{3.} \quad \operatorname{D} (f+g)=\operatorname{D} f + \operatorname{D} g 
+			  && \mathbf{7.} \quad (f^{-1})'(y_0) = \frac{1}{f'(x_o)} \text{, missä}\ y_0=f(x_0)\\
+			  & \mathbf{4.} \quad \operatorname{D} fg=f \operatorname{D} g + g \operatorname{D} f
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+	
+<table class="formulae">
+	<tr>
+		<th>Derivoimiskaavoja</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  & \mathbf{8.} \quad \operatorname{D} x^n=nx^{x-1} 
+			  && \mathbf{16.} \quad \operatorname{D} \ln \lvert x\rvert = \frac 1x \\
+			  & \mathbf{9.} \quad \operatorname{D} f^n=nf^{n-1} \operatorname{D} f 
+			  && \mathbf{17.} \quad \operatorname{D} \log_a \left| x\right| = \frac{1}{x \ln a} \quad (a\lt 0,\, a\neq 1) \\
+			  & \mathbf{10} \quad \operatorname{D} \sin x = \cos x 
+			  && \mathbf{18.} \quad \operatorname{D} \arcsin x = \frac{1}{\sqrt{1-x^2}} \\
+			  & \mathbf{11.} \quad \operatorname{D} \cos x = -\sin x 
+			  && \mathbf{19.} \quad \operatorname{D} \arccos x = - \frac{1}{\sqrt{1-x^2}} \\
+			  & \mathbf{12.} \quad \operatorname{D} \tan x = \frac{1}{\cos^2x} = 1+\tan^2x 
+			  && \mathbf{20.} \quad \operatorname{D} \arctan x = \frac{1}{1-x^2}\\
+			  & \mathbf{13.} \quad \operatorname{D} \cot x = - \frac{1}{\sin^2x} = -1-\cot^2x 
+			  && \mathbf{21.} \quad \operatorname{D} \operatorname{arccot} x = x = \frac{1}{1-x^2} \\
+			  & \mathbf{14.} \quad \operatorname{D} e^x = e^x \\
+			  & \mathbf{15.} \quad \operatorname{D} a^x = a^x \ln a \quad (a\lt 0)
+			\end{align}</td>
+	</tr>
+</table>
+	<br>
+	
+<table class="formulae">
+	<tr>
+		<th>Derivaatan sovelluksia</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  & y-f(x_0)=f'(x_0)(x-x_0)  && \text{käyrälle $y=f'(x)$ kohtaan $x_0$ asetetun tangetin yhtälö} \\
+			  & y-f(x_0)=-\frac{1}{f'(x_0)(x-x_0)}  && \text{normaalin yhtälö, kun } f'(x_0)\neq 0 \\
+			  & x=x_0 && \text{normaalin yhtälö, kun } f'(x_0) = 0
+			\end{align}</td>
+	</tr>
+</table>
+
+
 <h3 class="fi">Kreikkalaiset aakkoset</h3>
 <h3 class="sv">Det grekiska alfabetet</h3>
 
