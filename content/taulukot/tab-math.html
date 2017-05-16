@@ -4,9 +4,244 @@
 <h2 class="fi">Matematiikka</h2>
 <h2 class="sv">Matematik</h2>
 
+<h3 class="fi">Tilastot ja todennäköisyys</h3>
+<h3 class="sv">Tilastot ja todennäköisyys ruotsiksi</h3>
+
+
+
+<h3 class="fi">Numeerisia menetelmiä</h3>
+<h3 class="sv">Numeerisia menetelmiä ruotsiksi</h3>
+
+<table class="formulae">
+	<tr>
+		<th>Yhtälön \(f(x)=0\) ratkaisu</td>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  & \mathbf{Newtonin\ menetelmä} &&x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \\[2ex]
+			  & \mathbf{Sekanttimenetelmä} && x_{n+1}=x_n-f(x_n)\cdot \frac{x_n-x{n-1}}{f(x_n)-f(x_{n-1})}
+			\end{align}</td>
+	</tr>
+</table>
+<br>
+
+<table class="formulae">
+	<tr>
+		<th>Funktion approksimointi</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  & \mathbf{Taylorin\ polynomi} \\[2ex]
+			  & P_n(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots+\frac{f^n(a)}{n!}(x-a)^2\\
+			  & \text{Virhe $R_n+1(x)=\frac{f^{(n+1)}(t)}{(n+1)!}(x-a)^n$, missä $t$ on $a$:n ja $x$:n välillä oleva luku.}
+			\end{align}</td>
+	</tr>
+</table>
+<br>
+
+<table class="formulae">
+	<tr>
+		<th>Numeerinen integrointi</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  & \mathbf{Puolisuunnikassääntö} \\[1ex]
+			  & \int_a^b f(x)\mathrm{d}x \approx h\left[ \frac 12 f(x_0)+f(x_1)+\cdots+f(x_n-1)+ \frac 12f(x_n)\right],\ x_0=a,\ x_n=b\\
+			  & \text{Virhe $E_n=-\frac{(b-a)^3f**(t)}{12n^2}$, missä $a < t < b$} \\[2ex]
+			  
+			  & \mathbf{Simpsonin\ sääntö} \\[1ex]
+			  & \int^b_af(x)\mathrm{d}x \approx \frac h3 \left[f(x_0)+4f(x_1)+ 2f(x_2)+4f(x_3)+\cdots+4f(x_{n-1})+f(x_n)+f(x_n)\right] \\
+			  & x_0=a,\ x_n=b,\ n\ \text{parillinen}\\
+			  & \text{Virhe $E_n=-\frac{(b-a)^5ff^{(4)}(t)}{180n^4}$, missä $a < t < b$}
+			\end{align}</td>
+	</tr>
+</table>
+
+<h3 class="fi">Vektorilaskenta</h3>
+<h3 class="sv">Vektorilaskenta ruotsiksi</h3>
+
+<table class="formulae">
+	<tr>
+		<th colspan="3" class="fi">Komponenttiesitys</th><th colspan="3" class="sv">Komponenttiesitys ruotsiksi</th>
+	</tr>
+	<tr>
+		<td colspan="3">\(\bar a = a_x \bar i + a_y \bar j + a_z \bar k,\ \bar  b = b_x \bar i + b_y \bar j + b_z \bar k,\ \bar c = c_x \bar i + c_y \bar j + c_z \bar k \\
+		\bar i,\ \bar j \text{ ja } \bar k\ \text{ovat xyz-koordinaatiston yksikkövektorit.}\)</td>
+	</tr>
+	<tr>
+		<th>1.</th>
+		<td>paikkavektori</td>
+		<td>\[\overrightarrow{OA} = \bar a,\ \text{jos}\ A=(a_x,\ a_y,\ a_z)\]</td>
+	</tr>
+	<tr>
+		<th>2.</th>
+		<td>pituus</td>
+		<td>\[\lvert \bar a \rvert = \sqrt{a_x^2+a_y^2+a_z^2}=\sqrt{\bar a \cdot \bar a}\]</td>
+	</tr>
+	<tr>
+		<th>3.</th>
+		<td>identtisyys</td>
+		<td>\[\bar a = \bar b \iff (\bar a \uparrow \uparrow \bar b \wedge \lvert \bar a \rvert=\lvert \bar b \rvert) \iff 
+		(a_x=b_x \wedge a_y=b_y \wedge a_z=b_z)\]</td>
+	</tr>
+	<tr>
+		<th>4.</th>
+		<td>summa</td>
+		<td>\[\bar a \pm \bar b = (a_x\pm b_x)\bar i + (a_y\pm b_y)\bar j+ (a_z\pm b_z)\bar k\]</td>
+	</tr>
+	<tr>
+		<th>5.</th>
+		<td>luku \(\cdot\) vektori</td>
+		<td>\[k\bar a=ka_x\bar i+ka_y\bar j+ka_z\bar k\]</td>
+	</tr>
+	<tr>
+		<th>6.</th>
+		<td>pistetulo <br> skalaaritulo</td>
+		<td>\[\bar a\cdot \bar b=\lvert\bar a\rvert\lvert\bar b\rvert\cos(\bar a,\ \bar b)= a_xb_x+a_yb_y+a_zb_z\]</td>
+	</tr>
+	<tr>
+		<th>7.</th>
+		<td>kohtisuoruus</td>
+		<td>\[\bar a \bot \bar b \iff \bar a\cdot\bar b=0,\ \text{kun}\ \bar a,\ \bar b \neq \bar 0\]</td>
+	</tr>
+	<tr>
+		<th>8.</th>
+		<td>välinen kulma</td>
+		<td>\[\cos(a,\ b)=\frac{\bar a\cdot\bar b}{\lvert \bar a \rvert\lvert \bar b \rvert},\ 0 &deg; \ge \]</td>
+	</tr>
+	<tr>
+		<th>9.</th>
+		<td>skalaariprojektio</td>
+		<td>\[a_b=\frac{\bar a \cdot \bar b}{\lvert \bar b\rvert}\]</td>
+	</tr>
+	<tr>
+		<th>10.</th>
+		<td>vektoriprojektio</td>
+		<td>\[\bar a_b = \frac{\bar a \cdot \bar b}{\bar b \cdot \bar b}\bar b\]</td>
+	</tr>
+	<tr>
+		<th>11.</th>
+		<td>ristitulo<br>(vektoritulo)</td>
+		<td>\[\bar a \times \bar b = \lvert\bar a\rvert\lvert\bar b\rvert \sin (\bar a,\ \bar b)\bar e= 
+				\begin{vmatrix}
+				  \bar i & \bar j & \bar k \\
+				  a_x & a_y & a_z \\
+				  b_x & b_y & b_z
+				\end {vmatrix},\ \lvert \bar e\rvert=1\]</td>
+	</tr>
+	<tr>
+		<th>12.</th>
+		<td>yhdensuuntaisuus</td>
+		<td>\begin{align}
+			  \bar a \Vert \bar b \iff \bar a \times \bar b = \bar 0\text{, kun }\bar a,\ \bar b\neq\\
+			  \bar a \Vert \bar b \iff \bar a = t\bar b,\ t \in \Bbb{R}
+			\end{align}</td>
+	</tr>
+	<tr>
+		<th>13.</th>
+		<td>suunnikkaan ala</td>
+		<td>\[A=\lvert\bar a \times \bar b\rvert \longrightarrow \text{kolmion ala }=\frac 12 A\]</td>
+	</tr>
+	<tr>
+		<th>14.</th>
+		<td>skalaarikolmiotulo</td>
+		<td>\[\bar a \cdot \bar b \times \bar c = \bar a \times \bar b \cdot \bar c=\overline{abc}=
+				\begin{vmatrix}
+				  a_x & a_y & a_z\\
+				  b_x & b_y & b_z\\
+				  c_x & c_y & c_z
+				\end{vmatrix}\]</td>
+	</tr>
+	<tr>
+		<th>15.</th>
+		<td>särmiön tilavuus></td>
+		<td>\[V = \lvert\overline{abc}\rvert\ \longrightarrow\ \text{tetraedrin tilavuus}\ =\frac 16A\]</td>
+	</tr>
+	<tr>
+		<th>16.</th>
+		<td>vektorit samassa tasossa</td>
+		<td>\[\iff \overline{abc}=0,\ \text{kun}\ \bar a,\bar b,\bar c\neq0\]</td>
+	</tr>
+	<tr>
+		<th>17.</th>
+		<td>vektorikolmiotulo</td>
+		<td>\begin{align}
+			  \bar a\times(\bar b\times\bar c)&=(\bar a\cdot\bar c)\bar b-(\bar a\cdot\bar b)\bar c \\
+			  \bar (a\times\bar b)\times\bar c&=(\bar a\cdot\bar c)\bar b-(\bar b\cdot\bar c)\bar a
+			\end{align}</td>
+	</tr>
+	
+</table>
+
+<h3 class="fi">Trigonometria</h3>
+<h3 class="sv">Trigonometria ruotsiksi</h3>
+
+<table class="formulae">
+	<tr>
+		<th class="fi">Peruskaavoja</th>
+		<th class="sv">Peruskaavoja ruotsiksi</th>
+	</tr>
+	<tr>
+		<td>\begin{align} &\sin^2x+\cos^2x =1 \\[2ex]
+			&\tan x =\frac{\sin x}{\cos x} \\[2ex]
+			&\cot x =\frac{1}{\tan x}\end{align}</td>
+	</tr>
+</table>
+<br>
+<table class="formulae">
+	<tr>
+		<th colspan="2" class="fi">Merkkikaaviot</th>
+		<th colspan="2" class="sv">Merkkikaaviot ruotsiksi</th>
+	</tr>
+	<tr>
+		<td>$$\sin$$ \begin{array}{c|c}
+			+ & + \\ \hline
+			- & - \end{array}</td>
+		<td>$$\cos$$ \begin{array}{c|c}
+			- & + \\ \hline
+			- & + \end{array}</td>
+	</tr>
+	<tr>
+		<td>$$\tan$$ \begin{array}{c|c}
+			- & + \\ \hline
+			+ & - \end{array}</td>
+		<td>$$\cot$$ \begin{array}{c|c}
+			- & + \\ \hline
+			+ & - \end{array}</td>
+	</tr>
+</table>
+<br>
+
+<table class="formulae">
+	<tr>
+		<th class="fi">Trigonometristen funktioiden potensseja</th>
+		<th class="sv">Trigonometristen funktioiden potensseja ruotsiksi</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+		  & \mathbf{1.} \quad \sin^2x=\frac 12 (1-\cos2x) && \mathbf{4.} \quad \cos^3x=\frac 14 (\cos 3x - 3 \cos x)\\[2ex]
+		  & \mathbf{2.} \quad \cos^2x=\frac 12 (1+ cos 2x && \mathbf{5.} \quad \sin^4x=\frac 18 (\cos 4x - 4 \cos 2x +3)\\[2ex]
+		  & \mathbf{3.} \quad \sin^3x=\frac 14 (3 \sin x - \sin 3x) && \mathbf{6.} \quad \cos^4x = \frac 18 (\cos 4x + 4 \cos 2x+3)
+		\end{align}</td>
+	</tr>
+</table>
+
 <h3 class="fi">Algebra</h3>
 <h3 class="sv">Algebra ruotsiksi</h3>
 
+<table class="formulae">
+	<tr>
+		<th class="fi">Aritmeettinen keskiarvo</th>
+		<th class="sv">Aritmeettinen keskiarvo ruotsiksi</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+		      & \text{Kahdelle luvulle} && \bar x = \frac{x_1+x_2}{2}\\[2ex]
+			  & \text{Yleisesti} && \frac{x_1+x_2+ \cdots + x_n}{n}=\frac{\sum_{i=1}^nx_i}{n}
+		    \end{align}</td>
+	</tr>
+</table>
+<br>
 <table class="formulae">
 	<tr>
 		<th scope="col" colspan="3" class="fi">Lukujonoja ja summia</th><th scope="col" span="3" class="sv">Lukujonoja ja summia ruotsiksi</th>
@@ -160,19 +395,19 @@
 	</tr>
 	<tr>
 		<td>\begin{align}
-			  & \mathbf{1.}\quad a^ma^n=a^{m+n} &&\text{samankantaisten potenssien tulo}\\
-			  & \mathbf{2.}\quad \frac {a^m}{a^n}=a^{m-n}\ \ (a\neq0) && \text{samankantaisten potenssien osamäärä}\\
-			  & \mathbf{3.}\quad (ab)^n=a^nb^n && \text{tulon potenssi} \\
-			  & \mathbf{4.}\quad (\frac ab)^n= \frac{a^n}{b^n}\ \ (b\neq0) && \text{osamäärän potenssi} \\
-			  & \mathbf{5.}\quad (a^m)^n=a^{mn}=(a^n)^m && \text{potenssin potenssi} \\
+			  & \mathbf{1.}\quad a^ma^n=a^{m+n} &&\text{samankantaisten potenssien tulo}\\[2ex]
+			  & \mathbf{2.}\quad \frac {a^m}{a^n}=a^{m-n}\ \ (a\neq0) && \text{samankantaisten potenssien osamäärä}\\[2ex]
+			  & \mathbf{3.}\quad (ab)^n=a^nb^n && \text{tulon potenssi} \\[2ex]
+			  & \mathbf{4.}\quad (\frac ab)^n= \frac{a^n}{b^n}\ \ (b\neq0) && \text{osamäärän potenssi} \\[2ex]
+			  & \mathbf{5.}\quad (a^m)^n=a^{mn}=(a^n)^m && \text{potenssin potenssi} \\[2ex]
 			  & \mathbf{6.1} \quad (a+b)^2=a^2+2ab+b^2 && \text{binomin neliöt} \\
-			  & \mathbf{6.2} \quad (a-b)^2=a^2-2ab+b^2 && \\
-			  & \mathbf{8.}\quad (a+b+c)^2=a^2+b^2+c^2+2ab+2ac+2bc && \text{trinomin neliö} \\
+			  & \mathbf{6.2} \quad (a-b)^2=a^2-2ab+b^2 && \\[2ex]
+			  & \mathbf{8.}\quad (a+b+c)^2=a^2+b^2+c^2+2ab+2ac+2bc && \text{trinomin neliö} \\[2ex]
 			  & \mathbf{9.}\quad (a+b)^n=\sum_{k=o}^n \binom{n}{k}a^{n-k}b^k=\sum_{k=0}^n\frac{n!}{k!(n-k)}a^{n-k}b^k && \text{Newtonin binomikaava}
 			\end{align}</td>
 	</tr>
 </table>
-
+<br>
 
 <table class="formulae">
 	<tr>
@@ -292,17 +527,17 @@
 		<th>Derivoimiss&auml;&auml;ntöj&auml;</th>
 	</tr>
 	<tr>
-		<!-- \operatorname{D} is used for proper look -->
+		<!-- \mathrm{D} is used for proper look -->
 		
 		
 		<td>\begin{align}
-			  & \mathbf{1.} \quad \operatorname{D} k=0 \quad (k \text{ on vakio}) 
-			  && \mathbf{5.} \quad \operatorname{D} \frac fg = \frac{g \operatorname{D} f-f \operatorname{D} g}{g^2}\\
-			  & \mathbf{2.} \quad \operatorname{D} kf=k \operatorname{D} f 
-			  && \mathbf{6.} \quad \operatorname{D} g(f(x)) = g'(f(x))f'(x)\\
-			  & \mathbf{3.} \quad \operatorname{D} (f+g)=\operatorname{D} f + \operatorname{D} g 
+			  & \mathbf{1.} \quad \mathrm{D} k=0 \quad (k \text{ on vakio}) 
+			  && \mathbf{5.} \quad \mathrm{D} \frac fg = \frac{g \mathrm{D} f-f \mathrm{D} g}{g^2}\\
+			  & \mathbf{2.} \quad \mathrm{D} kf=k \mathrm{D} f 
+			  && \mathbf{6.} \quad \mathrm{D} g(f(x)) = g'(f(x))f'(x)\\
+			  & \mathbf{3.} \quad \mathrm{D} (f+g)=\mathrm{D} f + \mathrm{D} g 
 			  && \mathbf{7.} \quad (f^{-1})'(y_0) = \frac{1}{f'(x_o)} \text{, miss&auml;}\ y_0=f(x_0)\\
-			  & \mathbf{4.} \quad \operatorname{D} fg=f \operatorname{D} g + g \operatorname{D} f
+			  & \mathbf{4.} \quad \mathrm{D} fg=f \mathrm{D} g + g \mathrm{D} f
 			\end{align}</td>
 	</tr>
 </table> 
@@ -314,20 +549,20 @@
 	</tr>
 	<tr>
 		<td>\begin{align}
-			  & \mathbf{8.} \quad \operatorname{D} x^n=nx^{x-1} 
-			  && \mathbf{16.} \quad \operatorname{D} \ln \lvert x\rvert = \frac 1x \\
-			  & \mathbf{9.} \quad \operatorname{D} f^n=nf^{n-1} \operatorname{D} f 
-			  && \mathbf{17.} \quad \operatorname{D} \log_a \left| x\right| = \frac{1}{x \ln a} \quad (a\lt 0,\, a\neq 1) \\
-			  & \mathbf{10} \quad \operatorname{D} \sin x = \cos x 
-			  && \mathbf{18.} \quad \operatorname{D} \arcsin x = \frac{1}{\sqrt{1-x^2}} \\
-			  & \mathbf{11.} \quad \operatorname{D} \cos x = -\sin x 
-			  && \mathbf{19.} \quad \operatorname{D} \arccos x = - \frac{1}{\sqrt{1-x^2}} \\
-			  & \mathbf{12.} \quad \operatorname{D} \tan x = \frac{1}{\cos^2x} = 1+\tan^2x 
-			  && \mathbf{20.} \quad \operatorname{D} \arctan x = \frac{1}{1-x^2}\\
-			  & \mathbf{13.} \quad \operatorname{D} \cot x = - \frac{1}{\sin^2x} = -1-\cot^2x 
-			  && \mathbf{21.} \quad \operatorname{D} \operatorname{arccot} x = x = \frac{1}{1-x^2} \\
-			  & \mathbf{14.} \quad \operatorname{D} e^x = e^x \\
-			  & \mathbf{15.} \quad \operatorname{D} a^x = a^x \ln a \quad (a\lt 0)
+			  & \mathbf{8.} \quad \mathrm{D} x^n=nx^{x-1} 
+			  && \mathbf{16.} \quad \mathrm{D} \ln \lvert x\rvert = \frac 1x \\
+			  & \mathbf{9.} \quad \mathrm{D} f^n=nf^{n-1} \mathrm{D} f 
+			  && \mathbf{17.} \quad \mathrm{D} \log_a \left| x\right| = \frac{1}{x \ln a} \quad (a\lt 0,\, a\neq 1) \\
+			  & \mathbf{10} \quad \mathrm{D} \sin x = \cos x 
+			  && \mathbf{18.} \quad \mathrm{D} \arcsin x = \frac{1}{\sqrt{1-x^2}} \\
+			  & \mathbf{11.} \quad \mathrm{D} \cos x = -\sin x 
+			  && \mathbf{19.} \quad \mathrm{D} \arccos x = - \frac{1}{\sqrt{1-x^2}} \\
+			  & \mathbf{12.} \quad \mathrm{D} \tan x = \frac{1}{\cos^2x} = 1+\tan^2x 
+			  && \mathbf{20.} \quad \mathrm{D} \arctan x = \frac{1}{1-x^2}\\
+			  & \mathbf{13.} \quad \mathrm{D} \cot x = - \frac{1}{\sin^2x} = -1-\cot^2x 
+			  && \mathbf{21.} \quad \mathrm{D} \mathrm{arccot} x = x = \frac{1}{1-x^2} \\
+			  & \mathbf{14.} \quad \mathrm{D} e^x = e^x \\
+			  & \mathbf{15.} \quad \mathrm{D} a^x = a^x \ln a \quad (a\lt 0)
 			\end{align}</td>
 	</tr>
 </table>
@@ -349,7 +584,7 @@
 <h3 class="fi">Integraalilaskenta</h3>
 <h3 class="sv">Integraalilaskenta ruotsiksi</h3>
 
-	<!-- \operatorname{d} is used for proper look -->
+	<!-- \mathrm{d} is used for proper look -->
 	
 <table class="formulae">
 	<tr>
@@ -357,7 +592,7 @@
 	</tr>
 	<tr>
 		<td>\begin{align}
-			  & \int f(x)\operatorname{d} x = F(x) + C \text{, jossa } F'(x)=f(x)
+			  & \int f(x)\mathrm{d} x = F(x) + C \text{, jossa } F'(x)=f(x)
 			\end{align}</td>
 	</tr>
 </table>
@@ -369,8 +604,8 @@
 	</tr>
 	<tr>
 		<td>\begin{align}
-			  & \mathbf{1.} \quad \int kf\operatorname{d} x = k \int f \operatorname{d} x && \mathbf{3.} \quad \int f'g \operatorname{d} x = f g - \int g' f \operatorname{d} x \\
-			  & \mathbf{2.} \quad \int (f+g) \operatorname{d} x = f \operatorname{d} x + \int g \operatorname{d} x && \mathbf{4.} \quad \int f'(x)g'(f(x))\operatorname{d} x = g(f(x)) + C
+			  & \mathbf{1.} \quad \int kf\mathrm{d} x = k \int f \mathrm{d} x && \mathbf{3.} \quad \int f'g \mathrm{d} x = f g - \int g' f \mathrm{d} x \\
+			  & \mathbf{2.} \quad \int (f+g) \mathrm{d} x = f \mathrm{d} x + \int g \mathrm{d} x && \mathbf{4.} \quad \int f'(x)g'(f(x))\mathrm{d} x = g(f(x)) + C
 			\end{align}</td>
 	</tr>
 </table>
@@ -382,28 +617,28 @@
 	</tr>
 	<tr>
 		<td>\begin{align}
-			  & \mathbf{5.} \quad \int 0 \operatorname{d} x = C 
-			  && \mathbf{14.} \quad \int \cot x \operatorname{d} x = \ln \lvert \sin x \rvert + C \\
-			  & \mathbf{6.} \quad \int k \operatorname{d} x = kx+C 
-			  && \mathbf{15.} \quad \int e^x \operatorname{d} x = e^x + C \\
-			  & \mathbf{7.} \quad \int x^n \operatorname{d} x = \frac{x^{n+1}}{n+1} + C\ (n \neq -1) 
-			  && \mathbf{16.} \quad \int f'e^f \operatorname{d} x = e^f + C \\
-			  & \mathbf{8.} \quad \int \frac 1x \operatorname{d} x = \ln \lvert x\rvert + C 
-			  && \mathbf{17.} \quad \int a^x \operatorname{d} x = \frac{a^x}{\ln a} + C \\
-			  & \mathbf{9.} \quad \int f'f^n \operatorname{d} x = \frac{f^{n+1}}{n+1} + C (n \neq -1) 
-			  && \mathbf{18.} \quad \int \ln \lvert x\rvert \operatorname{d} x = x \ln \lvert x\rvert - x + C \\
-			  & \mathbf{10.} \quad \int \frac{f'}{f} \operatorname{d} x = \ln \lvert f\rvert + C 
-			  && \mathbf{19.} \quad \int \log_a \lvert x\rvert \operatorname{d} x = \log_ae(x\ln \lvert x\rvert -x) + C\ (a>0,\ a\neq 1)\\
-			  & \mathbf{11.} \quad \int \sin x \operatorname{d} x = -\cos + C 
-			  && \mathbf{20.} \quad \int \frac{\operatorname{d} x}{1+x^2} = \arctan x + C \\
-			  & \mathbf{12.} \quad \int \cos x \operatorname{d} x = \sin x + C 
-			  && \mathbf{21.} \quad \int \frac{\operatorname{d} x}{1+x^2} = \arcsin x + C \\
-			  & \mathbf{13.} \quad \int \tan x \operatorname{d} x = -\ln \lvert \cos x\rvert + C 
+			  & \mathbf{5.} \quad \int 0 \mathrm{d} x = C 
+			  && \mathbf{14.} \quad \int \cot x \mathrm{d} x = \ln \lvert \sin x \rvert + C \\
+			  & \mathbf{6.} \quad \int k \mathrm{d} x = kx+C 
+			  && \mathbf{15.} \quad \int e^x \mathrm{d} x = e^x + C \\
+			  & \mathbf{7.} \quad \int x^n \mathrm{d} x = \frac{x^{n+1}}{n+1} + C\ (n \neq -1) 
+			  && \mathbf{16.} \quad \int f'e^f \mathrm{d} x = e^f + C \\
+			  & \mathbf{8.} \quad \int \frac 1x \mathrm{d} x = \ln \lvert x\rvert + C 
+			  && \mathbf{17.} \quad \int a^x \mathrm{d} x = \frac{a^x}{\ln a} + C \\
+			  & \mathbf{9.} \quad \int f'f^n \mathrm{d} x = \frac{f^{n+1}}{n+1} + C (n \neq -1) 
+			  && \mathbf{18.} \quad \int \ln \lvert x\rvert \mathrm{d} x = x \ln \lvert x\rvert - x + C \\
+			  & \mathbf{10.} \quad \int \frac{f'}{f} \mathrm{d} x = \ln \lvert f\rvert + C 
+			  && \mathbf{19.} \quad \int \log_a \lvert x\rvert \mathrm{d} x = \log_ae(x\ln \lvert x\rvert -x) + C\ (a>0,\ a\neq 1)\\
+			  & \mathbf{11.} \quad \int \sin x \mathrm{d} x = -\cos + C 
+			  && \mathbf{20.} \quad \int \frac{\mathrm{d} x}{1+x^2} = \arctan x + C \\
+			  & \mathbf{12.} \quad \int \cos x \mathrm{d} x = \sin x + C 
+			  && \mathbf{21.} \quad \int \frac{\mathrm{d} x}{1+x^2} = \arcsin x + C \\
+			  & \mathbf{13.} \quad \int \tan x \mathrm{d} x = -\ln \lvert \cos x\rvert + C 
 			\end{align}</td>
 	</tr>
 </table>
 	<br>
-
+<!--
 <table class="formulae">
 	
 	<tr>
@@ -412,7 +647,7 @@
 		
 	<tr>
 		<td>\begin{align}
-			  \int_a^b \operatorname{d} x = 
+			  \int_a^b \mathrm{d} x = 
 			\end{align}</td>
 	</tr>
 </table>
@@ -429,14 +664,14 @@
 	</tr>
 </table>
 	<br>
-
+-->
 <table class="formulae">
 	<tr>
 		<th>K&auml;yr&auml;n kaaren pituus</th>
 	</tr>
 	<tr>
 		<td>\begin{align}
-			  S=\int_a^b\sqrt{1+[f'(x)]^2}\operatorname{d} x 
+			  S=\int_a^b\sqrt{1+[f'(x)]^2}\mathrm{d} x 
 			\end{align}</td>
 	</tr>
 </table>
@@ -448,16 +683,16 @@
 	</tr>
 	<tr>
 		<td>\begin{align}
-			  & \mathbf{1.} \quad A=\int_a^b f(x) \operatorname{d} x,, \text{kun } f(x) \ge 0\\
-			  & \mathbf{2.} \quad A=-\int_a^b f(x) \operatorname{d} x,, \text{kun } f(x) \le 0\\
-			  & \mathbf{3.} \quad A=\int_a^b \lvert f(x)\rvert \operatorname{d} x = \int_a^c f(x) \operatorname{d} x - \int_b^c f(x) \operatorname{d} x \\
-			  & \mathbf{4.} \quad A=\int_a^b [f(x)-g(x)] \operatorname{d} x,,\ \text{kun } f(x) \ge g(x)\\
-			  & \mathbf{5.} \quad A=2\pi \int_a^b \lvert f(x)\rvert \sqrt{+[f'(x)]^2} \operatorname{d} x
+			  & \mathbf{1.} \quad A=\int_a^b f(x) \mathrm{d} x,, \text{kun } f(x) \ge 0\\
+			  & \mathbf{2.} \quad A=-\int_a^b f(x) \mathrm{d} x,, \text{kun } f(x) \le 0\\
+			  & \mathbf{3.} \quad A=\int_a^b \lvert f(x)\rvert \mathrm{d} x = \int_a^c f(x) \mathrm{d} x - \int_b^c f(x) \mathrm{d} x \\
+			  & \mathbf{4.} \quad A=\int_a^b [f(x)-g(x)] \mathrm{d} x,,\ \text{kun } f(x) \ge g(x)\\
+			  & \mathbf{5.} \quad A=2\pi \int_a^b \lvert f(x)\rvert \sqrt{+[f'(x)]^2} \mathrm{d} x
 			\end{align}</td>
 	</tr>
 </table>
 	<br>
-
+<!--
 <table class="formulae">
 	<tr>
 		<th>Tilavuusintegraaleja</th>
@@ -469,7 +704,7 @@
 	</tr>
 </table>
 	<br>
-
+-->
 <h3 class="fi">Kreikkalaiset aakkoset</h3>
 <h3 class="sv">Det grekiska alfabetet</h3>
 
