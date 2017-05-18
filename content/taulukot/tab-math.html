@@ -4,11 +4,6 @@
 <h2 class="fi">Matematiikka</h2>
 <h2 class="sv">Matematik</h2>
 
-<h3 class="fi">Tilastot ja todennäköisyys</h3>
-<h3 class="sv">Tilastot ja todennäköisyys ruotsiksi</h3>
-
-
-
 <h3 class="fi">Numeerisia menetelmiä</h3>
 <h3 class="sv">Numeerisia menetelmiä ruotsiksi</h3>
 
@@ -19,7 +14,7 @@
 	<tr>
 		<td>\begin{align}
 			  & \mathbf{Newtonin\ menetelmä} &&x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \\[2ex]
-			  & \mathbf{Sekanttimenetelmä} && x_{n+1}=x_n-f(x_n)\cdot \frac{x_n-x{n-1}}{f(x_n)-f(x_{n-1})}
+			  & \mathbf{Sekanttimenetelmä} && x_{n+1}=x_n-f(x_n)\cdot \frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}
 			\end{align}</td>
 	</tr>
 </table>
@@ -47,12 +42,12 @@
 		<td>\begin{align}
 			  & \mathbf{Puolisuunnikassääntö} \\[1ex]
 			  & \int_a^b f(x)\mathrm{d}x \approx h\left[ \frac 12 f(x_0)+f(x_1)+\cdots+f(x_n-1)+ \frac 12f(x_n)\right],\ x_0=a,\ x_n=b\\
-			  & \text{Virhe $E_n=-\frac{(b-a)^3f**(t)}{12n^2}$, missä $a < t < b$} \\[2ex]
+			  & \text{Virhe $E_n=-\frac{(b-a)^3f''(t)}{12n^2}$, missä $a < t < b$} \\[2ex]
 			  
 			  & \mathbf{Simpsonin\ sääntö} \\[1ex]
 			  & \int^b_af(x)\mathrm{d}x \approx \frac h3 \left[f(x_0)+4f(x_1)+ 2f(x_2)+4f(x_3)+\cdots+4f(x_{n-1})+f(x_n)+f(x_n)\right] \\
 			  & x_0=a,\ x_n=b,\ n\ \text{parillinen}\\
-			  & \text{Virhe $E_n=-\frac{(b-a)^5ff^{(4)}(t)}{180n^4}$, missä $a < t < b$}
+			  & \text{Virhe $E_n=-\frac{(b-a)^5f^{(4)}(t)}{180n^4}$, missä $a < t < b$}
 			\end{align}</td>
 	</tr>
 </table>
@@ -76,12 +71,12 @@
 	<tr>
 		<th>2.</th>
 		<td>pituus</td>
-		<td>\[\lvert \bar a \rvert = \sqrt{a_x^2+a_y^2+a_z^2}=\sqrt{\bar a \cdot \bar a}\]</td>
+		<td>\[\left| \bar a \right| = \sqrt{a_x^2+a_y^2+a_z^2}=\sqrt{\bar a \cdot \bar a}\]</td>
 	</tr>
 	<tr>
 		<th>3.</th>
 		<td>identtisyys</td>
-		<td>\[\bar a = \bar b \iff (\bar a \uparrow \uparrow \bar b \wedge \lvert \bar a \rvert=\lvert \bar b \rvert) \iff 
+		<td>\[\bar a = \bar b \iff (\bar a \uparrow \uparrow \bar b \wedge \left| \bar a \right|=\left| \bar b \right|) \iff 
 		(a_x=b_x \wedge a_y=b_y \wedge a_z=b_z)\]</td>
 	</tr>
 	<tr>
@@ -97,7 +92,7 @@
 	<tr>
 		<th>6.</th>
 		<td>pistetulo <br> skalaaritulo</td>
-		<td>\[\bar a\cdot \bar b=\lvert\bar a\rvert\lvert\bar b\rvert\cos(\bar a,\ \bar b)= a_xb_x+a_yb_y+a_zb_z\]</td>
+		<td>\[\bar a\cdot \bar b=\left|\bar a\right|\left|\bar b\right|\cos(\bar a,\ \bar b)= a_xb_x+a_yb_y+a_zb_z\]</td>
 	</tr>
 	<tr>
 		<th>7.</th>
@@ -107,12 +102,12 @@
 	<tr>
 		<th>8.</th>
 		<td>välinen kulma</td>
-		<td>\[\cos(a,\ b)=\frac{\bar a\cdot\bar b}{\lvert \bar a \rvert\lvert \bar b \rvert},\ 0 &deg; \ge \]</td>
+		<td>\[\cos(a,\ b)=\frac{\bar a\cdot\bar b}{\left| \bar a \right|\left| \bar b \right|},\ 0 &deg; \ge \]</td>
 	</tr>
 	<tr>
 		<th>9.</th>
 		<td>skalaariprojektio</td>
-		<td>\[a_b=\frac{\bar a \cdot \bar b}{\lvert \bar b\rvert}\]</td>
+		<td>\[a_b=\frac{\bar a \cdot \bar b}{\left| \bar b\right|}\]</td>
 	</tr>
 	<tr>
 		<th>10.</th>
@@ -122,12 +117,12 @@
 	<tr>
 		<th>11.</th>
 		<td>ristitulo<br>(vektoritulo)</td>
-		<td>\[\bar a \times \bar b = \lvert\bar a\rvert\lvert\bar b\rvert \sin (\bar a,\ \bar b)\bar e= 
+		<td>\[\bar a \times \bar b = \left|\bar a\right|\left|\bar b\right| \sin (\bar a,\ \bar b)\bar e= 
 				\begin{vmatrix}
 				  \bar i & \bar j & \bar k \\
 				  a_x & a_y & a_z \\
 				  b_x & b_y & b_z
-				\end {vmatrix},\ \lvert \bar e\rvert=1\]</td>
+				\end {vmatrix},\ \left| \bar e\right|=1\]</td>
 	</tr>
 	<tr>
 		<th>12.</th>
@@ -140,7 +135,7 @@
 	<tr>
 		<th>13.</th>
 		<td>suunnikkaan ala</td>
-		<td>\[A=\lvert\bar a \times \bar b\rvert \longrightarrow \text{kolmion ala }=\frac 12 A\]</td>
+		<td>\[A=\left|\bar a \times \bar b\right| \longrightarrow \text{kolmion ala }=\frac 12 A\]</td>
 	</tr>
 	<tr>
 		<th>14.</th>
@@ -155,7 +150,7 @@
 	<tr>
 		<th>15.</th>
 		<td>särmiön tilavuus></td>
-		<td>\[V = \lvert\overline{abc}\rvert\ \longrightarrow\ \text{tetraedrin tilavuus}\ =\frac 16A\]</td>
+		<td>\[V = \left|\overline{abc}\right|\ \longrightarrow\ \text{tetraedrin tilavuus}\ =\frac 16A\]</td>
 	</tr>
 	<tr>
 		<th>16.</th>
@@ -301,7 +296,7 @@
 	</tr>
 	<tr>
 		<th>6.</th>
-		<td>\[S_n=\sum^n_{i=1}a_1=a_1+a_1q+a_1q^2+\cdots=\frac{a_1}{q-q},\ \text{jos}\ \lvert q \rvert \gt 1\]</td>
+		<td>\[S_n=\sum^n_{i=1}a_1=a_1+a_1q+a_1q^2+\cdots=\frac{a_1}{q-q},\ \text{jos}\ \left| q \right| \gt 1\]</td>
 		<td>suppeneva geometrinen sarja</td>
 	</tr>
 </table>
@@ -330,7 +325,7 @@
 		\begin{align}
 			  & \mathbf{1.} \quad (\sqrt a)^2=a && \mathbf{4.} \quad \sqrt{\frac ab}= \frac {\sqrt a}{\sqrt b} \\
 			  & \mathbf{2.} \quad (\sqrt a)^{2k} = a^k && \mathbf{5.} \quad \sqrt{ab} = \sqrt a \sqrt b \\
-			  & \mathbf{3.} \quad \sqrt {a^2} = \lvert a \rvert && \mathbf{6.} \quad \sqrt{a^2b} = \lvert a \rvert \sqrt b
+			  & \mathbf{3.} \quad \sqrt {a^2} = \left| a \right| && \mathbf{6.} \quad \sqrt{a^2b} = \left| a \right| \sqrt b
 			\end{align}</td>
 	</tr>
 </table>
@@ -550,7 +545,7 @@
 	<tr>
 		<td>\begin{align}
 			  & \mathbf{8.} \quad \mathrm{D} x^n=nx^{x-1} 
-			  && \mathbf{16.} \quad \mathrm{D} \ln \lvert x\rvert = \frac 1x \\
+			  && \mathbf{16.} \quad \mathrm{D} \ln \left| x\right| = \frac 1x \\
 			  & \mathbf{9.} \quad \mathrm{D} f^n=nf^{n-1} \mathrm{D} f 
 			  && \mathbf{17.} \quad \mathrm{D} \log_a \left| x\right| = \frac{1}{x \ln a} \quad (a\lt 0,\, a\neq 1) \\
 			  & \mathbf{10} \quad \mathrm{D} \sin x = \cos x 
@@ -618,22 +613,22 @@
 	<tr>
 		<td>\begin{align}
 			  & \mathbf{5.} \quad \int 0 \mathrm{d} x = C 
-			  && \mathbf{14.} \quad \int \cot x \mathrm{d} x = \ln \lvert \sin x \rvert + C \\
+			  && \mathbf{14.} \quad \int \cot x \mathrm{d} x = \ln \left| \sin x \right| + C \\
 			  & \mathbf{6.} \quad \int k \mathrm{d} x = kx+C 
 			  && \mathbf{15.} \quad \int e^x \mathrm{d} x = e^x + C \\
 			  & \mathbf{7.} \quad \int x^n \mathrm{d} x = \frac{x^{n+1}}{n+1} + C\ (n \neq -1) 
 			  && \mathbf{16.} \quad \int f'e^f \mathrm{d} x = e^f + C \\
-			  & \mathbf{8.} \quad \int \frac 1x \mathrm{d} x = \ln \lvert x\rvert + C 
+			  & \mathbf{8.} \quad \int \frac 1x \mathrm{d} x = \ln \left| x\right| + C 
 			  && \mathbf{17.} \quad \int a^x \mathrm{d} x = \frac{a^x}{\ln a} + C \\
 			  & \mathbf{9.} \quad \int f'f^n \mathrm{d} x = \frac{f^{n+1}}{n+1} + C (n \neq -1) 
-			  && \mathbf{18.} \quad \int \ln \lvert x\rvert \mathrm{d} x = x \ln \lvert x\rvert - x + C \\
-			  & \mathbf{10.} \quad \int \frac{f'}{f} \mathrm{d} x = \ln \lvert f\rvert + C 
-			  && \mathbf{19.} \quad \int \log_a \lvert x\rvert \mathrm{d} x = \log_ae(x\ln \lvert x\rvert -x) + C\ (a>0,\ a\neq 1)\\
+			  && \mathbf{18.} \quad \int \ln \left| x\right| \mathrm{d} x = x \ln \left| x\right| - x + C \\
+			  & \mathbf{10.} \quad \int \frac{f'}{f} \mathrm{d} x = \ln \left| f\right| + C 
+			  && \mathbf{19.} \quad \int \log_a \left| x\right| \mathrm{d} x = \log_ae(x\ln \left| x\right| -x) + C\ (a>0,\ a\neq 1)\\
 			  & \mathbf{11.} \quad \int \sin x \mathrm{d} x = -\cos + C 
 			  && \mathbf{20.} \quad \int \frac{\mathrm{d} x}{1+x^2} = \arctan x + C \\
 			  & \mathbf{12.} \quad \int \cos x \mathrm{d} x = \sin x + C 
 			  && \mathbf{21.} \quad \int \frac{\mathrm{d} x}{1+x^2} = \arcsin x + C \\
-			  & \mathbf{13.} \quad \int \tan x \mathrm{d} x = -\ln \lvert \cos x\rvert + C 
+			  & \mathbf{13.} \quad \int \tan x \mathrm{d} x = -\ln \left| \cos x\right| + C 
 			\end{align}</td>
 	</tr>
 </table>
@@ -685,9 +680,9 @@
 		<td>\begin{align}
 			  & \mathbf{1.} \quad A=\int_a^b f(x) \mathrm{d} x,, \text{kun } f(x) \ge 0\\
 			  & \mathbf{2.} \quad A=-\int_a^b f(x) \mathrm{d} x,, \text{kun } f(x) \le 0\\
-			  & \mathbf{3.} \quad A=\int_a^b \lvert f(x)\rvert \mathrm{d} x = \int_a^c f(x) \mathrm{d} x - \int_b^c f(x) \mathrm{d} x \\
+			  & \mathbf{3.} \quad A=\int_a^b \left| f(x)\right| \mathrm{d} x = \int_a^c f(x) \mathrm{d} x - \int_b^c f(x) \mathrm{d} x \\
 			  & \mathbf{4.} \quad A=\int_a^b [f(x)-g(x)] \mathrm{d} x,,\ \text{kun } f(x) \ge g(x)\\
-			  & \mathbf{5.} \quad A=2\pi \int_a^b \lvert f(x)\rvert \sqrt{+[f'(x)]^2} \mathrm{d} x
+			  & \mathbf{5.} \quad A=2\pi \int_a^b \left| f(x)\right| \sqrt{+[f'(x)]^2} \mathrm{d} x
 			\end{align}</td>
 	</tr>
 </table>
