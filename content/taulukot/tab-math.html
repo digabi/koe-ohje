@@ -4,6 +4,89 @@
 <h2 class="fi">Matematiikka</h2>
 <h2 class="sv">Matematik</h2>
 
+<h3 class="fi">Logiikka ja lukuteoria</h3>
+<h3 class="sv">Logiikka ja lukuteoria ruotsiksi</h3>
+
+<table class="formulae">
+	<tr>
+		<th colspan="3" class="fi">Konnektiivit</th> <th colspan="3" class="sv">Konnektiivit ruotsiksi</th>
+	</tr>
+	<tr>
+		<th>Konnektiivi</th>  <th>Symboli</th>  <th>Luetaan</th>
+	</tr>
+	<tr>
+		<td>negaatio</td> <td>\[\lnot p\]</td> <td>\[\text{ei }p\]</td>
+	</tr>
+	<tr>
+		<td>disjunktio</td> <td>\[p \lor q\]</td> <td>\[p\text{ tai }q\]</td>
+	</tr>
+	<tr>
+		<td>konjunktio</td> <td>\[p \land q\]</td> <td>\[p\text{ ja }q\]</td>
+	</tr>
+	<tr>
+		<td>implikaatio</td> <td>\[p \Rightarrow q\]</td> <td>\[\text{jos }p, \text{ niin }q\]</td>
+	</tr>
+	<tr>
+		<td>ekvivalenssi</td> <td>\[p \iff q\]</td> <td>\[p\text{ ja }q \text{ yhtäpitäviä}\]</td>
+	</tr>
+</table>
+
+<br>
+<table class="formulae">
+	<tr>
+		<th colspan="7" class="fi">Totuusarvotaulukko</th> <th colspan="7" class="sv">Totuusarvotaulukko ruotsiksi</th>
+	</tr>
+	<tr>
+		<td>\[p\]</td> <td>\[q\]</td> <td>\[\lnot p\]</td> <td>\[p \lor q\]</td>
+		<td>\[p \land q\]</td> <td>\[p \Rightarrow q\]</td> <td>\[p \iff q\]</td> 
+	</tr>
+	<tr>
+		<td align="center">1 <br><br> 1 <br><br> 0 <br><br> 0</td>
+		<td align="center">1 <br><br> 0 <br><br> 1 <br><br> 0</td>
+		<td align="center">0 <br><br> 0 <br><br> 1 <br><br> 1</td>
+		<td align="center">1 <br><br> 1 <br><br> 1 <br><br> 0</td>
+		<td align="center">1 <br><br> 0 <br><br> 0 <br><br> 0</td>
+		<td align="center">1 <br><br> 0 <br><br> 1 <br><br> 1</td>
+		<td align="center">1 <br><br> 0 <br><br> 0 <br><br> 1</td>
+	</tr>
+</table>
+<br>
+<table class="formulae">
+	<tr>
+		<th class="fi">Kvanttorit</th> <th class="sv">Kvanttorit ruotsiksi</th>
+	</tr>
+	<tr>
+		<td>\begin{align}
+			  & \mathbf{Olemassaolo-\ eli\ eksistenssikavanttori}\ \exists \\
+			  & \exists x \in A:\  p(x) && \text{On olemassa (ainakin yksi) sellainen A:n alkio $$x$$, jolle pätee väite }p(x). \\[2ex]
+			  & \mathbf{Universaali-\ eli\ kaikkikvanttori}\ \forall \\
+			  & \forall x \in A:\  p(x) && \text{Kaikille A:n alkioille $$x$$ pätee väite }p(x). \\[2ex]
+			  & \mathbf{Yhdistetyt\ kvanttorit} \\
+			  & \exists x \forall y:\ p(x,y) && \text{On olemassa sellainen $$x$$, että olipa $$y$$ mikä tahansa, niin väite $$p(x,\ y)$$ pätee.}\\
+			  & \forall x \exists y:\ p(x,y) && \text{Jokaista $$x$$:n arvoa kohti on olemassa sellainen $$y$$, että väite $$p(x,\ y)$$ pätee.}\\[2ex]
+			  & \mathbf{Kvanttorin negaatio}\\
+			  & \lnot \exists x \in A:\ p(x)) \iff \forall x \in A:\ \lnot p(x)\\
+			  & \lnot (\forall x \in A:\ p(x)) \iff \exists x \in A:\ \lnot p(x)
+			\end{align}</td>
+	</tr>
+</table>	
+<br>
+<table class="formulae">
+	<tr>
+		<th colspan="2" class="fi">Diofantoksen yhtälö</th> <th colspan="2" class="sv">Diofantoksen yhtälö ruotsiksi</th>
+	</tr>
+	<tr>
+		<td>Jos kokonaislukuketoimisen yhtälön \(ax+by+c=0\)<br>yksittäinen kokonaislukuratkaisu on \((x_0,\ y_0)\),<br>niin kaikki kokonaislukuratkaisut ovat</td>
+		<td>$$\left.
+				\begin{array}{l}
+				  &x=x_0+n\cdot \frac{b}{\operatorname{syt}(a,\ b)}\\
+				  &y=y_0-n\cdot \frac{b}{\operatorname{syt}(a,\ b)}
+				\end{array}
+			  \right\}
+			(n\in \mathbb{Z}$$
+	</tr>
+</table>
+
 <h3 class="fi">Numeerisia menetelmiä</h3>
 <h3 class="sv">Numeerisia menetelmiä ruotsiksi</h3>
 
@@ -384,6 +467,31 @@
 </table>
 <br>
 
+<table class="formulae">
+	<tr>
+		<th colspan="3" class="fi">Potenssi</th><th colspan="3" class="sv">Potenssi ruotsiksi</th>
+	</tr>
+	<tr>
+		<th>Eksponentti</th>  <th>Määritelmä</th>  <th>Huomautuksia</th> 
+	</tr>
+		<td>\[n=1,\ 2,\ \ldots\]</td> 
+		<td>\[a^n=a\cdot a\cdot a\cdot \ldots \cdot a\]</td>  
+		<td>\begin{align}
+			  & n \text{ tekijää}, && a= \text{kantaluku}\\ 
+			  & && n=\text{eksponentti}
+			\end{align}</td>
+	</tr>
+	</tr>
+		<td>\[n=0\]</td> <td>\[a^0=1\]</td>  <td>\[a\neq0,\ 0^0\ \text{ei määritelty}\]</td>
+	</tr>
+	</tr>
+		<td>\[n=-p \quad (n \in \mathbb{Z\_})\]</td> <td>\[a^{-p}=\frac {1}{a^p}\]</td>  <td>\[a\neq0,\ \left(\frac ab\right)^{-p}=\left(\frac ba\right)^p\]</td>
+	</tr>
+	</tr>
+		<td>\[n=\frac pq \quad (n\in \mathbb{Q})\]</td> <td>\[a^{\frac pq}=\sqrt[q]{a^p}\]</td>  <td>\[a>0\]</td>
+	</tr>
+	
+</table>
 <table class="formulae">
 	<tr>
 		<th class="fi">Potenssien laskusääntöjä</th><th class="sv">Potenssien laskusääntöjä ruotsiksi</th>
