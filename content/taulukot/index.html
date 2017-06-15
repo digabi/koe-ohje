@@ -7,15 +7,6 @@
 <link rel="stylesheet" href="../../common/css/tab.css" type="text/css" media="screen" />
 <script type="text/javascript" src="../../common/js/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="../../common/clipboard.min.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-	imageFont: null,
-	CommonHTML: {
-		scale: 90
-	}
-});
-</script>
-<script type="text/javascript" src="../../common/js/MathJax-master/MathJax.js?config=TeX-AMS_CHTML"></script>
 <script type="text/javascript" src="../../common/js/activetab.js"></script>
 <script type="text/javascript" src="../../common/js/sameHeights.js"></script>
 <script type="text/javascript">
@@ -111,9 +102,9 @@ MathJax.Hub.Config({
 		}
 		
 		// Include different pages to the respective divs
-		$("#tab-math").load("tab-math.html", function () { set_language(lang); init_subpage('tab-math'); });
-		$("#tab-physics").load("tab-physics.html", function () { set_language(lang); init_subpage('tab-physics'); });
-		$("#tab-chemistry").load("tab-chemistry.html", function () { set_language(lang); init_subpage('tab-chemistry'); });
+		$("#tab-math").load("build/tab-math.html", function () { set_language(lang); });
+		$("#tab-physics").load("build/tab-physics.html", function () { set_language(lang); });
+		$("#tab-chemistry").load("build/tab-chemistry.html", function () { set_language(lang); });
 
 		// Initialise ActiveTab navigation
 		var main_tabs = Object.create(ActiveTab);
