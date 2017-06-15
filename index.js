@@ -11,17 +11,22 @@ const paths = [math, chem, physics]
 
 const pageConfig = {
     format: ["TeX"],
-    singleDollars: true
+    singleDollars: true,
+    output: 'svg',
+    MathJax: {
+        SVG: {
+            font: "STIX-Web",
+            undefinedFamily: "STIXGeneral"
+        },
+        imageFont: null,
+        CommonHTML: {
+            scale: 90
+        }
+    }
 }
 const nodeConfig = {
     svg: true,
-    linebreaks: true,
-    MathJax: {
-        imageFont: null,
-	    CommonHTML: {
-		    scale: 90
-	    }
-    }
+    linebreaks: true
 }
 
 const mapPaths = () => {
