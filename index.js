@@ -4,11 +4,7 @@ const fs = require('fs-extra')
 const contentPath = './content/taulukot/'
 const buildPath = './content/build/'
 
-const index = 'index.html'
-const math = 'tab-math.html'
-const chem = 'tab-chemistry.html'
-const physics = 'tab-physics.html'
-const paths = [index, math, chem, physics]
+const indexHtml = 'index.html'
 
 const pageConfig = {
     format: ["TeX"],
@@ -34,7 +30,7 @@ const nodeConfig = {
 const readFromPath = (path) => {
     return fs.readFile(contentPath + path)
         .then((file) => {
-            return buildStatic(file, path)
+            return formatLatex(file, path)
         }).then((output) => {
             return fs.writeFile(buildPath + path, output)
         }).then(() => {
@@ -42,7 +38,7 @@ const readFromPath = (path) => {
         })
 }
 
-const buildStatic = (input, path) => {
+const formatLatex = (input, path) => {
     return new Promise((resolve, reject) => {
         mjpage(input, pageConfig, nodeConfig, (output, err) => {
             if (err) {
@@ -55,18 +51,23 @@ const buildStatic = (input, path) => {
     })
 }
 
-const replaceIndexHtml = () => {
-    return fs.readFile(index)
+const replaceTaulukkoWithBuild = (file) => {
+    return fs.readFile(file)
         .then(data => {
             var result = data.toString().replace(/taulukot/g, 'build')
-            return fs.writeFile(index, result, 'utf8')
+            return fs.writeFile(file, result, 'utf8')
         })
 }
 
+const getFilesFromDir = (path) => {
+    return fs.readdir(path)
+}
+
 fs.ensureDir(buildPath)
-    .then(replaceIndexHtml)
-    .then(() => {
-        return Promise.all(paths.map(readFromPath))
+    .then(replaceTaulukkoWithBuild(indexHtml))
+    .then(getFilesFromDir(contentPath))
+    .then((files) => {
+        return Promise.all(files.map(readFromPath))
     })
     .then(() => {
         console.log('Finished')
