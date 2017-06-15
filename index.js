@@ -64,8 +64,8 @@ const getFilesFromDir = (path) => {
 }
 
 fs.ensureDir(buildPath)
-    .then(replaceTaulukkoWithBuild(indexHtml))
-    .then(getFilesFromDir(contentPath))
+    .then(() => replaceTaulukkoWithBuild(indexHtml))
+    .then(() => getFilesFromDir(contentPath))
     .then((files) => {
         return Promise.all(files.map(readFromPath))
     })
