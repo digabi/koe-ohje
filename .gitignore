@@ -1,2 +1,4 @@
-# Ignore preview directory
 preview/
+node_modules/
+*.DS_Store
+build/
