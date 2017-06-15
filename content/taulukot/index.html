@@ -102,9 +102,9 @@
 		}
 		
 		// Include different pages to the respective divs
-		$("#tab-math").load("build/tab-math.html", function () { set_language(lang); });
-		$("#tab-physics").load("build/tab-physics.html", function () { set_language(lang); });
-		$("#tab-chemistry").load("build/tab-chemistry.html", function () { set_language(lang); });
+		$("#tab-math").load("tab-math.html", function () { set_language(lang); });
+		$("#tab-physics").load("tab-physics.html", function () { set_language(lang); });
+		$("#tab-chemistry").load("tab-chemistry.html", function () { set_language(lang); });
 
 		// Initialise ActiveTab navigation
 		var main_tabs = Object.create(ActiveTab);

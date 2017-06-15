@@ -4,10 +4,11 @@ const fs = require('fs-extra')
 const contentPath = './content/taulukot/'
 const buildPath = './content/build/'
 
+const index = 'index.html'
 const math = 'tab-math.html'
 const chem = 'tab-chemistry.html'
 const physics = 'tab-physics.html'
-const paths = [math, chem, physics]
+const paths = [index, math, chem, physics]
 
 const pageConfig = {
     format: ["TeX"],
@@ -24,33 +25,53 @@ const pageConfig = {
         }
     }
 }
+
 const nodeConfig = {
     svg: true,
     linebreaks: true
 }
 
-const mapPaths = () => {
-    return paths.map(path => {
-        return fs.readFile(contentPath + path)
-            .then((file) => {
-                return buildStatic(file, path)
-            })
-    })
+const readFromPath = (path) => {
+    return fs.readFile(contentPath + path)
+        .then((file) => {
+            return buildStatic(file, path)
+        }).then((output) => {
+            return fs.writeFile(buildPath + path, output)
+        }).then(() => {
+            console.log('Done with ' + path)
+        })
 }
 
 const buildStatic = (input, path) => {
-    return mjpage(input, pageConfig, nodeConfig, (output) => {
-        return fs.writeFile(buildPath + path, output, (err) => {
+    return new Promise((resolve, reject) => {
+        mjpage(input, pageConfig, nodeConfig, (output, err) => {
             if (err) {
-                console.error(err)
+                reject(err)
+            } else {
+                resolve(output)
             }
-            console.log('done with ' + path)
+
         })
     })
 }
 
+const replaceIndexHtml = () => {
+    return fs.readFile(index)
+        .then(data => {
+            var result = data.toString().replace(/taulukot/g, 'build')
+            return fs.writeFile(index, result, 'utf8')
+        })
+}
+
 fs.ensureDir(buildPath)
-    .then(mapPaths)
+    .then(replaceIndexHtml)
+    .then(() => {
+        return Promise.all(paths.map(readFromPath))
+    })
+    .then(() => {
+        console.log('Finished')
+    })
     .catch(err => {
         console.error(err)
     })
+
