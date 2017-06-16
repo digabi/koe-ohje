@@ -23,9 +23,6 @@ function setSameHeights () {
 }
 
 if ('addEventListener' in window) {
-	window.addEventListener('resize', function(){
-		setSameHeights();
-	});
 	window.addEventListener('load', function(){
 		setSameHeights();
 		$('#loading').hide();
