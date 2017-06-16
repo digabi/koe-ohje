@@ -17,19 +17,19 @@ const readFromPath = path => {
     })
     .then(() => {
       console.log("Done with " + path)
-    });
-};
+    })
+}
 
 const replaceTaulukkoWithBuild = file => {
   return fs.readFile(file).then(data => {
     var path = replaceInPath(data.toString())
     return fs.writeFile(file, path, "utf8")
-  });
-};
+  })
+}
 
 const getFilesFromDir = path => {
   return fs.readdir(path)
-};
+}
 
 const build = () => {
   return fs
