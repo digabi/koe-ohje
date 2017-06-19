@@ -82,12 +82,38 @@
 			}
 		}
 
+		// Lazy load tables
+		function changePageTo(subject, currentLanguage) {
+			if ($("#tab-" + subject).children().length === 0) {
+				$("#tab-" + subject).load("tab-" + subject + ".html", function () { set_language(currentLanguage) })
+			}
+		}
+
+		// Math-copying related functionality
+		function createMathImg(latex) {
+			console.log('createEq')
+			const img = document.createElement('img')
+			img.setAttribute('alt', latex)
+			var hostname = document.location.hostname
+			var baseUrl = hostame === 'localhost' || hostname == '' ? '' : 'https://math-demo.abitti.fi'
+			img.setAttribute('src', baseUrl + '/math.svg?latex=' + encodeURIComponent(latex))
+			document.body.appendChild(img)
+			return img
+		}
+
+		function selectElementContents(el) {
+			const range = document.createRange()
+			range.selectNode(el)
+			const sel = window.getSelection()
+			sel.removeAllRanges()
+			sel.addRange(range)
+		}
+
 		$(document).ready(function () {
-
-
 			// Set current language accoring to various suggestions
 			var request = window.location.href;
 			var lang = "fi";
+			var defaultPage = "math"
 
 			if (request.lastIndexOf('?') > -1) {
 				var param = request.slice(request.lastIndexOf('?') + 1);
@@ -101,10 +127,8 @@
 				lang = 'sv';
 			}
 
-			// Include different pages to the respective divs
-			$("#tab-math").load("tab-math.html", function () { set_language(lang); });
-			$("#tab-physics").load("tab-physics.html", function () { set_language(lang); });
-			$("#tab-chemistry").load("tab-chemistry.html", function () { set_language(lang); });
+			// Default init
+			changePageTo(defaultPage, lang)
 
 			// Initialise ActiveTab navigation
 			var main_tabs = Object.create(ActiveTab);
@@ -113,13 +137,22 @@
 
 			// Execute special initialisation when "tables" tab is activated
 			main_tabs.activeTabInitialise = {
-				'math': function () { write_to_stdout('math'); setSameHeights(); },
-				'physics': function () { write_to_stdout('physics'); setSameHeights(); },
-				'chemistry': function () { write_to_stdout('chemistry'); setSameHeights(); },
+				'math': function () { write_to_stdout('math'); changePageTo("math", lang); setSameHeights(); },
+				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang); setSameHeights(); },
+				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang); setSameHeights(); },
 				'help': function () { write_to_stdout('tables_to_help'); window.open('../index.html?' + lang); }
 			};
 			main_tabs.activateTabs();
-
+			$('#loading').hide();
+			$('body').on('click', 'svg', e => {
+				var latex = $(e.target).find('title').text()
+				console.log(latex)
+				const el = createMathImg(latex)
+				selectElementContents(el)
+				e.preventDefault()
+				document.execCommand('copy')
+				document.body.removeChild(el)
+			})
 		});
 	</script>
 </head>
@@ -128,14 +161,14 @@
 
 	<div id="tab-container">
 		<div id="tab-menu">
-			<div id="math-fi" class="tab-menu-option fi tab-menu-option-active">Matematiikka</div>
-			<div id="math-sv" class="tab-menu-option sv tab-menu-option-active">Matematik</div>
-			<div id="physics-fi" class="tab-menu-option fi">Fysiikka</div>
-			<div id="physics-sv" class="tab-menu-option sv">Fysik</div>
-			<div id="chemistry-fi" class="tab-menu-option fi">Kemia</div>
-			<div id="chemistry-sv" class="tab-menu-option sv">Kemi</div>
-			<div id="help-fi" class="tab-menu-option fi">Apua</div>
-			<div id="help-sv" class="tab-menu-option sv">Hjälp</div>
+			<a id="math-fi" class="tab-menu-option fi tab-menu-option-active">Matematiikka</a>
+			<a id="math-sv" class="tab-menu-option sv tab-menu-option-active">Matematik</a>
+			<a id="physics-fi" class="tab-menu-option fi">Fysiikka</a>
+			<a id="physics-sv" class="tab-menu-option sv">Fysik</a>
+			<a id="chemistry-fi" class="tab-menu-option fi">Kemia</a>
+			<a id="chemistry-sv" class="tab-menu-option sv">Kemi</a>
+			<a id="help-fi" class="tab-menu-option fi">Apua</a>
+			<a id="help-sv" class="tab-menu-option sv">Hjälp</a>
 		</div>
 
 		<div id="tab-math" class="tab-content active">
@@ -150,7 +183,7 @@
 	<div id="loading">
 		<div id="loading-text"><span class="fi">Ladataan...</span><span class="sv">Laddas...</span></div>
 	</div>
-	<script async="true" type="text/javascript" src="../../common/js/sameHeights.js"></script>
+	<script async type="text/javascript" src="../../common/js/sameHeights.js"></script>
 </body>
 
 </html>
