@@ -95,7 +95,7 @@
 			const img = document.createElement('img')
 			img.setAttribute('alt', latex)
 			var hostname = document.location.hostname
-			var baseUrl = hostame === 'localhost' || hostname == '' ? '' : 'https://math-demo.abitti.fi'
+			var baseUrl = hostname === 'localhost' || hostname == '' ? '' : 'https://math-demo.abitti.fi'
 			img.setAttribute('src', baseUrl + '/math.svg?latex=' + encodeURIComponent(latex))
 			document.body.appendChild(img)
 			return img

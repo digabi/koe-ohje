@@ -1,20 +1,42 @@
+
+@media (min-width: 480px) {
+	
+	.formulae th, td {
+		display: table-cell;
+		padding: .25em .5em;
+	}
+}
+.scrollwrap {
+	overflow-x: scroll;
+}
+.formulae td:before {
+  font-weight: bold;
+  width: 6.5em;
+  display: inline-block;
+}
+.formulae table {
+	table-layout: fixed;
+	margin: 1em 0;
+  	min-width: 300px; 
+}
+.formulae th, td {
+	margin: .5em 1em;
+	padding: .25em .5em;
+}
+svg {
+	width: 100%;
+}
 body{
     background: #fff;
-    margin:0;
+    margin:0 auto;
+	text-rendering: optimizeLegibility;
 }
 table{
-	padding:0px;
-	border:0px;
-	border-spacing:0px;
 	font-family: Arial, Verdana, Helvetica, sans-serif;
 	font-size: 16px;
 	font-weight: 500;
 	color: #000000;
-	padding: 0px 15px 0px 0px;
 	text-align: left;
-}
-td {
-	padding: 0px 15px 6px 0px;
 }
 .clear{
     clear: both;
@@ -90,8 +112,8 @@ button{
     text-align: left;
     font-size: 20px;
     display: none;
-    margin: 0px 30px 20px 20px;
     padding: 30px 0 0 0;
+	margin: 0 0.5em;
 }
 
 #charpc-menu, #charmac-menu {
@@ -174,16 +196,12 @@ h3 {
 	font-size: 14px;
 	font-weight: bold;
 	background-color: #fefefe;
-	padding: 5px;
-
 	border: 1px solid #c8c8c8;
 }
 
 .formulae td {
 	font-size: 14px;
 	background-color: #fafafa;
-	padding: 10px 5px;
-
 	border: 1px solid #c8c8c8;
 }
 
@@ -217,3 +235,4 @@ h3 {
 	z-index: 100;
 	background-color: white;
 }
+
