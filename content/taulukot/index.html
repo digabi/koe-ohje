@@ -152,6 +152,7 @@
 				e.preventDefault()
 				document.execCommand('copy')
 				document.body.removeChild(el)
+				$("#copying").show().fadeOut(2000)
 			})
 		});
 	</script>
@@ -182,6 +183,9 @@
 	</div>
 	<div id="loading">
 		<div id="loading-text"><span class="fi">Ladataan...</span><span class="sv">Laddas...</span></div>
+	</div>
+	<div id="copying">
+		<div id="copy-text"><span class="fi">Kaava kopioitu leikepöydälle.</span><span class="sv">Copied...</span></div>
 	</div>
 	<script async type="text/javascript" src="../../common/js/sameHeights.js"></script>
 </body>
