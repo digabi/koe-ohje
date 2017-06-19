@@ -191,6 +191,11 @@ h3 {
 	padding: .5em;
 }
 
+.formulae svg {
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
 /* Ajax loader */
 
 #loading {
