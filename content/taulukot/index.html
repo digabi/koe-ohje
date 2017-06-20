@@ -143,10 +143,13 @@
 				'help': function () { write_to_stdout('tables_to_help'); window.open('../index.html?' + lang); }
 			};
 			main_tabs.activateTabs();
+
 			$('#loading').hide();
 			$('body').on('click', 'svg', e => {
 				var latex = $(e.target).find('title').text()
 				console.log(latex)
+				$(e.target)
+					.css({ borderColor: "#707070", borderStyle: "solid", borderWidth: "2px" })
 				const el = createMathImg(latex)
 				selectElementContents(el)
 				e.preventDefault()
