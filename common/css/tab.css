@@ -1,18 +1,16 @@
 .scrollwrap {
 	overflow-x: scroll;
 }
-svg {
-	max-width: 100%;
-}
+
 body{
     background: #fff;
     margin:0 auto;
 	text-rendering: optimizeLegibility;
+	font-size: 1em;
 }
 table{
 	border-spacing: 0px;
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	font-size: 16px;
 	font-weight: 500;
 	color: #000000;
 	text-align: left;
@@ -25,11 +23,10 @@ table{
 }
 .firstcolumn{
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	font-size: 20px;
+
 }
 .note {
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	font-size: 16px;
 	font-weight: 500;
 	color: #787878;
 	padding: 29px 0px 15px 0px;
@@ -40,7 +37,6 @@ a{
 }
 button{
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	font-size: 14px;
 	font-weight: 700;
 	margin: 20px 0px 20px 0px;
 	background-color: #eee;
@@ -62,7 +58,6 @@ button{
 	display: block;
     float: left;
     position: relative;
-    font-size: 13px;
 	text-transform: uppercase;
     background: #359BB7;
     color: #FFFFFF;
@@ -71,9 +66,10 @@ button{
 
 .tab-menu-option {
 	display: inline;
-    margin: 10px 10px 0 10px;
+    margin: 0.5em 0.5em 0 0.5em;
     float: left;
     cursor: pointer;
+	font-size: 0.9em;
 }
 
 .tab-menu-option-active {
@@ -89,7 +85,6 @@ button{
     background: #efefef;
     background: #fff;
     text-align: left;
-    font-size: 20px;
     display: none;
     padding: 30px 0 0 0;
 	margin: 0 0.5em;
@@ -98,7 +93,6 @@ button{
 #charpc-menu, #charmac-menu {
     font-family: Arial, Verdana, Helvetica, sans-serif;
     color: #359BB7;
-    font-size: 16px;
 }
 .charpc-menu-option, .charmac-menu-option {
 	color: #359BB7;
@@ -117,7 +111,6 @@ button{
     background: #efefef;
     background: #fff;
     text-align: left;
-    font-size: 20px;
     display: none;
     margin: 0;
     padding: 0;
@@ -125,7 +118,6 @@ button{
 
 h1{
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
-   	font-size: 20px;
 	font-weight: 500;
 	color: #359BB7;
 	margin: 0;
@@ -134,13 +126,11 @@ h1{
 
 h2 {
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
-	font-size: 18px;
 	color: black;
 }
 
 h3 {
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
-	font-size: 16px;
 	color: black;
 }
 
@@ -184,7 +174,6 @@ h3 {
 }
 
 .formulae th, td {
-	font-size: 14px;
 	margin: .5em 1em;
 	border: 1px solid #c8c8c8;
 	display: table-cell;
@@ -213,7 +202,6 @@ h3 {
 
 #loading-text {
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
-	font-size: 20px;
 
 	width:200px;
     height:100px;
