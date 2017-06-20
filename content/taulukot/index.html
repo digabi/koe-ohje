@@ -147,6 +147,9 @@
 			$('#loading').hide();
 			$('body').on('click', 'svg', e => {
 				var latex = $(e.target).find('title').text()
+				if (!latex) {
+					return
+				}
 				console.log(latex)
 				$(e.target)
 					.css({ borderColor: "#707070", borderStyle: "solid", borderWidth: "2px" })
