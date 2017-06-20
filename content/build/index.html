@@ -1,14 +1,11 @@
-<!DOCTYPE HTML>
-<html>
-
-<head>
-	<meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8" />
+<!DOCTYPE html><html><head>
+	<meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8">
 	<meta charset="UTF-8">
-	<title>Abitti-apua / Abitti-hjälp</title>
-	<link rel="stylesheet" href="../common/css/tab.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
-	<script type="text/javascript" src="../common/clipboard.min.js"></script>
-	<script type="text/javascript" src="../common/js/activetab.js"></script>
+	<title>Abitti-taulukot / Abitti-tabeller</title>
+	<link rel="stylesheet" href="../../common/css/tab.css" type="text/css" media="screen">
+	<script type="text/javascript" src="../../common/js/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="../../common/clipboard.min.js"></script>
+	<script type="text/javascript" src="../../common/js/activetab.js"></script>
 	<script type="text/javascript">
 		// Handles for subpage initialisation functions
 		var subpage_init = {};
@@ -84,13 +81,9 @@
 
 		// Lazy load tables
 		function changePageTo(subject, currentLanguage) {
-			const tab = "tab-" + subject
-			if ($(tab).children().length === 0) {
-				$("#" + tab).load(tab + ".html", function () { set_language(currentLanguage), init_subpage(tab), set_video_url(currentLanguage) })
+			if ($("#tab-" + subject).children().length === 0) {
+				$("#tab-" + subject).load("tab-" + subject + ".html", function () { set_language(currentLanguage) })
 			}
-		}
-		function changeToTablePage(subject, currentLanguage) {
-			$("#tab-" + subject).load("build/tab-" + subject + ".html", function () { set_language(currentLanguage) })
 		}
 
 		// Math-copying related functionality
@@ -114,11 +107,10 @@
 		}
 
 		$(document).ready(function () {
-
-			// Set current language according to various suggestions
+			// Set current language accoring to various suggestions
 			var request = window.location.href;
 			var lang = "fi";
-			var defaultPage = "shortcut";
+			var defaultPage = "math"
 
 			if (request.lastIndexOf('?') > -1) {
 				var param = request.slice(request.lastIndexOf('?') + 1);
@@ -132,22 +124,20 @@
 				lang = 'sv';
 			}
 
-			changePageTo(defaultPage, lang);
+			// Default init
+			changePageTo(defaultPage, lang)
 
 			// Initialise ActiveTab navigation
 			var main_tabs = Object.create(ActiveTab);
 			main_tabs.classPrefix = 'tab';
-			main_tabs.tabNames = ["shortcut", "char_pc", "char_mac", "videos", "math", "physics", "chemistry"];
+			main_tabs.tabNames = ["math", "physics", "chemistry", "help"];
 
 			// Execute special initialisation when "tables" tab is activated
 			main_tabs.activeTabInitialise = {
-				'shortcut': function () { write_to_stdout('shortcut'); changePageTo("shortcut", lang); },
-				'char_pc': function () { write_to_stdout('char_pc'); changePageTo("char_pc", lang); activate_copy_to_clipboard(); },
-				'char_mac': function () { write_to_stdout('char_mac'); changePageTo("char_mac", lang); activate_copy_to_clipboard(); },
-				'videos': function () { write_to_stdout('videos'); changePageTo("videos", lang); set_video_url(lang); },
-				'math': function () { write_to_stdout('math'); changeToTablePage("math", lang); setSameHeights(); },
-				'physics': function () { write_to_stdout('physics'); changeToTablePage("physics", lang); setSameHeights(); },
-				'chemistry': function () { write_to_stdout('chemistry'); changeToTablePage("chemistry", lang); setSameHeights(); },
+				'math': function () { write_to_stdout('math'); changePageTo("math", lang); setSameHeights(); },
+				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang); setSameHeights(); },
+				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang); setSameHeights(); },
+				'help': function () { write_to_stdout('tables_to_help'); window.open('../index.html?' + lang); }
 			};
 			main_tabs.activateTabs();
 
@@ -168,7 +158,6 @@
 				$("#copying").show().fadeOut(2000)
 			})
 		});
-
 	</script>
 </head>
 
@@ -176,35 +165,23 @@
 
 	<div id="tab-container">
 		<div id="tab-menu">
-			<div id="shortcut-fi" class="tab-menu-option fi tab-menu-option-active">Pikan&auml;pp&auml;imet</div>
-			<div id="shortcut-sv" class="tab-menu-option sv tab-menu-option-active">Snabbtangenter</div>
-			<div id="char_pc-fi" class="tab-menu-option fi">Erikoismerkit PC:ll&auml;</div>
-			<div id="char_pc-sv" class="tab-menu-option sv">Specialtecken p&aring; PC</div>
-			<div id="char_mac-fi" class="tab-menu-option fi">Erikoismerkit Mac:ll&auml;</div>
-			<div id="char_mac-sv" class="tab-menu-option sv">Specialtecken p&aring; Mac</div>
-			<div id="videos-fi" class="tab-menu-option fi">Ohjevideot</div>
-			<div id="videos-sv" class="tab-menu-option sv">Hj&auml;lpvideor</div>
-			<div id="math-fi" class="tab-menu-option fi">Matematiikka</div>
-			<div id="math-sv" class="tab-menu-option sv">Matematik</div>
-			<div id="physics-fi" class="tab-menu-option fi">Fysiikka</div>
-			<div id="physics-sv" class="tab-menu-option sv">Fysik</div>
-			<div id="chemistry-fi" class="tab-menu-option fi">Kemia</div>
-			<div id="chemistry-sv" class="tab-menu-option sv">Kemi</div>
+			<a id="math-fi" class="tab-menu-option fi tab-menu-option-active">Matematiikka</a>
+			<a id="math-sv" class="tab-menu-option sv tab-menu-option-active">Matematik</a>
+			<a id="physics-fi" class="tab-menu-option fi">Fysiikka</a>
+			<a id="physics-sv" class="tab-menu-option sv">Fysik</a>
+			<a id="chemistry-fi" class="tab-menu-option fi">Kemia</a>
+			<a id="chemistry-sv" class="tab-menu-option sv">Kemi</a>
+			<a id="help-fi" class="tab-menu-option fi">Apua</a>
+			<a id="help-sv" class="tab-menu-option sv">Hjälp</a>
 		</div>
 
-		<div id="tab-shortcut" class="tab-content active">
-		</div>
-		<div id="tab-char_pc" class="tab-content">
-		</div>
-		<div id="tab-char_mac" class="tab-content">
-		</div>
-		<div id="tab-videos" class="tab-content">
-		</div>
-		<div id="tab-math" class="tab-content">
+		<div id="tab-math" class="tab-content active">
 		</div>
 		<div id="tab-physics" class="tab-content">
 		</div>
 		<div id="tab-chemistry" class="tab-content">
+		</div>
+		<div id="tab-help" class="tab-content">
 		</div>
 	</div>
 	<div id="loading">
@@ -213,7 +190,7 @@
 	<div id="copying">
 		<div id="copy-text"><span class="fi">Kaava kopioitu leikepöydälle.</span><span class="sv">Copied...</span></div>
 	</div>
-	<script async type="text/javascript" src="../common/js/sameHeights.js"></script>
-</body>
+	<script async="" type="text/javascript" src="../../common/js/sameHeights.js"></script>
 
-</html>
+
+</body></html>
