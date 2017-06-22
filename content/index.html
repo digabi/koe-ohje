@@ -84,7 +84,7 @@
 
 		// Lazy load tables
 		function changePageTo(subject, currentLanguage) {
-			const tab = "tab-" + subject
+			var tab = "tab-" + subject
 			if ($(tab).children().length === 0) {
 				$("#" + tab).load(tab + ".html", function () { set_language(currentLanguage), init_subpage(tab), set_video_url(currentLanguage) })
 			}
@@ -96,7 +96,7 @@
 		// Math-copying related functionality
 		function createMathImg(latex) {
 			console.log('createEq')
-			const img = document.createElement('img')
+			var img = document.createElement('img')
 			img.setAttribute('alt', latex)
 			var hostname = document.location.hostname
 			var baseUrl = hostname === 'localhost' || hostname == '' ? '' : 'https://math-demo.abitti.fi'
@@ -106,9 +106,9 @@
 		}
 
 		function selectElementContents(el) {
-			const range = document.createRange()
+			var range = document.createRange()
 			range.selectNode(el)
-			const sel = window.getSelection()
+			var sel = window.getSelection()
 			sel.removeAllRanges()
 			sel.addRange(range)
 		}
@@ -153,7 +153,7 @@
 
 			$('#loading').hide();
 			var lastClicked;
-			$('body').on('click', 'svg', e => {
+			$('body').on('click', 'svg', function (e) {
 				var latex = $(e.target).find('title').text()
 				if (!latex) {
 					return
@@ -166,12 +166,12 @@
 				lastClicked = e.target
 				$(e.target).css({ backgroundColor: "#E0F4FE" })
 
-				const el = createMathImg(latex)
+				var el = createMathImg(latex)
 				selectElementContents(el)
 				e.preventDefault()
 				document.execCommand('copy')
 				document.body.removeChild(el)
-				setTimeout(() => {
+				setTimeout(function () {
 					$("#copying_box").show().fadeOut(3000)
 				}, 350)
 			});
