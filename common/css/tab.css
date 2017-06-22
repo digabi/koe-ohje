@@ -214,32 +214,19 @@ h3 {
 	z-index: 100;
 	background-color: white;
 }
-
-#copying {
+#copying_box {
 	display: none;
 	width: 100%;
-	height: 100%;
 	top: 0;
-	left: 0;
 	position: fixed;
-	opacity: 0.9;
-	background-color: #fff;
-	z-index: 99;
-	text-align: center;
+	height: 40px;
+	background-color: #359BB7;
 }
 
 #copy-text {
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
-	font-size: 20px;
-
-	width:200px;
-    height:100px;
-    position:absolute;
-    left:50%;
-    top:50%;
-	margin-left:-100px;
-    margin-top:-50px;
+	font-size: 1.1em;
+	margin: 8px;
 	text-align: center;
-	z-index: 100;
-	background-color: white;
+	color: white;
 }

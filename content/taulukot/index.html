@@ -145,21 +145,29 @@
 			main_tabs.activateTabs();
 
 			$('#loading').hide();
+			var lastClicked;
 			$('body').on('click', 'svg', e => {
 				var latex = $(e.target).find('title').text()
 				if (!latex) {
 					return
 				}
 				console.log(latex)
-				$(e.target)
-					.css({ borderColor: "#707070", borderStyle: "solid", borderWidth: "2px" })
+				if(lastClicked !== e.target){
+					$(lastClicked).css({backgroundColor: "transparent"})
+					$("#copying_box").stop().animate({opacity:'100'})
+				}
+				lastClicked = e.target
+				$(e.target).css({ backgroundColor: "#E0F4FE" })
+
 				const el = createMathImg(latex)
 				selectElementContents(el)
 				e.preventDefault()
 				document.execCommand('copy')
 				document.body.removeChild(el)
-				$("#copying").show().fadeOut(2000)
-			})
+				setTimeout(() => {
+					$("#copying_box").show().fadeOut(3000)
+				}, 350)
+			});
 		});
 	</script>
 </head>
@@ -190,7 +198,7 @@
 	<div id="loading">
 		<div id="loading-text"><span class="fi">Ladataan...</span><span class="sv">Laddas...</span></div>
 	</div>
-	<div id="copying">
+	<div id="copying_box">
 		<div id="copy-text"><span class="fi">Kaava kopioitu leikepöydälle.</span><span class="sv">Copied...</span></div>
 	</div>
 	<script async type="text/javascript" src="../../common/js/sameHeights.js"></script>
