@@ -89,29 +89,6 @@
 				$("#" + tab).load(tab + ".html", function () { set_language(currentLanguage), init_subpage(tab), set_video_url(currentLanguage) })
 			}
 		}
-		function changeToTablePage(subject, currentLanguage) {
-			$("#tab-" + subject).load("build/tab-" + subject + ".html", function () { set_language(currentLanguage) })
-		}
-
-		// Math-copying related functionality
-		function createMathImg(latex) {
-			console.log('createEq')
-			var img = document.createElement('img')
-			img.setAttribute('alt', latex)
-			var hostname = document.location.hostname
-			var baseUrl = hostname === 'localhost' || hostname == '' ? '' : 'https://math-demo.abitti.fi'
-			img.setAttribute('src', baseUrl + '/math.svg?latex=' + encodeURIComponent(latex))
-			document.body.appendChild(img)
-			return img
-		}
-
-		function selectElementContents(el) {
-			var range = document.createRange()
-			range.selectNode(el)
-			var sel = window.getSelection()
-			sel.removeAllRanges()
-			sel.addRange(range)
-		}
 
 		$(document).ready(function () {
 
@@ -137,7 +114,7 @@
 			// Initialise ActiveTab navigation
 			var main_tabs = Object.create(ActiveTab);
 			main_tabs.classPrefix = 'tab';
-			main_tabs.tabNames = ["shortcut", "char_pc", "char_mac", "videos", "math", "physics", "chemistry"];
+			main_tabs.tabNames = ["shortcut", "char_pc", "char_mac", "videos", "tables"];
 
 			// Execute special initialisation when "tables" tab is activated
 			main_tabs.activeTabInitialise = {
@@ -145,36 +122,9 @@
 				'char_pc': function () { write_to_stdout('char_pc'); changePageTo("char_pc", lang); activate_copy_to_clipboard(); },
 				'char_mac': function () { write_to_stdout('char_mac'); changePageTo("char_mac", lang); activate_copy_to_clipboard(); },
 				'videos': function () { write_to_stdout('videos'); changePageTo("videos", lang); set_video_url(lang); },
-				'math': function () { write_to_stdout('math'); changeToTablePage("math", lang); setSameHeights(); },
-				'physics': function () { write_to_stdout('physics'); changeToTablePage("physics", lang); setSameHeights(); },
-				'chemistry': function () { write_to_stdout('chemistry'); changeToTablePage("chemistry", lang); setSameHeights(); },
+				'tables': function () { write_to_stdout('help_to_tables'); window.location = './build/index.html?' + lang; },
 			};
 			main_tabs.activateTabs();
-
-			$('#loading').hide();
-			var lastClicked;
-			$('body').on('click', 'svg', function (e) {
-				var latex = $(e.target).find('title').text()
-				if (!latex) {
-					return
-				}
-				console.log(latex)
-				if(lastClicked !== e.target){
-					$(lastClicked).css({backgroundColor: "transparent"})
-					$("#copying_box").stop().animate({opacity:'100'})
-				}
-				lastClicked = e.target
-				$(e.target).css({ backgroundColor: "#E0F4FE" })
-
-				var el = createMathImg(latex)
-				selectElementContents(el)
-				e.preventDefault()
-				document.execCommand('copy')
-				document.body.removeChild(el)
-				setTimeout(function () {
-					$("#copying_box").show().fadeOut(3000)
-				}, 350)
-			});
 		});
 
 	</script>
@@ -192,12 +142,8 @@
 			<div id="char_mac-sv" class="tab-menu-option sv">Specialtecken p&aring; Mac</div>
 			<div id="videos-fi" class="tab-menu-option fi">Ohjevideot</div>
 			<div id="videos-sv" class="tab-menu-option sv">Hj&auml;lpvideor</div>
-			<div id="math-fi" class="tab-menu-option fi">Matematiikka</div>
-			<div id="math-sv" class="tab-menu-option sv">Matematik</div>
-			<div id="physics-fi" class="tab-menu-option fi">Fysiikka</div>
-			<div id="physics-sv" class="tab-menu-option sv">Fysik</div>
-			<div id="chemistry-fi" class="tab-menu-option fi">Kemia</div>
-			<div id="chemistry-sv" class="tab-menu-option sv">Kemi</div>
+			<div id="tables-fi" class="tab-menu-option fi">Taulukoita</div>
+ 			<div id="tables-sv" class="tab-menu-option sv">Tabeller</div>
 		</div>
 
 		<div id="tab-shortcut" class="tab-content active">
@@ -207,12 +153,6 @@
 		<div id="tab-char_mac" class="tab-content">
 		</div>
 		<div id="tab-videos" class="tab-content">
-		</div>
-		<div id="tab-math" class="tab-content">
-		</div>
-		<div id="tab-physics" class="tab-content">
-		</div>
-		<div id="tab-chemistry" class="tab-content">
 		</div>
 	</div>
 	<div id="loading">
