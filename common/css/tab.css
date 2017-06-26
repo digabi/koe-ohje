@@ -292,4 +292,7 @@ h3 {
 		display: none;
 	}
 
+	.tab-view {
+		display: block;
+	}
 }

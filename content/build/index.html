@@ -151,13 +151,6 @@
 			var lang = getLangUrlParam();
 			var defaultPage = 'math'
 
-			if (request.indexOf('index-fi') > -1) {
-				lang = 'fi';
-			}
-			if (request.indexOf('index-sv') > -1) {
-				lang = 'sv';
-			}
-
 			// Default init
 			changePageTo(defaultPage, lang)
 
