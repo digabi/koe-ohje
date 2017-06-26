@@ -132,17 +132,23 @@
 			sel.addRange(range)
 		}
 
+		function getLangUrlParam() {
+			var param = window.location.search.substring(1).slice(0, 2);
+			var path = window.location.pathname;
+			var langs = ["fi", "sv"];
+			for (var i = 0; i < langs.length; i++) {
+				var lang = langs[i];
+				if (lang === param || path.includes("index-" + lang)) {
+					return lang;
+				}
+			}
+			return "fi";
+		}
 		$(document).ready(function () {
 			// Set current language accoring to various suggestions
 			var request = window.location.href;
-			var lang = 'fi';
+			var lang = getLangUrlParam();
 			var defaultPage = 'math'
-
-			if (request.lastIndexOf('?') > -1) {
-				var param = request.slice(request.lastIndexOf('?') + 1);
-				param = param.replace('#', '')
-				lang = param.toLowerCase();
-			}
 
 			if (request.indexOf('index-fi') > -1) {
 				lang = 'fi';
