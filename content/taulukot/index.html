@@ -6,9 +6,11 @@
 	<meta charset="UTF-8">
 	<title>Abitti-taulukot / Abitti-tabeller</title>
 	<link rel="stylesheet" href="../../common/css/tab.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../common/css/tocbot.css" type="text/css" />
 	<script type="text/javascript" src="../../common/js/jquery-2.2.0.min.js"></script>
 	<script type="text/javascript" src="../../common/clipboard.min.js"></script>
 	<script type="text/javascript" src="../../common/js/activetab.js"></script>
+	<script type="text/javascript" src="../../common/js/tocbot.min.js"></script>
 	<script type="text/javascript">
 		// Handles for subpage initialisation functions
 		var subpage_init = {};
@@ -57,12 +59,12 @@
 		}
 
 		function set_language(language) {
-			if (language.toLowerCase() == "fi") {
+			if (language.toLowerCase().startsWith("fi")) {
 				console.log("Language set to Finnish");
 				$(".fi").css("display", "t");
 				$(".sv").css("display", "none");
 			}
-			else if (language.toLowerCase() == "sv") {
+			else if (language.toLowerCase().startsWith("sv")) {
 				console.log("Language set to Swedish");
 				$(".fi").css("display", "none");
 				$(".sv").css("display", "");
@@ -82,10 +84,34 @@
 			}
 		}
 
+		function formAutomaticIDs(text) {
+			return text.toLowerCase()
+					   .replace(/\s/g, '_')
+		}
+
+		function initializeTocBot(language) {
+			$('.js-toc-content').find('h3')
+				.each(function () {
+					var elem = $(this)
+					elem.attr('id', formAutomaticIDs(elem.text()))
+				})
+
+			var languageToBeIgnored = language === "fi" ? ".sv" : ".fi"
+			tocbot.init({
+				// Where to render the table of contents.
+				tocSelector: '.js-toc',
+				// Where to grab the headings to build the table of contents.
+				contentSelector: '.js-toc-content',
+				// Which headings to grab inside of the contentSelector element.
+				headingSelector: 'h2, h3',
+				ignoreSelector: languageToBeIgnored
+			})
+		}
+
 		// Lazy load tables
 		function changePageTo(subject, currentLanguage) {
 			if ($("#tab-" + subject).children().length === 0) {
-				$("#tab-" + subject).load("tab-" + subject + ".html", function () { set_language(currentLanguage) })
+				$("#tab-" + subject).load("tab-" + subject + ".html", function () { set_language(currentLanguage); initializeTocBot(currentLanguage) })
 			}
 		}
 
@@ -112,11 +138,12 @@
 		$(document).ready(function () {
 			// Set current language accoring to various suggestions
 			var request = window.location.href;
-			var lang = "fi";
-			var defaultPage = "math"
+			var lang = 'fi';
+			var defaultPage = 'math'
 
 			if (request.lastIndexOf('?') > -1) {
 				var param = request.slice(request.lastIndexOf('?') + 1);
+				param = param.replace('#', '')
 				lang = param.toLowerCase();
 			}
 
@@ -137,9 +164,9 @@
 
 			// Execute special initialisation when "tables" tab is activated
 			main_tabs.activeTabInitialise = {
-				'math': function () { write_to_stdout('math'); changePageTo("math", lang); setSameHeights(); },
-				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang); setSameHeights(); },
-				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang); setSameHeights(); },
+				'math': function () { write_to_stdout('math'); changePageTo('math', lang); setSameHeights(); },
+				'physics': function () { write_to_stdout('physics'); changePageTo('physics', lang); setSameHeights(); },
+				'chemistry': function () { write_to_stdout('chemistry'); changePageTo('chemistry', lang); setSameHeights(); },
 				'help': function () { write_to_stdout('tables_to_help'); window.open('../index.html?' + lang); }
 			};
 			main_tabs.activateTabs();
@@ -152,9 +179,9 @@
 					return
 				}
 				console.log(latex)
-				if(lastClicked !== e.target){
-					$(lastClicked).css({backgroundColor: "transparent"})
-					$("#copying_box").stop().animate({opacity:'100'})
+				if (lastClicked !== e.target) {
+					$(lastClicked).css({ backgroundColor: "transparent" })
+					$("#copying_box").stop().animate({ opacity: '100' })
 				}
 				lastClicked = e.target
 				$(e.target).css({ backgroundColor: "#E0F4FE" })
@@ -168,6 +195,7 @@
 					$("#copying_box").show().fadeOut(3000)
 				}, 350)
 			});
+			initializeTocBot(lang)
 		});
 	</script>
 </head>
@@ -186,13 +214,18 @@
 			<a id="help-sv" class="tab-menu-option sv">Hjälp</a>
 		</div>
 
-		<div id="tab-math" class="tab-content active">
-		</div>
-		<div id="tab-physics" class="tab-content">
-		</div>
-		<div id="tab-chemistry" class="tab-content">
-		</div>
-		<div id="tab-help" class="tab-content">
+		<div class="tab-view">
+			<div class="js-toc"></div>
+			<div class="js-toc-content">
+				<div id="tab-math" class="tab-content active">
+				</div>
+				<div id="tab-physics" class="tab-content">
+				</div>
+				<div id="tab-chemistry" class="tab-content">
+				</div>
+				<div id="tab-help" class="tab-content">
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="loading">

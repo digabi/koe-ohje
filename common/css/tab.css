@@ -90,6 +90,23 @@ button{
 	margin: 0 0.5em;
 }
 
+.tab-view {
+	display: inline-flex;
+}
+
+.js-toc {
+	position: fixed;
+	left: 0; top: 36px; bottom: 0;
+	width: 300px;
+	display: flex;
+	padding-top: 20px;
+}
+
+.js-toc-content {
+	position: absolute;
+    left: 300px; top: 40px; right:0; bottom:0;
+}
+
 #charpc-menu, #charmac-menu {
     font-family: Arial, Verdana, Helvetica, sans-serif;
     color: #359BB7;
