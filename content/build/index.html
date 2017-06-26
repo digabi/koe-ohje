@@ -87,7 +87,7 @@
 		}
 
 		function initializeTocBot(language) {
-			$('.js-toc-content').find('h3')
+			$('.js-toc-content').find('h3, h4')
 				.each(function () {
 					var elem = $(this)
 					elem.attr('id', formAutomaticIDs(elem.text()))
@@ -100,8 +100,9 @@
 				// Where to grab the headings to build the table of contents.
 				contentSelector: '.js-toc-content',
 				// Which headings to grab inside of the contentSelector element.
-				headingSelector: 'h2, h3',
-				ignoreSelector: languageToBeIgnored
+				headingSelector: 'h3, h4',
+				ignoreSelector: languageToBeIgnored,
+				collapseDepth: 6
 			})
 		}
 

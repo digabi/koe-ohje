@@ -272,3 +272,24 @@ h3 {
 	text-align: center;
 	color: white;
 }
+
+/*
+	Mobile layouts
+*/
+
+@media screen and (max-width: 1024px) {
+
+	.js-toc {
+		display: none;
+	}
+
+	.js-toc-content {
+		position: static;
+		margin-left: 20px;
+	}
+
+	#tab-menu {
+		display: none;
+	}
+
+}
