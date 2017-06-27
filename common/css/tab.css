@@ -95,6 +95,16 @@ button{
 	margin-bottom: 200px;
 }
 
+.tab-view h3 {
+	margin-left: -50px;
+	font-size: 30px;
+	margin-top: 50px;
+}
+
+.tab-view h4 {
+	margin-bottom: 5px;
+}
+
 .js-toc {
 	left: 0;
 	bottom: 0;
@@ -291,5 +301,11 @@ h3 {
 
 	.tab-view {
 		display: block;
+	}
+
+	.tab-view h3 {
+		margin-left: 0px;
+		font-size: 30px;
+		margin-top: 50px;
 	}
 }
