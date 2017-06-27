@@ -47,12 +47,12 @@ def main():
     parser.add_argument('-y', '--positiony', dest='posy', type=int, default=1, help='Window position (Y)')
     parser.add_argument('-t', '--title', dest='title', type=str, default="Help", help='Window title')
     parser.add_argument('url', type=str, help='URL of the help file')
-    
+    parser.add_argument('-dev', '--devmode', dest='devmode', type=bool, default=False, help='Developer mode toggle')
 
     args = parser.parse_args()
 
     sc.write_to_stdout("starting")
-	
+
     # Encode window title to ISO-8859-15
     window_title = args.title.decode('utf8').encode('iso8859-15')
 
@@ -64,6 +64,13 @@ def main():
     window.move(args.posx, args.posy)
     window.setWindowTitle(window_title)
     window.setWindowIcon(QIcon(APP_ICON_PATH))
+
+    # Dev-environment debug variables
+    if args.devmode:
+        inspector = QWebInspector()
+        window.view.page().settings().setAttribute(QWebSettings.DeveloperExtrasEnabled, True)
+        inspector.setPage(window.view.page())
+        inspector.showMaximized()
 
     window.load_url(args.url)
     window.show()
