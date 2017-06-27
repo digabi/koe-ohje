@@ -58,12 +58,12 @@
 		}
 
 		function set_language(language) {
-			if (language.toLowerCase().startsWith("fi")) {
+			if (language === "fi") {
 				console.log("Language set to Finnish");
 				$(".fi").css("display", "");
 				$(".sv").css("display", "none");
 			}
-			else if (language.toLowerCase().startsWith("sv")) {
+			else if (language === "sv") {
 				console.log("Language set to Swedish");
 				$(".fi").css("display", "none");
 				$(".sv").css("display", "");
