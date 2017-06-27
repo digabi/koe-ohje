@@ -60,7 +60,7 @@
 		function set_language(language) {
 			if (language.toLowerCase().startsWith("fi")) {
 				console.log("Language set to Finnish");
-				$(".fi").css("display", "t");
+				$(".fi").css("display", "");
 				$(".sv").css("display", "none");
 			}
 			else if (language.toLowerCase().startsWith("sv")) {
@@ -104,7 +104,9 @@
 				// Which headings to grab inside of the contentSelector element.
 				headingSelector: 'h3, h4',
 				ignoreSelector: languageToBeIgnored,
-				collapseDepth: 6
+				collapseDepth: 6,
+				positionFixedSelector: '.js-toc',
+				fixedSidebarOffset: 40
 			})
 		}
 

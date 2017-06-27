@@ -96,13 +96,12 @@ button{
 }
 
 .js-toc {
-	position: fixed;
 	left: 0;
 	bottom: 0;
 	top: 0;
 	width: 300px;
 	display: block;
-	padding-top: 46px;
+	padding-top: 20px;
 	margin-left: 10px;
 	font-size: 20px;
     border-right: 2px solid gray;

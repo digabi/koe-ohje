@@ -7,7 +7,6 @@
 	<script type="text/javascript" src="../../common/js/jquery-2.2.0.min.js"></script>
 	<script type="text/javascript" src="../../common/clipboard.min.js"></script>
 	<script type="text/javascript" src="../../common/js/activetab.js"></script>
-	<script type="text/javascript" src="../../common/js/tocbot.min.js"></script>
 	<script type="text/javascript">
 		// Handles for subpage initialisation functions
 		var subpage_init = {};
@@ -58,7 +57,7 @@
 		function set_language(language) {
 			if (language.toLowerCase().startsWith("fi")) {
 				console.log("Language set to Finnish");
-				$(".fi").css("display", "t");
+				$(".fi").css("display", "");
 				$(".sv").css("display", "none");
 			}
 			else if (language.toLowerCase().startsWith("sv")) {
@@ -102,13 +101,18 @@
 				// Which headings to grab inside of the contentSelector element.
 				headingSelector: 'h3, h4',
 				ignoreSelector: languageToBeIgnored,
-				collapseDepth: 6
+				collapseDepth: 6,
+				positionFixedSelector: '.js-toc',
+				fixedSidebarOffset: 40
 			})
 		}
 
 		// Lazy load tables
 		function changePageTo(subject, currentLanguage) {
 			if ($("#tab-" + subject).children().length === 0) {
+				$("#tab-physics").empty()
+				$("#tab-chemistry").empty()
+				$("#tab-math").empty()
 				$("#tab-" + subject).load("tab-" + subject + ".html", function () { set_language(currentLanguage); initializeTocBot(currentLanguage) })
 			}
 		}
@@ -192,7 +196,6 @@
 					$("#copying_box").show().fadeOut(3000)
 				}, 350)
 			});
-			initializeTocBot(lang)
 		});
 	</script>
 </head>
@@ -231,6 +234,7 @@
 	<div id="copying_box">
 		<div id="copy-text"><span class="fi">Kaava kopioitu leikepöydälle.</span><span class="sv">Copied...</span></div>
 	</div>
+	<script type="text/javascript" src="../../common/js/tocbot.min.js"></script>
 	<script async="" type="text/javascript" src="../../common/js/sameHeights.js"></script>
 
 
