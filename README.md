@@ -24,7 +24,8 @@ On selostettu tarkemmin [tässä dokumentissa](HTML.md). Katso se ensin muutoste
 
 1. Rakenna [testisivulle](content/test/testpage.html) uusi kaava, jonka haluaisit lisätä kokoelmaan
 2. Kopioi ja liitä se oikeaan taulukkoon paikassa `content/taulukot/tab-*<taulukon_nimi>`
-3. Tarkista, että rakenne on oikein
+3. Älä vie versiohallintaan testisivua
+4. Tarkista, että rakenne on oikein
 
 ## Vinkkejä
 

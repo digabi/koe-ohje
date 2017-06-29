@@ -35,6 +35,10 @@ Esimerkki matematiikasta
     </div>
 ```
 
+### Kuvat
+
+Tallenna kuvat aina `.svg`-muodossa ja kansioon `content/images`. Katso testisivulta miten kuvat upotetaan lähdekoodiin.
+
 ### Kielet
 
 Suomen ja ruotsin kielen tuki on toteutettu niin, että lisäämällä mille tahansa HTML-elementille luokan `class="fi"` tai vastaavasti
