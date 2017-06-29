@@ -16,10 +16,23 @@ YTL ottaa vastaan muutosehdotuksia erityisesti kaavakokoelmaan. Muutosehdotukset
 
 Muutosehdotuksien tekijöiden on hyvä huomata, että kaavakokoelma on kaksikielinen.
 
+## HTML-struktuuri
+
+On selostettu tarkemmin [tässä dokumentissa](HTML.md). Katso se ensin muutosten tekemistä, jotta lähdekoodin yleinen rakenne pysyisi konsistenttina ja muiden olisi helppo lisätä kaavoja myös tulevaisuudessa.
+
+## Workflow
+
+1. Rakenna [testisivulle](content/test/testpage.html) uusi kaava, jonka haluaisit lisätä kokoelmaan
+2. Kopioi ja liitä se oikeaan taulukkoon paikassa `content/taulukot/tab-*<taulukon_nimi>`
+3. Tarkista, että rakenne on oikein
+
 ## Vinkkejä
 
  * Varsinainen aputiedosto löytyy `content/index.html`. Välilehdet löytyvät `content/tab-*.html`.
- * Voit katsoa tiedostoa lataamalla selaimeen `content/index.html`-tiedoston. Ruotsinkielisen tiedoston
+ * Testisivu kaavojen luomiselle löytyy `content/test/testpage.html`. **Kokeile ensin muokata tähän sivuun ja sitten kopioi ja liitä lopullinen kaava
+   haluttuun taulukkoon**
+ * Lopulliset näytettävät tiedostot löytyvät `content/build` -kansion alta ja sen alaisia tiedostoja ei pidä muokata käsin.
+ * Voit katsoa rakentamatonta sivua lataamalla selaimeen `content/index.html`-tiedoston. Ruotsinkielisen tiedoston
    voit ladata lisäämällä URL:iin `?sv` eli näin: `file:///polku-omalla-levyllasi/content/index.html?sv`
 
 ## Videoiden lisääminen

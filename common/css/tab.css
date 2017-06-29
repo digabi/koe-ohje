@@ -2,6 +2,10 @@
 	overflow-x: scroll;
 }
 
+.scrollwrap h3 {
+	display: inline-block;
+}
+
 body{
     background: #fff;
     margin:0 auto;
