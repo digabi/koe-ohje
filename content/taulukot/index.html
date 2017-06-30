@@ -142,7 +142,8 @@
 
 		function getLangUrlParam() {
 			var param = window.location.search.substring(1).slice(0, 2);
-			var path = window.location.pathname;
+			var pathname = window.location.pathname;
+			var path = pathname === undefined ? '' : pathname;
 			var langs = ["fi", "sv"];
 			for (var i = 0; i < langs.length; i++) {
 				var lang = langs[i];
@@ -193,7 +194,11 @@
 				var el = createMathImg(latex)
 				selectElementContents(el)
 				e.preventDefault()
-				document.execCommand('copy')
+				if(typeof(sharedclass) === 'object') {
+					sharedclass.copy_to_clipboard(el.outerHTML)
+				} else {
+					document.execCommand('copy')
+				}
 				document.body.removeChild(el)
 				setTimeout(function () {
 					$("#copying_box").show().fadeOut(3000)

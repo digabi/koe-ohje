@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
 
-import argparse, sys
+import argparse, sys, subprocess
 
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
@@ -12,8 +12,10 @@ APP_ICON_PATH='/usr/share/digabi-koe-ohje/help-browser.png'
 class SharedClass (QObject):
     @pyqtSlot(str)
     def copy_to_clipboard(self, value):
-        clipboard = QApplication.clipboard()
-        clipboard.setText(value)
+        xclip = subprocess.Popen("xclip -selection clipboard -target text/html -i".split(" "), stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
+        xclip.stdin.write(value.toUtf8())
+        xclip.stdin.close()
+        xclip.wait()
         
     @pyqtSlot(str)
     def write_to_stdout(self, value):
