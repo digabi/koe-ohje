@@ -11,12 +11,17 @@ APP_ICON_PATH='/usr/share/digabi-koe-ohje/help-browser.png'
 
 class SharedClass (QObject):
     @pyqtSlot(str)
-    def copy_to_clipboard(self, value):
+    def copy_html_to_clipboard(self, value):
         xclip = subprocess.Popen("xclip -selection clipboard -target text/html -i".split(" "), stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
         xclip.stdin.write(value.toUtf8())
         xclip.stdin.close()
         xclip.wait()
-        
+
+    @pyqtSlot(str)
+    def copy_text_to_clipboard(self, value):
+        clipboard = QApplication.clipboard()
+        clipboard.setText(value)
+
     @pyqtSlot(str)
     def write_to_stdout(self, value):
         print("[digabi-koe-browser] %s" % (value))

@@ -19,7 +19,7 @@
 			if (typeof (sharedclass) == 'object') {
 				// This is executed inside digabi-koe-browser.py
 				$(".special-key").click(function () {
-					sharedclass.copy_to_clipboard($(this).text());
+					sharedclass.copy_text_to_clipboard($(this).text());
 				});
 			}
 			else {
