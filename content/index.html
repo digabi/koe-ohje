@@ -14,8 +14,7 @@
 		var subpage_init = {};
 
 		function activate_copy_to_clipboard() {
-			$(".special-key").unbind("click");
-
+			$(".special-key").unbind("click")
 			// Activate Digabi-specific copy feature
 			if (typeof (sharedclass) == 'object') {
 				// This is executed inside digabi-koe-browser.py
@@ -86,7 +85,12 @@
 		function changePageTo(subject, currentLanguage) {
 			var tab = "tab-" + subject
 			if ($(tab).children().length === 0) {
-				$("#" + tab).load(tab + ".html", function () { set_language(currentLanguage), init_subpage(tab), set_video_url(currentLanguage) })
+				$("#" + tab).load(tab + ".html", function () {
+					set_language(currentLanguage)
+					init_subpage(tab)
+					set_video_url(currentLanguage)
+					activate_copy_to_clipboard()
+				})
 			}
 		}
 
@@ -119,8 +123,8 @@
 			// Execute special initialisation when "tables" tab is activated
 			main_tabs.activeTabInitialise = {
 				'shortcut': function () { write_to_stdout('shortcut'); changePageTo("shortcut", lang); },
-				'char_pc': function () { write_to_stdout('char_pc'); changePageTo("char_pc", lang); activate_copy_to_clipboard(); },
-				'char_mac': function () { write_to_stdout('char_mac'); changePageTo("char_mac", lang); activate_copy_to_clipboard(); },
+				'char_pc': function () { write_to_stdout('char_pc'); changePageTo("char_pc", lang); },
+				'char_mac': function () { write_to_stdout('char_mac'); changePageTo("char_mac", lang); },
 				'videos': function () { write_to_stdout('videos'); changePageTo("videos", lang); set_video_url(lang); },
 				'tables': function () { write_to_stdout('help_to_tables'); window.location = './build/index.html?' + lang; },
 			};
