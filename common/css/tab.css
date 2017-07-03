@@ -119,6 +119,7 @@ button{
 	padding-top: 20px;
 	font-size: 20px;
 	border-right: 2px solid gray;
+	overflow-y: scroll;
 }
 
 .js-toc-content {
