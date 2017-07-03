@@ -142,12 +142,11 @@
 
 		function getLangUrlParam() {
 			var param = window.location.search.substring(1).slice(0, 2);
-			var pathname = window.location.pathname;
-			var path = pathname === undefined ? '' : pathname;
+			var path = window.location.pathname;
 			var langs = ["fi", "sv"];
 			for (var i = 0; i < langs.length; i++) {
 				var lang = langs[i];
-				if (lang === param || path.includes("index-" + lang)) {
+				if (lang === param || (path.indexOf("index-" + lang) > -1)) {
 					return lang;
 				}
 			}

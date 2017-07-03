@@ -31,10 +31,14 @@ class Window (QWidget):
         layout.addWidget(self.view)
 
         self.sharedclass = SharedClass(self)
-        self.view.page().mainFrame().addToJavaScriptWindowObject("sharedclass", self.sharedclass)
+        self.frame = self.view.page().mainFrame()
+        self.frame.javaScriptWindowObjectCleared.connect(self.add_shared_object)
 
     def load_url (self, url):
         self.view.load(QUrl(url))
+
+    def add_shared_object(self):
+        self.frame.addToJavaScriptWindowObject("sharedclass", self.sharedclass)
 
 sc = SharedClass()
 
