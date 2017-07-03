@@ -2,7 +2,7 @@
 	overflow-x: scroll;
 }
 
-.scrollwrap h3 {
+.scrollwrap h3, h4 {
 	display: inline-block;
 }
 
