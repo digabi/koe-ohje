@@ -7,6 +7,8 @@
 	<script type="text/javascript" src="../../common/js/jquery-2.2.0.min.js"></script>
 	<script type="text/javascript" src="../../common/clipboard.min.js"></script>
 	<script type="text/javascript" src="../../common/js/activetab.js"></script>
+	<script type="text/javascript" src="../../common/js/sameHeights.js"></script>
+	<script type="text/javascript" src="../../common/js/copyLogic.js"></script>
 	<script type="text/javascript">
 		// Handles for subpage initialisation functions
 		var subpage_init = {};
@@ -117,26 +119,6 @@
 			}
 		}
 
-		// Math-copying related functionality
-		function createMathImg(latex) {
-			console.log('createEq')
-			var img = document.createElement('img')
-			img.setAttribute('alt', latex)
-			var hostname = document.location.hostname
-			var baseUrl = hostname === 'localhost' || hostname == '' ? '' : 'https://math-demo.abitti.fi'
-			img.setAttribute('src', baseUrl + '/math.svg?latex=' + encodeURIComponent(latex))
-			document.body.appendChild(img)
-			return img
-		}
-
-		function selectElementContents(el) {
-			var range = document.createRange()
-			range.selectNode(el)
-			var sel = window.getSelection()
-			sel.removeAllRanges()
-			sel.addRange(range)
-		}
-
 		function getLangUrlParam() {
 			var param = window.location.search.substring(1).slice(0, 2);
 			var path = window.location.pathname;
@@ -149,6 +131,7 @@
 			}
 			return "fi";
 		}
+
 		$(document).ready(function () {
 			// Set current language accoring to various suggestions
 			var request = window.location.href;
@@ -171,35 +154,7 @@
 				'help': function () { write_to_stdout('tables_to_help'); window.location = '../index.html?' + lang; }
 			};
 			main_tabs.activateTabs();
-
-			$('#loading').hide();
-			var lastClicked;
-			$('body').on('click', 'svg', function (e) {
-				var latex = $(e.target).find('title').text()
-				if (!latex) {
-					return
-				}
-				console.log(latex)
-				if (lastClicked !== e.target) {
-					$(lastClicked).css({ backgroundColor: "transparent" })
-					$("#copying_box").stop().animate({ opacity: '100' })
-				}
-				lastClicked = e.target
-				$(e.target).css({ backgroundColor: "#E0F4FE" })
-
-				var el = createMathImg(latex)
-				selectElementContents(el)
-				e.preventDefault()
-				if(typeof(sharedclass) === 'object') {
-					sharedclass.copy_html_to_clipboard(el.outerHTML)
-				} else {
-					document.execCommand('copy')
-				}
-				document.body.removeChild(el)
-				setTimeout(function () {
-					$("#copying_box").show().fadeOut(3000)
-				}, 350)
-			});
+			listenSVGEvent()
 		});
 	</script>
 </head>
