@@ -4,7 +4,7 @@ Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppi
 
 ## Kaavakokoelma ja taulukot
 
-Osoitteesta [https://tables.abitti.fi/content/taulukot](https://tables.abitti.fi/content/taulukot) löytyy kaavakokoelma ja taulukot.
+Osoitteesta [https://tables.abitti.fi/content/build](https://tables.abitti.fi/content/build) löytyy kaavakokoelma ja taulukot.
 
 ## Ohjeet muutosten ehdottamiseen
 
