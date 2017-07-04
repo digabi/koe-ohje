@@ -317,3 +317,13 @@ h3 {
 		margin-top: 50px;
 	}
 }
+
+@media screen and (max-width: 600px) {
+	.formulae th, td {
+		margin: .5em 1em;
+		border: 1px solid #c8c8c8;
+		display: table-cell;
+		padding: .5em;
+		font-size: 10px;
+	}
+}
