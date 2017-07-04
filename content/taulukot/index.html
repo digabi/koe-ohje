@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="../../common/js/activetab.js"></script>
 	<script type="text/javascript" src="../../common/js/sameHeights.js"></script>
 	<script type="text/javascript" src="../../common/js/copyLogic.js"></script>
+	<script type="text/javascript" src="../../common/js/tableOfContents.js"></script>
 	<script type="text/javascript">
 		// Handles for subpage initialisation functions
 		var subpage_init = {};
@@ -88,28 +89,6 @@
 		function formAutomaticIDs(text) {
 			return text.toLowerCase()
 					   .replace(/\s/g, '_')
-		}
-
-		function initializeTocBot(language) {
-			$('.js-toc-content').find('h3, h4')
-				.each(function () {
-					var elem = $(this)
-					elem.attr('id', formAutomaticIDs(elem.text()))
-				})
-
-			var languageToBeIgnored = language === "fi" ? ".sv" : ".fi"
-			tocbot.init({
-				// Where to render the table of contents.
-				tocSelector: '.js-toc',
-				// Where to grab the headings to build the table of contents.
-				contentSelector: '.js-toc-content',
-				// Which headings to grab inside of the contentSelector element.
-				headingSelector: 'h3, h4',
-				ignoreSelector: languageToBeIgnored,
-				collapseDepth: 6,
-				positionFixedSelector: '.js-toc',
-				fixedSidebarOffset: 'auto'
-			})
 		}
 
 		// Lazy load tables

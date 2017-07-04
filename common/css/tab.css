@@ -145,13 +145,6 @@ button{
 	font-size: 16px;
 }
 
-/*
-	Override equation font-size
-*/
-.mjpage {
-	font-size: 80% !important;
-}
-
 .is-active-link::before {
 	background-color: #359BB7 !important;
 }
@@ -244,6 +237,7 @@ h3 {
 	border: 1px solid #c8c8c8;
 	display: table-cell;
 	padding: .5em;
+	font-size: 12px;
 }
 
 .formulae svg {
