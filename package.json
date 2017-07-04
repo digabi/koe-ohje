@@ -1,0 +1,25 @@
+{
+  "name": "koe-ohje",
+  "version": "1.0.0",
+  "description": "Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle WebKit-selaimella (ks. `digabi-koe-browser.py`).",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digabi/koe-ohje.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digabi/koe-ohje/issues"
+  },
+  "homepage": "https://github.com/digabi/koe-ohje#readme",
+  "dependencies": {
+    "fs-extra": "^3.0.1",
+    "mathjax-node-page": "^1.4.0"
+  }
+}

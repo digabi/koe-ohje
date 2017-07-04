@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
 
-import argparse, sys
+import argparse, sys, subprocess
 
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
@@ -11,10 +11,17 @@ APP_ICON_PATH='/usr/share/digabi-koe-ohje/help-browser.png'
 
 class SharedClass (QObject):
     @pyqtSlot(str)
-    def copy_to_clipboard(self, value):
+    def copy_html_to_clipboard(self, value):
+        xclip = subprocess.Popen("xclip -selection clipboard -target text/html -i".split(" "), stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
+        xclip.stdin.write(value.toUtf8())
+        xclip.stdin.close()
+        xclip.wait()
+
+    @pyqtSlot(str)
+    def copy_text_to_clipboard(self, value):
         clipboard = QApplication.clipboard()
         clipboard.setText(value)
-        
+
     @pyqtSlot(str)
     def write_to_stdout(self, value):
         print("[digabi-koe-browser] %s" % (value))
@@ -29,10 +36,14 @@ class Window (QWidget):
         layout.addWidget(self.view)
 
         self.sharedclass = SharedClass(self)
-        self.view.page().mainFrame().addToJavaScriptWindowObject("sharedclass", self.sharedclass)
+        self.frame = self.view.page().mainFrame()
+        self.frame.javaScriptWindowObjectCleared.connect(self.add_shared_object)
 
     def load_url (self, url):
         self.view.load(QUrl(url))
+
+    def add_shared_object(self):
+        self.frame.addToJavaScriptWindowObject("sharedclass", self.sharedclass)
 
 sc = SharedClass()
 
@@ -47,12 +58,12 @@ def main():
     parser.add_argument('-y', '--positiony', dest='posy', type=int, default=1, help='Window position (Y)')
     parser.add_argument('-t', '--title', dest='title', type=str, default="Help", help='Window title')
     parser.add_argument('url', type=str, help='URL of the help file')
-    
+    parser.add_argument('-dev', '--devmode', dest='devmode', type=bool, default=False, help='Developer mode toggle')
 
     args = parser.parse_args()
 
     sc.write_to_stdout("starting")
-	
+
     # Encode window title to ISO-8859-15
     window_title = args.title.decode('utf8').encode('iso8859-15')
 
@@ -64,6 +75,13 @@ def main():
     window.move(args.posx, args.posy)
     window.setWindowTitle(window_title)
     window.setWindowIcon(QIcon(APP_ICON_PATH))
+
+    # Dev-environment debug variables
+    if args.devmode:
+        inspector = QWebInspector()
+        window.view.page().settings().setAttribute(QWebSettings.DeveloperExtrasEnabled, True)
+        inspector.setPage(window.view.page())
+        inspector.showMaximized()
 
     window.load_url(args.url)
     window.show()

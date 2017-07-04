@@ -23,16 +23,8 @@ function setSameHeights () {
 }
 
 if ('addEventListener' in window) {
-	window.addEventListener('resize', function(){
-		setSameHeights();
-	});
 	window.addEventListener('load', function(){
 		setSameHeights();
+		$('#loading').hide();
 	});
 }
-
-// Call setSameHeights() when MathJax typesetting is finished
-MathJax.Hub.Register.StartupHook("End",function () {
-	console.log("MathJax is ready");
-	$('#loading').hide();
-});

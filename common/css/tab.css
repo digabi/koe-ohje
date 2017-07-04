@@ -1,20 +1,23 @@
+.scrollwrap {
+	overflow-x: scroll;
+}
+
+.scrollwrap h3, h4 {
+	display: inline-block;
+}
+
 body{
     background: #fff;
-    margin:0;
+    margin:0 auto;
+	text-rendering: optimizeLegibility;
+	font-size: 1em;
 }
 table{
-	padding:0px;
-	border:0px;
-	border-spacing:0px;
+	border-spacing: 0px;
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	font-size: 16px;
 	font-weight: 500;
 	color: #000000;
-	padding: 0px 15px 0px 0px;
 	text-align: left;
-}
-td {
-	padding: 0px 15px 6px 0px;
 }
 .clear{
     clear: both;
@@ -22,13 +25,12 @@ td {
     visibility: hidden;
     display: block;
 }
-.firstcolumn{ 
+.firstcolumn{
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	font-size: 20px;
+
 }
-.note { 
+.note {
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	font-size: 16px;
 	font-weight: 500;
 	color: #787878;
 	padding: 29px 0px 15px 0px;
@@ -39,7 +41,6 @@ a{
 }
 button{
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	font-size: 14px;
 	font-weight: 700;
 	margin: 20px 0px 20px 0px;
 	background-color: #eee;
@@ -61,18 +62,19 @@ button{
 	display: block;
     float: left;
     position: relative;
-    font-size: 13px;
 	text-transform: uppercase;
     background: #359BB7;
     color: #FFFFFF;
 	border-style: none;
+	z-index: 10;
 }
 
 .tab-menu-option {
 	display: inline;
-    margin: 10px 10px 0 10px;
+    margin: 0.5em 0.5em 0 0.5em;
     float: left;
     cursor: pointer;
+	font-size: 0.9em;
 }
 
 .tab-menu-option-active {
@@ -88,16 +90,68 @@ button{
     background: #efefef;
     background: #fff;
     text-align: left;
-    font-size: 20px;
     display: none;
-    margin: 0px 30px 20px 20px;
-    padding: 30px 0 0 0;
+    padding: 30px 0 200px 0;
+	margin-left: 10px;
+}
+
+.tab-view {
+	display: inline-block;
+	margin-bottom: 200px;
+}
+
+.tab-view h3 {
+	font-size: 30px;
+	margin-top: 50px;
+}
+
+.tab-view h4 {
+	margin-bottom: 5px;
+}
+
+.js-toc {
+	left: 0;
+	bottom: 0;
+	position: absolute;
+	top: 36px;
+	width: 300px;
+	display: block;
+	padding-top: 20px;
+	font-size: 20px;
+	border-right: 2px solid gray;
+	overflow-y: scroll;
+}
+
+.js-toc-content {
+	position: absolute;
+	left: 350px; top: 40px; right:0; bottom:0;
+}
+
+.js-toc .toc-list {
+	list-style-type: none;
+	color:#43464B;
+}
+
+.js-toc .is-active-link {
+	color: black;
+}
+
+.js-toc > ul > li {
+	margin-bottom: 15px;
+	font-size: 16px;
+}
+
+.js-toc li ul {
+	font-size: 16px;
+}
+
+.is-active-link::before {
+	background-color: #359BB7 !important;
 }
 
 #charpc-menu, #charmac-menu {
     font-family: Arial, Verdana, Helvetica, sans-serif;
     color: #359BB7;
-    font-size: 16px;
 }
 .charpc-menu-option, .charmac-menu-option {
 	color: #359BB7;
@@ -116,7 +170,6 @@ button{
     background: #efefef;
     background: #fff;
     text-align: left;
-    font-size: 20px;
     display: none;
     margin: 0;
     padding: 0;
@@ -124,7 +177,6 @@ button{
 
 h1{
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
-   	font-size: 20px;
 	font-weight: 500;
 	color: #359BB7;
 	margin: 0;
@@ -133,13 +185,11 @@ h1{
 
 h2 {
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
-	font-size: 18px;
 	color: black;
 }
 
 h3 {
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
-	font-size: 16px;
 	color: black;
 }
 
@@ -168,23 +218,31 @@ h3 {
 	border: 1px solid #c8c8c8;
 	border-collapse: collapse;
 	vertical-align: middle;
+	table-layout: fixed;
+	margin: 1em 0;
+  	min-width: 300px;
 }
 
 .formulae th {
-	font-size: 14px;
 	font-weight: bold;
 	background-color: #fefefe;
-	padding: 5px;
-
-	border: 1px solid #c8c8c8;
 }
 
 .formulae td {
-	font-size: 14px;
 	background-color: #fafafa;
-	padding: 10px 5px;
+}
 
+.formulae th, td {
+	margin: .5em 1em;
 	border: 1px solid #c8c8c8;
+	display: table-cell;
+	padding: .5em;
+	font-size: 14px;
+}
+
+.formulae svg {
+	cursor: pointer;
+	transition: all .2s ease-in-out;
 }
 
 /* Ajax loader */
@@ -204,7 +262,6 @@ h3 {
 
 #loading-text {
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
-	font-size: 20px;
 
 	width:200px;
     height:100px;
@@ -216,4 +273,57 @@ h3 {
 	text-align: center;
 	z-index: 100;
 	background-color: white;
+}
+#copying_box {
+	display: none;
+	width: 100%;
+	top: 0;
+	position: fixed;
+	height: 40px;
+	background-color: #359BB7;
+	z-index: 99;
+}
+
+#copy-text {
+	font-family: Arial,  Verdana, Helvetica, sans-serif;
+	font-size: 1.1em;
+	margin: 8px;
+	text-align: center;
+	color: white;
+}
+
+/*
+	Mobile layouts
+*/
+
+@media screen and (max-width: 1024px) {
+
+	.js-toc {
+		display: none;
+	}
+
+	.js-toc-content {
+		position: static;
+		margin-left: 20px;
+	}
+
+	.tab-view {
+		display: block;
+	}
+
+	.tab-view h3 {
+		margin-left: 0px;
+		font-size: 30px;
+		margin-top: 50px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.formulae th, td {
+		margin: .5em 1em;
+		border: 1px solid #c8c8c8;
+		display: table-cell;
+		padding: .5em;
+		font-size: 10px;
+	}
 }
