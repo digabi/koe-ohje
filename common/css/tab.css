@@ -1,5 +1,5 @@
 .scrollwrap {
-	overflow-x: scroll;
+	overflow-x: auto;
 }
 
 .scrollwrap h3, h4 {
