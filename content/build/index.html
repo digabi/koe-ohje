@@ -83,8 +83,21 @@
 			}
 		}
 
+		function loseScandics(s) {
+			if(!loseScandics.translate_re) loseScandics.translate_re = /[öäüÖÄÜ]/g;
+			var translate = {
+				"ä": "a", "ö": "o", "ü": "u",
+				"Ä": "A", "Ö": "O", "Ü": "U"
+			};
+			return ( s.replace(loseScandics.translate_re, function(match) {
+				return translate[match];
+			}) );
+		}
+
 		function formAutomaticIDs(text) {
-			return text.toLowerCase()
+			return loseScandics(text)
+					   .trim()
+					   .toLowerCase()
 					   .replace(/\s/g, '-')
 		}
 
