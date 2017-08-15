@@ -69,7 +69,9 @@ Tuloksena on `output.webm`
 
 ## Lisenssi
 
-This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC-BY-NC-SA).
+This work is double licensed under:
+ * Creative Commons No Rights Reserved License ([CC0 1.0 Universal|https://creativecommons.org/publicdomain/zero/1.0/legalcode]), and
+ * [The MIT License|https://opensource.org/licenses/MIT].
 
 ## Kiitämme
 
