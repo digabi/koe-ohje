@@ -25,7 +25,7 @@ On selostettu tarkemmin [tässä dokumentissa](HTML.md). Katso se ensin muutoste
 1. Rakenna [testisivulle](content/test/testpage.html) uusi kaava, jonka haluaisit lisätä kokoelmaan
 2. Kopioi ja liitä se oikeaan taulukkoon paikassa `content/taulukot/tab-*<taulukon_nimi>.html`
 3. Älä vie versiohallintaan testisivua
-4. Tarkista, että rakenne on oikein
+4. Tarkista, että rakenne on oikein ja että ääkköset toimivat (käytössä UTF-8 enkoodaus)
 
 ### Huomioitavaa
 
@@ -49,8 +49,7 @@ Lopulliset kaavataulukot sekä verkkosivulla, että kokelaan koneella näytetä�
  * Testisivu kaavojen luomiselle löytyy `content/test/testpage.html`. **Kokeile ensin muokata tähän sivuun ja sitten kopioi ja liitä lopullinen kaava
    haluttuun taulukkoon**
  * Lopulliset näytettävät tiedostot löytyvät `content/build` -kansion alta ja sen alaisia tiedostoja ei pidä muokata käsin.
- * Voit katsoa rakentamatonta sivua lataamalla selaimeen `content/index.html`-tiedoston. Ruotsinkielisen tiedoston
-   voit ladata lisäämällä URL:iin `?sv` eli näin: `file:///polku-omalla-levyllasi/content/index.html?sv`
+ * Voit katsoa rakentamatonta sivua lataamalla selaimeen `content/index.html`-tiedoston (lokaalin tiedoston avaavat oikein Firefox/Safari). Ruotsinkielisen tiedoston voit ladata lisäämällä URL:iin `?sv` eli näin: `file:///polku-omalla-levyllasi/content/index.html?sv`
 
 ## Videoiden lisääminen
 
