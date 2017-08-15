@@ -25,7 +25,12 @@ On selostettu tarkemmin [tässä dokumentissa](HTML.md). Katso se ensin muutoste
 1. Rakenna [testisivulle](content/test/testpage.html) uusi kaava, jonka haluaisit lisätä kokoelmaan
 2. Kopioi ja liitä se oikeaan taulukkoon paikassa `content/taulukot/tab-*<taulukon_nimi>.html`
 3. Älä vie versiohallintaan testisivua
-4. Tarkista, että rakenne on oikein ja että ääkköset toimivat (käytössä UTF-8 enkoodaus)
+4. Tarkista, että rakenne on oikein ja että ääkköset toimivat (käytössä oltava UTF-8 enkoodaus). Ongelma voi syntyä,
+jos tiedostot tallennetaan Windowsin oletus enkoodauksella. Esimerkiksi Unix-ympäristössä UTF-8 muutos tapahtuu seuraavalla tavalla
+```
+file tab-<aine>.html // antaa nykyisen enkoodauksen
+iconv -f ISO-8859-1 -t UTF-8 tab-<aine>.html > tab-math.html // korvaa nykyisen ISO-enkoodauksen UTF-8
+```
 
 ### Huomioitavaa
 
