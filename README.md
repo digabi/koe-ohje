@@ -70,8 +70,8 @@ Tuloksena on `output.webm`
 ## Lisenssi
 
 This work is double licensed under:
- * Creative Commons No Rights Reserved License ([CC0 1.0 Universal|https://creativecommons.org/publicdomain/zero/1.0/legalcode]), and
- * [The MIT License|https://opensource.org/licenses/MIT].
+ * Creative Commons No Rights Reserved License ([CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)), and
+ * [The MIT License](https://opensource.org/licenses/MIT).
 
 ## Kiitämme
 
