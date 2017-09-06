@@ -5,12 +5,13 @@
 		// Initialise ActiveTab navigation
 		var charmac_tabs = Object.create(ActiveTab);
 		charmac_tabs.classPrefix = 'charmac';
-		charmac_tabs.tabNames = ["spanish","french","german","other"];
+		charmac_tabs.tabNames = ["spanish","french","german","sami","other"];
 
 		charmac_tabs.activeTabInitialise = {
 			'spanish': function () { write_to_stdout('char_mac - spanish'); },
 			'french': function () { write_to_stdout('char_mac - french'); },
 			'german': function () { write_to_stdout('char_mac - german'); },
+			'sami': function () { write_to_stdout('char_mac - sami'); },
 			'other': function () { write_to_stdout('char_mac - other'); },
 		};
 		
@@ -30,6 +31,8 @@
 		<div id="french-sv" class="charmac-menu-option sv">franska</div>
 		<div id="german-fi" class="charmac-menu-option fi">saksa</div>
 		<div id="german-sv" class="charmac-menu-option sv">tyska</div>
+		<div id="sami-fi" class="charmac-menu-option fi">saame</div>
+		<div id="sami-sv" class="charmac-menu-option sv">samiska</div>
 		<div id="other-fi" class="charmac-menu-option fi">muita merkkejä</div>
 		<div id="other-sv" class="charmac-menu-option sv">&ouml;vriga bokst&auml;ver</div>
 	</div>
@@ -568,6 +571,91 @@
 				<td>+</td>
 				<td><img src="../common/pictures/s.gif" alt="S"/></td>
 				</tr>
+			</tr>
+		</table>
+	</div>
+
+	<div id="charmac-sami" class="charmac-content">
+		<p class="note fi">Käytä saamen kirjoittamiseen pohjoissaamen näppäimistöä. Tarvittaessa voit kopioida merkkejä alta.</p>
+		<p class="note sv">För att skriva samiska, använd tangentbordet för nordsamiska. Vid behov, kopiera beteckningar nedan.</p>
+		<table>
+			<tr>
+				<td class="firstcolumn"><div class="special-key">&aacute;</div></td>
+				<td><div class="special-key">&Aacute;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&scaron;</div></td>
+				<td><div class="special-key">&Scaron;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&#x167;</div></td>
+				<td><div class="special-key">&#x166;</div></td>
+			</tr>
+			<tr>
+				<td class="firstcolumn"><div class="special-key">&iuml;</div></td>
+				<td><div class="special-key">&Iuml;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&otilde;</div></td>
+				<td><div class="special-key">&Otilde;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&#x14B;</div></td>
+				<td><div class="special-key">&#x14A;</div></td>
+			</tr>
+			<tr>
+				<td class="firstcolumn"><div class="special-key">&acirc;</div></td>
+				<td><div class="special-key">&Acirc;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&#x1E7;</div></td>
+				<td><div class="special-key">&#x1E6;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&#x1E5;</div></td>
+				<td><div class="special-key">&#x1E4;</div></td>
+			</tr>
+			<tr>
+				<td class="firstcolumn"><div class="special-key">&#x1E9;</div></td>
+				<td><div class="special-key">&#x1E8;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&oslash;</div></td>
+				<td><div class="special-key">&Oslash;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&aelig;</div></td>
+				<td><div class="special-key">&AElig;</div></td>
+			</tr>
+			<tr>
+				<td class="firstcolumn"><div class="special-key">&#x111;</div></td>
+				<td><div class="special-key">&#x110;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&#x17E;</div></td>
+				<td><div class="special-key">&#x17D;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&#x1EF;</div></td>
+				<td><div class="special-key">&#x1EE;</div></td>
+			</tr>
+			<tr>
+				<td class="firstcolumn"><div class="special-key">&#x292;</div></td>
+				<td><div class="special-key">&#x1B7;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&#x10D;</div></td>
+				<td><div class="special-key">&#x10C;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&#x1E9;</div></td>
+				<td><div class="special-key">&#x1E8;</div></td>
+			</tr>
+			<tr>
+				<td class="firstcolumn"><div class="special-key">&thorn;</div></td>
+				<td><div class="special-key">&THORN;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&ccedil;</div></td>
+				<td><div class="special-key">&Ccedil;</div></td>
+				<td>&nbsp;</td>
+				<td><div class="special-key">&eth;</div></td>
+				<td><div class="special-key">&ETH;</div></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="firstcolumn"><div class="special-key">&micro;</div></td>
+				<td><div class="special-key">&fnof;</div></td>
+				<td><div class="special-key">&#x294;</div></td>
+				<td><div class="special-key">&szlig;</div></td>
 			</tr>
 		</table>
 	</div>
