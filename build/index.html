@@ -103,7 +103,6 @@
 
 		// Lazy load tables
 		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix) {
-			console.log('changePageTo: '+subject+' language: '+currentLanguage);
 			if ($("#tab-" + subject).children().length === 0) {
 				$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
 				$("#tab-" + subject).load("tab-" + subject + ".html", function () {
