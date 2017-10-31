@@ -12,7 +12,7 @@
 		// Initialise ActiveTab navigation
 		var main_tabs = Object.create(ActiveTab);
 		main_tabs.classPrefix = 'tab';
-		main_tabs.tabNames = ["menu_fi", "menu_sv"];
+		main_tabs.tabNames = ["menu_common"];
 		
 		main_tabs.activateTabs();
 	});
@@ -21,24 +21,15 @@
 <body>
 <div id="tab-container">
 	<div id="tab-menu">
-		<div id="menu_fi-somelang" class="tab-menu-option tab-menu-option-active">Suomeksi</div>
-		<div id="menu_sv-somelang" class="tab-menu-option">På svenska</div>
+		<div id="menu_common" class="tab-menu-option tab-menu-option-active">ABITTI-TUKIMATERIAALI / ABITTI-STÖDMATERIAL</div>
 	</div>
 
-    <div id="tab-menu_fi" class="tab-content active">
-		<h1>Abitti-tukimateriaali suomeksi</h1>
-		<table>
-			<tr><td><a href="content/build/index.html?fi">Abitin taulukkoaineisto</a></td></tr>
-			<tr><td><a href="content/index.html?fi">Abitin apusivut</a></td></tr>
-		</table>
-    </div>
-
-    <div id="tab-menu_sv" class="tab-content">
-		<h1>Abitti-stödmaterial på svenska</h1>
-		<table>
-			<tr><td><a href="content/build/index.html?sv">Abitti tabeller</a></td></tr>
-			<tr><td><a href="content/index.html?sv">Abitti hjälpsidor</a></td></tr>
-		</table>
+    <div id="tab-menu_common" class="tab-content active">
+		<h1>Valitse kieli / Välja språk</h1>
+		<ul>
+			<li><a href="content/build/index.html?fi">Abitin tukimateriaali suomeksi</a></li>
+			<li><a href="content/build/index.html?sv">Abitti-stödmaterial på svenska</a></li>
+		</ul>
     </div>
 </div>
 </body>
