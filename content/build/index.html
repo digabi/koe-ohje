@@ -50,9 +50,9 @@
 			}
 		}
 
-		function set_video_url(language) {
+		function set_video_url(language, prefix) {
 			$(".helpvideo").each(function () {
-				var src = language + "/" + $(this).attr('data-src');
+				var src = prefix + language + "/" + $(this).attr('data-src');
 				$(this).attr('src', src);
 			});
 		}
@@ -84,10 +84,10 @@
 		}
 
 		function loseScandics(s) {
-			if(!loseScandics.translate_re) loseScandics.translate_re = /[öäüÖÄÜ]/g;
+			if(!loseScandics.translate_re) loseScandics.translate_re = /[öäüåÖÄÜÅ]/g;
 			var translate = {
-				"ä": "a", "ö": "o", "ü": "u",
-				"Ä": "A", "Ö": "O", "Ü": "U"
+				"ä": "a", "ö": "o", "ü": "u", "å": "a",
+				"Ä": "A", "Ö": "O", "Ü": "U", "Å": "A"
 			};
 			return ( s.replace(loseScandics.translate_re, function(match) {
 				return translate[match];
@@ -102,12 +102,17 @@
 		}
 
 		// Lazy load tables
-		function changePageTo(subject, currentLanguage) {
+		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix) {
+			console.log('changePageTo: '+subject+' language: '+currentLanguage);
 			if ($("#tab-" + subject).children().length === 0) {
-				$("#tab-physics").empty()
-				$("#tab-chemistry").empty()
-				$("#tab-math").empty()
-				$("#tab-" + subject).load("tab-" + subject + ".html", function () { set_language(currentLanguage); initializeTocBot(currentLanguage) })
+				$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
+				$("#tab-" + subject).load("tab-" + subject + ".html", function () {
+					set_language(currentLanguage);
+					if (videoPrefix != undefined) {
+						set_video_url(currentLanguage, videoPrefix);
+					}
+					initializeTocBot(currentLanguage);
+				});
 			}
 		}
 
@@ -128,22 +133,30 @@
 			// Set current language accoring to various suggestions
 			var request = window.location.href;
 			var lang = getLangUrlParam();
-			var defaultPage = 'math'
-
-			// Default init
-			changePageTo(defaultPage, lang)
+			var defaultPage = 'abitti'
+			var videoURLPrefix = '../';
 
 			// Initialise ActiveTab navigation
 			var main_tabs = Object.create(ActiveTab);
 			main_tabs.classPrefix = 'tab';
-			main_tabs.tabNames = ["math", "physics", "chemistry", "help"];
+			main_tabs.tabNames = ["abitti", "math", "physics", "chemistry", "spanish", "french", "german", "sami"];
+
+			// Default init
+			changePageTo(defaultPage, lang, main_tabs.tabNames, videoURLPrefix);
 
 			// Execute special initialisation when "tables" tab is activated
 			main_tabs.activeTabInitialise = {
-				'math': function () { write_to_stdout('math'); changePageTo("math", lang); setSameHeights(); },
-				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang); setSameHeights(); },
-				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang); setSameHeights(); },
-				'help': function () { write_to_stdout('tables_to_help'); window.location = '../index.html?' + lang; }
+				'abitti': function () { write_to_stdout('abitti'); changePageTo("abitti", lang, main_tabs.tabNames, videoURLPrefix); },
+				
+				'math': function () { write_to_stdout('math'); changePageTo("math", lang, main_tabs.tabNames); setSameHeights(); },
+				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang, main_tabs.tabNames); setSameHeights(); },
+				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang, main_tabs.tabNames); setSameHeights(); },
+				
+				'spanish': function () { write_to_stdout('spanish'); changePageTo("spanish", lang, main_tabs.tabNames); },
+				'french': function () { write_to_stdout('french'); changePageTo("french", lang, main_tabs.tabNames); },
+				'german': function () { write_to_stdout('german'); changePageTo("german", lang, main_tabs.tabNames); },
+				'sami': function () { write_to_stdout('sami'); changePageTo("sami", lang, main_tabs.tabNames); }
+				
 			};
 			main_tabs.activateTabs();
 			listenSVGEvent()
@@ -155,26 +168,43 @@
 
 	<div id="tab-container">
 		<div id="tab-menu">
-			<a id="math-fi" class="tab-menu-option fi tab-menu-option-active">Matematiikka</a>
-			<a id="math-sv" class="tab-menu-option sv tab-menu-option-active">Matematik</a>
+			<a id="spanish-fi" class="tab-menu-option fi">Espanja</a>
 			<a id="physics-fi" class="tab-menu-option fi">Fysiikka</a>
-			<a id="physics-sv" class="tab-menu-option sv">Fysik</a>
 			<a id="chemistry-fi" class="tab-menu-option fi">Kemia</a>
+			<a id="math-fi" class="tab-menu-option fi">Matematiikka</a>
+			<a id="french-fi" class="tab-menu-option fi">Ranska</a>
+			<a id="sami-fi" class="tab-menu-option fi">Saame</a>
+			<a id="german-fi" class="tab-menu-option fi">Saksa</a>
+			<a id="abitti-fi" class="tab-menu-option fi tab-menu-option-active">Yleisohjeet</a>
+
+			<a id="french-sv" class="tab-menu-option sv">Franska</a>
+			<a id="physics-sv" class="tab-menu-option sv">Fysik</a>
 			<a id="chemistry-sv" class="tab-menu-option sv">Kemi</a>
-			<a id="help-fi" class="tab-menu-option fi">Apua</a>
-			<a id="help-sv" class="tab-menu-option sv">Hjälp</a>
+			<a id="math-sv" class="tab-menu-option sv">Matematik</a>
+			<a id="sami-sv" class="tab-menu-option sv">Samiska</a>
+			<a id="spanish-sv" class="tab-menu-option sv">Spanska</a>
+			<a id="german-sv" class="tab-menu-option sv">Tyska</a>
+			<a id="abitti-sv" class="tab-menu-option sv tab-menu-option-active">Övrigt</a>
 		</div>
 
 		<div class="tab-view">
 			<div class="js-toc"></div>
 			<div class="js-toc-content">
-				<div id="tab-math" class="tab-content active">
+				<div id="tab-abitti" class="tab-content active">
+				</div>
+				<div id="tab-math" class="tab-content">
 				</div>
 				<div id="tab-physics" class="tab-content">
 				</div>
 				<div id="tab-chemistry" class="tab-content">
 				</div>
-				<div id="tab-help" class="tab-content">
+				<div id="tab-spanish" class="tab-content">
+				</div>
+				<div id="tab-french" class="tab-content">
+				</div>
+				<div id="tab-german" class="tab-content">
+				</div>
+				<div id="tab-sami" class="tab-content">
 				</div>
 			</div>
 		</div>
@@ -187,6 +217,7 @@
 	</div>
 	<script type="text/javascript" src="../../common/js/tocbot.min.js"></script>
 	<script async="" type="text/javascript" src="../../common/js/sameHeights.js"></script>
+
 
 
 </body></html>
