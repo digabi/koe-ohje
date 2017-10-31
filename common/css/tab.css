@@ -274,7 +274,8 @@ h3 {
 	z-index: 100;
 	background-color: white;
 }
-#copying_box {
+
+.copying-box {
 	display: none;
 	width: 100%;
 	top: 0;
@@ -284,7 +285,7 @@ h3 {
 	z-index: 99;
 }
 
-#copy-text {
+.copy-text {
 	font-family: Arial,  Verdana, Helvetica, sans-serif;
 	font-size: 1.1em;
 	margin: 8px;

@@ -25,6 +25,9 @@
 				// This is executed inside digabi-koe-browser.py
 				$(".special-key").click(function () {
 					sharedclass.copy_text_to_clipboard($(this).text());
+					setTimeout(function () {
+						$("#copying_box_kbd").show().fadeOut(3000)
+					}, 350);
 				});
 			}
 			else {
@@ -33,6 +36,9 @@
 					clipboard.copy($(this).text()).then(
 						function () {
 							console.log("Copied to clipboard!");
+							setTimeout(function () {
+								$("#copying_box_kbd").show().fadeOut(3000)
+							}, 350);
 						},
 						function (err) {
 							alert("Copying to clipboard is not supported on your browser.");
@@ -113,6 +119,7 @@
 					if (videoPrefix != undefined) {
 						set_video_url(currentLanguage, videoPrefix);
 					}
+					activate_copy_to_clipboard();
 					initializeTocBot(currentLanguage);
 				});
 			}
@@ -214,8 +221,11 @@
 	<div id="loading">
 		<div id="loading-text"><span class="fi">Ladataan...</span><span class="sv">Laddas...</span></div>
 	</div>
-	<div id="copying_box">
-		<div id="copy-text"><span class="fi">Kaava kopioitu leikepöydälle.</span><span class="sv">Copied...</span></div>
+	<div id="copying_box" class="copying-box">
+		<div id="copy-text" class="copy-text"><span class="fi">Kaava kopioitu leikepöydälle.</span><span class="sv">Copied...</span></div>
+	</div>
+	<div id="copying_box_kbd" class="copying-box">
+		<div id="copy-text-kbd" class="copy-text"><span class="fi">Merkki kopioitu leikepöydälle.</span><span class="sv">Copied...</span></div>
 	</div>
 	<script type="text/javascript" src="../common/js/tocbot.min.js"></script>
 	<script async type="text/javascript" src="../common/js/sameHeights.js"></script>
