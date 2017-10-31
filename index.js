@@ -1,8 +1,8 @@
 const fs = require("fs-extra")
 const { formatLatex, replaceInPath } = require("./common")
 
-const contentPath = "./content/taulukot/"
-const buildPath = "./content/build/"
+const contentPath = "./content/"
+const buildPath = "./build/"
 
 const indexHtml = "index.html"
 

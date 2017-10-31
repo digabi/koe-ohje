@@ -4,17 +4,22 @@
 <head>
 	<meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8" />
 	<meta charset="UTF-8">
-	<title>Abitti-apua / Abitti-hjälp</title>
+	<title>Abitti-taulukot / Abitti-tabeller</title>
 	<link rel="stylesheet" href="../common/css/tab.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../common/css/tocbot.css" type="text/css" />
 	<script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
 	<script type="text/javascript" src="../common/clipboard.min.js"></script>
 	<script type="text/javascript" src="../common/js/activetab.js"></script>
+	<script type="text/javascript" src="../common/js/sameHeights.js"></script>
+	<script type="text/javascript" src="../common/js/copyLogic.js"></script>
+	<script type="text/javascript" src="../common/js/tableOfContents.js"></script>
 	<script type="text/javascript">
 		// Handles for subpage initialisation functions
 		var subpage_init = {};
 
 		function activate_copy_to_clipboard() {
-			$(".special-key").unbind("click")
+			$(".special-key").unbind("click");
+
 			// Activate Digabi-specific copy feature
 			if (typeof (sharedclass) == 'object') {
 				// This is executed inside digabi-koe-browser.py
@@ -48,20 +53,20 @@
 			}
 		}
 
-		function set_video_url(language) {
+		function set_video_url(language, prefix) {
 			$(".helpvideo").each(function () {
-				var src = language + "/" + $(this).attr('data-src');
+				var src = prefix + language + "/" + $(this).attr('data-src');
 				$(this).attr('src', src);
 			});
 		}
 
 		function set_language(language) {
-			if (language.toLowerCase() == "fi") {
+			if (language === "fi") {
 				console.log("Language set to Finnish");
-				$(".fi").css("display", "t");
+				$(".fi").css("display", "");
 				$(".sv").css("display", "none");
 			}
-			else if (language.toLowerCase() == "sv") {
+			else if (language === "sv") {
 				console.log("Language set to Swedish");
 				$(".fi").css("display", "none");
 				$(".sv").css("display", "");
@@ -81,56 +86,84 @@
 			}
 		}
 
+		function loseScandics(s) {
+			if(!loseScandics.translate_re) loseScandics.translate_re = /[öäüåÖÄÜÅ]/g;
+			var translate = {
+				"ä": "a", "ö": "o", "ü": "u", "å": "a",
+				"Ä": "A", "Ö": "O", "Ü": "U", "Å": "A"
+			};
+			return ( s.replace(loseScandics.translate_re, function(match) {
+				return translate[match];
+			}) );
+		}
+
+		function formAutomaticIDs(text) {
+			return loseScandics(text)
+					   .trim()
+					   .toLowerCase()
+					   .replace(/\s/g, '-')
+		}
+
 		// Lazy load tables
-		function changePageTo(subject, currentLanguage) {
-			var tab = "tab-" + subject
-			if ($(tab).children().length === 0) {
-				$("#" + tab).load(tab + ".html", function () {
-					set_language(currentLanguage)
-					init_subpage(tab)
-					set_video_url(currentLanguage)
-					activate_copy_to_clipboard()
-				})
+		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix) {
+			console.log('changePageTo: '+subject+' language: '+currentLanguage);
+			if ($("#tab-" + subject).children().length === 0) {
+				$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
+				$("#tab-" + subject).load("tab-" + subject + ".html", function () {
+					set_language(currentLanguage);
+					if (videoPrefix != undefined) {
+						set_video_url(currentLanguage, videoPrefix);
+					}
+					initializeTocBot(currentLanguage);
+				});
 			}
 		}
 
+		function getLangUrlParam() {
+			var param = window.location.search.substring(1).slice(0, 2);
+			var path = window.location.pathname;
+			var langs = ["fi", "sv"];
+			for (var i = 0; i < langs.length; i++) {
+				var lang = langs[i];
+				if (lang === param || (path.indexOf("index-" + lang) > -1)) {
+					return lang;
+				}
+			}
+			return "fi";
+		}
+
 		$(document).ready(function () {
-
-			// Set current language according to various suggestions
+			// Set current language accoring to various suggestions
 			var request = window.location.href;
-			var lang = "fi";
-			var defaultPage = "shortcut";
-
-			if (request.lastIndexOf('?') > -1) {
-				var param = request.slice(request.lastIndexOf('?') + 1);
-				lang = param.toLowerCase();
-			}
-
-			if (request.indexOf('index-fi') > -1) {
-				lang = 'fi';
-			}
-			if (request.indexOf('index-sv') > -1) {
-				lang = 'sv';
-			}
-
-			changePageTo(defaultPage, lang);
+			var lang = getLangUrlParam();
+			var defaultPage = 'abitti'
+			var videoURLPrefix = '../common/videos/';
 
 			// Initialise ActiveTab navigation
 			var main_tabs = Object.create(ActiveTab);
 			main_tabs.classPrefix = 'tab';
-			main_tabs.tabNames = ["shortcut", "char_pc", "char_mac", "videos", "tables"];
+			main_tabs.tabNames = ["abitti", "math", "physics", "chemistry", "spanish", "french", "german", "sami"];
+
+			// Default init
+			changePageTo(defaultPage, lang, main_tabs.tabNames, videoURLPrefix);
 
 			// Execute special initialisation when "tables" tab is activated
 			main_tabs.activeTabInitialise = {
-				'shortcut': function () { write_to_stdout('shortcut'); changePageTo("shortcut", lang); },
-				'char_pc': function () { write_to_stdout('char_pc'); changePageTo("char_pc", lang); },
-				'char_mac': function () { write_to_stdout('char_mac'); changePageTo("char_mac", lang); },
-				'videos': function () { write_to_stdout('videos'); changePageTo("videos", lang); set_video_url(lang); },
-				'tables': function () { write_to_stdout('help_to_tables'); window.location = './build/index.html?' + lang; },
+				'abitti': function () { write_to_stdout('abitti'); changePageTo("abitti", lang, main_tabs.tabNames, videoURLPrefix); },
+				
+				'math': function () { write_to_stdout('math'); changePageTo("math", lang, main_tabs.tabNames); setSameHeights(); },
+				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang, main_tabs.tabNames); setSameHeights(); },
+				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang, main_tabs.tabNames); setSameHeights(); },
+				
+				'spanish': function () { write_to_stdout('spanish'); changePageTo("spanish", lang, main_tabs.tabNames); },
+				'french': function () { write_to_stdout('french'); changePageTo("french", lang, main_tabs.tabNames); },
+				'german': function () { write_to_stdout('german'); changePageTo("german", lang, main_tabs.tabNames); },
+				'sami': function () { write_to_stdout('sami'); changePageTo("sami", lang, main_tabs.tabNames); }
+				
 			};
 			main_tabs.activateTabs();
+			listenSVGEvent()
 		});
-
 	</script>
 </head>
 
@@ -138,36 +171,54 @@
 
 	<div id="tab-container">
 		<div id="tab-menu">
-			<div id="shortcut-fi" class="tab-menu-option fi tab-menu-option-active">Pikan&auml;pp&auml;imet</div>
-			<div id="shortcut-sv" class="tab-menu-option sv tab-menu-option-active">Snabbtangenter</div>
-			<div id="char_pc-fi" class="tab-menu-option fi">Erikoismerkit PC:ll&auml;</div>
-			<div id="char_pc-sv" class="tab-menu-option sv">Specialtecken p&aring; PC</div>
-			<div id="char_mac-fi" class="tab-menu-option fi">Erikoismerkit Mac:ll&auml;</div>
-			<div id="char_mac-sv" class="tab-menu-option sv">Specialtecken p&aring; Mac</div>
-			<div id="videos-fi" class="tab-menu-option fi">Ohjevideot</div>
-			<div id="videos-sv" class="tab-menu-option sv">Hj&auml;lpvideor</div>
-			<div id="tables-fi" class="tab-menu-option fi">Taulukoita</div>
- 			<div id="tables-sv" class="tab-menu-option sv">Tabeller</div>
+			<a id="spanish-fi" class="tab-menu-option fi">Espanja</a>
+			<a id="physics-fi" class="tab-menu-option fi">Fysiikka</a>
+			<a id="chemistry-fi" class="tab-menu-option fi">Kemia</a>
+			<a id="math-fi" class="tab-menu-option fi">Matematiikka</a>
+			<a id="french-fi" class="tab-menu-option fi">Ranska</a>
+			<a id="sami-fi" class="tab-menu-option fi">Saame</a>
+			<a id="german-fi" class="tab-menu-option fi">Saksa</a>
+			<a id="abitti-fi" class="tab-menu-option fi tab-menu-option-active">Yleisohjeet</a>
+
+			<a id="french-sv" class="tab-menu-option sv">Franska</a>
+			<a id="physics-sv" class="tab-menu-option sv">Fysik</a>
+			<a id="chemistry-sv" class="tab-menu-option sv">Kemi</a>
+			<a id="math-sv" class="tab-menu-option sv">Matematik</a>
+			<a id="sami-sv" class="tab-menu-option sv">Samiska</a>
+			<a id="spanish-sv" class="tab-menu-option sv">Spanska</a>
+			<a id="german-sv" class="tab-menu-option sv">Tyska</a>
+			<a id="abitti-sv" class="tab-menu-option sv tab-menu-option-active">Övrigt</a>
 		</div>
 
-		<div id="tab-shortcut" class="tab-content active">
-		</div>
-		<div id="tab-char_pc" class="tab-content">
-		</div>
-		<div id="tab-char_mac" class="tab-content">
-		</div>
-		<div id="tab-videos" class="tab-content">
+		<div class="tab-view">
+			<div class="js-toc"></div>
+			<div class="js-toc-content">
+				<div id="tab-abitti" class="tab-content active">
+				</div>
+				<div id="tab-math" class="tab-content">
+				</div>
+				<div id="tab-physics" class="tab-content">
+				</div>
+				<div id="tab-chemistry" class="tab-content">
+				</div>
+				<div id="tab-spanish" class="tab-content">
+				</div>
+				<div id="tab-french" class="tab-content">
+				</div>
+				<div id="tab-german" class="tab-content">
+				</div>
+				<div id="tab-sami" class="tab-content">
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="loading">
 		<div id="loading-text"><span class="fi">Ladataan...</span><span class="sv">Laddas...</span></div>
 	</div>
 	<div id="copying_box">
-		<div id="copy-text">
-                    <span class="fi">Kaava kopioitu leikepöydälle.</span>
-                    <span class="sv">Formeln har kopierats till urklippet.</span>
-                </div>
+		<div id="copy-text"><span class="fi">Kaava kopioitu leikepöydälle.</span><span class="sv">Copied...</span></div>
 	</div>
+	<script type="text/javascript" src="../common/js/tocbot.min.js"></script>
 	<script async type="text/javascript" src="../common/js/sameHeights.js"></script>
 </body>
 
