@@ -2,19 +2,17 @@
 
 Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle WebKit-selaimella (ks. `digabi-koe-browser.py`).
 
-## Kaavakokoelma ja taulukot
-
-Osoitteesta [https://tables.abitti.fi/content/build](https://tables.abitti.fi/content/build) löytyy kaavakokoelma ja taulukot.
+Ohje löytyy verkosta ssoitteesta [https://cheat.abitti.fi/](https://cheat.abitti.fi/).
 
 ## Ohjeet muutosten ehdottamiseen
 
-YTL ottaa vastaan muutosehdotuksia erityisesti kaavakokoelmaan. Muutosehdotukset on tehtävä pull requestina:
+YTL ottaa vastaan muutosehdotuksia. Muutosehdotukset on tehtävä pull requestina:
 
  1. Tee tästä koodihakemistosta oma kopiosi (fork): (https://help.github.com/articles/fork-a-repo/)
  2. Tee muutokset omaan koodihakemistoosi ([clone](https://help.github.com/articles/cloning-a-repository/), [commit](https://github.com/abhikp/git-test/wiki/Committing-changes), [push](https://help.github.com/articles/pushing-to-a-remote/)): esim. [https://guides.github.com/activities/hello-world/](https://guides.github.com/activities/hello-world/)
  3. Lähetä muokkausehdotus (pull request): (https://help.github.com/articles/creating-a-pull-request/)
 
-Muutosehdotuksien tekijöiden on hyvä huomata, että kaavakokoelma on kaksikielinen.
+Muutosehdotuksien tekijöiden on hyvä huomata, että ohje on kaksikielinen.
 
 ## HTML-struktuuri
 
@@ -22,7 +20,7 @@ On selostettu tarkemmin [tässä dokumentissa](HTML.md). Katso se ensin muutoste
 
 ## Muutosten tekemisen työnkulku
 
-1. Rakenna [testisivulle](content/test/testpage.html) uusi kaava, jonka haluaisit lisätä kokoelmaan
+1. Rakenna [testisivulle](content/test/testpage.html) esimerkiksi uusi kaava, jonka haluaisit lisätä kokoelmaan
 2. Kopioi ja liitä se oikeaan taulukkoon paikassa `content/taulukot/tab-*<taulukon_nimi>.html`
 3. Älä vie versiohallintaan testisivua
 4. Tarkista, että rakenne on oikein ja että ääkköset toimivat (käytössä oltava UTF-8 enkoodaus). Ongelma voi syntyä,
