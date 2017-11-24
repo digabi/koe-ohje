@@ -15,7 +15,7 @@ elif [ "${IS_SV}" != "" ]; then
 	DOC_LANG=sv
 	TITLE=Hjälp
 
-	if [ ! -f /usr/share/digabi-koe-ohje/content/index-${DOC_LANG}.html ]; then
+	if [ ! -f /usr/share/digabi-koe-ohje/build/index-${DOC_LANG}.html ]; then
 		echo "Oops, Swedish documentation is missing"
 		DOC_LANG=fi
 		TITLE=Apua
@@ -28,4 +28,4 @@ fi
 pkill -TERM -f "/usr/bin/digabi-koe-browser"
 
 # Start browser
-/usr/bin/digabi-koe-browser -t "${TITLE}" -W 1045 -H 600 -x 30 -y 30 file:///usr/share/digabi-koe-ohje/content/index-${DOC_LANG}.html &
+/usr/bin/digabi-koe-browser -t "${TITLE}" -W 1045 -H 600 -x 30 -y 30 file:///usr/share/digabi-koe-ohje/build/index-${DOC_LANG}.html &

@@ -4,7 +4,7 @@ all:
 
 update-clipboardjs:
 	wget -O common/clipboard.min.js https://raw.githubusercontent.com/lgarron/clipboard.js/master/clipboard.min.js
-	
+
 install:
 	install -D -m 0755 digabi-koe-ohje.sh $(DESTDIR)/usr/bin/$(APPNAME)
 	install -D -m 0755 digabi-koe-browser.py $(DESTDIR)/usr/bin/digabi-koe-browser
@@ -16,11 +16,11 @@ install:
 	cp -r common $(DESTDIR)/usr/share/${APPNAME}/
 
 	# Common content to Finnish/Swedish documentation
-	cp -r content/ $(DESTDIR)/usr/share/$(APPNAME)/
-	
+	cp -r build/ $(DESTDIR)/usr/share/$(APPNAME)/
+
 	# Finnish/Swedish frontpage
-	cp content/index.html $(DESTDIR)/usr/share/$(APPNAME)/content/index-fi.html
-	cp content/index.html $(DESTDIR)/usr/share/$(APPNAME)/content/index-sv.html
+	cp build/index.html $(DESTDIR)/usr/share/$(APPNAME)/build/index-fi.html
+	cp build/index.html $(DESTDIR)/usr/share/$(APPNAME)/build/index-sv.html
 
 	# Set perms
 	find $(DESTDIR)/usr/share/$(APPNAME) -type f -exec chmod 644 {} \;
