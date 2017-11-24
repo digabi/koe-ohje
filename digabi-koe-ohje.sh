@@ -28,4 +28,4 @@ fi
 pkill -TERM -f "/usr/bin/digabi-koe-browser"
 
 # Start browser
-/usr/bin/digabi-koe-browser -t "${TITLE}" -W 800 -H 500 -x 30 -y 30 file:///usr/share/digabi-koe-ohje/content/index-${DOC_LANG}.html &
+/usr/bin/digabi-koe-browser -t "${TITLE}" -W 1045 -H 600 -x 30 -y 30 file:///usr/share/digabi-koe-ohje/content/index-${DOC_LANG}.html &
