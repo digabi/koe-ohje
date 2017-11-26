@@ -86,6 +86,14 @@ button{
 	padding-bottom: 10px;
 }
 
+.tab-menu-opennavi {
+	display: inline;
+    margin: 0.5em 0.5em 0 0.5em;
+    float: left;
+    cursor: pointer;
+	font-size: 0.9em;
+}
+
 .tab-content{
     background: #efefef;
     background: #fff;
@@ -120,6 +128,7 @@ button{
 	font-size: 20px;
 	border-right: 2px solid gray;
 	overflow-y: scroll;
+	background: white;
 }
 
 .js-toc-content {
@@ -297,10 +306,16 @@ h3 {
 	Mobile layouts
 */
 
+@media screen and (min-width: 1025px) {
+	.tab-menu-opennavi {
+		display: none;
+	}
+}
+
 @media screen and (max-width: 1024px) {
 
-	.js-toc {
-		display: none;
+	.tab-menu-opennavi {
+		display:block;
 	}
 
 	.js-toc-content {

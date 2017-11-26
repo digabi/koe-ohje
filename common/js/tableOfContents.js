@@ -20,4 +20,31 @@ function initializeTocBot(language) {
         positionFixedSelector: '.js-toc',
         fixedSidebarOffset: 'auto'
     })
+
+    // Toggle toc menu (#menu button is show on narrow displays)
+    $("#menu").off("click");
+    $("#menu").click(function() {
+      $(".js-toc").toggle("fast", function () {
+        $(".toc-link").click(function() {
+          $(".js-toc").hide("fast");
+        });
+      });
+    });
+
+    // Always show on wide displays
+    $(window).resize(function () {
+      showTocBasedOnWidth();
+    });
+
+    showTocBasedOnWidth();
+}
+
+function showTocBasedOnWidth () {
+  if ($(window).width()>1024) {
+    $(".js-toc").show();
+    $(".toc-link").off("click");
+  }
+  else {
+    $(".js-toc").hide();
+  }
 }

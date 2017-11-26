@@ -156,16 +156,16 @@
 			// Execute special initialisation when "tables" tab is activated
 			main_tabs.activeTabInitialise = {
 				'abitti': function () { write_to_stdout('abitti'); changePageTo("abitti", lang, main_tabs.tabNames, videoURLPrefix); },
-				
+
 				'math': function () { write_to_stdout('math'); changePageTo("math", lang, main_tabs.tabNames); setSameHeights(); },
 				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang, main_tabs.tabNames); setSameHeights(); },
 				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang, main_tabs.tabNames); setSameHeights(); },
-				
+
 				'spanish': function () { write_to_stdout('spanish'); changePageTo("spanish", lang, main_tabs.tabNames); },
 				'french': function () { write_to_stdout('french'); changePageTo("french", lang, main_tabs.tabNames); },
 				'german': function () { write_to_stdout('german'); changePageTo("german", lang, main_tabs.tabNames); },
 				'sami': function () { write_to_stdout('sami'); changePageTo("sami", lang, main_tabs.tabNames); }
-				
+
 			};
 			main_tabs.activateTabs();
 			listenSVGEvent()
@@ -177,6 +177,8 @@
 
 	<div id="tab-container">
 		<div id="tab-menu">
+			<a id="menu" class="tab-menu-opennavi">M</a>
+
 			<a id="spanish-fi" class="tab-menu-option fi">Espanja</a>
 			<a id="physics-fi" class="tab-menu-option fi">Fysiikka</a>
 			<a id="chemistry-fi" class="tab-menu-option fi">Kemia</a>
