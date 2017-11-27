@@ -18,6 +18,7 @@ table{
 	font-weight: 500;
 	color: #000000;
 	text-align: left;
+	margin-right:20px;
 }
 .clear{
     clear: both;
@@ -101,6 +102,7 @@ button{
     display: none;
     padding: 30px 0 200px 0;
 	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .tab-view {
@@ -329,7 +331,6 @@ h3 {
 
 	.js-toc-content {
 		position: static;
-		margin-left: 20px;
 	}
 
 	.tab-view {
@@ -344,6 +345,7 @@ h3 {
 }
 
 @media screen and (max-width: 600px) {
+
 	.formulae th, td {
 		margin: .5em 1em;
 		border: 1px solid #c8c8c8;
