@@ -42,9 +42,11 @@ function initializeTocBot(language) {
 function showTocBasedOnWidth () {
   if ($(window).width()>1024) {
     $(".js-toc").show();
+    $(".js-toc").css('top', $("#tab-menu").height());
     $(".toc-link").off("click");
   }
   else {
     $(".js-toc").hide();
+    $(".js-toc").css('top', $("#tab-menu").height());
   }
 }

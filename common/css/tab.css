@@ -61,7 +61,7 @@ button{
     padding: 0;
 	display: block;
     float: left;
-    position: relative;
+    position: fixed;
 	text-transform: uppercase;
     background: #359BB7;
     color: #FFFFFF;
@@ -119,9 +119,9 @@ button{
 
 .js-toc {
 	left: 0;
+	top: 0;
 	bottom: 0;
 	position: absolute;
-	top: 36px;
 	width: 300px;
 	display: block;
 	padding-top: 20px;
@@ -129,6 +129,7 @@ button{
 	border-right: 2px solid gray;
 	overflow-y: scroll;
 	background: white;
+	z-index: 9;
 }
 
 .js-toc-content {
