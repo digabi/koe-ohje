@@ -64,18 +64,21 @@ Tutki ensin uuden videotiedoston äänenvoimakkuus:
 
 Nyt haluat lisätä äänenvoimakkuutta 9.8 dB (ks. edellinen `max_volume` ja skaalata videon 640px leveyteen:
 
-`ffmpeg -i "/home/user/input_video.mpg" -codec:v libvpx -quality good -cpu-used 0 -b:v 600k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1000k -threads 2 -vf scale=640:-1 -af "volume=9.8dB" -an -pass 1 -f webm /dev/null`
-`ffmpeg -i "/home/user/input_video.mpg" -codec:v libvpx -quality good -cpu-used 0 -b:v 600k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1000k -threads 2 -vf scale=640:-1 -af "volume=9.8dB" -codec:a libvorbis -b:a 128k -pass 2 -f webm output.webm`
+```
+ffmpeg -i "/home/user/input_video.mpg" -codec:v libvpx -quality good -cpu-used 0 -b:v 600k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1000k -threads 2 -vf scale=640:-1 -af "volume=9.8dB" -an -pass 1 -f webm /dev/null`
+ffmpeg -i "/home/user/input_video.mpg" -codec:v libvpx -quality good -cpu-used 0 -b:v 600k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1000k -threads 2 -vf scale=640:-1 -af "volume=9.8dB" -codec:a libvorbis -b:a 128k -pass 2 -f webm output.webm
+```
 
 Tuloksena on `output.webm`
 
 ## Lisenssi
 
 This work is double licensed under:
- * Creative Commons No Rights Reserved License ([CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)), and
+ * Creative Commons No Rights Reserved License ([CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)) (except the FontAwesome `common/css/fa` which is licensed under the MIT License), and
  * [The MIT License](https://opensource.org/licenses/MIT).
 
 ## Kiitämme
 
  * Peter Ahlroos: Videot
  * Riitta Salmenoja: Mekaniikan kaavoja
+ * ([FontAwesome](http://fontawesome.io/)), MIT License
