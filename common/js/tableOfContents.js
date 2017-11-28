@@ -31,6 +31,13 @@ function initializeTocBot(language) {
       });
     });
 
+    // Close toc menu when tab is changed on narrow displays
+    $(".tab-menu-option").click(function() {
+      if ($("#menu").css('display') == 'block') {
+        $(".js-toc").hide("fast");
+      }
+    });
+
     // Always show on wide displays
     $(window).resize(function () {
       showTocBasedOnWidth();
