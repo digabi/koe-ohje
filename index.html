@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Abitti-apua / Abitti-hjälp</title>
 <link rel="stylesheet" href="common/css/tab.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="common/css/landing_page.css" type="text/css" media="screen" />
 <script type="text/javascript" src="common/js/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="common/js/activetab.js"></script>
 <script type="text/javascript">
@@ -16,6 +17,14 @@
 		main_tabs.tabNames = ["menu_common"];
 
 		main_tabs.activateTabs();
+
+		$("#goFI").click(function (e) {
+			window.location.href = "build/index.html?fi";
+		});
+
+		$("#goSV").click(function (e) {
+			window.location.href = "build/index.html?sv";
+		});
 	});
 </script>
 </head>
@@ -28,8 +37,14 @@
     <div id="tab-menu_common" class="tab-content active">
 		<h1>Valitse kieli / Välja språk</h1>
 		<ul>
-			<li><a href="build/index.html?fi">Abitin tukimateriaali suomeksi</a></li>
-			<li><a href="build/index.html?sv">Abitti-stödmaterial på svenska</a></li>
+			<li id="goFI" class="linkEntry">
+				<b>Abitin tukimateriaali suomeksi</b><br/>
+				Cheat on Ylioppilastutkintolautakunnan laatima ohje, joka sisältää koeympäristöön ja kokeisiin liittyvää oheismateriaalia. Nimi viittaa englanninkieliseen termiin Cheat Sheet, joka tarkoittaa tiivistä muistiinpanoa. Ohje löytyy internetistä ja Abitti-koeympäristöstä.
+			</li>
+			<li id="goSV" class="linkEntry">
+				<b>Abitti-stödmaterial på svenska</b><br/>
+				Cheat är Studentexamensnämndens anvisningar, som innehåller följematerial som ansluter sig till provmiljön och proven. Namnet hänvisar till den engelska termen Cheat Sheet, som syftar till koncisa anteckningar. Anvisningarna finns på internet och i Abitti-provmiljön.
+			</li>
 		</ul>
     </div>
 </div>
