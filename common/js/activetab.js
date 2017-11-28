@@ -7,7 +7,7 @@ var ActiveTab = {
 		var self = this;
 
 		$("." + this.classPrefix + "-menu-option").click(function (e) {
-			var curname_arr = e.target.id.split("-");
+			var curname_arr = e.target.parentElement.id.split("-");
 
 			var new_tab = curname_arr[0];
 			var new_lang = curname_arr[1];

@@ -321,6 +321,14 @@ h3 {
 	.tab-menu-opennavi {
 		display: none;
 	}
+
+	.tab-menu-option-short {
+		display:none;
+	}
+
+	.tab-menu-option-long {
+		display:inline;
+	}
 }
 
 @media screen and (max-width: 1024px) {
@@ -341,6 +349,25 @@ h3 {
 		margin-left: 0px;
 		font-size: 30px;
 		margin-top: 50px;
+	}
+
+	.tab-menu-option-short {
+		display:none;
+	}
+
+	.tab-menu-option-long {
+		display:inline;
+	}
+}
+
+@media screen and (max-width: 700px) {
+
+	.tab-menu-option-short {
+		display:inline;
+	}
+
+	.tab-menu-option-long {
+		display:none;
 	}
 }
 
