@@ -8,9 +8,10 @@
 
 body{
     background: #FAFAFA;
+    color: #333333;
     margin:0 auto;
-	text-rendering: optimizeLegibility;
-	font-size: 1em;
+    text-rendering: optimizeLegibility;
+    font-size: 1em;
 }
 
 .boxed {
