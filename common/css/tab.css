@@ -228,7 +228,7 @@ h3 {
 }
 
 .special-key {
-	color: #ffffff;
+	color: #FEFEFE;
 	background-color: #359BB7;
 	text-align: center;
 	border-radius: 4px;
@@ -237,11 +237,16 @@ h3 {
 	line-height: 42px;
 	display: block;
 	box-shadow: 2px 2px 5px rgba(0,0,0,.15);
+}
+
+.special-key:hover {
+	color: #333333;
+	background-color: #F8F8F8;
 	cursor: pointer;
 }
 
 .mjpage svg:hover {
-	bakcground-color: #359bb761;
+	bakcground-color: #F8F8F8;
 	border-radius: 2px;
 	box-shadow: 2px 2px 5px rgba(0,0,0,.15);
 	cursor: pointer;
