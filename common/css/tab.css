@@ -230,9 +230,10 @@ h3 {
 
 .special-key {
 	color: #FEFEFE;
-	background-color: #359BB7;
+	background-color: #FEFEFE;
 	text-align: center;
 	border-radius: 4px;
+	border: 1px #C8C8C8 solid;
 	width: 40px;
 	height: 42px;
 	line-height: 42px;
