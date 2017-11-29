@@ -240,6 +240,13 @@ h3 {
 	cursor: pointer;
 }
 
+.mjpage svg:hover {
+	bakcground-color: #359BB7;
+	border-radius: 4px;
+	box-shadow: 2px 2px 5px rgba(0,0,0,.15);
+	cursor: pointer;
+}
+
 .infotext {
 	color: grey;
 	font-size: 16px;
