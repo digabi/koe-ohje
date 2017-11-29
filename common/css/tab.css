@@ -274,6 +274,10 @@ h3 {
 	font-size: 14px;
 }
 
+.borderless table, th, td {
+	border: 0;
+}
+
 .formulae svg {
 	cursor: pointer;
 	transition: all .2s ease-in-out;
