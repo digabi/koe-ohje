@@ -241,8 +241,8 @@ h3 {
 }
 
 .mjpage svg:hover {
-	bakcground-color: #359BB7;
-	border-radius: 4px;
+	bakcground-color: #359bb761;
+	border-radius: 2px;
 	box-shadow: 2px 2px 5px rgba(0,0,0,.15);
 	cursor: pointer;
 }
