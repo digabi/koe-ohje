@@ -17,6 +17,8 @@ body{
     background-color: white;
     border: 1px solid #dfdfdf;
     box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    padding: 10px;
 }
 
 table{
@@ -117,8 +119,13 @@ button{
 	margin-bottom: 200px;
 }
 
-.tab-view h3 {
+.tab-view h2 {
 	font-size: 30px;
+	margin-top: 50px;
+}
+
+.tab-view h3 {
+	font-size: 24px;
 	margin-top: 50px;
 }
 
