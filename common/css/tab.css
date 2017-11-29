@@ -26,6 +26,11 @@ body{
     margin-bottom: 0px;
 }
 
+.boxed img {
+    display: block;
+    margin: auto;
+}
+
 table{
 	border-spacing: 0px;
 	font-family: Arial, Verdana, Helvetica, sans-serif;
