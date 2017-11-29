@@ -236,7 +236,7 @@ h3 {
 	height: 42px;
 	line-height: 42px;
 	display: block;
-	box-shadow: 2px 2px 5px rgba(0,0,0,.15);
+	box-shadow: 2px 2px 5px #ddd;
 }
 
 .special-key:hover {
@@ -248,7 +248,7 @@ h3 {
 .mjpage svg:hover {
 	bakcground-color: #F8F8F8;
 	border-radius: 2px;
-	box-shadow: 2px 2px 5px rgba(0,0,0,.15);
+	box-shadow: 2px 2px 5px #ddd;
 	cursor: pointer;
 }
 
