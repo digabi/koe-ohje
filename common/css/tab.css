@@ -106,8 +106,6 @@ button{
 }
 
 .tab-content{
-    background: #efefef;
-    background: #fff;
     text-align: left;
     display: none;
     padding: 30px 0 200px 0;
@@ -248,12 +246,20 @@ h3 {
 	cursor: pointer;
 }
 
+.mjpage svg {
+	margin: 1px;
+}
+
 .mjpage svg:hover {
-	bakcground-color: #F8F8F8;
+	bakckground-color: #F8F8F8;
 	border-radius: 2px;
+	border: 1px solid #C8C8C8;
 	box-shadow: 2px 2px 5px #ddd;
 	cursor: pointer;
+	margin: 0;
 }
+
+
 
 .infotext {
 	color: grey;
