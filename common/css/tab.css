@@ -237,6 +237,7 @@ h3 {
 	line-height: 42px;
 	display: block;
 	box-shadow: 2px 2px 5px #ddd;
+	margin-right: 20px;
 }
 
 .special-key:hover {
