@@ -80,5 +80,6 @@ This work is double licensed under:
 ## Kiitämme
 
  * Peter Ahlroos: Videot
+ * Lotta Oinonen: Matematiikan sisältö
  * Riitta Salmenoja: Mekaniikan kaavoja
  * ([FontAwesome](http://fontawesome.io/)), MIT License
