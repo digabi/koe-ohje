@@ -1,5 +1,17 @@
 /* CSS for language selection landing page */
 
+a:link, a:visited {
+  color: #1E5075;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+a:active, a:hover {
+  color: #359BB7;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
 .linkEntry {
   cursor:pointer;
   margin-bottom: 30px;
