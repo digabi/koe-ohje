@@ -111,7 +111,7 @@
         <p>
             Oletetaan, että \(n\) on positiivinen kokonaisluku. Luvun \(a\) <em>\(n\):s potenssi</em> \(a^n\) tarkoittaa tuloa
             \(a \cdot a \cdots a\), jossa luku \(a\) esiintyy \(n\) kertaa. Siis
-            \[a^n = \underbrace{a \cdot a \cdots a}_{n \mathrm{ kappaletta}}\]
+            \[a^n = \underbrace{a \cdot a \cdots a}_{n \mathrm{-kappaletta}}\]
             Potenssilausekkeessa \(a^n\) luku \(a\) on <em>kantaluku</em> ja luku \(n\) on <em>eksponentti</em>.
         </p>
         <p>
@@ -130,10 +130,10 @@
                 \(a^ma^n=a^{m+n}\).</li>
 
             <li><span class="fi">Samankantaisten potenssien osamäärä: </span><span class="sv">Kvoten av potenser med samma bas: </span>
-                \(\frac {a^m}{a^n}=a^{m-n}\ \ (a\neq0)\).</li>
+                \(\frac {a^m}{a^n}=a^{m-n}\), missä a\neq0)\.</li>
 
             <li><span class="fi">Tulon potenssi: </span><span class="sv">Potens av en produkt: </span>
-                \[(ab)^n=a^nb^n\).</li>
+                \((ab)^n=a^nb^n\).</li>
 
             <li><span class="fi">Osamäärän potenssi: </span><span class="sv">Potens av en kvot: </span> <br />
                 \(\left( \frac{a}{b} \right)^n= \frac{a^n}{b^n}\)<span class="fi">, missä </span><span class="sv">, där </span> \(b\neq0\).</li>
@@ -179,7 +179,7 @@
         <ol>
             <li>
                 <span class="fi">Yhteenlasku: </span><span class="sv">Addition: </span>
-                ([b\sqrt a + c \sqrt a = (b+c) \sqrt a\).</li>
+                \(b\sqrt a + c \sqrt a = (b+c) \sqrt a\).</li>
             <li>
                 <span class="fi">Kertolasku: </span><span class="sv">Multiplikation: </span><br />
                 \(\sqrt a \cdot \sqrt b = \sqrt {ab}\)<br />
@@ -294,7 +294,7 @@
     <div class="boxed">
         <h3 class="fi">Kulmia</h3>
         <h3 class="sv">Vinklar</h3>
-        Suora kulma on kulma, jonka suuruus on  \(90°\):</p>
+        <p class="fi">Suora kulma on kulma, jonka suuruus on  \(90°\):</p>
         <img src="../common/images/math/suora-kulma.png" alt="Suora kulma" />
 
         <p class="fi">Oikokulma on kulma, jonka suuruus on \(180°\); </p>
@@ -381,15 +381,18 @@
     <div class="boxed">
         <h3 class="fi">Vektoreiden samuus</h3>
         <h3 class="sv">Vektorer</h3>
-        <p class="fi">Kaksi vektoria ovat samat, jos ja vain jos ne voidaan esittää samalla tavalla vektoreiden  \(\overline{\mathrm{i}}\) ja \(\overline{\mathrm{j}}\) avulla. Tarkemmin sanottuna vektorit  
+		<ul>
+        <li class="fi">Kaksi vektoria ovat samat, jos ja vain jos ne voidaan esittää samalla tavalla vektoreiden  \(\overline{\mathrm{i}}\) ja \(\overline{\mathrm{j}}\) avulla. Tarkemmin sanottuna vektorit  
             \(\overline{\mathrm{v}} = x_1 \overline{\mathrm{i}} + y_1 \overline{\mathrm{j}}\) ja \(\overline{\mathrm{w}} = x_2 \overline{\mathrm{i}} + y_2 \overline{\mathrm{j}}\) ovat samat eli \(\overline{\mathrm{v}}= \overline{\mathrm{w}}\), 
-            jos ja vain jos \(x_1=x_2\) ja \(y_1=y_2\).</p>
-        <p class="fi">Kaksi vektoria ovat samat, jos ja vain jos ne voidaan esittää samalla tavalla vektoreiden  \(\overline{\mathrm{i}}\), \(\overline{\mathrm{j}}\)  ja \(\overline{\mathrm{k}}\) avulla. Tarkemmin sanottuna vektorit  
-            \(\overline{\mathrm{v}} = x_1 \overline{\mathrm{i}} + y_1 \overline{\mathrm{j}}+ z_1 \overline{\mathrm{k}}\) ja \(\overline{\mathrm{w}} = x_2 \overline{\mathrm{i}} + y_2 \overline{\mathrm{j}} + z_2 \overline{\mathrm{k}}\)\) ovat samat eli \(\overline{\mathrm{v}}= \overline{\mathrm{w}}\), 
-            jos ja vain jos \(x_1=x_2\), \(y_1=y_2\) ja \(z_1=z_2\).</p>
+            jos ja vain jos \(x_1=x_2\) ja \(y_1=y_2\).</li>
+			
+        <li class="fi">Kaksi vektoria ovat samat, jos ja vain jos ne voidaan esittää samalla tavalla vektoreiden  \(\overline{\mathrm{i}}\), \(\overline{\mathrm{j}}\)  ja \(\overline{\mathrm{k}}\) avulla. Tarkemmin sanottuna vektorit  
+            \(\overline{\mathrm{v}} = x_1 \overline{\mathrm{i}} + y_1 \overline{\mathrm{j}}+ z_1 \overline{\mathrm{k}}\) ja \(\overline{\mathrm{w}} = x_2 \overline{\mathrm{i}} + y_2 \overline{\mathrm{j}} + z_2 \overline{\mathrm{k}}\) ovat samat eli \(\overline{\mathrm{v}}= \overline{\mathrm{w}}\), 
+            jos ja vain jos \(x_1=x_2\), \(y_1=y_2\) ja \(z_1=z_2\).</li>
 
 
-        <p class="fi">Kaksi vektoria ovat samat, jos ja vain jos ne ovat samansuuntaiset ja yhtä pitkät.</p>
+        <li class="fi">Kaksi vektoria ovat samat, jos ja vain jos ne ovat samansuuntaiset ja yhtä pitkät.</li>
+		</ul>
     </div>
     <div class="boxed">
         <h3 class="fi">Paikkavektori</h3>
