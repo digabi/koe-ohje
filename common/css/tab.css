@@ -302,6 +302,9 @@ h3 {
 	color: inherit; 
 }
 
+.mjpage {
+	min-height: 23px;
+}
 
 .mjpage svg {
 	border: 1px solid transparent;
