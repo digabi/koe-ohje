@@ -20,12 +20,12 @@
 		var subpage_init = {};
 
 		function activate_copy_to_clipboard() {
-			$(".special-key").unbind("click");
+			$(".clickable").unbind("click");
 
 			// Activate Digabi-specific copy feature
 			if (typeof (sharedclass) == 'object') {
 				// This is executed inside digabi-koe-browser.py
-				$(".special-key").click(function () {
+				$(".clickable").click(function () {
 					sharedclass.copy_text_to_clipboard($(this).text());
 					setTimeout(function () {
 						$("#copying_box_kbd").show().fadeOut(3000)
@@ -34,7 +34,7 @@
 			}
 			else {
 				// This is executed in regular browser (uses clipboard.js)
-				$(".special-key").click(function () {
+				$(".clickable").click(function () {
 					clipboard.copy($(this).text()).then(
 						function () {
 							console.log("Copied to clipboard!");
