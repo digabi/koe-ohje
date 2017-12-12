@@ -353,6 +353,11 @@ h3 {
 	box-shadow: none;
 }		
 
+.mjpage svg:active
+{
+	margin-bottom: -2px;
+}	
+
 .key.keyboard > span
 {
 	padding-top: 15px;
