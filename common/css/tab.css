@@ -300,7 +300,11 @@ h3 {
 
 
 .mjpage svg {
-	border: 1px solid white;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	box-sizing: border-box !important;
+	box-shadow: 0px 3px 0px -2px rgb(234, 222, 222), 0px 2px 0px 0px rgba(169,169,169,1);
+	cursor: pointer;
 }
 
 .key
@@ -325,8 +329,7 @@ h3 {
 	box-shadow: 0px 3px 0px -2px rgb(234, 222, 222), 0px 2px 0px 0px rgba(169,169,169,1);
 }
 
-.key.clickable > span:hover,
-.mjpage svg:hover
+.key.clickable > span:hover
 {
 	background-color: #75b4fb;
 	border: 1px solid #5a88c5;
