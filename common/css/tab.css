@@ -39,7 +39,7 @@ table.formulae {
 
 table{
 	border-spacing: 0px;
-	font-family: Arial, Verdana, Helvetica, sans-serif;
+
 	font-weight: 500;
 	color: #000000;
 	text-align: left;
@@ -52,12 +52,12 @@ table{
     display: block;
 }
 .firstcolumn{
-	font-family: Arial, Verdana, Helvetica, sans-serif;
+
 	padding-right: 50px;
 }
 
 .note {
-	font-family: Arial, Verdana, Helvetica, sans-serif;
+
 	font-weight: 500;
 	color: #787878;
 	padding: 29px 0px 15px 0px;
@@ -67,7 +67,7 @@ a{
     text-decoration: none;
 }
 button{
-	font-family: Arial, Verdana, Helvetica, sans-serif;
+
 	font-weight: 700;
 	margin: 20px 0px 20px 0px;
 	background-color: #eee;
@@ -225,7 +225,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 }
 
 h1{
-	font-family: Arial,  Verdana, Helvetica, sans-serif;
+
 	font-size: 3em;
 	font-weight: 500;
 	color: #359BB7;
@@ -234,12 +234,12 @@ h1{
 }
 
 h2 {
-	font-family: Arial,  Verdana, Helvetica, sans-serif;
+
 	color: black;
 }
 
 h3 {
-	font-family: Arial,  Verdana, Helvetica, sans-serif;
+
 	color: black;
 }
 
@@ -394,7 +394,7 @@ table.row-highlight tr:nth-child(odd) {
 }
 
 #loading-text {
-	font-family: Arial,  Verdana, Helvetica, sans-serif;
+
 
 	width:200px;
     height:100px;
@@ -419,7 +419,7 @@ table.row-highlight tr:nth-child(odd) {
 }
 
 .copy-text {
-	font-family: Arial,  Verdana, Helvetica, sans-serif;
+
 	font-size: 1.1em;
 	margin: 8px;
 	text-align: center;
