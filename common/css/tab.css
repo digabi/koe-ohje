@@ -53,8 +53,9 @@ table{
 }
 .firstcolumn{
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-
+	padding-right: 50px;
 }
+
 .note {
 	font-family: Arial, Verdana, Helvetica, sans-serif;
 	font-weight: 500;
@@ -344,7 +345,7 @@ table.row-highlight tr:nth-child(odd) {
 	box-shadow: 0px 3px 0px -2px rgb(234, 222, 222), 0px 2px 0px 0px rgba(169,169,169,1);
 }
 
-.key.clickable > span:hover
+.key.key clickable > span:hover
 {
 	background-color: #75b4fb;
 	border: 1px solid #5a88c5;
@@ -354,7 +355,7 @@ table.row-highlight tr:nth-child(odd) {
 	cursor: pointer;
 }
 
-.key.clickable > span:active,
+.key.key clickable > span:active,
 .mjpage svg:active
 {
 	margin-top: 2px;
