@@ -282,17 +282,17 @@ h3 {
 }
 
 table.borderless, 
-table..borderless th, 
-table..borderless td {
+table.borderless th, 
+table.borderless td {
 	border: 0;
 }
 
 table.row-highlight tr:nth-child(even) {
-	background: #CCC
+	background: #eee;
 }
 
 table.row-highlight tr:nth-child(odd) {
-	background: #FFF
+	background: #FFF;
 }
 
 /* Keyboard buttons*/
