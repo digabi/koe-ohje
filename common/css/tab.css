@@ -292,6 +292,11 @@ table.row-highlight tr:nth-child(even) {
 	background: #eee;
 }
 
+table.row-highlight img {
+	vertical-align: middle;
+	padding: 0 8px 0 8px;
+}
+
 table.row-highlight tr:nth-child(odd) {
 	background: #FFF;
 }
@@ -345,7 +350,7 @@ table.row-highlight tr:nth-child(odd) {
 	box-shadow: 0px 3px 0px -2px rgb(234, 222, 222), 0px 2px 0px 0px rgba(169,169,169,1);
 }
 
-.key.key clickable > span:hover
+.key.clickable > span:hover
 {
 	background-color: #75b4fb;
 	border: 1px solid #5a88c5;
@@ -355,7 +360,7 @@ table.row-highlight tr:nth-child(odd) {
 	cursor: pointer;
 }
 
-.key.key clickable > span:active,
+.key.clickable > span:active,
 .mjpage svg:active
 {
 	margin-top: 2px;
@@ -373,7 +378,7 @@ table.row-highlight tr:nth-child(odd) {
 	font-size: 11px;
 }
 
-.key.key clickable"><span> {
+.key.clickable {
 	color: #6D6D6D;
 	background-color: #FEFEFE;
 	text-align: center;
