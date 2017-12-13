@@ -276,15 +276,23 @@ h3 {
 	font-size: 14px;
 }
 
-.borderless table, 
-.borderless th, 
-.borderless td {
-	border: 0;
-}
-
 .formulae svg {
 	cursor: pointer;
 	transition: all .2s ease-in-out;
+}
+
+table.borderless, 
+table..borderless th, 
+table..borderless td {
+	border: 0;
+}
+
+table.row-highlight tr:nth-child(even) {
+	background: #CCC
+}
+
+table.row-highlight tr:nth-child(odd) {
+	background: #FFF
 }
 
 /* Keyboard buttons*/
