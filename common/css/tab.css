@@ -165,14 +165,15 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 	display: block;
 	padding-top: 20px;
 	font-size: 20px;
-	border-right: 0 2px 0 2px solid #359BB7;
+	border-right: 2px #359BB7;
 	overflow-y: scroll;
 	background: white;
 	z-index: 9;
 }
 
 .js-toc::-webkit-scrollbar-track {
-	background-color: #F5F5F5;
+	background-color: #F5F5F5;	
+	border-right: 2px transparent;
 }
 
 .js-toc::-webkit-scrollbar {
