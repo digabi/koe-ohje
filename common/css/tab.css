@@ -1,17 +1,21 @@
-.scrollwrap {
-	overflow-x: auto;
-}
-
-.scrollwrap h2, h3, h4 {
-	display: inline-block;
-}
-
 body{
     background: #FAFAFA;
     color: #333333;
     margin:0 auto;
     text-rendering: optimizeLegibility;
     font-size: 1em;
+}
+
+#tab-menu {
+    letter-spacing: 1px;
+}
+
+.scrollwrap {
+	overflow-x: auto;
+}
+
+.scrollwrap h2, h3, h4 {
+	display: inline-block;
 }
 
 .boxed,
@@ -213,7 +217,6 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 }
 
 #charpc-menu, #charmac-menu {
-    font-family: Arial, Verdana, Helvetica, sans-serif;
     color: #359BB7;
 }
 .charpc-menu-option, .charmac-menu-option {
@@ -351,6 +354,7 @@ table.row-highlight tr:nth-child(odd) {
 }
 .key > span
 {
+	background-color: rgb(244, 249, 255);
 	display: block;
 	width: 35px;
 	height: 35px;
