@@ -8,46 +8,50 @@
 <h2 class="sv">Tal</h2>
 <div class="scrollwrap">
     <div class="boxed">
-        <h3 class="fi">Luonnolliset luvut</h3>
-        <h3 class="sv">Naturliga tal</h3>
-        <p>Luonnollisiksi luvuiksi kutsutaan lukuja 0, 1, 2, 3, 4 jne. Luonnollisten lukujen joukkoa merkitään \(\mathbb{N}\). Siis
-            \[\mathbb{N}=\left\{ 0, 1 ,2 ,3 ,4 , \ldots\right\}.\]</p>
-    </div>
-    <div class="boxed">
-        <h3 class="fi">Kokonaisluvut</h3>
-        <h3 class="sv">Heltal</h3>
-        <p>Kokonaisluvuiksi kutsutaan lukuja 0, 1, -1, 2, -2, 3, -3 jne. Kokonaislukujen joukkoa merkitään \(\mathbb{Z}\). Siis
-            \[\mathbb{Z}=\left\{ 0, 1, -1, 2, -2, 3, -3, \ldots\right\}.\]</p>
-    </div>
-    <div class="boxed">
-        <h3 class="fi">Rationaaliluvut</h3>
-        <h3 class="sv">Rationella tal</h3>
-        <p>Rationaaliluvuiksi kutsutaan lukuja, jotka voidaan kirjoittaa murtolukumuodossa
+        <p class="fi">Luonnollisiksi luvuiksi kutsutaan lukuja 0, 1, 2, 3, 4 jne. Luonnollisten lukujen joukkoa merkitään \(\mathbb{N}\). Siis</p>
+		<p class="sv">Talen 0, 1, 2, 3, 4 osv. kallas naturliga tal. Mängden av naturliga tal betecknas \(\mathbb{N}\). Dvs.</p>
+            \[\mathbb{N}=\left\{ 0, 1 ,2 ,3 ,4 , \ldots\right\}.\]
+
+        <p class="fi">Kokonaisluvuiksi kutsutaan lukuja 0, 1, -1, 2, -2, 3, -3 jne. Kokonaislukujen joukkoa merkitään \(\mathbb{Z}\). Siis</p>
+		<p class="sv">Talen 0, 1, -1, 2, -2, 3, -3 osv. kallas heltal. Mängden av heltal betecknas \(\mathbb{Z}\). Dvs.</p>
+            \[\mathbb{Z}=\left\{ 0, 1, -1, 2, -2, 3, -3, \ldots\right\}.\]
+
+        <p class="fi">Rationaaliluvuiksi kutsutaan lukuja, jotka voidaan kirjoittaa murtolukumuodossa</p>
+		<p class="sv">Tal som skrivas i bråkformen</p>
             \[\frac{m}{n},\]
-            missä \(m\) ja \(n\) ovat kokonaislukuja ja \( n \neq 0 \). Rationaalikuja merkitään \(\mathbb{Q}\).</p>
-    </div>
-    <div class="boxed">
-        <h3 class="fi">Reaaliluvut</h3>
-        <h3 class="sv">Reella tal</h3>
-        <p>Reaalilukuja merkitään \(\mathbb{R}\). Reaaliluvut ovat lukuja joille pätee</p>
-        <ol>
-            <li>Yhteenlaskun vaihdantalaki: Kaikille \(a,b\in \mathbb{R}\) pätee \(a+b=b+a\).</li>
-            <li>Yhteenlaskun liitäntälaki: Kaikille \(a,b,c\in \mathbb{R}\) pätee \(a+(b+c)=(a+b)+c\).</li>
-            <li>Nollan olemassaolo: On olemassa sellainen reaaliluku \(0\), että kaikille \(a\in \mathbb{R}\) pätee \(a+0=a\).</li>
-            <li>Vastaluvun olemassaolo: Jokaista reaalilukua \(a\in \mathbb{R}\) kohti on olemassa sellainen reaaliluku  \(b \in \mathbb{R}\), että \(a+b=0\). Kutsutaan tätä lukua \(b\) <em>vastaluvuksi</em> ja merkitään \(b=-a\).</li>
-            <li>Kertolaskun vaihdantalaki: Kaikille \(a, b\in \mathbb{R}\)pätee \(ab=ba\).</li>
-            <li>Kertolaskun liitäntälaki: Kaikille \( a,b,c\in \mathbb{R}\) pätee \(a(bc)=(ab)c\).</li>
-            <li>Ykkösen olemassaolo: On olemassa sellainen reaaliluku \(1\), että kaikilla \(a\in \mathbb{R}\) pätee \(a\cdot 1=a\).</li>
-            <li>Käänteisluvun olemassaolo: Jos \(a\in \mathbb{R}\) ja \(a\neq 0\), niin on olemassa sellainen \(b \in \mathbb{R}\), että \(ab=1\). Kutsutaan tätä lukua \(b\) <em>käänteisluvuksi</em> ja merkitään \(b=\frac{1}{a}\).</li>
-            <li>Osittelulaki: Kaikille \(a,b,c\in \mathbb{R}\) pätee \(a(b+c)=ab+ac\).</li>
-            <li>Refleksiivisyys: Kaikille \(a\in \mathbb{R}\) pätee \(a\leq a\).</li>
-            <li>Antisymmetrisyys: Olkoon \(a,b\in \mathbb{R}\). Jos \(a\leq b\) ja \(b\leq a\), niin \(a=b\).</li>
-            <li>Transitiivisuus: Olkoon \(a,b,c\in \mathbb{R}\). Jos \(a\leq b\) ja \(b\leq c\), niin \(a\leq c\).</li>
-            <li>Vertailullisuus: Kaikille \(a,b\in \mathbb{R}\) pätee \(a\leq b\) tai \(b\leq a\).</li>
-            <li>Järjestyksen säilyminen yhteenlaskussa: Olkoon \(a,b,c\in \mathbb{R}\). Jos \(a\leq b\), niin \(a+c\leq b+c\).</li>
-            <li>Ei-negatiivisuuden säilyminen kertolaskussa: Olkoon \(a,b\in \mathbb{R}\). Jos \(0\leq a\) ja \(0\leq b\), niin \(0\leq ab\).</li>
-            <li>Jokaisella epätyhjällä \(\mathbb{R}\):n osajoukolla on pienin yläraja.</li>
-        </ol>
+        <p class="fi">missä \(m\) ja \(n\) ovat kokonaislukuja ja \( n \neq 0 \). Rationaalikuja merkitään \(\mathbb{Q}\).</p>
+		<p class="sv">där \(m\) och \(n\) är heltal och \( n \neq 0 \) kallas rationella tal. Rationella tal betecknas \(\mathbb{Q}\).</p>
+
+        <p class="fi">Reaaliluvut ovat lukusuoran pisteitä. Reaalilukuja merkitään \(\mathbb{R}\). </p>
+		<p class="sv">Reella talen är punkter på tallinjen. Reella tal beteckans \(\mathbb{R}\). </p>
+		
+		<p class="fi">Reaali- ja rationaaliluvuille pätee muun muassa</p>
+		<p class="sv">För reella och rationella tal gäller bland annat</p>
+        <ul>
+            <li class="fi">Vastaluvun olemassaolo: Jokaista lukua \(a\) kohti on olemassa sellainen luku \(b\), että \(a+b=0\). Kutsutaan tätä lukua \(b\) <em>vastaluvuksi</em> ja merkitään \(b=-a\).</li>
+            <li class="sv">Existens av additativ invers: För varje tal \(a\) existerar ett sådant tal \(b\), att \(a+b=0\). Vi kallar detta tal \(b\) <em>additativ inver</em> och betecknar det \(b=-a\).</li>
+            
+			<li class="fi">Käänteisluvun olemassaolo: Luvulle \(a\neq 0\) on olemassa sellainen luku \(b\), että \(ab=1\). Kutsutaan tätä lukua \(b\) <em>käänteisluvuksi</em> ja merkitään \(b=\frac{1}{a}\).</li>
+            <li class="sv">Existens av multiplikativ invers: För talet \(a\neq 0\) existerar det ett tal \(b\), att \(ab=1\). Vi kallar detta tal \(b\) <em>multiplikativ invers</em> och betecknar det \(b=\frac{1}{a}\).</li>
+            
+			<li class="fi">Osittelulaki: Kaikille luvuille \(a,b\) ja \(c\) pätee \(a(b+c)=ab+ac\).</li>
+            <li class="sv">Distributativa lagen: Föra alla tal \(a,b\) och \(c\) gäller \(a(b+c)=ab+ac\).</li>
+            
+			<li class="fi">Antisymmetrisyys: Olkoon \(a,b\) lukuja. Jos \(a\leq b\) ja \(b\leq a\), niin \(a=b\).</li>
+            <li class="sv">Antisymmetri: Låt \(a,b\) vara tal. Om \(a\leq b\) och \(b\leq a\), så \(a=b\).</li>
+            
+			<li class="fi">Transitiivisuus: Olkoon \(a,b\) ja \(c\) lukuja. Jos \(a\leq b\) ja \(b\leq c\), niin \(a\leq c\).</li>
+            <li class="sv">Transitivitet: Låt \(a,b\) och \(c\) vara tal. Om \(a\leq b\) och \(b\leq c\), så \(a\leq c\).</li>
+            
+			<li class="fi">Vertailullisuus: Kaikille luvuille \(a\) ja \(b\) pätee \(a\leq b\) tai \(b\leq a\).</li>
+            <li class="sv">Jämförbarhet: För alla tal \(a\) och \(b\) gäller \(a\leq b\) eller \(b\leq a\).</li>
+            
+			<li class="fi">Järjestyksen säilyminen yhteenlaskussa: Olkoon \(a,b\) ja \(c\) lukuja. Jos \(a\leq b\), niin \(a+c\leq b+c\).</li>
+            <li class="sv">Ordningen bevaras vid addition: Låt \(a,b\) och \(c\) vara tal. Om \(a\leq b\), så \(a+c\leq b+c\).</li>
+            
+			<li class="fi">Ei-negatiivisuuden säilyminen kertolaskussa: Olkoon \(a\) ja \(b\) lukuja. Jos \(0\leq a\) ja \(0\leq b\), niin \(0\leq ab\).</li>
+			<li class="sv">Icke-negativiteten bevaras vid multiplikation: Låt \(a\) och \(b\) vara tal. Om \(0\leq a\) och \(0\leq b\), så \(0\leq ab\).</li>
+		</ul>
     </div>
 </div>
 <h2 class="fi">Funktiot ja yhtälöt</h2>
@@ -57,19 +61,33 @@
         <h3 class="fi">Funktio</h3>
         <h3 class="sv">Funktion</h3>
 
-        <p class="fi">Funktio joukosta \(X\) joukkoon \(Y\) tarkoittaa sääntöä, joka liittää joukon \(X\) jokaiseen alkioon täsmälleen yhden alkion joukosta \(Y\). Joukko \(X\) on funktion määrittelyjoukko eli lähtöjoukko ja joukko \(Y\) on funktion maalijoukko.</p>
-        <p class="fi">Funktion \(f\) nollakohta tarkoittaa sellaista muuttujan \(x\) arvoa, jolla funktio saa arvon nolla eli \(f(x)=0\).</p>
-        <p class="fi">Funktiota \(f\), joka on muotoa \(f(x)=a\), missä \(a\) on reaaliluku, kutsutaan <em>vakiofunktioksi.</em></p>
-        <p class="fi">Funktiota \(f\), joka on muotoa \(f(x)=ax+b\), missä \()a \ne 0\), kutsutaan <em>ensimmäisen asteen polynomifunktioksi</em>.</p>
-        <p class="fi">Olkoon \(n\) positiivinen kokonaisluku. Funktiota \(f\), joka on muotoa \(f(x)=a_nx^n + a_{n_1}x^{n-1} + \ldots + a_1 x + a_0\) ja \(a\ne 0\), kutsutaan <em>\(n\):nnen asteen polynomifunktioksi</em>.</p>
-    </div>
+        <p class="fi">Funktio joukosta \(X\) joukkoon \(Y\) liittää joukon \(X\) jokaiseen alkioon täsmälleen yhden alkion joukosta \(Y\). Joukko \(X\) on funktion määrittelyjoukko eli lähtöjoukko ja joukko \(Y\) on funktion maalijoukko.</p>
+        <p class="sv">En funktion från mängden \(X\) till mängden \(Y\) ansluter till varje element i mängden \(X\) exakt ett element i mängden \(Y\). Mängden \(X\) är funktionens definitionsmängd och mängden \(Y\) är funktionens målmängd.</p>
+        
+		<p class="fi">Funktion \(f\) nollakohta tarkoittaa sellaista muuttujan \(x\) arvoa, jolla funktio saa arvon nolla eli \(f(x)=0\).</p>
+        <p class="sv">Nollställe till funktionen \(f\) betyder ett sådant värde för variabeln \(x\), för vilket funktionen får värde noll, dvs. \(f(x)=0\).</p>
+        
+		<p class="fi">Funktiota \(f\), joka on muotoa \(f(x)=a\), missä \(a\) on reaaliluku, kutsutaan <em>vakiofunktioksi.</em></p>
+        <p class="sv">En funktion \(f\), som är av formen \(f(x)=a\), där \(a\) är ett reellt tal kallas <em>konstantfunktion.</em></p>
+        
+		<p class="fi">Funktiota \(f\), joka on muotoa \(f(x)=ax+b\), missä \(a \ne 0\), kutsutaan <em>ensimmäisen asteen polynomifunktioksi</em>.</p>
+        <p class="sv">En funktion \(f\), som är av formen \(f(x)=ax+b\), där \(a \ne 0\), kallas <em>polynom av första graden</em>.</p>
+        
+		<p class="fi">Olkoon \(n\) luonnollinen luku. Funktiota \(f\), joka on muotoa \(f(x)=a_nx^n + a_{n_1}x^{n-1} + \ldots + a_1 x + a_0\) ja \(a\ne 0\), kutsutaan <em>\(n\):nnen asteen polynomifunktioksi</em>.</p>
+		<p class="sv">Låt \(n\) vara ett naturligt tal. En funktion \(f\), som är av formen \(f(x)=a_nx^n + a_{n_1}x^{n-1} + \ldots + a_1 x + a_0\) och \(a\ne 0\), kallas <em>\(n\):e gradens polynom</em>.</p>
+    
+	</div>
     <div class="boxed">
         <h3 class="fi">Yhtälö</h3>
         <h3 class="sv">Ekvation</h3>
         <p class="fi">Yhtälön <em>ratkaisu</em> eli <em>juuri</em> tarkoittaa lukua, joka muuttujan paikalle sijoitettuna tekee yhtälön vasemmasta ja oikeasta puolesta yhtä suuria.</p>
-        <p>Ensimmäisen asteen yhtälö tarkoittaa yhtälöä, joka voidaan esittää muodossa
+		<p class="sv">Yhtälön <em>ratkaisu</em> eli <em>juuri</em> tarkoittaa lukua, joka muuttujan paikalle sijoitettuna tekee yhtälön vasemmasta ja oikeasta puolesta yhtä suuria.</p>
+        <p class="fi">Ensimmäisen asteen yhtälö tarkoittaa yhtälöä, joka voidaan esittää muodossa
             \[ax+b=0,\]
             missä \(a\ne 0\).</p>
+		<p class="sv">En eförsta grads ekvation är en ekvation, som kan anges i formen
+            \[ax+b=0,\]
+            där \(a\ne 0\).</p>
         <p class="fi">Olkoon \(n\) positiivinen kokonaisluku. Yhtälöä \(a_nx^n+a_{n_1}x^{n-1}+ \ldots + a_1 + x a_0 = 0\), missä \(a\ne 0\), kutsutaan <em>\(n\):nnen asteen yhtälöksi</em>.</p>
 
         <h3 class="fi">Toisen asteen yhtälön ratkaiseminen</h3>
