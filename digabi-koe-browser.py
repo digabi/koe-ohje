@@ -7,7 +7,10 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyQt4.QtWebKit import *
 
+from os.path import expanduser
+
 APP_ICON_PATH='/usr/share/digabi-koe-ohje/help-browser.png'
+LOCAL_STORAGE_PATH="%s/.cache/digabi-koe" % expanduser("~")
 
 class SharedClass (QObject):
     @pyqtSlot(str)
@@ -49,7 +52,7 @@ sc = SharedClass()
 
 def appExiting ():
     sc.write_to_stdout("exiting")
-    
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-W', '--width', dest='width', type=int, default=500, help='Browser window width')
@@ -58,6 +61,7 @@ def main():
     parser.add_argument('-y', '--positiony', dest='posy', type=int, default=1, help='Window position (Y)')
     parser.add_argument('-t', '--title', dest='title', type=str, default="Help", help='Window title')
     parser.add_argument('url', type=str, help='URL of the help file')
+    parser.add_argument('-s', '--localstorage', dest='localstorage', type=bool, default=False, help='Write local storage to disk')
     parser.add_argument('-dev', '--devmode', dest='devmode', type=bool, default=False, help='Developer mode toggle')
 
     args = parser.parse_args()
@@ -82,6 +86,11 @@ def main():
         window.view.page().settings().setAttribute(QWebSettings.DeveloperExtrasEnabled, True)
         inspector.setPage(window.view.page())
         inspector.showMaximized()
+
+    # Enable LocalStorage
+    if args.localstorage:
+        window.view.page().settings().setLocalStoragePath(LOCAL_STORAGE_PATH)
+        window.view.page().settings().setAttribute(QWebSettings.LocalStorageEnabled, True)
 
     window.load_url(args.url)
     window.show()
