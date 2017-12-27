@@ -4,7 +4,7 @@
 */
 
 function initializeTocBot(language) {
-    $('.js-toc-content').find('h2, h3, h4')
+    $('.js-toc-content').find('h2, h3')
         .each(function () {
             var elem = $(this)
             elem.attr('id', formAutomaticIDs(elem.text()))
@@ -14,7 +14,7 @@ function initializeTocBot(language) {
     tocbot.init({
         tocSelector: '.js-toc',
         contentSelector: '.js-toc-content',
-        headingSelector: 'h2, h3, h4',
+        headingSelector: 'h2, h3',
         ignoreSelector: languageToBeIgnored,
         collapseDepth: 6,
         positionFixedSelector: '.js-toc',
