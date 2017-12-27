@@ -12,6 +12,7 @@ const pageConfig = {
     imageFont: null,
     CommonHTML: {
       scale: 100
+	  minScaleAdjust: 100
     }
   }
 }
