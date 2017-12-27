@@ -7,13 +7,13 @@ const pageConfig = {
   MathJax: {
     SVG: {
       font: "STIX-Web",
-      undefinedFamily: "STIXGeneral"
+      undefinedFamily: "STIXGeneral",
+	  minScaleAdjust: 110
 
     },
     imageFont: null,
     CommonHTML: {
-      scale: 100,
-	  minScaleAdjust: 100
+      scale: 110
     }
   }
 }
