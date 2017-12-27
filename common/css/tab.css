@@ -6,10 +6,6 @@ body{
     font-size: 1em;
 }
 
-#tab-menu {
-    letter-spacing: 1px;
-}
-
 .scrollwrap {
 	overflow-x: auto;
 }
