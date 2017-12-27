@@ -6,13 +6,13 @@ const pageConfig = {
   output: "svg",
   MathJax: {
     SVG: {
-      font: "Asana-Math",
-      undefinedFamily: "STIXGeneral"
+      font: "STIX-Web",
+      undefinedFamily: "STIXGeneral",
+	  minScaleAdjust: 99
     },
     imageFont: null,
     CommonHTML: {
       scale: 100
-	  minScaleAdjust: 100
     }
   }
 }
