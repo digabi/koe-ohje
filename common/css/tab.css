@@ -332,7 +332,6 @@ table.row-highlight tr:nth-child(odd) {
 .mjpage svg {
 	border: 1px solid transparent;
 	border-radius: 4px;
-	box-sizing: border-box !important;
 	cursor: pointer;
 }
 
