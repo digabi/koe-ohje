@@ -39,8 +39,7 @@ table.formulae {
 
 table{
 	border-spacing: 0px;
-
-	font-weight: 500;
+	font-weight: inherit;
 	color: #000000;
 	text-align: left;
 	margin-right:20px;
@@ -332,7 +331,6 @@ table.row-highlight tr:nth-child(odd) {
 .mjpage svg {
 	border: 1px solid transparent;
 	border-radius: 4px;
-	box-sizing: border-box !important;
 	cursor: pointer;
 }
 
