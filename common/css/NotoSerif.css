@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Noto serif';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto serif'), local('NotoSerif'), url('../fonts/NotoSerif.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Noto serif';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto serif Bold'), local('NotoSerif-Bold'), url('../fonts/NotoSerif-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Noto serif';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Noto serif Italic'), local('NotoSerif-Italic'), url('../fonts/NotoSerif-Italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Noto serif';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Noto serif Bold Italic'), local('NotoSerif-BoldItalic'), url('../fonts/NotoSerif-BoldItalic.ttf') format('truetype');
+}
