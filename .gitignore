@@ -2,3 +2,4 @@ preview/
 node_modules/
 *.DS_Store
 CNAME
+editor.html
