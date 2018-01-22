@@ -4,26 +4,53 @@
 <p class="fi">Huom. Voit kopioida kaavan leikepöydälle klikkaamalla sitä.</p>
 <p class="sv">Obs. Du kan kopiera formeln genom att klicka på den.</p>
 
-<h2 class="fi">Luvut</h2>
+<h2 class="fi">Luut</h2>
 <h2 class="sv">Tal</h2>
 <div class="scrollwrap">
-    <div class="boxed">
-        <p class="fi">Luonnollisiksi luvuiksi kutsutaan lukuja 0, 1, 2, 3, 4 jne. Luonnollisten lukujen joukkoa merkitään symbolillä \(\mathbb{N}\). Siis</p>
-		<p class="sv">Talen 0, 1, 2, 3, 4 osv. kallas naturliga tal. Mängden av naturliga tal betecknas \(\mathbb{N}\). Dvs.</p>
-            \[\mathbb{N}=\left\{ 0, 1 ,2 ,3 ,4 , \ldots\right\}.\]
-
-        <p class="fi">Kokonaisluvuiksi kutsutaan lukuja 0, 1, -1, 2, -2, 3, -3 jne. Kokonaislukujen joukkoa merkitään symbolilla \(\mathbb{Z}\). Siis</p>
-		<p class="sv">Talen 0, 1, -1, 2, -2, 3, -3 osv. kallas heltal. Mängden av heltal betecknas \(\mathbb{Z}\). Dvs.</p>
-            \[\mathbb{Z}=\left\{ 0, 1, -1, 2, -2, 3, -3, \ldots\right\}.\]
-
-        <p class="fi">Rationaaliluvuiksi kutsutaan lukuja, jotka voidaan kirjoittaa murtolukumuodossa</p>
-		<p class="sv">Tal som kan skrivas i bråkformen</p>
+<table class="formulae">
+        <tr>
+            <!-- headers for the table -->
+            <th class="fi">Lukualue</th>
+			<th class="sv">Talområde<th>
+			<th class="fi">Selite</th>
+			<th class="sv">Förklaring</th>			
+			<th class="fi">Merkintä</th>	
+			<th class="sv">Beteckning</th>			
+        </tr> 
+		<tr>
+		<td class="fi">Luonnolliset luvut</td>
+		<td class="sv">Naturliga tal</td>
+		
+        <td class="fi">Luonnollisiksi luvuiksi kutsutaan lukuja 0, 1, 2, 3, 4 jne.</td>
+		<td class="sv">Talen 0, 1, 2, 3, 4 osv. kallas naturliga tal.</td>
+        <td>\[\mathbb{N}\]</td>
+		</tr>
+		<tr>
+        <td class="fi">Kokonaisluvut</td>
+		<td class="sv">Heltal</td>
+		<td class="fi">Kokonaisluvuiksi kutsutaan lukuja 0, 1, -1, 2, -2, 3, -3 jne.</td>
+		<td class="sv">Talen 0, 1, -1, 2, -2, 3, -3 osv. kallas heltal.</td>
+        <td>\[\mathbb{Z}\]</td>
+		</tr>
+		<tr>
+        <td class="fi">Rationaaliluvut</td>
+		<td class="sv">Rationella tal</td>
+		<td class="fi">Rationaaliluvuiksi kutsutaan lukuja, jotka voidaan kirjoittaa murtolukumuodossa
+			\[\frac{m}{n},\]
+			missä \(m\) ja \(n\) ovat kokonaislukuja ja \( n \neq 0 \).</td>
+		<td class="sv">Tal som kan skrivas i bråkformen</p>
             \[\frac{m}{n},\]
-        <p class="fi">missä \(m\) ja \(n\) ovat kokonaislukuja ja \( n \neq 0 \). Rationaalikuja merkitään symbolilla \(\mathbb{Q}\).</p>
-		<p class="sv">där \(m\) och \(n\) är heltal och \( n \neq 0 \) kallas rationella tal. Rationella tal betecknas \(\mathbb{Q}\).</p>
-
-        <p class="fi">Reaaliluvut ovat lukusuoran pisteitä. Reaalilukuja merkitään symbolilla \(\mathbb{R}\). </p>
-		<p class="sv">Reella tal är punkter på tallinjen. Reella tal beteckans \(\mathbb{R}\). </p>
+			där \(m\) och \(n\) är heltal och \( n \neq 0 \) kallas rationella tal.</td>
+		<td>\[\mathbb{Q}\]</td>
+		</tr>
+		<tr>
+        <td class="fi">Reaaliluvut</td>
+		<td class="sv">Reella tal</td>
+		<td class="fi">Reaaliluvut ovat lukusuoran pisteitä.</td>
+		<td class="sv">Reella tal är punkter på tallinjen.</td> 
+		<td>\[\mathbb{R}\]</td>
+		</tr>
+</table>
 		
 		<p class="fi">Reaali- ja rationaaliluvuille pätee muun muassa</p>
 		<p class="sv">För reella och rationella tal gäller bland annat</p>
@@ -36,22 +63,7 @@
             
 			<li class="fi">Osittelulaki: Kaikille luvuille \(a,b\) ja \(c\) pätee \(a(b+c)=ab+ac\).</li>
             <li class="sv">Distributativa lagen: Föra alla tal \(a,b\) och \(c\) gäller \(a(b+c)=ab+ac\).</li>
-            
-			<li class="fi">Antisymmetrisyys: Olkoon \(a,b\) lukuja. Jos \(a\leq b\) ja \(b\leq a\), niin \(a=b\).</li>
-            <li class="sv">Antisymmetri: Låt \(a,b\) vara tal. Om \(a\leq b\) och \(b\leq a\), så \(a=b\).</li>
-            
-			<li class="fi">Transitiivisuus: Olkoon \(a,b\) ja \(c\) lukuja. Jos \(a\leq b\) ja \(b\leq c\), niin \(a\leq c\).</li>
-            <li class="sv">Transitivitet: Låt \(a,b\) och \(c\) vara tal. Om \(a\leq b\) och \(b\leq c\), så \(a\leq c\).</li>
-            
-			<li class="fi">Vertailullisuus: Kaikille luvuille \(a\) ja \(b\) pätee \(a\leq b\) tai \(b\leq a\).</li>
-            <li class="sv">Jämförbarhet: För alla tal \(a\) och \(b\) gäller \(a\leq b\) eller \(b\leq a\).</li>
-            
-			<li class="fi">Järjestyksen säilyminen yhteenlaskussa: Olkoon \(a,b\) ja \(c\) lukuja. Jos \(a\leq b\), niin \(a+c\leq b+c\).</li>
-            <li class="sv">Ordningen bevaras vid addition: Låt \(a,b\) och \(c\) vara tal. Om \(a\leq b\), så \(a+c\leq b+c\).</li>
-            
-			<li class="fi">Ei-negatiivisuuden säilyminen kertolaskussa: Olkoon \(a\) ja \(b\) lukuja. Jos \(0\leq a\) ja \(0\leq b\), niin \(0\leq ab\).</li>
-			<li class="sv">Icke-negativiteten bevaras vid multiplikation: Låt \(a\) och \(b\) vara tal. Om \(0\leq a\) och \(0\leq b\), så \(0\leq ab\).</li>
-		</ul>
+        </ul>
     </div>
 </div>
 <h2 class="fi">Funktiot ja yhtälöt</h2>
@@ -112,8 +124,6 @@
 
         <h3 class="fi">Itseisarvo</h3>
         <h3 class="sv">Absolutbelopp</h3>
-        <p class="fi">Luvun \(a\) itseisarvo \(|a|\) ilmaisee luvun \(a\) etäisyyden luvusta nolla lukusuoralla.</p>
-        <p class="sv">Absolutbeloppet \(|a|\) för talet \(a\) uttrycker avståndet mellan talen \(a\) och noll på tallinjen.</p>
         
 		<p class="fi">Luvun \(a\) itseisarvolle pätee</p>
 		<p class="sv">För absolutbeloppet till talet \(a\) gäller</p>
@@ -127,9 +137,9 @@
 			<li class="fi">Tulon itseisarvo on yhtä suuri kuin itseisarvojen tulo</li>
 			<li class="sv">Produktens absolutbelopp är lika stort som produkten av absolutbeloppen</li>
             \[\left|ab\right| = \left|a\right|\left|b\right|.\]
-            <li class="fi">Osamäärän itseisarvo on yhtä suuri kuin itseisarvojen osamäärä</li>
-            <li class="sv">Kvotens absolutbelopp är lika stort som kvoten av absolutbeloppen</li>
-            \[\left|\frac{a}{b}\right| = \frac{\left|a\right|}{\left|b\right|}.\]
+            <li class="fi">Kolmioepäyhtälö</li>
+            <li class="sv">Triangelolikheten</li>
+            \[\left|x+y\right| \le \frac{\left|x\right|}{\left|y\right|}.\]
         </ol>
     </div>
     <div class="boxed">
@@ -143,8 +153,7 @@
 
         <p class="fi">Oletetaan, että \(a>0\) sekä että \(m\) ja \(n\) ovat positiivisia luonnollisia lukuja. Tällöin</p>
         <p class="sv">Antag att \(a>0\) och att \(m\) och \(n\) är positiva naturliga tal. Då gäller</p>
-        \[a^\frac{m}{n} = \sqrt[n]{a^m} \]
-        \[ a^{-\frac{m}{n}} = \frac{1}{\sqrt[n]{a^m}}.\]
+        \[a^\frac{m}{n} = \left( \sqrt[n]{a} \right)^m \]
 
         <h4 class="fi">Potenssien laskusääntöjä</h4>
         <h4 class="sv">Räkneregler med potensser</h4>
@@ -205,12 +214,8 @@
         <h4 class="sv">Räkneregler med kvadratrot</h4>
         <ol>
             <li>
-                <span class="fi">Yhteenlasku: </span><span class="sv">Addition: </span>
-                \(b\sqrt a + c \sqrt a = (b+c) \sqrt a\).</li>
-            <li>
                 <span class="fi">Kertolasku: </span><span class="sv">Multiplikation: </span><br />
-                \(\sqrt a \cdot \sqrt b = \sqrt {ab}\)<br />
-                \( \left(\sqrt a\right)^2 = a \).</li>
+                \(\sqrt a \cdot \sqrt b = \sqrt {ab}\)</li>
             <li>
                 <span class="fi">Jakolasku: </span><span class="sv">Division: </span><br />
                 \( \frac{\sqrt a}{\sqrt b} = \sqrt {\frac ab}\).</li>
@@ -223,8 +228,8 @@
         <h3 class="fi">Logaritmi</h3>
         <h3 class="sv">Logaritmer</h3>
 
-        <p class="fi">Oletetaan, että kantaluku \(k\) on positiivinen ja \(k\ne1\). Positiivisen luvun \(a\) \(k\)-kantainen logaritmi tarkoittaa lukua \(x\), jolla on ominaisuus \(k^x=a\). Luvusta \(x\) käytetään merkintää \(\log_k(a)\). Lukua \(a\) kutsutaan numerukseksi.</p>
-		<p class="sv">Antag, att basen \(k\) är positiv och \(k\ne1\). Ett positivt tals \(a\) \(k\)-basiga logaritm är talet \(x\), som har egenskapen \(k^x=a\). Vi betecknar \(x\) med \(\log_k(a)\). Talet \(a\) kallas numerus.</p>
+        <p class="fi">Oletetaan, että kantaluku \(k\) on positiivinen ja \(k\ne1\). Positiivisen luvun \(a\) \(k\)-kantainen logaritmi tarkoittaa lukua \(x\), jolla on ominaisuus \(k^x=a\). Luvusta \(x\) käytetään merkintää \(\log_k(a)\).</p>
+		<p class="sv">Antag, att basen \(k\) är positiv och \(k\ne1\). Ett positivt tals \(a\) \(k\)-basiga logaritm är talet \(x\), som har egenskapen \(k^x=a\). Vi betecknar \(x\) med \(\log_k(a)\).</p>
 
         <h4 class="fi">Logaritmin laskusääntöjä</h4>
         <h4 class="sv">Räkneregler med logaritmer</h4>
