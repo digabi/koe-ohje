@@ -273,8 +273,9 @@ h3 {
 }
 
 .formulae th {
-	font-weight: bold;
 	background-color: #fefefe;
+	font-weight: bold;
+	vertical-align: top;
 }
 
 .formulae td {
