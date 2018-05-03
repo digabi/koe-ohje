@@ -3,3 +3,5 @@ node_modules/
 *.DS_Store
 CNAME
 editor.html
+build/tab-math.html
+content/tab-math.html
