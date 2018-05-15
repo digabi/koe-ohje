@@ -437,9 +437,9 @@
 				<td>\(6,67428 \cdot 10^{-11} \ \mathrm{\frac{Nm^2}{kg^2}}\)</td>
 			</tr>
 			<tr>
-				<td class="fi">normaaliputoamiskiihtyvyys</td>
+				<td class="fi">putoamiskiihtyvyys maan pinnalla</td>
 				<td class="sv">tyngdacceleration på jordytan</td>
-				<td>\(g_n\)</td>
+				<td>\(g\)</td>
 				<td>\(9,80665 \ \mathrm{\frac{m}{s^2}}\)</td>
 			</tr>
 			<tr>
@@ -481,7 +481,7 @@
 			<tr>
 				<td class="fi">valon nopeus tyhjiössä</td>
 				<td class="sv">ljusets hastighet i vakuum</td>
-				<td>\(c_0\)</td>
+				<td>\(c\)</td>
 				<td>\(2,99792458 \cdot 10^8 \ \mathrm{\frac{m}{s}}\)</td>
 			</tr>
 			<tr>
@@ -542,13 +542,13 @@
 				<td class="fi">Coulombin lain vakio</td>
 				<td class="sv">Konstanten för Coulombs lag</td>
 				<td>\(k\)</td>
-				<td>\(\frac{1}{4 \pi \varepsilon_0} \approx 8,987551787368 \cdot 10^9 \mathrm{N m^2 C^{-2}}\)</td>
+				<td>\(\frac{1}{4 \pi \varepsilon_0} \approx 8,987551787368 \cdot 10^9 \ \mathrm{N m^2 C^{-2}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">Faradayn vakio</td>
 				<td class="sv">Faradays konstant</td>
 				<td>\(F\)</td>
-				<td>\(96485,31 \ \mathrm{\frac{C}{mol}}\)</td>
+				<td>\(N_A e \approx 96485,31 \ \mathrm{\frac{C}{mol}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">Planckin vakio</td>
@@ -2799,14 +2799,14 @@
 					</tr>
 					<td class="fi">keskinopeus</td>
 					<td class="sv">medelhastighet</td>
-					<td>\(v\)</td>
+					<td>\(v_k\)</td>
 					<td>\(\mathrm{\frac{m}{s}}\)</td>
 					<td>\(v_k = \frac{\Delta x}{\Delta t}\)</td>
 				</tr>
 				<tr>
 					<td class="fi">kiihtyvyys</td>
 					<td class="sv">acceleration</td>
-					<td>\(a\)</td>
+					<td>\(a_k\)</td>
 					<td>\(\mathrm{\frac{m}{s^2}}\)</td>
 					<td>\(a_k = \frac{\Delta v}{\Delta t}\)</td>
 				</tr>
@@ -2837,7 +2837,7 @@
 					<td/>
 				</tr>
 				<tr>	
-					<td class="fi">painovoima</td>
+					<td class="fi">painovoima maan pinnalla</td>
 					<td class="sv">tyngdkraft</td>
 					<td>\(G\)</td>
 					<td/>
@@ -2852,7 +2852,7 @@
 				</tr>
 
 				<tr>
-					<th class="fi" colspan="2">Etenemisen liikeyht&auml;l&ouml;</th>
+					<th class="fi" colspan="2">Newtonin II laki</th>
 					<th class="sv" colspan="2">Rörelseekvation</th>
 					<td/>
 					<td/>
@@ -2894,7 +2894,7 @@
 					<th class="sv" colspan="2">Mekanisk verkningsgrad</th>
 					<td>\(\eta\)</td>
 					<td/>
-					<td>\(\eta = \frac{E_\mathrm{a}}{E_\mathrm{o}} = \frac{P_\mathrm{a}}{P_\mathrm{o}}\)</td>
+					<td>\(\eta = \frac{E_\mathrm{a}}{E_\mathrm{o}}\)</td>
 				</tr>
 				<tr>
 					<th class="fi">Potentiaalienergia</th>
@@ -2907,7 +2907,7 @@
 				</tr>
 
 				<tr>
-					<th class="fi" colspan="2">Kineettinen energia</th>
+					<th class="fi" colspan="2">Liike-energia</th>
 					<th class="sv" colspan="2">Kinetisk energi</th>
 					<td>\(E_\mathrm{k}\)</td>
 					<td>\(\mathrm{J}\)</td>
@@ -2953,41 +2953,39 @@
 					<td>\[\frac {t_{\mathrm{F}}}{\mathrm{F}}=\frac 95 \left(\frac {t}{\mathrm{&deg;C}}+32\right)\]</td>
 				</tr>
 				<tr>
-					<th colspan="2" class="fi">Kaasujen yleinen tilanyhtälö</th> 
+					<th colspan="2" class="fi">Ideaalikaasun tilanyhtälö</th> 
 					<th colspan="2" class="sv">Gasernas allmänna tillståndsekvation</th> 
 					<td/>
 					<td/> 
-					<td class="fi">\[pV=nRT,\ \frac{pV}{T}= \ \mathrm{vakio}\]</td>
-					<td class="sv">\[pV=nRT,\ \frac{pV}{T}= \ \mathrm{konstant}\]</td>
+					<td class="fi">\[pV=nRT\]</td>
+					<td class="sv">\[pV=nRT\]</td>
 				</tr>
 				<tr>
-					<th rowspan="2" class="fi">Lämpölaajeneminen</th> 
-					<th rowspan="2" class="sv">Värmeutvidgning</th> 
-					<td class="fi">pituus</td>
-					<td class="sv">längd</td>			
+					<th colspan="2" class="fi">Pituuden lämpölaajenemiskerroin</th>
+					<th colspan="2" class="sv">längd</th>			
 					<td>\(\alpha\)</td> 
 					<td>1/&deg;C</td> 
 					<td>\[l=l_0(1+\alpha \Delta t)\]</td>
 				</tr>
 				<tr>
-					<td class="fi">tilavuus</td> 
-					<td class="sv">volym</td> 
+					<th colspan="2" class="fi">Tilavuuden lämpölaajenemiskerroin</th> 
+					<th colspan="2" class="sv">volym</th> 
 					<td>\(\gamma\)</td> 
 					<td>1/&deg;C</td> 
-					<td>\[V=V_0(1-\gamma \Delta t)\]</td>
+					<td>\[V=V_0(1+\gamma \Delta t)\]</td>
 				</tr>
 				<tr>
 					<th rowspan="2" class="fi">Termodynaaminen systeemi</th> 
 					<th rowspan="2" class="sv">Termodynamiskt system</th>
-					<td class="fi">työ</td> 
+					<td class="fi">isobaarinen työ</td> 
 					<td class="sv">arbete</td> 
 					<td/> 
 					<td/> 
 					<td>\[W=p\Delta V\]</td>
 				</tr>
 				<tr>
-					<td class="fi">ensimmäinen pääsääntö:<br /> energian säilyminen</td> 
-					<td class="sv">första huvudsatsen:<br /> energins bevarande</td> 
+					<td class="fi">ensimmäinen pääsääntö</td> 
+					<td class="sv">första huvudsatsen</td> 
 					<td/>
 					<td/>
 					<td>\[\Delta U=Q+W\]</td>
@@ -3022,8 +3020,8 @@
 					<td>\[Q=rm\]</td>
 				</tr>
 				<tr>
-					<th rowspan="2" class="fi">Lämpövoimakone</th> 
-					<th rowspan="2" class="sv">Värmemaskin</th> 
+					<th class="fi">Lämpövoimakone</th> 
+					<th class="sv">Värmemaskin</th> 
 					<td class="fi">hyötysuhde</td> 
 					<td class="sv">verkningsgrad</td> 
 					<td>\(\eta\)</td> 
@@ -3031,28 +3029,14 @@
 					<td>\[\eta = \frac {W}{Q_1}=\frac {Q_1-Q_2}{Q_1}\]</td>
 				</tr>
 				<tr>
-					<td class="fi">ideaalinen hyötysuhde</td> 
-					<td class="sv">ideala verkningsgraden</td> 
-					<td/>
-					<td/>
-					<td>\[\eta_{\max}= \frac{T_1-T_2}{T_1}\]</td>
-				</tr>
-				<tr>
-					<th rowspan="2" class="fi">Jäähdytyskone</th> 
-					<th rowspan="2" class="sv">Kylmaskin</th> 
+					<th class="fi">Jäähdytyskone</th> 
+					<th class="sv">Kylmaskin</th> 
 					<td class="fi">suorituskyky</td> 
 					<td class="sv">prestationsförmåga</td> 
 					<td>\(\varepsilon\)</td> 
 					<td/> 
 					<td>\[\varepsilon = \frac {Q_2}{Q_1-Q_2}=\frac {1}{\eta}-1\]</td>
 				</tr>
-				<tr>
-					<td class="fi">ideaalinen suorituskyky</td> 
-					<td class="sv">ideala prestationsförmågan> 
-						<td/> 
-						<td/> 
-						<td>\[\varepsilon_{\max}=\frac{T_2}{T_1-T_2}=\frac{1}{\eta_{\max}}-1\]</td>
-					</tr>
 				</table>
 			</div>
 
@@ -3071,24 +3055,11 @@
 						<th class="sv">Formel</th>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Aalto-opin perusyhtälö</th> 
+						<th colspan="2" class="fi">Aallonpituus</th> 
 						<th colspan="2" class="sv">Vågrörelsens grundformel</th> 
-						<td/> 
-						<td/> 
-						<td class="fi">\(\lambda=\frac{v}{f}\), missä 
-							<ul>
-								<li>\(\lambda\) aallon pituus,</li>
-								<li>\(v\) on aallon etenemisnopeus,</li>
-								<li>\(f\) on aallon taajuus,</li>
-							</ul>
-						jotka kaikki ovat suhteessa havaitsijaan.</td>
-						<td class="sv">\(\lambda=\frac{v}{f}\), där 
-							<ul>
-								<li>\(\lambda\) är våglängden,</li>
-								<li>\(v\) är vågens famskridnigshastighet,</li>
-								<li>\(f\) är vågens frekevens,</li>
-							</ul>
-						som alla är i förhallande till åskådaren.</td>
+						<td>\(\lambda\)</td> 
+						<td>\(\mathrm{m}\)</td> 
+						<td>\[\lambda=\frac{v}{f}\]</td>
 					</tr>
 					<tr>
 						<th colspan="2" class="fi">Intensiteetti</th> 
@@ -3111,21 +3082,14 @@
 						<td class="sv">vågkällan rör sig</td> 
 						<td/> 
 						<td/> 
-						<td>\[f=f_0\frac {c}{c\pm v}\]</td>
+						<td>\[f=f_0\frac {v}{v \pm v_l}\]</td>
 					</tr>
 					<tr>
 						<td class="fi">havaitsija liikkuu</td> 
 						<td class="sv">vågkällan rör sig</td> 
 						<td/> 
 						<td/> 
-						<td>\[f=f_0\frac {c\pm v}{c}\]</td>
-					</tr>
-					<tr>
-						<th  colspan="2" class="fi">Äänen nopeus kaasussa</th> 
-						<th  colspan="2" class="sv">Ljudets hastighet i gas</th> 
-						<td>\(c\)</td> 
-						<td/> 
-						<td>\[\frac {c_1}{c_2}=\sqrt{\frac{T_1}{T_2}}\]</td>
+						<td>\[f=f_0\frac {v\pm v_h}{v}\]</td>
 					</tr>
 					<tr>
 						<th  colspan="2" class="fi">Äänen intensiteettitaso</th> 
@@ -3160,20 +3124,7 @@
 						<th colspan="2" class="sv">Gauss avbildningslag (linsekvation)</th> 
 						<td/> 
 						<td/> 
-						<td class="fi">\(\frac 1a + \frac 1b = \frac 1f\), missä
-							<ul>
-								<li>\(a\) on esineen etäisyys linssistä,</li>
-								<li>\(b\) on kuvan etäisyys linssistä,</li>
-								<li>\(f\) on polttoväli.</li>
-							</ul>
-						</td>
-						<td class="sv">\(\frac 1a + \frac 1b = \frac 1f\), där
-							<ul>
-								<li>\(a\) är föremålets avstånd från linsen,</li>
-								<li>\(b\) är bildens avstånd från linsen,</li>
-								<li>\(f\) är brännvidden.</li>
-							</ul>
-						</td>
+						<td>\[\frac 1a + \frac 1b = \frac 1f\]</td>
 					</tr>
 					<tr>
 						<th  colspan="2" class="fi">Linssin taittokyky</th> 
@@ -3187,18 +3138,7 @@
 						<th colspan="2" class="sv">Linjär förstoring</th> 
 						<td>\(m\)</td> 
 						<td/> 
-						<td class="fi">\(m=\left|\frac ba\right|\), missä
-							<ul>
-								<li>\(b\) on kuvan etäisyys peilistä, </li>
-								<li>\(a\) on esineen etäisyys peilistä.</li>
-							</ul>
-						</td>
-						<td class="sv">\(m=\left|\frac ba\right|\), där
-							<ul>
-								<li>\(b\) är bildens avstånd från spegeln, </li>
-								<li>\(a\) är föremålets avstånd från spegeln.</li>
-							</ul>
-						</td>
+						<td>\[m=\left|\frac ba\right|\]</td>
 					</tr>
 					<tr>
 						<th colspan="2" class="fi">Kulmasuurennus</th>
@@ -3277,95 +3217,38 @@
 					<tr>
 						<th colspan="2" class="fi">Coulombin laki (tyhjiössä)</th> 
 						<th colspan="2" class="sv">Coulombs lag (i vakum)</th> 
-						<td>\(\mathbf {F} \)</td> 
-						<td>N</td> 
-						<td  class="fi">\(\mathbf {F} ={\frac {1}{4\pi \epsilon _{0}}}{\frac {q_{1}q_{2}}{r^{2}}}\mathbf {\hat {r}} \), missä
-							<ul>
-								<li>\( \varepsilon_{0}\) on sähkövakio,</li>
-								<li>\(q_{1}\) ja \(q_{2}\) ovat hiukkasten sähkövaraukset,</li>
-								<li>\( r\) on hiukkasten välinen etäisyys,</li>
-								<li>\(\mathbf {\hat {r}}\) on yksikkövektori, joka osoittaa varauksesta toiseen.</li>
-							</ul>
-						</td>
-						<td  class="sv">\(\mathbf {F} ={\frac {1}{4\pi \epsilon _{0}}}{\frac {q_{1}q_{2}}{r^{2}}}\mathbf {\hat {r}} \), där
-							<ul>
-								<li>\( \varepsilon_{0}\) är den elektriska konstanten,</li>
-								<li>\(q_{1}\) och \(q_{2}\) är partiklarnas laddningar</li>
-								<li>\( r\) är avståndet mellan partiklarna,</li>
-								<li>\(\mathbf {\hat {r}}\) är enhetsvektorn, som är riktad mellan laddningarna.</li>
-							</ul>
-						</td>
+						<td>\( F \)</td> 
+						<td>\(\mathrm{N}\)</td> 
+						<td>\[F ={\frac {1}{4\pi \epsilon _{0}}}{\frac {q_{1}q_{2}}{r^{2}}}\]</td>
 					</tr>
 					<tr>
 						<th rowspan="2" class="fi">Sähkökentän</th> 
 						<th rowspan="2" class="sv">Elektriska fältets</th> 
 						<td class="fi">voimakkuus</td> 
 						<td class="sv">fältstyrka</td> 
-						<td>\(\mathbf{E}\)</td> 
-						<td>\(\mathrm{N}{C}\), \(\mathrm{V}{m}\)</td> 
-						<td class="fi">\(\mathbf{E} = \frac{\mathbf{F}}{q}\), missä 
-							<ul>
-								<ul>
-									<li>\(\mathbf{F}\) on Coulumbin lain mukainen voima,</li>
-									<li>\(q\) on jännite annetussa pisteessä.</li>
-								</ul>
-							</td>
-							<td class="sv">\(\mathbf{E} = \frac{\mathbf{F}}{q}\), där 
-								<ul>
-									<li>\(\mathbf{F}\) är kraften enligt Coulombs lag,</li>
-									<li>\(q\) är laddningen i den givna punkten.</li>
-								</ul>
-							</td>
+						<td>\(E \)</td> 
+						<td>\(\frac{\mathrm{N}}{\mathrm{C}}\), \(\frac{\mathrm{V}}{\mathrm{m}}\)</td> 
+						<td class="fi">\[E = \frac{F}{q}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">potentiaali</td> 
 							<td class="sv">potential</td> 
-							<td>\(\mathbf{V}\)</td> 
-							<td>V</td> 
-							<td class="fi">\(\mathbf{V}=\frac{\mathbf{E_{p}}}{Q}\), missä 
-								<ul>
-									<li>\(\mathbf{E_{p}}\) on sähköinen potentiaalienergia,</li>
-									<li>\(Q\) on varaus.</li>
-								</ul>
-							</td>
-							<td class="sv">\(\mathbf{v}=\frac{\mathbf{E_{p}}}{Q}\), där 
-								<ul>
-									<li>\(\mathbf{E_{p}}\) är sähköinen potentiaalienergia,</li>
-									<li>\(Q\) on varaus.</li>
-								</ul>
-							</td>
+							<td>\(V\)</td> 
+							<td>\(\mathrm{V}\)</td> 
+							<td class="fi">\[V=\frac{E_{p}}{Q}\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Suhteellinen permittiivisyys</th> 
 							<th colspan="2" class="sv">Relativ permittivitet</th> 
 							<td>\(\varepsilon_{r}\)</td> 
 							<td/> 
-							<td class="fi">\(\varepsilon_{r}=\frac{\mathbf{E}_{0}}{\mathbf{E}}=\frac{\varepsilon}{\varepsilon_{0}}\), missä
-								<ul>
-									<li>\(\varepsilon\) on väliaineen permittiivisyys,</li>
-									<li>\(\varepsilon_{0}\) on tyhjiön permittiivisyys.</li>
-								</ul>
-							</td>
-							<td class="sv">\(\varepsilon_{r}=\frac{\mathbf{E}_{0}}{\mathbf{E}}=\frac{\varepsilon}{\varepsilon_{0}}\), där
-								<ul>
-									<li>\(\varepsilon\) är mediumets permittivitet,</li>
-									<li>\(\varepsilon_{0}\) är tommrummets permittivitet.</li>
-								</ul>
-							</td>
+							<td>\[\varepsilon_{r}=\frac{\varepsilon}{\varepsilon_{0}}\]</td>
 						</tr>
 						<tr>
-							<th rowspan="2" class="fi">Jännite eli potentiaaliero</th>
-							<th rowspan="2" class="sv">Spänning dvs. potentialskillnad</th>			
-							<td />							
-							<td>\(\mathbf{U}\)</td> 
-							<td>V</td> 
-							<td>\(\mathbf{U_{AB}}=\mathbf{V_{A}-V_{B}}=\frac{\mathbf{E_{pA}}-\mathbf{E_{pB}}}{q}\)</td>
-						</tr>
-						<tr>
-							<td class="fi">homogeenisessä sähkökentässä</td> 
-							<td class="sv">i homogent elfält</td> 							
-							<td/> 
-							<td/> 
+							<th colspan="2" class="fi">Potentiaaliero homogeenisessä sähkökentässä</th>
+							<th colspan="2" class="sv">Potentialskillnad i homogent elfält</th>			
+							<td>\(U\)</td> 
+							<td>\(\mathrm{V}\)</td> 
 							<td>\[U=Ed\]</td>
 						</tr>
 						<tr>
@@ -3381,7 +3264,7 @@
 							<td class="fi">potentiaali</td>
 							<td class="sv">potential</td>							
 							<td>\(V\)</td> 
-							<td>V</td> 
+							<td>\(\mathrm{V}\)</td> 
 							<td>\[V=\frac{1}{4\pi\varepsilon_0} \frac Qr\]</td>
 						</tr>
 						<tr>
@@ -3390,7 +3273,7 @@
 							<td class="fi">kapasitanssi</td>
 							<td class="sv">kapacitans</td>							
 							<td rowspan="2">\(C\)</td> 
-							<td>F</td> 
+							<td>\(\mathrm{F}\)</td> 
 							<td>\[C= \frac QU\]</td>
 						</tr>
 						<tr>
@@ -3435,8 +3318,8 @@
 							<th colspan="2" class="fi">Resistiivisyys</th>
 							<th colspan="2" class="sv">Resistivitet</th>							
 							<td>\(\rho\)</td> 
-							<td>\(\Omega\)</td> 
-							<td>\(\rho=\frac{RA}{l}\)</td> 
+							<td>\(\Omega\mathrm{m}\)</td> 
+							<td>\[\rho=\frac{RA}{\ell}\]</td> 
 						</tr>
 						<tr>
 							<th rowspan="2" class="fi">Vastukset</th>
@@ -3458,15 +3341,8 @@
 							<th colspan="2" class="fi">Sähkövirta</th>
 							<th colspan="2" class="sv">Elektrisk ström</th>							
 							<td>\(I\)</td> 
-							<td>A</td> 
+							<td>\(\mathrm{A}\)</td> 
 							<td>\[I=\frac {\Delta Q}{\Delta t}\]</td>
-						</tr>
-						<tr>
-							<th colspan="2" class="fi">Sähköenergia</th>
-							<th colspan="2" class="sv">Elektrisk energi</th>							
-							<td>\(E\)</td> 
-							<td>J</td> 
-							<td>\[E=UIt\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Sähköteho</th>
@@ -3479,7 +3355,7 @@
 							<th colspan="2" class="fi">Yhdensuuntaiset virtajohtimet</th>
 							<th colspan="2" class="sv">Parallella elektriska ledare</th>							
 							<td>\(F\)</td> 
-							<td>N</td> 
+							<td>\(\mathrm{N}\)</td> 
 							<td>\[F=\frac{\mu_o}{4\pi} \frac{I_1I_2}{r}\ell\]</td>
 						</tr>
 						<tr>
@@ -3487,7 +3363,7 @@
 							<th colspan="2" class="sv">Relatic permeabilitet</th>							
 							<td>\(\mu_r\)</td> 
 							<td/> 
-							<td>\[\mu_r=\frac{B}{B_0} = \frac{\mu}{\mu_0}\]</td>
+							<td>\[\mu_r = \frac{\mu}{\mu_0}\]</td>
 						</tr>
 						<tr>
 							<th rowspan="4" class="fi">Magneettivuon tiheys</th>
@@ -3495,7 +3371,7 @@
 							<td class="fi">suora virtajohdin</td>
 							<td class="sv">rak elektrisk ledare</td>	
 							<td rowspan="4">\(B\)</td> 
-							<td rowspan="4">T</td> 
+							<td rowspan="4">\(\mathrm{T}\)</td> 
 								<td>\[B=\frac{\mu_0}{2\pi r}I\]</td>
 						</tr>
 						<tr>
@@ -3523,7 +3399,7 @@
 							<th colspan="2" class="fi">Magneettikentän voimakkuus</th>
 							<th colspan="2" class="sv">Magnetisk fältstyrcka</th>							
 							<td>\(H\)</td> 
-							<td>A/m</td> 
+							<td>\(\frac{\mathrm{A}}{\mathrm{m}}\)</td> 
 							<td>\[H=\frac{B}{\mu_0}\]</td>
 						</tr>
 						<tr>
@@ -3534,14 +3410,14 @@
 							<td class="sv">laddad partikel</td>							
 							<td rowspan="2">\(F\)</td> 
 							<td rowspan="2">N</td> 
-							<td>\[F=Qv \times B, \ F=QvB\sin \alpha\]</td>
+							<td>\[\vec{F}=Q \vec{v} \times \vec{B}, \ F=QvB\sin \alpha\]</td>
 						</tr>
 						<tr>
 							<td class="fi">suora virtajohdin</td>
 							<td class="sv">rak elektrisk ledare</td>							
 
 
-							<td>\[F=I\ell B\sin\alpha\]</td>
+							<td>\[\vec{F}=I \vec{\ell} \times \vec{B}, \ F=I\ell B\sin\alpha\]</td>
 						</tr>
 						<tr>
 							<th class="fi">Momentti magneettikentässä</th>
@@ -3549,52 +3425,43 @@
 							<td class="fi">käämi</td>
 							<td class="sv">spole</td>							
 							<td>\(M\)</td> 
-							<td>Nm</td> 
+							<td>\(\mathrm{Nm}\)</td> 
 							<td>\[M=NIAB\sin\alpha\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Magneettivuo</th>
 							<th colspan="2" class="sv">Magnetiskt flöde</th>							
-							<td>\(\Sigma\)</td> 
-							<td>Wb</td> 
-							<td>\[\Sigma=A\cdot B=AB\cos\varphi\]</td>
+							<td>\(\Phi\)</td> 
+							<td>\(\mathrm{Wb}\)</td> 
+							<td>\[\Phi= \vec{A}\cdot \vec{B}=AB\cos\varphi\]</td>
 						</tr>
 						<tr>
-							<th rowspan="3" class="fi">Induktiojännite</th>
-							<th rowspan="3" class="sv">Induktionsspänning</th>	
-							<td class="fi">suora johdin</td>
-							<td class="sv">rak elektrisk ledare</td>
-							<td rowspan="3">\(e\)</td> 
-							<td>V</td> 
-							<td>\[e=\ell vB\sin \alpha\]</td>
-						</tr>
-						<tr>
+							<th rowspan="2" class="fi">Induktiojännite</th>
+							<th rowspan="2" class="sv">Induktionsspänning</th>	
 							<td class="fi">käämi</td>
 							<td class="sv">spole</td>							
-
+							<td/>
 							<td/> 
 							<td>\[e=-N\frac{\Delta\Phi}{\Delta t}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">itseinduktio</td>
 							<td class="sv">självinduktion</td>							
-
+							<td/> 
 							<td/> 
 							<td>\[e=-L\frac{\Delta I}{\Delta t}\]</td>
 						</tr>
 						<tr>
 							<th rowspan="2" class="fi">Induktanssi</th>
 							<th rowspan="2" class="sv">Induktans</th>	
-							<td />							
+							<td>käämi</td>							
 							<td rowspan="2">\(L\)</td> 
-							<td>H</td> 
+							<td rowspan="2">\(\mathrm{H}\)</td> 
 							<td>\[L=N\frac{\Phi}{I}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">pitkä käämi</td>
 							<td class="sv">långsträckt spole</td>							
-
-							<td/> 
 							<td>\[L=\mu_0\frac{N^2A}{\ell}\]</td>
 						</tr>
 						<tr>
@@ -3605,26 +3472,26 @@
 							<td>\[E=\frac 12 LI^2\]</td>
 						</tr>
 						<tr>
-							<th rowspan="4" class="fi">Sinimuotoinen vaihtojännite</th>
-							<th rowspan="4" class="sv">Sinusformad växelspänning</th>	
+							<th rowspan="6" class="fi">Sinimuotoinen vaihtojännite</th>
+							<th rowspan="6" class="sv">Sinusformad växelspänning</th>	
 							<td />							
 							<td>\(u\)</td> 
 							<td>V</td> 
-							<td>\[u=u_0\sin2\pi ft\]</td>
+							<td>\[u=u_0\sin \left(2\pi ft\right)\]</td>
 						</tr>
 						<tr>
 							<td class="fi">tehollinen jännite</td>
 							<td class="sv">effektiv spänning</td>							
 							<td/> 
 							<td/> 
-							<td>\[U_\mathrm{eff}=U=\frac{u_0}{\sqrt{2}}\]</td>
+							<td>\[U_\mathrm{eff}=\frac{u_0}{\sqrt{2}}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">tehollinen virta</td>
 							<td class="sv">effektiv strömstyrka</td>							
 							<td/> 
 							<td/> 
-							<td>\[I_{\mathrm{eff}}=I=\frac{i_0}{\sqrt{2}}\]</td>
+							<td>\[I_{\mathrm{eff}}=\frac{i_0}{\sqrt{2}}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">teho</td>
@@ -3634,25 +3501,17 @@
 							<td>\[P=UI\cos\varphi\]</td>
 						</tr>
 						<tr>
-							<th rowspan="3" class="fi">Reaktanssi</th>
-							<th rowspan="3" class="sv">Reaktans</th>		
-							<td />							
-							<td>\(X\)</td> 
-							<td>\(\Omega\)</td> 
-							<td/>
-						</tr>
-						<tr>
-							<td class="fi">induktiivinen</td>
+							<td class="fi">induktiivinen reaktanssi</td>
 							<td class="sv">induktiv</td>							
-							<td>\(X_L\)</td> 
-							<td/> 
+							<td>\(X_L\)</td>
+							<td>\(\Omega\)</td> 
 							<td>\[X_L=\omega L=2\pi fL\]</td>
 						</tr>
 						<tr>
-							<td class="fi">kapasitiivinen</td>
+							<td class="fi">kapasitiivinen reaktanssi</td>
 							<td class="sv">kapacitiv</td>							
 							<td>\(X_C\)</td> 
-							<td/> 
+							<td>\(\Omega\)</td> 
 							<td>\[X_C=\frac{1}{\omega C}=\frac {1}{2\pi fC}\]</td>
 						</tr>
 						<tr>
@@ -3662,7 +3521,7 @@
 							<td class="sv">spänning</td>							
 							<td>\(u\)</td> 
 							<td>V</td> 
-							<td>\[u=u_0\sin 2\pi ft\]</td>
+							<td>\[u=u_0\sin \left(2\pi ft \right)\]</td>
 						</tr>
 						<tr>
 							<td class="fi">virta</td>
@@ -3700,8 +3559,8 @@
 							<td>\[f_0=\frac{1}{2\pi\sqrt{LC}}\]</td>
 						</tr>
 						<tr>
-							<th colspan="2" class="fi">Sähkömagneettisen aaltoliikkeen nopeus (tyhjiössä)</th> 
-							<th colspan="2" class="sv">Hastighet av elektromagnetisk rörelse (i vakum)</th>
+							<th colspan="2" class="fi">Sähkömagneettisen aaltoliikkeen nopeus tyhjiössä</th> 
+							<th colspan="2" class="sv">Hastighet av elektromagnetisk rörelse i vakum</th>
 							<td>\(c\)</td> 
 							<td>\(\mathrm{\frac{m}{s}}\)</td> 
 							<td>\[c=\frac{1}{\sqrt{\epsilon_0\mu_0}}\]</td>
