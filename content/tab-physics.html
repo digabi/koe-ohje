@@ -67,7 +67,7 @@
 			<td class="sv">Termodynamisk temperatur</td>
 			<td>\(T\)</td>
 			<td>kelvin</td>
-			<td>K</td>
+			<td>\(\mathrm{K}\)</td>
 			<td class="fi">Kelvin vastaa \(\frac{1}{273,16}\) veden kolmoispisteen termodynaamisesta lämpötilasta.</td>
 			<td class="sv">Kelvin motsvarar \(\frac{1}{273,16}\) av den termodynamiska temperaturen vid vattnets trippelpunkt.</td>			
 		</tr>
@@ -2934,22 +2934,22 @@
 					<th rowspan="4" colspan="2" class="fi">Lämpötila-asteikot</th>
 					<th rowspan="4" colspan="2" class="sv">Temperaturskalor</th>
 					<td>\(T\)</td>
-					<td>K</td>
+					<td>\(\mathrm{K}\)</td>
 					<td>\[\frac {T}{\mathrm{K}}=\frac {t}{\mathrm{&deg;C}}+273,15\]</td>
 				</tr>
 				<tr>
 					<td>\(t\)</td>
-					<td>&deg;C</td>
+					<td>\(\mathrm{&deg;C}\)</td>
 					<td>\[\frac {t}{\mathrm{&deg;C}} = \frac {T}{\mathrm{K}} -273,15\]</td>
 				</tr>
 				<tr>
 					<td/>
-					<td>&deg;C</td>
+					<td>\(\mathrm{&deg;C}\)</td>
 					<td>\[\frac {t}{\mathrm{&deg;C}}=\frac 59 \left( \frac {t_{\mathrm{F}}}{\mathrm{&deg;F}}-32 \right)\]</td>
 				</tr>
 				<tr>
 					<td/>
-					<td>&deg;F</td>
+					<td>\(\mathrm{&deg;F}\)</td>
 					<td>\[\frac {t_{\mathrm{F}}}{\mathrm{F}}=\frac 95 \left(\frac {t}{\mathrm{&deg;C}}+32\right)\]</td>
 				</tr>
 				<tr>
@@ -2964,14 +2964,14 @@
 					<th colspan="2" class="fi">Pituuden lämpölaajenemiskerroin</th>
 					<th colspan="2" class="sv">längd</th>			
 					<td>\(\alpha\)</td> 
-					<td>1/&deg;C</td> 
+					<td>\(\mathrm{\frac{1}{&deg;C}}\)</td> 
 					<td>\[l=l_0(1+\alpha \Delta t)\]</td>
 				</tr>
 				<tr>
 					<th colspan="2" class="fi">Tilavuuden lämpölaajenemiskerroin</th> 
 					<th colspan="2" class="sv">volym</th> 
 					<td>\(\gamma\)</td> 
-					<td>1/&deg;C</td> 
+					<td>\(\mathrm{\frac{1}{&deg;C}}\)</td> 
 					<td>\[V=V_0(1+\gamma \Delta t)\]</td>
 				</tr>
 				<tr>
@@ -2994,7 +2994,7 @@
 					<th colspan="2" class="fi">Lämpökapasiteetti</th>
 					<th colspan="2" class="sv">Värmekapacitet</th>			
 					<td>\(C\)</td> 
-					<td>J/K</td> 
+					<td>\(\frac{\mathrm{J}}{\mathrm{K}}\)</td> 
 					<td>\[C=cm\]</td>
 				</tr>
 				<tr>
@@ -3002,7 +3002,7 @@
 					<th rowspan="3" class="sv">Värmemängd</th>
 					<td/>
 					<td rowspan="3">\(Q\)</td> 
-					<td>J</td> 
+					<td>\(\mathrm{J}\)</td> 
 					<td>\[Q=cm\Delta t\]</td>
 				</tr>
 				<tr>
@@ -3095,7 +3095,7 @@
 						<th  colspan="2" class="fi">Äänen intensiteettitaso</th> 
 						<th  colspan="2" class="sv">Ljudnivån för ljudintensitet</th> 
 						<td>\(L\)</td> 
-						<td>dB</td> 
+						<td>\(\mathrm{dB}\)</td> 
 						<td>\(L=10\lg\frac{I}{I_0}\mathrm{dB}\), \(I_0=1 \mathrm{\frac{pW}{m^2}}\)</td>
 					</tr>
 					<tr>
@@ -3174,7 +3174,7 @@
 						<th colspan="2" class="fi">Valovoima</th> 
 						<th colspan="2" class="sv">Ljusstyrka</th> 
 						<td>\(I\)</td> 
-						<td>cd</td> 
+						<td>\(\mathrm{cd}\)</td> 
 						<td>\[I=\frac {\Phi}{\omega}\]</td>
 					</tr>
 					<tr>
@@ -3188,14 +3188,14 @@
 						<th colspan="2" class="fi">Valovirta</th> 
 						<th colspan="2" class="sv">Ljusflöde</th> 
 						<td>\(\Phi\)</td> 
-						<td>lm</td> 
+						<td>\(\mathrm{lm}\)</td> 
 						<td>\[\Phi=I\omega\]</td>
 					</tr>
 					<tr>
 						<th colspan="2" class="fi">Valaistusvoimakkuus</th> 
 						<th colspan="2" class="sv">Illuminans</th> 
 						<td>\(E\)</td> 
-						<td>lx</td> 
+						<td>\(\mathrm{lx}\)</td> 
 						<td>\[\frac{\Phi}{A}\]</td>
 					</tr>
 				</table>
@@ -3302,16 +3302,14 @@
 						<tr>
 							<th rowspan="2" class="fi">Resistanssi</th>
 							<th rowspan="2" class="sv">Resistans</th>		
-							<td />							
+							<td> Ohmin laki</td>							
 							<td rowspan="2">\(R\)</td> 
-							<td>\(\Omega\)</td> 
+							<td rowspan="2">\(\Omega\)</td> 
 							<td>\[R=\frac UI\]</td>
 						</tr>
 						<tr>
 							<td class="fi">johdin</td>
 							<td class="sv">ledare</td>							
-
-							<td/> 
 							<td>\[R=\rho \frac {\ell}{A}\]</td>
 						</tr>
 						<tr>
@@ -3348,7 +3346,7 @@
 							<th colspan="2" class="fi">Sähköteho</th>
 							<th colspan="2" class="sv">Elektrisk effekt</th>							
 							<td>\(P\)</td> 
-							<td>W</td> 
+							<td>\(\mathrm{W}\)</td> 
 							<td>\[P=UI\]</td>
 						</tr>
 						<tr>
@@ -3409,7 +3407,7 @@
 							<td class="fi">varauksellinen hiukkanen</td>
 							<td class="sv">laddad partikel</td>							
 							<td rowspan="2">\(F\)</td> 
-							<td rowspan="2">N</td> 
+							<td rowspan="2">\(\mathrm{N}\)</td> 
 							<td>\[\vec{F}=Q \vec{v} \times \vec{B}, \ F=QvB\sin \alpha\]</td>
 						</tr>
 						<tr>
@@ -3468,7 +3466,7 @@
 							<th colspan="2" class="fi">Käämin magneettikentän energia</th>
 							<th colspan="2" class="sv">Energi hos fältet i en spole</th>							
 							<td>\(E\)</td> 
-							<td>J</td> 
+							<td>\(\mathrm{J}\)</td> 
 							<td>\[E=\frac 12 LI^2\]</td>
 						</tr>
 						<tr>
@@ -3476,7 +3474,7 @@
 							<th rowspan="6" class="sv">Sinusformad växelspänning</th>	
 							<td />							
 							<td>\(u\)</td> 
-							<td>V</td> 
+							<td>\(\mathrm{V}\)</td> 
 							<td>\[u=u_0\sin \left(2\pi ft\right)\]</td>
 						</tr>
 						<tr>
@@ -3520,14 +3518,14 @@
 							<td class="fi">jännite</td>
 							<td class="sv">spänning</td>							
 							<td>\(u\)</td> 
-							<td>V</td> 
+							<td>\(\mathrm{V}\)</td> 
 							<td>\[u=u_0\sin \left(2\pi ft \right)\]</td>
 						</tr>
 						<tr>
 							<td class="fi">virta</td>
 							<td class="sv">ström</td>							
 							<td>\(i\)</td> 
-							<td>A</td> 
+							<td>\(\mathrm{A}\)</td> 
 							<td>\[i=i_0\sin(2\pi ft -\varphi)\]</td>
 						</tr>
 						<tr>
@@ -3555,7 +3553,7 @@
 							<th colspan="2" class="fi">Värähtelypiirin taajuus</th>
 							<th colspan="2" class="sv">Frekvens för vändningskrets</th>									
 							<td>\(f\)</td> 
-							<td>Hz</td> 
+							<td>\(\mathrm{Hz}\)</td> 
 							<td>\[f_0=\frac{1}{2\pi\sqrt{LC}}\]</td>
 						</tr>
 						<tr>
