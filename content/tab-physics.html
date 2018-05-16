@@ -2789,7 +2789,7 @@
 				</tr>
 				<tr>
 					<tr>
-						<th rowspan="3" class="fi">Tasainen etenemisliike</th>
+						<th rowspan="3" class="fi">Etenemisliike</th>
 						<th rowspan="3" class="sv">Likformig rörelse</th>
 						<td class="fi">matka</td>
 						<td class="sv">sträcka</td>
@@ -2879,7 +2879,7 @@
 					<th class="sv" colspan="2">Arbete</th>
 					<td>\(W\)</td>
 					<td>\(\mathrm{J}\)</td>
-					<td>\(W = F_s s\)</td>
+					<td>\(W = \vec{F}\cdot \vec{s}, \ W = F_s s\)</td>
 				</tr>
 
 				<tr>
@@ -2998,8 +2998,8 @@
 					<td>\[C=cm\]</td>
 				</tr>
 				<tr>
-					<th rowspan="3" class="fi">Lämpömäärä</th> 
-					<th rowspan="3" class="sv">Värmemängd</th>
+					<th rowspan="3" class="fi">Lämpö</th> 
+					<th rowspan="3" class="sv">Värme</th>
 					<td/>
 					<td rowspan="3">\(Q\)</td> 
 					<td>\(\mathrm{J}\)</td> 
@@ -3037,6 +3037,15 @@
 					<td/> 
 					<td>\[\varepsilon = \frac {Q_2}{Q_1-Q_2}=\frac {1}{\eta}-1\]</td>
 				</tr>
+				<tr>
+					<th class="fi">Lämpöpumppu</th> 
+					<th class="sv"> </th> 
+					<td class="fi">suorituskyky</td> 
+					<td class="sv">prestationsförmåga</td> 
+					<td>\(\varepsilon\)</td> 
+					<td/> 
+					<td>\[\varepsilon = \frac {Q_1}{Q_1-Q_2}=\frac {1}{\eta}\]</td>
+				</tr>
 				</table>
 			</div>
 
@@ -3055,11 +3064,11 @@
 						<th class="sv">Formel</th>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Aallonpituus</th> 
+						<th colspan="2" class="fi">Aaltoliikkeen nopeus</th> 
 						<th colspan="2" class="sv">Vågrörelsens grundformel</th> 
-						<td>\(\lambda\)</td> 
-						<td>\(\mathrm{m}\)</td> 
-						<td>\[\lambda=\frac{v}{f}\]</td>
+						<td>\(v \)</td> 
+						<td>\(\mathrm{\frac{m}{s}}\)</td> 
+						<td>\[v=\lambda \, f\]</td>
 					</tr>
 					<tr>
 						<th colspan="2" class="fi">Intensiteetti</th> 
@@ -3104,6 +3113,13 @@
 						<td/> 
 						<td/> 
 						<td>\[\frac {\sin \alpha_1}{\sin \alpha_2}= \frac{v_1}{v_2}= \frac{n_2}{n_1}=n_{12}\]</td>
+					</tr>
+					<tr>
+						<th colspan="2" class="fi">Valon nopeus väliaineessa</th> 
+						<th colspan="2" class="sv">  </th> 
+						<td/> 
+						<td/> 
+						<td>\[c_n = \frac{c}{n}\]</td>
 					</tr>
 					<tr>
 						<th colspan="2" class="fi">Brewsterin laki</th> 
@@ -3268,8 +3284,8 @@
 							<td>\[V=\frac{1}{4\pi\varepsilon_0} \frac Qr\]</td>
 						</tr>
 						<tr>
-							<th rowspan="2" class="fi">Kondensaattori</th>
-							<th rowspan="2" class="sv">Kondensator</th>							
+							<th rowspan="3" class="fi">Kondensaattori</th>
+							<th rowspan="3" class="sv">Kondensator</th>							
 							<td class="fi">kapasitanssi</td>
 							<td class="sv">kapacitans</td>							
 							<td rowspan="2">\(C\)</td> 
@@ -3282,6 +3298,12 @@
 
 							<td/> 
 							<td>\[C=\varepsilon_0\varepsilon_r \frac Ad\]</td>
+						<tr>
+							<td class="fi">energia</td>
+							<td class="sv"> </td>
+							<td>\( E \) </td>
+							<td>\( J \)
+							<td>\[E=\frac{1}{2}\frac{Q^2}{C}\]</td>
 						</tr>
 						<tr>
 							<th rowspan="2" class="fi">Kondensaattorit</th>
@@ -3364,12 +3386,12 @@
 							<td>\[\mu_r = \frac{\mu}{\mu_0}\]</td>
 						</tr>
 						<tr>
-							<th rowspan="4" class="fi">Magneettivuon tiheys</th>
-							<th rowspan="4" class="sv">Magnetiskt flödestäthet</th>		
+							<th rowspan="5" class="fi">Magneettivuon tiheys</th>
+							<th rowspan="5" class="sv">Magnetiskt flödestäthet</th>		
 							<td class="fi">suora virtajohdin</td>
 							<td class="sv">rak elektrisk ledare</td>	
-							<td rowspan="4">\(B\)</td> 
-							<td rowspan="4">\(\mathrm{T}\)</td> 
+							<td rowspan="5">\(B\)</td> 
+							<td rowspan="5">\(\mathrm{T}\)</td> 
 								<td>\[B=\frac{\mu_0}{2\pi r}I\]</td>
 						</tr>
 						<tr>
@@ -3392,6 +3414,13 @@
 
 
 							<td>\[B=N\frac{\mu_0}{2\pi r}I\]</td>
+						</tr>
+						<tr>
+							<td class="fi">aineessa</td>
+							<td class="sv"> </td>							
+
+
+							<td>\[B=\mu_r B_0\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Magneettikentän voimakkuus</th>
@@ -3424,7 +3453,7 @@
 							<td class="sv">spole</td>							
 							<td>\(M\)</td> 
 							<td>\(\mathrm{Nm}\)</td> 
-							<td>\[M=NIAB\sin\alpha\]</td>
+							<td>\[\vec{M} = NI \vec{A} \times \vec{B}, \ M=NIAB\sin\alpha\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Magneettivuo</th>
