@@ -79,7 +79,8 @@ This work is double licensed under:
 
 ## Kiitämme
 
- * Peter Ahlroos: Videot
- * Lotta Oinonen: Matematiikan sisältö
- * Riitta Salmenoja: Mekaniikan kaavoja
+ * Videot: Peter Ahlroos
+ * Matematiikka: Lotta Oinonen
+ * Fysiikka: Riitta Salmenoja, Ville Havu, Krisitan Meinander
+ * Kemia: Katariina Tammi
  * ([FontAwesome](http://fontawesome.io/)), MIT License
