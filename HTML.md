@@ -6,9 +6,9 @@ lisätä duplikaatteina eikä niitä ole seuraavassa tarkemmin eritelty selkeyde
 ### Yleisrakenne
 
 ```html
-<h3>Yläotsikko</h3>
+<h2>Yläotsikko</h2>
     <div class="scrollwrap">
-        <h4>Alaotsikko</h4>
+        <h3>Alaotsikko</h3>
         <table class="formulae">
         .
         . välissä LaTeX kaavoja ja soluja
@@ -19,16 +19,16 @@ lisätä duplikaatteina eikä niitä ole seuraavassa tarkemmin eritelty selkeyde
 
 ### Otsikot
 
-`<h3></h3>` muodostavat automaattisesti sivupalkin ylätason otsikot, jotka voivat kuvata muunmuassa eri aiheita.
+`<h2></h2>` muodostavat automaattisesti sivupalkin ylätason otsikot, jotka voivat kuvata muunmuassa eri aiheita.
 
-`<h4></h4>` on aihealueen alaotsikko.
+`<h3></h3>` on aihealueen alaotsikko.
 
 Esimerkki matematiikasta
 
 ```html
-<h3>Algebra</h3>
+<h2>Algebra</h2>
     <div class="scrollwrap">
-        <h4>Itseisarvo</h4>
+        <h3>Itseisarvo</h3>
         .
         .
         .
@@ -37,9 +37,9 @@ Esimerkki matematiikasta
 
 Kaavan lisääminen otsikkoon tapahtuu seuraavalla tavalla
 ```html
-<h3>Geometria</h3>
+<h2>Geometria</h2>
 <div class="scrollwrap">
-    <h4>Pythagoran lauseke</h4>
+    <h3>Pythagoran lauseke</h3>
     <span>\( a^2 + b^2 = c^2 \)</span>
     <table class="formulae">
         .
