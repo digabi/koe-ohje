@@ -11,7 +11,7 @@ from PyQt5.QtWebKitWidgets import QWebView
 
 from os.path import expanduser
 
-APP_ICON_PATH='/usr/share/digabi-koe-ohje/help-browser.png'
+APP_ICON_PATH='/usr/share/digabi-koe-ohje/help-browser.svg'
 LOCAL_STORAGE_PATH="%s/.cache/digabi-koe" % expanduser("~")
 
 class SharedClass (QObject):
