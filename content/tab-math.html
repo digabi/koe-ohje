@@ -710,4 +710,54 @@
 		<p class="sv">är den normalformade ekvationen för planet \(T\).</p>
 	
 	</div>
-</div>										
+</div>
+
+<h2 class="fi">Derivaatta</h2>
+<h2 class="sv">Derivata</h2>
+
+<div class="scrollwrap">
+	<div class="boxed">
+		<h3 class="fi">Derivaatan määritelmä</h3>
+		<h3 class="sv">Derivatans definition</h3>
+		
+		<p class="fi">Jos funktion \(f\) erotusosamäärällä kohdassa \(a\) on raja-arvo kohdassa \(a\), niin funktio \(f\) on derivoituva kohdassa \(a\). Raja-arvoa kutsutaan funktion \(f\) derivaataksi kohdassa \(a\) ja merkitään \(f'(a)\). Siis</p>
+		<p class="sv">Om differenskvoten för funktionen \(f\) i punkten \(a\) har ett gränsvärde i punkten \(a\), så är funktionen \(f\) deriverbar i punkten \(a\). Gränsvärdet kallas derivatan för funktionen \(f\) i punkten \(a\) och betecknas \(f'(a)\). Alltså</p>
+		\[\mathrm{D}f(a) = f'(a) = \lim_{x \rightarrow a} \frac{f(x)-f(a)}{x-a} = \lim_{h \rightarrow 0} \frac{f(a+h)-f(a)}{h}\]
+		
+		<h3 class="fi">Derivaatalle pätee</h3>
+		<h3 class="sv">För derivatan gäller</h3>
+		<ul>
+			<li class="fi">Vakiofunktion \(f(x)=c\) derivaattafunktio on \(\mathrm{D} c = f'(x) = 0\).</li>
+			<li class="sv">Derivatafunktionen för en konstant funtkion \(f(x)=c\) är \(\mathrm{D} c = f'(x) = 0\).</li>
+			<li class="fi">Olkoon \(r\) rationaaliluku. Potenssifunktion \(f(x)=x^r\) derivaattafunktio on \(\mathrm{D} x^r = f'(x) = rx^{r-1}\).</li>
+			<li class="sv">Låt \(r\) vara ett rationellt tal. Derivatafunktionen för potensfunktionen \(f(x)=x^r\) är \(\mathrm{D} x^r = f'(x) = rx^{r-1}\).</li>
+			<li class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Summan \(f+g\) derivaattafunktio on \(\mathrm{D} (f + g) = (f + g)'(x) = f'(x) + g'(x)\)</li>
+			<li class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för summan \(f+g\) är \(\mathrm{D} (f + g) = (f + g)'(x) = f'(x) + g'(x)\)</li>
+			<li class="fi">Oletetaan, että funktio \(f\) on derivoituva. Vakiolla kerrotun funktion \(kf\) derivaattafunktio on \(\mathrm{D} kf =(kf)'(x) = kf'(x)\).</li>
+			<li class="sv">Antag, att \(f\) är deriverbar. Derivatafunktionen för funktionen som multipliceras med en konstant \(kf\) är \(\mathrm{D} kf =(kf)'(x) = kf'(x)\).</li>
+			<li class="fi">Oletetaan, että funktio \(f\) ja \(g\) ovat derivoituvia. Tulofunktion \(fg\) derivaattafunktio on \(\mathrm{D} fg(fg)'(x) = f'(x)g(x) + f(x)g'(x)\).</li>
+			<li class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för produktfunktionen \(fg\) är \(\mathrm{D} fg(fg)'(x) = f'(x)g(x) + f(x)g'(x)\).</li>
+			<li class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Niiden osamäärän derivaattafunktio on \(\mathrm{D} \frac{f(x)}{g(x)} = \frac{f'(x)g(x)- f(x)g'(x)}{(g(x))^2}\).</li>
+			<li class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för deras kvotkoefficient är \(\mathrm{D} \frac{f(x)}{g(x)} = \frac{f'(x)g(x)- f(x)g'(x)}{(g(x))^2}\).</li>
+			<li class="fi">Olkoon \(n\) kokonaisluku. Jos \(f\) on derivoituva funktio, niin \(\mathrm{D} (f(x))^n = n(f(x))^{n-1}f'(x)\).
+			<li class="sv">Låt \(n\) vara ett heltal. Om funktionen \(f\) är deriverbar, så är \(\mathrm{D} (f(x))^n = n(f(x))^{n-1}f'(x)\).
+			<li class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Yhdistetyn funktion \(g \circ f\) derivaatta on \(\mathrm{D} g(f(x)) = g'(f(x))f'(x)\).</li>
+			<li class="sv">Antag, att \(f\) och \(g\) är deriverabra. Derivatafunktionen för den sammansatta funktionen \(g \circ f\) är \(\mathrm{D} g(f(x)) = g'(f(x))f'(x)\).</li>
+			<li class="fi">Sini- ja kosinifunktiot ovat kaikkialla derivoituvia. Niiden derivaattafunktiot ovat \(\mathrm{D} \sin x = \cos x\) ja \(\mathrm{D} \cos x = - \sin x\).</li>
+			<li class="sv">Sinus- och kosinusfunktionerna är deriverbara överallt. Deras derivatafunktioner är \(\mathrm{D} \sin x = \cos x\) och \(\mathrm{D} \cos x = - \sin x\).</li>
+			<li class="fi">Tangenttifunktio on derivoituva koko määrittelyjoukossaan. Sen derivaattafunktio on \(\mathrm{D} \tan x = \frac{1}{\cos^2 x} = 1 + \tan^2 x\), missä \(x \neq \frac{\pi}{2} + n\cdot \pi\) kaikilla kokonaisluvuilla \(n\).</li>
+			<li class="sv">Tangentfunktionen är deriverbar i dess definitionsmängd. Dess derivatafunktion är \(\mathrm{D} \tan x = \frac{1}{\cos^2 x} = 1 + \tan^2 x\), där \(x \neq \frac{\pi}{2} + n\cdot \pi\) för alla heltal \(n\).</li>
+			<li class="fi">Eksponenttifunktio \(f(x)=e^x\) on kaikkialla derivoituva ja sen derivaattafunktio on \(\mathrm{D}e^x = f'(x) = e^x\).</li>
+			<li class="sv">Exponentfunktionen \(f(x)=e^x\) är deriverbar överallt och dess derivatafunktion är \(\mathrm{D}e^x = f'(x) = e^x\).</li>
+			<li class="fi">Oletetaan, että \(k \neq 1\) on positiivinen reaaliluku. Eksponenttifunktio \(f(x)=k^x\) on kaikkialla derivoituva ja sen derivaattafunktio on \(\mathrm{D} k^x = f'(x) = k^x \ln(k)\).</li>
+			<li class="sv">Antag, att \(k \neq 1\) är ett positivt reellt tal. Exponentfunktionen \(f(x)=k^x\) är deriverbar överallt och dess derivatafunktion är \(\mathrm{D} k^x = f'(x) = k^x \ln(k)\).</li>
+			<li class="fi">Logaritmifunktio \(f(x)=\ln(x)\) on derivoituva koko määrittelyjoukossaan \(\left.\right]0{,}\infty\left[\right.\) ja sen derivaattafunktio on \(\mathrm{D} ln(x) = f'(x) = \frac{1}{x}\).</li>
+			<li class="sv">Logaritmfunktionen \(f(x)=\ln(x)\) är deriverbar i hela sin definitionsmängd \(\left.\right]0{,}\infty\left[\right.\) och dess derivata är \(\mathrm{D} ln(x) = f'(x) = \frac{1}{x}\).</li>
+			<li class="fi">Oletetaan, että \(k \neq 1\) on positiivinen reaaliluku. Logaritmifunktio \(f(x) = \log_k (x)\) on kaikkialla derivoituva ja sen derivaattafunktio on \(\mathrm{D} \log_k (x) = f'(x) = \frac{1}{x \ln (k)}\).</li>
+			<li class="sv">Antag, att \(k \neq 1\) är ett positivt reellt tal. Logaritmfunktionen \(f(x) = \log_k (x)\) är deriverbar överallt och dess derivatafunktion är \(\mathrm{D} \log_k (x) = f'(x) = \frac{1}{x \ln (k)}\).</li>
+		</ul>		
+	</div>	
+</div>	
+
+
+
