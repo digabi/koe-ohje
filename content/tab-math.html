@@ -4,10 +4,12 @@
 <p class="fi">Huom. Voit kopioida kaavan leikepöydälle klikkaamalla sitä.</p>
 <p class="sv">Obs. Du kan kopiera formeln genom att klicka på den.</p>
 
-<h2 class="fi">Luvut</h2>
-<h2 class="sv">Tal</h2>
+<h2 class="fi">Luvut ja lukujonot</h2>
+<h2 class="sv">Tal och talföljder</h2>
 <div class="scrollwrap">
-	<div class="boxed">	
+
+	<h3 class="fi">Lukualueet</h3>
+	<h3 class="sv">Talområden</h3>
 		<table class="formulae">
 			<tr>
 				<th class="fi">Lukualue</th>
@@ -64,7 +66,47 @@
 		<li class="fi">Osittelulaki: Kaikille luvuille \(a,b\) ja \(c\) pätee \(a(b+c)=ab+ac\).</li>
 		<li class="sv">Distributativa lagen: Föra alla tal \(a,b\) och \(c\) gäller \(a(b+c)=ab+ac\).</li>
 	</ul>
-</div>
+	
+	<h3 class="fi">Lukujunot</h3>
+	<h3 class="sv">Talföljder</h3>
+	<div class="boxed">
+		<p class="fi">Lukujono \((a_{n})\) on <em>aritmeettinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen erotus on aina sama, eli jos on olemassa sellainen luku \(d\), että</p>
+		<p class="sv">Talföljden \((a_{n})\) är <em>aritmetisk</em>, om och endast om skillnaden mellan två påföljande element är alltid samma, dvs. om det existerar ett tal \(d\) så, att</p>
+	
+		\[a_{n+1}−a_{n}=d\]
+	
+		<p class="fi">kaikilla positiivisilla kokonaisluvuilla \(n\) Erotus \(d\) on nimeltään jonon differenssi.</p>
+		<p class="sv">för alla positiva heltal \(n\). Skillnaden \(d\) kallas följdens differens.</p>
+
+		<p class="fi">Summa \(S_n = a_1 + \cdots + a_n\) on aritmeettinen, jos ja vain jos vastaava lukujono \((a_{n})\) on aritmeettinen. Aritmeettinen summa lasketaan</p>
+		<p class="sv">Summan \(S_n = a_1 + \cdots + a_n\) är aritmetisk, om och endast om talföjden \((a_{n})\) är aritmetisk. Den aritmetiska summan beräknas</p>
+	
+		\[a_1 + \cdots + a_n = n \frac{a_1+a_n}{2}.\]
+	</div>
+	<div class="boxed">
+		<p class="fi">Lukujono \((a_{n})\) on <em>geometrinenaritmeettinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen suhde eli osamäärä on aina sama. Toisin sanottuna jos on olemassa sellainen luku \(q\), että</p>
+		<p class="sv">Talföljden \((a_{n})\) är <em>geometrisk</em>, om och endast om förhållandet mellan två påföljande element är alltid samma, dvs. om det existerar ett tal \(q\) så, att</p>
+	
+		\[\frac{a_{n+1}}{a_n} = q\]
+	
+		<p class="fi">kaikilla positiivisilla kokonaisluvuilla \(n\). Suhde \(q\) on nimeltään jonon suhdeluku.</p>
+		<p class="sv">för alla positiva heltal \(n\). Förhållandet \(q\) kallas följdens kvot.</p>
+
+		<p class="fi">Geometrisen jonon \((a_{n})\) jäsenet saadaan laskettua, jos tiedetään jonon ensimmäinen jäsen \(a_1\) ja jonon suhdeluku \(q\), sillä kaikilla positiivisilla kokonaisluvuilla \(n\) pätee</p>
+		<p class="sv">Talen i den geometriska talföljden \((a_{n})\) kan beräknas om man vet följdens första tal \(a_1\) och följdens kvot \(q\), för det gäller för alla positiva heltal \(n\) att</p>
+	
+		\[a_n = a_1q^{n-1}.\]
+		
+		<p class="fi">Summa \(S_n = a_1 + \cdots + a_n\) on geometrinen, jos ja vain jos vastaava lukujono \((a_{n})\) on geometrinen. Geometrinen summa lasketaan seuraavasti (luku \(n\) kertoo sen, kuinka monta yhteenlaskettavaa summassa on):</p>
+		<p class="sv">Summan \(S_n = a_1 + \cdots + a_n\) är geometrisk, om och endast om talföjden \((a_{n})\) är geometrisk. Den geometriska summan beräknas på följande sätt (talet \(n\) står för antalet tal som ska adderas):</p>
+	
+		<ul>
+			<li class="fi">Jos suhdeluku \(q\) on ykkösestä poikkeava eli \(q \neq 1\), niin \(a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = a_1\cdot \frac{1-q^n}{1-q}\).</li>
+			<li class="sv">Om kvoten \(q\) inte är ett, dvs. \(q \neq 1\), så \(a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = a_1\cdot \frac{1-q^n}{1-q}\).</li>
+			<li class="fi">Jos suhdeluku \(q\) on yksi eli \(q = 1\), niin \(a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = na_1\).</li>
+			<li class="sv">Om kvoten \(q\) är ett, dvs. \(q = 1\), så \(a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = na_1\).</li>
+		</ul>	
+	</div>
 </div>
 <h2 class="fi">Funktiot ja yhtälöt</h2>
 <h2 class="sv">Funktioner och ekvationer</h2>
