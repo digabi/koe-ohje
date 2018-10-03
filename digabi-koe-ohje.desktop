@@ -8,5 +8,5 @@ Name[sv]=Provmiljöns instruktioner
 Exec=/usr/bin/digabi-koe-ohje
 Icon=/usr/share/digabi-koe-ohje/help-browser.png
 Comment=See instructions
-Comment[fi]=Lue ohjeita järjestelmän käyttöön
-Comment[sv]=Läs instruktionerna för användning av systemet
+Comment[fi]=Lue ainekohtaisia ja yleisiä ohjeita
+Comment[sv]=Läs ämnesspecifika och allmänna instruktioner
