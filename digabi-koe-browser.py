@@ -3,20 +3,25 @@
 
 import argparse, sys, subprocess
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyQt4.QtWebKit import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWebKit import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtWebKitWidgets import QWebView
 
 from os.path import expanduser
 
-APP_ICON_PATH='/usr/share/digabi-koe-ohje/help-browser.png'
+APP_ICON_PATH='/usr/share/digabi-koe-ohje/help-browser.svg'
 LOCAL_STORAGE_PATH="%s/.cache/digabi-koe" % expanduser("~")
 
 class SharedClass (QObject):
     @pyqtSlot(str)
     def copy_html_to_clipboard(self, value):
         xclip = subprocess.Popen("xclip -selection clipboard -target text/html -i".split(" "), stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
-        xclip.stdin.write(value.toUtf8())
+        try:
+            xclip.stdin.write(value.toUtf8())
+        except AttributeError:
+            xclip.stdin.write(value)
         xclip.stdin.close()
         xclip.wait()
 
