@@ -10,7 +10,7 @@ install:
 	install -D -m 0755 digabi-koe-browser.py $(DESTDIR)/usr/bin/digabi-koe-browser
 	install -d -m 0755 $(DESTDIR)/usr/share/$(APPNAME)
 	install -D -m 0644 digabi-koe-ohje.desktop $(DESTDIR)/usr/share/applications/digabi-koe-ohje.desktop
-	install -D -m 0644 help-browser.png $(DESTDIR)/usr/share/$(APPNAME)/help-browser.png
+	install -D -m 0644 help-browser.svg $(DESTDIR)/usr/share/$(APPNAME)/help-browser.svg
 
 	# Common files (images etc)
 	cp -r common $(DESTDIR)/usr/share/${APPNAME}/
