@@ -1,4 +1,8 @@
 /* tables */
+.tablesorter th::after {
+	content:"...";
+	color: white;
+}
 table.tablesorter thead tr .header {
 	background-image: url(bg.gif);
 	background-repeat: no-repeat;
