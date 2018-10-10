@@ -10,18 +10,18 @@
 	<h3 class="fi">Perusyksiköt</h3>
 	<h3 class="sv">Grundenheter</h3>
 
-	<table class="formulae">
-		<tr> 
+	<table class="formulae" id="perusyksikot">
+		<tr>
 			<th class="fi">Suure</th>
 			<th class="sv">Storhet</th>
 			<th class="fi">Suureen tunnus</th>
 			<th class="sv">Storhetens symbol</th>
 			<th class="fi">Yksikkö</th>
-			<th class="sv">Enhet</th>  		
-			<th class="fi">Yksikön tunnus</th> 
-			<th class="sv">Enhetens symbol</th>			
+			<th class="sv">Enhet</th>
+			<th class="fi">Yksikön tunnus</th>
+			<th class="sv">Enhetens symbol</th>
 			<th class="fi">Määritelmä</th>
-			<th class="sv">Defintion</th>			
+			<th class="sv">Defintion</th>
 		</tr>
 		<tr>
 			<td class="fi">Pituus</td>
@@ -44,7 +44,7 @@
 		</tr>
 		<tr>
 			<td class="fi">Aika</td>
-			<td class="sv">Tid</td>            
+			<td class="sv">Tid</td>
 			<td>\(t\)</td>
 			<td class="fi">sekunti</td>
 			<td class="sv">sekund</td>
@@ -54,11 +54,11 @@
 		</tr>
 		<tr>
 			<td class="fi">Sähkövirta</td>
-			<td class="sv">Elektrisk ström</td>   
-			<td>\(I\)</td>			
+			<td class="sv">Elektrisk ström</td>
+			<td>\(I\)</td>
 			<td class="fi">ampeeri</td>
 			<td class="sv">ampere</td>
-			<td>A</td>  
+			<td>A</td>
 			<td class="fi">Ampeeri on sellainen ajallisesti muuttumaton sähkövirta, joka kulkiessaan kahdessa suorassa, yhdensuuntaisessa, äärettömän pitkässä ja ohuessa johtimessa, joiden poikkileikkaus on ympyrä ja jotka ovat 1 metrin etäisyydellä toisistaan tyhjiössä, aiheuttaa johtimien välille \(2\cdot 10^{-7}\) newtonin voiman johtimen metriä kohti.</td>
 			<td class="sv">En ampere är storleken av den konstanta elektriska ström som, då den flyter igenom två raka, parallella ledare med oändlig längd och försumbart cirkulärt tvärsnitt som är placerade på en meters avstånd från varandra i vakuum, åstadkommer en kraft på \(2\cdot 10^{-7}\) newton för varje meter ledare.</td>
 		</tr>
@@ -69,17 +69,17 @@
 			<td>kelvin</td>
 			<td>\(\mathrm{K}\)</td>
 			<td class="fi">Kelvin vastaa \(\frac{1}{273,16}\) veden kolmoispisteen termodynaamisesta lämpötilasta.</td>
-			<td class="sv">En kelvin motsvarar \(\frac{1}{273,16}\) av den termodynamiska temperaturen vid vattnets trippelpunkt.</td>			
+			<td class="sv">En kelvin motsvarar \(\frac{1}{273,16}\) av den termodynamiska temperaturen vid vattnets trippelpunkt.</td>
 		</tr>
 		<tr>
 			<td class="fi">Ainemäärä</td>
-			<td class="sv">Substansmängd</td>            
+			<td class="sv">Substansmängd</td>
 			<td>\(n\)</td>
 			<td class="fi">mooli</td>
 			<td class="sv">mol</td>
 			<td>mol</td>
 			<td class="fi">Mooli on sellaisen systeemin ainemäärä, joka sisältää yhtä monta keskenään samanlaista perusosasta kuin 0,012 kilogrammassa hiili-12:ta on atomeja.</td>
-			<td class="sv">En mol är substansmängden i ett system med samma antal systemelement som antalet atomer i 0,012 kilogram kol-12.</td>     
+			<td class="sv">En mol är substansmängden i ett system med samma antal systemelement som antalet atomer i 0,012 kilogram kol-12.</td>
 		</tr>
 		<tr>
 			<td class="fi">Valovoima</td>
@@ -90,7 +90,7 @@
 				<td class="sv">candela</td>
 				<td>cd</td>
 				<td class="fi">Kandela on sellaisen säteilijän valovoima, joka lähettää tiettyyn suuntaan monokromaattista \(540\cdot 10^{12}\) hertsin taajuista säteilyä ja jonka säteilyintensiteetti tähän suuntaan on \(\frac{1}{683}\) wattia steradiaania kohti.</td>
-				<td class="sv">En candela definieras som ljusstyrkan i en given riktning från en källa som sänder ut monokromatisk strålning med en frekvens på \(540\cdot 10^{12}\) hertz och som har en strålningsstyrka på \(\frac{1}{683}\) watt per steradian i denna riktning.</td>     
+				<td class="sv">En candela definieras som ljusstyrkan i en given riktning från en källa som sänder ut monokromatisk strålning med en frekvens på \(540\cdot 10^{12}\) hertz och som har en strålningsstyrka på \(\frac{1}{683}\) watt per steradian i denna riktning.</td>
 			</tr>
 		</table>
 
@@ -98,185 +98,185 @@
 		<h3 class="sv">Härledda enheter</h3>
 
 		<table class="formulae">
-			<tr> 
-				<th class="fi">Suure</th>
-				<th class="sv">Storhet</th>
-				<th class="fi">Suureen tunnus</th>
-				<th class="sv">Storhetens symbol</th>
-				<th class="fi">Yksikkö</th>
-				<th class="sv">Enhet</th>  				
-				<th class="fi">Ilmaistuna perusyksiköillä</th>
-				<th class="sv">Uttryckt i grundenheter</th>			
-			</tr>
-			<tr>
-				<td class="fi">Tasokulma</td>
-				<td class="sv">Plan vinkel</td>			
-				<td>\(\alpha,\ \beta,\ \gamma,\ \ldots\)</td>  
-				<td class="fi">radiaani</td>
-				<td class="sv">radian</td>			
-				<td>\(1 \ \mathrm{rad} = \frac{\mathrm{m}}{\mathrm{m}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Taajuus</td>
-				<td class="sv">Frekvens</td>
-				<td>\(f,\ v\)</td>  
-				<td class="fi">hertsi</td>
-				<td class="sv">hertz</td>
-				<td>\(1 \ \mathrm{Hz} = \frac{1}{\mathrm{s}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Voima</td>
-				<td class="sv">Kraft</td>			
-				<td>\(F\)</td>  
-				<td>newton</td>  
-				<td>\(1 \ \mathrm{N} = \frac{\mathrm{kg \cdot m}}{\mathrm{s}^2}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Paine</td>
-				<td class="sv">Tryck</td>
-				<td>\(p\)</td>  
-				<td>pascal</td>  
-				<td>\(1 \ \mathrm{Pa} = \frac{\mathrm{kg}}{\mathrm{m \cdot s}^{2}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Energia</td>
-				<td class="sv">Energi</td>
-				<td>\(E,\ W\)</td>  
-				<td>joule</td>  
-				<td>\(1 \ \mathrm{J} = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^2}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Teho</td>
-				<td class="sv">Effekt</td>			
-				<td>\(P\)</td>  
-				<td class="fi">watti</td>
-				<td class="sv">watt</td>			
-				<td>\(1 \ \mathrm{W} = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^3}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Celsiuslämpötila</td>
-				<td class="sv">Celsiustemperatur</td>			
-				<td>\(t,\ \vartheta\)</td>  
-				<td class="fi">celsiusaste</td>
-				<td class="sv">grad Celsius</td>			
-				<td>\(1 \ \mathrm{°C} = \mathrm{K}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Sähkövaraus</td>
-				<td class="sv">Laddning</td>			
-				<td>\(Q\)</td>  
-				<td class="fi">coulombi</td>
-				<td class="sv">coulomb</td>			
-				<td>\(1 \ \mathrm{C} = \mathrm{A \cdot s}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Jännite</td>
-				<td class="sv">Spänning</td>			
-				<td>\(U\)</td>  
-				<td class="fi">voltti</td>
-				<td class="sv">volt</td>			
-				<td>\(1 \ \mathrm{V} = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^3 \cdot A}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Kapasitanssi</td>
-				<td class="sv">Kapacitans</td>			
-				<td>\(C\)</td>  
-				<td class="fi">faradi</td>
-				<td class="sv">farad</td>			
-				<td>\(1 \ \mathrm{F} = \frac{\mathrm{s^4 \cdot A^2}}{\mathrm{kg \cdot m^2}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Resistanssi</td>
-				<td class="sv">Resistans</td>			
-				<td>\(R\)</td>  
-				<td class="fi">ohmi</td>
-				<td class="sv">ohm</td>			
-				<td>\(1 \ \Omega = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^3 \cdot A^2}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Konduktanssi</td>
-				<td class="sv">Konduktans</td>			
-				<td>\(G\)</td>  
-				<td>siemens</td>  
-				<td>\(1 \ \mathrm{S} = \frac{\mathrm{s^3 \cdot A^2}}{\mathrm{kg \cdot m^2}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Magneettivuo</td>
-				<td class="sv">Magnetiskt flöde</td>			
-				<td>\(\Phi\)</td>  
-				<td>weber</td>  
-				<td>\(1 \ \mathrm{Wb} = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^2 \cdot A}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Magneettivuon tiheys</td>
-				<td class="sv">Magnetisk flödestäthet</td>			
-				<td>\(B\)</td>  
-				<td>tesla</td>  
-				<td>\(1 \ \mathrm{T} = \frac{\mathrm{kg}}{\mathrm{s^2 \cdot A}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Induktanssi</td>
-				<td class="sv">Induktans</td>			
-				<td>\(L\)</td>  
-				<td>henry</td>  
-				<td>\(1 \ \mathrm{H} = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^2 \cdot A^2}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Valovirta</td>
-				<td class="sv">Ljusflöde</td>
-				<td>\(\Phi\)</td>  
-				<td class="fi">luumen</td>
-				<td class="sv">lumen</td>			
-				<td>\(1 \ \mathrm{lm} = \mathrm{cd \cdot sr}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Valaistusvoimakkuus</td>
-				<td class="sv">Illuminans (belysning)</td>  
-				<td>\(E\)</td>  
-				<td class="fi">luksi</td>
-				<td class="sv">lux</td>  
-				<td>\(1 \ \mathrm{lx} = \frac{\mathrm{cd \cdot sr}}{\mathrm{m^2}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Radioaktiivisuus</td>
-				<td class="sv">Aktivitet</td>			
-				<td>\(A\)</td>  
-				<td>becquerel</td>  
-				<td>\(1 \ \mathrm{Bq} = \frac{1}{\mathrm{s}}\)</td>
-			</tr>
-			<tr>
-				<td class="fi">Ekvivalenttiannos</td>
-				<td class="sv">Ekvivalent dos</td>  
-				<td>\(H\)</td>  
-				<td>sievert</td>  
-				<td>\(1 \ \mathrm{Sv} = \frac{\mathrm{m^2}}{\mathrm{s^2}}\)</td>
-			</tr>
+				<tr>
+					<th class="fi">Suure</th>
+					<th class="sv">Storhet</th>
+					<th class="fi">Suureen tunnus</th>
+					<th class="sv">Storhetens symbol</th>
+					<th class="fi">Yksikkö</th>
+					<th class="sv">Enhet</th>
+					<th class="fi">Ilmaistuna perusyksiköillä</th>
+					<th class="sv">Uttryckt i grundenheter</th>
+				</tr>
+				<tr>
+					<td class="fi">Tasokulma</td>
+					<td class="sv">Plan vinkel</td>
+					<td>\(\alpha,\ \beta,\ \gamma,\ \ldots\)</td>
+					<td class="fi">radiaani</td>
+					<td class="sv">radian</td>
+					<td>\(1 \ \mathrm{rad} = \frac{\mathrm{m}}{\mathrm{m}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Taajuus</td>
+					<td class="sv">Frekvens</td>
+					<td>\(f,\ v\)</td>
+					<td class="fi">hertsi</td>
+					<td class="sv">hertz</td>
+					<td>\(1 \ \mathrm{Hz} = \frac{1}{\mathrm{s}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Voima</td>
+					<td class="sv">Kraft</td>
+					<td>\(F\)</td>
+					<td>newton</td>
+					<td>\(1 \ \mathrm{N} = \frac{\mathrm{kg \cdot m}}{\mathrm{s}^2}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Paine</td>
+					<td class="sv">Tryck</td>
+					<td>\(p\)</td>
+					<td>pascal</td>
+					<td>\(1 \ \mathrm{Pa} = \frac{\mathrm{kg}}{\mathrm{m \cdot s}^{2}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Energia</td>
+					<td class="sv">Energi</td>
+					<td>\(E,\ W\)</td>
+					<td>joule</td>
+					<td>\(1 \ \mathrm{J} = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^2}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Teho</td>
+					<td class="sv">Effekt</td>
+					<td>\(P\)</td>
+					<td class="fi">watti</td>
+					<td class="sv">watt</td>
+					<td>\(1 \ \mathrm{W} = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^3}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Celsiuslämpötila</td>
+					<td class="sv">Celsiustemperatur</td>
+					<td>\(t,\ \vartheta\)</td>
+					<td class="fi">celsiusaste</td>
+					<td class="sv">grad Celsius</td>
+					<td>\(1 \ \mathrm{°C} = \mathrm{K}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Sähkövaraus</td>
+					<td class="sv">Laddning</td>
+					<td>\(Q\)</td>
+					<td class="fi">coulombi</td>
+					<td class="sv">coulomb</td>
+					<td>\(1 \ \mathrm{C} = \mathrm{A \cdot s}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Jännite</td>
+					<td class="sv">Spänning</td>
+					<td>\(U\)</td>
+					<td class="fi">voltti</td>
+					<td class="sv">volt</td>
+					<td>\(1 \ \mathrm{V} = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^3 \cdot A}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Kapasitanssi</td>
+					<td class="sv">Kapacitans</td>
+					<td>\(C\)</td>
+					<td class="fi">faradi</td>
+					<td class="sv">farad</td>
+					<td>\(1 \ \mathrm{F} = \frac{\mathrm{s^4 \cdot A^2}}{\mathrm{kg \cdot m^2}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Resistanssi</td>
+					<td class="sv">Resistans</td>
+					<td>\(R\)</td>
+					<td class="fi">ohmi</td>
+					<td class="sv">ohm</td>
+					<td>\(1 \ \Omega = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^3 \cdot A^2}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Konduktanssi</td>
+					<td class="sv">Konduktans</td>
+					<td>\(G\)</td>
+					<td>siemens</td>
+					<td>\(1 \ \mathrm{S} = \frac{\mathrm{s^3 \cdot A^2}}{\mathrm{kg \cdot m^2}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Magneettivuo</td>
+					<td class="sv">Magnetiskt flöde</td>
+					<td>\(\Phi\)</td>
+					<td>weber</td>
+					<td>\(1 \ \mathrm{Wb} = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^2 \cdot A}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Magneettivuon tiheys</td>
+					<td class="sv">Magnetisk flödestäthet</td>
+					<td>\(B\)</td>
+					<td>tesla</td>
+					<td>\(1 \ \mathrm{T} = \frac{\mathrm{kg}}{\mathrm{s^2 \cdot A}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Induktanssi</td>
+					<td class="sv">Induktans</td>
+					<td>\(L\)</td>
+					<td>henry</td>
+					<td>\(1 \ \mathrm{H} = \frac{\mathrm{kg \cdot m^2}}{\mathrm{s^2 \cdot A^2}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Valovirta</td>
+					<td class="sv">Ljusflöde</td>
+					<td>\(\Phi\)</td>
+					<td class="fi">luumen</td>
+					<td class="sv">lumen</td>
+					<td>\(1 \ \mathrm{lm} = \mathrm{cd \cdot sr}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Valaistusvoimakkuus</td>
+					<td class="sv">Illuminans (belysning)</td>
+					<td>\(E\)</td>
+					<td class="fi">luksi</td>
+					<td class="sv">lux</td>
+					<td>\(1 \ \mathrm{lx} = \frac{\mathrm{cd \cdot sr}}{\mathrm{m^2}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Radioaktiivisuus</td>
+					<td class="sv">Aktivitet</td>
+					<td>\(A\)</td>
+					<td>becquerel</td>
+					<td>\(1 \ \mathrm{Bq} = \frac{1}{\mathrm{s}}\)</td>
+				</tr>
+				<tr>
+					<td class="fi">Ekvivalenttiannos</td>
+					<td class="sv">Ekvivalent dos</td>
+					<td>\(H\)</td>
+					<td>sievert</td>
+					<td>\(1 \ \mathrm{Sv} = \frac{\mathrm{m^2}}{\mathrm{s^2}}\)</td>
+				</tr>
 		</table>
 		<h3 class="fi">Etuliitteet</h3>
 		<h3 class="sv">Prefix</h3>
 		<table class="formulae">
 			<tr>
 				<th class="fi">Etuliite</th>
-				<th class="sv">Prefix</th>  			
+				<th class="sv">Prefix</th>
 				<th class="fi">Tunnus</th>
-				<th class="sv">Symbol</th>    
+				<th class="sv">Symbol</th>
 				<th class="fi">Kerroin 10:n potensseina</th>
 				<th class="sv">Multipel som tiopotens</th>
 				<th class="fi">Nimi</th>
-				<th class="sv">Namn</th>			
+				<th class="sv">Namn</th>
 			</tr>
 			<tr>
 				<td class="fi">Jotta</td>
-				<td class="sv">Yotta</td>			
-				<td>Y</td> 
+				<td class="sv">Yotta</td>
+				<td>Y</td>
 				<td>\(10^{24}\)</td>
 				<td class="fi">Kvadriljoona</td>
 				<td class="sv">Kvadriljon</td>
 			</tr>
 			<tr>
 				<td class="fi">Tsetta</td>
-				<td class="sv">Zetta</td>			
-				<td>Z</td> 
+				<td class="sv">Zetta</td>
+				<td>Z</td>
 				<td>\(10^{21}\)</td>
 				<td class="fi">Tuhattriljoona</td>
 				<td class="sv">Triljard</td>
@@ -284,130 +284,130 @@
 			<tr>
 				<td class="fi">Eksa</td>
 				<td class="sv">Exa</td>
-				<td>E</td> 
+				<td>E</td>
 				<td>\(10^{18}\)</td>
 				<td class="fi">Triljoona</td>
 				<td class="sv">Triljon</td>
 			</tr>
 			<tr>
-				<td>Peta</td> 
-				<td>P</td> 
+				<td>Peta</td>
+				<td>P</td>
 				<td>\(10^{15}\)</td>
 				<td class="fi">Tuhatbiljoona</td>
 				<td class="sv">Biljard</td>
 			</tr>
 			<tr>
-				<td>Tera</td> 
-				<td>T</td> 
+				<td>Tera</td>
+				<td>T</td>
 				<td>\(10^{12}\)</td>
 				<td class="fi">Biljoona</td>
 				<td class="sv">Biljon</td>
 			</tr>
 			<tr>
-				<td>Giga</td> 
-				<td>G</td> 
+				<td>Giga</td>
+				<td>G</td>
 				<td>\(10^{9}\)</td>
 				<td class="fi">Miljardi</td>
 				<td class="sv">Miljard</td>
 			</tr>
 			<tr>
-				<td>Mega</td> 
-				<td>M</td> 
+				<td>Mega</td>
+				<td>M</td>
 				<td>\(10^{6}\)</td>
 				<td class="fi">Miljoona</td>
 				<td class="sv">Miljon</td>
 			</tr>
 			<tr>
-				<td>Kilo</td> 
-				<td>k</td> 
+				<td>Kilo</td>
+				<td>k</td>
 				<td>\(10^{3}\)</td>
 				<td class="fi">Tuhat</td>
 				<td class="sv">Tusen</td>
 			</tr>
 			<tr>
 				<td class="fi">Hehto</td>
-				<td class="sv">Hekto</td>			
-				<td>h</td> 
+				<td class="sv">Hekto</td>
+				<td>h</td>
 				<td>\(10^{2}\)</td>
 				<td class="fi">Sata</td>
 				<td class="sv">Hundra</td>
 			</tr>
 			<tr>
-				<td>Deka</td> 
-				<td>da</td> 
+				<td>Deka</td>
+				<td>da</td>
 				<td>\(10^{1}\)</td>
 				<td class="fi">Kymmenen</td>
 				<td class="sv">Tio</td>
 			</tr>
 			<tr>
-				<td/> 
-				<td/> 
+				<td/>
+				<td/>
 				<td>\(10^{0}\)</td>
 				<td class="fi">Yksi</td>
 				<td class="sv">Ett</td>
 			</tr>
 			<tr>
 				<td class="fi">Desi</td>
-				<td class="sv">Deci</td> 
-				<td>d</td> 
+				<td class="sv">Deci</td>
+				<td>d</td>
 				<td>\(10^{-1}\)</td>
 				<td class="fi">Kymmenesosa</td>
 				<td class="sv">Tiondel</td>
 			</tr>
 			<tr>
 				<td class="fi">Sentti</td>
-				<td class="sv">Centi</td> 
-				<td>c</td> 
+				<td class="sv">Centi</td>
+				<td>c</td>
 				<td>\(10^{-2}\)</td>
 				<td class="fi">Sadasosa</td>
 				<td class="sv">Hundradel</td>
 			</tr>
 			<tr>
-				<td>Milli</td> 
-				<td>m</td> 
+				<td>Milli</td>
+				<td>m</td>
 				<td>\(10^{-3}\)</td>
 				<td class="fi">Tuhannesosa</td>
 				<td class="sv">Tusendel</td>
 			</tr>
 			<tr>
-				<td>Mikro</td> 
-				<td>&mu;</td> 
+				<td>Mikro</td>
+				<td>&mu;</td>
 				<td>\(10^{-6}\)</td>
 				<td class="fi">Miljoonasosa</td>
 				<td class="sv">Miljondel</td>
 			</tr>
 			<tr>
-				<td>Nano</td> 
-				<td>n</td> 
+				<td>Nano</td>
+				<td>n</td>
 				<td>\(10^{-9}\)</td>
 				<td class="fi">Miljardisosa</td>
 				<td class="sv">Miljarddel</td>
 			</tr>
 			<tr>
-				<td>Piko</td> 
-				<td>p</td> 
+				<td>Piko</td>
+				<td>p</td>
 				<td>\(10^{-12}\)</td>
 				<td class="fi">Biljoonasosa</td>
 				<td class="sv">Biljondel</td>
 			</tr>
 			<tr>
-				<td>Femto</td> 
-				<td>f</td> 
+				<td>Femto</td>
+				<td>f</td>
 				<td>\(10^{-15}\)</td>
 				<td class="fi">Tuhannesbiljoonasosa</td>
 				<td class="sv">Biljarddel</td>
 			</tr>
 			<tr>
-				<td>Atto</td> 
-				<td>a</td> 
+				<td>Atto</td>
+				<td>a</td>
 				<td>\(10^{-18}\)</td>
 				<td class="fi">Triljoonasosa</td>
 				<td class="sv">Triljondel</td>
 			</tr>
 			<tr>
 				<td class="fi">Tsepto</td>
-				<td class="sv">Zepto</td> 
-				<td>z</td> 
+				<td class="sv">Zepto</td>
+				<td>z</td>
 				<td>\(10^{-21}\)</td>
 				<td class="fi">Tuhannestriljoonasosa</td>
 				<td class="sv">Triljarddel</td>
@@ -415,7 +415,7 @@
 			<tr>
 				<td class="fi">Jokto</td>
 				<td class="sv">Yokto</td>
-				<td>y</td> 
+				<td>y</td>
 				<td>\(10^{-24}\)</td>
 				<td class="fi">Kvadriljoonasosa</td>
 				<td class="sv">Kvadriljondel</td>
@@ -434,7 +434,7 @@
 				<td class="fi">gravitaatiovakio</td>
 				<td class="sv">gravitationskonstanten</td>
 				<td>\(\gamma, G\)</td>
-				<td>\(6{,}67428 \cdot 10^{-11} \ \mathrm{\frac{Nm^2}{kg^2}}\)</td>
+				<td>\(6{,}67408 \cdot 10^{-11} \ \mathrm{\frac{Nm^2}{kg^2}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">putoamiskiihtyvyys maan pinnalla</td>
@@ -458,25 +458,25 @@
 				<td class="fi">ideaalikaasun moolitilavuus normaalitilassa</td>
 				<td class="sv">molvolymen för en ideal gas vid normaltillstånd</td>
 				<td>\(V_m\)</td>
-				<td>\(22{,}41410 \cdot 10^{-3} \ \mathrm{\frac{m^3}{mol}}\)</td>
+				<td>\(22{,}413962 \cdot 10^{-3} \ \mathrm{\frac{m^3}{mol}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">kaasuvakio</td>
 				<td class="sv">allmänna gaskonstanten</td>
 				<td>\(R\)</td>
-				<td>\(8{,}314510 \ \mathrm{\frac{Pa \cdot m^3}{mol \cdot K} } = 0,08314510 \mathrm{\frac{bar \cdot dm^3}{mol \cdot K}}\)</td>
+				<td>\(8{,}3144598 \ \mathrm{\frac{Pa \cdot m^3}{mol \cdot K} }\)</td>
 			</tr>
 			<tr>
 				<td class="fi">Avogadron vakio</td>
 				<td class="sv">Avogadros tal</td>
 				<td>\(N_A\)</td>
-				<td>\(6{,}0221367 \cdot 10^{23} \ \frac{1}{\mathrm{mol}}\)</td>
+				<td>\(6{,}022140857 \cdot 10^{23} \ \frac{1}{\mathrm{mol}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">Boltzmannin vakio</td>
 				<td class="sv">Boltzmanns konstant</td>
 				<td>\(k\)</td>
-				<td>\(1{,}380658 \cdot 10^{-23} \ \mathrm{\frac{J}{K}}\)</td>
+				<td>\(1{,}38064852 \cdot 10^{-23} \ \mathrm{\frac{J}{K}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">valon nopeus tyhjiössä</td>
@@ -488,55 +488,55 @@
 				<td class="fi">atomimassayksikkö</td>
 				<td class="sv">atommassenheten</td>
 				<td>\(u\)</td>
-				<td>\(1{,}6605402 \cdot 10^{-27} \ \mathrm{kg}\)</td>
+				<td>\(1{,}660539040 \cdot 10^{-27} \ \mathrm{kg}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">alkeisvaraus</td>
 				<td class="sv">elementarladdningen</td>
 				<td>\(e\)</td>
-				<td>\(1{,}6021773 \cdot 10^{-19} \ \mathrm{C}\)</td>
+				<td>\(1{,}6021766208 \cdot 10^{-19} \ \mathrm{C}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">elektronin lepomassa</td>
 				<td class="sv">elektronens vilomassa</td>
 				<td>\(m_e\)</td>
-				<td>\(9{,}109 3897 \cdot 10^{-31} \ \mathrm{kg} = 5{,}485 7990 \cdot 10^{-4} \ \mathrm{u}\)</td>
+				<td>\(9{,}10938356 \cdot 10^{-31} \ \mathrm{kg} = 5{,}485 799070 \cdot 10^{-4} \ \mathrm{u}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">protonin lepomassa</td>
 				<td class="sv">protonens vilomassa</td>
 				<td>\(m_p\)</td>
-				<td>\(1{,}6726231 \cdot 10^{-27} \ \mathrm{kg} = 1{,}0072765 \ \mathrm{u}\)</td>
-			</tr> 
+				<td>\(1{,}672621898 \cdot 10^{-27} \ \mathrm{kg} = 1{,}007276466879 \ \mathrm{u}\)</td>
+			</tr>
 			<tr>
 				<td class="fi">neutronin lepomassa</td>
 				<td class="sv">neutronens vilomassa</td>
 				<td>\(m_n\)</td>
-				<td>\(1{,}6749286 \cdot 10^{-27} \ \mathrm{kg} = 1{,}0086650 \ \mathrm{u}\)</td>
-			</tr> 
+				<td>\(1{,}00866491588 \ \mathrm{u}\)</td>
+			</tr>
 			<tr>
 				<td class="fi">deuteronin lepomassa</td>
 				<td class="sv">deuteronens vilomassa</td>
 				<td>\(m_D\)</td>
-				<td>\(3{,}3435860 \cdot 10^{-27} \ \mathrm{kg} = 2{,}0135532 \ \mathrm{u}\)</td>
-			</tr> 
+				<td>\(2{,}013553212745 \ \mathrm{u}\)</td>
+			</tr>
 			<tr>
 				<td class="fi">alfahiukkasen lepomassa</td>
 				<td class="sv">alfapartikelns vilomassa</td>
 				<td>\(m_\alpha\)</td>
-				<td>\(6{,}644663 \cdot 10^{-27} \ \mathrm{kg} = 4{,}001507 \ \mathrm{u}\)</td>
+				<td>\(4{,}001506179127 \ \mathrm{u}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">tyhjiön permittiivisyys (sähkövakio)</td>
 				<td class="sv">permittiviten i vakuum (elektriska konstanten)</td>
 				<td>\(\varepsilon_0\)</td>
-				<td>\(8{,}854 19 \cdot 10^{-12} \ \mathrm{\frac{F}{m}}\)</td>
+				<td>\(8{,}854187817 \cdot 10^{-12} \ \mathrm{\frac{F}{m}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">tyhjiön permeabiliteetti (magneettivakio)</td>
 				<td class="sv">permeabiliteten i vakuum (magnetiska konstanten)</td>
 				<td>\(\mu_0\)</td>
-				<td>\(4 \pi \cdot 10^{-7} \ \mathrm{\frac{Vs}{Am}} = 1{,}256637061 \cdot 10^{-6} \ \mathrm{\frac{H}{m}}\)</td>
+				<td>\(4 \pi \cdot 10^{-7} \ \mathrm{\frac{Vs}{Am}} = 1{,}2566370614 \cdot 10^{-6} \ \mathrm{\frac{H}{m}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">Coulombin lain vakio</td>
@@ -548,37 +548,37 @@
 				<td class="fi">Faradayn vakio</td>
 				<td class="sv">Faradays konstant</td>
 				<td>\(F\)</td>
-				<td>\(N_A e \approx 96485{,}31 \ \mathrm{\frac{C}{mol}}\)</td>
+				<td>\(N_A e \approx 96485{,}33289 \ \mathrm{\frac{C}{mol}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">Planckin vakio</td>
 				<td class="sv">Plancks konstant</td>
 				<td>\(h\)</td>
-				<td>\(6{,}6260755 \cdot 10^{-34} \ \mathrm{Js} = 4{,}135669 \cdot 10^{-15} \ \mathrm{eVs}\)</td>
+				<td>\(6{,}626070040 \cdot 10^{-34} \ \mathrm{Js} = 4{,}135667662 \cdot 10^{-15} \ \mathrm{eVs}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">Diracin vakio</td>
 				<td class="sv">Diracs konstant</td>
 				<td>\(\hbar\)</td>
-				<td>\(\frac{h}{2 \pi} \approx 1{,}0545727 \cdot 10^{-34} \ \mathrm{Js}\)</td>
+				<td>\(\frac{h}{2 \pi} \approx 1{,}054571800 \cdot 10^{-34} \ \mathrm{Js}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">Rydbergin vakio (vety)</td>
 				<td class="sv">Rydbergs konstant</td>
 				<td>\(R_H\)</td>
-				<td>\(1{,}0973731 \cdot 10^7  \ \mathrm{\frac{1}{m}}\)</td>
+				<td>\(10973731{,}568508 \ \mathrm{\frac{1}{m}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">Stefanin-Blotzmannin vakio</td>
 				<td class="sv">Stefan–Boltzmanns konstant</td>
 				<td>\(\sigma\)</td>
-				<td>\(\frac{2 \pi^5 k^4}{15 h^3 c^2} \approx 5{,}67051 \cdot 10^{-8} \ \mathrm{\frac{W}{m^2 \cdot K^4}}\)</td>
+				<td>\(\frac{2 \pi^5 k^4}{15 h^3 c^2} \approx 5{,}670367 \cdot 10^{-8} \ \mathrm{\frac{W}{m^2 \cdot K^4}}\)</td>
 			</tr>
 			<tr>
 				<td class="fi">Wienin siirtymälain vakio</td>
 				<td class="sv">konstanten i Wiens förskjutninglag</td>
 				<td>\(b\)</td>
-				<td>\(2{,}897 756 \cdot 10^{-3} \ \mathrm{m \cdot K}\)</td>
+				<td>\(2{,}8977729 \cdot 10^{-3} \ \mathrm{m \cdot K}\)</td>
 			</tr>
 		</table>
 	</div>
@@ -606,7 +606,7 @@
 					<span class="sv">Fast form:</span>
 					<ul>
 						<li>0 °C: 0,9167 g/ml</li>
-					</ul>	
+					</ul>
 				</td>
 			</tr>
 			<tr>
@@ -627,7 +627,7 @@
 			<tr>
 				<td class="fi">Kolmoispiste</td>
 				<td class="sv">Trippelpunkt</td>
-				<td>\(0,01  \ \mathrm{°C} = 273,16  \ \mathrm{K}\)<br />  
+				<td>\(0,01  \ \mathrm{°C} = 273,16  \ \mathrm{K}\)<br />
 				 \(613  \ \mathrm{Pa} = 6,13  \ \mathrm{mbar}\)</td>
 			</tr>
 			<tr>
@@ -962,7 +962,7 @@
 <div class="scrollwrap">
 	<table class="formulae">
 		<tr>
-			<th colspan=2" class="fi">Fraunhoferin viiva</th>  
+			<th colspan=2" class="fi">Fraunhoferin viiva</th>
 			<th colspan=2" class="sv">Fraunhoferska linjen</th>
 			<td>A</td>
 			<td>B</td>
@@ -987,7 +987,7 @@
 		</tr>
 		<tr>
 			<th colspan=2" class="fi">Alkuperä</th>
-			<th colspan=2" class="sv">Ursprung</th>			
+			<th colspan=2" class="sv">Ursprung</th>
 			<td>\(\mathrm{O}\)</td>
 			<td>\(\mathrm{O}\)</td>
 			<td>\(\mathrm{H_{\alpha}}\)</td>
@@ -998,7 +998,7 @@
 			<td>\(\mathrm{Ca}\)</td>
 		</tr>
 		<tr>
-			<th colspan=2" class="fi">Väri</th> 
+			<th colspan=2" class="fi">Väri</th>
 			<th colspan=2" class="sv">Färg</th>
 			<td class="fi">punainen</td>
 			<td class="fi">punainen</td>
@@ -1029,7 +1029,7 @@
 			<td>1,489</td>
 			<td>1,494</td>
 			<td>1,497</td>
-		</tr>			
+		</tr>
 		<tr>
 			<td rowspan="2" class="fi">jää (0 °C)</td>
 			<td rowspan="2" class="sv">is (0 °C)</td>
@@ -1239,7 +1239,8 @@
 <h3 class="fi">Kiinteät alkuaineet</h3>
 <h3 class="sv">Fasta grundämnen</h3>
 <div class="scrollwrap">
-	<table class="formulae">
+	<table class="formulae tablesorter" id="table-kiinteat_alkuaineet">
+		<thead>
 		<tr>
 			<th class="fi">Järjestysluku</th>
 			<th class="sv">Ordningstal</th>
@@ -1264,6 +1265,8 @@
 			<th class="fi">Lämmön-<br />johtavuus \[\mathrm{\frac{W}{m \cdot K}}\]</th>
 			<th class="sv">Värmelednings-<br />förmåga \[\mathrm{\frac{W}{m \cdot K}}\]</th>
 		</tr>
+		</thead>
+		<tbody>
 		<tr>
 			<td>11</td>
 			<td>\(\mathrm{Na}\)</td>
@@ -1276,7 +1279,7 @@
 			<td>3,90</td>
 			<td>–</td>
 			<td>142</td>
-		</tr>				
+		</tr>
 		<tr>
 			<td>12</td>
 			<td>\(\mathrm{Mg}\)</td>
@@ -1289,7 +1292,7 @@
 			<td>5,42</td>
 			<td>4,4</td>
 			<td>156 </td>
-		</tr>						
+		</tr>
 		<tr>
 			<td>13</td>
 			<td>\(\mathrm{Al}\)</td>
@@ -1302,7 +1305,7 @@
 			<td>10,9</td>
 			<td>7,06</td>
 			<td>237</td>
-		</tr>						
+		</tr>
 		<tr>
 			<td>14</td>
 			<td>\(\mathrm{Si}\)</td>
@@ -1315,7 +1318,7 @@
 			<td>10,6</td>
 			<td>10</td>
 			<td>149</td>
-		</tr>				
+		</tr>
 		<tr>
 			<td>15</td>
 			<td>\(\mathrm{P}\)</td>
@@ -1328,7 +1331,7 @@
 			<td>0,40</td>
 			<td>–</td>
 			<td>0,24</td>
-		</tr>				
+		</tr>
 		<tr>
 			<td>16</td>
 			<td>\(\mathrm{S}\)</td>
@@ -1341,7 +1344,7 @@
 			<td>0,28</td>
 			<td>–</td>
 			<td>0,20</td>
-		</tr>	
+		</tr>
 		<tr>
 			<td>19</td>
 			<td>\(\mathrm{K}\)</td>
@@ -1354,7 +1357,7 @@
 			<td>2,15</td>
 			<td>–</td>
 			<td>102</td>
-		</tr>			
+		</tr>
 		<tr>
 			<td>20</td>
 			<td>\(\mathrm{Ca}\)</td>
@@ -1367,7 +1370,7 @@
 			<td>3,75</td>
 			<td>2,0</td>
 			<td>201</td>
-		</tr>						
+		</tr>
 		<tr>
 			<td>22</td>
 			<td>\(\mathrm{Ti}\)</td>
@@ -1380,7 +1383,7 @@
 			<td>8,9</td>
 			<td>11</td>
 			<td>21,9</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>23</td>
 			<td>\(\mathrm{V}\)</td>
@@ -1393,7 +1396,7 @@
 			<td>8,74</td>
 			<td>13</td>
 			<td>30,7</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>24</td>
 			<td>\(\mathrm{Cr}\)</td>
@@ -1406,7 +1409,7 @@
 			<td>6,50</td>
 			<td>2,5</td>
 			<td>94</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>25</td>
 			<td>\(\mathrm{Mn}\)</td>
@@ -1419,7 +1422,7 @@
 			<td>4,37</td>
 			<td>20</td>
 			<td>7,81</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>26</td>
 			<td>\(\mathrm{Fe}\)</td>
@@ -1432,7 +1435,7 @@
 			<td>6,80</td>
 			<td>20,6</td>
 			<td>80,4</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>27</td>
 			<td>\(\mathrm{Co}\)</td>
@@ -1445,7 +1448,7 @@
 			<td>6,45</td>
 			<td>20</td>
 			<td>100</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>28</td>
 			<td>\(\mathrm{Ni}\)</td>
@@ -1458,7 +1461,7 @@
 			<td>6,47</td>
 			<td>20</td>
 			<td>82</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>29</td>
 			<td>\(\mathrm{Cu}\)</td>
@@ -1471,7 +1474,7 @@
 			<td>4,75</td>
 			<td>12,4</td>
 			<td>400</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>3</td>
 			<td>\(\mathrm{Li}\)</td>
@@ -1484,7 +1487,7 @@
 			<td>24,5</td>
 			<td>0,49</td>
 			<td>84,8</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>30</td>
 			<td>\(\mathrm{Zn}\)</td>
@@ -1497,7 +1500,7 @@
 			<td>1,76</td>
 			<td>9,8</td>
 			<td>116</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>31</td>
 			<td>\(\mathrm{Ga}\)</td>
@@ -1510,7 +1513,7 @@
 			<td>3,64</td>
 			<td>–</td>
 			<td>93</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>32</td>
 			<td>\(\mathrm{Ge}\)</td>
@@ -1523,7 +1526,7 @@
 			<td>4,6</td>
 			<td>8,1</td>
 			<td>60,2</td>
-		</tr>						
+		</tr>
 		<tr>
 			<td>33</td>
 			<td>\(\mathrm{As}\)</td>
@@ -1538,7 +1541,7 @@
 			<td>1,86</td>
 			<td>–</td>
 			<td>50,2</td>
-		</tr>										
+		</tr>
 		<tr>
 			<td>34</td>
 			<td>\(\mathrm{Se}\)</td>
@@ -1551,7 +1554,7 @@
 			<td>0,76</td>
 			<td>–</td>
 			<td>0,52</td>
-		</tr>			
+		</tr>
 		<tr>
 			<td>4</td>
 			<td>\(\mathrm{Be}\)</td>
@@ -1565,7 +1568,7 @@
 			<td>32,6</td>
 			<td>30</td>
 			<td>200</td>
-		</tr>								
+		</tr>
 		<tr>
 			<td>40</td>
 			<td>\(\mathrm{Zr}\)</td>
@@ -1578,7 +1581,7 @@
 			<td>6,4</td>
 			<td>7,0</td>
 			<td>22,7</td>
-		</tr>						
+		</tr>
 		<tr>
 			<td>42</td>
 			<td>\(\mathrm{Mo}\)</td>
@@ -1591,7 +1594,7 @@
 			<td>6,83</td>
 			<td>33</td>
 			<td>138</td>
-		</tr>			
+		</tr>
 		<tr>
 			<td>47</td>
 			<td>\(\mathrm{Ag}\)</td>
@@ -1604,7 +1607,7 @@
 			<td>2,31</td>
 			<td>7,8</td>
 			<td>429</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>48</td>
 			<td>\(\mathrm{Cd}\)</td>
@@ -1617,7 +1620,7 @@
 			<td>0,95</td>
 			<td>5,0</td>
 			<td>92</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>49</td>
 			<td>\(\mathrm{In}\)</td>
@@ -1630,7 +1633,7 @@
 			<td>1,97</td>
 			<td>1,1</td>
 			<td>81,8</td>
-		</tr>				
+		</tr>
 		<tr>
 			<td>5</td>
 			<td>\(\mathrm{B}\)</td>
@@ -1644,7 +1647,7 @@
 			<td>49,6</td>
 			<td>–</td>
 			<td>27,4</td>
-		</tr>							
+		</tr>
 		<tr>
 			<td>50</td>
 			<td>\(\mathrm{Sn}\)</td>
@@ -1657,7 +1660,7 @@
 			<td>2,45</td>
 			<td>5,4</td>
 			<td>63 </td>
-		</tr>				
+		</tr>
 		<tr>
 			<td>51</td>
 			<td>\(\mathrm{Sb}\)</td>
@@ -1670,7 +1673,7 @@
 			<td>1,02</td>
 			<td>7,7</td>
 			<td>24,4</td>
-		</tr>						
+		</tr>
 		<tr>
 			<td>53</td>
 			<td>\(\mathrm{I}\)</td>
@@ -1683,7 +1686,7 @@
 			<td>0,173</td>
 			<td>–</td>
 			<td>0,45</td>
-		</tr>		
+		</tr>
 		<tr>
 			<td>55</td>
 			<td>\(\mathrm{Cs}\)</td>
@@ -1696,7 +1699,7 @@
 			<td>0,504</td>
 			<td>–</td>
 			<td>35,9</td>
-		</tr>				
+		</tr>
 		<tr>
 			<td>56</td>
 			<td>\(\mathrm{Ba}\)</td>
@@ -1709,7 +1712,7 @@
 			<td>1,09</td>
 			<td>1,3</td>
 			<td>18,4</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>6</td>
 			<td>\(\mathrm{C}\)</td>
@@ -1723,7 +1726,7 @@
 			<td>50</td>
 			<td>–</td>
 			<td>1,59</td>
-		</tr>								
+		</tr>
 		<tr>
 			<td>74</td>
 			<td>\(\mathrm{W}\)v</td>
@@ -1736,7 +1739,7 @@
 			<td>8,8</td>
 			<td>38</td>
 			<td>173 </td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>76</td>
 			<td>\(\mathrm{Os}\)</td>
@@ -1749,7 +1752,7 @@
 			<td>3,93</td>
 			<td>56</td>
 			<td>61</td>
-		</tr>				
+		</tr>
 		<tr>
 			<td>77</td>
 			<td>\(\mathrm{Ir}\)</td>
@@ -1762,7 +1765,7 @@
 			<td>3,19</td>
 			<td>52</td>
 			<td>147</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>78</td>
 			<td>\(\mathrm{Pt}\)</td>
@@ -1775,7 +1778,7 @@
 			<td>2,67</td>
 			<td>16</td>
 			<td>71,6</td>
-		</tr>					
+		</tr>
 		<tr>
 			<td>79</td>
 			<td>\(\mathrm{Au}\)</td>
@@ -1788,7 +1791,7 @@
 			<td>1,65</td>
 			<td>7,9</td>
 			<td>318</td>
-		</tr>				
+		</tr>
 		<tr>
 			<td>82</td>
 			<td>\(\mathrm{Pb}\)</td>
@@ -1801,7 +1804,7 @@
 			<td>0,93</td>
 			<td>1,6</td>
 			<td>35,3</td>
-		</tr> 		                                                                                                                                                                             			
+		</tr>
 		<tr>
 			<td>83</td>
 			<td>\(\mathrm{Bi}\)</td>
@@ -1814,7 +1817,7 @@
 			<td>0,82</td>
 			<td>3,1</td>
 			<td>7,92</td>
-		</tr>				
+		</tr>
 		<tr>
 			<td>88</td>
 			<td>\(\mathrm{Ra}\)</td>
@@ -1827,7 +1830,7 @@
 			<td>–</td>
 			<td>–</td>
 			<td>18,6</td>
-		</tr> 
+		</tr>
 		<tr>
 			<td>92</td>
 			<td>\(\mathrm{U}\)</td>
@@ -1840,13 +1843,14 @@
 			<td>1,73</td>
 			<td>18</td>
 			<td>27,5</td>
-		</tr>			
+		</tr>
+		</tbody>
 	</table>
 
 	<ol>
 		<li class="fi">sublimoitumispiste</li>
 		<li class="sv">sublimeringspunkt</li>
-		<li>2,8 MPa</li> 
+		<li>2,8 MPa</li>
 		<li>7,3 kPa</li>
 	</ol>
 
@@ -1855,7 +1859,8 @@
 <h3 class="fi">Metalliseokset</h3>
 <h3 class="sv">Legeringar</h3>
 <div class="scrollwrap">
-	<table class="formulae">
+	<table class="formulae tablesorter" id="table-metalliseokset">
+		<thead>
 		<tr>
 			<th class="fi">Aine</th>
 			<th class="sv">Ämne</th>
@@ -1872,15 +1877,17 @@
 			<th class="fi">Lämmön-<br />johtavuus \[\mathrm{\frac{W}{m \cdot K}}\]</th>
 			<th class="sv">Värmelednings-<br />förmåga \[\mathrm{\frac{W}{m \cdot K}}\]</th>
 		</tr>
+		</thead>
+		<tbody>
 		<tr>
 			<td>
 				<span class="fi">alumiinipronssi</span>
 				<span class="sv">aluminiumbrons</span>
-				<br />\(\mathrm{Cu} \ 94,6\quad \mathrm{Al} \ 5\quad \mathrm{Mn} \ 0,4\)</td>		
+				<br />\(\mathrm{Cu} \ 94,6\quad \mathrm{Al} \ 5\quad \mathrm{Mn} \ 0,4\)</td>
 			<td>8,1</td>
 			<td>18 </td>
 			<td>0,42</td>
-			<td>1060</td>				
+			<td>1060</td>
 			<td>12  </td>
 			<td>84</td>
 		</tr>
@@ -1888,7 +1895,7 @@
 			<td>
 				<span class="fi">duralumiini</span>
 				<span class="sv">duraluminium</span>
-				<br />\(\mathrm{Al} \ 94\quad \mathrm{Cu} \ 4 \quad \mathrm{Mg} \ 1 \quad \mathrm{Mn} \ 0,5 \quad \mathrm{Si} \ 0,5\)</td>		
+				<br />\(\mathrm{Al} \ 94\quad \mathrm{Cu} \ 4 \quad \mathrm{Mg} \ 1 \quad \mathrm{Mn} \ 0,5 \quad \mathrm{Si} \ 0,5\)</td>
 			<td>2,8</td>
 			<td>34 </td>
 			<td>0,93</td>
@@ -1897,7 +1904,7 @@
 			<td>160</td>
 		</tr>
 		<tr>
-			<td>elektron		<br />\(\mathrm{Mg} \ 92 \quad \mathrm{Al} \ 5 \quad \mathrm{Zn} \ 3\)</td>		
+			<td>elektron		<br />\(\mathrm{Mg} \ 92 \quad \mathrm{Al} \ 5 \quad \mathrm{Zn} \ 3\)</td>
 			<td>1,8</td>
 			<td>25 </td>
 			<td>1,00</td>
@@ -1909,7 +1916,7 @@
 			<td>
 				<span class="fi">invarteräs</span>
 				<span class="sv">invar</span>
-				<br />\(\mathrm{Fe} \ 64 \quad \mathrm{Ni} \ 36\)</td>			
+				<br />\(\mathrm{Fe} \ 64 \quad \mathrm{Ni} \ 36\)</td>
 			<td>8,1</td>
 			<td>2,0</td>
 			<td>0,50</td>
@@ -1921,7 +1928,7 @@
 			<td>
 				<span class="fi">kanttaali</span>
 				<span class="sv">kanthal</span>
-				<br />\(\mathrm{Fe} \ 67,5 \quad \mathrm{Cr} \ 25 \quad \mathrm{Al} \ 5,5 \quad \mathrm{Co} \ 2\)</td>	
+				<br />\(\mathrm{Fe} \ 67,5 \quad \mathrm{Cr} \ 25 \quad \mathrm{Al} \ 5,5 \quad \mathrm{Co} \ 2\)</td>
 			<td>7,1</td>
 			<td>17 </td>
 			<td>–	</td>
@@ -1933,7 +1940,7 @@
 			<td>
 				<span class="fi">konstantaani</span>
 				<span class="sv">konstantan</span>
-				<br />\(\mathrm{Cu} \ 58 \quad \mathrm{Ni} \ 41 \quad \mathrm{Mn} \ 1\)</td>	
+				<br />\(\mathrm{Cu} \ 58 \quad \mathrm{Ni} \ 41 \quad \mathrm{Mn} \ 1\)</td>
 			<td>8,9</td>
 			<td>15 </td>
 			<td>0,41</td>
@@ -1945,7 +1952,7 @@
 			<td>
 				<span class="fi">manganiini</span>
 				<span class="sv">manganin</span>
-				<br />\(\mathrm{Cu} \ 85 \quad \mathrm{Mn} \ 12 \quad \mathrm{Ni} \ 2 \quad \mathrm{Fe} \ 1\)</td>			
+				<br />\(\mathrm{Cu} \ 85 \quad \mathrm{Mn} \ 12 \quad \mathrm{Ni} \ 2 \quad \mathrm{Fe} \ 1\)</td>
 			<td>8,5</td>
 			<td>16 </td>
 			<td>0,41</td>
@@ -1957,7 +1964,7 @@
 			<td>
 				<span class="fi">messinki</span>
 				<span class="sv">mässing</span>
-				<br />\(\mathrm{Cu} \ 63 \quad \mathrm{Zn} \ 37\)</td>			
+				<br />\(\mathrm{Cu} \ 63 \quad \mathrm{Zn} \ 37\)</td>
 			<td>8,4</td>
 			<td>21 </td>
 			<td>0,38</td>
@@ -1969,7 +1976,7 @@
 			<td>
 				<span class="fi">silumiini</span>
 				<span class="sv">silumin</span>
-				<br />\(\mathrm{Al} \ 87 \quad \mathrm{Si} \ 13\)</td>			
+				<br />\(\mathrm{Al} \ 87 \quad \mathrm{Si} \ 13\)</td>
 			<td>2,6</td>
 			<td>19 </td>
 			<td>0,88</td>
@@ -1981,7 +1988,7 @@
 			<td>
 				<span class="fi">teräs</span>
 				<span class="sv">stål</span>
-				<br />\(\mathrm{C}  \ 0,25\)</td>	
+				<br />\(\mathrm{C}  \ 0,25\)</td>
 			<td>7,8</td>
 			<td>12 </td>
 			<td>0,46</td>
@@ -1993,7 +2000,7 @@
 			<td>
 				<span class="fi">tinapronssi</span>
 				<span class="sv">tennbrons</span>
-				<br />\(\mathrm{Cu} \ 91 \quad \mathrm{Sn} \ 9 \quad \mathrm{P} \ 0,25\)</td>			
+				<br />\(\mathrm{Cu} \ 91 \quad \mathrm{Sn} \ 9 \quad \mathrm{P} \ 0,25\)</td>
 			<td>8,9</td>
 			<td>19 </td>
 			<td>0,38</td>
@@ -2005,7 +2012,7 @@
 			<td>
 				<span class="fi">alpakka (uushopea)</span>
 				<span class="sv">nysilver (nickelmässing, tyskt silver)</span>
-				<br />\(\mathrm{Cu} \ 60 \quad \mathrm{Zn} \ 22 \quad \mathrm{Ni} \ 18\)</td>	
+				<br />\(\mathrm{Cu} \ 60 \quad \mathrm{Zn} \ 22 \quad \mathrm{Ni} \ 18\)</td>
 			<td>8,7</td>
 			<td>17 </td>
 			<td>0,40</td>
@@ -2017,7 +2024,7 @@
 			<td>
 				<span class="fi">Woodin metalli</span>
 				<span class="sv">Woods metall</span>
-				<br />\(\mathrm{Bi} \ 50 \quad \mathrm{Pb} \ 25 \quad \mathrm{Sn} \ 12,5 \quad \mathrm{Cd} \ \mathrm{12,5}\)</td>		
+				<br />\(\mathrm{Bi} \ 50 \quad \mathrm{Pb} \ 25 \quad \mathrm{Sn} \ 12,5 \quad \mathrm{Cd} \ \mathrm{12,5}\)</td>
 			<td>9,7</td>
 			<td>–  </td>
 			<td>0,15</td>
@@ -2025,13 +2032,15 @@
 			<td>   –</td>
 			<td>13</td>
 		</tr>
+		</tbody>
 	</table>
 </div>
 
 <h3 class="fi">Muita kiinteitä aineita</h3>
 <h3 class="sv">Andra fasta ämnen</h3>
 <div class="scrollwrap">
-	<table class="formulae">
+	<table class="formulae tablesorter" id="table-muita_kiinteita_aineita">
+		<thead>
 		<tr>
 			<th class="fi">Aine</th>
 			<th class="sv">Ämne</th>
@@ -2044,6 +2053,8 @@
 			<th class="fi">Lämmön-<br />johtavuus \[\mathrm{\frac{W}{m \cdot K}}\]</th>
 			<th class="sv">Värmelednings-<br />förmåga \[\mathrm{\frac{W}{m \cdot K}}\]</th>
 		</tr>
+		</thead>
+		<tbody>
 		<tr>
 			<td class="fi">akryyli</td>
 			<td class="sv">akryl</td>
@@ -2170,7 +2181,7 @@
 			<td>100…200</td>
 			<td>2,1</td>
 			<td>0,23…0,29</td>
-		</tr>	
+		</tr>
 		<tr>
 			<td class="fi">polystyreeni</td>
 			<td class="sv">polystyren</td>
@@ -2242,6 +2253,7 @@
 			<td>0,90</td>
 			<td>0,036…0,045</td>
 		</tr>
+		</tbody>
 	</table>
 </div>
 <br />
@@ -2249,12 +2261,13 @@
 <h3 class="fi">Nesteet</h3>
 <h3 class="sv">Vätskor</h3>
 <div class="scrollwrap">
-	<table class="formulae">
+	<table class="formulae tablesorter" id="table-nesteet">
+		<thead>
 		<tr>
 			<th class="fi">Aine</th>
 			<th class="sv">Ämne</th>
 			<th class="fi">Tiheys<br />(20 °C) \[\mathrm{\frac{10^3 \ kg}{m^3}}\]</th>
-			<th class="sv">Densitet<br />(20 °C) \[\mathrm{\frac{10^3 \ kg}{m^3}}\]</th> 
+			<th class="sv">Densitet<br />(20 °C) \[\mathrm{\frac{10^3 \ kg}{m^3}}\]</th>
 			<th class="fi">Tilavuuden<br />lämpötilakerroin<br />(20-100 &deg;C)\[\frac{10^{-3}}{\mathrm{K}}\]</th>
 			<th class="sv">Volymutvidgnings-<br />koefficient<br />(20-100 &deg;C)\[\frac{10^{-3}}{\mathrm{K}}\]</th>
 			<th class="fi">Ominais-<br />lämpökapasiteetti \[\mathrm{\frac{kJ}{kg \cdot K}}\]</th>
@@ -2264,7 +2277,8 @@
 			<th class="fi">Ominais-<br />sulamislämpö \[\mathrm{\frac{kJ}{kg}}\]</th>
 			<th class="sv">Specifik<br />smältvärme \[\mathrm{\frac{kJ}{kg}}\]</th>
 		</tr>
-
+		</thead>
+		<tbody>
 		<tr>
 			<td class="fi">asetoni</td>
 			<td class="sv">aceton</td>
@@ -2356,7 +2370,7 @@
 			<td>190</td>
 		</tr>
 		<tr>
-			<td class="fi">hiilitetrakloridi                                
+			<td class="fi">hiilitetrakloridi
 					<br />(tetrakloorimetaani)</td>
 				<td class="sv">koltetraklorid
 					<br />(tetraklormetan)</td>
@@ -2384,17 +2398,19 @@
 				<td>  3,85</td>
 				<td>318</td>
 			</tr>
+			</tbody>
 		</table>
 	</div>
 	<h3 class="fi">Kaasut</h3>
 	<h3 class="sv">Gaser</h3>
 	<div class="scrollwrap">
-		<table class="formulae">
+		<table class="formulae tablesorter" id="table-kaasut">
+			<thead>
 			<tr>
 				<th class="fi">Aine</th>
 				<th class="sv">Ämne</th>
 				<th class="fi">Tiheys (NTP)<br />(20 °C) \[\mathrm{\frac{kg}{m^3}}\]</th>
-				<th class="sv">Densitet (NTP)<br />(20 °C) \[\mathrm{\frac{kg}{m^3}}\]</th> 
+				<th class="sv">Densitet (NTP)<br />(20 °C) \[\mathrm{\frac{kg}{m^3}}\]</th>
 				<th class="fi">Tilavuuden<br />lämpötilakerroin<br />(20-100 &deg;C)\[\frac{10^{-3}}{\mathrm{K}}\]</th>
 				<th class="sv">Volymutvidgnings-<br />koefficient<br />(20-100 &deg;C)\[\frac{10^{-3}}{\mathrm{K}}\]</th>
 				<th class="fi">Ominais-<br />lämpökapasiteetti<br />vakiopaineessa \[\mathrm{\frac{kJ}{kg \cdot K}}\]</th>
@@ -2405,6 +2421,8 @@
 				<th class="fi">Ominais-<br />sulamislämpö \[\mathrm{\frac{kJ}{kg}}\]</th>
 				<th class="sv">Specifik<br />smältvärme \[\mathrm{\frac{kJ}{kg}}\]</th>
 			</tr>
+			</thead>
+			<tbody>
 			<tr>
 				<td class="fi">ammoniakki</td>
 				<td class="sv">ammoniak</td>
@@ -2632,6 +2650,7 @@
 				<td>-114</td>
 				<td>55</td>
 			</tr>
+			</tbody>
 		</table>
 		</div>
 
@@ -2778,9 +2797,9 @@
 					<th colspan="2" class="fi">Suure</th>
 					<th colspan="2"	class="sv">Storhet</th>
 					<th class="fi">Tunnus</th>
-					<th class="sv">Beteckning</th> 
+					<th class="sv">Beteckning</th>
 					<th class="fi">Yksikkö</th>
-					<th class="sv">Enhet</th>  
+					<th class="sv">Enhet</th>
 					<th class="fi">Laki</th>
 					<th class="sv">Lag</th>
 				</tr>
@@ -2808,7 +2827,7 @@
 					<td>\(a_k = \frac{\Delta v}{\Delta t}\)</td>
 				</tr>
 
-				<tr>        
+				<tr>
 					<th rowspan="2" class="fi">Tasaisesti muuttuva etenemisliike</th>
 					<th rowspan="2" class="sv">Likformigt föränderlig rörelse</th>
 					<td class="fi">nopeus</td>
@@ -2824,7 +2843,7 @@
 					<td>\(\mathrm{m}\)</td>
 					<td>\(x = x_0 + v_0 t + \frac{1}{2}at^2\)</td>
 				</tr>
-				<tr>        
+				<tr>
 					<th colspan="2" class="fi">Normaalikiihtyvyys</th>
 					<th colspan="2" class="sv">Normalacceleration</th>
 					<td>\(a_n\)</td>
@@ -2840,7 +2859,7 @@
 					<td>\(\mathrm{N}\)</td>
 					<td/>
 				</tr>
-				<tr>	
+				<tr>
 					<td class="fi">painovoima maan pinnalla</td>
 					<td class="sv">tyngdkraft vid jordytan</td>
 					<td>\(G\)</td>
@@ -3002,7 +3021,7 @@
 					<td/>
 					<td>\(p = \rho g h \)</td>
 				</tr>
-				
+
 			</table>
 		</div>
 
@@ -3014,108 +3033,108 @@
 					<th colspan="2" class="fi">Suure</th>
 					<th colspan="2"	class="sv">Storhet</th>
 					<th class="fi">Tunnus</th>
-					<th class="sv">Beteckning</th> 
+					<th class="sv">Beteckning</th>
 					<th class="fi">Yksikkö</th>
-					<th class="sv">Enhet</th>  
+					<th class="sv">Enhet</th>
 					<th class="fi">Laki</th>
 					<th class="sv">Lag</th>
 				</tr>
 				<tr>
 					<th colspan="2" class="fi">Celsiuslämpötila</th>
-					<th colspan="2" class="sv">Celsiustemperatur</th>				        
+					<th colspan="2" class="sv">Celsiustemperatur</th>
 					<td>\(t\)</td>
 					<td>\(\mathrm{&deg;C}\)</td>
 					<td>\[t = T -273{,}15~\mathrm{K}\]</td>
 				</tr>
 				<tr>
-					<th colspan="2" class="fi">Ideaalikaasun tilanyhtälö</th> 
-					<th colspan="2" class="sv">Gasernas allmänna tillståndsekvation</th> 
+					<th colspan="2" class="fi">Ideaalikaasun tilanyhtälö</th>
+					<th colspan="2" class="sv">Gasernas allmänna tillståndsekvation</th>
 					<td/>
-					<td/> 
+					<td/>
 					<td class="fi">\[pV=nRT\]</td>
 					<td class="sv">\[pV=nRT\]</td>
 				</tr>
 				<tr>
 					<th colspan="2" class="fi">Pituuden lämpötilakerroin</th>
-					<th colspan="2" class="sv">Längdutvidgningskoefficient</th>			
-					<td>\(\alpha\)</td> 
-					<td>\(\mathrm{\frac{1}{&deg;C}}\)</td> 
+					<th colspan="2" class="sv">Längdutvidgningskoefficient</th>
+					<td>\(\alpha\)</td>
+					<td>\(\mathrm{\frac{1}{&deg;C}}\)</td>
 					<td>\[\ell = \ell_0 (1+\alpha \Delta t)\]</td>
 				</tr>
 				<tr>
-					<th colspan="2" class="fi">Tilavuuden lämpötilakerroin</th> 
-					<th colspan="2" class="sv">Volymutvidgningskoefficient</th> 
-					<td>\(\gamma\)</td> 
-					<td>\(\mathrm{\frac{1}{&deg;C}}\)</td> 
+					<th colspan="2" class="fi">Tilavuuden lämpötilakerroin</th>
+					<th colspan="2" class="sv">Volymutvidgningskoefficient</th>
+					<td>\(\gamma\)</td>
+					<td>\(\mathrm{\frac{1}{&deg;C}}\)</td>
 					<td>\[V=V_0(1+\gamma \Delta t)\]</td>
 				</tr>
 				<tr>
-					<th rowspan="2" class="fi">Termodynaaminen systeemi</th> 
+					<th rowspan="2" class="fi">Termodynaaminen systeemi</th>
 					<th rowspan="2" class="sv">Termodynamiskt system</th>
-					<td class="fi">isobaarinen työ</td> 
-					<td class="sv">isobariskt arbete</td> 
-					<td>\(W\)</td> 
+					<td class="fi">isobaarinen työ</td>
+					<td class="sv">isobariskt arbete</td>
+					<td>\(W\)</td>
 					<td>\(\mathrm{J}\)</td>
 					<td>\[W=p\Delta V\]</td>
 				</tr>
 				<tr>
-					<td class="fi">ensimmäinen pääsääntö</td> 
-					<td class="sv">första huvudsatsen</td> 
+					<td class="fi">ensimmäinen pääsääntö</td>
+					<td class="sv">första huvudsatsen</td>
 					<td/>
 					<td/>
 					<td>\[\Delta U=Q+W\]</td>
 				</tr>
 				<tr>
 					<th colspan="2" class="fi">Lämpökapasiteetti</th>
-					<th colspan="2" class="sv">Värmekapacitet</th>			
-					<td>\(C\)</td> 
-					<td>\(\frac{\mathrm{J}}{\mathrm{K}}\)</td> 
+					<th colspan="2" class="sv">Värmekapacitet</th>
+					<td>\(C\)</td>
+					<td>\(\frac{\mathrm{J}}{\mathrm{K}}\)</td>
 					<td>\[C=cm\]</td>
 				</tr>
 				<tr>
-					<th rowspan="3" class="fi">Lämpö</th> 
+					<th rowspan="3" class="fi">Lämpö</th>
 					<th rowspan="3" class="sv">Värme</th>
-					<td class="fi">lämpötilan muutos</td> 
-					<td class="sv">temperaturförändring</td> 
-					<td rowspan="3">\(Q\)</td> 
-					<td rowspan="3">\(\mathrm{J}\)</td> 
+					<td class="fi">lämpötilan muutos</td>
+					<td class="sv">temperaturförändring</td>
+					<td rowspan="3">\(Q\)</td>
+					<td rowspan="3">\(\mathrm{J}\)</td>
 					<td>\[Q=cm\Delta t\]</td>
 				</tr>
 				<tr>
-					<td class="fi">sulaminen</td> 
-					<td class="sv">smältning</td> 
+					<td class="fi">sulaminen</td>
+					<td class="sv">smältning</td>
 					<td>\[Q=sm\]</td>
 				</tr>
 				<tr>
-					<td class="fi">höyrystyminen</td> 
+					<td class="fi">höyrystyminen</td>
 					<td class="sv">förångning</td>
 					<td>\[Q=rm\]</td>
 				</tr>
 				<tr>
-					<th class="fi">Lämpövoimakone</th> 
-					<th class="sv">Värmekraftmaskin</th> 
-					<td class="fi">hyötysuhde</td> 
-					<td class="sv">verkningsgrad</td> 
-					<td>\(\eta\)</td> 
-					<td/> 
+					<th class="fi">Lämpövoimakone</th>
+					<th class="sv">Värmekraftmaskin</th>
+					<td class="fi">hyötysuhde</td>
+					<td class="sv">verkningsgrad</td>
+					<td>\(\eta\)</td>
+					<td/>
 					<td>\[\eta = \frac {W}{Q_1}=\frac {Q_1-Q_2}{Q_1}\]</td>
 				</tr>
 				<tr>
-					<th class="fi">Jäähdytyskone</th> 
-					<th class="sv">Kylmaskin</th> 
-					<td class="fi">suorituskyky</td> 
-					<td class="sv">köldfaktor</td> 
-					<td>\(\varepsilon\)</td> 
-					<td/> 
+					<th class="fi">Jäähdytyskone</th>
+					<th class="sv">Kylmaskin</th>
+					<td class="fi">suorituskyky</td>
+					<td class="sv">köldfaktor</td>
+					<td>\(\varepsilon\)</td>
+					<td/>
 					<td>\[\varepsilon = \frac {Q_2}{Q_1-Q_2}=\frac {1}{\eta}-1\]</td>
 				</tr>
 				<tr>
-					<th class="fi">Lämpöpumppu</th> 
-					<th class="sv">Värmepump</th> 
-					<td class="fi">suorituskyky</td> 
-					<td class="sv">värmefaktor</td> 
-					<td>\(\varepsilon\)</td> 
-					<td/> 
+					<th class="fi">Lämpöpumppu</th>
+					<th class="sv">Värmepump</th>
+					<td class="fi">suorituskyky</td>
+					<td class="sv">värmefaktor</td>
+					<td>\(\varepsilon\)</td>
+					<td/>
 					<td>\[\varepsilon = \frac {Q_1}{Q_1-Q_2}=\frac {1}{\eta}\]</td>
 				</tr>
 				</table>
@@ -3129,161 +3148,161 @@
 						<th colspan="2" class="fi">Suure</th>
 						<th colspan="2"	class="sv">Storhet</th>
 						<th class="fi">Tunnus</th>
-						<th class="sv">Beteckning</th> 
+						<th class="sv">Beteckning</th>
 						<th class="fi">Yksikkö</th>
-						<th class="sv">Enhet</th>  
+						<th class="sv">Enhet</th>
 						<th class="fi">Laki</th>
 						<th class="sv">Lag</th>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Aaltoliikkeen nopeus</th> 
-						<th colspan="2" class="sv">Vågrörelsens grundekvation</th> 
-						<td>\(v \)</td> 
-						<td>\(\mathrm{\frac{m}{s}}\)</td> 
+						<th colspan="2" class="fi">Aaltoliikkeen nopeus</th>
+						<th colspan="2" class="sv">Vågrörelsens grundekvation</th>
+						<td>\(v \)</td>
+						<td>\(\mathrm{\frac{m}{s}}\)</td>
 						<td>\[v=\lambda \, f\]</td>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Intensiteetti</th> 
-						<th colspan="2" class="sv">Intensitet</th> 
-						<td>\(I\)</td> 
-						<td>\(\mathrm{\frac{W}{m^2}}\)</td> 
+						<th colspan="2" class="fi">Intensiteetti</th>
+						<th colspan="2" class="sv">Intensitet</th>
+						<td>\(I\)</td>
+						<td>\(\mathrm{\frac{W}{m^2}}\)</td>
 						<td>\[I=\frac PA\]</td>
 					</tr>
 					<tr>
-						<th rowspan="2" class="fi">Dopplerin ilmiö</th> 
-						<th rowspan="2" class="sv">Dopplereffekt</th> 
-						<td class="fi">aaltolähde liikkuu</td> 
-						<td class="sv">vågkällan rör sig</td> 
-						<td/> 
-						<td/> 
+						<th rowspan="2" class="fi">Dopplerin ilmiö</th>
+						<th rowspan="2" class="sv">Dopplereffekt</th>
+						<td class="fi">aaltolähde liikkuu</td>
+						<td class="sv">vågkällan rör sig</td>
+						<td/>
+						<td/>
 						<td>\[f=f_0\frac {v}{v \pm v_l}\]</td>
 					</tr>
 					<tr>
-						<td class="fi">havaitsija liikkuu</td> 
-						<td class="sv">observatören rör sig</td> 
-						<td/> 
-						<td/> 
+						<td class="fi">havaitsija liikkuu</td>
+						<td class="sv">observatören rör sig</td>
+						<td/>
+						<td/>
 						<td>\[f=f_0\frac {v\pm v_h}{v}\]</td>
 					</tr>
 					<tr>
-						<th  colspan="2" class="fi">Äänen intensiteettitaso</th> 
-						<th  colspan="2" class="sv">Ljudnivå</th> 
-						<td>\(L\)</td> 
-						<td>\(\mathrm{dB}\)</td> 
+						<th  colspan="2" class="fi">Äänen intensiteettitaso</th>
+						<th  colspan="2" class="sv">Ljudnivå</th>
+						<td>\(L\)</td>
+						<td>\(\mathrm{dB}\)</td>
 						<td>\(L=10\lg\frac{I}{I_0}\mathrm{dB}\), \(I_0=1 \mathrm{\frac{pW}{m^2}}\)</td>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Snellin laki (taittumislaki)</th> 
-						<th colspan="2" class="sv">Snells lag (brytningslagen) </th> 
-						<td/> 
-						<td/> 
+						<th colspan="2" class="fi">Snellin laki (taittumislaki)</th>
+						<th colspan="2" class="sv">Snells lag (brytningslagen) </th>
+						<td/>
+						<td/>
 						<td>\[\frac {\sin \alpha_1}{\sin \alpha_2}= \frac{v_1}{v_2}= \frac{n_2}{n_1}=n_{12}\]</td>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Valon nopeus väliaineessa</th> 
-						<th colspan="2" class="sv">Ljusets hastighet i ett medium</th> 
-						<td/> 
-						<td/> 
+						<th colspan="2" class="fi">Valon nopeus väliaineessa</th>
+						<th colspan="2" class="sv">Ljusets hastighet i ett medium</th>
+						<td/>
+						<td/>
 						<td>\[c_n = \frac{c}{n}\]</td>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Brewsterin laki</th> 
-						<th colspan="2" class="sv">Brewsters lag</th> 
-						<td/> 
-						<td/> 
+						<th colspan="2" class="fi">Brewsterin laki</th>
+						<th colspan="2" class="sv">Brewsters lag</th>
+						<td/>
+						<td/>
 						<td>\[\tan \alpha_{B}=\frac {n_2}{n_1}\]</td>
 					</tr>
 					<tr>
 						<th colspan="2" class="fi">Hilayhtälö</th>
-						<th colspan="2" class="sv">Gitterekvationen</th> 						
-						<td/> 
-						<td/> 
+						<th colspan="2" class="sv">Gitterekvationen</th>
+						<td/>
+						<td/>
 						<td>\[d\sin \alpha = k\lambda\]</td>
 					</tr>
 					<tr>
 						<th colspan="2" class="fi">Braggin laki</th>
-						<th colspan="2" class="sv">Braggs lag</th> 						
-						<td/> 
-						<td/> 
+						<th colspan="2" class="sv">Braggs lag</th>
+						<td/>
+						<td/>
 						<td>\[2 d\sin \theta = k\lambda\]</td>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Gaussin kuvauslaki (linssiyhtälö)</th> 
-						<th colspan="2" class="sv">Gauss avbildningslag (linsformeln)</th> 
-						<td/> 
-						<td/> 
+						<th colspan="2" class="fi">Gaussin kuvauslaki (linssiyhtälö)</th>
+						<th colspan="2" class="sv">Gauss avbildningslag (linsformeln)</th>
+						<td/>
+						<td/>
 						<td>\[\frac 1a + \frac 1b = \frac 1f\]</td>
 					</tr>
 					<tr>
-						<th  colspan="2" class="fi">Linssin taittokyky</th> 
-						<th  colspan="2" class="sv">Linsstyrka (linsens brytningsförmåga)</th> 
-						<td>\(D\)</td> 
-						<td>\(\mathrm{\frac{1}{m}=d}\)</td> 
+						<th  colspan="2" class="fi">Linssin taittokyky</th>
+						<th  colspan="2" class="sv">Linsstyrka (linsens brytningsförmåga)</th>
+						<td>\(D\)</td>
+						<td>\(\mathrm{\frac{1}{m}=d}\)</td>
 						<td>\[D=\frac 1f\]</td>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Viivasuurennus</th> 
-						<th colspan="2" class="sv">Linjär förstoring</th> 
-						<td>\(m\)</td> 
-						<td/> 
+						<th colspan="2" class="fi">Viivasuurennus</th>
+						<th colspan="2" class="sv">Linjär förstoring</th>
+						<td>\(m\)</td>
+						<td/>
 						<td>\[m=\left|\frac ba\right|\]</td>
 					</tr>
 					<tr>
 						<th colspan="2" class="fi">Kulmasuurennus</th>
-						<th colspan="2" class="sv">Vinkelförstoring</th> 						
-						<td>\(M\)</td> 
-						<td/> 
+						<th colspan="2" class="sv">Vinkelförstoring</th>
+						<td>\(M\)</td>
+						<td/>
 						<td>\[M=\frac{\tan\alpha_2}{\tan\alpha_1}\]</td>
 					</tr>
 					<tr>
-						<th rowspan="3" class="fi">Suurennuksia</th> 
-						<th rowspan="3" class="sv">Förstoringar</th> 
-						<td class="fi">suurennuslasi</td> 
-						<td class="sv">förstoringsglas</td> 
-						<td/> 
-						<td/> 
+						<th rowspan="3" class="fi">Suurennuksia</th>
+						<th rowspan="3" class="sv">Förstoringar</th>
+						<td class="fi">suurennuslasi</td>
+						<td class="sv">förstoringsglas</td>
+						<td/>
+						<td/>
 						<td>\[M=\frac sf\]</td>
 					</tr>
 					<tr>
-						<td class="fi">mikroskooppi</td> 
-						<td class="sv">mikroskop</td> 
-						<td/> 
-						<td/> 
+						<td class="fi">mikroskooppi</td>
+						<td class="sv">mikroskop</td>
+						<td/>
+						<td/>
 						<td>\[M=\frac {Ls}{f_{\mathrm{ob}} \ f_\mathrm{ok}}\]</td>
 					</tr>
 					<tr>
-						<td class="fi">kaukoputki</td> 
-						<td class="sv">teleskop</td> 
-						<td/> 
-						<td/> 
+						<td class="fi">kaukoputki</td>
+						<td class="sv">teleskop</td>
+						<td/>
+						<td/>
 						<td>\[M=\frac{f_\mathrm{ob}}{f_\mathrm{ok}}\]</td>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Valovoima</th> 
-						<th colspan="2" class="sv">Ljusstyrka</th> 
-						<td>\(I\)</td> 
-						<td>\(\mathrm{cd}\)</td> 
+						<th colspan="2" class="fi">Valovoima</th>
+						<th colspan="2" class="sv">Ljusstyrka</th>
+						<td>\(I\)</td>
+						<td>\(\mathrm{cd}\)</td>
 						<td>\[I=\frac {\Phi}{\omega}\]</td>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Luminanssi</th> 
-						<th colspan="2" class="sv">Luminans</th> 
-						<td>\(L\)</td> 
-						<td>\(\mathrm{\frac{cd}{m^2}}\)</td> 
+						<th colspan="2" class="fi">Luminanssi</th>
+						<th colspan="2" class="sv">Luminans</th>
+						<td>\(L\)</td>
+						<td>\(\mathrm{\frac{cd}{m^2}}\)</td>
 						<td>\[L=\frac IA\]</td>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Valovirta</th> 
-						<th colspan="2" class="sv">Ljusflöde</th> 
-						<td>\(\Phi\)</td> 
-						<td>\(\mathrm{lm}\)</td> 
+						<th colspan="2" class="fi">Valovirta</th>
+						<th colspan="2" class="sv">Ljusflöde</th>
+						<td>\(\Phi\)</td>
+						<td>\(\mathrm{lm}\)</td>
 						<td>\[\Phi=I\omega\]</td>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Valaistusvoimakkuus</th> 
-						<th colspan="2" class="sv">Illuminans (belysning)</th> 
-						<td>\(E\)</td> 
-						<td>\(\mathrm{lx}\)</td> 
+						<th colspan="2" class="fi">Valaistusvoimakkuus</th>
+						<th colspan="2" class="sv">Illuminans (belysning)</th>
+						<td>\(E\)</td>
+						<td>\(\mathrm{lx}\)</td>
 						<td>\[E=\frac{\Phi}{A}\]</td>
 					</tr>
 				</table>
@@ -3296,94 +3315,94 @@
 						<th colspan="2" class="fi">Suure</th>
 						<th colspan="2"	class="sv">Storhet</th>
 						<th class="fi">Tunnus</th>
-						<th class="sv">Beteckning</th> 
+						<th class="sv">Beteckning</th>
 						<th class="fi">Yksikkö</th>
-						<th class="sv">Enhet</th>  
+						<th class="sv">Enhet</th>
 						<th class="fi">Laki</th>
 						<th class="sv">Lag</th>
 					</tr>
 					<tr>
-						<th colspan="2" class="fi">Coulombin laki (tyhjiössä)</th> 
-						<th colspan="2" class="sv">Coulombs lag (i vakuum)</th> 
-						<td>\( F \)</td> 
-						<td>\(\mathrm{N}\)</td> 
+						<th colspan="2" class="fi">Coulombin laki (tyhjiössä)</th>
+						<th colspan="2" class="sv">Coulombs lag (i vakuum)</th>
+						<td>\( F \)</td>
+						<td>\(\mathrm{N}\)</td>
 						<td>\[F ={\frac {1}{4\pi \epsilon _{0}}}{\frac {q_{1}q_{2}}{r^{2}}}\]</td>
 					</tr>
 					<tr>
-						<th rowspan="3" class="fi">Sähkökenttä</th> 
-						<th rowspan="3" class="sv">Elektriska fältets</th> 
-						<td class="fi">voimakkuus</td> 
-						<td class="sv">fältstyrka</td> 
-						<td>\(E \)</td> 
-						<td>\(\frac{\mathrm{N}}{\mathrm{C}}\), \(\frac{\mathrm{V}}{\mathrm{m}}\)</td> 
+						<th rowspan="3" class="fi">Sähkökenttä</th>
+						<th rowspan="3" class="sv">Elektriska fältets</th>
+						<td class="fi">voimakkuus</td>
+						<td class="sv">fältstyrka</td>
+						<td>\(E \)</td>
+						<td>\(\frac{\mathrm{N}}{\mathrm{C}}\), \(\frac{\mathrm{V}}{\mathrm{m}}\)</td>
 						<td class="fi">\[E = \frac{F}{q}\]</td>
 						</tr>
 						<tr>
-							<td class="fi">potentiaali</td> 
-							<td class="sv">potential</td> 
-							<td>\(V\)</td> 
-							<td>\(\mathrm{V}\)</td> 
+							<td class="fi">potentiaali</td>
+							<td class="sv">potential</td>
+							<td>\(V\)</td>
+							<td>\(\mathrm{V}\)</td>
 							<td class="fi">\[V=\frac{E_{p}}{Q}\]</td>
 						</tr>
 						<tr>
-							<td class="fi">potentiaalienergia</td> 
-							<td class="sv">potentiell energi</td> 
-							<td>\(E_p\)</td> 
-							<td>\(\mathrm{J}\)</td> 
+							<td class="fi">potentiaalienergia</td>
+							<td class="sv">potentiell energi</td>
+							<td>\(E_p\)</td>
+							<td>\(\mathrm{J}\)</td>
 							<td class="fi">\[E_p=QV\]</td>
 						</tr>
 						<tr>
-							<th colspan="2" class="fi">Suhteellinen permittiivisyys</th> 
-							<th colspan="2" class="sv">Relativ permittivitet</th> 
-							<td>\(\varepsilon_{r}\)</td> 
-							<td/> 
+							<th colspan="2" class="fi">Suhteellinen permittiivisyys</th>
+							<th colspan="2" class="sv">Relativ permittivitet</th>
+							<td>\(\varepsilon_{r}\)</td>
+							<td/>
 							<td>\[\varepsilon_{r}=\frac{\varepsilon}{\varepsilon_{0}}\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Potentiaaliero homogeenisessä sähkökentässä</th>
-							<th colspan="2" class="sv">Potentialskillnad i homogent elfält</th>			
-							<td>\(U\)</td> 
-							<td>\(\mathrm{V}\)</td> 
+							<th colspan="2" class="sv">Potentialskillnad i homogent elfält</th>
+							<td>\(U\)</td>
+							<td>\(\mathrm{V}\)</td>
 							<td>\[U=Ed\]</td>
 						</tr>
 						<tr>
 							<th rowspan="2" class="fi">Pistevarauksen sähkökenttä</th>
-							<th rowspan="2" class="sv">En punktformad laddnings elfält</th>							
+							<th rowspan="2" class="sv">En punktformad laddnings elfält</th>
 							<td class="fi">voimakkuus</td>
-							<td class="sv">fältstyrka</td>							
-							<td>\(E\)</td> 
-							<td>\(\mathrm{\frac{N}{C}}\), \(\mathrm{\frac{V}{m}}\)</td> 
+							<td class="sv">fältstyrka</td>
+							<td>\(E\)</td>
+							<td>\(\mathrm{\frac{N}{C}}\), \(\mathrm{\frac{V}{m}}\)</td>
 							<td>\[E=\frac{1}{4\pi\varepsilon_0} \frac{Q}{r^2}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">potentiaali</td>
-							<td class="sv">potential</td>							
-							<td>\(V\)</td> 
-							<td>\(\mathrm{V}\)</td> 
+							<td class="sv">potential</td>
+							<td>\(V\)</td>
+							<td>\(\mathrm{V}\)</td>
 							<td>\[V=\frac{1}{4\pi\varepsilon_0} \frac Qr\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Kapasitanssi</th>
-							<th colspan="2" class="sv">Kapacitans</th>							
-							<td rowspan="4">\(C\)</td> 
-							<td rowspan="4">\(\mathrm{F}\)</td> 
+							<th colspan="2" class="sv">Kapacitans</th>
+							<td rowspan="4">\(C\)</td>
+							<td rowspan="4">\(\mathrm{F}\)</td>
 							<td>\[C= \frac QU\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Levykondensaattorin kapasitanssi</th>
-							<th colspan="2" class="sv">Skivkondensatorns kapacitans</th>					
+							<th colspan="2" class="sv">Skivkondensatorns kapacitans</th>
 							<td>\[C=\varepsilon_0\varepsilon_r \frac Ad\]</td>
 						</tr>
 						<tr>
 							<th rowspan="2" class="fi">Kondensaattorikytkennän kapasitanssi</th>
-							<th rowspan="2" class="sv">Kapacitans vid koppling av kondensatorer</th>					
+							<th rowspan="2" class="sv">Kapacitans vid koppling av kondensatorer</th>
 							<td class="fi">sarjaankytkentä</td>
-							<td class="sv">seriekopplade</td>							
+							<td class="sv">seriekopplade</td>
 							<td>\[C =\frac{1}{\sum \frac{1}{C_i}}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">rinnankytkentä</td>
-							<td class="sv">parallellkopplade</td>							
+							<td class="sv">parallellkopplade</td>
 							<td>\[C=\sum C_i\]</td>
 						</tr>
 						<tr>
@@ -3395,32 +3414,32 @@
 						</tr>
 						<tr>
 							<th rowspan="2" class="fi">Resistanssi</th>
-							<th rowspan="2" class="sv">Resistans</th>		
+							<th rowspan="2" class="sv">Resistans</th>
 							<td class="fi">Ohmin laki</td>
-							<td class="sv">Ohms lag</td>							
-							<td rowspan="2">\(R\)</td> 
-							<td rowspan="2">\(\Omega\)</td> 
+							<td class="sv">Ohms lag</td>
+							<td rowspan="2">\(R\)</td>
+							<td rowspan="2">\(\Omega\)</td>
 							<td>\[R=\frac UI\]</td>
 						</tr>
 						<tr>
 							<td class="fi">johdin</td>
-							<td class="sv">ledare</td>							
+							<td class="sv">ledare</td>
 							<td>\[R=\rho \frac {\ell}{A}\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Resistiivisyys</th>
-							<th colspan="2" class="sv">Resistivitet</th>							
-							<td>\(\rho\)</td> 
-							<td>\(\Omega\mathrm{m}\)</td> 
-							<td>\[\rho=\frac{RA}{\ell}\]</td> 
+							<th colspan="2" class="sv">Resistivitet</th>
+							<td>\(\rho\)</td>
+							<td>\(\Omega\mathrm{m}\)</td>
+							<td>\[\rho=\frac{RA}{\ell}\]</td>
 						</tr>
 						<tr>
 							<th rowspan="2" class="fi">Vastuskytkennän resistanssi</th>
-							<th rowspan="2" class="sv">Resistans vid koppling av motstånd</th>						
+							<th rowspan="2" class="sv">Resistans vid koppling av motstånd</th>
 							<td class="fi">sarjaankytkentä</td>
-							<td class="sv">seriekopplade</td>	
-							<td rowspan="2">\(R\)</td> 
-							<td rowspan="2">\(\Omega\)</td>  
+							<td class="sv">seriekopplade</td>
+							<td rowspan="2">\(R\)</td>
+							<td rowspan="2">\(\Omega\)</td>
 							<td>\[R=\sum R_i\]</td>
 						</tr>
 						<tr>
@@ -3430,238 +3449,238 @@
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Sähkövirta</th>
-							<th colspan="2" class="sv">Elektrisk ström</th>							
-							<td>\(I\)</td> 
-							<td>\(\mathrm{A}\)</td> 
+							<th colspan="2" class="sv">Elektrisk ström</th>
+							<td>\(I\)</td>
+							<td>\(\mathrm{A}\)</td>
 							<td>\[I=\frac {\Delta Q}{\Delta t}\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Sähköteho</th>
-							<th colspan="2" class="sv">Elektrisk effekt</th>							
-							<td>\(P\)</td> 
-							<td>\(\mathrm{W}\)</td> 
+							<th colspan="2" class="sv">Elektrisk effekt</th>
+							<td>\(P\)</td>
+							<td>\(\mathrm{W}\)</td>
 							<td>\[P=UI\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Yhdensuuntaisten virtajohtimien toisiinsa kohdistama voima</th>
-							<th colspan="2" class="sv">Kraften med vilken parallella elektriska ledare påverkar varandra</th>							
-							<td>\(F\)</td> 
-							<td>\(\mathrm{N}\)</td> 
+							<th colspan="2" class="sv">Kraften med vilken parallella elektriska ledare påverkar varandra</th>
+							<td>\(F\)</td>
+							<td>\(\mathrm{N}\)</td>
 							<td>\[F=\frac{\mu_0}{4\pi} \frac{I_1I_2}{r}\ell\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Suhteellinen permeabiliteetti</th>
-							<th colspan="2" class="sv">Relativ permeabilitet</th>							
-							<td>\(\mu_r\)</td> 
-							<td/> 
+							<th colspan="2" class="sv">Relativ permeabilitet</th>
+							<td>\(\mu_r\)</td>
+							<td/>
 							<td>\[\mu_r = \frac{\mu}{\mu_0}\]</td>
 						</tr>
 						<tr>
 							<th rowspan="5" class="fi">Magneettivuon tiheys</th>
-							<th rowspan="5" class="sv">Magnetiskt flödestäthet</th>		
+							<th rowspan="5" class="sv">Magnetiskt flödestäthet</th>
 							<td class="fi">suora virtajohdin</td>
-							<td class="sv">rak elektrisk ledare</td>	
-							<td rowspan="5">\(B\)</td> 
-							<td rowspan="5">\(\mathrm{T}\)</td> 
+							<td class="sv">rak elektrisk ledare</td>
+							<td rowspan="5">\(B\)</td>
+							<td rowspan="5">\(\mathrm{T}\)</td>
 								<td>\[B=\frac{\mu_0}{2\pi r}I\]</td>
 						</tr>
 						<tr>
 							<td class="fi">ympyräjohdin, keskipisteessä</td>
-							<td class="sv">cirkulär strömslinga, i mittpunkten</td>		
+							<td class="sv">cirkulär strömslinga, i mittpunkten</td>
 
 
 							<td>\[B=\frac{\mu_0}{2r}I\]</td>
 						</tr>
 						<tr>
 							<td class="fi">pitkä käämi, sisällä</td>
-							<td class="sv">långsträckt spole, innanför</td>							
+							<td class="sv">långsträckt spole, innanför</td>
 
 
 							<td>\[B=N\frac{\mu_0}{\ell}I\]</td>
 						</tr>
 						<tr>
 							<td class="fi">toroidi, sisällä</td>
-							<td class="sv">toroid, innanför</td>							
+							<td class="sv">toroid, innanför</td>
 
 
 							<td>\[B=N\frac{\mu_0}{2\pi r}I\]</td>
 						</tr>
 						<tr>
 							<td class="fi">aineessa</td>
-							<td class="sv">i materia</td>							
+							<td class="sv">i materia</td>
 
 
 							<td>\[B=\mu_r B_0\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Magneettikentän voimakkuus</th>
-							<th colspan="2" class="sv">Magnetisk fältstyrka</th>							
-							<td>\(H\)</td> 
-							<td>\(\frac{\mathrm{A}}{\mathrm{m}}\)</td> 
+							<th colspan="2" class="sv">Magnetisk fältstyrka</th>
+							<td>\(H\)</td>
+							<td>\(\frac{\mathrm{A}}{\mathrm{m}}\)</td>
 							<td>\[H=\frac{B}{\mu_0}\]</td>
 						</tr>
 						<tr>
 							<th rowspan="2" class="fi">Voima magneettikentässä</th>
-							<th rowspan="2" class="sv">Kraft i magnetfält</th>							
+							<th rowspan="2" class="sv">Kraft i magnetfält</th>
 
 							<td class="fi">varauksellinen hiukkanen</td>
-							<td class="sv">laddad partikel</td>							
-							<td rowspan="2">\(F\)</td> 
-							<td rowspan="2">\(\mathrm{N}\)</td> 
+							<td class="sv">laddad partikel</td>
+							<td rowspan="2">\(F\)</td>
+							<td rowspan="2">\(\mathrm{N}\)</td>
 							<td>\[\vec{F}=Q \vec{v} \times \vec{B}, \ F=QvB\sin \alpha\]</td>
 						</tr>
 						<tr>
 							<td class="fi">suora virtajohdin</td>
-							<td class="sv">rak elektrisk ledare</td>							
+							<td class="sv">rak elektrisk ledare</td>
 
 
 							<td>\[\vec{F}=I \vec{\ell} \times \vec{B}, \ F=I\ell B\sin\alpha\]</td>
 						</tr>
 						<tr>
 							<th class="fi">Momentti magneettikentässä</th>
-							<th class="sv">Moment i magnetfält</th>							
+							<th class="sv">Moment i magnetfält</th>
 							<td class="fi">käämi</td>
-							<td class="sv">spole</td>							
-							<td>\(M\)</td> 
-							<td>\(\mathrm{Nm}\)</td> 
+							<td class="sv">spole</td>
+							<td>\(M\)</td>
+							<td>\(\mathrm{Nm}\)</td>
 							<td>\[\vec{M} = NI \vec{A} \times \vec{B}, \ M=NIAB\sin\alpha\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Magneettivuo</th>
-							<th colspan="2" class="sv">Magnetiskt flöde</th>							
-							<td>\(\Phi\)</td> 
-							<td>\(\mathrm{Wb}\)</td> 
+							<th colspan="2" class="sv">Magnetiskt flöde</th>
+							<td>\(\Phi\)</td>
+							<td>\(\mathrm{Wb}\)</td>
 							<td>\[\Phi= \vec{A}\cdot \vec{B}=AB\cos\varphi\]</td>
 						</tr>
 						<tr>
 							<th rowspan="2" class="fi">Induktiojännite</th>
-							<th rowspan="2" class="sv">Induktionsspänning</th>	
+							<th rowspan="2" class="sv">Induktionsspänning</th>
 							<td class="fi">käämi</td>
-							<td class="sv">spole</td>							
+							<td class="sv">spole</td>
 							<td>\(e\)</td>
-							<td>\(\mathrm{V}\)</td> 
+							<td>\(\mathrm{V}\)</td>
 							<td>\[e=-N\frac{\Delta\Phi}{\Delta t}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">itseinduktio</td>
-							<td class="sv">självinduktion</td>							
-							<td/> 
-							<td/> 
+							<td class="sv">självinduktion</td>
+							<td/>
+							<td/>
 							<td>\[e=-L\frac{\Delta I}{\Delta t}\]</td>
 						</tr>
 						<tr>
 							<th rowspan="2" class="fi">Induktanssi</th>
-							<th rowspan="2" class="sv">Induktans</th>	
+							<th rowspan="2" class="sv">Induktans</th>
 							<td class="fi">käämi</td>
-							<td class="sv">spole</td>							
-							<td rowspan="2">\(L\)</td> 
-							<td rowspan="2">\(\mathrm{H}\)</td> 
+							<td class="sv">spole</td>
+							<td rowspan="2">\(L\)</td>
+							<td rowspan="2">\(\mathrm{H}\)</td>
 							<td>\[L=N\frac{\Phi}{I}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">pitkä käämi</td>
-							<td class="sv">långsträckt spole</td>							
+							<td class="sv">långsträckt spole</td>
 							<td>\[L=\mu_0\frac{N^2A}{\ell}\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Käämin magneettikentän energia</th>
-							<th colspan="2" class="sv">Energi hos magnetfältet i en spole</th>							
-							<td>\(E\)</td> 
-							<td>\(\mathrm{J}\)</td> 
+							<th colspan="2" class="sv">Energi hos magnetfältet i en spole</th>
+							<td>\(E\)</td>
+							<td>\(\mathrm{J}\)</td>
 							<td>\[E=\frac 12 LI^2\]</td>
 						</tr>
 						<tr>
 							<th rowspan="6" class="fi">Sinimuotoinen vaihtojännite</th>
-							<th rowspan="6" class="sv">Sinusformad växelspänning</th>	
-							<td />							
-							<td>\(u\)</td> 
-							<td>\(\mathrm{V}\)</td> 
+							<th rowspan="6" class="sv">Sinusformad växelspänning</th>
+							<td />
+							<td>\(u\)</td>
+							<td>\(\mathrm{V}\)</td>
 							<td>\[u=u_0\sin \left(2\pi ft\right)\]</td>
 						</tr>
 						<tr>
 							<td class="fi">tehollinen jännite</td>
-							<td class="sv">effektiv spänning</td>							
-							<td/> 
-							<td/> 
+							<td class="sv">effektiv spänning</td>
+							<td/>
+							<td/>
 							<td>\[U_\mathrm{eff}=\frac{u_0}{\sqrt{2}}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">tehollinen virta</td>
-							<td class="sv">effektiv strömstyrka</td>							
-							<td/> 
-							<td/> 
+							<td class="sv">effektiv strömstyrka</td>
+							<td/>
+							<td/>
 							<td>\[I_{\mathrm{eff}}=\frac{i_0}{\sqrt{2}}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">teho</td>
-							<td class="sv">effekt</td>							
-							<td/> 
-							<td/> 
+							<td class="sv">effekt</td>
+							<td/>
+							<td/>
 							<td>\[P=UI\cos\varphi\]</td>
 						</tr>
 						<tr>
 							<td class="fi">induktiivinen reaktanssi</td>
-							<td class="sv">induktiv reaktans</td>							
+							<td class="sv">induktiv reaktans</td>
 							<td>\(X_L\)</td>
-							<td>\(\Omega\)</td> 
+							<td>\(\Omega\)</td>
 							<td>\[X_L=\omega L=2\pi fL\]</td>
 						</tr>
 						<tr>
 							<td class="fi">kapasitiivinen reaktanssi</td>
-							<td class="sv">kapacitiv reaktans</td>							
-							<td>\(X_C\)</td> 
-							<td>\(\Omega\)</td> 
+							<td class="sv">kapacitiv reaktans</td>
+							<td>\(X_C\)</td>
+							<td>\(\Omega\)</td>
 							<td>\[X_C=\frac{1}{\omega C}=\frac {1}{2\pi fC}\]</td>
 						</tr>
 						<tr>
 							<th rowspan="4" class="fi">RLC-piiri</th>
-							<th rowspan="4" class="sv">RLC-krets</th>							
+							<th rowspan="4" class="sv">RLC-krets</th>
 							<td class="fi">jännite</td>
-							<td class="sv">spänning</td>							
-							<td>\(u\)</td> 
-							<td>\(\mathrm{V}\)</td> 
+							<td class="sv">spänning</td>
+							<td>\(u\)</td>
+							<td>\(\mathrm{V}\)</td>
 							<td>\[u=u_0\sin \left(2\pi ft \right)\]</td>
 						</tr>
 						<tr>
 							<td class="fi">virta</td>
-							<td class="sv">ström</td>							
-							<td>\(i\)</td> 
-							<td>\(\mathrm{A}\)</td> 
+							<td class="sv">ström</td>
+							<td>\(i\)</td>
+							<td>\(\mathrm{A}\)</td>
 							<td>\[i=i_0\sin(2\pi ft -\varphi)\]</td>
 						</tr>
 						<tr>
 							<td class="fi">impedanssi</td>
-							<td class="sv">impedans</td>							
-							<td>\(Z\)</td> 
-							<td>\(\Omega\)</td> 
+							<td class="sv">impedans</td>
+							<td>\(Z\)</td>
+							<td>\(\Omega\)</td>
 							<td>\[Z=\sqrt{R^2+(X_L-X_C)^2}\]</td>
 						</tr>
 						<tr>
 							<td class="fi">vaihe-ero</td>
-							<td class="sv">fasförskjutning</td>							
-							<td>\(\varphi\)</td> 
-							<td/> 
+							<td class="sv">fasförskjutning</td>
+							<td>\(\varphi\)</td>
+							<td/>
 							<td>\[\tan \varphi = \frac{X_L-X_C}{R}\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Muuntaja</th>
-							<th colspan="2" class="sv">Transformator</th>							
-							<td/> 
-							<td/> 
+							<th colspan="2" class="sv">Transformator</th>
+							<td/>
+							<td/>
 							<td>\[\frac{N_1}{N_2}=\frac{U_1}{U_2}\approx \frac{I_2}{I_1}\]</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="fi">Värähtelypiirin taajuus</th>
-							<th colspan="2" class="sv">Frekvens för svängningskrets</th>									
-							<td>\(f\)</td> 
-							<td>\(\mathrm{Hz}\)</td> 
+							<th colspan="2" class="sv">Frekvens för svängningskrets</th>
+							<td>\(f\)</td>
+							<td>\(\mathrm{Hz}\)</td>
 							<td>\[f_0=\frac{1}{2\pi\sqrt{LC}}\]</td>
 						</tr>
 						<tr>
-							<th colspan="2" class="fi">Sähkömagneettisen aaltoliikkeen nopeus tyhjiössä</th> 
+							<th colspan="2" class="fi">Sähkömagneettisen aaltoliikkeen nopeus tyhjiössä</th>
 							<th colspan="2" class="sv">Hastigheten av elektromagnetisk vågrörelse i vakuum</th>
-							<td>\(c\)</td> 
-							<td>\(\mathrm{\frac{m}{s}}\)</td> 
+							<td>\(c\)</td>
+							<td>\(\mathrm{\frac{m}{s}}\)</td>
 							<td>\[c=\frac{1}{\sqrt{\epsilon_0\mu_0}}\]</td>
 						</tr>
 					</table>
@@ -3674,79 +3693,79 @@
 						<th colspan="2" class="fi">Suure</th>
 						<th colspan="2"	class="sv">Storhet</th>
 						<th class="fi">Tunnus</th>
-						<th class="sv">Beteckning</th> 
+						<th class="sv">Beteckning</th>
 						<th class="fi">Yksikkö</th>
-						<th class="sv">Enhet</th>  
+						<th class="sv">Enhet</th>
 						<th class="fi">Laki</th>
 						<th class="sv">Lag</th>
 					</tr>
 				                <tr>
 							<th colspan="2" class="fi">Fotonin energia</th>
-							<th colspan="2" class="sv">Fotonens energi</th>							
-							<td>\(E\)</td> 
+							<th colspan="2" class="sv">Fotonens energi</th>
+							<td>\(E\)</td>
 							<td/>\(\mathrm{J}\)</td>
 							<td>\[E=h \, f\]</td>
 						</tr>
 				                <tr>
 							<th colspan="2" class="fi">Fotonin liikemäärä</th>
-							<th colspan="2" class="sv">Fotonens rörelsemängd</th>							
-							<td>\(p\)</td> 
-							<td>\(\mathrm{\frac{kg \, m}{s}}\)</td> 
+							<th colspan="2" class="sv">Fotonens rörelsemängd</th>
+							<td>\(p\)</td>
+							<td>\(\mathrm{\frac{kg \, m}{s}}\)</td>
 							<td>\[p=\frac{h}{\lambda}\]</td>
 						</tr>
 				                <tr>
 							<th colspan="2" class="fi">de Broglien aallonpituus</th>
-							<th colspan="2" class="sv">de Broglie-våglängd</th>							
-							<td>\(\lambda\)</td> 
-							<td>\(\mathrm{m}\)</td> 
+							<th colspan="2" class="sv">de Broglie-våglängd</th>
+							<td>\(\lambda\)</td>
+							<td>\(\mathrm{m}\)</td>
 							<td>\[\lambda = \frac{h}{p}\]</td>
 						</tr>
 				                <tr>
 							<th colspan="2" class="fi">Vetyatomin energiatilat</th>
-							<th colspan="2" class="sv">Väteatomens energitillstånd</th>							
-							<td/> 
-							<td/> 
+							<th colspan="2" class="sv">Väteatomens energitillstånd</th>
+							<td/>
+							<td/>
 							<td>\[E_n=-\frac{13{,}6~\mathrm{eV}}{n^2}\]</td>
 						</tr>
 				                <tr>
 							<th colspan="2" class="fi">Stefan-Boltzmannin laki</th>
-							<th colspan="2" class="sv">Stefan-Boltzmanns lag</th>							
-							<td/> 
-							<td/> 
+							<th colspan="2" class="sv">Stefan-Boltzmanns lag</th>
+							<td/>
+							<td/>
 							<td>\[I=\sigma \,  T^4\]</td>
 						</tr>
 				                <tr>
 							<th colspan="2" class="fi">Wienin sirtymälaki</th>
-							<th colspan="2" class="sv">Wiens förskjutningslag</th>							
-							<td/> 
-							<td/> 
+							<th colspan="2" class="sv">Wiens förskjutningslag</th>
+							<td/>
+							<td/>
 							<td>\[\lambda_\mathrm{max}= \frac{b}{T}\]</td>
 						</tr>
 				                <tr>
 							<th colspan="2" class="fi">Sidosenergia</th>
-							<th colspan="2" class="sv">Bindningsenergi</th>							
-							<td>\(E_B\)</td> 
-							<td>\(\mathrm{J}\)</td> 
+							<th colspan="2" class="sv">Bindningsenergi</th>
+							<td>\(E_B\)</td>
+							<td>\(\mathrm{J}\)</td>
 							<td>\[E_B=\Delta m c^2\]</td>
 						</tr>
 				                <tr>
 							<th colspan="2" class="fi">Hajoamislaki</th>
-							<th colspan="2" class="sv">Sönderfallslagen</th>							
-							<td/> 
-							<td/> 
+							<th colspan="2" class="sv">Sönderfallslagen</th>
+							<td/>
+							<td/>
 							<td>\[N = N_0 e^{-\lambda t}\]</td>
 						</tr>
 				                <tr>
 							<th colspan="2" class="fi">Aktiivisuus</th>
-							<th colspan="2" class="sv">Aktivitet</th>							
-							<td>\(A\)</td> 
-							<td>\(\mathrm{Bq}\)</td> 
+							<th colspan="2" class="sv">Aktivitet</th>
+							<td>\(A\)</td>
+							<td>\(\mathrm{Bq}\)</td>
 							<td>\[A = \lambda N\]</td>
 						</tr>
 				                <tr>
 							<th colspan="2" class="fi">Puoliintumisaika</th>
-							<th colspan="2" class="sv">Halveringstid</th>							
-							<td>\(T_{1/2}\)</td> 
+							<th colspan="2" class="sv">Halveringstid</th>
+							<td>\(T_{1/2}\)</td>
 							<td/>\(\mathrm{s}\)</td>
 							<td>\[T_{1/2} = \frac{\ln 2}{\lambda}\]</td>
 						</tr>

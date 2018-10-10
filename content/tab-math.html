@@ -4,10 +4,12 @@
 <p class="fi">Huom. Voit kopioida kaavan leikepöydälle klikkaamalla sitä.</p>
 <p class="sv">Obs. Du kan kopiera formeln genom att klicka på den.</p>
 
-<h2 class="fi">Luvut</h2>
-<h2 class="sv">Tal</h2>
+<h2 class="fi">Luvut ja lukujonot</h2>
+<h2 class="sv">Tal och talföljder</h2>
 <div class="scrollwrap">
-	<div class="boxed">	
+
+	<h3 class="fi">Lukualueet</h3>
+	<h3 class="sv">Talområden</h3>
 		<table class="formulae">
 			<tr>
 				<th class="fi">Lukualue</th>
@@ -64,7 +66,47 @@
 		<li class="fi">Osittelulaki: Kaikille luvuille \(a,b\) ja \(c\) pätee \(a(b+c)=ab+ac\).</li>
 		<li class="sv">Distributativa lagen: Föra alla tal \(a,b\) och \(c\) gäller \(a(b+c)=ab+ac\).</li>
 	</ul>
-</div>
+	
+	<h3 class="fi">Lukujunot</h3>
+	<h3 class="sv">Talföljder</h3>
+	<div class="boxed">
+		<p class="fi">Lukujono \((a_{n})\) on <em>aritmeettinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen erotus on aina sama, eli jos on olemassa sellainen luku \(d\), että</p>
+		<p class="sv">Talföljden \((a_{n})\) är <em>aritmetisk</em>, om och endast om skillnaden mellan två påföljande element är alltid samma, dvs. om det existerar ett tal \(d\) så, att</p>
+	
+		\[a_{n+1}−a_{n}=d\]
+	
+		<p class="fi">kaikilla positiivisilla kokonaisluvuilla \(n\) Erotus \(d\) on nimeltään jonon differenssi.</p>
+		<p class="sv">för alla positiva heltal \(n\). Skillnaden \(d\) kallas följdens differens.</p>
+
+		<p class="fi">Summa \(S_n = a_1 + \cdots + a_n\) on aritmeettinen, jos ja vain jos vastaava lukujono \((a_{n})\) on aritmeettinen. Aritmeettinen summa lasketaan</p>
+		<p class="sv">Summan \(S_n = a_1 + \cdots + a_n\) är aritmetisk, om och endast om talföjden \((a_{n})\) är aritmetisk. Den aritmetiska summan beräknas</p>
+	
+		\[a_1 + \cdots + a_n = n \frac{a_1+a_n}{2}.\]
+	</div>
+	<div class="boxed">
+		<p class="fi">Lukujono \((a_{n})\) on <em>geometrinenaritmeettinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen suhde eli osamäärä on aina sama. Toisin sanottuna jos on olemassa sellainen luku \(q\), että</p>
+		<p class="sv">Talföljden \((a_{n})\) är <em>geometrisk</em>, om och endast om förhållandet mellan två påföljande element är alltid samma, dvs. om det existerar ett tal \(q\) så, att</p>
+	
+		\[\frac{a_{n+1}}{a_n} = q\]
+	
+		<p class="fi">kaikilla positiivisilla kokonaisluvuilla \(n\). Suhde \(q\) on nimeltään jonon suhdeluku.</p>
+		<p class="sv">för alla positiva heltal \(n\). Förhållandet \(q\) kallas följdens kvot.</p>
+
+		<p class="fi">Geometrisen jonon \((a_{n})\) jäsenet saadaan laskettua, jos tiedetään jonon ensimmäinen jäsen \(a_1\) ja jonon suhdeluku \(q\), sillä kaikilla positiivisilla kokonaisluvuilla \(n\) pätee</p>
+		<p class="sv">Talen i den geometriska talföljden \((a_{n})\) kan beräknas om man vet följdens första tal \(a_1\) och följdens kvot \(q\), för det gäller för alla positiva heltal \(n\) att</p>
+	
+		\[a_n = a_1q^{n-1}.\]
+		
+		<p class="fi">Summa \(S_n = a_1 + \cdots + a_n\) on geometrinen, jos ja vain jos vastaava lukujono \((a_{n})\) on geometrinen. Geometrinen summa lasketaan seuraavasti (luku \(n\) kertoo sen, kuinka monta yhteenlaskettavaa summassa on):</p>
+		<p class="sv">Summan \(S_n = a_1 + \cdots + a_n\) är geometrisk, om och endast om talföjden \((a_{n})\) är geometrisk. Den geometriska summan beräknas på följande sätt (talet \(n\) står för antalet tal som ska adderas):</p>
+	
+		<ul>
+			<li class="fi">Jos suhdeluku \(q\) on ykkösestä poikkeava eli \(q \neq 1\), niin \(a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = a_1\cdot \frac{1-q^n}{1-q}\).</li>
+			<li class="sv">Om kvoten \(q\) inte är ett, dvs. \(q \neq 1\), så \(a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = a_1\cdot \frac{1-q^n}{1-q}\).</li>
+			<li class="fi">Jos suhdeluku \(q\) on yksi eli \(q = 1\), niin \(a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = na_1\).</li>
+			<li class="sv">Om kvoten \(q\) är ett, dvs. \(q = 1\), så \(a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = na_1\).</li>
+		</ul>	
+	</div>
 </div>
 <h2 class="fi">Funktiot ja yhtälöt</h2>
 <h2 class="sv">Funktioner och ekvationer</h2>
@@ -710,4 +752,54 @@
 		<p class="sv">är den normalformade ekvationen för planet \(T\).</p>
 	
 	</div>
-</div>										
+</div>
+
+<h2 class="fi">Derivaatta</h2>
+<h2 class="sv">Derivata</h2>
+
+<div class="scrollwrap">
+	<div class="boxed">
+		<h3 class="fi">Derivaatan määritelmä</h3>
+		<h3 class="sv">Derivatans definition</h3>
+		
+		<p class="fi">Jos funktion \(f\) erotusosamäärällä kohdassa \(a\) on raja-arvo kohdassa \(a\), niin funktio \(f\) on derivoituva kohdassa \(a\). Raja-arvoa kutsutaan funktion \(f\) derivaataksi kohdassa \(a\) ja merkitään \(f'(a)\). Siis</p>
+		<p class="sv">Om differenskvoten för funktionen \(f\) i punkten \(a\) har ett gränsvärde i punkten \(a\), så är funktionen \(f\) deriverbar i punkten \(a\). Gränsvärdet kallas derivatan för funktionen \(f\) i punkten \(a\) och betecknas \(f'(a)\). Alltså</p>
+		\[\mathrm{D}f(a) = f'(a) = \lim_{x \rightarrow a} \frac{f(x)-f(a)}{x-a} = \lim_{h \rightarrow 0} \frac{f(a+h)-f(a)}{h}\]
+		
+		<h3 class="fi">Derivaatalle pätee</h3>
+		<h3 class="sv">För derivatan gäller</h3>
+		<ul>
+			<li class="fi">Vakiofunktion \(f(x)=c\) derivaattafunktio on \(\mathrm{D} c = f'(x) = 0\).</li>
+			<li class="sv">Derivatafunktionen för en konstant funtkion \(f(x)=c\) är \(\mathrm{D} c = f'(x) = 0\).</li>
+			<li class="fi">Olkoon \(r\) rationaaliluku. Potenssifunktion \(f(x)=x^r\) derivaattafunktio on \(\mathrm{D} x^r = f'(x) = rx^{r-1}\).</li>
+			<li class="sv">Låt \(r\) vara ett rationellt tal. Derivatafunktionen för potensfunktionen \(f(x)=x^r\) är \(\mathrm{D} x^r = f'(x) = rx^{r-1}\).</li>
+			<li class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Summan \(f+g\) derivaattafunktio on \(\mathrm{D} (f + g) = (f + g)'(x) = f'(x) + g'(x)\)</li>
+			<li class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för summan \(f+g\) är \(\mathrm{D} (f + g) = (f + g)'(x) = f'(x) + g'(x)\)</li>
+			<li class="fi">Oletetaan, että funktio \(f\) on derivoituva. Vakiolla kerrotun funktion \(kf\) derivaattafunktio on \(\mathrm{D} kf =(kf)'(x) = kf'(x)\).</li>
+			<li class="sv">Antag, att \(f\) är deriverbar. Derivatafunktionen för funktionen som multipliceras med en konstant \(kf\) är \(\mathrm{D} kf =(kf)'(x) = kf'(x)\).</li>
+			<li class="fi">Oletetaan, että funktio \(f\) ja \(g\) ovat derivoituvia. Tulofunktion \(fg\) derivaattafunktio on \(\mathrm{D} fg(fg)'(x) = f'(x)g(x) + f(x)g'(x)\).</li>
+			<li class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för produktfunktionen \(fg\) är \(\mathrm{D} fg(fg)'(x) = f'(x)g(x) + f(x)g'(x)\).</li>
+			<li class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Niiden osamäärän derivaattafunktio on \(\mathrm{D} \frac{f(x)}{g(x)} = \frac{f'(x)g(x)- f(x)g'(x)}{(g(x))^2}\).</li>
+			<li class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för deras kvotkoefficient är \(\mathrm{D} \frac{f(x)}{g(x)} = \frac{f'(x)g(x)- f(x)g'(x)}{(g(x))^2}\).</li>
+			<li class="fi">Olkoon \(n\) kokonaisluku. Jos \(f\) on derivoituva funktio, niin \(\mathrm{D} (f(x))^n = n(f(x))^{n-1}f'(x)\).
+			<li class="sv">Låt \(n\) vara ett heltal. Om funktionen \(f\) är deriverbar, så är \(\mathrm{D} (f(x))^n = n(f(x))^{n-1}f'(x)\).
+			<li class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Yhdistetyn funktion \(g \circ f\) derivaatta on \(\mathrm{D} g(f(x)) = g'(f(x))f'(x)\).</li>
+			<li class="sv">Antag, att \(f\) och \(g\) är deriverabra. Derivatafunktionen för den sammansatta funktionen \(g \circ f\) är \(\mathrm{D} g(f(x)) = g'(f(x))f'(x)\).</li>
+			<li class="fi">Sini- ja kosinifunktiot ovat kaikkialla derivoituvia. Niiden derivaattafunktiot ovat \(\mathrm{D} \sin x = \cos x\) ja \(\mathrm{D} \cos x = - \sin x\).</li>
+			<li class="sv">Sinus- och kosinusfunktionerna är deriverbara överallt. Deras derivatafunktioner är \(\mathrm{D} \sin x = \cos x\) och \(\mathrm{D} \cos x = - \sin x\).</li>
+			<li class="fi">Tangenttifunktio on derivoituva koko määrittelyjoukossaan. Sen derivaattafunktio on \(\mathrm{D} \tan x = \frac{1}{\cos^2 x} = 1 + \tan^2 x\), missä \(x \neq \frac{\pi}{2} + n\cdot \pi\) kaikilla kokonaisluvuilla \(n\).</li>
+			<li class="sv">Tangentfunktionen är deriverbar i dess definitionsmängd. Dess derivatafunktion är \(\mathrm{D} \tan x = \frac{1}{\cos^2 x} = 1 + \tan^2 x\), där \(x \neq \frac{\pi}{2} + n\cdot \pi\) för alla heltal \(n\).</li>
+			<li class="fi">Eksponenttifunktio \(f(x)=e^x\) on kaikkialla derivoituva ja sen derivaattafunktio on \(\mathrm{D}e^x = f'(x) = e^x\).</li>
+			<li class="sv">Exponentfunktionen \(f(x)=e^x\) är deriverbar överallt och dess derivatafunktion är \(\mathrm{D}e^x = f'(x) = e^x\).</li>
+			<li class="fi">Oletetaan, että \(k \neq 1\) on positiivinen reaaliluku. Eksponenttifunktio \(f(x)=k^x\) on kaikkialla derivoituva ja sen derivaattafunktio on \(\mathrm{D} k^x = f'(x) = k^x \ln(k)\).</li>
+			<li class="sv">Antag, att \(k \neq 1\) är ett positivt reellt tal. Exponentfunktionen \(f(x)=k^x\) är deriverbar överallt och dess derivatafunktion är \(\mathrm{D} k^x = f'(x) = k^x \ln(k)\).</li>
+			<li class="fi">Logaritmifunktio \(f(x)=\ln(x)\) on derivoituva koko määrittelyjoukossaan \(\left.\right]0{,}\infty\left[\right.\) ja sen derivaattafunktio on \(\mathrm{D} ln(x) = f'(x) = \frac{1}{x}\).</li>
+			<li class="sv">Logaritmfunktionen \(f(x)=\ln(x)\) är deriverbar i hela sin definitionsmängd \(\left.\right]0{,}\infty\left[\right.\) och dess derivata är \(\mathrm{D} ln(x) = f'(x) = \frac{1}{x}\).</li>
+			<li class="fi">Oletetaan, että \(k \neq 1\) on positiivinen reaaliluku. Logaritmifunktio \(f(x) = \log_k (x)\) on kaikkialla derivoituva ja sen derivaattafunktio on \(\mathrm{D} \log_k (x) = f'(x) = \frac{1}{x \ln (k)}\).</li>
+			<li class="sv">Antag, att \(k \neq 1\) är ett positivt reellt tal. Logaritmfunktionen \(f(x) = \log_k (x)\) är deriverbar överallt och dess derivatafunktion är \(\mathrm{D} \log_k (x) = f'(x) = \frac{1}{x \ln (k)}\).</li>
+		</ul>		
+	</div>	
+</div>	
+
+
+
