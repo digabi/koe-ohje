@@ -171,7 +171,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 }
 
 .js-toc::-webkit-scrollbar-track {
-	background-color: #F5F5F5;	
+	background-color: #F5F5F5;
 	border-right: 2px transparent;
 }
 
@@ -181,7 +181,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 }
 
 .js-toc::-webkit-scrollbar-thumb {
-	background-color: #359BB7;	
+	background-color: #359BB7;
 }
 
 .js-toc-content {
@@ -209,6 +209,10 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 
 .is-active-link::before {
 	background-color: #359BB7 !important;
+}
+
+a.toc-link:hover {
+  color:black;
 }
 
 #charpc-menu, #charmac-menu {
@@ -295,8 +299,8 @@ h3 {
 	transition: all .2s ease-in-out;
 }
 
-table.borderless, 
-table.borderless th, 
+table.borderless,
+table.borderless th,
 table.borderless td {
 	border: 0;
 }
@@ -316,17 +320,17 @@ table.row-highlight tr:nth-child(odd) {
 
 /* Keyboard buttons*/
 * { outline: none !important; }
-.key a, 
-.key a:visited, 
-.key a:hover, 
-.key a:active, 
-.mjpage a, 
-.mjpage a:visited, 
-.mjpage a:hover, 
-.mjpage a:active 
-{ 
-	text-decoration: none; 
-	color: inherit; 
+.key a,
+.key a:visited,
+.key a:hover,
+.key a:active,
+.mjpage a,
+.mjpage a:visited,
+.mjpage a:hover,
+.mjpage a:active
+{
+	text-decoration: none;
+	color: inherit;
 }
 
 .mjpage svg {
@@ -378,12 +382,12 @@ table.row-highlight tr:nth-child(odd) {
 {
 	margin-top: 2px;
 	box-shadow: none;
-}		
+}
 
 .mjpage svg:active
 {
 	margin-bottom: -2px;
-}	
+}
 
 .key.keyboard > span
 {

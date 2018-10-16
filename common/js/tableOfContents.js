@@ -12,7 +12,7 @@ function initializeTocBot(language) {
 
     var languageToBeIgnored = language === "fi" ? ".sv" : ".fi"
     tocbot.init({
-        tocSelector: '.js-toc',
+        tocSelector: '.js-toc-result',
         contentSelector: '.js-toc-content',
         headingSelector: 'h2, h3',
         ignoreSelector: languageToBeIgnored,

@@ -1,0 +1,31 @@
+#js-search-input {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 265px;
+}
+
+#js-search-result ul {
+  padding-inline-start: 10px;
+  margin-top:0;
+}
+
+#js-search-result-heading {
+  margin-top: 10px;
+  padding-inline-start: 10px;
+  color:black;
+  font-weight: 700;
+}
+
+.search-result-item {
+  font-size: 16px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.search-result-link {
+  color: currentColor;
+}
+
+a.search-result-link:hover {
+  color: black;
+}
