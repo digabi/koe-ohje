@@ -248,7 +248,10 @@
 
 				setTimeout(function () {
 					$(".search-result-link").click(function() {
-						$(".js-toc").hide("fast");
+						if ($("#menu").css("display") == "block") {
+							// The menu button is visible -> we're on a narrow window
+							$(".js-toc").hide("fast");
+						}
 					});
 				});
 			}
