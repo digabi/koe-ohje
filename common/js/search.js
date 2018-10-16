@@ -51,21 +51,3 @@ function searchSetRandomID(childNode) {
 
   return id;
 }
-
-function searchFindParentHeading (childNode) {
-  var parentNodeId = undefined;
-  var prevNode = childNode;
-
-  do {
-    prevNode = prevNode.prev();
-    console.log(prevNode);
-    console.log("lookup: "+prevNode.prop("tagName"));
-    if (prevNode.prop("tagName") == "h3") {
-      parentNodeId = prevNode.attr("id");
-    }
-  } while (parentNodeId === undefined);
-
-  console.log(childNode.text()+' finds parent: '+parentNodeId);
-
-  return parentNodeId;
-}
