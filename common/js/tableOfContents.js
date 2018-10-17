@@ -18,7 +18,8 @@ function initializeTocBot(language) {
         ignoreSelector: languageToBeIgnored,
         collapseDepth: 6,
         positionFixedSelector: '.js-toc',
-        fixedSidebarOffset: 'auto'
+        fixedSidebarOffset: 'auto',
+        headingsOffset: 50
     })
 
     // Toggle toc menu (#menu button is show on narrow displays)
