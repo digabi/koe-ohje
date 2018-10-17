@@ -172,7 +172,7 @@
 			return loseScandics(text)
 					   .trim()
 					   .toLowerCase()
-					   .replace(/\s/g, '-')
+					   .replace(/[\s\(\)]/g, '-')
 		}
 
 		// Lazy load tables
