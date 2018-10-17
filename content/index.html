@@ -247,11 +247,16 @@
 				MathJax.Hub.Queue(["Typeset",MathJax.Hub,"js-search-result"]);
 
 				setTimeout(function () {
-					$(".search-result-link").click(function() {
+					$(".search-result-link").off("click");
+					$(".search-result-link").click(function(event) {
 						if ($("#menu").css("display") == "block") {
 							// The menu button is visible -> we're on a narrow window
 							$(".js-toc").hide("fast");
 						}
+
+						// Scroll to given ID (take account the upper navi) and prevent/revert to default action as needed
+						// scrollToElement is defined in tableOfContents.js
+			      return scrollToElement($(this).get(0).hash);
 					});
 				});
 			}
