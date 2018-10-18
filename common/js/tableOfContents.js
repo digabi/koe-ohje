@@ -29,6 +29,14 @@ function initializeTocBot(language) {
       setTocLinkClick();
     });
 
+    $(".js-toc-content").off("click");
+    $(".js-toc-content").click(function () {
+      console.log("js-toc-content clicked");
+      if ($("#menu").css('display') == 'block') {
+        $(".js-toc").hide("fast");
+      }
+    });
+
     // Close toc menu when tab is changed on narrow displays
     $(".tab-menu-option").click(function() {
       if ($("#menu").css('display') == 'block') {
