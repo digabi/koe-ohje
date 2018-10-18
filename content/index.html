@@ -157,6 +157,14 @@
 			}
 		}
 
+		function showLoading () {
+			$("#loading").show();
+		}
+
+		function hideLoading () {
+			$("#loading").fadeOut(300);
+		}
+
 		function loseScandics(s) {
 			if(!loseScandics.translate_re) loseScandics.translate_re = /[öäüåÖÄÜÅ]/g;
 			var translate = {
@@ -176,19 +184,28 @@
 		}
 
 		// Lazy load tables
-		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix) {
-			if ($("#tab-" + subject).children().length === 0) {
-				$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
-				$("#tab-" + subject).load("tab-" + subject + ".html", function () {
-					removeWrongLanguageFromDOM(currentLanguage);
-					if (videoPrefix != undefined) {
-						set_video_url(currentLanguage, videoPrefix);
-					}
-					activate_copy_to_clipboard();
-					initializeTocBot(currentLanguage);
-					applyTablesorter(subject);
-				});
-			}
+		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix, funcExecuteAfter) {
+			showLoading();
+			setTimeout(function () {
+				if ($("#tab-" + subject).children().length === 0) {
+					$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
+					$("#tab-" + subject).load("tab-" + subject + ".html", function () {
+						removeWrongLanguageFromDOM(currentLanguage);
+						if (videoPrefix != undefined) {
+							set_video_url(currentLanguage, videoPrefix);
+						}
+						activate_copy_to_clipboard();
+						initializeTocBot(currentLanguage);
+						applyTablesorter(subject);
+
+						if (typeof funcExecuteAfter == "function") {
+							funcExecuteAfter();
+						}
+
+						hideLoading();
+					});
+				}
+			}, 200);
 		}
 
 		function getLangUrlParam() {
@@ -281,9 +298,9 @@
 			main_tabs.activeTabInitialise = {
 				'abitti': function () { write_to_stdout('abitti'); changePageTo("abitti", lang, main_tabs.tabNames, videoURLPrefix); },
 
-				'math': function () { write_to_stdout('math'); changePageTo("math", lang, main_tabs.tabNames); setSameHeights(); },
-				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang, main_tabs.tabNames); setSameHeights(); },
-				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang, main_tabs.tabNames); setSameHeights(); },
+				'math': function () { write_to_stdout('math'); changePageTo("math", lang, main_tabs.tabNames, undefined, function () { setSameHeights(); }); },
+				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang, main_tabs.tabNames, undefined, function () { setSameHeights(); }); },
+				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang, main_tabs.tabNames, undefined, function () { setSameHeights(); }); },
 
 				'spanish': function () { write_to_stdout('spanish'); changePageTo("spanish", lang, main_tabs.tabNames); },
 				'french': function () { write_to_stdout('french'); changePageTo("french", lang, main_tabs.tabNames); },
