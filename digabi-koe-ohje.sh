@@ -5,7 +5,7 @@ IS_SV=`echo "$LANG" | grep -P "^sv"`
 
 # Defaults to Finnish
 DOC_LANG=fi
-TITLE=Koejärjestelmän ohjeet
+TITLE="Koejärjestelmän ohjeet"
 
 if [ "${IS_FI}" != "" ]; then
 	echo "Finnish language selected"
@@ -13,12 +13,12 @@ if [ "${IS_FI}" != "" ]; then
 elif [ "${IS_SV}" != "" ]; then
 	echo "Swedish language selected"
 	DOC_LANG=sv
-	TITLE=Provmiljöns instruktioner
+	TITLE="Provmiljöns instruktioner"
 
 	if [ ! -f /usr/share/digabi-koe-ohje/build/index-${DOC_LANG}.html ]; then
 		echo "Oops, Swedish documentation is missing"
 		DOC_LANG=fi
-		TITLE=Koejärjestelmän ohjeet
+		TITLE="Koejärjestelmän ohjeet"
 	fi
 else
 	echo "$0: No known language selected, defaults to ${DOC_LANG}"
