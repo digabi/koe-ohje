@@ -151,13 +151,13 @@ button{
 	left: 0;
 	top: 0;
 	bottom: 0;
-	position: absolute;
+	position: fixed;
 	width: 300px;
 	display: block;
 	padding-top: 20px;
 	font-size: 20px;
 	border-right: 2px #359BB7;
-	overflow-y: scroll;
+	overflow-y: auto;
 	background: white;
 	z-index: 9;
 }
@@ -206,7 +206,10 @@ button{
 a.toc-link:hover {
   color:black;
 }
-
+a.toc-link:before {
+    content: none;
+    display: none;
+}
 #charpc-menu, #charmac-menu {
     color: #359BB7;
 }
