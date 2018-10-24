@@ -2,6 +2,7 @@ var searchIdCounter = 0;
 
 function searchResults(searchTerm, hitsMax) {
   var SEARCH_SELECTOR = "h1, h2, h3, th, td";
+  var SEARCH_RESULT_MAXLENGTH = 60;
 
   var searchResults = [];
 
@@ -18,6 +19,10 @@ function searchResults(searchTerm, hitsMax) {
         if (text.indexOf("\\") > -1) {
           // This is a formula
           text = "\\("+text+"\\)";
+        }
+        else if (text.length > SEARCH_RESULT_MAXLENGTH) {
+          // Cut long strings
+          text = text.substring(0, SEARCH_RESULT_MAXLENGTH-3) + "...";
         }
 
         if ($(this).attr('id') != undefined) {
