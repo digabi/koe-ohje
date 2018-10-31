@@ -84,7 +84,7 @@
 		\[a_1 + \cdots + a_n = n \frac{a_1+a_n}{2}.\]
 	</div>
 	<div class="boxed">
-		<p class="fi">Lukujono \((a_{n})\) on <em>geometrinenaritmeettinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen suhde eli osamäärä on aina sama. Toisin sanottuna jos on olemassa sellainen luku \(q\), että</p>
+		<p class="fi">Lukujono \((a_{n})\) on <em>geometrinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen suhde eli osamäärä on aina sama. Toisin sanottuna jos on olemassa sellainen luku \(q\), että</p>
 		<p class="sv">Talföljden \((a_{n})\) är <em>geometrisk</em>, om och endast om förhållandet mellan två påföljande element är alltid samma, dvs. om det existerar ett tal \(q\) så, att</p>
 	
 		\[\frac{a_{n+1}}{a_n} = q\]
@@ -450,7 +450,7 @@
 		<h3 class="sv">Radian</h3>
 
 		<p class="fi">Kulman suuruus <em>radiaaneina</em> on kulmaa vastaavan ympyrän kaaren pituuden suhde ympyrän säteeseen:</p>
-		<p class="sv">En vinkels mått i <em>radianer</em> är förhållandet mellan längden på cirkelns radie och den bågens längd, som spänns upp av vinkeln. 
+		<p class="sv">En vinkels mått i <em>radianer</em> är förhållandet mellan längden på cirkelns radie och den bågens längd, som spänns upp av vinkeln.</p> 
 		\[\alpha=\frac{b}{r}\]
 		<img src="../common/images/math/radiaani.png" alt="Radiaani" />
 
@@ -524,27 +524,33 @@
 		<p class="sv">Summan av kvadraten av alla vinklars kosinus och sinus är 1:</p>
 		\[\sin^2\alpha+\cos^2\alpha =1.\]
 
-		<p class="fi">Kulman \(\alpha\) tangentti on sinin ja kosinin osamäärä:</p>
-		<p class="sv">Tangenten till vinkeln \(\alpha\) är kvoten av sinus och kosinus:</p>
-		\[\tan\alpha=\frac{\sin\alpha}{\cos\alpha}.\]
+		<ol>
+			<li><span class="fi">Kulman \(\alpha\) tangentti on sinin ja kosinin osamäärä:</span>
+				<span class="sv">Tangenten till vinkeln \(\alpha\) är kvoten av sinus och kosinus:</span>
+				\[\tan\alpha=\frac{\sin\alpha}{\cos\alpha}.\]
+			</li>
 
-		<p class="fi">Kulmien \(\alpha + \beta\) ja \(\alpha - \beta\) sini ja kosini saadaan laskettua seuraavasti:</p>
-		<p class="sv">Sinus och kosinus för vinklarna \(\alpha + \beta\) och \(\alpha - \beta\) räknas engligt följande:</p>
-		\[\sin(\alpha + \beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta\]
-		\[\sin(\alpha - \beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta\]
-		\[\cos(\alpha + \beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta\]
-		\[\cos(\alpha - \beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta\]
+			<li><span class="fi">Kulmien \(\alpha + \beta\) ja \(\alpha - \beta\) sini ja kosini saadaan laskettua seuraavasti:</span>
+				<span class="sv">Sinus och kosinus för vinklarna \(\alpha + \beta\) och \(\alpha - \beta\) räknas engligt följande:</span>
+				\[\sin(\alpha + \beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta\]
+				\[\sin(\alpha - \beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta\]
+				\[\cos(\alpha + \beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta\]
+				\[\cos(\alpha - \beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta\]
+			</li>
 
-		<p class="fi">Kaikilla kulmilla \(x\) pätee</p>
-		<p class="sv">För alla vinklar \(x\) gäller</p>
-		\[\cos\left(x-\frac{\pi}{2}\right)=\sin x\]
-		\[\sin x\left(x+\frac{\pi}{2}\right)=\cos x\]
+			<li><span class="fi">Kaikilla kulmilla \(x\) pätee</span>
+				<span class="sv">För alla vinklar \(x\) gäller</span>
+				\[\cos\left(x-\frac{\pi}{2}\right)=\sin x\]
+				\[\sin\left(x+\frac{\pi}{2}\right)=\cos x\]
+			</li>
 
-		<p class="fi">Kulman \(2x\) sini, kosini ja tangentti saadaan laskettua kulman \(x\) sinin, kosinin ja tangentin avulla:</p>
-		<p class="sv">Sinus, kosinus och tangenten för vinkeln \(2x\) kan beräknas med hjälp av sinus, kosinus och tangenten för vinkeln \(x\):
-		\[\sin2x=2\sin x\cos x\]
-		\[\cos2x=\cos^2x-\sin^2x\]
-		\[\tan2x=\frac{2\tan x}{1-\tan^2x}.\]
+			<li><span class="fi">Kulman \(2x\) sini, kosini ja tangentti saadaan laskettua kulman \(x\) sinin, kosinin ja tangentin avulla:</span>
+				<span class="sv">Sinus, kosinus och tangenten för vinkeln \(2x\) kan beräknas med hjälp av sinus, kosinus och tangenten för vinkeln \(x\):</span>
+				\[\sin2x=2\sin x\cos x\]
+				\[\cos2x=\cos^2x-\sin^2x\]
+				\[\tan2x=\frac{2\tan x}{1-\tan^2x}.\]
+			</li>
+		</ol>
 	</div>
 	<div class="boxed">
 		<h3 class="fi">Sini-, kosini- ja tangenttifunktion ominaisuuksia </h3>
@@ -562,14 +568,14 @@
 
 		<p class="fi">Sini-, kosini- ja tangenttifunktiot ovat jaksollisia funktioita. Sinin ja kosinin jakso on \(2\pi\) eli kaikilla muuttujan \(x\) arvoilla pätee</p>
 		<p class="sv">Sinus-, kosinus och tangentfunktionen är periodiska funktioner. Perioden för sinus och kosinus är \(2\pi\) dvs. för alla värden på variabeln \(x\) gäller</p>
-		\[\sin(x+2\pi)=\sin x\]
+		\[\sin (x+2\pi)=\sin x\]
 		<img src="../common/images/math/jaksollinen-sin.png" alt="Sinifunktion kuvaaja" />
-		\[\cos x(x+2\pi)=\cos x\]
+		\[\cos (x+2\pi)=\cos x\]
 		<img src="../common/images/math/jaksollinen-kos.png" alt="Kosinifunktion kuvaaja" />
 
 		<p class="fi">Tangenttifunktion jakso on \(\pi\) eli  määrittelyjoukossa kaikilla muuttujan \(x\) arvoilla pätee</p>
 		<p class="sv">Tangentfunktionens period är \(\pi\) dvs. för alla värden för variabeln \(x\) i definitionsmängden gäller</p>
-		\[\tan(x+\pi)=\tan x\]
+		\[\tan (x+\pi)=\tan x\]
 		<img src="../common/images/math/jaksollinen-tan.png" alt="Tangenttifunktion kuvaaja" />
 	</div>
 </div>
@@ -602,7 +608,7 @@
 			\(\overline{\mathrm{v}}=x_1\overline{\mathrm{i}}+y_1\overline{\mathrm{j}}\) 
 			<span class="fi">skalaarimonikerta:</span>
 			<span class="sv">är multiplikationen med en skalär:</span>			
-			\(r\overline{\mathrm{v}}=(rx_1\overline{\mathrm{i}}+ry_1\overline{\mathrm{j}}\)  
+			\(r\overline{\mathrm{v}}=rx_1\overline{\mathrm{i}}+ry_1\overline{\mathrm{j}}\)  
 			<br />
 			<span class="fi">ja avaruuden vektorin</span>
 			<span class="sv">och för vektorer i rummet</span>			
@@ -684,7 +690,7 @@
 			\overline{\mathrm{i}} + y_2 \overline{\mathrm{j}} + z_2  
 			\overline{\mathrm{k}}\)<span class="fi"> pistetulo on</span><span class="sv"> är</p>
         
-		\[\overline{\mathrm{v}} \cdot \overline{\mathrm{w}} =  x_1x_2+y_1y_2+x_3y_3.\]
+		\[\overline{\mathrm{v}} \cdot \overline{\mathrm{w}} =  x_1x_2+y_1y_2+z_1z_2.\]
 
 		<p class="fi">Olkoot \(\overline{\mathrm{a}}\), \(\overline{\mathrm{b}}\) ja \(\overline{\mathrm{c}}\) vektoreita ja  \(t\) reaaliluku. Pistetulolla on seuraavat ominaisuudet:</p>
 		<p class="sv">Låt \(\overline{\mathrm{a}}\), \(\overline{\mathrm{b}}\) och \(\overline{\mathrm{c}}\) vara vektorer och  \(t\) ett reellt tal. Punktprodukten har följande egeneskaper:</p>
@@ -698,7 +704,7 @@
 		</ol>
 
 		<p class="fi">Vektorin pistetulo itsensä kanssa on yhtä suuri kuin vektorin pituuden neliö. Toisin sanottuna</p>
-		<p class="fi">Punktprodukten av en vektor med sig själv är lika stor som kvadraten av vektorns längs. Med andra ord</p>
+		<p class="sv">Punktprodukten av en vektor med sig själv är lika stor som kvadraten av vektorns längs. Med andra ord</p>
          \[\overline{\mathrm{v}} \cdot \overline{\mathrm{v}} = \left|\overline{\mathrm{v}}\right|^2.\]
 
 		<p class="fi">Vektoreiden \(\overline{\mathrm{v}}\) ja \(\overline{\mathrm{w}}\) pistetulolle pätee</p>
@@ -766,38 +772,54 @@
 		<p class="sv">Om differenskvoten för funktionen \(f\) i punkten \(a\) har ett gränsvärde i punkten \(a\), så är funktionen \(f\) deriverbar i punkten \(a\). Gränsvärdet kallas derivatan för funktionen \(f\) i punkten \(a\) och betecknas \(f'(a)\). Alltså</p>
 		\[\mathrm{D}f(a) = f'(a) = \lim_{x \rightarrow a} \frac{f(x)-f(a)}{x-a} = \lim_{h \rightarrow 0} \frac{f(a+h)-f(a)}{h}\]
 		
-		<h3 class="fi">Derivaatalle pätee</h3>
-		<h3 class="sv">För derivatan gäller</h3>
-		<ul>
-			<li class="fi">Vakiofunktion \(f(x)=c\) derivaattafunktio on \(\mathrm{D} c = f'(x) = 0\).</li>
-			<li class="sv">Derivatafunktionen för en konstant funtkion \(f(x)=c\) är \(\mathrm{D} c = f'(x) = 0\).</li>
-			<li class="fi">Olkoon \(r\) rationaaliluku. Potenssifunktion \(f(x)=x^r\) derivaattafunktio on \(\mathrm{D} x^r = f'(x) = rx^{r-1}\).</li>
-			<li class="sv">Låt \(r\) vara ett rationellt tal. Derivatafunktionen för potensfunktionen \(f(x)=x^r\) är \(\mathrm{D} x^r = f'(x) = rx^{r-1}\).</li>
-			<li class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Summan \(f+g\) derivaattafunktio on \(\mathrm{D} (f + g) = (f + g)'(x) = f'(x) + g'(x)\)</li>
-			<li class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för summan \(f+g\) är \(\mathrm{D} (f + g) = (f + g)'(x) = f'(x) + g'(x)\)</li>
-			<li class="fi">Oletetaan, että funktio \(f\) on derivoituva. Vakiolla kerrotun funktion \(kf\) derivaattafunktio on \(\mathrm{D} kf =(kf)'(x) = kf'(x)\).</li>
-			<li class="sv">Antag, att \(f\) är deriverbar. Derivatafunktionen för funktionen som multipliceras med en konstant \(kf\) är \(\mathrm{D} kf =(kf)'(x) = kf'(x)\).</li>
-			<li class="fi">Oletetaan, että funktio \(f\) ja \(g\) ovat derivoituvia. Tulofunktion \(fg\) derivaattafunktio on \(\mathrm{D} fg(fg)'(x) = f'(x)g(x) + f(x)g'(x)\).</li>
-			<li class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för produktfunktionen \(fg\) är \(\mathrm{D} fg(fg)'(x) = f'(x)g(x) + f(x)g'(x)\).</li>
-			<li class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Niiden osamäärän derivaattafunktio on \(\mathrm{D} \frac{f(x)}{g(x)} = \frac{f'(x)g(x)- f(x)g'(x)}{(g(x))^2}\).</li>
-			<li class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för deras kvotkoefficient är \(\mathrm{D} \frac{f(x)}{g(x)} = \frac{f'(x)g(x)- f(x)g'(x)}{(g(x))^2}\).</li>
-			<li class="fi">Olkoon \(n\) kokonaisluku. Jos \(f\) on derivoituva funktio, niin \(\mathrm{D} (f(x))^n = n(f(x))^{n-1}f'(x)\).
-			<li class="sv">Låt \(n\) vara ett heltal. Om funktionen \(f\) är deriverbar, så är \(\mathrm{D} (f(x))^n = n(f(x))^{n-1}f'(x)\).
-			<li class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Yhdistetyn funktion \(g \circ f\) derivaatta on \(\mathrm{D} g(f(x)) = g'(f(x))f'(x)\).</li>
-			<li class="sv">Antag, att \(f\) och \(g\) är deriverabra. Derivatafunktionen för den sammansatta funktionen \(g \circ f\) är \(\mathrm{D} g(f(x)) = g'(f(x))f'(x)\).</li>
-			<li class="fi">Sini- ja kosinifunktiot ovat kaikkialla derivoituvia. Niiden derivaattafunktiot ovat \(\mathrm{D} \sin x = \cos x\) ja \(\mathrm{D} \cos x = - \sin x\).</li>
-			<li class="sv">Sinus- och kosinusfunktionerna är deriverbara överallt. Deras derivatafunktioner är \(\mathrm{D} \sin x = \cos x\) och \(\mathrm{D} \cos x = - \sin x\).</li>
-			<li class="fi">Tangenttifunktio on derivoituva koko määrittelyjoukossaan. Sen derivaattafunktio on \(\mathrm{D} \tan x = \frac{1}{\cos^2 x} = 1 + \tan^2 x\), missä \(x \neq \frac{\pi}{2} + n\cdot \pi\) kaikilla kokonaisluvuilla \(n\).</li>
-			<li class="sv">Tangentfunktionen är deriverbar i dess definitionsmängd. Dess derivatafunktion är \(\mathrm{D} \tan x = \frac{1}{\cos^2 x} = 1 + \tan^2 x\), där \(x \neq \frac{\pi}{2} + n\cdot \pi\) för alla heltal \(n\).</li>
-			<li class="fi">Eksponenttifunktio \(f(x)=e^x\) on kaikkialla derivoituva ja sen derivaattafunktio on \(\mathrm{D}e^x = f'(x) = e^x\).</li>
-			<li class="sv">Exponentfunktionen \(f(x)=e^x\) är deriverbar överallt och dess derivatafunktion är \(\mathrm{D}e^x = f'(x) = e^x\).</li>
-			<li class="fi">Oletetaan, että \(k \neq 1\) on positiivinen reaaliluku. Eksponenttifunktio \(f(x)=k^x\) on kaikkialla derivoituva ja sen derivaattafunktio on \(\mathrm{D} k^x = f'(x) = k^x \ln(k)\).</li>
-			<li class="sv">Antag, att \(k \neq 1\) är ett positivt reellt tal. Exponentfunktionen \(f(x)=k^x\) är deriverbar överallt och dess derivatafunktion är \(\mathrm{D} k^x = f'(x) = k^x \ln(k)\).</li>
-			<li class="fi">Logaritmifunktio \(f(x)=\ln(x)\) on derivoituva koko määrittelyjoukossaan \(\left.\right]0{,}\infty\left[\right.\) ja sen derivaattafunktio on \(\mathrm{D} ln(x) = f'(x) = \frac{1}{x}\).</li>
-			<li class="sv">Logaritmfunktionen \(f(x)=\ln(x)\) är deriverbar i hela sin definitionsmängd \(\left.\right]0{,}\infty\left[\right.\) och dess derivata är \(\mathrm{D} ln(x) = f'(x) = \frac{1}{x}\).</li>
-			<li class="fi">Oletetaan, että \(k \neq 1\) on positiivinen reaaliluku. Logaritmifunktio \(f(x) = \log_k (x)\) on kaikkialla derivoituva ja sen derivaattafunktio on \(\mathrm{D} \log_k (x) = f'(x) = \frac{1}{x \ln (k)}\).</li>
-			<li class="sv">Antag, att \(k \neq 1\) är ett positivt reellt tal. Logaritmfunktionen \(f(x) = \log_k (x)\) är deriverbar överallt och dess derivatafunktion är \(\mathrm{D} \log_k (x) = f'(x) = \frac{1}{x \ln (k)}\).</li>
-		</ul>		
+		<h3 class="fi">Derivaatan laskusääntöjä</h3>
+		<h3 class="sv">Derivatans räkneregler</h3>
+		<ol>
+			<li><span class="fi">Vakiofunktion \(f(x)=c\) derivaattafunktio on</span>
+				<span class="sv">Derivatafunktionen för en konstant funtkion \(f(x)=c\) är</span> 
+				\[\mathrm{D} c = f'(x) = 0.\]</li>
+			<li><span class="fi">Olkoon \(r\) rationaaliluku. Potenssifunktion \(f(x)=x^r\) derivaattafunktio on</span>
+				<span class="sv">Låt \(r\) vara ett rationellt tal. Derivatafunktionen för potensfunktionen \(f(x)=x^r\) är</span>
+				\[\mathrm{D} x^r = f'(x) = rx^{r-1}.\]</li>
+			<li><span class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Summan \(f+g\) derivaattafunktio on</span>
+				<span class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för summan \(f+g\) är</span>
+				\[\mathrm{D} (f + g) = (f + g)'(x) = f'(x) + g'(x).\]</li>
+			<li><span class="fi">Oletetaan, että funktio \(f\) on derivoituva. Vakiolla kerrotun funktion \(kf\) derivaattafunktio on</span>
+				<span class="sv">Antag, att \(f\) är deriverbar. Derivatafunktionen för funktionen som multipliceras med en konstant \(kf\) är</span>
+				\[\mathrm{D} kf =(kf)'(x) = kf'(x).\]</li>
+			<li><span class="fi">Oletetaan, että funktio \(f\) ja \(g\) ovat derivoituvia. Tulofunktion \(fg\) derivaattafunktio on</span>
+				<span class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för produktfunktionen \(fg\) är</span>
+				\[\mathrm{D} fg(fg)'(x) = f'(x)g(x) + f(x)g'(x).\]</li>
+			<li><span class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Niiden osamäärän derivaattafunktio on</span>
+				<span class="sv">Antag, att funktionerna \(f\) och \(g\) är deriverbara. Derivatafunktionen för deras kvotkoefficient är</span>
+				\[\mathrm{D} \frac{f(x)}{g(x)} = \frac{f'(x)g(x)- f(x)g'(x)}{(g(x))^2}.\]</li>
+			<li><span class="fi">Olkoon \(n\) kokonaisluku. Jos \(f\) on derivoituva funktio, niin</span>
+				<span class="sv">Låt \(n\) vara ett heltal. Om funktionen \(f\) är deriverbar, så är</span>
+				\[\mathrm{D} (f(x))^n = n(f(x))^{n-1}f'(x).\]
+			<li><span class="fi">Oletetaan, että funktiot \(f\) ja \(g\) ovat derivoituvia. Yhdistetyn funktion \(g \circ f\) derivaatta on</span>
+				<span class="sv">Antag, att \(f\) och \(g\) är deriverabra. Derivatafunktionen för den sammansatta funktionen \(g \circ f\) är</span>
+				\[\mathrm{D} g(f(x)) = g'(f(x))f'(x).\]</li>
+			<li><span class="fi">Sini- ja kosinifunktiot ovat kaikkialla derivoituvia. Niiden derivaattafunktiot ovat</span>
+				<span class="sv">Sinus- och kosinusfunktionerna är deriverbara överallt. Deras derivatafunktioner är</span>
+				\[\mathrm{D} \sin x = \cos x\]
+				\(\mathrm{D} \cos x = - \sin x.\]</li>
+			<li><span class="fi">Tangenttifunktio on derivoituva koko määrittelyjoukossaan. Sen derivaattafunktio on <br />
+				\(\mathrm{D} \tan x = \frac{1}{\cos^2 x} = 1 + \tan^2 x\), missä \(x \neq \frac{\pi}{2} + n\cdot \pi\) kaikilla kokonaisluvuilla \(n\).</span>
+				<span class="sv">Tangentfunktionen är deriverbar i dess definitionsmängd. Dess derivatafunktion<br />
+				\(\mathrm{D} \tan x = \frac{1}{\cos^2 x} = 1 + \tan^2 x\), där \(x \neq \frac{\pi}{2} + n\cdot \pi\) för alla heltal \(n\).</span></li>
+			<li><span class="fi">Eksponenttifunktio \(f(x)=e^x\) on kaikkialla derivoituva ja sen derivaattafunktio on</span>
+				<span class="sv">Exponentfunktionen \(f(x)=e^x\) är deriverbar överallt och dess derivatafunktion</span>
+				\[\mathrm{D}e^x = f'(x) = e^x.\]</li>
+			<li><span class="fi">Oletetaan, että \(k \neq 1\) on positiivinen reaaliluku. Eksponenttifunktio \(f(x)=k^x\) on kaikkialla derivoituva ja sen derivaattafunktio on</span>
+				<span class="sv">Antag, att \(k \neq 1\) är ett positivt reellt tal. Exponentfunktionen \(f(x)=k^x\) är deriverbar överallt och dess derivatafunktion är</span>
+				\[\mathrm{D} k^x = f'(x) = k^x \ln(k).\]</li>
+			<li><span class="fi">Logaritmifunktio \(f(x)=\ln(x)\) on derivoituva koko määrittelyjoukossaan \(\left.\right]0{,}\infty\left[\right.\) ja sen derivaattafunktio on</span>
+				<span class="sv">Logaritmfunktionen \(f(x)=\ln(x)\) är deriverbar i hela sin definitionsmängd \(\left.\right]0{,}\infty\left[\right.\) och dess derivata är</span>
+				\[\mathrm{D} ln(x) = f'(x) = \frac{1}{x}.\]</li>
+			<li><span class="fi">Oletetaan, että \(k \neq 1\) on positiivinen reaaliluku. Logaritmifunktio \(f(x) = \log_k (x)\) on kaikkialla derivoituva ja sen derivaattafunktio on</span>
+				<span class="sv">Antag, att \(k \neq 1\) är ett positivt reellt tal. Logaritmfunktionen \(f(x) = \log_k (x)\) är deriverbar överallt och dess derivatafunktion är</span>
+				\[\mathrm{D} \log_k (x) = f'(x) = \frac{1}{x \ln (k)}.\]</li>
+		</ol>		
 	</div>	
 </div>	
 
