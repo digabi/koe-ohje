@@ -73,16 +73,13 @@ def main():
 
     sc.write_to_stdout("starting")
 
-    # Encode window title to ISO-8859-15
-    window_title = args.title.decode('utf8').encode('iso8859-15')
-
     app = QApplication(sys.argv)
     app.aboutToQuit.connect(appExiting)
     window = Window()
 
     window.resize(args.width, args.height)
     window.move(args.posx, args.posy)
-    window.setWindowTitle(window_title)
+    window.setWindowTitle(args.title)
     window.setWindowIcon(QIcon(APP_ICON_PATH))
 
     # Dev-environment debug variables

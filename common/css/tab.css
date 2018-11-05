@@ -147,31 +147,23 @@ button{
 	margin-bottom: 5px;
 }
 
-h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
-    display: block;
-    content: " ";
-    height: 60px;
-    margin-top: -60px;
-    visibility: hidden;
-}
-
 .js-toc {
 	left: 0;
 	top: 0;
 	bottom: 0;
-	position: absolute;
+	position: fixed;
 	width: 300px;
 	display: block;
 	padding-top: 20px;
 	font-size: 20px;
 	border-right: 2px #359BB7;
-	overflow-y: scroll;
+	overflow-y: auto;
 	background: white;
 	z-index: 9;
 }
 
 .js-toc::-webkit-scrollbar-track {
-	background-color: #F5F5F5;	
+	background-color: #F5F5F5;
 	border-right: 2px transparent;
 }
 
@@ -181,7 +173,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 }
 
 .js-toc::-webkit-scrollbar-thumb {
-	background-color: #359BB7;	
+	background-color: #359BB7;
 }
 
 .js-toc-content {
@@ -211,6 +203,13 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 	background-color: #359BB7 !important;
 }
 
+a.toc-link:hover {
+  color:black;
+}
+a.toc-link:before {
+    content: none;
+    display: none;
+}
 #charpc-menu, #charmac-menu {
     color: #359BB7;
 }
@@ -295,8 +294,8 @@ h3 {
 	transition: all .2s ease-in-out;
 }
 
-table.borderless, 
-table.borderless th, 
+table.borderless,
+table.borderless th,
 table.borderless td {
 	border: 0;
 }
@@ -316,17 +315,17 @@ table.row-highlight tr:nth-child(odd) {
 
 /* Keyboard buttons*/
 * { outline: none !important; }
-.key a, 
-.key a:visited, 
-.key a:hover, 
-.key a:active, 
-.mjpage a, 
-.mjpage a:visited, 
-.mjpage a:hover, 
-.mjpage a:active 
-{ 
-	text-decoration: none; 
-	color: inherit; 
+.key a,
+.key a:visited,
+.key a:hover,
+.key a:active,
+.mjpage a,
+.mjpage a:visited,
+.mjpage a:hover,
+.mjpage a:active
+{
+	text-decoration: none;
+	color: inherit;
 }
 
 .mjpage svg {
@@ -378,12 +377,12 @@ table.row-highlight tr:nth-child(odd) {
 {
 	margin-top: 2px;
 	box-shadow: none;
-}		
+}
 
 .mjpage svg:active
 {
 	margin-bottom: -2px;
-}	
+}
 
 .key.keyboard > span
 {
@@ -400,25 +399,24 @@ table.row-highlight tr:nth-child(odd) {
 	left: 0;
 	position: fixed;
 	display: block;
-	opacity: 0.7;
+	opacity: 0.9;
 	background-color: #fff;
 	z-index: 99;
 	text-align: center;
 }
 
 #loading-text {
-
-
 	width:200px;
-    height:100px;
-    position:absolute;
-    left:50%;
-    top:50%;
+  height:100px;
+  position:absolute;
+  left:50%;
+  top:50%;
 	margin-left:-100px;
-    margin-top:-50px;
+  margin-top:-50px;
 	text-align: center;
 	z-index: 100;
 	background-color: white;
+  font-weight: bold;
 }
 
 .copying-box {

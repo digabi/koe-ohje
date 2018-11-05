@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="../common/css/tocbot.css" type="text/css" />
 	<link rel="stylesheet" href="../common/css/fa/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="../common/tablesorter/meb-theme/style.css" type="text/css" media="print, projection, screen">
+	<link rel="stylesheet" href="../common/css/search.css" type="text/css" />
 	<script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
 	<script type="text/javascript" src="../common/clipboard.min.js"></script>
 	<script type="text/javascript" src="../common/tablesorter/jquery.tablesorter.min.js"></script>
@@ -17,6 +18,18 @@
 	<script type="text/javascript" src="../common/js/sameHeights.js"></script>
 	<script type="text/javascript" src="../common/js/copyLogic.js"></script>
 	<script type="text/javascript" src="../common/js/tableOfContents.js"></script>
+	<script type="text/javascript" src="../common/js/search.js"></script>
+
+	<!-- This MathJax is used for rendering search results -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			"showMathMenu": false,
+			"showMathMenuMSIE": false,
+			"jax": ["input/TeX","output/PreviewHTML"]
+		});
+	</script>
+	<script type="text/javascript" src="../common/mathjax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
 	<script type="text/javascript">
 		// Handles for subpage initialisation functions
 		var subpage_init = {};
@@ -144,6 +157,14 @@
 			}
 		}
 
+		function showLoading () {
+			$("#loading").show();
+		}
+
+		function hideLoading () {
+			$("#loading").fadeOut(300);
+		}
+
 		function loseScandics(s) {
 			if(!loseScandics.translate_re) loseScandics.translate_re = /[öäüåÖÄÜÅ]/g;
 			var translate = {
@@ -159,23 +180,32 @@
 			return loseScandics(text)
 					   .trim()
 					   .toLowerCase()
-					   .replace(/\s/g, '-')
+					   .replace(/[\s\(\)]/g, '-')
 		}
 
 		// Lazy load tables
-		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix) {
-			if ($("#tab-" + subject).children().length === 0) {
-				$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
-				$("#tab-" + subject).load("tab-" + subject + ".html", function () {
-					removeWrongLanguageFromDOM(currentLanguage);
-					if (videoPrefix != undefined) {
-						set_video_url(currentLanguage, videoPrefix);
-					}
-					activate_copy_to_clipboard();
-					initializeTocBot(currentLanguage);
-					applyTablesorter(subject);
-				});
-			}
+		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix, funcExecuteAfter) {
+			showLoading();
+			setTimeout(function () {
+				if ($("#tab-" + subject).children().length === 0) {
+					$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
+					$("#tab-" + subject).load("tab-" + subject + ".html", function () {
+						removeWrongLanguageFromDOM(currentLanguage);
+						if (videoPrefix != undefined) {
+							set_video_url(currentLanguage, videoPrefix);
+						}
+						activate_copy_to_clipboard();
+						initializeTocBot(currentLanguage);
+						applyTablesorter(subject);
+
+						if (typeof funcExecuteAfter == "function") {
+							funcExecuteAfter();
+						}
+
+						hideLoading();
+					});
+				}
+			}, 200);
 		}
 
 		function getLangUrlParam() {
@@ -219,6 +249,36 @@
 			});
 		}
 
+		function updateSearch () {
+			var searchResultHTML = searchResults($("#js-search-input").val(), 20);
+
+			if (searchResultHTML == "") {
+				$("#js-search-result-heading").css("display","none");
+				$("#js-search-result").html("");
+			}
+			else {
+				$("#js-search-result-heading").css("display","block");
+				$("#js-search-result").html("<ul>"+searchResultHTML+"</ul>");
+
+				// Render result set with MathJax
+				MathJax.Hub.Queue(["Typeset",MathJax.Hub,"js-search-result"]);
+
+				setTimeout(function () {
+					$(".search-result-link").off("click");
+					$(".search-result-link").click(function(event) {
+						if ($("#menu").css("display") == "block") {
+							// The menu button is visible -> we're on a narrow window
+							$(".js-toc").hide("fast");
+						}
+
+						// Scroll to given ID (take account the upper navi) and prevent/revert to default action as needed
+						// scrollToElement is defined in tableOfContents.js
+			      return scrollToElement($(this).get(0).hash);
+					});
+				});
+			}
+		}
+
 		$(document).ready(function () {
 			// Set current language accoring to various suggestions
 			var request = window.location.href;
@@ -238,9 +298,9 @@
 			main_tabs.activeTabInitialise = {
 				'abitti': function () { write_to_stdout('abitti'); changePageTo("abitti", lang, main_tabs.tabNames, videoURLPrefix); },
 
-				'math': function () { write_to_stdout('math'); changePageTo("math", lang, main_tabs.tabNames); setSameHeights(); },
-				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang, main_tabs.tabNames); setSameHeights(); },
-				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang, main_tabs.tabNames); setSameHeights(); },
+				'math': function () { write_to_stdout('math'); changePageTo("math", lang, main_tabs.tabNames, undefined, function () { setSameHeights(); }); },
+				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang, main_tabs.tabNames, undefined, function () { setSameHeights(); }); },
+				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang, main_tabs.tabNames, undefined, function () { setSameHeights(); }); },
 
 				'spanish': function () { write_to_stdout('spanish'); changePageTo("spanish", lang, main_tabs.tabNames); },
 				'french': function () { write_to_stdout('french'); changePageTo("french", lang, main_tabs.tabNames); },
@@ -250,6 +310,13 @@
 			};
 			main_tabs.activateTabs();
 			listenSVGEvent()
+
+			$("#js-search-input").keyup(function (event) { updateSearch(); });
+			$("#js-search-input").on("search", function (event) { updateSearch(); });
+			$(".tab-menu-option").click(function () {
+				$("#js-search-input").val('');
+				updateSearch();
+			});
 		});
 	</script>
 </head>
@@ -280,7 +347,17 @@
 		</span></div>
 
 		<div class="tab-view">
-			<div class="js-toc"></span></div>
+			<div class="js-toc">
+				<div class="js-search">
+					<input type="search" id="js-search-input" placeholder="Hae/Sök">
+					<div id="js-search-result-heading" style="display:none">
+						<span class="fi">Hakutulokset</span>
+						<span class="sv">Sökresultat</span>
+					</div>
+					<span id="js-search-result"></span>
+				</div>
+				<div class="js-toc-result"></span></div>
+			</div>
 			<div class="js-toc-content">
 				<div id="tab-abitti" class="tab-content active">
 				</span></div>

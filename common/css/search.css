@@ -1,0 +1,49 @@
+#js-search-input {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 265px;
+}
+
+#js-search-result ul {
+  padding-inline-start: 0px;
+  margin-top:0;
+}
+
+#js-search-result-heading {
+  margin-top: 10px;
+  padding-inline-start: 10px;
+  color:black;
+  font-weight: 700;
+}
+
+.search-result-item {
+  font-size: 16px;
+  list-style-type: none;
+  text-decoration: none;
+  /*margin-bottom: 5px;*/
+  padding:5px 5px 5px 10px;
+}
+
+.search-result-item:hover {
+  background: #F0F0F0;
+}
+
+.search-result-item:nth-child(even) {
+  background: #F6F6F6;
+}
+
+.search-result-item:nth-child(even):hover {
+  background: #F0F0F0;
+}
+
+.search-result-item span.mjpage {
+  margin:0;
+}
+
+.search-result-link {
+  color: currentColor;
+}
+
+a.search-result-link:hover {
+  color: black;
+}
