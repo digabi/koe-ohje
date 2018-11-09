@@ -18,11 +18,7 @@ class SharedClass (QObject):
     @pyqtSlot(str)
     def copy_html_to_clipboard(self, value):
         xclip = subprocess.Popen("xclip -selection clipboard -target text/html -i".split(" "), stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
-        try:
-            xclip.stdin.write(value.toUtf8())
-        except AttributeError:
-            xclip.stdin.write(value)
-        xclip.stdin.close()
+        xclip.communicate(value.encode("utf-8"))
         xclip.wait()
 
     @pyqtSlot(str)
