@@ -17,7 +17,7 @@ LOCAL_STORAGE_PATH="%s/.cache/digabi-koe" % expanduser("~")
 class SharedClass (QObject):
     @pyqtSlot(str)
     def copy_html_to_clipboard(self, value):
-        xclip = subprocess.Popen("xclip -selection clipboard -target text/html -i".split(" "), stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
+        xclip = subprocess.Popen("xclip -selection clipboard -target text/html -i".split(" "), stdin=subprocess.PIPE, shell=False)
         xclip.communicate(value.encode("utf-8"))
         xclip.wait()
 
