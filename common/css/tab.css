@@ -505,3 +505,8 @@ table.row-highlight tr:nth-child(odd) {
 		font-size: 10px;
 	}
 }
+
+video {
+  width: 100% !important;
+  height: auto !important;
+}
