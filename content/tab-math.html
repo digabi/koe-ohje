@@ -829,7 +829,145 @@
 				\[\mathrm{D} \log_k (x) = f'(x) = \frac{1}{x \ln k}.\]</li>
 		</ol>		
 	</div>	
-</div>	
+</div>
+<h2 class="fi">Integrointi</h2>
+<h2 class="sv">Integrering</h2>
 
+<div class="scrollwrap">
+	<div class="boxed">
+		<h3 class="fi">Integraalifunktio</h3>
+		<h3 class="sv">Integralfunktion</h3>
+		
+		<p class="fi">Funktio \(F\) on funktion \(f\) integraalifunktio jollakin väillä, jos kaikissa tämän välin pisteissä pätee</p>
+		<p class="sv">Funktionen \(F\) är integralfunktion till funktionen \(f\) i något intervall, om det gäller för alla punkter i intervallet att</p></p>
+		\[F'(x) = f(x)\]
+		
+		<p class="fi">Kaikki funktion \(f\) integraalifunktiot ovat muotoa \(F(x) + C\), missä \(C\) on jokin reaalilukuihin kuuluva integroimisvakio. Integrointia, eli integraalifunktion määrittämistä merkitään</p>
+		<p class="sv">Alla integralfunktioner till funktionen \(f\) är av formen \(F(x) + C\), där \(C\) är en integreringskonstant, som hör till de reella talen. Integrering, dvs. bestämning av integralfunktionen betecknas med</p>
+		\[\int_{ }^{ }f\left(x\right) \ \mathrm{d}x= F\left(x\right) + C\]	
+		<p class="fi">, missä \(\mathrm{d}x\) merkitsee integtrointia \(x\):n suhteen.</p>
+		<p class="sv">, där \(\mathrm{d}x\) betecknar integrering med avseende på \(x\).</p>		
+				
+		<h3 class="fi">Integroinnille pätee</h3>
+		<h3 class="sv">För integrering gäller</h3>
+		
+		<p class="fi">Oletetaan, että funktioilla \(f\) ja \(g\) on integraalifunktiot. Tällöin integroinnille pätee lineaarisuus</p>
+		<p class="sv">Antag, att funktionerna \(f\) och \(g\) har intgralfunktioner. Nu gäller för integrering linjäritetiTällöin integroinnille pätee lineaarisuus</p>		
+		<ul>
+			<li>\(\int_{ }^{ }kf\left(x\right)\ \mathrm{d}x=k\int_{ }^{ }f\left(x\right)\ \mathrm{d}x\)</li>
+			<li>\(\int_{ }^{ }f\left(x\right)+g\left(x\right)\ \mathrm{d}x=\int_{ }^{ }f\left(x\right)\ \mathrm{d}x\ +\int_{ }^{ }g\left(x\right)\ \mathrm{d}x\)</li>
+		</ul>
+		<p class="fi">, osittaisintegrointi</p>
+		<p class="sv">, partiell integrering</p>
+		<ul>
+			<li>\int_{ }^{ }f'\left(x\right)g\left(x\right)\ \mathrm{d}x=f\left(x\right)g\left(x\right)-\int_{ }^{ }g'\left(x\right)\ \mathrm{d}x\ f\left(x\right)\ \mathrm{d}x</li>
+		</ul>
+		<p class="fi">ja yhdistetyn funktion derivaatasta johtuen</p>
+		<p class="sv">och p.g.a. den sammansatta funktionens derivata</p>
+		<ul>
+			<li>\( \int _{ }^{ }f'\left(x\right)g'\left(f\left(x\right)\right)\mathrm{d}x=g\left(f\left(x\right)\right)\)</li>
+		</ul>	
+		<h3 class="fi">Eräiden funktioiden integrointi</h3>
+		<h3 class="sv">Integrering av vissa funktioner</h3>
+		
+		<p class="fi">Alla olevissa kaavoissa\(f \)ja \(g\) ovat muuttujasta \(x\) riippuvia (Riemann-)integroituvia funktioita. Integroimisvakiota ei ole merkitty näkyviin.</p>
+		<p class="sv">I formlerna nedan är \(f\) och \(g\) (Riemann-)integrerbara funktioner som beror på variabeln \(x\). Integreringskonstanten har lämnats bort.</p>
+			
+		<ul>
+			<li>\(\int{}{} 0 \mathrm{d}x=0\)</li>
+			<li class="fi">Oletetaan, että \(k\) on reaaliluku. Tällöin \(\int{}{} k \mathrm{d}x=kx\).</li>
+			<li class="fi">Oletetaan, että \(n \neq -1\). Tällöin \(\int{}{} x^{n} \mathrm{d}x=\frac{1}{n+1} x^{n+1}\).</li>
+			<li>\(\int{}{} \frac{1}{x} \mathrm{d}x=\ln |x| </li>
+			<li class="fi">Oletetaan, että \(n \neq -1\). Tällöin \(\int{}{} f'f^{n} \mathrm{d}x=\frac{f^{n+1}}{n+1} \).</li>
+			<li>\(\int{}{} \frac{f'}{f} \mathrm{d}x=\ln |f|\)</li>
+			<li>\(\int{}{} \sin x \mathrm{d}x=-\cos x\)</li>
+			<li>\(\int{}{} \cos x \mathrm{d}x=\sin x \)</li>
+			<li>\(\int{}{} \tan x \mathrm{d}x=-\ln \left|\cos x\right| \)</li>
+			<li>\(\int{}{} f'e^{f} \mathrm{d}x=e^{f}\)</li>
+			<li>\(\int{}{} e^{x} \mathrm{d}x=e^{x}\)</li>
+			<li class="fi">Oletetaan, että \(a\) on positiivinen reaaliluku. Tällöin \(\int{}{} a^{x} \mathrm{d}x=\frac{a^{x}}{\ln{a}}\).</li>
+			<li>\(\int{}{} \ln |x| \mathrm{d}x=x\ln |x|-x\)</li>
+			<li class="fi">Oletetaan, että \(a\) on positiivinen reaaliluku ja \(a \neq 1\). Tällöin \(\int{}{} \log _{a}x \mathrm{d}x=\log _{a}e\left(x\ln |x|-x\right)\).</li>
+		</ul>	
+		<h3 class="fi">Määrätty integraali</h3>
+		<h3 class="sv">Bestämd integral</h3>
+		
+		<p class="fi">Funktion \(f\) määrätty integraali \(a\):sta \(b\):hen on</p>
+		<p class="sv">Den bestämda integralen för funktionen \(f\) från \(a\) till \(b\) är</p>
+		\[ \int_a^bf\left(x\right)\mathrm{d}x\ =\lim_{n\rightarrow\infty}\sum_{i=1}^n\Delta x\ f\left(t_i\right)=\bigg/_{\!\!\!\!\!a}^bF\left(x\right)=F\left(b\right)-F\left(a\right)\]
+		
+		<p class="fi">, missä \(n\) on osavälien määrä ja \(\Delta x\) on osavälien leveys mielivaltaisella osavälin pisteellä \(t_i\}.</p>
+		<p class="sv">, där \(\mathrm{d}x\) betecknar integrering med avseende på \(x\).</p>
+		
+		<h3 class="fi">Määrätylle integraalille pätee</h3>
+		<h3 class="sv">För bestämd integral gäller</h3>
+		
+		\int_a^cf\left(x\right)\mathrm{d}x=\int_a^bf\left(x\right)\mathrm{d}x+\int_b^cf\left(x\right)\mathrm{d}x
+		\int_a^af\left(x\right)\mathrm{d}x=0
+		\int_a^bf\left(x\right)\mathrm{d}x=-\int_b^af\left(x\right)\mathrm{d}x
+		\int_a^bf\left(x\right)\mathrm{d}x\ge-\int_b^ag\left(x\right)\mathrm{d}x
+		\int_a^bf'\left(x\right)g\left(x\right)\mathrm{d}x=\bigg/_{\!\!\!\!\!a}^bf\left(x\right)g\left(x\right)-\int_b^ag'\left(x\right)f\left(x\right)\mathrm{d}x
+		\int_a^{\infty}f\left(x\right)\mathrm{d}x=\lim_{k\rightarrow\infty}\int_a^kf\left(x\right)\mathrm{d}x
+		\int_{-\infty}^bf\left(x\right)\mathrm{d}x=\lim_{k\rightarrow-\infty}\int_k^bf\left(x\right)\mathrm{d}x
+		
+	</div>	
+</div>
+<h2 class="fi">Todennäköisyysjakaumia</h2>
+<h2 class="sv">Sannolikhetslära</h2>
 
-
+<div class="scrollwrap">
+	<div class="boxed">
+	<h3 class="fi">Diskreetti todennäköisyysjakauma</h2>
+	<h3 class="sv">Sannolikhetslära</h2>
+		<p class="fi">Olkoon diskreetin satunnaismuuttujan \(X\) arvot \(x_1, x_n, \ldots, x_n\). Tällöin</p>
+		<ul>
+			<li class="fi">jakauman pistetodennäköisyyksien \(p_i\) summa on 1, eli	\(\sum_{i=1}^np_i=1\).</li>
+			<li class="fi">jakauman kertymäfunktio on \(P(X\le k)=\sum_{i=0}^kp_i\).
+			<li class="fi">satunnaismuuttujan \(X\) odotusarvo \(E(X)\) tai \(\mu\) on \(\sum_{i=1}^n x_ip_i=1\).</li>
+			<li class="fi">satunnaismuuttujan \(X\) keskihajonta \(D(X)\) tai \(\sigma\) on \(\sqrt{\sum_i^np_i\left(x_i-\mu\right)^2}\).</li>
+			<li class="fi">satunnaismuuttujan \(X\) varianssi on \(\sigma^2\).</li>
+			<li class="fi">mikäli \(X\) noudattaa binomijakaumaa parametrein \(n\) ja \(p\), eli \(X\sim\mathrm{Bin}\left(n{,}p\right)\), niin 
+				<ul>
+					<li>pistetodennäköisyys on \(\binom{n}{k}p^k\left(1-p\right)^{n-k}\),</li>
+					<li>\(\mu=np\),</li>
+					<li>\(\sigma=\sqrt{np\left(1-p\right)}\),</li>
+					<li>kertymäfunktio P(X\le k)=\sum_{i=0}^{\left|k\right|}\binom{n}{i}p^i(1-p)^{n-i}.</li>
+				</ul>
+			<li class="fi">mikäli \(X\) noudattaa geometrista jakaumaa parametrillä \(p\), eli \(X\sim\mathrm{Geom}\left(p\right)\), niin
+				<ul>
+					<li>pistetodennäköisyys on \(\left(p-1\right)^kp\),</li>
+					<li>\(\mu=\frac{q}{p}\),</li>
+					<li>\(\sigma=\frac{\sqrt{q}}{p}\),</li>
+					<li>kertymäfunktio \(P(X\le k)=1-(1-p)^{k+1}\).</li>
+				</ul>
+			</li>
+		</ul>
+		
+	<h3 class="fi">Jatkuva todennäköisyysjakauma</h2>
+	<h3 class="sv">Sannolikhetslära</h2>
+		<p class="fi">Olkoon jatkuvan satunnaismuuttuja \(X\) arvojoukko \(E=[a{,}b]\), huom. \(a\) tai \(b\) voi olla \(infty\). Tällöin</p>
+		<ul>
+			<li class="fi">satunnaismuuttujan tiheysfunktion arvot ovat epänegatiivisia ja \(\int_a^bf\left(x\right)\mathrm{dx}=1\).</li>
+			<li class="fi">satunnaismuuttujan kertymäfunktio on \(F(x)\) on \(P(X\le x)=\int_a^xf\left(t\right)\mathrm{dt}\).
+			<li class="fi">jos \(A=[c, d] \subset E\), niin todennäköisyys \(P\left(A\right)\) on \(\int_c^df\left(x\right)\mathrm{dx}=F\left(d\right)-F\left(c\right)\).</li>
+			<li class="fi">satunnaismuuttujan \(X\) odotusarvo \(E(X)\) tai \(\mu\) on \(\int_a^b xf\left(x\right)\mathrm{dx}\).</li>
+			<li class="fi">satunnaismuuttujan \(X\) keskihajonta \(D(X)\) tai \(\sigma\) on \(\sqrt{\int_a^b x^2f\left(x\right)\mathrm{dx}-\mu^2}\).</li>
+			<li class="fi">satunnaismuuttujan \(X\) varianssi on \(\sigma^2\).</li>
+			<li class="fi">mikäli \(X\) on tasaisesti jakautunut, niin 
+				<ul>
+					<li>tiheysfunktio on \(\frac{1}{b-a}\),</li>
+					<li>\(\mu=\frac{a+b}{2}\),</li>
+					<li>\(\sigma=\frac{b-a}{2\sqrt{3}}\),</li>
+					<li>\(F(x)=P(X\le x)=\frac{x-a}{b-a}\).</li>
+				</ul>
+			<li class="fi">mikäli \(X\) on eksponentiaalisesti jakautunut, niin 
+				<ul>
+					<li>tiheysfunktio on \(ae^{-ax}\), missä \(a>0\)</li>
+					<li>\(\mu=\frac{1}{a}\),</li>
+					<li>\(\sigma=\frac{1}{a}\),</li>
+					<li>\(F(x)=P(X\le x)=1-e^{\frac{1}{\mu}x}\).</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
