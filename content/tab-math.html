@@ -301,6 +301,16 @@
 			<li>\(a^{\log_a x}=x\)</li>
 		</ol>
 	</div>
+	<div class="boxed">
+		<h3 class="fi">Algoritmeja yhtälöiden ratkaisuun</h3>
+		<h3 class="sv">Algoritmer för lösning av ekvationer</h3>
+		<p class="fi">Oletetaan, että \(f\) on derivoituva funktio, joka on määritelty välillä \([a, b]\) ja sen arvojoukko koostuu reaaliluvuista. <em>Newtonin menetelmällä</em> nollakohta löydetään seuraavasti. Oletetaan, että tiedossa oleva likiarvo on \(x_n\). Siitä saadaan parempi likiarvo \(x_{n+1}\) alla seuraavan kaavan mukaisesti:</p>
+		<p class="sv">Antag, att \(f\) är en deriverbar funktion, som är definierad i intervallet \([a, b]\) och har värdemängden består av reella tal. Med hjälp av <em>Newtons mentod</em> får man nollställena som följande. Antag, att man känner till en approximation \(x_n\). En bättre approximation \(x_{n+1}\) fås genom följande formel:</p>
+		\[x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}x_{n+1}.\]
+		<p class="fi"><em>Sekanttimenetelmä</em> on määritelty rekursiokaavalla</p>
+		<p class="sv"><em>Sekantmetoden</em> definieras med rekursionsformeln</p>
+		\[x_{n+1}=x_{n}-\frac{x_{n}-x_{n-1}}{f(x_{n})-f(x_{n-1})}f(x_{n}).\]
+	</div>
 </div>
 	
 <h2 class="fi">Geometria</h2>
@@ -854,11 +864,11 @@
 		<p class="fi">Oletetaan, että funktioilla \(f\) ja \(g\) on integraalifunktiot. Tällöin integroinnille pätee lineaarisuus</p>
 		<p class="sv">Antag, att funktionerna \(f\) och \(g\) har intgralfunktioner. Nu gäller för integrering linjäritetiTällöin integroinnille pätee lineaarisuus</p>		
 		<ul>
-			<li>\(\int_{ }^{ }kf\left(x\right)\ \mathrm{d}x=k\int_{ }^{ }f\left(x\right)\ \mathrm{d}x\)</li>
-			<li>\(\int_{ }^{ }f\left(x\right)+g\left(x\right)\ \mathrm{d}x=\int_{ }^{ }f\left(x\right)\ \mathrm{d}x\ +\int_{ }^{ }g\left(x\right)\ \mathrm{d}x\)</li>
+			<li>\(\int_{ }^{ }kf\left(x\right)\ \mathrm{d}x=k\int_{ }^{ }f\left(x\right)\ \mathrm{d}x,\)</li>
+			<li>\(\int_{ }^{ }f\left(x\right)+g\left(x\right)\ \mathrm{d}x=\int_{ }^{ }f\left(x\right)\ \mathrm{d}x\ +\int_{ }^{ }g\left(x\right)\ \mathrm{d}x,\)</li>
 		</ul>
-		<p class="fi">, osittaisintegrointi</p>
-		<p class="sv">, partiell integrering</p>
+		<p class="fi">osittaisintegrointi</p>
+		<p class="sv">partiell integrering</p>
 		<ul>
 			<li>\int_{ }^{ }f'\left(x\right)g\left(x\right)\ \mathrm{d}x=f\left(x\right)g\left(x\right)-\int_{ }^{ }g'\left(x\right)\ \mathrm{d}x\ f\left(x\right)\ \mathrm{d}x</li>
 		</ul>
@@ -876,9 +886,13 @@
 		<ul>
 			<li>\(\int{}{} 0 \mathrm{d}x=0\)</li>
 			<li class="fi">Oletetaan, että \(k\) on reaaliluku. Tällöin \(\int{}{} k \mathrm{d}x=kx\).</li>
+			<li class="sv">Antag, att \(k\) är ett reelt tal. Då gäller att \(\int{}{} k \mathrm{d}x=kx\).</li>
 			<li class="fi">Oletetaan, että \(n \neq -1\). Tällöin \(\int{}{} x^{n} \mathrm{d}x=\frac{1}{n+1} x^{n+1}\).</li>
-			<li>\(\int{}{} \frac{1}{x} \mathrm{d}x=\ln |x| </li>
+			<li class="sv">Antag, att \(n \neq -1\). Då gäller att \(\int{}{} x^{n} \mathrm{d}x=\frac{1}{n+1} x^{n+1}\).</li>
 			<li class="fi">Oletetaan, että \(n \neq -1\). Tällöin \(\int{}{} f'f^{n} \mathrm{d}x=\frac{f^{n+1}}{n+1} \).</li>
+			<li class="sv">Antag, att \(n \neq -1\). Då gäller att \(\int{}{} f'f^{n} \mathrm{d}x=\frac{f^{n+1}}{n+1} \).</li>
+			<li>\(\int{}{} \frac{1}{x} \mathrm{d}x=\ln |x|\)</li>
+			<li>\(\int{}{} \ln |x| \mathrm{d}x=x\ln |x|-x\)</li>	
 			<li>\(\int{}{} \frac{f'}{f} \mathrm{d}x=\ln |f|\)</li>
 			<li>\(\int{}{} \sin x \mathrm{d}x=-\cos x\)</li>
 			<li>\(\int{}{} \cos x \mathrm{d}x=\sin x \)</li>
@@ -886,29 +900,37 @@
 			<li>\(\int{}{} f'e^{f} \mathrm{d}x=e^{f}\)</li>
 			<li>\(\int{}{} e^{x} \mathrm{d}x=e^{x}\)</li>
 			<li class="fi">Oletetaan, että \(a\) on positiivinen reaaliluku. Tällöin \(\int{}{} a^{x} \mathrm{d}x=\frac{a^{x}}{\ln{a}}\).</li>
-			<li>\(\int{}{} \ln |x| \mathrm{d}x=x\ln |x|-x\)</li>
+			<li class="sv">Antag, att \(a\) är ett positivt reelt tal. Då gäller att \(\int{}{} a^{x} \mathrm{d}x=\frac{a^{x}}{\ln{a}}\).</li>	
 			<li class="fi">Oletetaan, että \(a\) on positiivinen reaaliluku ja \(a \neq 1\). Tällöin \(\int{}{} \log _{a}x \mathrm{d}x=\log _{a}e\left(x\ln |x|-x\right)\).</li>
+			<li class="sv">Antag, att \(a\) är ett positivt reelt tal och \(a \neq 1\). Då gäller att \(\int{}{} \log _{a}x \mathrm{d}x=\log _{a}e\left(x\ln |x|-x\right)\).</li>
 		</ul>	
 		<h3 class="fi">Määrätty integraali</h3>
 		<h3 class="sv">Bestämd integral</h3>
 		
 		<p class="fi">Funktion \(f\) määrätty integraali \(a\):sta \(b\):hen on</p>
 		<p class="sv">Den bestämda integralen för funktionen \(f\) från \(a\) till \(b\) är</p>
-		\[ \int_a^bf\left(x\right)\mathrm{d}x\ =\lim_{n\rightarrow\infty}\sum_{i=1}^n\Delta x\ f\left(t_i\right)=\bigg/_{\!\!\!\!\!a}^bF\left(x\right)=F\left(b\right)-F\left(a\right)\]
+		\[ \int_a^bf\left(x\right)\mathrm{d}x\ =\lim_{n\rightarrow\infty}\sum_{i=1}^n\Delta x\ f\left(t_i\right)=\bigg/_{\!\!\!\!\!a}^bF\left(x\right)=F\left(b\right)-F\left(a\right),\]
 		
-		<p class="fi">, missä \(n\) on osavälien määrä ja \(\Delta x\) on osavälien leveys mielivaltaisella osavälin pisteellä \(t_i\}.</p>
-		<p class="sv">, där \(\mathrm{d}x\) betecknar integrering med avseende på \(x\).</p>
+		<p class="fi">missä \(n\) on osavälien määrä ja \(\Delta x\) on osavälien leveys mielivaltaisella osavälin pisteellä \(t_i\).</p>
+		<p class="sv">där \(\mathrm{d}x\) betecknar integrering med avseende på \(x\).</p>
 		
-		<h3 class="fi">Määrätylle integraalille pätee</h3>
-		<h3 class="sv">För bestämd integral gäller</h3>
+		<h4 class="fi">Määrätylle integraalille pätee</h4>
+		<h4 class="sv">För bestämd integral gäller</h4>
 		
-		\int_a^cf\left(x\right)\mathrm{d}x=\int_a^bf\left(x\right)\mathrm{d}x+\int_b^cf\left(x\right)\mathrm{d}x
-		\int_a^af\left(x\right)\mathrm{d}x=0
-		\int_a^bf\left(x\right)\mathrm{d}x=-\int_b^af\left(x\right)\mathrm{d}x
-		\int_a^bf\left(x\right)\mathrm{d}x\ge-\int_b^ag\left(x\right)\mathrm{d}x
-		\int_a^bf'\left(x\right)g\left(x\right)\mathrm{d}x=\bigg/_{\!\!\!\!\!a}^bf\left(x\right)g\left(x\right)-\int_b^ag'\left(x\right)f\left(x\right)\mathrm{d}x
-		\int_a^{\infty}f\left(x\right)\mathrm{d}x=\lim_{k\rightarrow\infty}\int_a^kf\left(x\right)\mathrm{d}x
-		\int_{-\infty}^bf\left(x\right)\mathrm{d}x=\lim_{k\rightarrow-\infty}\int_k^bf\left(x\right)\mathrm{d}x
+		<ul>
+			<li>\(\int_a^cf\left(x\right)\mathrm{d}x=\int_a^bf\left(x\right)\mathrm{d}x+\int_b^cf\left(x\right)\mathrm{d}x\)</li>
+			<li>\(\int_a^af\left(x\right)\mathrm{d}x=0\)</li>
+			<li>\(\int_a^bf\left(x\right)\mathrm{d}x=-\int_b^af\left(x\right)\mathrm{d}x\)</li>
+			<li>\(\int_a^bf\left(x\right)\mathrm{d}x\ge-\int_b^ag\left(x\right)\mathrm{d}x\)</li>
+			<li>\(\int_a^bf'\left(x\right)g\left(x\right)\mathrm{d}x=\bigg/_{\!\!\!\!\!a}^bf\left(x\right)g\left(x\right)-\int_b^ag'\left(x\right)f\left(x\right)\mathrm{d}x\)</li>
+			<li>\(\int_a^{\infty}f\left(x\right)\mathrm{d}x=\lim_{k\rightarrow\infty}\int_a^kf\left(x\right)\mathrm{d}x\)</li>
+			<li>\(\int_{-\infty}^bf\left(x\right)\mathrm{d}x=\lim_{k\rightarrow-\infty}\int_k^bf\left(x\right)\mathrm{d}x\)</li>
+		</ul>
+	<h3 class="fi">Numeerinen inegrointi</h3>
+	<h3 class="sv">Numerisk integrering</h3>
+	
+	<p class="fi"><em>Simpsonin säännöllä</em> voidaan approksimoida määrättyä integraalia, kun integroitavan funktion integraalifunktiota ei tunneta tai haluta käyttää. Jos väli \([a,b]\) jaetaan kahteen yhtä pitkään osaväliin, niin tällöin pätee likimääräisesti:</p>
+	<p>\(\int _{a}^{b}f(x)\mathrm{d}x\approx \frac {b-a}{6}\left[f(a)+4f\left(\frac {a+b}{2}\right)+f(b)\right]=\frac {h}{3}\left[f(a)+4f\left(\frac {a+b}{2}\right)+f(b)\right]\), <span class="fi">missä</span> \(h=\frac{b-a}{2}\).</p>
 		
 	</div>	
 </div>
@@ -919,8 +941,8 @@
 	<div class="boxed">
 	<h3 class="fi">Diskreetti todennäköisyysjakauma</h3>
 	<h3 class="sv">Diskret sannolikhetsfördelning</h3>
-		<p class="fi">Olkoon diskreetin satunnaismuuttujan \(X\) arvot \(x_1, x_n, \ldots, x_n\). Tällöin</p>
-		<p class="sv">Låt den diksreta stokastiska variabelns \(X\) värden vara  \(x_1, x_n, \ldots, x_n\). Då gäller att</p>
+		<p class="fi">Olkoon diskreetin satunnaismuuttujan \(X\) arvot \(x_1, x_n, \ldots, x_n\), huom. arvoja voi myös olla ääretön määrä. Tällöin</p>
+		<p class="sv">Låt den diksreta stokastiska variabelns \(X\) värden vara  \(x_1, x_n, \ldots, x_n\), obs. det kan finnas oändligt många värden. Då gäller att</p>
 		<ul>
 			<li class="fi">jakauman pistetodennäköisyyksien \(p_i\) summa on 1, eli	\(\sum_{i=1}^np_i=1\).</li>
 			<li class="sv">summan av sannolikheterna \(p_i\) av fördelningen är 1, dvs.	\(\sum_{i=1}^np_i=1\).</li>
@@ -954,8 +976,8 @@
 		
 	<h3 class="fi">Jatkuva todennäköisyysjakauma</h3>
 	<h3 class="sv">Kontinuerlig sannolikhetsfördelning</h3>
-		<p class="fi">Olkoon jatkuvan satunnaismuuttuja \(X\) arvojoukko \(E=[a{,}b]\), huom. \(a\) tai \(b\) voi olla \(infty\). Tällöin</p>
-		<p class="sv">Låt \(E=[a{,}b]\) vara värdemängden för den kontinuerliga stokastiska variabeln \(X\), obs. \(a\) eller \(b\) kan vara \(infty\). Då gäller att</p>
+		<p class="fi">Olkoon jatkuvan satunnaismuuttuja \(X\) arvojoukko \(E=[a{,}b]\), huom. \(a\) tai \(b\) voi olla \(\infty\). Tällöin</p>
+		<p class="sv">Låt \(E=[a{,}b]\) vara värdemängden för den kontinuerliga stokastiska variabeln \(X\), obs. \(a\) eller \(b\) kan vara \(\infty\). Då gäller att</p>
 		
 		<ul>
 			<li class="fi">satunnaismuuttujan tiheysfunktion arvot ovat epänegatiivisia ja \(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
@@ -994,7 +1016,7 @@
 					<li><span  class="fi">tiheysfunktio on</span><span class="sv">täthetsfunktionen är</span> \(\frac{1}{\sigma\sqrt{2\pi }}e^{-\frac  {(x-\mu )^{2}}{2\sigma ^{2}}}\),</li>
 					<li><span  class="fi">kertymäfunktio on</span><span class="sv">den kumulativa fördelningsfunktionen är</span> \(\Phi (x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty }^{x}e^{-\frac{t^{2}}{2}}\mathrm{d}t\),</li>
 					<li><span  class="fi">kertymäfunktiolle pätee jos</span><span class="sv">om det gäller för den kumulativa fördelningsfunktionen att</span> \(\Phi(a)=P(x\leq a\), <span class="fi">niin</span><span class="sv">så</span> \(\Phi(-a) = 1-\Phi(a)\).</li>
-					<li class="fi">kertymäfunktiota ei voi ratkaista analyyttisesti, mutta sen arvoja voidaan laskea numeerisilla menetelmillä.</li>
+					<li class="fi">kertymäfunktiota ei voi ratkaista analyyttisesti, mutta sen arvoja voidaan laskea numeerisilla menetelmillä,</li>
 					<li class="sv">den kumulativa fördelningsfunktionen kan inte lösas analytiskt, men dess värden kan beräknas med numeriska metoder.</li>
 				</ul>
 			</li>
@@ -1003,7 +1025,7 @@
 				<ul>
 					<li><span class="fi">tiheysfunktio on</span><span class="sv">täthetsfunktionen är</span> \(\frac{1}{\sqrt{2\pi }}e^{-\frac{1}{2}x^{2}}\),</li>
 					<li>\(\mu=0\),</li>
-					<li>\(\sigma=1\),</li>
+					<li>\(\sigma=1\).</li>
 				</ul>
 			</li>
 		</ul>
