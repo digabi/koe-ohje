@@ -941,7 +941,7 @@
 	<div class="boxed">
 	<h3 class="fi">Diskreetti todennäköisyysjakauma</h3>
 	<h3 class="sv">Diskret sannolikhetsfördelning</h3>
-		<p class="fi">Olkoon diskreetin satunnaismuuttujan \(X\) arvot \(x_1, x_n, \ldots, x_n\), huom. arvoja voi myös olla ääretön määrä. Tällöin</p>
+		<p class="fi">Olkoon diskreetin satunnaismuuttujan \(X\) arvot \(x_1, \ldots, x_n\), huom. arvoja voi myös olla ääretön määrä. Tällöin</p>
 		<p class="sv">Låt den diksreta stokastiska variabelns \(X\) värden vara  \(x_1, x_n, \ldots, x_n\), obs. det kan finnas oändligt många värden. Då gäller att</p>
 		<ul>
 			<li class="fi">jakauman pistetodennäköisyyksien \(p_i\) summa on 1, eli	\(\sum_{i=1}^np_i=1\).</li>
@@ -957,10 +957,10 @@
 			<li class="fi"><span class="fi">jos \(X\) noudattaa binomijakaumaa parametrein \(n\) ja \(p\), eli \(X\sim\mathrm{Bin}\left(n{,}p\right)\), niin</span>
 						   <span class="sv">om \(X\) följer binomialfördelningen med parametrarna \(n\) och \(p\), dvs. \(X\sim\mathrm{Bin}\left(n{,}p\right)\), så gäller att</span>			
 				<ul>
-					<li><span class="fi">pistetodennäköisyys on</span><span class="fi">sannolikheterna är</span> \(\binom{n}{k}p^k\left(1-p\right)^{n-k}\),</li>
+					<li><span class="fi">pistetodennäköisyys on</span><span class="sv">sannolikheterna är</span> \(\binom{n}{k}p^k\left(1-p\right)^{n-k}\),</li>
 					<li>\(\mu=np\),</li>
 					<li>\(\sigma=\sqrt{np\left(1-p\right)}\),</li>
-					<li><span class="fi">kertymäfunktio</span><span class="sv">den kumulativa fördelningsfunktionen är</span> P(X\le k)=\sum_{i=0}^{\left|k\right|}\binom{n}{i}p^i(1-p)^{n-i}.</li>
+					<li><span class="fi">kertymäfunktio</span><span class="sv">den kumulativa fördelningsfunktionen är</span> \(P(X\le k)=\sum_{i=0}^{\left|k\right|}\binom{n}{i}p^i(1-p)^{n-i}\).</li>
 				</ul>
 			</li>
 			<li class="fi"><span class="fi">jos \(X\) noudattaa geometrista jakaumaa parametrillä \(p\), eli \(X\sim\mathrm{Geom}\left(p\right)\), niin</span>
@@ -976,16 +976,16 @@
 		
 	<h3 class="fi">Jatkuva todennäköisyysjakauma</h3>
 	<h3 class="sv">Kontinuerlig sannolikhetsfördelning</h3>
-		<p class="fi">Olkoon jatkuvan satunnaismuuttuja \(X\) arvojoukko \(E=[a{,}b]\), huom. \(a\) tai \(b\) voi olla \(\infty\). Tällöin</p>
-		<p class="sv">Låt \(E=[a{,}b]\) vara värdemängden för den kontinuerliga stokastiska variabeln \(X\), obs. \(a\) eller \(b\) kan vara \(\infty\). Då gäller att</p>
+		<p class="fi">Olkoon jatkuvan satunnaismuuttuja \(X\) arvojoukko \(E=[a{,}b]\), huom. \(a\) tai \(b\) voi olla \(\infty\) tai \(-\infty\). Tällöin</p>
+		<p class="sv">Låt \(E=\left[a{,}b\right]\) vara värdemängden för den kontinuerliga stokastiska variabeln \(X\), obs. \(a\) eller \(b\) kan vara \(\infty\). Då gäller att</p>
 		
 		<ul>
 			<li class="fi">satunnaismuuttujan tiheysfunktion arvot ovat epänegatiivisia ja \(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
 			<li class="sv">värden för täthetsfunktionen för stokastiska variabeln är icke negativa och  \(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
 			<li class="fi">satunnaismuuttujan kertymäfunktio on \(F(x)\) on \(P(X\le x)=\int_a^xf\left(t\right)\mathrm{d}t\).</li>
 			<li class="sv">kumulativa fördelningsfunktionen för funktionen \(F(x)\) är \(P(X\le x)=\int_a^xf\left(t\right)\mathrm{d}t\).</li>
-			<li class="fi">jos \(A=[c, d] \subset E\), niin todennäköisyys \(P\left(A\right)\) on \(\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
-			<li class="sv">om \(A=[c, d] \subset E\), så är sannolikheten \(P\left(A\right)=\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
+			<li class="fi">jos \(A=\left[c, d\right] \subset E\), niin todennäköisyys \(P\left(A\right)\) on \(\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
+			<li class="sv">om \(A=\left[c, d\right] \subset E\), så är sannolikheten \(P\left(A\right)=\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
 			<li class="fi">satunnaismuuttujan \(X\) odotusarvo \(E(X)\) tai \(\mu\) on \(\int_a^b xf\left(x\right)\mathrm{d}x\).</li>
 			<li class="sv">väntevärdet \(E(X)\) eller \(\mu\) för den stokastiska variabeln \(X\) är \(\int_a^b xf\left(x\right)\mathrm{d}x\).</li>
 			<li class="fi">satunnaismuuttujan \(X\) keskihajonta \(D(X)\) tai \(\sigma\) on \(\sqrt{\int_a^b x^2f\left(x\right)\mathrm{d}x-\mu^2}\).</li>
@@ -1001,7 +1001,8 @@
 					<li>\(\sigma=\frac{b-a}{2\sqrt{3}}\),</li>
 					<li>\(F(x)=P(X\le x)=\frac{x-a}{b-a}\).</li>
 				</ul>
-			<li class="fi">mikäli \(X\) on eksponentiaalisesti jakautunut, niin 
+			<li><span  class="fi">jos \(X\) on eksponentiaalisesti jakautunut, niin</span>
+				<span  class="sv">om \(X\) är exponentiellt fördelat, så gäller att</span>
 				<ul>
 					<li class="fi">tiheysfunktio on \(ae^{-ax}\), missä \(a>0\),</li>
 					<li class="sv">täthetsfunktionen är \(ae^{-ax}\), där \(a>0\),</li>
@@ -1015,7 +1016,7 @@
 				<ul>
 					<li><span  class="fi">tiheysfunktio on</span><span class="sv">täthetsfunktionen är</span> \(\frac{1}{\sigma\sqrt{2\pi }}e^{-\frac  {(x-\mu )^{2}}{2\sigma ^{2}}}\),</li>
 					<li><span  class="fi">kertymäfunktio on</span><span class="sv">den kumulativa fördelningsfunktionen är</span> \(\Phi (x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty }^{x}e^{-\frac{t^{2}}{2}}\mathrm{d}t\),</li>
-					<li><span  class="fi">kertymäfunktiolle pätee jos</span><span class="sv">om det gäller för den kumulativa fördelningsfunktionen att</span> \(\Phi(a)=P(x\leq a\), <span class="fi">niin</span><span class="sv">så</span> \(\Phi(-a) = 1-\Phi(a)\).</li>
+					<li><span  class="fi">kertymäfunktiolle pätee jos</span><span class="sv">om det gäller för den kumulativa fördelningsfunktionen att</span> \(\Phi(a)=P(x\leq a)\), <span class="fi">niin</span><span class="sv">så</span> \(\Phi(-a) = 1-\Phi(a)\).</li>
 					<li class="fi">kertymäfunktiota ei voi ratkaista analyyttisesti, mutta sen arvoja voidaan laskea numeerisilla menetelmillä,</li>
 					<li class="sv">den kumulativa fördelningsfunktionen kan inte lösas analytiskt, men dess värden kan beräknas med numeriska metoder.</li>
 				</ul>
