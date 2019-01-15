@@ -893,7 +893,7 @@
 		<p class="fi">osittaisintegrointi</p>
 		<p class="sv">partiell integrering</p>
 		<ul>
-			<li>\int_{ }^{ }f'\left(x\right)g\left(x\right)\ \mathrm{d}x=f\left(x\right)g\left(x\right)-\int_{ }^{ }g'\left(x\right)\ \mathrm{d}x\ f\left(x\right)\ \mathrm{d}x</li>
+			<li>\(\int_{ }^{ }f'\left(x\right)g\left(x\right)\ \mathrm{d}x=f\left(x\right)g\left(x\right)-\int_{ }^{ }g'\left(x\right)\ \mathrm{d}x\ f\left(x\right)\ \mathrm{d}x\)</li>
 		</ul>
 		<p class="fi">ja yhdistetyn funktion derivaatasta johtuen</p>
 		<p class="sv">och p.g.a. den sammansatta funktionens derivata</p>
@@ -954,7 +954,7 @@
 	
 	<p class="fi"><em>Simpsonin säännöllä</em> voidaan approksimoida määrättyä integraalia, kun integroitavan funktion integraalifunktiota ei tunneta tai haluta käyttää. Jos väli \([a,b]\) jaetaan kahteen yhtä pitkään osaväliin, niin tällöin pätee likimääräisesti:</p>
 	<p class="sv"><em>Simpsons regel</em> kan användas för att approximera en integral då integralfunktionen till den funktion som ska integreras inte är känd, eller om man inte vill använda den. Om intervallet \([a,b]\) delas in i två lika stora delintervall, gäller det approximativt att:</p>
-	<p>\(\int _{a}^{b}f(x)\mathrm{d}x\approx \frac {b-a}{6}\left[f(a)+4f\left(\frac {a+b}{2}\right)+f(b)\right]=\frac {h}{3}\left[f(a)+4f\left(\frac {a+b}{2}\right)+f(b)\right]\), <span class="fi">missä</span><span class="fi">där</span> \(h=\frac{b-a}{2}\).</p>
+	<p>\(\int _{a}^{b}f(x)\mathrm{d}x\approx \frac {b-a}{6}\left[f(a)+4f\left(\frac {a+b}{2}\right)+f(b)\right]=\frac {h}{3}\left[f(a)+4f\left(\frac {a+b}{2}\right)+f(b)\right]\), <span class="fi">missä</span><span class="sv">där</span> \(h=\frac{b-a}{2}\).</p>
 		
 	</div>	
 </div>
@@ -1001,7 +1001,7 @@
 	<h3 class="fi">Jatkuva todennäköisyysjakauma</h3>
 	<h3 class="sv">Kontinuerlig sannolikhetsfördelning</h3>
 		<p class="fi">Olkoon jatkuvan satunnaismuuttuja \(X\) arvojoukko \(E=[a{,}b]\), huom. \(a\) tai \(b\) voi olla \(\infty\) tai \(-\infty\). Tällöin</p>
-		<p class="sv">Låt \(E=\left[a{,}b\right]\) vara värdemängden för den kontinuerliga stokastiska variabeln \(X\), obs. \(a\) eller \(b\) kan vara \(\infty\). Då gäller att</p>
+		<p class="sv">Låt \(E=\left[a{,}b\right]\) vara värdemängden för den kontinuerliga stokastiska variabeln \(X\). Obs. \(a\) eller \(b\) kan vara \(\infty\). Då gäller att</p>
 		
 		<ul>
 			<li class="fi">satunnaismuuttujan tiheysfunktion arvot ovat epänegatiivisia ja \(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
@@ -1010,12 +1010,12 @@
 			<li class="sv">kumulativa fördelningsfunktionen för funktionen \(F(x)\) är \(P(X\le x)=\int_a^xf\left(t\right)\mathrm{d}t\).</li>
 			<li class="fi">jos \(A=\left[c, d\right] \subset E\), niin todennäköisyys \(P\left(A\right)\) on \(\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
 			<li class="sv">om \(A=\left[c, d\right] \subset E\), så är sannolikheten \(P\left(A\right)=\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
-			<li class="fi">satunnaismuuttujan \(X\) odotusarvo \(E(X)\) tai \(\mu\) on \(\int_a^b xf\left(x\right)\mathrm{d}x\).</li>
-			<li class="sv">väntevärdet \(E(X)\) eller \(\mu\) för den stokastiska variabeln \(X\) är \(\int_a^b xf\left(x\right)\mathrm{d}x\).</li>
+			<li class="fi">satunnaismuuttujan \(X\) odotusarvo \(E(X)\) tai \(\mu\) on \(\int_a^b x \ f\left(x\right)\mathrm{d}x\).</li>
+			<li class="sv">väntevärdet \(E(X)\) eller \(\mu\) för den stokastiska variabeln \(X\) är \(\int_a^b x \ f\left(x\right)\mathrm{d}x\).</li>
 			<li class="fi">satunnaismuuttujan \(X\) keskihajonta \(D(X)\) tai \(\sigma\) on \(\sqrt{\int_a^b x^2f\left(x\right)\mathrm{d}x-\mu^2}\).</li>
 			<li class="sv">standardavvikelsen \(D(X)\) eller \(\sigma\) för den stokastiska variabeln \(X\) är \(\sqrt{\int_a^b x^2f\left(x\right)\mathrm{d}x-\mu^2}\).</li>
 			<li class="fi">satunnaismuuttujan \(X\) varianssi on \(\sigma^2\).</li>
-			<li class="sv">varianssen för den stokastiska variabeln \(X\) är \(\sigma^2\).</li>
+			<li class="sv">variansen för den stokastiska variabeln \(X\) är \(\sigma^2\).</li>
 			<li><span class="fi">jos \(X\) on tasaisesti jakautunut, niin</span>
 				<span class="sv">om \(X\) är likformigt födelat, så gäller att</span>
 				<ul>
