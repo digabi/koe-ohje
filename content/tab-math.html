@@ -424,15 +424,15 @@
 		<h3 class="sv">Cylindrar</h3>
 		
 		<p class="fi"><em>Ympyrälieriön</em> pohja on ympyrä. <em>Särmiö</em> eli <em>prisma</em> on lieriö, jonka pohja on monikulmio.</p>
-		<p class="sv">Basen av en <em>cirkulär cylinder</em> är en cirkel. <em>Prismat</em> är en cylinder, vars bas är ett polygon.</p>
+		<p class="sv">Basytorna i en <em>cirkulär cylinder</em> är cirklar. Ett <em>prisma</em> är en cylinder, vars basytor är polygoner.</p>
 		<img src="../common/images/math/ympyralierio-sarmio.png" alt="Ympyrälieriö ja särmiö - Cirkulär cylinder och prima" />
 										
 		<p class="fi"><em>Suora lieriö</em> tarkoittaa lieriötä, jonka vaippa on kohtisuorassa pohjaa vastaan.</p>
-		<p class="sv">För en <em>rak cylinder</em> gäller, att dess mantelyta ligger rätvinkligt till basen.</p>
+		<p class="sv">För en <em>rak cylinder</em> gäller, att dess mantelyta ligger vinkelrätt mot basytorna.</p>
 		<img src="../common/images/math/suora-lierio.png" alt="Suora lierio - Rak cylinder" />
 
 		<p class="fi">Lieriön tilavuus \(V\) on lieriön pohjan pinta-alan \(A_p\) ja lieriön korkeuden \(h\) tulo:</p>
-		<p class="sv">Cylinderns volym \(V\) är  produkten av basens area \(A_p\) och cylinderns höjd \(h\):</p>
+		<p class="sv">Cylinderns volym \(V\) är  produkten av basytans area \(A_p\) och cylinderns höjd \(h\):</p>
         \[V = A_p \cdot h\]
 		<img src="../common/images/math/lierion-tilavuus.png" alt="Lieriön tilavuus - Cylinderns volym" />
 
@@ -944,8 +944,8 @@
 			<li>\(\int_a^cf\left(x\right)\mathrm{d}x=\int_a^bf\left(x\right)\mathrm{d}x+\int_b^cf\left(x\right)\mathrm{d}x\)</li>
 			<li>\(\int_a^af\left(x\right)\mathrm{d}x=0\)</li>
 			<li>\(\int_a^bf\left(x\right)\mathrm{d}x=-\int_b^af\left(x\right)\mathrm{d}x\)</li>
-			<li>\(\int_a^bf\left(x\right)\mathrm{d}x = -\int_b^ag\left(x\right)\mathrm{d}x\)</li>
-			<li>\(\int_a^bf'\left(x\right)g\left(x\right)\mathrm{d}x=\bigg/_{\!\!\!\!\!a}^bf\left(x\right)g\left(x\right)-\int_a^bg'\left(x\right)f\left(x\right)\mathrm{d}x\)</li>
+			<li>\(\int_a^bf\left(x\right)\mathrm{d}x = -\int_b^a f\left(x\right)\mathrm{d}x\)</li>
+			<li>\(\int_a^bf'\left(x\right)g\left(x\right)\mathrm{d}x=\bigg/_{\!\!\!\!\!a}^bf\left(x\right)g\left(x\right)-\int_a^b g'\left(x\right)f\left(x\right)\mathrm{d}x\)</li>
 			<li>\(\int_a^{\infty}f\left(x\right)\mathrm{d}x=\lim_{k\rightarrow\infty}\int_a^kf\left(x\right)\mathrm{d}x\)</li>
 			<li>\(\int_{-\infty}^bf\left(x\right)\mathrm{d}x=\lim_{k\rightarrow-\infty}\int_k^bf\left(x\right)\mathrm{d}x\)</li>
 		</ul>
@@ -971,10 +971,10 @@
 			<li class="fi">jakauman pistetodennäköisyyksien \(p_i\) summa on 1, eli	\(\sum_{i=1}^np_i=1\).</li>
 			<li class="sv">summan av sannolikheterna \(p_i\) av fördelningen är 1, dvs.	\(\sum_{i=1}^np_i=1\).</li>
 			<li class="fi">jakauman kertymäfunktio on \(P(X\le k)=\sum_{i=0}^kp_i\).</li>
-			<li class="sv">fördelningens kumulativa fördelningsfunktion är \(P(X\le k)=\sum_{i=0}^kp_i\).</li>
+			<li class="sv">fördelningens (kumulativa) fördelningsfunktion är \(P(X\le k)=\sum_{i=0}^kp_i\).</li>
 			<li class="fi">satunnaismuuttujan \(X\) odotusarvo \(E(X)\) tai \(\mu\) on \(\sum_{i=1}^n p_ix_i\).</li>
 			<li class="sv">väntevärdet \(E(X)\) eller \(\mu\) för den stokastiska variabeln \(X\) är \(\sum_{i=1}^n p_ix_i\).</li>
-			<li class="fi">satunnaismuuttujan \(X\) keskihajonta \(D(X)\) tai \(\sigma\) on \(\sqrt{\sum_i^np_i\left(x_i-\mu\right)^2}\).</li>
+			<li class="fi">satunnaismuuttujan \(X\) keskihajonta \(D(X)\) tai \(\sigma\) on \(\sqrt{\sum_{i=1}^n p_i\left(x_i-\mu\right)^2}\).</li>
 			<li class="sv">standardavvikelsen \(D(X)\) eller \(\sigma\)för den stokastiska variabeln \(X\) är \(\sqrt{\sum_i^np_i\left(x_i-\mu\right)^2}\).</li>
 			<li class="fi">satunnaismuuttujan \(X\) varianssi on \(\sigma^2\).</li>
 			<li class="sv">variansen för den stokastiska variabeln \(X\) är \(\sigma^2\).</li>
@@ -1001,15 +1001,15 @@
 	<h3 class="fi">Jatkuva todennäköisyysjakauma</h3>
 	<h3 class="sv">Kontinuerlig sannolikhetsfördelning</h3>
 		<p class="fi">Olkoon jatkuvan satunnaismuuttuja \(X\) arvojoukko \(E=[a{,}b]\), huom. \(a\) tai \(b\) voi olla \(\infty\) tai \(-\infty\). Tällöin</p>
-		<p class="sv">Låt \(E=\left[a{,}b\right]\) vara värdemängden för den kontinuerliga stokastiska variabeln \(X\). Obs. \(a\) eller \(b\) kan vara \(\infty\). Då gäller att</p>
+		<p class="sv">Anta att den kontinuerliga stokastiska variabeln \(X\) antar värden i intervallet \(I=\left[a{,}b\right]\). Obs. \(a\) eller \(b\) kan vara \(\infty\). Då gäller att</p>
 		
 		<ul>
 			<li class="fi">satunnaismuuttujan tiheysfunktion arvot ovat epänegatiivisia ja \(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
-			<li class="sv">värden för täthetsfunktionen för stokastiska variabeln är icke negativa och  \(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
+			<li class="sv">värdena för täthetsfunktionen \(f\left(x\right)\) för stokastiska variabeln är icke-negativa och  \(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
 			<li class="fi">satunnaismuuttujan kertymäfunktio on \(F(x)\) on \(P(X\le x)=\int_a^xf\left(t\right)\mathrm{d}t\).</li>
-			<li class="sv">kumulativa fördelningsfunktionen för funktionen \(F(x)\) är \(P(X\le x)=\int_a^xf\left(t\right)\mathrm{d}t\).</li>
-			<li class="fi">jos \(A=\left[c, d\right] \subset E\), niin todennäköisyys \(P\left(A\right)\) on \(\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
-			<li class="sv">om \(A=\left[c, d\right] \subset E\), så är sannolikheten \(P\left(A\right)=\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
+			<li class="sv">den (kumulativa) fördelningsfunktionen för funktionen \(F(x)\) är \(P(X\le x)=\int_a^xf\left(t\right)\mathrm{d}t\).</li>
+			<li class="fi">jos \(A=\left[c, d\right] \subset I\), niin todennäköisyys \(P\left(A\right)\) on \(\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
+			<li class="sv">om \(A=\left[c, d\right] \subset I\), så är sannolikheten \(P\left(A\right)=\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
 			<li class="fi">satunnaismuuttujan \(X\) odotusarvo \(E(X)\) tai \(\mu\) on \(\int_a^b x \ f\left(x\right)\mathrm{d}x\).</li>
 			<li class="sv">väntevärdet \(E(X)\) eller \(\mu\) för den stokastiska variabeln \(X\) är \(\int_a^b x \ f\left(x\right)\mathrm{d}x\).</li>
 			<li class="fi">satunnaismuuttujan \(X\) keskihajonta \(D(X)\) tai \(\sigma\) on \(\sqrt{\int_a^b x^2f\left(x\right)\mathrm{d}x-\mu^2}\).</li>
@@ -1017,7 +1017,7 @@
 			<li class="fi">satunnaismuuttujan \(X\) varianssi on \(\sigma^2\).</li>
 			<li class="sv">variansen för den stokastiska variabeln \(X\) är \(\sigma^2\).</li>
 			<li><span class="fi">jos \(X\) on tasaisesti jakautunut, niin</span>
-				<span class="sv">om \(X\) är likformigt födelat, så gäller att</span>
+				<span class="sv">om \(X\) är likformigt fördelad, så gäller att</span>
 				<ul>
 					<li class="fi">tiheysfunktio on \(\frac{1}{b-a}\),</li>
 					<li class="sv">täthetsfunktionen är \(\frac{1}{b-a}\),</li>
@@ -1026,7 +1026,7 @@
 					<li>\(F(x)=P(X\le x)=\frac{x-a}{b-a}\).</li>
 				</ul>
 			<li><span  class="fi">jos \(X\) on eksponentiaalisesti jakautunut, niin</span>
-				<span  class="sv">om \(X\) är exponentiellt fördelat, så gäller att</span>
+				<span  class="sv">om \(X\) följer exponentialfördelningen, så gäller att</span>
 				<ul>
 					<li class="fi">tiheysfunktio on \(ae^{-ax}\), missä \(a>0\),</li>
 					<li class="sv">täthetsfunktionen är \(ae^{-ax}\), där \(a>0\),</li>
@@ -1036,26 +1036,26 @@
 				</ul>
 			</li>
 			<li><span class="fi">jos \(X\) on normaalijakautunut, eli \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\), niin</span>
-				<span class="sv">om \(X\) är nomralfördelat, dvs. \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\), så gäller att</span>
+				<span class="sv">om \(X\) är normalfördelad, dvs. \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\), så gäller att</span>
 				<ul>
 					<li><span  class="fi">tiheysfunktio on</span><span class="sv">täthetsfunktionen är</span> \(\frac{1}{\sigma\sqrt{2\pi }}e^{-\frac  {(x-\mu )^{2}}{2\sigma ^{2}}}\),</li>
-					<li><span  class="fi">kertymäfunktio on</span><span class="sv">den kumulativa fördelningsfunktionen är</span> \(\Phi (x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty }^{x}e^{-\frac{t^{2}}{2}}\mathrm{d}t\),</li>
-					<li><span  class="fi">kertymäfunktiolle pätee jos</span><span class="sv">om det gäller för den kumulativa fördelningsfunktionen att</span> \(\Phi(a)=P(x\leq a)\), <span class="fi">niin</span><span class="sv">så</span> \(\Phi(-a) = 1-\Phi(a)\).</li>
+					<li><span  class="fi">kertymäfunktiolle pätee jos</span><span class="sv">om det för fördelningsfunktionen gäller att</span> \(\Phi(a)=P(x\leq a)\), <span class="fi">niin</span><span class="sv">så är</span> \(\Phi(-a) = 1-\Phi(a)\).</li>
 					<li class="fi">kertymäfunktiota ei voi ratkaista analyyttisesti, mutta sen arvoja voidaan laskea numeerisilla menetelmillä,</li>
-					<li class="sv">den kumulativa fördelningsfunktionen kan inte lösas analytiskt, men dess värden kan beräknas med numeriska metoder.</li>
+					<li class="sv">fördelningsfunktionen kan inte lösas analytiskt, men dess värden kan beräknas med numeriska metoder.</li>
 				</ul>
 			</li>
 			<li><span class="fi">erikoistapauksena normaalijakumasta on standardinormaalijakauma \(Z\sim\mathrm{N}\left(0{,}1\right)\), missä \(Z=\frac{X-\mu}{\sigma}\) ja \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\). Tällöin</span>
-				<span class="sv">som specialfall av normafördelningen är den standardiserade normalfördelningen \(Z\sim\mathrm{N}\left(0{,}1\right)\), där \(Z=\frac{X-\mu}{\sigma}\) och \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\). Då gäller att</span>
+				<span class="sv">ett specialfall av normalfördelningen är den standardiserade normalfördelningen \(Z\sim\mathrm{N}\left(0{,}1\right)\), där \(Z=\frac{X-\mu}{\sigma}\) och \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\). För fördelningen gäller att</span>
 				<ul>
 					<li><span class="fi">tiheysfunktio on</span><span class="sv">täthetsfunktionen är</span> \(\frac{1}{\sqrt{2\pi }}e^{-\frac{1}{2}x^{2}}\),</li>
+					<li><span  class="fi">kertymäfunktio on</span><span class="sv">fördelningsfunktionen är</span> \(\Phi (x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty }^{x}e^{-\frac{t^{2}}{2}}\mathrm{d}t\),</li>
 					<li>\(\mu=0\),</li>
 					<li>\(\sigma=1\).</li>
 				</ul>
 			</li>
 		</ul>
 	<h3 class="fi">Standardoidun normaalijakauman kertymäfunktion arvoja</h3>
-	<h3 class="sv">Värden för den kumulativa täthetsfunktionen för den standardiserade normalfördelningen</h3>
+	<h3 class="sv">Värden för fördelningsfunktionen för den standardiserade normalfördelningen</h3>
 	
 	<table class="formulae">
         <tr><td>	z</td><td>0,00</td><td>0,01</td><td>0,02</td><td>0,03</td><td>0,04</td><td>0,05</td><td>0,06</td><td>0,07</td><td>0,08</td><td>0,09	</td></tr>
