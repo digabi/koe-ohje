@@ -510,3 +510,11 @@ video {
   width: 100% !important;
   height: auto !important;
 }
+
+.emergency-message {
+  background-color: #359BB7;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  margin-right: 20px;
+}

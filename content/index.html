@@ -34,6 +34,10 @@
 		// Handles for subpage initialisation functions
 		var subpage_init = {};
 
+		// If set shows this emergency message content in all pages
+		var EMERGENCY_MESSAGE = "<span class='fi'>Tämä versio koeohjeesta vastaa ylioppilastutkinnossa käytössä olevaa versiota. Abitti-tikulla on päivityksen aikana sattuneen virheen takia vanhempi versio ohjeesta.</span>"
+			+"<span class='sv'>Denna version av provinstruktionerna motsvara versionen som används i studentexamen. På grund av misstag som uppkommit under uppdateringen av Abitti, är en äldre version av instruktionerna på Abitti-pinnen.</span>";
+
 		// Table-specific configuration for applyTablesorter()
 		var sorter_configuration = {
 			'chemistry': {
@@ -190,6 +194,14 @@
 				if ($("#tab-" + subject).children().length === 0) {
 					$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
 					$("#tab-" + subject).load("tab-" + subject + ".html", function () {
+						// Apply emergency message
+						if (EMERGENCY_MESSAGE) {
+							$(".emergency-message").html(EMERGENCY_MESSAGE);
+						}
+						else {
+							$(".emergency-message").hide();
+						}
+
 						removeWrongLanguageFromDOM(currentLanguage);
 						if (videoPrefix != undefined) {
 							set_video_url(currentLanguage, videoPrefix);
