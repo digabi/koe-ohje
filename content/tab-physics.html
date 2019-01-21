@@ -2808,7 +2808,7 @@
 				<tr>
 					<tr>
 						<th rowspan="3" class="fi">Etenemisliike</th>
-						<th rowspan="3" class="sv">Likformig rörelse</th>
+						<th rowspan="3" class="sv">Rörelse</th>
 						<td class="fi">matka</td>
 						<td class="sv">sträcka</td>
 						<td>\(s\)</td>
@@ -2817,21 +2817,25 @@
 					</tr>
 					<td class="fi">keskinopeus</td>
 					<td class="sv">medelhastighet</td>
-					<td>\(v_k\)</td>
+					<td class="fi">\(v_k\)</td>
+					<td class="sv">\(v_m\)</td>
 					<td>\(\mathrm{\frac{m}{s}}\)</td>
-					<td>\(v_k = \frac{\Delta x}{\Delta t}\)</td>
+					<td class="fi">\(v_k = \frac{\Delta x}{\Delta t}\)</td>
+					<td class="sv">\(v_m = \frac{\Delta x}{\Delta t}\)</td>
 				</tr>
 				<tr>
 					<td class="fi">keskikiihtyvyys</td>
-					<td class="sv">acceleration</td>
-					<td>\(a_k\)</td>
+					<td class="sv">medelacceleration</td>
+					<td class="fi">\(a_k\)</td>
+					<td class="sv">\(a_m\)</td>
 					<td>\(\mathrm{\frac{m}{s^2}}\)</td>
-					<td>\(a_k = \frac{\Delta v}{\Delta t}\)</td>
+					<td class="fi">\(a_k = \frac{\Delta v}{\Delta t}\)</td>
+					<td class="sv">\(a_m = \frac{\Delta v}{\Delta t}\)</td>
 				</tr>
 
 				<tr>
 					<th rowspan="2" class="fi">Tasaisesti muuttuva etenemisliike</th>
-					<th rowspan="2" class="sv">Likformigt föränderlig rörelse</th>
+					<th rowspan="2" class="sv">Likformigt accelererad rörelse</th>
 					<td class="fi">nopeus</td>
 					<td class="sv">hastighet</td>
 					<td>\(v\)</td>
@@ -3177,14 +3181,16 @@
 						<td class="sv">vågkällan rör sig</td>
 						<td/>
 						<td/>
-						<td>\[f=f_0\frac {v}{v \pm v_l}\]</td>
+						<td class="fi">\[f=f_0\frac {v}{v \pm v_l}\]</td>
+						<td class="sv">\[f=f_0\frac {v}{v \pm v_k}\]</td>
 					</tr>
 					<tr>
 						<td class="fi">havaitsija liikkuu</td>
 						<td class="sv">observatören rör sig</td>
 						<td/>
 						<td/>
-						<td>\[f=f_0\frac {v\pm v_h}{v}\]</td>
+						<td class="fi">\[f=f_0\frac {v\pm v_h}{v}\]</td>
+						<td class="sv">\[f=f_0\frac {v\pm v_o}{v}\]</td>
 					</tr>
 					<tr>
 						<th  colspan="2" class="fi">Äänen intensiteettitaso</th>
