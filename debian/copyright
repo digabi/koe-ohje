@@ -1,7 +1,0 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: digabi-koe-ohje
-Source: https://github.com/digabi/koe-ohje
-
-Files: *
-Copyright: 2015 Ylioppilastutkintolautakunta <lautakunta@ylioppilastutkinto.fi>
-
