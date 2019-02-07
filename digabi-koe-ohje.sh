@@ -25,7 +25,9 @@ else
 fi
 
 # Kill existing browsers
-pkill -TERM -f "/usr/bin/digabi-koe-browser"
+pkill koeohje
 
 # Start browser
-/usr/bin/digabi-koe-browser -t "${TITLE}" -W 1045 -H 600 -x 30 -y 30 file:///usr/share/digabi-koe-ohje/build/index-${DOC_LANG}.html &
+abikit-browser -t "${TITLE}" -W 1045 -H 600 -x 30 -y 30 \
+	-n koeohje -i /usr/share/digabi-koe-ohje/help-browser.svg \
+	file:///usr/share/digabi-koe-ohje/build/index-${DOC_LANG}.html &
