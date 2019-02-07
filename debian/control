@@ -11,9 +11,6 @@ Package: digabi-koe-ohje
 Architecture: all
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- python-pyqt5.qtwebkit,
- gstreamer1.0-plugins-good,
- gstreamer1.0-plugins-ugly,
- gstreamer1.0-libav
+ abikit-browser
 Description: End-user documentation for test-taker's device. The
  package contains both Finnish and Swedish documentation.
