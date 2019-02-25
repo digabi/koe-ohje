@@ -1,6 +1,9 @@
-APPNAME = digabi-koe-ohje
+default_build_number=1
 
 all:
+
+build: content/*
+	npm run build
 
 update-clipboardjs:
 	wget -O common/clipboard.min.js https://raw.githubusercontent.com/lgarron/clipboard.js/master/clipboard.min.js
@@ -8,23 +11,26 @@ update-clipboardjs:
 update-mathjax:
 	cp -r node_modules/mathjax/ common/
 
-install:
-	install -D -m 0755 digabi-koe-ohje.sh $(DESTDIR)/usr/bin/$(APPNAME)
-	install -D -m 0755 digabi-koe-browser.py $(DESTDIR)/usr/bin/digabi-koe-browser
-	install -d -m 0755 $(DESTDIR)/usr/share/$(APPNAME)
-	install -D -m 0644 digabi-koe-ohje.desktop $(DESTDIR)/usr/share/applications/digabi-koe-ohje.desktop
-	install -D -m 0644 help-browser.svg $(DESTDIR)/usr/share/$(APPNAME)/help-browser.svg
+deb:
+	if [ -d deb-root ]; then rm -fR deb-root/; fi
 
-	# Common files (images etc)
-	cp -r common $(DESTDIR)/usr/share/${APPNAME}/
+	# Executable
+	mkdir -p deb-root/usr/local/bin/
+	cp digabi-koe-ohje.sh deb-root/usr/local/bin/digabi-koe-ohje
+	chmod 755 deb-root/usr/local/bin/*
 
-	# Common content to Finnish/Swedish documentation
-	cp -r build/ $(DESTDIR)/usr/share/$(APPNAME)/
+	# Desktop entry
+	mkdir -p deb-root/usr/share/applications/
+	cp digabi-koe-ohje.desktop deb-root/usr/share/applications/
 
-	# Finnish/Swedish frontpage
-	cp build/index.html $(DESTDIR)/usr/share/$(APPNAME)/build/index-fi.html
-	cp build/index.html $(DESTDIR)/usr/share/$(APPNAME)/build/index-sv.html
+	# Content
+	mkdir -p deb-root/usr/local/share/digabi-koe-ohje
+	cp help-browser.svg deb-root/usr/local/share/digabi-koe-ohje/
+	cp -r common/ deb-root/usr/local/share/digabi-koe-ohje/
+	cp -r build/ deb-root/usr/local/share/digabi-koe-ohje/
 
-	# Set perms
-	find $(DESTDIR)/usr/share/$(APPNAME) -type f -exec chmod 644 {} \;
-	find $(DESTDIR)/usr/share/$(APPNAME) -type d -exec chmod 755 {} \;
+	cp build/index.html deb-root/usr/local/share/digabi-koe-ohje/build/index-fi.html
+	cp build/index.html deb-root/usr/local/share/digabi-koe-ohje/build/index-sv.html
+
+	if [ "x$(BUILD_NUMBER)" = "x" ]; then BUILD_NUMBER=$(default_build_number); echo "Using default build number $$BUILD_NUMBER"; fi; \
+	fpm -C deb-root/ -s dir --name digabi-koe-ohje --architecture native -t deb --version "1.0.$$BUILD_NUMBER" --depends abikit-browser .

@@ -15,7 +15,7 @@ elif [ "${IS_SV}" != "" ]; then
 	DOC_LANG=sv
 	TITLE="Provmiljöns instruktioner"
 
-	if [ ! -f /usr/share/digabi-koe-ohje/build/index-${DOC_LANG}.html ]; then
+	if [ ! -f /usr/local/share/digabi-koe-ohje/build/index-${DOC_LANG}.html ]; then
 		echo "Oops, Swedish documentation is missing"
 		DOC_LANG=fi
 		TITLE="Koejärjestelmän ohjeet"
@@ -25,7 +25,9 @@ else
 fi
 
 # Kill existing browsers
-pkill -TERM -f "/usr/bin/digabi-koe-browser"
+pkill koeohje
 
 # Start browser
-/usr/bin/digabi-koe-browser -t "${TITLE}" -W 1045 -H 600 -x 30 -y 30 file:///usr/share/digabi-koe-ohje/build/index-${DOC_LANG}.html &
+abikit-browser -t "${TITLE}" -W 1045 -H 600 -x 30 -y 30 \
+	-n koeohje -i /usr/local/share/digabi-koe-ohje/help-browser.svg \
+	file:///usr/local/share/digabi-koe-ohje/build/index-${DOC_LANG}.html &
