@@ -12,7 +12,6 @@
 	<script type="text/javascript" src="../common/clipboard.min.js"></script>
 	<script type="text/javascript" src="../common/tablesorter/jquery.tablesorter.min.js"></script>
 	<script type="text/javascript" src="../common/js/activetab.js"></script>
-	<script type="text/javascript" src="../common/js/sameHeights.js"></script>
 	<script type="text/javascript" src="../common/js/copyLogic.js"></script>
 	<script type="text/javascript" src="../common/js/tableOfContents.js"></script>
 	<script type="text/javascript" src="../common/js/search.js"></script>
@@ -306,9 +305,9 @@
 			main_tabs.activeTabInitialise = {
 				'abitti': function () { write_to_stdout('abitti'); changePageTo("abitti", lang, main_tabs.tabNames, videoURLPrefix); },
 
-				'math': function () { write_to_stdout('math'); changePageTo("math", lang, main_tabs.tabNames, undefined, function () { setSameHeights(); }); },
-				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang, main_tabs.tabNames, undefined, function () { setSameHeights(); }); },
-				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang, main_tabs.tabNames, undefined, function () { setSameHeights(); }); },
+				'math': function () { write_to_stdout('math'); changePageTo("math", lang, main_tabs.tabNames); },
+				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang, main_tabs.tabNames); },
+				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang, main_tabs.tabNames); },
 
 				'spanish': function () { write_to_stdout('spanish'); changePageTo("spanish", lang, main_tabs.tabNames); },
 				'french': function () { write_to_stdout('french'); changePageTo("french", lang, main_tabs.tabNames); },
