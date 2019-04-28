@@ -77,7 +77,7 @@
 	
 		\[a_{n+1}−a_{n}=d\]
 	
-		<p class="fi">kaikilla positiivisilla kokonaisluvuilla \(n\) Erotus \(d\) on nimeltään jonon differenssi.</p>
+		<p class="fi">kaikilla positiivisilla kokonaisluvuilla \(n\). Erotus \(d\) on nimeltään jonon differenssi.</p>
 		<p class="sv">för alla positiva heltal \(n\). </p>
 
 		<p class="fi">Summa \(S_n = a_1 + \cdots + a_n\) on aritmeettinen, jos ja vain jos vastaava lukujono \((a_{n})\) on aritmeettinen. Aritmeettinen summa lasketaan</p>
@@ -129,8 +129,8 @@
 		<p class="fi">Funktiota \(f\), joka on muotoa \(f(x)=ax+b\), missä \(a \ne 0\), kutsutaan <em>ensimmäisen asteen polynomifunktioksi</em>.</p>
 		<p class="sv">En funktion \(f\) i formen \(f(x)=ax+b\), där \(a \ne 0\), är en <em>polynomfunktion av första graden</em>.</p>
 
-		<p class="fi">Olkoon \(n\) positiivinen luonnollinen luku. Funktiota \(f\), joka on muotoa \(f(x)=a_nx^n + a_{n_1}x^{n-1} + \ldots + a_1 x + a_0\) ja \(a_n\ne 0\), kutsutaan <em>\(n\):nnen asteen polynomifunktioksi</em>.</p>
-		<p class="sv">Låt \(n\) vara ett positivt naturligt tal. En funktion \(f\) i formen \(f(x)=a_nx^n + a_{n_1}x^{n-1} + \ldots + a_1 x + a_0\) där \(a_n\ne 0\), är en <em>polynomfunktion av \(n\):e graden</em>.</p>
+		<p class="fi">Olkoon \(n\) positiivinen luonnollinen luku. Funktiota \(f\), joka on muotoa \(f(x)=a_nx^n + a_{n-1}x^{n-1} + \ldots + a_1 x + a_0\) ja \(a_n\ne 0\), kutsutaan <em>\(n\):nnen asteen polynomifunktioksi</em>.</p>
+		<p class="sv">Låt \(n\) vara ett positivt naturligt tal. En funktion \(f\) i formen \(f(x)=a_nx^n + a_{n-1}x^{n-1} + \ldots + a_1 x + a_0\) där \(a_n\ne 0\), är en <em>polynomfunktion av \(n\):e graden</em>.</p>
 
 	</div>
 	<div class="boxed">
@@ -145,10 +145,10 @@
             \[ax+b=0,\]
             där \(a\ne 0\).</p>
 		<p class="fi">Olkoon \(n\) positiivinen luonnollinen luku.  
-            Yhtälöä \(a_nx^n+a_{n_1}x^{n-1}+ \ldots + a_1 + x a_0 = 0\), missä  
+            Yhtälöä \(a_nx^n+a_{n-1}x^{n-1}+ \ldots + a_1 + x a_0 = 0\), missä  
             \(a\ne 0\), kutsutaan <em>\(n\):nnen asteen yhtälöksi</em>.</p>
 		<p class="sv">Låt \(n\) vara ett positivt naturligt tal. Ekvationen  
-            \(a_nx^n+a_{n_1}x^{n-1}+ \ldots + a_1 + x a_0 = 0\), där \(a\ne 0\),  
+            \(a_nx^n+a_{n-1}x^{n-1}+ \ldots + a_1 + x a_0 = 0\), där \(a\ne 0\),  
             är en ekvation av <em>\(n\):e graden</em>.</p>
 
 		<h3 class="fi">Toisen asteen yhtälön ratkaiseminen</h3>
@@ -257,7 +257,8 @@
 							\(a^n+b^n = (a+b)(a^{n-1}-a^{n-2}b+\cdots-ab^{n-2}+b^{n-1})\), där \(n\) är udda.</li>
 
 			<li><span class="fi">Newtonin binomikaava: </span>
-				<span class="sv">Newtons binomialformel: </span> \((a+b)^n=\sum_{k=o}^n \binom{n}{k}a^{n-k}b^k=\sum_{k=0}^n\frac{n!}{k!(n-k)}a^{n-k}b^k\).</li>
+				<span class="sv">Newtons binomialformel: </span> 
+				\((a+b)^n=\sum_{k=0}^n \binom{n}{k}a^{n-k}b^k=\sum_{k=0}^n\frac{n!}{k!(n-k)!}a^{n-k}b^k\).</li>
 		</ol>
 	</div>
 	<div class="boxed">
@@ -898,7 +899,7 @@
 		<p class="fi">osittaisintegrointi</p>
 		<p class="sv">partiell integrering</p>
 		<ul>
-			<li>\(\int_{ }^{ }f'\left(x\right)g\left(x\right)\ \mathrm{d}x=f\left(x\right)g\left(x\right)-\int_{ }^{ }g'\left(x\right)\ \mathrm{d}x\ f\left(x\right)\ \mathrm{d}x\)</li>
+			<li>\(\int_{ }^{ }f'\left(x\right)g\left(x\right)\ \mathrm{d}x=f\left(x\right)g\left(x\right)-\int_{ }^{ }g'\left(x\right) f\left(x\right)\ \mathrm{d}x\)</li>
 		</ul>
 		<p class="fi">ja yhdistetyn funktion derivaatasta johtuen</p>
 		<p class="sv">och p.g.a. den sammansatta funktionens derivata</p>
@@ -957,9 +958,12 @@
 	<h3 class="fi">Numeerinen integrointi</h3>
 	<h3 class="sv">Numerisk integrering</h3>
 	
-	<p class="fi"><em>Simpsonin säännöllä</em> voidaan approksimoida määrättyä integraalia, kun integroitavan funktion integraalifunktiota ei tunneta tai haluta käyttää. Jos väli \([a,b]\) jaetaan kahteen yhtä pitkään osaväliin, niin tällöin pätee likimääräisesti:</p>
-	<p class="sv"><em>Simpsons regel</em> kan användas för att approximera en integral då integralfunktionen till den funktion som ska integreras inte är känd, eller om man inte vill använda den. Om intervallet \([a,b]\) delas in i två lika stora delintervall, gäller det approximativt att:</p>
-	<p>\(\int _{a}^{b}f(x)\mathrm{d}x\approx \frac {b-a}{6}\left[f(a)+4f\left(\frac {a+b}{2}\right)+f(b)\right]=\frac {h}{3}\left[f(a)+4f\left(\frac {a+b}{2}\right)+f(b)\right]\), <span class="fi">missä</span><span class="sv">där</span> \(h=\frac{b-a}{2}\).</p>
+	<p class="fi"><em>Simpsonin säännöllä</em> voidaan approksimoida määrättyä integraalia, kun integroitavan funktion integraalifunktiota ei tunneta tai haluta käyttää. Jos \(x_0=a\), \(x_n=b\) ja \(n\) on parillinen, niin tällöin pätee likimääräisesti:</p>
+	<p class="sv"><em>Simpsons regel</em> kan användas för att approximera en integral då integralfunktionen till den funktion som ska integreras inte är känd, eller om man inte vill använda den. Om \(x_0=a\), \(x_n=b\) och \(n\) är ett jämt tal, gäller det approximativt att:</p>
+	\[\int _{a}^{b}f(x)\mathrm{d}x\approx \frac {h}{3}\left(f(x_0)+4f(x_1)+2f(x_2)+4f(x_3)+\cdots+4f(x_{n-1})+f(x_n)\right).\]
+	<p class="fi">Virhe: Jos \(a < t < b \), niin</p>
+	<p class="sv">Felet: Om \(a < t < b \), så</p>
+	\[E_n=\frac{(b-a)^5f^{(4)}(t)}{180n^4}.\]
 		
 	</div>	
 </div>
