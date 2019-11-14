@@ -62,8 +62,13 @@ function showTocBasedOnWidth () {
     setTocLinkClick();
   }
   else {
-    $(".js-toc").hide();
-    $(".js-toc").css('top', $("#tab-menu").height());
+    // Hide TOC only if search input does not have focus
+    var searchInput = document.getElementById("js-search-input");
+
+    if (document.activeElement !== searchInput) {
+      $(".js-toc").hide();
+      $(".js-toc").css('top', $("#tab-menu").height());
+    }
   }
 }
 
