@@ -17,10 +17,10 @@
 				<th class="fi">Lukualue</th>
 				<th class="sv">Talområde</th>
 				<th class="fi">Selite</th>
-				<th class="sv">Förklaring</th>			
-				<th class="fi">Merkintä</th>	
-				<th class="sv">Beteckning</th>			
-			</tr> 
+				<th class="sv">Förklaring</th>
+				<th class="fi">Merkintä</th>
+				<th class="sv">Beteckning</th>
+			</tr>
 			<tr>
 				<td class="fi">Luonnolliset luvut</td>
 				<td class="sv">Naturliga tal</td>
@@ -51,7 +51,7 @@
 			<td class="fi">Reaaliluvut</td>
 			<td class="sv">Reella tal</td>
 			<td class="fi">Reaaliluvut ovat lukusuoran pisteitä.</td>
-			<td class="sv">Reella tal är punkter på tallinjen.</td> 
+			<td class="sv">Reella tal är punkter på tallinjen.</td>
 			<td>\[\mathbb{R}\]</td>
 		</tr>
 	</table>
@@ -68,51 +68,51 @@
 		<li class="fi">Osittelulaki: Kaikille luvuille \(a,b\) ja \(c\) pätee \(a(b+c)=ab+ac\).</li>
 		<li class="sv">Distributativa lagen: För alla tal \(a,b\) och \(c\) gäller \(a(b+c)=ab+ac\).</li>
 	</ul>
-	
+
 	<h3 class="fi">Lukujonot</h3>
 	<h3 class="sv">Talföljder</h3>
 	<div class="boxed">
 		<p class="fi">Lukujono \((a_{n})\) on <em>aritmeettinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen erotus on aina sama, eli jos on olemassa sellainen luku \(d\), että</p>
 		<p class="sv">Talföljden \((a_{n})\) är <em>aritmetisk</em>, om differensen \(d\) mellan två på varandra följande element alltid är samma, dvs. om </p>
-	
+
 		\[a_{n+1}−a_{n}=d\]
-	
+
 		<p class="fi">kaikilla positiivisilla kokonaisluvuilla \(n\). Erotus \(d\) on nimeltään jonon differenssi.</p>
 		<p class="sv">för alla positiva heltal \(n\). </p>
-		
+
 		<p class="fi">Aritmeettisen jonon \((a_{n})\) jäsenet saadaan laskettua, jos tiedetään jonon ensimmäinen jäsen \(a_1\) ja jonon differenssi \(d\). Silloin kaikilla positiivisilla kokonaisluvuilla \(n\) pätee</p>
 		<p class="sv">Elementen i den aritmetiska talföljden \((a_{n})\) kan beräknas om talföljdens första element \(a_1\) och differensen \(d\) är kända.  Då gäller för alla positiva heltal \(n\) att</p>
-	
+
 		\[a_n = a_1+(n-1)d.\]
 
 		<p class="fi">Summa \(S_n = a_1 + \cdots + a_n\) on aritmeettinen, jos ja vain jos vastaava lukujono \((a_{n})\) on aritmeettinen. Aritmeettinen summa lasketaan</p>
 		<p class="sv">Summan \(S_n = a_1 + \cdots + a_n\) är aritmetisk, om och endast om talföjden \((a_{n})\) är aritmetisk. Den aritmetiska summan beräknas med formeln</p>
-	
+
 		\[a_1 + \cdots + a_n = n \frac{a_1+a_n}{2}.\]
 	</div>
 	<div class="boxed">
 		<p class="fi">Lukujono \((a_{n})\) on <em>geometrinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen suhde eli osamäärä on aina sama. Toisin sanottuna jos on olemassa sellainen luku \(q\), että</p>
 		<p class="sv">Talföljden \((a_{n})\) är <em>geometrisk</em>, om förhållandet \(q\) mellan två på varandra följande element alltid är samma, dvs. om </p>
-	
+
 		\[\frac{a_{n+1}}{a_n} = q\]
-	
+
 		<p class="fi">kaikilla positiivisilla kokonaisluvuilla \(n\). Suhde \(q\) on nimeltään jonon suhdeluku.</p>
 		<p class="sv">för alla positiva heltal \(n\). Förhållandet \(q\) kallas följdens kvot.</p>
 
 		<p class="fi">Geometrisen jonon \((a_{n})\) jäsenet saadaan laskettua, jos tiedetään jonon ensimmäinen jäsen \(a_1\) ja jonon suhdeluku \(q\), sillä kaikilla positiivisilla kokonaisluvuilla \(n\) pätee</p>
 		<p class="sv">Elementen i den geometriska talföljden \((a_{n})\) kan beräknas om talföljdens första element \(a_1\) och kvot \(q\) är kända, och då gäller för alla positiva heltal \(n\) att</p>
-	
+
 		\[a_n = a_1q^{n-1}.\]
-		
+
 		<p class="fi">Summa \(S_n = a_1 + \cdots + a_n\) on geometrinen, jos ja vain jos vastaava lukujono \((a_{n})\) on geometrinen. Geometrinen summa lasketaan seuraavasti (luku \(n\) kertoo sen, kuinka monta yhteenlaskettavaa summassa on):</p>
 		<p class="sv">Summan \(S_n = a_1 + \cdots + a_n\) är geometrisk, om och endast om talföjden \((a_{n})\) är geometrisk. Den geometriska summan beräknas på följande sätt (talet \(n\) står för antalet tal som ska adderas):</p>
-	
+
 		<ul>
 			<li class="fi">Jos suhdeluku \(q\) on ykkösestä poikkeava eli \(q \neq 1\), niin \(S_n = a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = a_1\cdot \frac{1-q^n}{1-q}\).</li>
 			<li class="sv">Om kvoten \(q\) inte är ett, dvs. \(q \neq 1\), så gäller \(S_n = a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = a_1\cdot \frac{1-q^n}{1-q}\).</li>
 			<li class="fi">Jos suhdeluku \(q\) on yksi eli \(q = 1\), niin \(S_n = a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = na_1\).</li>
 			<li class="sv">Om kvoten \(q\) är ett, dvs. \(q = 1\), så gäller \(S_n = a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = na_1\).</li>
-		</ul>	
+		</ul>
 	</div>
 </div>
 <h2 class="fi">Funktiot ja yhtälöt</h2>
@@ -143,28 +143,28 @@
 		<h3 class="sv">Ekvationer</h3>
 		<p class="fi">Yhtälön <em>ratkaisu</em> tai <em>juuri</em> tarkoittaa lukua, joka muuttujan paikalle sijoitettuna tekee yhtälön vasemmasta ja oikeasta puolesta yhtä suuria.</p>
 		<p class="sv">Ekvationens <em>lösning</em> eller <em>rot</em> är ett tal, som när det placeras i stället för variabeln leder till att vänstra och högra ledet av ekvationen är lika stora.</p>
-		<p class="fi">Ensimmäisen asteen yhtälö tarkoittaa yhtälöä, joka voidaan esittää muodossa 
+		<p class="fi">Ensimmäisen asteen yhtälö tarkoittaa yhtälöä, joka voidaan esittää muodossa
 		\[ax+b=0,\]
             missä \(a\ne 0\).</p>
 		<p class="sv">En ekvation av första graden är en ekvation, som kan anges i formen
             \[ax+b=0,\]
             där \(a\ne 0\).</p>
-		<p class="fi">Olkoon \(n\) positiivinen luonnollinen luku.  
-            Yhtälöä \(a_nx^n+a_{n-1}x^{n-1}+ \ldots + a_1 + x a_0 = 0\), missä  
+		<p class="fi">Olkoon \(n\) positiivinen luonnollinen luku.
+            Yhtälöä \(a_nx^n+a_{n-1}x^{n-1}+ \ldots + a_1 + x a_0 = 0\), missä
             \(a\ne 0\), kutsutaan <em>\(n\):nnen asteen yhtälöksi</em>.</p>
-		<p class="sv">Låt \(n\) vara ett positivt naturligt tal. Ekvationen  
-            \(a_nx^n+a_{n-1}x^{n-1}+ \ldots + a_1 + x a_0 = 0\), där \(a\ne 0\),  
+		<p class="sv">Låt \(n\) vara ett positivt naturligt tal. Ekvationen
+            \(a_nx^n+a_{n-1}x^{n-1}+ \ldots + a_1 + x a_0 = 0\), där \(a\ne 0\),
             är en ekvation av <em>\(n\):e graden</em>.</p>
 
 		<h3 class="fi">Toisen asteen yhtälön ratkaiseminen</h3>
 		<h3 class="sv">Lösning av andragradsekvationer</h3>
-		<p class="fi">Toisen asteen yhtälön \(ax^2 + bx + c = 0\)  
+		<p class="fi">Toisen asteen yhtälön \(ax^2 + bx + c = 0\)
             ratkaisut saadaan kaavalla</p>
-		<p class="sv">Lösningarna till en andragradsekvation \(ax^2 +  
+		<p class="sv">Lösningarna till en andragradsekvation \(ax^2 +
             bx + c = 0\) fås med formeln</p>
         \[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}.\]
-		<p class="fi">Ratkaisukaavassa neliöjuurimerkin alle tulevaa  
-            lukua \(b^2-4ac\), kutsutaan <em>diskriminantiksi</em> ja merkitään  
+		<p class="fi">Ratkaisukaavassa neliöjuurimerkin alle tulevaa
+            lukua \(b^2-4ac\), kutsutaan <em>diskriminantiksi</em> ja merkitään
             \(D\).</p>
 		<p class="sv">Talet \(b^2-4ac\) i formeln kallas <em>diskriminant</em> och betecknas \(D\).</p>
 		<p class="fi">Jos \(D > 0\), on yhtälöllä kaksi ratkaisua.</p>
@@ -203,12 +203,12 @@
 			<li class="sv">Kvotens absolutbelopp är lika stort som kvoten av absolutbeloppen</li>
 			\[\left|\frac{a}{b}\right| = \frac{\left|a\right|}{\left|b\right|}\]
 			<li class="fi">Kolmioepäyhtälö</li>
-			<li class="sv">Triangelolikheten</li>		
+			<li class="sv">Triangelolikheten</li>
 			\[\left|\left|a\right|-\left|b\right|\right| \leq \left|a+b\right| \leq \left|a\right|+\left|b\right|.\]
 		</ol>
 	</div>
 	<div class="boxed">
-					
+
 		<h3 class="fi">Potenssi</h3>
 		<h3 class="sv">Potens</h3>
 
@@ -226,10 +226,10 @@
 		<ol>
 			<li class="fi">Samankantaisten potenssien tulo: \(a^ma^n=a^{m+n}\).</li>
 			<li class="sv">Produkten av potenser med samma bas: \(a^ma^n=a^{m+n}\).</li>
-						
+
 			<li class="fi">Samankantaisten potenssien osamäärä: \(\frac {a^m}{a^n}=a^{m-n}\), missä \(a\neq 0\).</li>
 			<li class="sv">Kvoten av potenser med samma bas: \(\frac{a^m}{a^n}=a^{m-n}\), där \(a\neq 0\).</li>
-							
+
 			<li class="fi">Tulon potenssi: \((ab)^n=a^nb^n\).</li>
 			<li class="sv">Potens av en produkt: \((ab)^n=a^nb^n\).</li>
 
@@ -257,12 +257,12 @@
 
 			<li class="fi">Potenssien yhteenlasku: <br />
 							\(a^n+b^n = (a+b)(a^{n-1}-a^{n-2}b+\cdots-ab^{n-2}+b^{n-1})\), missä \(n\) on pariton.</li>
-							
+
 			<li class="sv">Addition av potenser: <br />
 							\(a^n+b^n = (a+b)(a^{n-1}-a^{n-2}b+\cdots-ab^{n-2}+b^{n-1})\), där \(n\) är udda.</li>
 
 			<li><span class="fi">Newtonin binomikaava: </span>
-				<span class="sv">Newtons binomialformel: </span> 
+				<span class="sv">Newtons binomialformel: </span>
 				\((a+b)^n=\sum_{k=0}^n \binom{n}{k}a^{n-k}b^k=\sum_{k=0}^n\frac{n!}{k!(n-k)!}a^{n-k}b^k\).</li>
 		</ol>
 	</div>
@@ -296,7 +296,7 @@
 
 		<h4 class="fi">Logaritmin laskusääntöjä</h4>
 		<h4 class="sv">Räkneregler med logaritmer</h4>
-		
+
 		<ol>
 			<li>\(\log xy = \log x + \log y\)</li>
 			<li>\(\log \frac{x}{y} = \log x -\log y\)</li>
@@ -319,7 +319,7 @@
 		\[x_{n+1}=x_{n}-\frac{x_{n}-x_{n-1}}{f(x_{n})-f(x_{n-1})}f(x_{n}).\]
 	</div>
 </div>
-	
+
 <h2 class="fi">Geometria</h2>
 <h2 class="sv">Geometri</h2>
 
@@ -327,7 +327,7 @@
 	<div class="boxed">
 		<h3 class="fi">Ympyrä</h3>
 		<h3 class="sv">Cirkel</h3>
-							
+
 		<p class="fi">Tason pisteet, jotka ovat vakioetäisyydellä  kiinteästä pisteestä, muodostavat <em>ympyrän</em>. Kiinteä  piste on ympyrän <em>keskipiste</em> ja vakioetäisyys sen <em>säde</em>.</p>
 		<p class="sv">De punkter i ett plan, som har ett konstant avstånd till en given punkt, bildar en <em>cirkel</em>. Den givna punkten är cirkelns <em>medelpunkt</em> och det konstanta avståndet cirkelns <em>radie</em>.</p>
 
@@ -376,7 +376,7 @@
 		<p class="fi">Kolmion pinta-ala \(A\) on \(A=\frac{ah}{2}\),  missä \(a\) on kolmion kannan pituus ja \(h\) on korkeus.</p>
 		<p class="sv">Triangelns area \(A\) är \(A=\frac{ah}{2}\),  där \(a\) är längden på triangelns bas och \(h\) är triangelns höjd.</p>
 		<img src="../common/images/math/kolmion-pinta-ala.png"  alt="Kolmion pinta-ala - Triangelns area" />
-									
+
 		<p class="fi">Kolmion kulmien summa on 180°.</p>
 		<p class="sv">Summan av vinklarna i en triangel är 180°.</p>
 
@@ -387,7 +387,7 @@
 		<p class="fi">Suorakulmaisessa kolmiossa terävän kulman \(\alpha\) sini, kosini ja tangetti tarkoittavat kolmion sivujen pituuksien suhteita.</p>
 		<p class="sv">I en rätvinklig triangel betyder sinus, cosinus och tangens av en spetsig vinkel \(\alpha\) förhållandet mellan längderna av triangelns sidor.</p>
 		<img src="../common/images/math/kosini-sini-tangentti.png" alt="Kosini, sini ja tangentti - Cosinus, sinus och tangens" />
-										
+
 		<p class="fi">Yllä olevan kuvion merkinnöillä</p>
 		<p class="sv">Med figurens beteckningar gäller att</p>
          \[\sin \alpha = \dfrac{a}{c}\]
@@ -419,22 +419,22 @@
 		<p class="sv">Sfärens volym \(V\) och area \(A\) beror på sfärens radie \(r\) enligt följande:</p>
          \[V = \frac{4\pi r^3}{3}\]
          \[A = 4\pi r^2\]
-		 
+
 		<p class="fi"> Jos taso leikkaa pallon sisältä kappaleen, kutsutaan sitä <em>pallosegmentiksi</em>, ja erottaa pallon pinnasta  <em>kalotin</em>. Pallosegmentin tilavuus \(V_S\) ja kalotin pinta-ala  \(A_K\) riippuvat pallosegmentin korkeudesta \(h\) ja pallon säteestä \(r\) seuraavasti:</p>
 		<p class="sv"> Om ett plan avskiljer ett stycke i sfären (klotet) kallas detta ett <em>sfäriskt segment</em> eller <em>klotsegment</em>. Samtidigt avgränsar planet en <em>kalott</em> på sfärens yta. Det sfäriska segmentets volym \(V_S\) och kalottens area \(A_K\) beror på höjden \(h\) av det sfäriska segmentet och sfärens radie \(r\) enligt följande:</p>
          \[V_S = \pi h^2 \left(r-\dfrac{h}{3}\right)\]
          \[A_K = 2\pi rh\]
 		<img src="../common/images/math/pallosegmentti-kalotti.png" alt="Pallosegmentti ja kalott i- Sfäriska segmentet och kalotten" />
 	</div>
-	
+
 	<div class="boxed">
 		<h3 class="fi">Lieriöt</h3>
 		<h3 class="sv">Cylindrar</h3>
-		
+
 		<p class="fi"><em>Ympyrälieriön</em> pohja on ympyrä. <em>Särmiö</em> eli <em>prisma</em> on lieriö, jonka pohja on monikulmio.</p>
 		<p class="sv">Basytorna i en <em>cirkulär cylinder</em> är cirklar. Ett <em>prisma</em> är en cylinder, vars basytor är polygoner.</p>
 		<img src="../common/images/math/ympyralierio-sarmio.png" alt="Ympyrälieriö ja särmiö - Cirkulär cylinder och prima" />
-										
+
 		<p class="fi"><em>Suora lieriö</em> tarkoittaa lieriötä, jonka vaippa on kohtisuorassa pohjaa vastaan.</p>
 		<p class="sv">För en <em>rak cylinder</em> gäller, att dess mantelyta ligger vinkelrätt mot basytorna.</p>
 		<img src="../common/images/math/suora-lierio.png" alt="Suora lierio - Rak cylinder" />
@@ -454,11 +454,11 @@
 	<div class="boxed">
 		<h3 class="fi">Kartiot</h3>
 		<h3 class="sv">Koner</h3>
-		
+
 		<p class="fi"><em>Ympyräkartion</em> pohja on ympyrä. <em>Pyramidi</em> on kartio, jonka pohja on monikulmio.</p>
 		<p class="sv">Basytan i en <em>cirkulär kon</em> begränsas av en cirkel. <em>Pyramiden</em> är en kon, vars bas är en polygon.</p>
 		<img src="../common/images/math/ympyrakartio-pyramidi.png" alt="Ympyräkartio ja pyramidi - Cirkulär kon och pyramid" />
-										
+
 		<p class="fi"><em>Suoran kartion</em> huipusta piirretty korkeusjanan toinen päätepiste on pohjan keskipisteessä.</p>
 		<p class="sv">För en <em>rät kon</em> gäller att ena ändpunkten för höjden som dras från konens topp ligger i basytans medelpunkt eller mittpunkt.</p>
 		<img src="../common/images/math/suora-kartio.png" alt="Suora kartio - Rät kon" />
@@ -478,7 +478,7 @@
 
 		<p class="fi"><em>Katkaistu kartio</em> muodostuu kartiosta, jonka huippu on leikattu pois pohjan suuntaisella tasolla.</p>
 		<p class="sv">En <em>stympad kon</em> bildas av en kon, vars topp har skurits bort med ett plan som är parallellt med basytan.</p>
-										
+
 		<p class="fi">Katkaistun kartion tilavuus \(V\) on alla olevan kuvan merkinnöin:</p>
 		<p class="sv">Volymen \(V\) av en stympad kon är med beteckningarna i figuren nedan:</p>
         \[V = \frac{h}{3}\left(A_1+A_2+ \sqrt{A_1A_2}\right)\]
@@ -495,7 +495,7 @@
 		<h3 class="sv">Radian</h3>
 
 		<p class="fi">Kulman suuruus <em>radiaaneina</em> on kulmaa vastaavan ympyrän kaaren pituuden suhde ympyrän säteeseen:</p>
-		<p class="sv">En vinkels storlek i <em>radianer</em> är förhållandet mellan bågens längd och radiens längd.</p> 
+		<p class="sv">En vinkels storlek i <em>radianer</em> är förhållandet mellan bågens längd och radiens längd.</p>
 		\[\alpha=\frac{b}{r}\]
 		<img src="../common/images/math/radiaani.png" alt="Radiaani" />
 
@@ -513,23 +513,23 @@
 	<div class="boxed">
 		<h3 class="fi">Suunnattu kulma</h3>
 		<h3 class="sv">Riktad vinkel</h3>
-	
+
 		<p class="fi">Suunnattu kulma ilmaisee kierron suunnan ja suuruuden. Kierto vastapäivään on positiivinen: </p>
 		<p class="sv">Den riktade vinkeln uttrycker vridningens riktning och storlek. En vridning moturs är positiv:</p>
 		<img src="../common/images/math/suunnattu-pos.png" alt="Suunnattu kulma, kierto vastapäivään" />
-			
+
 		<p class="fi">Kierto myötäpäivään on negatiivinen: </p>
 		<p class="sv">En vridning medurs är negativ:</p>
 		<img src="../common/images/math/suunnattu-neg.png" alt="Suunnattu kulma, kierto myötäpäivään" />
 	</div>
-	<div class="boxed">	
+	<div class="boxed">
 		<h3 class="fi">Suunnatun kulman sini, kosini ja tangentti</h3>
 		<h3 class="sv">Den riktade vinkelns sinus, cosinus och tangens</h3>
 
 		<p class="fi">Kulman \(\alpha\) sini on kulman \(\alpha\) kehäpisteen \(y\)-koordinaatti: </p>
 		<p class="sv">Sinus för vinkeln \(\alpha\) är \(y\)-koordinaten för periferipunkten till vinkeln \(\alpha\):</p>
 		<img src="../common/images/math/suunnattu-sin.png" alt="Suunnatun kulman sini" />
-		
+
 		<p class="fi">Kulman sinin arvo on aina lukujen -1 ja 1 välissä, ts. kaikilla kulmilla \(\alpha\) pätee</p>
 		<p class="sv">Värdet av sinus för vinkeln är mellan -1 och 1, dvs. för alla vinklar \(\alpha\) gäller</p>
 		\[-1 \le\sin\alpha\le 1.\]
@@ -537,26 +537,26 @@
 		<p class="fi">Kulman sini on positiivinen, jos kulman kehäpiste on koordinaatiston I tai II neljänneksessä. Muussa tapauksessa kulman sini on negatiivinen.</p>
 		<p class="sv">Sinus för vinkeln är positiv, om vinkelns periferipunkt ligger i koodinatsystemets I eller II kvadrant. I övriga fall är sinus för vinkeln negativ.</p>
 		<img src="../common/images/math/sin-etumerkki.png" alt="Sinin etumerkki" />
-		
+
 		<p class="fi">Kulman \(\alpha\) kosini on kulman \(\alpha\) kehäpisteen \(x\)-koordinaatti: </p>
 		<p class="sv">Cosinus för vinkeln \(\alpha\) är \(x\)-koordinaten för periferipunkten till vinkeln \(\alpha\):</p>
 		<img src="../common/images/math/suunnattu-kos.png" alt="Suunnatun kulman kosini" />
-											
+
 		<p class="fi">Kulman kosinin arvo on aina lukujen -1 ja 1 välissä, ts. kaikilla kulmilla \(\alpha\) pätee</p>
 		<p class="sv">Värdet av cosinus för vinkeln är mellan -1 och 1, dvs. för alla vinklar \(\alpha\) gäller</p>
 		\[ -1\le\cos\alpha\le 1.\]
-											
+
 		<p class="fi">Kulman kosini on positiivinen, jos kulman kehäpiste on koordinaatiston I tai IV neljänneksessä. Muussa tapauksessa kulman kosini on negatiivinen. </p>
 		<p class="sv">Cosinus för vinkeln är positiv, om vinkelns periferipunkt ligger i koordinatsystemets I eller IV kvadrant. I övriga fall är cosinus för vinkeln negativ.</p>
 		<img src="../common/images/math/kos-etumerkki.png" alt="Kosinin etumerkki" />
-		
+
 		<p class="fi">Oletetaan, että kulman \(\alpha\) kehäpiste ei ole \(y\)-akselilla eli \(\alpha \neq 90^° + n \cdot 180^°\) kaikilla  kokonaisluvuilla \(n\). Kulman \(\alpha\) tangentti on kulman \(\alpha\) tangenttipisteen \(y\)-koordinaatti.</p>
 		<p class="sv">Anta att periferipunkten för vinkeln \(\alpha\) inte ligger på \(y\)-axeln, dvs. \(\alpha \neq 90^° + n \cdot 180^°\) för alla hela tal \(n\). Tangens för vinkeln \(\alpha\) är \(y\)-koordinaten för tangentpunkten till vinkeln \(\alpha\).</p>
 
 		<p class="fi">Piirretään yksikköympyrälle tangentti pisteeseen (1,0). Tämän tangenttisuoran ja suunnatun kulman \(\alpha\) kyljen mukaisesti kulkevan suoran leikkauspiste on kulman \(\alpha\) tangenttipiste. </p>
 		<p class="sv">Vi ritar en tangent till enhetscirkeln i punkten (1,0). Skärningspunkten mellan tangenten och vinkeln \(\alpha\):s vänstra vinkelben eller dess förlängning är tangentpunkt till vinkeln \(\alpha\).</p>
 		<img src="../common/images/math/suunnattu-tan.png" alt="Suunnatun kulman tangentti" />
-											
+
 		<p class="fi">Kulman tangentti voi olla mikä tahansa reaaliluku. Kulman tangentti on positiivinen, jos kulman kehäpiste on koordinaatiston I tai III neljänneksessä. Muussa tapauksessa kulman tangentti on negatiivinen.</p>
 		<p class="sv">Tangens för en vinkel kan vara vilket reellt tal som helst. Tangens för vinkeln är positiv, om vinkelns periferipunkt ligger i koordinatsystemets I eller III kvadrant. I övriga fall är tangens för vinkeln negativ.</p>
 		<img src="../common/images/math/tan-etumerkki.png" alt="Tangentin  etumerkki" />
@@ -564,7 +564,7 @@
 	<div class="boxed">
 		<h3 class="fi">Sini-, kosini- ja tangenttifunktion ominaisuuksia </h3>
 		<h3 class="sv">Egenskaper för sinus-, cosinus- och tangensfunktioner</h3>
-	
+
 		<p class="fi">Sini- ja kosini funktioiden arvojoukko on suljettu väli \(\left[ -1,1\right]\).</p>
 		<p class="sv">Värdemängden för både sinus- och cosinusfunktionen är det slutna intervallet\(\left[ -1,1\right]\).</p>
 
@@ -625,7 +625,284 @@
 			</li>
 		</ol>
 	</div>
-	
+	<div class="boxed">
+		<h3 class="fi">Trigonometristen funktioiden tarkkoja arvoja</h3>
+		<h3 class="sv">Exakta värden för trigonometriska funktioner</h3>
+
+		<table class="formulae">
+			<thead>
+				<tr>
+					<td>&deg;</td>
+					<td>rad</td>
+					<td>sin</td>
+					<td>cos</td>
+					<td>tan</td>
+					<td>cot</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>\[0\]</td><td>0</td>
+					<td>\[0\]</td>
+					<td>\[1\]</td>
+					<td>\[0\]</td>
+					<td>\[-\]</td>
+				</tr>
+				<tr>
+					<td>\[15\]</td><td>\[\frac{\pi}{12}\]</td>
+					<td>\[\frac{1}{4}(\sqrt{6}-\sqrt{2})\]</td>
+					<td>\[\frac{1}{4}(\sqrt{6}+\sqrt{2})\]</td>
+					<td>\[2-\sqrt{3}\]</td>
+					<td>\[2+\sqrt{3}\]</td>
+				</tr>
+				<tr>
+					<td>\[18\]</td><td>\[\frac{\pi}{10}\]</td>
+					<td>\[\frac{1}{4}(\sqrt{5}-1)\]</td>
+					<td>\[\frac{1}{4}\sqrt{10+2\sqrt{5}}\]</td>
+					<td>\[\frac{1}{5}\sqrt{25-10\sqrt{5}}\]</td>
+					<td>\[\sqrt{5+2\sqrt{5}}\]</td>
+				</tr>
+				<tr>
+					<td>\[22,5\]</td><td>\[\frac{\pi}{8}\]</td>
+					<td>\[\frac{1}{2}\sqrt{2-\sqrt{2}}\]</td>
+					<td>\[\frac{1}{2}\sqrt{2+\sqrt{2}}\]</td>
+					<td>\[\sqrt{2}-1\]</td>
+					<td>\[\sqrt{2}+1\]</td>
+				</tr>
+				<tr>
+					<td>\[30\]</td><td>\[\frac{\pi}{6}\]</td>
+					<td>\[\frac{1}{2}\]</td>
+					<td>\[\frac{\sqrt{3}}{2}\]</td>
+					<td>\[\frac{1}{\sqrt{3}}\]</td>
+					<td>\[\sqrt{3}\]</td>
+				</tr>
+				<tr>
+					<td>\[36\]</td><td>\[\frac{\pi}{5}\]</td>
+					<td>\[\frac{1}{4}\sqrt{10-2\sqrt{5}}\]</td>
+					<td>\[\frac{1}{4}(\sqrt{5}+1)\]</td>
+					<td>\[\sqrt{5-2\sqrt{5}}\]</td>
+					<td>\[\frac{1}{5}\sqrt{25+10\sqrt{5}}\]</td>
+				</tr>
+				<tr>
+					<td>\[45\]</td><td>\[\frac{\pi}{4}\]</td>
+					<td>\[\frac{1}{\sqrt{2}}\]</td>
+					<td>\[\frac{1}{\sqrt{2}}\]</td>
+					<td>\[1\]</td>
+					<td>\[1\]</td>
+				</tr>
+				<tr>
+					<td>\[54\]</td><td>\[\frac{3\pi}{10}\]</td>
+					<td>\[\frac{1}{4}(\sqrt{5}+1)\]</td>
+					<td>\[\frac{1}{4}\sqrt{10-2\sqrt{5}}\]</td>
+					<td>\[\frac{1}{5}\sqrt{25+10\sqrt{5}}\]</td>
+					<td>\[\sqrt{5-2\sqrt{5}}\]</td>
+				</tr>
+				<tr>
+					<td>\[60\]</td><td>\[\frac{\pi}{3}\]</td>
+					<td>\[\frac{\sqrt{3}}{2}\]</td>
+					<td>\[\frac{1}{2}\]</td>
+					<td>\[\sqrt{3}\]</td>
+					<td>\[\frac{1}{\sqrt{3}}\]</td>
+				</tr>
+				<tr>
+					<td>\[67,5\]</td><td>\[\frac{3\pi}{8}\]</td>
+					<td>\[\frac{1}{2}\sqrt{2+\sqrt{2}}\]</td>
+					<td>\[\frac{1}{2}\sqrt{2-\sqrt{2}}\]</td>
+					<td>\[\sqrt{2}+1\]</td>
+					<td>\[\sqrt{2}-1\]</td>
+				</tr>
+				<tr>
+					<td>\[72\]</td><td>\[\frac{2\pi}{5}\]</td>
+					<td>\[\frac{1}{4}\sqrt{10+2\sqrt{5}}\]</td>
+					<td>\[\frac{1}{4}(\sqrt{5}-1)\]</td>
+					<td>\[\sqrt{5+2\sqrt{5}}\]</td>
+					<td>\[\frac{1}{5}\sqrt{25-10\sqrt{5}}\]</td>
+				</tr>
+				<tr>
+					<td>\[75\]</td><td>\[\frac{5\pi}{12}\]</td>
+					<td>\[\frac{1}{4}(\sqrt{6}+\sqrt{2})\]</td>
+					<td>\[\frac{1}{4}(\sqrt{6}-\sqrt{2})\]</td>
+					<td>\[2+\sqrt{3}\]</td>
+					<td>\[2-\sqrt{3}\]</td>
+				</tr>
+				<tr>
+					<td>\[90\]</td><td>\[\frac{\pi}{2}\]</td>
+					<td>\[1\]</td>
+					<td>\[0\]</td>
+					<td>\[-\]</td>
+					<td>\[0\]</td>
+				</tr>
+				<tr>
+					<td>\[105\]</td><td>\[\frac{7\pi}{12}\]</td>
+					<td>\[\frac{1}{4}(\sqrt{6}+\sqrt{2})\]</td>
+					<td>\[-\frac{1}{4}(\sqrt{6}-\sqrt{2})\]</td>
+					<td>\[-(2+\sqrt{3})\]</td>
+					<td>\[\sqrt{3}-2\]</td>
+				</tr>
+				<tr>
+					<td>\[108\]</td><td>\[\frac{3\pi}{5}\]</td>
+					<td>\[\frac{1}{4}\sqrt{10+2\sqrt{5}}\]</td>
+					<td>\[-\frac{1}{4}(\sqrt{5}-1)\]</td>
+					<td>\[-\sqrt{5+2\sqrt{5}}\]</td>
+					<td>\[-\frac{1}{5}\sqrt{25-10\sqrt{5}}\]</td>
+				</tr>
+				<tr>
+					<td>\[112,5\]</td><td>\[\frac{5\pi}{8}\]</td>
+					<td>\[\frac{1}{2}\sqrt{2+\sqrt{2}}\]</td>
+					<td>\[-\frac{1}{2}\sqrt{2-\sqrt{2}}\]</td>
+					<td>\[-\sqrt{3+2\sqrt{2}}\]</td>
+					<td>\[-\sqrt{3-2\sqrt{2}}\]</td>
+				</tr>
+				<tr>
+					<td>\[120\]</td><td>\[\frac{2\pi}{3}\]</td>
+					<td>\[\frac{\sqrt{3}}{2}\]</td>
+					<td>\[-\frac{1}{2}\]</td>
+					<td>\[-\sqrt{3}\]</td>
+					<td>\[-\frac{1}{\sqrt{3}}\]</td>
+				</tr>
+				<tr>
+					<td>\[126\]</td><td>\[\frac{7\pi}{10}\]</td>
+					<td>\[\frac{1}{4}(\sqrt{5}+1)\]</td>
+					<td>\[-\frac{1}{4}\sqrt{10-2\sqrt{5}}\]</td>
+					<td>\[-\frac{1}{5}\sqrt{25+10\sqrt{5}}\]</td>
+					<td>\[-\sqrt{5-2\sqrt{5}}\]</td>
+				</tr>
+				<tr>
+					<td>\[135\]</td><td>\[\frac{3\pi}{4}\]</td>
+					<td>\[\frac{1}{\sqrt{2}}\]</td>
+					<td>\[-\frac{1}{\sqrt{2}}\]</td>
+					<td>\[-1\]</td>
+					<td>\[-1\]</td>
+				</tr>
+				<tr>
+					<td>\[144\]</td><td>\[\frac{4\pi}{5}\]</td>
+					<td>\[\frac{1}{4}\sqrt{10-2\sqrt{5}}\]</td>
+					<td>\[-\frac{1}{4}(\sqrt{5}+1)\]</td>
+					<td>\[-\sqrt{5-2\sqrt{5}}\]</td>
+					<td>\[-\frac{1}{5}\sqrt{25+10\sqrt{5}}\]</td>
+				</tr>
+				<tr>
+					<td>\[150\]</td><td>\[\frac{5\pi}{6}\]</td>
+					<td>\[\frac{1}{2}\]</td>
+					<td>\[-\frac{\sqrt{3}}{2}\]</td>
+					<td>\[-\frac{1}{\sqrt{3}}\]</td>
+					<td>\[-\sqrt{3}\]</td>
+				</tr>
+				<tr>
+					<td>\[157,5\]</td><td>\[\frac{7\pi}{8}\]</td>
+					<td>\[\frac{1}{2}\sqrt{2-\sqrt{2}}\]</td>
+					<td>\[-\frac{1}{2}\sqrt{2+\sqrt{2}}\]</td>
+					<td>\[1-\sqrt{2}\]</td>
+					<td>\[-(\sqrt{2}+1)\]</td>
+				</tr>
+				<tr>
+					<td>\[162\]</td><td>\[\frac{9\pi}{10}\]</td>
+					<td>\[\frac{1}{4}(\sqrt{5}-1)\]</td>
+					<td>\[-\frac{1}{4}\sqrt{10+2\sqrt{5}}\]</td>
+					<td>\[-\frac{1}{5}\sqrt{25-10\sqrt{5}}\]</td>
+					<td>\[-\sqrt{5+2\sqrt{5}}\]</td>
+				</tr>
+				<tr>
+					<td>\[165\]</td><td>\[\frac{11\pi}{12}\]</td>
+					<td>\[\frac{1}{4}(\sqrt{6}-\sqrt{2})\]</td>
+					<td>\[-\frac{1}{4}(\sqrt{6}+\sqrt{2})\]</td>
+					<td>\[\sqrt{3}-2\]</td>
+					<td>\[-(2+\sqrt{3})\]</td>
+				</tr>
+				<tr>
+					<td>\[180\]</td><td>\[\pi\]</td>
+					<td>\[0\]</td>
+					<td>\[-1\]</td>
+					<td>\[0\]</td>
+					<td>\[-\]</td>
+				</tr>
+				<tr>
+					<td>\[195\]</td><td>\[\frac{13\pi}{12}\]</td>
+					<td>\[-\frac{1}{4}(\sqrt{6}-\sqrt{2})\]</td>
+					<td>\[-\frac{1}{4}(\sqrt{6}+\sqrt{2})\]</td>
+					<td>\[2-\sqrt{3}\]</td>
+					<td>\[2+\sqrt{3}\]</td>
+				</tr>
+				<tr>
+					<td>\[210\]</td><td>\[\frac{7\pi}{6}\]</td>
+					<td>\[-\frac{1}{2}\]</td>
+					<td>\[-\frac{\sqrt{3}}{2}\]</td>
+					<td>\[\frac{1}{\sqrt{3}}\]</td>
+					<td>\[\sqrt{3}\]</td>
+				</tr>
+				<tr>
+					<td>\[225\]</td><td>\[\frac{5\pi}{4}\]</td>
+					<td>\[-\frac{1}{\sqrt{2}}\]</td>
+					<td>\[-\frac{1}{\sqrt{2}}\]</td>
+					<td>\[1\]</td>
+					<td>\[1\]</td>
+				</tr>
+				<tr>
+					<td>\[240\]</td><td>\[\frac{4\pi}{3}\]</td>
+					<td>\[-\frac{\sqrt{3}}{2}\]</td>
+					<td>\[-\frac{1}{2}\]</td>
+					<td>\[\sqrt{3}\]</td>
+					<td>\[\frac{1}{\sqrt{3}}\]</td>
+				</tr>
+				<tr>
+					<td>\[255\]</td><td>\[\frac{17\pi}{12}\]</td>
+					<td>\[-\frac{1}{4}(\sqrt{6}+\sqrt{2})\]</td>
+					<td>\[-\frac{1}{4}(\sqrt{6}-\sqrt{2})\]</td>
+					<td>\[2+\sqrt{3}\]</td>
+					<td>\[2-\sqrt{3}\]</td>
+				</tr>
+				<tr>
+					<td>\[270\]</td><td>\[\frac{3\pi}{2}\]</td>
+					<td>\[-1\]</td>
+					<td>\[0\]</td>
+					<td>\[-\]</td>
+					<td>\[0\]</td>
+				</tr>
+				<tr>
+					<td>\[285\]</td><td>\[\frac{19\pi}{12}\]</td>
+					<td>\[-\frac{1}{4}(\sqrt{6}+\sqrt{2})\]</td>
+					<td>\[\frac{1}{4}(\sqrt{6}-\sqrt{2})\]</td>
+					<td>\[-(2+\sqrt{3})\]</td>
+					<td>\[\sqrt{3}-2\]</td>
+				</tr>
+				<tr>
+					<td>\[300\]</td><td>\[\frac{5\pi}{3}\]</td>
+					<td>\[-\frac{\sqrt{3}}{2}\]</td>
+					<td>\[\frac{1}{2}\]</td>
+					<td>\[-\sqrt{3}\]</td>
+					<td>\[-\frac{1}{\sqrt{3}}\]</td>
+				</tr>
+				<tr>
+					<td>\[315\]</td><td>\[\frac{7\pi}{4}\]</td>
+					<td>\[-\frac{1}{\sqrt{2}}\]</td>
+					<td>\[\frac{1}{\sqrt{2}}\]</td>
+					<td>\[-1\]</td>
+					<td>\[-1\]</td>
+				</tr>
+				<tr>
+					<td>\[330\]</td><td>\[\frac{11\pi}{6}\]</td>
+					<td>\[-\frac{1}{2}\]</td>
+					<td>\[\frac{\sqrt{3}}{2}\]</td>
+					<td>\[-\frac{1}{\sqrt{3}}\]</td>
+					<td>\[-\sqrt{3}\]</td>
+				</tr>
+				<tr>
+					<td>\[345\]</td><td>\[\frac{23\pi}{12}\]</td>
+					<td>\[-\frac{1}{4}(\sqrt{6}-\sqrt{2})\]</td>
+					<td>\[\frac{1}{4}(\sqrt{6}+\sqrt{2})\]</td>
+					<td>\[\sqrt{3}-2\]</td>
+					<td>\[-(2+\sqrt{3})\]</td>
+				</tr>
+				<tr>
+					<td>\[360\]</td><td>\[2\pi\]</td>
+					<td>\[0\]</td>
+					<td>\[1\]</td>
+					<td>\[0\]</td>
+					<td>\[-\]</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
 
 <h2 class="fi">Vektorit</h2>
@@ -635,54 +912,54 @@
 	<div class="boxed">
 		<h3 class="fi">Paikkavektori</h3>
 		<h3 class="sv">Ortsvektor</h3>
-		
+
 		<p class="fi">Vektori, joka lähtee origosta ja joka loppuu pisteeseen \(P\), on pisteen \(P\) <em>paikkavektori</em>. Pisteen \(P\) paikkavektoria voidaan merkitä \(\overline{\mathrm{OP}}\).</p>
 		<p class="sv">En vektor, som har startpunkten i origo och slutpunkten \(P\), är <em>ortsvektor</em> för punkten \(P\). Ortsvektorn för punkten \(P\) kan betecknas \(\overline{\mathrm{OP}}\).</p>
 	</div>
 	<div class="boxed">
 		<h3 class="fi">Vektorien laskutoimituksia kantavektoreiden avulla</h3>
 		<h3 class="sv">Räkneoperationer med hjälp av basvektorer</h3>
-		
+
 		<p>	<span class="fi">Tason vektorien summa:</span>
 			<span class="sv">Summan av vektorer i planet:</span>
-			\((x_1\overline{\mathrm{i}}+y_1\overline{\mathrm{j}})+(x_2\overline{\mathrm{i}}+y_2\overline{\mathrm{j}})=(x_1+x_2)\overline{\mathrm{i}}+(y_1+y_2)\overline{\mathrm{j}}\) 
+			\((x_1\overline{\mathrm{i}}+y_1\overline{\mathrm{j}})+(x_2\overline{\mathrm{i}}+y_2\overline{\mathrm{j}})=(x_1+x_2)\overline{\mathrm{i}}+(y_1+y_2)\overline{\mathrm{j}}\)
 			<br />
 			<span class="fi">ja avaruuden vektorien summa:</span>
-			<span class="sv">och summan av vektorer i rymden:</span>			
+			<span class="sv">och summan av vektorer i rymden:</span>
 			\((x_1\overline{\mathrm{i}}+y_1\overline{\mathrm{j}}+z_1\overline{\mathrm{k}})+(x_2\overline{\mathrm{i}}+y_2\overline{\mathrm{j}}+z_2\overline{\mathrm{k}})=(x_1+x_2)\overline{\mathrm{i}}+(y_1+y_2)\overline{\mathrm{j}}+(z_1+z_2)\overline{\mathrm{k}}\).</p>
-		
+
 		<p>	<span class="fi">Tason vektorin</span>
 			<span class="sv">För en vektor i planet</span>
-			\(\overline{\mathrm{v}}=x_1\overline{\mathrm{i}}+y_1\overline{\mathrm{j}}\) 
+			\(\overline{\mathrm{v}}=x_1\overline{\mathrm{i}}+y_1\overline{\mathrm{j}}\)
 			<span class="fi">skalaarimonikerta:</span>
-			<span class="sv">ger multiplikation med ett tal \(r\):</span>			
-			\(r\overline{\mathrm{v}}=rx_1\overline{\mathrm{i}}+ry_1\overline{\mathrm{j}}\)  
+			<span class="sv">ger multiplikation med ett tal \(r\):</span>
+			\(r\overline{\mathrm{v}}=rx_1\overline{\mathrm{i}}+ry_1\overline{\mathrm{j}}\)
 			<br />
 			<span class="fi">ja avaruuden vektorin</span>
-			<span class="sv">och för en vektor i rymden</span>			
-			\(\overline{\mathrm{v}}=x_1\overline{\mathrm{i}}+y_1\overline{\mathrm{j}}+z_1\overline{\mathrm{k}}\) 
+			<span class="sv">och för en vektor i rymden</span>
+			\(\overline{\mathrm{v}}=x_1\overline{\mathrm{i}}+y_1\overline{\mathrm{j}}+z_1\overline{\mathrm{k}}\)
 			<span class="fi">skalaarimonikerta:</span>
 			<span class="sv">ger multiplikation med ett tal \(r\):</span>
 			\(r\overline{\mathrm{v}}=rx_1\overline{\mathrm{i}}+ry_1\overline{\mathrm{j}}+rz_1\overline{\mathrm{k}}\).</p>
 
 			<p class="fi">Vektori \(-1\overline{\mathrm{v}}\) on vektorin \(\overline{\mathrm{v}}\)	<em>vastavektori</em>. Sitä merkitään \(-\overline{\mathrm{v}}\).</p>
 			<p class="sv">Vektorn \(-1\overline{\mathrm{v}}\) är den <em>motsatta</em> vektorn till vektorn \(\overline{\mathrm{v}}\). Den betecknas \(-\overline{\mathrm{v}}\).</p>
-			
+
 			<p class="fi">Vektoreiden \(\overline{\mathrm{v}}\) ja \(\overline{\mathrm{w}}\) erotus \(\overline{\mathrm{v}}-\overline{\mathrm{w}}\) saadaan lisäämällä vektoriin  \(\overline{\mathrm{v}}\) vastavektori \(-1\overline{\mathrm{w}}\).</p>
 			<p class="sv">Differensen \(\overline{\mathrm{v}}-\overline{\mathrm{w}}\) av vektorerna \(\overline{\mathrm{v}}\) och \(\overline{\mathrm{w}}\) får vi genom att addera motsatta vektorn \(-1\overline{\mathrm{w}}\) till vektorn \(\overline{\mathrm{v}}\).</p>
-	
+
 	</div>
 	<div class="boxed">
 		<h3 class="fi">Vektoreiden yhdensuuntaisuus</h3>
 		<h3 class="sv">Parallella vektorer</h3>
-	
+
 		<p class="fi">Vektorit \(\overline{\mathrm{v}}\) ja \(\overline{\mathrm{w}}\) ovat yhdensuuntaiset eli \(\overline{\mathrm{v}} \parallel  \overline{\mathrm{w}}\), jos ja vain jos \(\overline{\mathrm{v}}= r \overline{\mathrm{w}}\) jollakin reaaliluvulla \(r \neq 0\).</p>
 		<p class="sv">Vektorerna \(\overline{\mathrm{v}}\) och \(\overline{\mathrm{w}}\) är parallella, dvs. \(\overline{\mathrm{v}} \parallel  \overline{\mathrm{w}}\), om och endast om \(\overline{\mathrm{v}}= r \overline{\mathrm{w}}\) för något reellt tal \(r \neq 0\).</p>
 	</div>
 	<div class="boxed">
 		<h3 class="fi">Vektoreiden pituus</h3>
 		<h3 class="sv">Längden av vektorer</h3>
-		
+
 		<p class="fi">Vektorin  \(\overline{\mathrm{v}} = x \overline{\mathrm{i}} + y \overline{\mathrm{j}}\)  pituus on</p>
 		<p class="sv">Längden av vektorn \(\overline{\mathrm{v}} = x \overline{\mathrm{i}} + y \overline{\mathrm{j}}\)  är</p>
 		\[|\overline{\mathrm{v}}|=\sqrt{x^2+y^2}.\]
@@ -699,10 +976,10 @@
 	<div class="boxed">
 		<h3 class="fi">Yksikkövektori</h3>
 		<h3 class="sv">Enhetsvektor</h3>
-	
+
 		<p class="fi">Vektoria, jonka pituus on 1, sanotaan yksikkövektoriksi.</p>
 		<p class="sv">En vektor som har längden 1 kallas enhetsvektor.</p>
-	
+
 		<p class="fi">Vektorin \(\overline{\mathrm{v}} \neq \overline{0}\) suuntainen yksikkövektori \(\overline{\mathrm{v}}^0\) on</p>
         <p class="sv">Enhetsvektorn \(\overline{\mathrm{v}}^0\) som är parallell med vektorn \(\overline{\mathrm{v}} \neq \overline{0}\) är</p>
          \[\frac{1}{|\overline{\mathrm{v}}|}\overline{\mathrm{v}}.\]
@@ -711,12 +988,12 @@
 	<div class="boxed">
 		<h3 class="fi">Vektorin komponentit</h3>
 		<h3 class="sv">Vektorns komponenter</h3>
-		
+
 		<p class="fi">Oletetaan, että  \(\overline{\mathrm{v}}\) ja \(\overline{\mathrm{w}}\) ovat kaksi vektoria, joista kumpikaan ei ole nollavektori. Oletetaan lisäksi, että vektorit \(\overline{\mathrm{v}}\) ja \(\overline{\mathrm{w}}\) eivät ole yhdensuuntaiset.
         Jos vektori  \(\overline{\mathrm{a}}\) voidaan kirjoittaa muodossa
 		\[ \overline{\mathrm{a}} = s\overline{\mathrm{v}} +  t\overline{\mathrm{w}} \]
 		missä \(s\) ja \(t\) ovat reaalilukuja, niin sanotaan, että \(s\overline{\mathrm{v}}\) ja \(t\overline{\mathrm{w}}\) ovat vektorin \(\overline{\mathrm{a}}\) vektoreiden  \(\overline{\mathrm{v}}\) ja \(\overline{\mathrm{w}}\) suuntaiset <em>komponentit</em>.
-	
+
 		<p class="sv">Anta att \(\overline{\mathrm{v}}\) och \(\overline{\mathrm{w}}\) är två vektorer, som inte är nollvektorn. Anta dessutom att vektorerna \(\overline{\mathrm{v}}\) och \(\overline{\mathrm{w}}\) inte är parallella.
         Om vektorn  \(\overline{\mathrm{a}}\) kan uttryckas i formen
         \[ \overline{\mathrm{a}} = s\overline{\mathrm{v}} +  t\overline{\mathrm{w}} \]
@@ -726,18 +1003,18 @@
 	<div class="boxed">
 		<h3 class="fi">Pistetulo</h3>
 		<h3 class="sv">Skalär produkt</h3>
-		
+
 		<p class="fi">Vektoreiden  \(\overline{\mathrm{v}} = x_1 \overline{\mathrm{i}} + y_1 \overline{\mathrm{j}}\) ja \(\overline{\mathrm{w}} = x_2 \overline{\mathrm{i}} + y_2 \overline{\mathrm{j}}\) pistetulo on</p>
 		<p class="sv">Den skalära produkten av vektorerna \(\overline{\mathrm{v}} = x_1 \overline{\mathrm{i}} + y_1 \overline{\mathrm{j}}\) och \(\overline{\mathrm{w}} = x_2 \overline{\mathrm{i}} + y_2 \overline{\mathrm{j}}\) är</p>
          \[\overline{\mathrm{v}} \cdot \overline{\mathrm{w}} = x_1x_2+y_1y_2.\]
-			
-		<p><span class="fi">Vektoreiden</span><span class="sv">Den skalära produkten av vektorerna</span>  
-			\(\overline{\mathrm{v}} = x_1  
-			\overline{\mathrm{i}} + y_1 \overline{\mathrm{j}} + z_1  
-			\overline{\mathrm{k}}\) <span class="fi">ja</span><span class="sv">och</span> \(\overline{\mathrm{w}} = x_2  
-			\overline{\mathrm{i}} + y_2 \overline{\mathrm{j}} + z_2  
+
+		<p><span class="fi">Vektoreiden</span><span class="sv">Den skalära produkten av vektorerna</span>
+			\(\overline{\mathrm{v}} = x_1
+			\overline{\mathrm{i}} + y_1 \overline{\mathrm{j}} + z_1
+			\overline{\mathrm{k}}\) <span class="fi">ja</span><span class="sv">och</span> \(\overline{\mathrm{w}} = x_2
+			\overline{\mathrm{i}} + y_2 \overline{\mathrm{j}} + z_2
 			\overline{\mathrm{k}}\)<span class="fi"> pistetulo on</span><span class="sv"> är</p>
-        
+
 		\[\overline{\mathrm{v}} \cdot \overline{\mathrm{w}} =  x_1x_2+y_1y_2+z_1z_2.\]
 
 		<p class="fi">Olkoot \(\overline{\mathrm{a}}\), \(\overline{\mathrm{b}}\) ja \(\overline{\mathrm{c}}\) vektoreita ja  \(t\) reaaliluku. Pistetulolla on seuraavat ominaisuudet:</p>
@@ -762,7 +1039,7 @@
 		<p class="fi">Oletetaan, että \(\overline{\mathrm{v}} \neq  0\) ja \(\overline{\mathrm{w}} \neq 0\). Vektorit \(\overline{\mathrm{v}}\) ja \(\overline{\mathrm{w}}\) ovat toisiaan vastaan kohtisuorassa, jos ja vain jos \(\overline{\mathrm{v}} \cdot \overline{\mathrm{w}}=0\)</p>
 		<p class="sv">Anta att \(\overline{\mathrm{v}} \neq  0\) och \(\overline{\mathrm{w}} \neq 0\). Vektorerna \(\overline{\mathrm{v}}\) och \(\overline{\mathrm{w}}\) är vinkelräta mot varandra, om och endast om \(\overline{\mathrm{v}} \cdot \overline{\mathrm{w}}=0\)</p>
 	</div>
-	
+
 	<div class="boxed">
 		<h3 class="fi">Suoran esityksiä</h3>
 		<h3 class="sv">Framställningsformer för en linje</h3>
@@ -770,41 +1047,41 @@
 		<p class="fi">Oletetaan, että \(A\) on suoran \(L\) piste ja \(\overline{\mathrm{v}}\) on suoran \(L\) suuntavektori. Yhtälö</p>
 		<p class="sv">Anta att \(A\) är en punkt på linjen \(L\) och att vektorn \(\overline{\mathrm{v}}\) är en riktningsvektor för linjen \(L\). Ekvationen</p>
          \[\overline{\mathrm{OP}} = \overline{\mathrm{OA}} + t\overline{\mathrm{v}}\]
-				
+
 		<p class ="fi">on suoran \(L\) vektorimuotoinen parametriesitys.</p>
-		<p class ="sv">är parameterframställningen i vektorform för linjen \(L\).</p>	
-	
+		<p class ="sv">är parameterframställningen i vektorform för linjen \(L\).</p>
+
 		<p class ="fi">Tässä esiintyvä kerroin \(t\) on parametri ja vektori \(\overline{\mathrm{OP}}\) on paikkavektori liikkuvalle pisteelle \(P\) suoralla.</p>
 		<p class ="sv">Koefficienten \(t\) är parametern och vektorn \(\overline{\mathrm{OP}}\) är ortsvektorn för en rörlig punkt \(P\) på linjen.</p>
-				
+
 		<p class="fi">Oletetaan, että \(L\) on \(xy\)-tason suora ja \(\overline{\mathrm{n}} = a\overline{\mathrm{i}} + b\overline{\mathrm{j}}\) on sen normaalivektori. Yhtälö</p>
 		<p class="sv">Anta att \(L\) är en linje i \(xy\)-planet och att \(\overline{\mathrm{n}} = a\overline{\mathrm{i}} + b\overline{\mathrm{j}}\) är en normalvektor till linjen. Ekvationen</p>
-                
+
 		\[ax+by+c=0\]
-				
+
 		<p class="fi">on suoran \(L\) normaalimuotoinen yhtälö.</p>
 		<p class="sv">är ekvationen för linjen \(L\) i normalform.</p>
-	
+
 	</div>
-	
+
 	<div class="boxed">
 		<h3 class="fi">Tason esityksiä</h3>
 		<h3 class="sv">Framställningsformer för ett plan</h3>
-	
+
 		<p class="fi">Oletetaan, että piste \(A\) on tasossa \(T\), jonka suuntavektorit ovat  \(\overline{\mathrm{v}}\) ja \(\overline{\mathrm{w}}\). Oletetaan lisäksi, että \(\overline{\mathrm{v}} \nparallel \overline{\mathrm{w}}\) . Yhtälö</p>
         <p class="sv">Anta att punkten \(A\) ligger i planet \(T\) som spänns upp av vektorerna  \(\overline{\mathrm{v}}\) och \(\overline{\mathrm{w}}\). Anta dessutom att \(\overline{\mathrm{v}} \nparallel \overline{\mathrm{w}}\) . Ekvationen</p>
         \[\overline{\mathrm{OP}} = \overline{\mathrm{OA}} + s\overline{\mathrm{v}} + t\overline{\mathrm{w}}\]
 
 		<p class="fi">on tason \(T\) vektorimuotoinen parametriesitys. Tässä esiintyvät kertoimet \(s\) ja \(t\) ovat parametreja ja vektori \(\overline{\mathrm{OA}}\) on tason paikkavektori.</p>
 		<p class="sv">är parameterframställningen i vektorform för planet \(T\). Koefficienterna \(s\) och \(t\) är parametrarna och vektorn \(\overline{\mathrm{OA}}\) är ortsvektorn för en punkt planet.</p>
-				
+
 		<p class="fi">Oletetaan, että \(\overline{\mathrm{n}} = a\overline{\mathrm{i}} + b\overline{\mathrm{j}} + c\overline{\mathrm{k}}\) on tason \(T\) normaalivektori. Yhtälö</p>
         <p class="sv">Anta att \(\overline{\mathrm{n}} = a\overline{\mathrm{i}} + b\overline{\mathrm{j}} + c\overline{\mathrm{k}}\) är en normalvektor till planet \(T\). Ekvationen</p>
          \[ax+by+cz+d=0\]
-				
+
 		<p class="fi">on tason \(T\) normaalimuotoinen yhtälö.</p>
 		<p class="sv">är ekvationen för planet \(T\) i normalform.</p>
-	
+
 	</div>
 </div>
 
@@ -815,16 +1092,16 @@
 	<div class="boxed">
 		<h3 class="fi">Derivaatan määritelmä</h3>
 		<h3 class="sv">Derivatans definition</h3>
-		
+
 		<p class="fi">Jos funktion \(f\) erotusosamäärällä kohdassa \(a\) on raja-arvo, niin funktio \(f\) on derivoituva kohdassa \(a\). Raja-arvoa kutsutaan funktion \(f\) derivaataksi kohdassa \(a\) ja merkitään \(f'(a)\). Siis</p>
 		<p class="sv">Om differenskvoten för funktionen \(f\) har ett gränsvärde i punkten \(a\), så är funktionen \(f\) deriverbar i punkten \(a\). Gränsvärdet kallas derivatan för funktionen \(f\) i punkten \(a\) och betecknas \(f'(a)\). Alltså</p>
 		\[\mathrm{D}f(a) = f'(a) = \lim_{x \rightarrow a} \frac{f(x)-f(a)}{x-a} = \lim_{h \rightarrow 0} \frac{f(a+h)-f(a)}{h}\]
-		
+
 		<h3 class="fi">Derivaatan laskusääntöjä</h3>
 		<h3 class="sv">Derivatans räkneregler</h3>
 		<ol>
 			<li><span class="fi">Vakiofunktion \(f(x)=c\) derivaattafunktio on</span>
-				<span class="sv">Derivatafunktionen till en konstant funktion \(f(x)=c\) är</span> 
+				<span class="sv">Derivatafunktionen till en konstant funktion \(f(x)=c\) är</span>
 				\[\mathrm{D} c = f'(x) = 0.\]</li>
 			<li><span class="fi">Olkoon \(r\) rationaaliluku. Potenssifunktion \(f(x)=x^r\) derivaattafunktio on</span>
 				<span class="sv">Låt \(r\) vara ett rationellt tal. Derivatafunktionen till potensfunktionen \(f(x)=x^r\) är</span>
@@ -870,9 +1147,9 @@
 				\[\mathrm{D} \log_k (x) = f'(x) = \frac{1}{x \ln k}.\]</li>
 			<li class="sv">Anta att \(a \neq 1\) är ett positivt reellt tal. Logaritmfunktionen \(f(x) = \log_a (x)\) är deriverbar överallt och derivatafunktionen är
 				\[\mathrm{D} \log_a (x) = f'(x) = \frac{1}{x \ln a}.\]</li>
-		
-		</ol>		
-	</div>	
+
+		</ol>
+	</div>
 </div>
 <h2 class="fi">Integraalilaskenta</h2>
 <h2 class="sv">Integralkalkyl</h2>
@@ -881,22 +1158,22 @@
 	<div class="boxed">
 		<h3 class="fi">Integraalifunktio</h3>
 		<h3 class="sv">Integralfunktion</h3>
-		
+
 		<p class="fi">Funktio \(F\) on funktion \(f\) integraalifunktio jollakin väillä, jos kaikissa tämän välin pisteissä pätee</p>
 		<p class="sv">Funktionen \(F\) är integralfunktion till funktionen \(f\) i något intervall, om det för alla punkter i intervallet gäller att</p></p>
 		\[F'(x) = f(x)\]
-		
+
 		<p class="fi">Kaikki funktion \(f\) integraalifunktiot ovat muotoa \(F(x) + C\), missä \(C\) on jokin reaalilukuihin kuuluva integroimisvakio. Integrointia, eli integraalifunktion määrittämistä merkitään</p>
 		<p class="sv">Alla integralfunktioner till funktionen \(f\) är av formen \(F(x) + C\), där \(C\) är en integralkonstant, som tillhör de reella talen. Integrering, dvs. bestämning av integralfunktionen betecknas med</p>
-		\[\int_{ }^{ }f\left(x\right) \ \mathrm{d}x= F\left(x\right) + C,\]	
+		\[\int_{ }^{ }f\left(x\right) \ \mathrm{d}x= F\left(x\right) + C,\]
 		<p class="fi">missä \(\mathrm{d}x\) merkitsee integrointia \(x\):n suhteen.</p>
-		<p class="sv">där \(\mathrm{d}x\) betecknar integrering med avseende på \(x\).</p>		
-				
+		<p class="sv">där \(\mathrm{d}x\) betecknar integrering med avseende på \(x\).</p>
+
 		<h3 class="fi">Integrointisääntöjä</h3>
 		<h3 class="sv">Integreringsregler</h3>
-		
+
 		<p class="fi">Oletetaan, että funktioilla \(f\) ja \(g\) on integraalifunktiot. Tällöin integroinnille pätee lineaarisuus</p>
-		<p class="sv">Anta att funktionerna \(f\) och \(g\) har integralfunktioner. Vid integrering gäller linjäritet</p>		
+		<p class="sv">Anta att funktionerna \(f\) och \(g\) har integralfunktioner. Vid integrering gäller linjäritet</p>
 		<ul>
 			<li>\(\int_{ }^{ }kf\left(x\right)\ \mathrm{d}x=k\int_{ }^{ }f\left(x\right)\ \mathrm{d}x,\)</li>
 			<li>\(\int_{ }^{ }f\left(x\right)+g\left(x\right)\ \mathrm{d}x=\int_{ }^{ }f\left(x\right)\ \mathrm{d}x\ +\int_{ }^{ }g\left(x\right)\ \mathrm{d}x,\)</li>
@@ -910,13 +1187,13 @@
 		<p class="sv">och p.g.a. den sammansatta funktionens derivata</p>
 		<ul>
 			<li>\( \int _{ }^{ }f'\left(x\right)g'\left(f\left(x\right)\right)\mathrm{d}x=g\left(f\left(x\right)\right) + C\)</li>
-		</ul>	
+		</ul>
 		<h3 class="fi">Eräiden funktioiden integrointi</h3>
 		<h3 class="sv">Integrering av vissa funktioner</h3>
-		
+
 		<p class="fi">Alla olevissa kaavoissa \(f\) ja \(g\) ovat muuttujasta \(x\) riippuvia integroituvia funktioita. Integroimisvakiota ei ole merkitty näkyviin.</p>
 		<p class="sv">I formlerna nedan är \(f\) och \(g\) integrerbara funktioner som beror på variabeln \(x\). Integreringskonstanten har lämnats bort.</p>
-			
+
 		<ul>
 			<li>\(\int{}{} 0 \mathrm{d}x=C\)</li>
 			<li class="fi">Oletetaan, että \(k\) on reaaliluku. Tällöin \(\int{}{} k \mathrm{d}x=kx\).</li>
@@ -926,7 +1203,7 @@
 			<li class="fi">Oletetaan, että \(n \neq -1\). Tällöin \(\int{}{} f'f^{n} \mathrm{d}x=\frac{f^{n+1}}{n+1} \).</li>
 			<li class="sv">Anta att \(n \neq -1\). Då gäller att \(\int{}{} f'f^{n} \mathrm{d}x=\frac{f^{n+1}}{n+1} \).</li>
 			<li>\(\int{}{} \frac{1}{x} \mathrm{d}x=\ln |x|\)</li>
-			<li>\(\int{}{} \ln |x| \mathrm{d}x=x\ln |x|-x\)</li>	
+			<li>\(\int{}{} \ln |x| \mathrm{d}x=x\ln |x|-x\)</li>
 			<li>\(\int{}{} \frac{f'}{f} \mathrm{d}x=\ln |f|\)</li>
 			<li>\(\int{}{} \sin x \mathrm{d}x=-\cos x\)</li>
 			<li>\(\int{}{} \cos x \mathrm{d}x=\sin x \)</li>
@@ -934,23 +1211,23 @@
 			<li>\(\int{}{} f'e^{f} \mathrm{d}x=e^{f}\)</li>
 			<li>\(\int{}{} e^{x} \mathrm{d}x=e^{x}\)</li>
 			<li class="fi">Oletetaan, että \(a\) on positiivinen reaaliluku. Tällöin \(\int{}{} a^{x} \mathrm{d}x=\frac{a^{x}}{\ln{a}}\).</li>
-			<li class="sv">Anta att \(a\) är ett positivt reellt tal. Då gäller \(\int{}{} a^{x} \mathrm{d}x=\frac{a^{x}}{\ln{a}}\).</li>	
+			<li class="sv">Anta att \(a\) är ett positivt reellt tal. Då gäller \(\int{}{} a^{x} \mathrm{d}x=\frac{a^{x}}{\ln{a}}\).</li>
 			<li class="fi">Oletetaan, että \(a\) on positiivinen reaaliluku ja \(a \neq 1\). Tällöin \(\int{}{} \log _{a}x \mathrm{d}x=\log _{a}e\left(x\ln |x|-x\right)\).</li>
 			<li class="sv">Anta att \(a\) är ett positivt reellt tal och att \(a \neq 1\). Då gäller \(\int{}{} \log _{a}x \mathrm{d}x=\log _{a}e\left(x\ln |x|-x\right)\).</li>
-		</ul>	
+		</ul>
 		<h3 class="fi">Määrätty integraali</h3>
 		<h3 class="sv">Bestämd integral</h3>
-		
+
 		<p class="fi">Funktion \(f\) määrätty integraali \(a\):sta \(b\):hen on</p>
 		<p class="sv">Den bestämda integralen av funktionen \(f\) från \(a\) till \(b\) är</p>
 		\[ \int_a^bf\left(x\right)\mathrm{d}x\ =\lim_{n\rightarrow\infty}\sum_{i=1}^n\Delta x\ f\left(t_i\right)=\bigg/_{\!\!\!\!\!a}^bF\left(x\right)=F\left(b\right)-F\left(a\right),\]
-		
+
 		<p class="fi">missä \(n\) on osavälien määrä ja \(\Delta x\) on osavälien leveys mielivaltaisella osavälin pisteellä \(t_i\).</p>
 		<p class="sv">där \(\mathrm{d}x\) betecknar integrering med avseende på \(x\).</p>
-		
+
 		<h4 class="fi">Määrätylle integraalille pätee</h4>
 		<h4 class="sv">För bestämd integral gäller</h4>
-		
+
 		<ul>
 			<li>\(\int_a^cf\left(x\right)\mathrm{d}x=\int_a^bf\left(x\right)\mathrm{d}x+\int_b^cf\left(x\right)\mathrm{d}x\)</li>
 			<li>\(\int_a^af\left(x\right)\mathrm{d}x=0\)</li>
@@ -962,15 +1239,15 @@
 		</ul>
 	<h3 class="fi">Numeerinen integrointi</h3>
 	<h3 class="sv">Numerisk integrering</h3>
-	
+
 	<p class="fi"><em>Simpsonin säännöllä</em> voidaan approksimoida määrättyä integraalia, kun integroitavan funktion integraalifunktiota ei tunneta tai haluta käyttää. Jos \(x_0=a\), \(x_n=b\) ja \(n\) on parillinen, niin tällöin pätee likimääräisesti:</p>
 	<p class="sv"><em>Simpsons regel</em> kan användas för att approximera en integral då integralfunktionen till den funktion som ska integreras inte är känd, eller om man inte vill använda den. Om \(x_0=a\), \(x_n=b\) och \(n\) är ett jämt tal, gäller det approximativt att:</p>
 	\[\int _{a}^{b}f(x)\mathrm{d}x\approx \frac {h}{3}\left(f(x_0)+4f(x_1)+2f(x_2)+4f(x_3)+\cdots+4f(x_{n-1})+f(x_n)\right).\]
 	<p class="fi">Virhe: Jos \(a < t < b \), niin</p>
 	<p class="sv">Felet: Om \(a < t < b \), så</p>
 	\[E_n=\frac{(b-a)^5f^{(4)}(t)}{180n^4}.\]
-		
-	</div>	
+
+	</div>
 </div>
 <h2 class="fi">Todennäköisyysjakaumia</h2>
 <h2 class="sv">Sannolikhetsfördelningar</h2>
@@ -993,7 +1270,7 @@
 			<li class="fi">satunnaismuuttujan \(X\) varianssi on \(\sigma^2\).</li>
 			<li class="sv">variansen för den stokastiska variabeln \(X\) är \(\sigma^2\).</li>
 			<li class="fi"><span class="fi">jos \(X\) noudattaa binomijakaumaa parametrein \(n\) ja \(p\), eli \(X\sim\mathrm{Bin}\left(n{,}p\right)\), niin</span>
-						   <span class="sv">om \(X\) följer binomialfördelningen med parametrarna \(n\) och \(p\), dvs. \(X\sim\mathrm{Bin}\left(n{,}p\right)\), så gäller att</span>			
+						   <span class="sv">om \(X\) följer binomialfördelningen med parametrarna \(n\) och \(p\), dvs. \(X\sim\mathrm{Bin}\left(n{,}p\right)\), så gäller att</span>
 				<ul>
 					<li><span class="fi">pistetodennäköisyys on</span><span class="sv">sannolikheterna är</span> \(\binom{n}{k}p^k\left(1-p\right)^{n-k}\),</li>
 					<li>\(\mu=np\),</li>
@@ -1011,12 +1288,12 @@
 				</ul>
 			</li>
 		</ul>
-		
+
 	<h3 class="fi">Jatkuva todennäköisyysjakauma</h3>
 	<h3 class="sv">Kontinuerlig sannolikhetsfördelning</h3>
 		<p class="fi">Olkoon jatkuvan satunnaismuuttuja \(X\) arvojoukko \(E=[a{,}b]\), huom. \(a\) tai \(b\) voi olla \(\infty\) tai \(-\infty\). Tällöin</p>
 		<p class="sv">Anta att den kontinuerliga stokastiska variabeln \(X\) antar värden i intervallet \(I=\left[a{,}b\right]\). Obs. \(a\) eller \(b\) kan vara \(\infty\). Då gäller att</p>
-		
+
 		<ul>
 			<li class="fi">satunnaismuuttujan tiheysfunktion arvot ovat epänegatiivisia ja \(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
 			<li class="sv">värdena för täthetsfunktionen \(f\left(x\right)\) för stokastiska variabeln är icke-negativa och  \(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
@@ -1070,7 +1347,7 @@
 		</ul>
 	<h3 class="fi">Standardoidun normaalijakauman kertymäfunktion arvoja</h3>
 	<h3 class="sv">Värden för fördelningsfunktionen för den standardiserade normalfördelningen</h3>
-	
+
 	<table class="formulae">
         <tr><td>	z</td><td>0,00</td><td>0,01</td><td>0,02</td><td>0,03</td><td>0,04</td><td>0,05</td><td>0,06</td><td>0,07</td><td>0,08</td><td>0,09	</td></tr>
         <tr><td>	-3,4</td><td>0,0003</td><td>0,0003</td><td>0,0003</td><td>0,0003</td><td>0,0003</td><td>0,0003</td><td>0,0003</td><td>0,0003</td><td>0,0003</td><td>0,0002	</td></tr>
