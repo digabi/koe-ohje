@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/digabi/koe-ohje#readme",
   "dependencies": {
+
+  },
+  "devDependencies": {
     "fs-extra": "^3.0.1",
     "mathjax-node-page": "^1.4.0"
   }
