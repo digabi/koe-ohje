@@ -5,4 +5,4 @@ CNAME
 editor.html
 *.deb
 deb-root/
-
+.vscode/
