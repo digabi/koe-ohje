@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "start:abikit": "./digabi-koe-ohje-dev.sh",
     "build": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
