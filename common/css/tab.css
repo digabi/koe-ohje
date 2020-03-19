@@ -112,11 +112,22 @@ button {
 }
 
 .tab-menu-opennavi {
-  display: inline;
-  margin: 0.5em 0.5em 0 0.5em;
   float: left;
   cursor: pointer;
-  font-size: 0.9em;
+  margin: 0.5em 0.5em 0 0.5em;
+  width: 16px;
+}
+
+.tab-menu-opennavi:after,
+.tab-menu-opennavi:before,
+.tab-menu-opennavi div {
+  background-color: #fff;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 2px;
+  margin-bottom: 3px;
+  transition: all 0.2s ease-in-out;
 }
 
 .tab-content {
