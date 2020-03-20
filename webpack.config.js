@@ -1,5 +1,5 @@
 const path = require('path')
-const CopyPlugin = require('copy-webpack-plugin')
+const express = require('express')
 
 module.exports = {
   entry: './src/index.ts',
@@ -35,14 +35,12 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build')
   },
-  plugins: [
-    new CopyPlugin([
-      { from: 'common', to: 'common' },
-      { from: 'build', to: '' }
-    ])
-  ],
   devServer: {
     compress: true,
-    port: 8080
+    port: 8080,
+    contentBase: path.resolve('build'),
+    before(app) {
+      app.use('/common', express.static('common'))
+    }
   }
 }
