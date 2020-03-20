@@ -20,7 +20,10 @@
     "url": "https://github.com/digabi/koe-ohje/issues"
   },
   "homepage": "https://github.com/digabi/koe-ohje#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@types/jquery": "^3.3.33",
+    "jquery": "^3.4.1"
+  },
   "devDependencies": {
     "css-loader": "^3.4.2",
     "file-loader": "^5.1.0",
