@@ -16,7 +16,7 @@
 	<script type="text/javascript" src="../common/js/activetab.js"></script>
 	<script type="text/javascript" src="../common/js/copyLogic.js"></script>
 	<script type="text/javascript" src="../common/js/tableOfContents.js"></script>
-  <script type="text/javascript" src="../common/js/search.js"></script>
+	<script type="text/javascript" src="../common/js/search.js"></script>
 
 	<script type="text/javascript" src="./bundle.js"></script>
 
@@ -157,7 +157,7 @@
 
 		// Lazy load tables
 		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix, funcExecuteAfter) {
-      showLoading();
+ 			showLoading();
 
 			setTimeout(function () {
 				if ($("#tab-" + subject).children().length === 0) {
@@ -174,16 +174,16 @@
 						removeWrongLanguageFromDOM(currentLanguage);
 						if (videoPrefix != undefined) {
 							set_video_url(currentLanguage, videoPrefix);
-            }
+						}
 
-            window.legacyIntegration.initializeCopyToClipboard()
+						window.legacyIntegration.initializeCopyToClipboard()
 
 						initializeTocBot(currentLanguage);
 						applyTablesorter(subject);
 
 						if (typeof funcExecuteAfter == "function") {
 							funcExecuteAfter();
-            }
+							}
 
 						hideLoading();
 					});
@@ -256,7 +256,7 @@
 
 						// Scroll to given ID (take account the upper navi) and prevent/revert to default action as needed
 						// scrollToElement is defined in tableOfContents.js
-			      return scrollToElement($(this).get(0).hash);
+						return scrollToElement($(this).get(0).hash);
 					});
 				});
 			}
