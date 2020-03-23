@@ -101,37 +101,6 @@
 				return k;
 			};
 
-		function activate_copy_to_clipboard() {
-			$(".clickable").unbind("click");
-
-			// Activate Digabi-specific copy feature
-			if (typeof (sharedclass) == 'object') {
-				// This is executed inside digabi-koe-browser.py
-				$(".clickable").click(function () {
-					sharedclass.copy_text_to_clipboard($(this).text());
-					setTimeout(function () {
-						$("#copying_box_kbd").show().fadeOut(3000)
-					}, 350);
-				});
-			}
-			else {
-				// This is executed in regular browser (uses clipboard.js)
-				$(".clickable").click(function () {
-					clipboard.copy($(this).text()).then(
-						function () {
-							console.log("Copied to clipboard!");
-							setTimeout(function () {
-								$("#copying_box_kbd").show().fadeOut(3000)
-							}, 350);
-						},
-						function (err) {
-							alert("Copying to clipboard is not supported on your browser.");
-							console.log("Copying to clipboard failed:", err);
-						});
-				});
-			}
-		}
-
 		function write_to_stdout(message) {
 			if (typeof (sharedclass) == 'object') {
 				// This is executed inside digabi-koe-browser.py
@@ -188,7 +157,8 @@
 
 		// Lazy load tables
 		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix, funcExecuteAfter) {
-			showLoading();
+      showLoading();
+
 			setTimeout(function () {
 				if ($("#tab-" + subject).children().length === 0) {
 					$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
@@ -204,14 +174,16 @@
 						removeWrongLanguageFromDOM(currentLanguage);
 						if (videoPrefix != undefined) {
 							set_video_url(currentLanguage, videoPrefix);
-						}
-						activate_copy_to_clipboard();
+            }
+
+            window.legacyIntegration.initializeCopyToClipboard()
+
 						initializeTocBot(currentLanguage);
 						applyTablesorter(subject);
 
 						if (typeof funcExecuteAfter == "function") {
 							funcExecuteAfter();
-						}
+            }
 
 						hideLoading();
 					});
