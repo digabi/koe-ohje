@@ -6,6 +6,3 @@ editor.html
 *.deb
 deb-root/
 .vscode/
-
-build/bundle.js
-build/bundle.js.map
