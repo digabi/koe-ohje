@@ -25,7 +25,7 @@ const copyText = (text: string): Promise<void> => {
 }
 
 export const initializeCopyToClipboard = async () => {
-  const copyableElements = document.querySelectorAll('.clickable')
+  const copyableElements = Array.from(document.querySelectorAll('.clickable'))
 
   const onClick = (event: MouseEvent) => {
     const target = event.target as HTMLElement
