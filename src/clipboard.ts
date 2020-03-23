@@ -1,8 +1,9 @@
 import { isAbikitBrowser } from './util/abikit'
 import * as jQuery from 'jquery'
+import { log } from './util/debug'
 
 const copyText = (text: string): Promise<void> => {
-  return new Promise(function(resolve, reject) {
+  return new Promise((resolve, reject) => {
     if (isAbikitBrowser()) {
       window.sharedclass.copy_text_to_clipboard(text)
       return resolve()
@@ -24,24 +25,24 @@ const copyText = (text: string): Promise<void> => {
   })
 }
 
-export const initializeCopyToClipboard = async () => {
+export const initializeCopyToClipboard = () => {
   const copyableElements = Array.from(document.querySelectorAll('.clickable'))
 
-  const onClick = (event: MouseEvent) => {
+  const onClick = async (event: MouseEvent) => {
     const target = event.target as HTMLElement
     const text = target.textContent
 
-    copyText(text)
-      .then(() => {
-        setTimeout(() => {
-          jQuery('#copying_box_kbd')
-            .show()
-            .fadeOut(3000)
-        }, 350)
-      })
-      .catch(() => {
-        alert('Copying to clipboard is not supported on your browser.')
-      })
+    try {
+      await copyText(text)
+      setTimeout(() => {
+        jQuery('#copying_box_kbd')
+          .show()
+          .fadeOut(3000)
+      }, 350)
+    } catch (error) {
+      alert('Copying to clipboard is not supported on your browser.')
+      log('Error while copying ')
+    }
   }
 
   copyableElements.forEach(element => element.addEventListener('click', onClick))
