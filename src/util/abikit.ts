@@ -10,4 +10,4 @@ declare global {
   }
 }
 
-export const isAbikitBrowser = (): Boolean => typeof window.sharedclass == 'object'
+export const isAbikitBrowser = (): boolean => typeof window.sharedclass == 'object'

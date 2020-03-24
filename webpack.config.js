@@ -1,5 +1,6 @@
 const path = require('path')
 const express = require('express')
+
 module.exports = (env, argv) => {
   const isProduction = argv && argv['mode'] === 'production'
 
