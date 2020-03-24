@@ -3,7 +3,7 @@ default_build_number=1
 all:
 
 build: content/*
-	npm run build
+	yarn build
 
 update-clipboardjs:
 	wget -O common/clipboard.min.js https://raw.githubusercontent.com/lgarron/clipboard.js/master/clipboard.min.js

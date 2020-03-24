@@ -8,7 +8,6 @@
 	<title>Koeympäristön ohjeet / Provmiljöns instruktioner</title>
 	<link rel="stylesheet" href="../common/css/tab.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="../common/css/tocbot.css" type="text/css" />
-	<link rel="stylesheet" href="../common/css/fa/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="../common/tablesorter/meb-theme/style.css" type="text/css" media="print, projection, screen">
 	<link rel="stylesheet" href="../common/css/search.css" type="text/css" />
 	<script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
@@ -18,6 +17,8 @@
 	<script type="text/javascript" src="../common/js/copyLogic.js"></script>
 	<script type="text/javascript" src="../common/js/tableOfContents.js"></script>
 	<script type="text/javascript" src="../common/js/search.js"></script>
+
+	<script type="text/javascript" src="./bundle.js"></script>
 
 	<!-- This MathJax is used for rendering search results -->
 	<script type="text/x-mathjax-config">
@@ -100,37 +101,6 @@
 				return k;
 			};
 
-		function activate_copy_to_clipboard() {
-			$(".clickable").unbind("click");
-
-			// Activate Digabi-specific copy feature
-			if (typeof (sharedclass) == 'object') {
-				// This is executed inside digabi-koe-browser.py
-				$(".clickable").click(function () {
-					sharedclass.copy_text_to_clipboard($(this).text());
-					setTimeout(function () {
-						$("#copying_box_kbd").show().fadeOut(3000)
-					}, 350);
-				});
-			}
-			else {
-				// This is executed in regular browser (uses clipboard.js)
-				$(".clickable").click(function () {
-					clipboard.copy($(this).text()).then(
-						function () {
-							console.log("Copied to clipboard!");
-							setTimeout(function () {
-								$("#copying_box_kbd").show().fadeOut(3000)
-							}, 350);
-						},
-						function (err) {
-							alert("Copying to clipboard is not supported on your browser.");
-							console.log("Copying to clipboard failed:", err);
-						});
-				});
-			}
-		}
-
 		function write_to_stdout(message) {
 			if (typeof (sharedclass) == 'object') {
 				// This is executed inside digabi-koe-browser.py
@@ -187,7 +157,8 @@
 
 		// Lazy load tables
 		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix, funcExecuteAfter) {
-			showLoading();
+ 			showLoading();
+
 			setTimeout(function () {
 				if ($("#tab-" + subject).children().length === 0) {
 					$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
@@ -204,13 +175,15 @@
 						if (videoPrefix != undefined) {
 							set_video_url(currentLanguage, videoPrefix);
 						}
-						activate_copy_to_clipboard();
+
+						window.legacyIntegration.initializeCopyToClipboard()
+
 						initializeTocBot(currentLanguage);
 						applyTablesorter(subject);
 
 						if (typeof funcExecuteAfter == "function") {
 							funcExecuteAfter();
-						}
+							}
 
 						hideLoading();
 					});
@@ -283,7 +256,7 @@
 
 						// Scroll to given ID (take account the upper navi) and prevent/revert to default action as needed
 						// scrollToElement is defined in tableOfContents.js
-			      return scrollToElement($(this).get(0).hash);
+						return scrollToElement($(this).get(0).hash);
 					});
 				});
 			}
@@ -335,7 +308,7 @@
 
 	<div id="tab-container">
 		<div id="tab-menu">
-			<a id="menu" class="tab-menu-opennavi"><i class="fa fa-bars" aria-hidden="true"></i></a>
+			<a id="menu" class="tab-menu-opennavi"><div></div></a>
 
 			<a id="spanish-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Espanja</span><span class="tab-menu-option-short">ES</span></a>
 			<a id="physics-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Fysiikka</span><span class="tab-menu-option-short">FY</span></a>
