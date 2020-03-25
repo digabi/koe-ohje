@@ -272,7 +272,7 @@
 			// Initialise ActiveTab navigation
 			var main_tabs = Object.create(ActiveTab);
 			main_tabs.classPrefix = 'tab';
-			main_tabs.tabNames = ["abitti", "math", "physics", "chemistry", "spanish", "french", "german", "sami"];
+			main_tabs.tabNames = ["abitti", "math", "physics", "chemistry", "spanish", "french", "german", "sami", "geography"];
 
 			// Default init
 			changePageTo(defaultPage, lang, main_tabs.tabNames, videoURLPrefix);
@@ -288,7 +288,9 @@
 				'spanish': function () { write_to_stdout('spanish'); changePageTo("spanish", lang, main_tabs.tabNames); },
 				'french': function () { write_to_stdout('french'); changePageTo("french", lang, main_tabs.tabNames); },
 				'german': function () { write_to_stdout('german'); changePageTo("german", lang, main_tabs.tabNames); },
-				'sami': function () { write_to_stdout('sami'); changePageTo("sami", lang, main_tabs.tabNames); }
+        'sami': function () { write_to_stdout('sami'); changePageTo("sami", lang, main_tabs.tabNames); },
+
+				'geography': function () { write_to_stdout('geography'); changePageTo("geography", lang, main_tabs.tabNames); }
 
 			};
 			main_tabs.activateTabs();
@@ -313,6 +315,7 @@
 			<a id="spanish-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Espanja</span><span class="tab-menu-option-short">ES</span></a>
 			<a id="physics-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Fysiikka</span><span class="tab-menu-option-short">FY</span></a>
 			<a id="chemistry-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Kemia</span><span class="tab-menu-option-short">KE</span></a>
+			<a id="geography-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Maantiede</span><span class="tab-menu-option-short">GE</span></a>
 			<a id="math-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Matematiikka</span><span class="tab-menu-option-short">MA</span></a>
 			<a id="french-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Ranska</span><span class="tab-menu-option-short">RA</span></a>
 			<a id="sami-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Saame</span><span class="tab-menu-option-short">SAA</span></a>
@@ -322,6 +325,7 @@
 			<a id="french-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Franska</span><span class="tab-menu-option-short">FR</span></a>
 			<a id="physics-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Fysik</span><span class="tab-menu-option-short">FY</span></a>
 			<a id="chemistry-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Kemi</span><span class="tab-menu-option-short">KE</span></a>
+			<a id="geography-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">TODO:</span><span class="tab-menu-option-short">GE</span></a>
 			<a id="math-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Matematik</span><span class="tab-menu-option-short">MA</span></a>
 			<a id="sami-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Samiska</span><span class="tab-menu-option-short">SAM</span></a>
 			<a id="spanish-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Spanska</span><span class="tab-menu-option-short">SP</span></a>
@@ -342,23 +346,16 @@
 				<div class="js-toc-result"></span></div>
 			</div>
 			<div class="js-toc-content">
-				<div id="tab-abitti" class="tab-content active">
-				</span></div>
-				<div id="tab-math" class="tab-content">
-				</span></div>
-				<div id="tab-physics" class="tab-content">
-				</span></div>
-				<div id="tab-chemistry" class="tab-content">
-				</span></div>
-				<div id="tab-spanish" class="tab-content">
-				</span></div>
-				<div id="tab-french" class="tab-content">
-				</span></div>
-				<div id="tab-german" class="tab-content">
-				</span></div>
-				<div id="tab-sami" class="tab-content">
-				</span></div>
-			</span></div>
+				<div id="tab-abitti" class="tab-content active"></div>
+				<div id="tab-math" class="tab-content"></div>
+				<div id="tab-physics" class="tab-content"></div>
+				<div id="tab-chemistry" class="tab-content"></div>
+				<div id="tab-spanish" class="tab-content"></div>
+				<div id="tab-french" class="tab-content"></div>
+				<div id="tab-german" class="tab-content"></div>
+				<div id="tab-sami" class="tab-content"></div>
+        <div id="tab-geography" class="tab-content"></div>
+      </div>
 		</span></div>
 	</span></div>
 	<div id="loading">
