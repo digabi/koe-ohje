@@ -8,7 +8,7 @@
     "start": "webpack-dev-server",
     "start:abikit": "./digabi-koe-ohje-dev.sh",
     "build": "node index.js && webpack --mode production",
-    "test": "jest"
+    "test": "jest test/"
   },
   "repository": {
     "type": "git",
