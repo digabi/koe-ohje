@@ -9,9 +9,11 @@ describe('Digabi Exam Help', () => {
     })
 
     it('should be able to change tabs', async () => {
-      // Wait before clicking, so event handlers will be set for tabs
-      await page.waitFor(1000)
-      await expect(page).toClick('#spanish-fi .tab-menu-option-long')
+      await page.evaluate(() => {
+        const el: HTMLElement = document.querySelector('#spanish-fi .tab-menu-option-long')
+        el.click()
+      })
+
       await expect(page).toMatchElement('#tab-spanish h1')
     })
   })
