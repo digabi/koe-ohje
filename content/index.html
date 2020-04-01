@@ -176,7 +176,10 @@
 							set_video_url(currentLanguage, videoPrefix);
 						}
 
-						window.legacyIntegration.initializeCopyToClipboard()
+            window.legacyIntegration.initializeCopyToClipboard()
+            if (subject === 'geography') {
+              window.legacyIntegration.initializeGeographyTab()
+            }
 
 						initializeTocBot(currentLanguage);
 						applyTablesorter(subject);
@@ -325,7 +328,7 @@
 			<a id="french-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Franska</span><span class="tab-menu-option-short">FR</span></a>
 			<a id="physics-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Fysik</span><span class="tab-menu-option-short">FY</span></a>
 			<a id="chemistry-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Kemi</span><span class="tab-menu-option-short">KE</span></a>
-			<a id="geography-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">TODO:</span><span class="tab-menu-option-short">GE</span></a>
+			<a id="geography-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Geografi</span><span class="tab-menu-option-short">GE</span></a>
 			<a id="math-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Matematik</span><span class="tab-menu-option-short">MA</span></a>
 			<a id="sami-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Samiska</span><span class="tab-menu-option-short">SAM</span></a>
 			<a id="spanish-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Spanska</span><span class="tab-menu-option-short">SP</span></a>
