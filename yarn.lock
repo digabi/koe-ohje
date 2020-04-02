@@ -217,14 +217,15 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@digabi/cheat-maps@digabi/cheat-maps#ca9592b6d9a097b693f052e1b9a6a7dc6c2307c7":
-  version "1.0.0"
-  resolved "https://codeload.github.com/digabi/cheat-maps/tar.gz/ca9592b6d9a097b693f052e1b9a6a7dc6c2307c7"
-
 "@digabi/eslint-config@^0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-0.0.12.tgz#7d7a75e7681026b400db64bd764d363a0dac2352"
   integrity sha512-zqlOpKVmXyEau5dwhgv9g8XCAa+rwTx8RNeSIX0aQM+cABo52PVtghLByJCRpXqaMjYcZfyxWYz36VCUPKMlsg==
+
+"@digabi/exam-help-maps@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@digabi/exam-help-maps/-/exam-help-maps-0.1.0.tgz#33690522835fc1d1b1f6acccc4a92e1f1aa9bcaf"
+  integrity sha512-SReFARuJWO6ZFvj8BB3evpglcAhOKwM2BQdxOa3QQrT8oVsB5QdMuo+VqJWA2kTS5WbGaRGDA8zi0LmLmu9EpQ==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
@@ -4722,7 +4723,7 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
-leaflet@^1.6.0:
+leaflet@~1.6:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.6.0.tgz#aecbb044b949ec29469eeb31c77a88e2f448f308"
   integrity sha512-CPkhyqWUKZKFJ6K8umN5/D2wrJ2+/8UIpXppY7QDnUZW5bZL5+SEI2J7GBpwh4LIupOKqbNSQXgqmrEJopHVNQ==

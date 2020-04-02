@@ -1,4 +1,4 @@
-import { createMap } from '@digabi/cheat-maps'
+import { createMap } from '@digabi/exam-help-maps'
 import { isAbikitBrowser } from '../util/abikit'
 import { log } from '../util/debug'
 import { getCurrentLanguage, Language } from '../util/language'

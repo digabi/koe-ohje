@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/digabi/koe-ohje#readme",
   "dependencies": {
-    "@digabi/cheat-maps": "digabi/cheat-maps#ca9592b6d9a097b693f052e1b9a6a7dc6c2307c7",
+    "@digabi/exam-help-maps": "^0.1.0",
     "jquery": "^3.4.1",
-    "leaflet": "^1.6.0"
+    "leaflet": "~1.6"
   },
   "devDependencies": {
     "@digabi/eslint-config": "^0.0.12",
