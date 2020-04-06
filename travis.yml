@@ -14,3 +14,33 @@ before_install:
 script:
   - yarn build
   - yarn test
+
+before_deploy:
+  - mkdir release
+  - cp -r common release
+  - cp -r build release
+  - cp index.html release
+
+deploy:
+  - provider: s3
+    access_key_id:
+      secret: $TEST_ACCESS_KEY
+    secret_access_key:
+      secret: $TEST_SECRET_KEY
+    bucket: $TEST_BUCKET
+    local-dir: release
+    region: eu-north-1
+    on:
+      branch: master
+    skip_cleanup: true
+  - provider: s3
+    access_key_id:
+      secret: $PROD_ACCESS_KEY
+    secret_access_key:
+      secret: $PROD_SECRET_KEY
+    bucket: $PROD_BUCKET
+    local-dir: release
+    region: eu-north-1
+    on:
+      branch: release
+    skip_cleanup: true
