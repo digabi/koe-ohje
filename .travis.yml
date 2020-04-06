@@ -23,10 +23,8 @@ before_deploy:
 
 deploy:
   - provider: s3
-    access_key_id:
-      secret: $TEST_ACCESS_KEY
-    secret_access_key:
-      secret: $TEST_SECRET_KEY
+    access_key_id: $TEST_ACCESS_KEY
+    secret_access_key: $TEST_SECRET_KEY
     bucket: $TEST_BUCKET
     local-dir: release
     region: eu-north-1
@@ -34,10 +32,8 @@ deploy:
       branch: master
     skip_cleanup: true
   - provider: s3
-    access_key_id:
-      secret: $PROD_ACCESS_KEY
-    secret_access_key:
-      secret: $PROD_SECRET_KEY
+    access_key_id: $PROD_ACCESS_KEY
+    secret_access_key: $PROD_SECRET_KEY
     bucket: $PROD_BUCKET
     local-dir: release
     region: eu-north-1
