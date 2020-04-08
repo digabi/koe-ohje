@@ -14,7 +14,6 @@
 	<script type="text/javascript" src="../common/clipboard.min.js"></script>
 	<script type="text/javascript" src="../common/tablesorter/jquery.tablesorter.min.js"></script>
 	<script type="text/javascript" src="../common/js/activetab.js"></script>
-	<script type="text/javascript" src="../common/js/copyLogic.js"></script>
 	<script type="text/javascript" src="../common/js/tableOfContents.js"></script>
 	<script type="text/javascript" src="../common/js/search.js"></script>
 
@@ -297,7 +296,6 @@
 
 			};
 			main_tabs.activateTabs();
-			listenSVGEvent()
 
 			$("#js-search-input").keyup(function (event) { updateSearch(); });
 			$("#js-search-input").on("search", function (event) { updateSearch(); });
