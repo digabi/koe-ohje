@@ -5,9 +5,6 @@ all:
 build: content/*
 	yarn build
 
-update-clipboardjs:
-	wget -O common/clipboard.min.js https://raw.githubusercontent.com/lgarron/clipboard.js/master/clipboard.min.js
-
 update-mathjax:
 	cp -r node_modules/mathjax/ common/
 
