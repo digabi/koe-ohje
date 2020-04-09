@@ -21,13 +21,11 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader'],
-          include: path.resolve(__dirname, 'src')
+          use: ['style-loader', 'css-loader']
         },
         {
           test: /\.(png|jpe?g|gif)$/i,
-          use: [{ loader: 'file-loader' }],
-          include: path.resolve(__dirname, 'src')
+          use: [{ loader: 'file-loader' }]
         }
       ]
     },
