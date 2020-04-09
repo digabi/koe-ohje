@@ -7,3 +7,4 @@ editor.html
 deb-root/
 .vscode/
 *.log
+build/
