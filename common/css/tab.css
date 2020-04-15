@@ -330,8 +330,9 @@ table.row-highlight tr:nth-child(odd) {
 
 /* Keyboard buttons*/
 * {
-  outline: none !important;
+  outline: none;
 }
+
 .key a,
 .key a:visited,
 .key a:hover,
