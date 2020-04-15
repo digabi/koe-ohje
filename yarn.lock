@@ -222,10 +222,10 @@
   resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-0.0.12.tgz#7d7a75e7681026b400db64bd764d363a0dac2352"
   integrity sha512-zqlOpKVmXyEau5dwhgv9g8XCAa+rwTx8RNeSIX0aQM+cABo52PVtghLByJCRpXqaMjYcZfyxWYz36VCUPKMlsg==
 
-"@digabi/maps@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@digabi/maps/-/maps-0.1.0.tgz#a6c9d1c38648ea0a0eedcafec406f283634c951a"
-  integrity sha512-Glbb/V47et0Pc5n9qW/OYF2z0AapgaFFBy1CicBnOs9zrBb8T9bzuwwPy0RFS4OU1cwSdEM0WCG8jtP4W2/GKA==
+"@digabi/maps@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@digabi/maps/-/maps-0.2.0.tgz#3f63b8427f77b5012ba9f479a86bd4f89fe88f78"
+  integrity sha512-lSsESWscwDtEY7loUIbOX1yHKlrO1f12FuKaL1BXbdDfwI80yPkNbXUCruDto2yvK5Cl/qH6huYeExOSwjnkyQ==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
