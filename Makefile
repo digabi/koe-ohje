@@ -9,6 +9,7 @@ update-mathjax:
 	cp -r node_modules/mathjax/ common/
 
 deb:
+	yarn install
 	yarn build
 	if [ -d deb-root ]; then rm -fR deb-root/; fi
 
