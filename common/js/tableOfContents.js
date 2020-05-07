@@ -3,6 +3,24 @@
     of the screen if the screen is not too tiny.
 */
 
+function loseScandics(s) {
+  if (!loseScandics.translate_re) loseScandics.translate_re = /[öäüåÖÄÜÅ]/g;
+  var translate = {
+    "ä": "a", "ö": "o", "ü": "u", "å": "a",
+    "Ä": "A", "Ö": "O", "Ü": "U", "Å": "A"
+  };
+  return (s.replace(loseScandics.translate_re, function (match) {
+    return translate[match];
+  }));
+}
+
+function formAutomaticIDs(text) {
+  return loseScandics(text)
+    .trim()
+    .toLowerCase()
+    .replace(/[\s\(\)]/g, '-')
+}
+
 function initializeTocBot(language) {
   $('.js-toc-content').find('h2, h3')
     .each(function () {

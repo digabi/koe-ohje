@@ -86,23 +86,10 @@
 			}
 		};
 
-		// Object.keys() for old browsers
-		if (!Object.keys)
-			Object.keys = function(obj) {
-				if (obj !== Object(obj))
-					throw new TypeError('Object.keys called on a non-object');
-				var k = [], p;
-				for (p in obj) if (Object.prototype.hasOwnProperty.call(obj, p)) k.push(p);
-				return k;
-			};
-
 		function write_to_stdout(message) {
 			if (typeof (sharedclass) == 'object') {
-				// This is executed inside digabi-koe-browser.py
 				sharedclass.write_to_stdout(message);
-			}
-			else {
-				// This is executed in regular browser (uses clipboard.js)
+			} else {
 				console.log(message);
 			}
 		}
@@ -122,23 +109,6 @@
 			$("#loading").fadeOut(300);
 		}
 
-		function loseScandics(s) {
-			if(!loseScandics.translate_re) loseScandics.translate_re = /[öäüåÖÄÜÅ]/g;
-			var translate = {
-				"ä": "a", "ö": "o", "ü": "u", "å": "a",
-				"Ä": "A", "Ö": "O", "Ü": "U", "Å": "A"
-			};
-			return ( s.replace(loseScandics.translate_re, function(match) {
-				return translate[match];
-			}) );
-		}
-
-		function formAutomaticIDs(text) {
-			return loseScandics(text)
-					   .trim()
-					   .toLowerCase()
-					   .replace(/[\s\(\)]/g, '-')
-		}
 
 		// Lazy load tables
 		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix, funcExecuteAfter) {
