@@ -40,13 +40,6 @@
 			}
 		}
 
-		function set_video_url(language, prefix) {
-			$(".helpvideo").each(function () {
-				var src = prefix + language + "/" + $(this).attr('data-src');
-				$(this).attr('src', src);
-			});
-		}
-
 		function showLoading () {
 			$("#loading").show();
 		}
@@ -56,7 +49,7 @@
 		}
 
 		// Lazy load tables
-		function changePageTo(subject, currentLanguage, allTabNames, videoPrefix, funcExecuteAfter) {
+		function changePageTo(subject, allTabNames, funcExecuteAfter) {
  			showLoading();
 
 			setTimeout(function () {
@@ -71,18 +64,15 @@
 							$(".emergency-message").hide();
 						}
 
-						removeWrongLanguageFromDOM(currentLanguage);
-						if (videoPrefix != undefined) {
-							set_video_url(currentLanguage, videoPrefix);
-						}
 
+            window.legacyIntegration.initializeLanguage()
             window.legacyIntegration.initializeCopyToClipboard()
 						window.legacyIntegration.applyTablesorter(subject)
             if (subject === 'geography') {
               window.legacyIntegration.initializeGeographyTab()
             }
 
-						initializeTocBot(currentLanguage);
+						initializeTocBot();
 
 						if (typeof funcExecuteAfter == "function") {
 							funcExecuteAfter();
@@ -92,30 +82,7 @@
 					});
 				}
 			}, 200);
-		}
-
-		function getLangUrlParam() {
-			var param = window.location.search.substring(1).slice(0, 2);
-			var path = window.location.pathname;
-			var langs = ["fi", "sv"];
-			for (var i = 0; i < langs.length; i++) {
-				var lang = langs[i];
-				if (lang === param || (path.indexOf("index-" + lang) > -1)) {
-					return lang;
-				}
-			}
-			return "fi";
-		}
-
-		function removeWrongLanguageFromDOM(this_lang) {
-			if (this_lang == "sv") {
-				$(".fi").remove();
-			}
-			else {
-				$(".sv").remove();
-			}
-		}
-
+    }
 
 		function updateSearch () {
 			var searchResultHTML = searchResults($("#js-search-input").val(), 20);
@@ -148,11 +115,8 @@
 		}
 
 		$(document).ready(function () {
-			// Set current language accoring to various suggestions
 			var request = window.location.href;
-			var lang = getLangUrlParam();
 			var defaultPage = 'abitti'
-			var videoURLPrefix = '../common/videos/';
 
 			// Initialise ActiveTab navigation
 			var main_tabs = Object.create(ActiveTab);
@@ -160,22 +124,22 @@
 			main_tabs.tabNames = ["abitti", "math", "physics", "chemistry", "spanish", "french", "german", "sami", "geography"];
 
 			// Default init
-			changePageTo(defaultPage, lang, main_tabs.tabNames, videoURLPrefix);
+			changePageTo(defaultPage, main_tabs.tabNames);
 
-			// Execute special initialisation when "tables" tab is activated
+      // Execute special initialisation when "tables" tab is activated
 			main_tabs.activeTabInitialise = {
-				'abitti': function () { write_to_stdout('abitti'); changePageTo("abitti", lang, main_tabs.tabNames, videoURLPrefix); },
+				'abitti': function () { write_to_stdout('abitti'); changePageTo("abitti", main_tabs.tabNames); },
 
-				'math': function () { write_to_stdout('math'); changePageTo("math", lang, main_tabs.tabNames); },
-				'physics': function () { write_to_stdout('physics'); changePageTo("physics", lang, main_tabs.tabNames); },
-				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", lang, main_tabs.tabNames); },
+				'math': function () { write_to_stdout('math'); changePageTo("math", main_tabs.tabNames); },
+				'physics': function () { write_to_stdout('physics'); changePageTo("physics", main_tabs.tabNames); },
+				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", main_tabs.tabNames); },
 
-				'spanish': function () { write_to_stdout('spanish'); changePageTo("spanish", lang, main_tabs.tabNames); },
-				'french': function () { write_to_stdout('french'); changePageTo("french", lang, main_tabs.tabNames); },
-				'german': function () { write_to_stdout('german'); changePageTo("german", lang, main_tabs.tabNames); },
-        'sami': function () { write_to_stdout('sami'); changePageTo("sami", lang, main_tabs.tabNames); },
+				'spanish': function () { write_to_stdout('spanish'); changePageTo("spanish", main_tabs.tabNames); },
+				'french': function () { write_to_stdout('french'); changePageTo("french", main_tabs.tabNames); },
+				'german': function () { write_to_stdout('german'); changePageTo("german", main_tabs.tabNames); },
+        'sami': function () { write_to_stdout('sami'); changePageTo("sami", main_tabs.tabNames); },
 
-				'geography': function () { write_to_stdout('geography'); changePageTo("geography", lang, main_tabs.tabNames); }
+				'geography': function () { write_to_stdout('geography'); changePageTo("geography", main_tabs.tabNames); }
 
 			};
 			main_tabs.activateTabs();
