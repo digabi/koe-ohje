@@ -21,19 +21,17 @@ function formAutomaticIDs(text) {
     .replace(/[\s\(\)]/g, '-')
 }
 
-function initializeTocBot(language) {
+function initializeTocBot() {
   $('.js-toc-content').find('h2, h3')
     .each(function () {
       var elem = $(this)
       elem.attr('id', formAutomaticIDs(elem.text()))
     })
 
-  var languageToBeIgnored = language === "fi" ? ".sv" : ".fi"
   tocbot.init({
     tocSelector: '.js-toc-result',
     contentSelector: '.js-toc-content',
     headingSelector: 'h2, h3',
-    ignoreSelector: languageToBeIgnored,
     collapseDepth: 6,
     positionFixedSelector: '.js-toc',
     fixedSidebarOffset: 'auto',
