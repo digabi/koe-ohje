@@ -32,14 +32,6 @@
 		// If set shows this emergency message content in all pages
 		var EMERGENCY_MESSAGE = null;
 
-		function write_to_stdout(message) {
-			if (typeof (sharedclass) == 'object') {
-				sharedclass.write_to_stdout(message);
-			} else {
-				console.log(message);
-			}
-		}
-
 		function showLoading () {
 			$("#loading").show();
 		}
@@ -128,20 +120,17 @@
 
       // Execute special initialisation when "tables" tab is activated
 			main_tabs.activeTabInitialise = {
-				'abitti': function () { write_to_stdout('abitti'); changePageTo("abitti", main_tabs.tabNames); },
-
-				'math': function () { write_to_stdout('math'); changePageTo("math", main_tabs.tabNames); },
-				'physics': function () { write_to_stdout('physics'); changePageTo("physics", main_tabs.tabNames); },
-				'chemistry': function () { write_to_stdout('chemistry'); changePageTo("chemistry", main_tabs.tabNames); },
-
-				'spanish': function () { write_to_stdout('spanish'); changePageTo("spanish", main_tabs.tabNames); },
-				'french': function () { write_to_stdout('french'); changePageTo("french", main_tabs.tabNames); },
-				'german': function () { write_to_stdout('german'); changePageTo("german", main_tabs.tabNames); },
-        'sami': function () { write_to_stdout('sami'); changePageTo("sami", main_tabs.tabNames); },
-
-				'geography': function () { write_to_stdout('geography'); changePageTo("geography", main_tabs.tabNames); }
-
+				'abitti': function () { changePageTo("abitti", main_tabs.tabNames); },
+				'math': function () { changePageTo("math", main_tabs.tabNames); },
+				'physics': function () { changePageTo("physics", main_tabs.tabNames); },
+				'chemistry': function () { changePageTo("chemistry", main_tabs.tabNames); },
+				'spanish': function () { changePageTo("spanish", main_tabs.tabNames); },
+				'french': function () { changePageTo("french", main_tabs.tabNames); },
+				'german': function () {changePageTo("german", main_tabs.tabNames); },
+        'sami': function () { changePageTo("sami", main_tabs.tabNames); },
+				'geography': function () { changePageTo("geography", main_tabs.tabNames); }
 			};
+
 			main_tabs.activateTabs();
 
 			$("#js-search-input").keyup(function (event) { updateSearch(); });
