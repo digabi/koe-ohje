@@ -30,63 +30,6 @@
 		});
 	</script>
 	<script type="text/javascript" src="../common/mathjax/MathJax.js?config=TeX-AMS_HTML-full"></script>
-
-	<script type="text/javascript">
-		// Lazy load tables
-		function changePageTo(subject, allTabNames, funcExecuteAfter) {
-			setTimeout(function () {
-				if ($("#tab-" + subject).children().length === 0) {
-			    $("#loading").show();
-
-					$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
-					$("#tab-" + subject).load("tab-" + subject + ".html", function () {
-            window.legacyIntegration.initializeLanguage()
-            window.legacyIntegration.initializeCopyToClipboard()
-						window.legacyIntegration.applyTablesorter(subject)
-            if (subject === 'geography') {
-              window.legacyIntegration.initializeGeographyTab()
-            }
-
-						initializeTocBot();
-
-						if (typeof funcExecuteAfter == "function") {
-							funcExecuteAfter();
-							}
-
-			      $("#loading").fadeOut(300);
-					});
-				}
-			}, 200);
-    }
-
-		$(document).ready(function () {
-			var request = window.location.href;
-			var defaultPage = 'abitti'
-
-			// Initialise ActiveTab navigation
-			var main_tabs = Object.create(ActiveTab);
-			main_tabs.classPrefix = 'tab';
-			main_tabs.tabNames = ["abitti", "math", "physics", "chemistry", "spanish", "french", "german", "sami", "geography"];
-
-			// Default init
-			changePageTo(defaultPage, main_tabs.tabNames);
-
-      // Execute special initialisation when "tables" tab is activated
-			main_tabs.activeTabInitialise = {
-				'abitti': function () { changePageTo("abitti", main_tabs.tabNames); },
-				'math': function () { changePageTo("math", main_tabs.tabNames); },
-				'physics': function () { changePageTo("physics", main_tabs.tabNames); },
-				'chemistry': function () { changePageTo("chemistry", main_tabs.tabNames); },
-				'spanish': function () { changePageTo("spanish", main_tabs.tabNames); },
-				'french': function () { changePageTo("french", main_tabs.tabNames); },
-				'german': function () {changePageTo("german", main_tabs.tabNames); },
-        'sami': function () { changePageTo("sami", main_tabs.tabNames); },
-				'geography': function () { changePageTo("geography", main_tabs.tabNames); }
-			};
-
-			main_tabs.activateTabs();
-		});
-	</script>
 </head>
 
 <body>
