@@ -63,3 +63,47 @@ function searchSetRandomID(childNode) {
 
   return id;
 }
+
+function updateSearch () {
+  var searchResultHTML = searchResults($("#js-search-input").val(), 20);
+
+  if (searchResultHTML == "") {
+    $("#js-search-result-heading").css("display","none");
+    $("#js-search-result").html("");
+  }
+  else {
+    $("#js-search-result-heading").css("display","block");
+    $("#js-search-result").html("<ul>"+searchResultHTML+"</ul>");
+
+    // Render result set with MathJax
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"js-search-result"]);
+
+    setTimeout(function () {
+      $(".search-result-link").off("click");
+      $(".search-result-link").click(function(event) {
+        if ($("#menu").css("display") == "block") {
+          // The menu button is visible -> we're on a narrow window
+          $(".js-toc").hide("fast");
+        }
+
+        // Scroll to given ID (take account the upper navi) and prevent/revert to default action as needed
+        // scrollToElement is defined in tableOfContents.js
+        return scrollToElement($(this).get(0).hash);
+      });
+    });
+  }
+}
+
+
+$(document).ready(function() {
+  $('#js-search-input').keyup(function(event) {
+    updateSearch()
+  })
+  $('#js-search-input').on('search', function(event) {
+    updateSearch()
+  })
+  $('.tab-menu-option').click(function() {
+    $('#js-search-input').val('')
+    updateSearch()
+  })
+})
