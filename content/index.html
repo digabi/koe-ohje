@@ -29,9 +29,6 @@
 	<script type="text/javascript" src="../common/mathjax/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
 	<script type="text/javascript">
-		// If set shows this emergency message content in all pages
-		var EMERGENCY_MESSAGE = null;
-
 		function showLoading () {
 			$("#loading").show();
 		}
@@ -48,15 +45,6 @@
 				if ($("#tab-" + subject).children().length === 0) {
 					$.each(allTabNames, function (thisTabIndex, thisTabName) { $("#tab-"+thisTabName).empty(); });
 					$("#tab-" + subject).load("tab-" + subject + ".html", function () {
-						// Apply emergency message
-						if (EMERGENCY_MESSAGE) {
-							$(".emergency-message").html(EMERGENCY_MESSAGE);
-						}
-						else {
-							$(".emergency-message").hide();
-						}
-
-
             window.legacyIntegration.initializeLanguage()
             window.legacyIntegration.initializeCopyToClipboard()
 						window.legacyIntegration.applyTablesorter(subject)
