@@ -2,7 +2,7 @@
 
 Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle WebKit-selaimella (ks. `digabi-koe-browser.py`).
 
-Ohje löytyy verkosta osoitteesta [https://cheat.abitti.fi/](https://cheat.abitti.fi/).
+Ohje löytyy verkosta osoitteesta [https://cheat.abitti.fi/](https://cheat.abitti.fi/) (release haara) ja testi (master haara) osoitteesta https://cheat.test.abitti.fi.
 
 ## Ohjeet muutosten ehdottamiseen
 
