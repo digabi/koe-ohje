@@ -16,3 +16,13 @@ export const getCurrentLanguage = () => {
     return Language.finnish
   }
 }
+
+export const initializeLanguage = () => {
+  $('.helpvideo').each(function() {
+    const src = `../common/videos/${getCurrentLanguage()}/${$(this).attr('data-src')}`
+    $(this).attr('src', src)
+  })
+
+  const languageToRemove = getCurrentLanguage() === Language.finnish ? Language.swedish : Language.finnish
+  $(`.${languageToRemove}`).remove()
+}
