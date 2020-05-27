@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="../common/css/search.css" type="text/css" />
     <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
     <script type="text/javascript" src="../common/tablesorter/jquery.tablesorter.min.js"></script>
-    <script type="text/javascript" src="../common/js/activetab.js"></script>
     <script type="text/javascript" src="../common/js/tableOfContents.js"></script>
     <script type="text/javascript" src="../common/js/search.js"></script>
 
@@ -39,68 +38,68 @@
   <body>
     <div id="tab-container">
       <div id="tab-menu">
-        <a id="menu" class="tab-menu-opennavi">
-          <div></div>
-        </a>
+        <a id="menu" class="tab-menu-opennavi"><div></div></a>
 
-        <a id="spanish-fi" class="tab-menu-option fi"
-          ><span class="tab-menu-option-long">Espanja</span><span class="tab-menu-option-short">ES</span></a
-        >
-        <a id="physics-fi" class="tab-menu-option fi"
-          ><span class="tab-menu-option-long">Fysiikka</span><span class="tab-menu-option-short">FY</span></a
-        >
-        <a id="chemistry-fi" class="tab-menu-option fi"
-          ><span class="tab-menu-option-long">Kemia</span><span class="tab-menu-option-short">KE</span></a
-        >
-        <a id="geography-fi" class="tab-menu-option fi"
-          ><span class="tab-menu-option-long">Maantiede</span><span class="tab-menu-option-short">GE</span></a
-        >
-        <a id="math-fi" class="tab-menu-option fi"
-          ><span class="tab-menu-option-long">Matematiikka</span><span class="tab-menu-option-short">MA</span></a
-        >
-        <a id="french-fi" class="tab-menu-option fi"
-          ><span class="tab-menu-option-long">Ranska</span><span class="tab-menu-option-short">RA</span></a
-        >
-        <a id="sami-fi" class="tab-menu-option fi"
-          ><span class="tab-menu-option-long">Saame</span><span class="tab-menu-option-short">SAA</span></a
-        >
-        <a id="german-fi" class="tab-menu-option fi"
-          ><span class="tab-menu-option-long">Saksa</span><span class="tab-menu-option-short">SA</span></a
-        >
-        <a id="abitti-fi" class="tab-menu-option fi tab-menu-option-active"
-          ><span class="tab-menu-option-long">Yleisohjeet</span><span class="tab-menu-option-short">YL</span></a
-        >
-
-        <a id="french-sv" class="tab-menu-option sv"
-          ><span class="tab-menu-option-long">Franska</span><span class="tab-menu-option-short">FR</span></a
-        >
-        <a id="physics-sv" class="tab-menu-option sv"
-          ><span class="tab-menu-option-long">Fysik</span><span class="tab-menu-option-short">FY</span></a
-        >
-        <a id="chemistry-sv" class="tab-menu-option sv"
-          ><span class="tab-menu-option-long">Kemi</span><span class="tab-menu-option-short">KE</span></a
-        >
-        <a id="geography-sv" class="tab-menu-option sv"
-          ><span class="tab-menu-option-long">Geografi</span><span class="tab-menu-option-short">GE</span></a
-        >
-        <a id="math-sv" class="tab-menu-option sv"
-          ><span class="tab-menu-option-long">Matematik</span><span class="tab-menu-option-short">MA</span></a
-        >
-        <a id="sami-sv" class="tab-menu-option sv"
-          ><span class="tab-menu-option-long">Samiska</span><span class="tab-menu-option-short">SAM</span></a
-        >
-        <a id="spanish-sv" class="tab-menu-option sv"
-          ><span class="tab-menu-option-long">Spanska</span><span class="tab-menu-option-short">SP</span></a
-        >
-        <a id="german-sv" class="tab-menu-option sv"
-          ><span class="tab-menu-option-long">Tyska</span><span class="tab-menu-option-short">TY</span></a
-        >
-        <a id="abitti-sv" class="tab-menu-option sv tab-menu-option-active"
-          ><span class="tab-menu-option-long">Allmänna instruktioner</span
-          ><span class="tab-menu-option-short">AI</span></a
-        >
+        <span class="fi">
+          <div data-tab-id="spanish" class="tab-menu-option">
+            <span class="tab-menu-option-long">Espanja</span><span class="tab-menu-option-short">ES</span>
+          </div>
+          <div data-tab-id="physics" class="tab-menu-option">
+            <span class="tab-menu-option-long">Fysiikka</span><span class="tab-menu-option-short">FY</span>
+          </div>
+          <div data-tab-id="chemistry" class="tab-menu-option">
+            <span class="tab-menu-option-long">Kemia</span><span class="tab-menu-option-short">KE</span>
+          </div>
+          <div data-tab-id="geography" class="tab-menu-option">
+            <span class="tab-menu-option-long">Maantiede</span><span class="tab-menu-option-short">GE</span>
+          </div>
+          <div data-tab-id="math" class="tab-menu-option">
+            <span class="tab-menu-option-long">Matematiikka</span><span class="tab-menu-option-short">MA</span>
+          </div>
+          <div data-tab-id="french" class="tab-menu-option">
+            <span class="tab-menu-option-long">Ranska</span><span class="tab-menu-option-short">RA</span>
+          </div>
+          <div data-tab-id="sami" class="tab-menu-option">
+            <span class="tab-menu-option-long">Saame</span><span class="tab-menu-option-short">SAA</span>
+          </div>
+          <div data-tab-id="german" class="tab-menu-option">
+            <span class="tab-menu-option-long">Saksa</span><span class="tab-menu-option-short">SA</span>
+          </div>
+          <div data-tab-id="general" class="tab-menu-option active">
+            <span class="tab-menu-option-long">Yleisohjeet</span><span class="tab-menu-option-short">YL</span>
+          </div>
+        </span>
+        <span class="sv">
+          <div data-tab-id="french" class="tab-menu-option"></div>
+            <span class="tab-menu-option-long">Franska</span><span class="tab-menu-option-short">FR</span>
+          </div>
+          <div data-tab-id="physics" class="tab-menu-option">
+            <span class="tab-menu-option-long">Fysik</span><span class="tab-menu-option-short">FY</span>
+          </div>
+          <div data-tab-id="geography" class="tab-menu-option">
+            <span class="tab-menu-option-long">Geografi</span><span class="tab-menu-option-short">GE</span>
+          </div>
+          <div data-tab-id="chemistry" class="tab-menu-option">
+            <span class="tab-menu-option-long">Kemi</span><span class="tab-menu-option-short">KE</span>
+          </div>
+          <div data-tab-id="math" class="tab-menu-option">
+            <span class="tab-menu-option-long">Matematik</span><span class="tab-menu-option-short">MA</span>
+          </div>
+          <div data-tab-id="sami" class="tab-menu-option">
+            <span class="tab-menu-option-long">Samiska</span><span class="tab-menu-option-short">SAM</span>
+          </div>
+          <div data-tab-id="spanish" class="tab-menu-option">
+            <span class="tab-menu-option-long">Spanska</span><span class="tab-menu-option-short">SP</span>
+          </div>
+          <div data-tab-id="german" class="tab-menu-option">
+            <span class="tab-menu-option-long">Tyska</span><span class="tab-menu-option-short">TY</span>
+          </div>
+          <div data-tab-id="general" class="tab-menu-option active">
+            <span class="tab-menu-option-long">Allmänna instruktioner</span
+            ><span class="tab-menu-option-short">AI</span>
+          </div>
+        </span>
       </div>
-
       <div class="tab-view">
         <div class="js-toc">
           <div class="js-search">
@@ -114,7 +113,7 @@
           <div class="js-toc-result"></div>
         </div>
         <div class="js-toc-content">
-          <div id="tab-abitti" class="tab-content active"></div>
+          <div id="tab-general" class="tab-content active"></div>
           <div id="tab-math" class="tab-content"></div>
           <div id="tab-physics" class="tab-content"></div>
           <div id="tab-chemistry" class="tab-content"></div>

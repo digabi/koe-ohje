@@ -3,6 +3,7 @@ import { initializeCopyToClipboard } from './clipboard'
 import { initializeGeographyTab } from './tabs/geography'
 import { applyTablesorter } from './util/tablesorter'
 import { initializeLanguage } from './util/language'
+import { initializeTabs } from './tabs/tabs'
 
 declare global {
   interface Window {
@@ -15,3 +16,8 @@ window.legacyIntegration.initializeCopyToClipboard = initializeCopyToClipboard
 window.legacyIntegration.applyTablesorter = applyTablesorter
 window.legacyIntegration.initializeLanguage = initializeLanguage
 window.legacyIntegration.initializeGeographyTab = initializeGeographyTab
+
+$(document).ready(() => {
+  initializeLanguage()
+  initializeTabs()
+})

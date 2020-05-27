@@ -10,7 +10,7 @@ describe('Digabi Exam Help', () => {
 
     it('should be able to open spanish tabs', async () => {
       await page.evaluate(() => {
-        const el: HTMLElement = document.querySelector('#spanish-fi .tab-menu-option-long')
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=spanish]')
         el.click()
       })
 
@@ -19,7 +19,7 @@ describe('Digabi Exam Help', () => {
 
     it('should be able to open physics tab', async () => {
       await page.evaluate(() => {
-        const el: HTMLElement = document.querySelector('#physics-fi .tab-menu-option-long')
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=physics]')
         el.click()
       })
 
@@ -28,7 +28,7 @@ describe('Digabi Exam Help', () => {
 
     it('should be able to open chemistry tab', async () => {
       await page.evaluate(() => {
-        const el: HTMLElement = document.querySelector('#chemistry-fi .tab-menu-option-long')
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=chemistry]')
         el.click()
       })
 
@@ -37,7 +37,7 @@ describe('Digabi Exam Help', () => {
 
     it('should be able to open math tab', async () => {
       await page.evaluate(() => {
-        const el: HTMLElement = document.querySelector('#math-fi .tab-menu-option-long')
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=math]')
         el.click()
       })
 
@@ -46,7 +46,7 @@ describe('Digabi Exam Help', () => {
 
     it('should be able to open french tab', async () => {
       await page.evaluate(() => {
-        const el: HTMLElement = document.querySelector('#french-fi .tab-menu-option-long')
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=french]')
         el.click()
       })
 
@@ -55,7 +55,7 @@ describe('Digabi Exam Help', () => {
 
     it('should be able to open german tab', async () => {
       await page.evaluate(() => {
-        const el: HTMLElement = document.querySelector('#german-fi .tab-menu-option-long')
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=german]')
         el.click()
       })
 
@@ -64,7 +64,7 @@ describe('Digabi Exam Help', () => {
 
     it('should be able to open sami tab', async () => {
       await page.evaluate(() => {
-        const el: HTMLElement = document.querySelector('#sami-fi .tab-menu-option-long')
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=sami]')
         el.click()
       })
 
@@ -73,7 +73,7 @@ describe('Digabi Exam Help', () => {
 
     it('should be able to open geography tab', async () => {
       await page.evaluate(() => {
-        const el: HTMLElement = document.querySelector('#geography-fi .tab-menu-option-long')
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=geography]')
         el.click()
       })
 
@@ -85,8 +85,8 @@ describe('Digabi Exam Help', () => {
     it('should show page in swedish', async () => {
       await page.goto('http://localhost:8080?sv')
 
-      await expect(page).toMatchElement('#tab-abitti h1.sv')
-      await expect(page).not.toMatchElement('#tab-abitti h1.fi')
+      await expect(page).toMatchElement('#tab-general h1.sv')
+      await expect(page).not.toMatchElement('#tab-general h1.fi')
     })
   })
 })
