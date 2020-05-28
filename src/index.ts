@@ -1,3 +1,4 @@
+import './polyfills'
 import { initializeCopyToClipboard } from './clipboard'
 import { initializeGeographyTab } from './tabs/geography'
 import { applyTablesorter } from './util/tablesorter'
