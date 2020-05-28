@@ -37,7 +37,8 @@ module.exports = (env, argv) => {
     },
     devServer: {
       compress: true,
-      port: 8080
+      port: 8080,
+      writeToDisk: true
     }
   }
 }
