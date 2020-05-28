@@ -1,7 +1,7 @@
 describe('Digabi Exam Help', () => {
   describe('Tabs', () => {
     beforeEach(async () => {
-      await page.goto('http://localhost:8080')
+      await page.goto('http://localhost:8080/build/index.html?fi')
     })
 
     it('should render abitti as initial tab', async () => {
@@ -83,7 +83,7 @@ describe('Digabi Exam Help', () => {
 
   describe('Language', () => {
     it('should show page in swedish', async () => {
-      await page.goto('http://localhost:8080?sv')
+      await page.goto('http://localhost:8080/build/index.html?sv')
 
       await expect(page).toMatchElement('#tab-general h1.sv')
       await expect(page).not.toMatchElement('#tab-general h1.fi')

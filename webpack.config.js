@@ -1,5 +1,4 @@
 const path = require('path')
-const express = require('express')
 
 module.exports = (env, argv) => {
   const isProduction = argv && argv['mode'] === 'production'
@@ -38,11 +37,7 @@ module.exports = (env, argv) => {
     },
     devServer: {
       compress: true,
-      port: 8080,
-      contentBase: path.resolve('build'),
-      before(app) {
-        app.use('/common', express.static('common'))
-      }
+      port: 8080
     }
   }
 }
