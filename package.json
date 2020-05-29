@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "start:abikit": "yarn build && ./digabi-koe-ohje-dev.sh",
+    "start:abikit": "./digabi-koe-ohje-dev.sh",
     "build": "node index.js && webpack --mode production",
     "test": "jest test/"
   },

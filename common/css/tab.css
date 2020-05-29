@@ -95,14 +95,13 @@ button {
 }
 
 .tab-menu-option {
-  display: inline;
   margin: 0.5em 0.5em 0 0.5em;
   float: left;
   cursor: pointer;
   font-size: 0.9em;
 }
 
-.tab-menu-option-active {
+.tab-menu-option.active {
   font-weight: bold;
   color: #ffffff;
   border-width: 0px 0px 4px 0px;
@@ -136,6 +135,10 @@ button {
   padding: 30px 0 200px 0;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.tab-content.active {
+  display: block;
 }
 
 .tab-view {
