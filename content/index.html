@@ -1,99 +1,146 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Koeympäristön ohjeet / Provmiljöns instruktioner</title>
+    <link rel="stylesheet" href="../common/css/tab.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../common/css/tocbot.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../common/tablesorter/meb-theme/style.css"
+      type="text/css"
+      media="print, projection, screen"
+    />
+    <link rel="stylesheet" href="../common/css/search.css" type="text/css" />
+    <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="../common/tablesorter/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="../common/js/activetab.js"></script>
+    <script type="text/javascript" src="../common/js/tableOfContents.js"></script>
+    <script type="text/javascript" src="../common/js/search.js"></script>
 
-<head>
-	<meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="UTF-8">
-	<title>Koeympäristön ohjeet / Provmiljöns instruktioner</title>
-	<link rel="stylesheet" href="../common/css/tab.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="../common/css/tocbot.css" type="text/css" />
-	<link rel="stylesheet" href="../common/tablesorter/meb-theme/style.css" type="text/css" media="print, projection, screen">
-	<link rel="stylesheet" href="../common/css/search.css" type="text/css" />
-	<script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
-	<script type="text/javascript" src="../common/tablesorter/jquery.tablesorter.min.js"></script>
-	<script type="text/javascript" src="../common/js/activetab.js"></script>
-	<script type="text/javascript" src="../common/js/tableOfContents.js"></script>
-	<script type="text/javascript" src="../common/js/search.js"></script>
+    <script type="text/javascript" src="./bundle.js"></script>
 
-	<script type="text/javascript" src="./bundle.js"></script>
+    <!--
+      This MathJax is used for rendering search results.
+      This config must be loaded before mathjax https://docs.mathjax.org/en/v2.7-latest/configuration.html#using-in-line-configuration-options
+    -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "showMathMenu": false,
+        "showMathMenuMSIE": false,
+        "jax": ["input/TeX","output/PreviewHTML"]
+      });
+    </script>
+    <script type="text/javascript" src="../common/mathjax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+  </head>
 
-  <!--
-    This MathJax is used for rendering search results.
-    This config must be loaded before mathjax https://docs.mathjax.org/en/v2.7-latest/configuration.html#using-in-line-configuration-options
-  -->
-  <script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"showMathMenu": false,
-			"showMathMenuMSIE": false,
-			"jax": ["input/TeX","output/PreviewHTML"]
-		});
-	</script>
-	<script type="text/javascript" src="../common/mathjax/MathJax.js?config=TeX-AMS_HTML-full"></script>
-</head>
+  <body>
+    <div id="tab-container">
+      <div id="tab-menu">
+        <a id="menu" class="tab-menu-opennavi">
+          <div></div>
+        </a>
 
-<body>
+        <a id="spanish-fi" class="tab-menu-option fi"
+          ><span class="tab-menu-option-long">Espanja</span><span class="tab-menu-option-short">ES</span></a
+        >
+        <a id="physics-fi" class="tab-menu-option fi"
+          ><span class="tab-menu-option-long">Fysiikka</span><span class="tab-menu-option-short">FY</span></a
+        >
+        <a id="chemistry-fi" class="tab-menu-option fi"
+          ><span class="tab-menu-option-long">Kemia</span><span class="tab-menu-option-short">KE</span></a
+        >
+        <a id="geography-fi" class="tab-menu-option fi"
+          ><span class="tab-menu-option-long">Maantiede</span><span class="tab-menu-option-short">GE</span></a
+        >
+        <a id="math-fi" class="tab-menu-option fi"
+          ><span class="tab-menu-option-long">Matematiikka</span><span class="tab-menu-option-short">MA</span></a
+        >
+        <a id="french-fi" class="tab-menu-option fi"
+          ><span class="tab-menu-option-long">Ranska</span><span class="tab-menu-option-short">RA</span></a
+        >
+        <a id="sami-fi" class="tab-menu-option fi"
+          ><span class="tab-menu-option-long">Saame</span><span class="tab-menu-option-short">SAA</span></a
+        >
+        <a id="german-fi" class="tab-menu-option fi"
+          ><span class="tab-menu-option-long">Saksa</span><span class="tab-menu-option-short">SA</span></a
+        >
+        <a id="abitti-fi" class="tab-menu-option fi tab-menu-option-active"
+          ><span class="tab-menu-option-long">Yleisohjeet</span><span class="tab-menu-option-short">YL</span></a
+        >
 
-	<div id="tab-container">
-		<div id="tab-menu">
-			<a id="menu" class="tab-menu-opennavi"><div></div></a>
-
-			<a id="spanish-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Espanja</span><span class="tab-menu-option-short">ES</span></a>
-			<a id="physics-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Fysiikka</span><span class="tab-menu-option-short">FY</span></a>
-			<a id="chemistry-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Kemia</span><span class="tab-menu-option-short">KE</span></a>
-			<a id="geography-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Maantiede</span><span class="tab-menu-option-short">GE</span></a>
-			<a id="math-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Matematiikka</span><span class="tab-menu-option-short">MA</span></a>
-			<a id="french-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Ranska</span><span class="tab-menu-option-short">RA</span></a>
-			<a id="sami-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Saame</span><span class="tab-menu-option-short">SAA</span></a>
-			<a id="german-fi" class="tab-menu-option fi"><span class="tab-menu-option-long">Saksa</span><span class="tab-menu-option-short">SA</span></a>
-			<a id="abitti-fi" class="tab-menu-option fi tab-menu-option-active"><span class="tab-menu-option-long">Yleisohjeet</span><span class="tab-menu-option-short">YL</span></a>
-
-			<a id="french-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Franska</span><span class="tab-menu-option-short">FR</span></a>
-			<a id="physics-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Fysik</span><span class="tab-menu-option-short">FY</span></a>
-			<a id="chemistry-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Kemi</span><span class="tab-menu-option-short">KE</span></a>
-			<a id="geography-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Geografi</span><span class="tab-menu-option-short">GE</span></a>
-			<a id="math-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Matematik</span><span class="tab-menu-option-short">MA</span></a>
-			<a id="sami-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Samiska</span><span class="tab-menu-option-short">SAM</span></a>
-			<a id="spanish-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Spanska</span><span class="tab-menu-option-short">SP</span></a>
-			<a id="german-sv" class="tab-menu-option sv"><span class="tab-menu-option-long">Tyska</span><span class="tab-menu-option-short">TY</span></a>
-			<a id="abitti-sv" class="tab-menu-option sv tab-menu-option-active"><span class="tab-menu-option-long">Allmänna instruktioner</span><span class="tab-menu-option-short">AI</span></a>
-		</div>
-
-		<div class="tab-view">
-			<div class="js-toc">
-				<div class="js-search">
-					<input type="search" id="js-search-input" placeholder="Hae/Sök" />
-					<div id="js-search-result-heading" style="display:none">
-						<span class="fi">Hakutulokset</span>
-						<span class="sv">Sökresultat</span>
-					</div>
-					<span id="js-search-result"></span>
-				</div>
-				<div class="js-toc-result"></div>
-			</div>
-			<div class="js-toc-content">
-				<div id="tab-abitti" class="tab-content active"></div>
-				<div id="tab-math" class="tab-content"></div>
-				<div id="tab-physics" class="tab-content"></div>
-				<div id="tab-chemistry" class="tab-content"></div>
-				<div id="tab-spanish" class="tab-content"></div>
-				<div id="tab-french" class="tab-content"></div>
-				<div id="tab-german" class="tab-content"></div>
-				<div id="tab-sami" class="tab-content"></div>
-        <div id="tab-geography" class="tab-content"></div>
+        <a id="french-sv" class="tab-menu-option sv"
+          ><span class="tab-menu-option-long">Franska</span><span class="tab-menu-option-short">FR</span></a
+        >
+        <a id="physics-sv" class="tab-menu-option sv"
+          ><span class="tab-menu-option-long">Fysik</span><span class="tab-menu-option-short">FY</span></a
+        >
+        <a id="chemistry-sv" class="tab-menu-option sv"
+          ><span class="tab-menu-option-long">Kemi</span><span class="tab-menu-option-short">KE</span></a
+        >
+        <a id="geography-sv" class="tab-menu-option sv"
+          ><span class="tab-menu-option-long">Geografi</span><span class="tab-menu-option-short">GE</span></a
+        >
+        <a id="math-sv" class="tab-menu-option sv"
+          ><span class="tab-menu-option-long">Matematik</span><span class="tab-menu-option-short">MA</span></a
+        >
+        <a id="sami-sv" class="tab-menu-option sv"
+          ><span class="tab-menu-option-long">Samiska</span><span class="tab-menu-option-short">SAM</span></a
+        >
+        <a id="spanish-sv" class="tab-menu-option sv"
+          ><span class="tab-menu-option-long">Spanska</span><span class="tab-menu-option-short">SP</span></a
+        >
+        <a id="german-sv" class="tab-menu-option sv"
+          ><span class="tab-menu-option-long">Tyska</span><span class="tab-menu-option-short">TY</span></a
+        >
+        <a id="abitti-sv" class="tab-menu-option sv tab-menu-option-active"
+          ><span class="tab-menu-option-long">Allmänna instruktioner</span
+          ><span class="tab-menu-option-short">AI</span></a
+        >
       </div>
-		</div>
-	</div>
-	<div id="loading">
-		<div id="loading-text"><span class="fi">Ladataan...</span><span class="sv">Laddas...</span></div>
-	</div>
-	<div id="copying_box" class="copying-box">
-		<div id="copy-text" class="copy-text"><span class="fi">Kaava kopioitu leikepöydälle.</span><span class="sv">Formeln har kopierats till urklippet</span></div>
-	</div>
-	<div id="copying_box_kbd" class="copying-box">
-		<div id="copy-text-kbd" class="copy-text"><span class="fi">Merkki kopioitu leikepöydälle.</span><span class="sv">Tecknet har kopierats till urklippet</span></div>
-	</div>
-	<script type="text/javascript" src="../common/js/tocbot.min.js"></script>
-</body>
 
+      <div class="tab-view">
+        <div class="js-toc">
+          <div class="js-search">
+            <input type="search" id="js-search-input" placeholder="Hae/Sök" />
+            <div id="js-search-result-heading" style="display:none">
+              <span class="fi">Hakutulokset</span>
+              <span class="sv">Sökresultat</span>
+            </div>
+            <span id="js-search-result"></span>
+          </div>
+          <div class="js-toc-result"></div>
+        </div>
+        <div class="js-toc-content">
+          <div id="tab-abitti" class="tab-content active"></div>
+          <div id="tab-math" class="tab-content"></div>
+          <div id="tab-physics" class="tab-content"></div>
+          <div id="tab-chemistry" class="tab-content"></div>
+          <div id="tab-spanish" class="tab-content"></div>
+          <div id="tab-french" class="tab-content"></div>
+          <div id="tab-german" class="tab-content"></div>
+          <div id="tab-sami" class="tab-content"></div>
+          <div id="tab-geography" class="tab-content"></div>
+        </div>
+      </div>
+    </div>
+    <div id="loading">
+      <div id="loading-text"><span class="fi">Ladataan...</span><span class="sv">Laddas...</span></div>
+    </div>
+    <div id="copying_box" class="copying-box">
+      <div id="copy-text" class="copy-text">
+        <span class="fi">Kaava kopioitu leikepöydälle.</span
+        ><span class="sv">Formeln har kopierats till urklippet</span>
+      </div>
+    </div>
+    <div id="copying_box_kbd" class="copying-box">
+      <div id="copy-text-kbd" class="copy-text">
+        <span class="fi">Merkki kopioitu leikepöydälle.</span
+        ><span class="sv">Tecknet har kopierats till urklippet</span>
+      </div>
+    </div>
+    <script type="text/javascript" src="../common/js/tocbot.min.js"></script>
+  </body>
 </html>
