@@ -22,32 +22,33 @@ declare global {
 }
 
 const loadTab = (oldTab: Tab, newTab: Tab) => {
-  // TODO: Before executing this code the old code used to hide old tab content with display none and show current tab content with display block
-  // This is probably not necessary as removing should be fast, but it should be tested
   $('#loading').show()
 
-  const oldTabElement = document.querySelector(`#tab-${oldTab}`)
-  oldTabElement.classList.remove('active')
-  while (oldTabElement.firstChild) {
-    oldTabElement.removeChild(oldTabElement.firstChild)
-  }
-
-  const newTabElement = document.querySelector(`#tab-${newTab}`)
-  newTabElement.classList.add('active')
-
-  $(`#tab-${newTab}`).load(`tab-${newTab}.html`, () => {
-    initializeLanguage()
-    initializeCopyToClipboard()
-    applyTablesorter(newTab)
-
-    if (newTab === Tab.Geography) {
-      initializeGeographyTab()
+  // This timeout makes sure that the loading screen renders before executing the load tab code
+  setTimeout(() => {
+    const oldTabElement = document.querySelector(`#tab-${oldTab}`)
+    oldTabElement.classList.remove('active')
+    while (oldTabElement.firstChild) {
+      oldTabElement.removeChild(oldTabElement.firstChild)
     }
 
-    window.initializeTocBot()
+    const newTabElement = document.querySelector(`#tab-${newTab}`)
+    newTabElement.classList.add('active')
 
-    $('#loading').fadeOut(300)
-  })
+    $(`#tab-${newTab}`).load(`tab-${newTab}.html`, () => {
+      initializeLanguage()
+      initializeCopyToClipboard()
+      applyTablesorter(newTab)
+
+      if (newTab === Tab.Geography) {
+        initializeGeographyTab()
+      }
+
+      window.initializeTocBot()
+
+      $('#loading').fadeOut(300)
+    })
+  }, 0)
 }
 
 const handleChangeTab = (event: MouseEvent) => {
