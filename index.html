@@ -9,25 +9,6 @@
     <link rel="stylesheet" href="common/css/tab.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="common/css/landing_page.css" type="text/css" media="screen" />
     <script type="text/javascript" src="common/js/jquery-2.2.0.min.js"></script>
-    <script type="text/javascript" src="common/js/activetab.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // Initialise ActiveTab navigation
-        var main_tabs = Object.create(ActiveTab)
-        main_tabs.classPrefix = 'tab'
-        main_tabs.tabNames = ['menu_common']
-
-        main_tabs.activateTabs()
-
-        $('#goFI').click(function(e) {
-          window.location.href = 'build/index.html?fi'
-        })
-
-        $('#goSV').click(function(e) {
-          window.location.href = 'build/index.html?sv'
-        })
-      })
-    </script>
   </head>
   <body>
     <div id="tab-container">
