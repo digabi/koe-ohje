@@ -1,4 +1,4 @@
-import { createWorldMap } from '@digabi/maps'
+import { createWorldMap, createTerrainMap } from '@digabi/maps'
 import { isAbikitBrowser } from '../util/abikit'
 import { log } from '../util/debug'
 import { getCurrentLanguage, Language } from '../util/language'
@@ -6,11 +6,12 @@ import { getCurrentLanguage, Language } from '../util/language'
 import './geography.css'
 import 'leaflet/dist/leaflet.css'
 
-const setupMap = () => {
+const awsUrl = 'https://s3.eu-north-1.amazonaws.com/maptiles-cheat.abitti.fi-cheat.abitti-test'
+
+const setupWorldMap = () => {
   if (isAbikitBrowser()) {
     log('Error: Maps are not supported with abikit')
   } else {
-    const awsUrl = 'https://s3.eu-north-1.amazonaws.com/maptiles-cheat.abitti.fi-cheat.abitti-prod'
     const mapUrlSv = `${awsUrl}/world/sv/{z}/{x}/{y}.png`
     const mapUrlFi = `${awsUrl}/world/fi/{z}/{x}/{y}.png`
 
@@ -26,6 +27,23 @@ const setupMap = () => {
   }
 }
 
+const setupTerrainMap = () => {
+  if (isAbikitBrowser()) {
+    log('Error: Maps are not supported with abikit')
+  } else {
+    const mapContainer = document.getElementById('terrain-container')
+    const mapUrl = `${awsUrl}/terrain/{z}/{x}/{y}.png`
+
+    if (mapContainer) {
+      createTerrainMap({
+        container: mapContainer,
+        mapUrl
+      })
+    }
+  }
+}
+
 export const initializeGeographyTab = () => {
-  setupMap()
+  setupWorldMap()
+  setupTerrainMap()
 }
