@@ -1,4 +1,4 @@
-import { createMap } from '@digabi/maps'
+import { createWorldMap } from '@digabi/maps'
 import { isAbikitBrowser } from '../util/abikit'
 import { log } from '../util/debug'
 import { getCurrentLanguage, Language } from '../util/language'
@@ -18,7 +18,7 @@ const setupMap = () => {
     const mapUrl = getCurrentLanguage() === Language.finnish ? mapUrlFi : mapUrlSv
 
     if (mapContainer) {
-      createMap({
+      createWorldMap({
         container: mapContainer,
         mapUrl
       })

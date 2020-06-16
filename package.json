@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/digabi/koe-ohje#readme",
   "dependencies": {
-    "@digabi/maps": "^0.2.0",
+    "@digabi/maps": "^0.3.2",
     "core-js": "^3.6.5",
     "jquery": "^3.5.0",
     "leaflet": "~1.6",
