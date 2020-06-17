@@ -1,11 +1,12 @@
 const path = require('path')
 
 module.exports = (env, argv) => {
-  const isProduction = argv && argv['mode'] === 'production'
+  const isProduction = argv && argv.mode === 'production'
 
   return {
     entry: './src/index.ts',
     devtool: isProduction ? 'cheap-module-source-map' : 'inline-source-map',
+    mode: isProduction ? 'production' : 'development',
     module: {
       rules: [
         {
