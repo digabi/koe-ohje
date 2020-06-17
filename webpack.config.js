@@ -1,5 +1,11 @@
 const path = require('path')
 
+const devServer = {
+  compress: true,
+  port: 8080,
+  writeToDisk: true
+}
+
 module.exports = (env, argv) => {
   const isProduction = argv && argv.mode === 'production'
 
@@ -36,10 +42,6 @@ module.exports = (env, argv) => {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'build')
     },
-    devServer: {
-      compress: true,
-      port: 8080,
-      writeToDisk: true
-    }
+    devServer: isProduction ? undefined : devServer
   }
 }
