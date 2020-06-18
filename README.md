@@ -1,24 +1,39 @@
 # koe-ohje
 
-Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle WebKit-selaimella (ks. `digabi-koe-browser.py`).
+Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle WebKit-selaimella (ks. https://github.com/digabi/abikit-browser).
 
-Ohje löytyy verkosta osoitteesta [https://cheat.abitti.fi/](https://cheat.abitti.fi/) (release haara) ja testi (master haara) osoitteesta https://cheat.test.abitti.fi.
+Kokeissa käytettävä versio ohjeesta löytyy osoitteesta https://cheat.abitti.fi/ (release haara). Nykyinen versio löytyy testi ympäristöstä (master haara) https://cheat.test.abitti.fi.
+
+## Projektin käynnistäminen
+
+Projektin kehitystä varten tarvitset Yarn paketinhallintatyökalun https://yarnpkg.com/ sekä Node.js version 12 https://nodejs.org/en/ (tarkempi versio löytyy `.nvmrc` tiedostosta)
+
+1. Asenna projektin riippuvuudet komennolla `yarn install`
+2. Generoi HTML tiedostot komennolla `yarn build`
+3. Tämän jälkeen voit ajaa projektia lokaalisti komennolla `yarn start`. Lokaalin koe-ohjeen löydät osoitteesta http://localhost:8080
+
+TypeScript muutokset näkyvät selaimessa automaattisesti kun projekti on käynnissä. Jotta HTML tiedostojen muutokset tulevat näkyviin, pitää ne generoida uudelleen `yarn build` komennolla.
+
+Jos koneellesi on asennettu abikit selain, voit testata koe-ohjetta sillä ajamalla komennon `yarn start:abikit` komennon. Huomioithan että koneeltasi löytyvä `pyqt5` versio on sama kuin digabios:n versio. Lisätietoja abikit selaimesta: https://github.com/digabi/abikit-browser
 
 ## Ohjeet muutosten ehdottamiseen
 
-YTL ottaa vastaan muutosehdotuksia. Muutosehdotukset on tehtävä pull requestina:
+YTL ottaa vastaan muutosehdotuksia. Ennen isompaa muutosta kannattaa ensin keskustella aiheesta GitHub issuen kautta https://github.com/digabi/koe-ohje/issues.
 
 1.  Tee tästä koodihakemistosta oma kopiosi (fork): (https://help.github.com/articles/fork-a-repo/)
 2.  Tee muutokset omaan koodihakemistoosi ([clone](https://help.github.com/articles/cloning-a-repository/), [commit](https://github.com/abhikp/git-test/wiki/Committing-changes), [push](https://help.github.com/articles/pushing-to-a-remote/)): esim. [https://guides.github.com/activities/hello-world/](https://guides.github.com/activities/hello-world/)
-3.  Lähetä muokkausehdotus (pull request): (https://help.github.com/articles/creating-a-pull-request/)
+3.  Lähetä muutosehdotus (pull request): (https://help.github.com/articles/creating-a-pull-request/)
 
-Muutosehdotuksien tekijöiden on hyvä huomata, että ohje on kaksikielinen.
+### Huomioitavaa muutosehdotuskesta
 
-## HTML-struktuuri
+- Ohje on kaksikielinen (käännöksiin saa tarvittaessa apua muutosehdotuksen yhteydessä tai GitHub issuen kautta)
+- Ohjeen tulee toimia koe ympäristön abikit selaimella (https://github.com/digabi/abikit-browser)
 
-On selostettu tarkemmin [tässä dokumentissa](HTML.md). Katso se ensin muutosten tekemistä, jotta lähdekoodin yleinen rakenne pysyisi konsistenttina ja muiden olisi helppo lisätä kaavoja myös tulevaisuudessa.
+### HTML-struktuuri
 
-## Muutosten tekemisen työnkulku
+HTML-struktuuri on selostettu tarkemmin [tässä dokumentissa](HTML.md). Tutustu tähän ennen muutosten tekemistä, jotta lähdekoodin yleinen rakenne pysyisi yhtenäisenä ja muiden olisi helppo lisätä kaavoja myös tulevaisuudessa.
+
+### Uusien kaavojen luominen
 
 1. Rakenna [testisivulle](content/test/testpage.html) esimerkiksi uusi kaava, jonka haluaisit lisätä kokoelmaan
 2. Kopioi ja liitä se oikeaan taulukkoon paikassa `content/tab-*<aineen_nimi>.html`
@@ -31,27 +46,11 @@ file tab-<aine>.html // antaa nykyisen enkoodauksen
 iconv -f ISO-8859-1 -t UTF-8 tab-<aine>.html > tab-math.html // korvaa nykyisen ISO-enkoodauksen UTF-8
 ```
 
-### Huomioitavaa
-
-Jotta matemaattisen notaation lataaminen olisi nopeaa käyttäjälle, on lopulliset sivut rakennettava ennakkoon jossain vaiheessa.
-Tämä tarkoittaa, että kaavat muutetaan automaattisesti `LaTeX`-muodosta `.svg` muotoon (kaavasta kuviksi),
-jolloin ne myös skaalautuvat hyvin ruudun resoluution ollessa mikä tahansa ja sivun lataus pysyy erittäin nopeana.
-
-Käytännössä tämä luo uuden työvaiheen, jonka esimerkiksi tämän kaavakokoelman ylläpitäjä voi suorittaa sen jälkeen,
-kun hän on hyväksynyt uuden kaavan lisäämisen kokoelmaan. Pilkottuna ne ovat seuraavat:
-
-1. `npm` -paketinhallinnan [asentaminen](https://www.npmjs.com/get-npm?utm_source=house&utm_medium=homepage&utm_campaign=free%20orgs&utm_term=Install%20npm)
-2. `npm install` komento tämän kansion juuressa (asentaa [riippuvuudet](package.json))
-3. `npm run build` luo `/build`-kansioon staattisilla kuvilla korvatut taulukot
-
-Lopulliset kaavataulukot sekä verkkosivulla, että kokelaan koneella näytetään siis `/build`-kansion alapuolelta.
-
 ## Vinkkejä
 
 - Varsinainen aputiedosto löytyy `content/index.html`. Välilehdet löytyvät `content/tab-*.html`.
-- Testisivu kaavojen luomiselle löytyy `content/test/testpage.html`. **Kokeile ensin muokata tähän sivuun ja sitten kopioi ja liitä lopullinen kaava
-  haluttuun taulukkoon**
-- Lopulliset näytettävät tiedostot löytyvät `content/build` -kansion alta ja sen alaisia tiedostoja ei pidä muokata käsin.
+- Testisivu kaavojen luomiselle löytyy `content/test/testpage.html`.
+- Lopulliset näytettävät tiedostot löytyvät `content/build` -kansion alta ja sen alaisia tiedostoja ei pidä muokata käsin (nämä generoidaan automaattisesti ja eivät ole versionhallinnassa).
 - Voit katsoa rakentamatonta sivua lataamalla selaimeen `content/index.html`-tiedoston (lokaalin tiedoston avaavat oikein Firefox/Safari). Ruotsinkielisen tiedoston voit ladata lisäämällä URL:iin `?sv` eli näin: `file:///polku-omalla-levyllasi/content/index.html?sv`
 
 ## Videoiden lisääminen
