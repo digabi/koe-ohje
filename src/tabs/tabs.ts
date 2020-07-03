@@ -2,6 +2,7 @@ import { initializeLanguage } from '../util/language'
 import { initializeCopyToClipboard } from '../clipboard'
 import { applyTablesorter } from '../util/tablesorter'
 import { initializeGeographyTab } from './geography'
+import { initializeToc } from './common/toc'
 
 export enum Tab {
   Chemistry = 'chemistry',
@@ -44,7 +45,7 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
         initializeGeographyTab()
       }
 
-      window.initializeTocBot()
+      initializeToc()
 
       $('#loading').fadeOut(300)
     })
