@@ -148,12 +148,12 @@ button {
 
 .tab-view h2 {
   font-size: 30px;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .tab-view h3 {
   font-size: 24px;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .tab-view h4 {
@@ -222,10 +222,12 @@ button {
 a.toc-link:hover {
   color: black;
 }
+
 a.toc-link:before {
   content: none;
   display: none;
 }
+
 #charpc-menu,
 #charmac-menu {
   color: #359bb7;
