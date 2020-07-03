@@ -175,6 +175,10 @@ button {
   z-index: 9;
 }
 
+.js-toc.hidden {
+  display: none;
+}
+
 .js-toc::-webkit-scrollbar-track {
   background-color: #f5f5f5;
   border-right: 2px transparent;

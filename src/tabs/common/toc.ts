@@ -16,12 +16,12 @@ const setHeaderIds = () => {
 
 const showTocMenu = () => {
   const jstoc = document.querySelector<HTMLElement>('.js-toc')
-  jstoc.style.display = 'block'
+  jstoc.classList.remove('hidden')
 }
 
 const hideTocMenu = () => {
   const jstoc = document.querySelector<HTMLElement>('.js-toc')
-  jstoc.style.display = 'none'
+  jstoc.classList.add('hidden')
 }
 
 let isMobileToc = false
@@ -55,7 +55,7 @@ export const initializeTocEventListeners = () => {
   const jstocContent = document.querySelector<HTMLElement>('.js-toc-content')
 
   menu.addEventListener('click', () => {
-    if (jstoc.style.display === 'none') {
+    if (jstoc.classList.contains('hidden')) {
       showTocMenu()
     } else {
       hideTocMenu()
