@@ -25,7 +25,8 @@
     "core-js": "^3.6.5",
     "jquery": "^3.5.0",
     "leaflet": "~1.6",
-    "tablesorter": "^2.31.3"
+    "tablesorter": "^2.31.3",
+    "tocbot": "^4.11.2"
   },
   "devDependencies": {
     "@digabi/eslint-config": "^0.0.12",
