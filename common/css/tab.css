@@ -173,10 +173,14 @@ button {
   overflow-y: auto;
   background: white;
   z-index: 9;
+
+  opacity: 1;
+  transition: left ease-in-out 0.2s, opacity linear 0.2s;
 }
 
 .js-toc.hidden {
-  display: none;
+  left: -320px;
+  opacity: 0;
 }
 
 .js-toc::-webkit-scrollbar-track {
