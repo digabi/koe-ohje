@@ -14,6 +14,24 @@ const setHeaderIds = () => {
   })
 }
 
+const setTocVisibilityAndPosition = () => {
+  const jstoc = document.querySelector<HTMLElement>('.js-toc')
+  const navigation = document.getElementById('tab-menu')
+  jstoc.style.top = `${navigation.clientHeight}px`
+
+  if (window.innerWidth > 1024) {
+    jstoc.style.display = 'block'
+    return
+  }
+
+  const searchInput = document.getElementById('js-search-input')
+  if (document.activeElement === searchInput) {
+    return
+  }
+
+  jstoc.style.display = 'none'
+}
+
 export const initializeToc = () => {
   setHeaderIds()
 
@@ -25,4 +43,7 @@ export const initializeToc = () => {
     positionFixedSelector: '.js-toc',
     fixedSidebarOffset: 'auto'
   })
+
+  window.addEventListener('resize', setTocVisibilityAndPosition)
+  setTocVisibilityAndPosition()
 }
