@@ -14,6 +14,7 @@ const setHeaderIds = () => {
   })
 }
 
+let isMobileToc = false
 const setTocVisibilityAndPosition = () => {
   const jstoc = document.querySelector<HTMLElement>('.js-toc')
   const navigation = document.getElementById('tab-menu')
@@ -21,9 +22,11 @@ const setTocVisibilityAndPosition = () => {
 
   if (window.innerWidth > 1024) {
     jstoc.style.display = 'block'
+    isMobileToc = false
     return
   }
 
+  isMobileToc = true
   const searchInput = document.getElementById('js-search-input')
   if (document.activeElement === searchInput) {
     return
@@ -43,7 +46,7 @@ export const initializeTocEventListeners = () => {
 
   // Jos mobilessa painaa sisältöä, piilotetaan menu
   $('.js-toc-content').click(function() {
-    if (window.innerWidth < 1024) {
+    if (isMobileToc) {
       const jstoc = document.querySelector<HTMLElement>('.js-toc')
       jstoc.style.display = 'none'
     }
@@ -59,6 +62,12 @@ export const initializeToc = () => {
     headingSelector: 'h2, h3',
     collapseDepth: 6,
     positionFixedSelector: '.js-toc',
-    fixedSidebarOffset: 'auto'
+    fixedSidebarOffset: 'auto',
+    onClick: () => {
+      if (isMobileToc) {
+        const jstoc = document.querySelector<HTMLElement>('.js-toc')
+        jstoc.style.display = 'none'
+      }
+    }
   })
 }
