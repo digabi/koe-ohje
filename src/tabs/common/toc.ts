@@ -14,6 +14,16 @@ const setHeaderIds = () => {
   })
 }
 
+const showTocMenu = () => {
+  const jstoc = document.querySelector<HTMLElement>('.js-toc')
+  jstoc.style.display = 'block'
+}
+
+const hideTocMenu = () => {
+  const jstoc = document.querySelector<HTMLElement>('.js-toc')
+  jstoc.style.display = 'none'
+}
+
 let isMobileToc = false
 const setTocVisibilityAndPosition = () => {
   const jstoc = document.querySelector<HTMLElement>('.js-toc')
@@ -21,34 +31,40 @@ const setTocVisibilityAndPosition = () => {
   jstoc.style.top = `${navigation.clientHeight}px`
 
   if (window.innerWidth > 1024) {
-    jstoc.style.display = 'block'
+    showTocMenu()
     isMobileToc = false
     return
   }
 
   isMobileToc = true
+
   const searchInput = document.getElementById('js-search-input')
   if (document.activeElement === searchInput) {
     return
   }
 
-  jstoc.style.display = 'none'
+  hideTocMenu()
 }
 
 export const initializeTocEventListeners = () => {
   window.addEventListener('resize', setTocVisibilityAndPosition)
   setTocVisibilityAndPosition()
 
-  // Toggle menu in mobile
-  $('#menu').click(function() {
-    $('.js-toc').toggle('fast')
+  const menu = document.getElementById('menu')
+  const jstoc = document.querySelector<HTMLElement>('.js-toc')
+  const jstocContent = document.querySelector<HTMLElement>('.js-toc-content')
+
+  menu.addEventListener('click', () => {
+    if (jstoc.style.display === 'none') {
+      showTocMenu()
+    } else {
+      hideTocMenu()
+    }
   })
 
-  // Jos mobilessa painaa sisältöä, piilotetaan menu
-  $('.js-toc-content').click(function() {
+  jstocContent.addEventListener('click', () => {
     if (isMobileToc) {
-      const jstoc = document.querySelector<HTMLElement>('.js-toc')
-      jstoc.style.display = 'none'
+      hideTocMenu()
     }
   })
 }
@@ -65,8 +81,7 @@ export const initializeToc = () => {
     fixedSidebarOffset: 'auto',
     onClick: () => {
       if (isMobileToc) {
-        const jstoc = document.querySelector<HTMLElement>('.js-toc')
-        jstoc.style.display = 'none'
+        hideTocMenu()
       }
     }
   })
