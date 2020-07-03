@@ -32,6 +32,24 @@ const setTocVisibilityAndPosition = () => {
   jstoc.style.display = 'none'
 }
 
+export const initializeTocEventListeners = () => {
+  window.addEventListener('resize', setTocVisibilityAndPosition)
+  setTocVisibilityAndPosition()
+
+  // Toggle menu in mobile
+  $('#menu').click(function() {
+    $('.js-toc').toggle('fast')
+  })
+
+  // Jos mobilessa painaa sisältöä, piilotetaan menu
+  $('.js-toc-content').click(function() {
+    if (window.innerWidth < 1024) {
+      const jstoc = document.querySelector<HTMLElement>('.js-toc')
+      jstoc.style.display = 'none'
+    }
+  })
+}
+
 export const initializeToc = () => {
   setHeaderIds()
 
@@ -43,7 +61,4 @@ export const initializeToc = () => {
     positionFixedSelector: '.js-toc',
     fixedSidebarOffset: 'auto'
   })
-
-  window.addEventListener('resize', setTocVisibilityAndPosition)
-  setTocVisibilityAndPosition()
 }
