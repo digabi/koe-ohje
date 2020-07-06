@@ -107,3 +107,26 @@ $(document).ready(function() {
     updateSearch()
   })
 })
+
+function scrollToElement(targetID) {
+  if (targetID == null || targetID == "") {
+    console.log("Could not get targetID for TOC link, reverting to default action");
+    return true;
+  }
+
+  if ($(targetID).length != 1) {
+    console.log("TargetID points to " + $(targetID).length + " elements, reverting to default action");
+    return true;
+  }
+
+  var bodyRect = document.body.getBoundingClientRect(),
+    elemRect = $(targetID).get(0).getBoundingClientRect(),
+    offset = elemRect.top - bodyRect.top;
+
+  // Scroll to 50 px above the given ID
+  window.scrollTo(0, offset - 50);
+
+  // Prevent default action
+  return false;
+}
+
