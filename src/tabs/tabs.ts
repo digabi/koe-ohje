@@ -24,6 +24,7 @@ declare global {
 
 const loadTab = (oldTab: Tab, newTab: Tab) => {
   $('#loading').show()
+  window.location.hash = ''
 
   // This timeout makes sure that the loading screen renders before executing the load tab code
   setTimeout(() => {
