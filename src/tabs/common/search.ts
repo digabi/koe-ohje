@@ -1,4 +1,5 @@
 import Fuse from 'fuse.js'
+import { debounce } from '../../util/debounce'
 
 declare global {
   interface Window {
@@ -36,6 +37,7 @@ export const createSearchIndex = () => {
     })
 
     record.text = elementClone.innerText
+
     searchIndex.push(record)
   })
 
@@ -86,9 +88,8 @@ export const clearSearch = () => {
   renderSearchResults()
 }
 
-// TODO: Debounce
 export const initializeSearchEventListeners = () => {
   const searchInput = document.getElementById('js-search-input')
-  searchInput.addEventListener('keyup', renderSearchResults)
+  searchInput.addEventListener('keyup', debounce(renderSearchResults, 250))
   searchInput.addEventListener('search', renderSearchResults)
 }
