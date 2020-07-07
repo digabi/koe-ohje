@@ -20,7 +20,6 @@ const fuseOptions: Fuse.IFuseOptions<SearchRecord> = {
 let fuse: Fuse<SearchRecord, Fuse.IFuseOptions<SearchRecord>>
 
 export const createSearchIndex = () => {
-  const start = performance.now()
   const contentElement = document.querySelector('.js-toc-content')
   const searchSelector = 'h1, h2, h3, h4, h5, h6, th, td, p, li'
   const searchableContent = contentElement.querySelectorAll<HTMLElement>(searchSelector)
@@ -42,7 +41,6 @@ export const createSearchIndex = () => {
   })
 
   fuse = new Fuse(searchIndex, fuseOptions)
-  console.log('Generated Fuse index in ', window.performance.now() - start, 'ms.')
 }
 
 const createSearchItem = (searchRecrod: SearchRecord): HTMLElement => {
