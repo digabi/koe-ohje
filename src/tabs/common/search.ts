@@ -56,7 +56,7 @@ const createSearchItem = (searchRecrod: SearchRecord): HTMLElement => {
 
   result.innerText = searchRecrod.text
 
-  if (searchRecrod.elementRef.tagName === 'h2' || searchRecrod.elementRef.tagName === 'h3') {
+  if (searchRecrod.elementRef.tagName === 'H2' || searchRecrod.elementRef.tagName === 'H3') {
     result.innerText = ` \u2261 ${result.innerText}`
   }
 
