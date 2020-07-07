@@ -1,52 +1,83 @@
-const searchSelector = 'h1, h2, h3, h4, h5, h6, th, td, p, li'
+import Fuse from 'fuse.js'
 
-const search = (searchTerm: string): HTMLElement[] => {
-  if (!searchTerm) return []
+declare global {
+  interface Window {
+    MathJax: any
+  }
+}
 
+interface SearchRecord {
+  text: string
+  elementRef: HTMLElement
+}
+
+const fuseOptions: Fuse.IFuseOptions<SearchRecord> = {
+  keys: ['text'],
+  threshold: 0.4
+}
+
+let fuse: Fuse<SearchRecord, Fuse.IFuseOptions<SearchRecord>>
+
+export const createSearchIndex = () => {
+  const start = performance.now()
   const contentElement = document.querySelector('.js-toc-content')
+  const searchSelector = 'h1, h2, h3, h4, h5, h6, th, td, p, li'
   const searchableContent = contentElement.querySelectorAll<HTMLElement>(searchSelector)
 
-  const searchResults: HTMLElement[] = []
+  const searchIndex: SearchRecord[] = []
 
   searchableContent.forEach(element => {
-    if (searchResults.length >= 20) return
+    const record: SearchRecord = { text: '', elementRef: element }
 
-    const elementText = element.innerText.toLowerCase()
+    const elementClone = <HTMLElement>element.cloneNode(true)
+    const equations = elementClone.querySelectorAll('.mjpage')
+    equations.forEach(equation => {
+      equation.innerHTML = `\\(${equation.textContent.trim()}\\)`
+    })
 
-    if (elementText.includes(searchTerm.toLowerCase())) {
-      const result = document.createElement('li')
-      result.classList.add('search-result-item')
-
-      result.addEventListener('click', () => {
-        const scrollTop = element.getBoundingClientRect().y + window.scrollY - 50
-        window.scrollTo({ top: scrollTop, behavior: 'smooth' })
-      })
-
-      result.innerText = element.innerText
-
-      if (element.tagName === 'h2' || element.tagName === 'h3') {
-        result.innerText = ` \u2261 ${result.innerText}`
-      }
-
-      searchResults.push(result)
-    }
+    record.text = elementClone.innerText
+    searchIndex.push(record)
   })
 
-  return searchResults
+  fuse = new Fuse(searchIndex, fuseOptions)
+  console.log('Generated Fuse index in ', window.performance.now() - start, 'ms.')
+}
+
+const createSearchItem = (searchRecrod: SearchRecord): HTMLElement => {
+  const result = document.createElement('li')
+  result.classList.add('search-result-item')
+
+  result.addEventListener('click', () => {
+    const scrollTop = searchRecrod.elementRef.getBoundingClientRect().y + window.scrollY - 50
+    window.scrollTo({ top: scrollTop, behavior: 'smooth' })
+  })
+
+  result.innerText = searchRecrod.text
+
+  if (searchRecrod.elementRef.tagName === 'h2' || searchRecrod.elementRef.tagName === 'h3') {
+    result.innerText = ` \u2261 ${result.innerText}`
+  }
+
+  return result
 }
 
 const renderSearchResults = () => {
   const searchInput = <HTMLInputElement>document.getElementById('js-search-input')
-  const results = search(searchInput.value)
 
   const resultContainer = document.getElementById('js-search-result')
   while (resultContainer.firstChild) {
     resultContainer.removeChild(resultContainer.firstChild)
   }
 
-  results.forEach(element => {
-    resultContainer.appendChild(element)
+  if (!fuse) return
+
+  const results = fuse.search(searchInput.value)
+
+  results.slice(0, 10).forEach(resultItem => {
+    resultContainer.appendChild(createSearchItem(resultItem.item))
   })
+
+  window.MathJax.Hub.Queue(['Typeset', window.MathJax.Hub, 'js-search-result'])
 }
 
 export const clearSearch = () => {
