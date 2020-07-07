@@ -3,6 +3,7 @@ import { initializeCopyToClipboard } from '../clipboard'
 import { applyTablesorter } from '../util/tablesorter'
 import { initializeGeographyTab } from './geography'
 import { initializeToc } from './common/toc'
+import { clearSearch, createSearchIndex } from './common/search'
 
 export enum Tab {
   Chemistry = 'chemistry',
@@ -26,6 +27,8 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
   $('#loading').show()
   window.location.hash = ''
 
+  clearSearch()
+
   // This timeout makes sure that the loading screen renders before executing the load tab code
   setTimeout(() => {
     const oldTabElement = document.querySelector(`#tab-${oldTab}`)
@@ -41,6 +44,7 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
       initializeLanguage()
       initializeCopyToClipboard()
       applyTablesorter(newTab)
+      createSearchIndex()
 
       if (newTab === Tab.Geography) {
         initializeGeographyTab()
