@@ -148,12 +148,12 @@ button {
 
 .tab-view h2 {
   font-size: 30px;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .tab-view h3 {
   font-size: 24px;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .tab-view h4 {
@@ -173,6 +173,14 @@ button {
   overflow-y: auto;
   background: white;
   z-index: 9;
+
+  opacity: 1;
+  transition: left ease-in-out 0.2s, opacity linear 0.2s;
+}
+
+.js-toc.hidden {
+  left: -320px;
+  opacity: 0;
 }
 
 .js-toc::-webkit-scrollbar-track {
@@ -222,10 +230,12 @@ button {
 a.toc-link:hover {
   color: black;
 }
+
 a.toc-link:before {
   content: none;
   display: none;
 }
+
 #charpc-menu,
 #charmac-menu {
   color: #359bb7;

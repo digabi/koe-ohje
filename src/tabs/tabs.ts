@@ -2,6 +2,7 @@ import { initializeLanguage } from '../util/language'
 import { initializeCopyToClipboard } from '../clipboard'
 import { applyTablesorter } from '../util/tablesorter'
 import { initializeGeographyTab } from './geography'
+import { initializeToc } from './common/toc'
 
 export enum Tab {
   Chemistry = 'chemistry',
@@ -23,6 +24,7 @@ declare global {
 
 const loadTab = (oldTab: Tab, newTab: Tab) => {
   $('#loading').show()
+  window.location.hash = ''
 
   // This timeout makes sure that the loading screen renders before executing the load tab code
   setTimeout(() => {
@@ -44,7 +46,7 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
         initializeGeographyTab()
       }
 
-      window.initializeTocBot()
+      initializeToc()
 
       $('#loading').fadeOut(300)
     })
