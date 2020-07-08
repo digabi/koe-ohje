@@ -5,7 +5,7 @@ describe('Digabi Exam Help', () => {
     })
 
     it('should render abitti as initial tab', async () => {
-      await expect(page).toMatch('Yleisohjeet')
+      await expect(page).toMatch('Yleisohjeet', { timeout: 5000 })
     })
 
     it('should be able to open spanish tabs', async () => {
@@ -14,7 +14,7 @@ describe('Digabi Exam Help', () => {
         el.click()
       })
 
-      await expect(page).toMatchElement('#tab-spanish h1')
+      await expect(page).toMatchElement('#tab-spanish h1', { timeout: 5000 })
     })
 
     it('should be able to open physics tab', async () => {
@@ -50,7 +50,7 @@ describe('Digabi Exam Help', () => {
         el.click()
       })
 
-      await expect(page).toMatchElement('#tab-french h1')
+      await expect(page).toMatchElement('#tab-french h1', { timeout: 5000 })
     })
 
     it('should be able to open german tab', async () => {
@@ -59,7 +59,7 @@ describe('Digabi Exam Help', () => {
         el.click()
       })
 
-      await expect(page).toMatchElement('#tab-german h1')
+      await expect(page).toMatchElement('#tab-german h1', { timeout: 5000 })
     })
 
     it('should be able to open sami tab', async () => {
@@ -68,7 +68,7 @@ describe('Digabi Exam Help', () => {
         el.click()
       })
 
-      await expect(page).toMatchElement('#tab-sami h1')
+      await expect(page).toMatchElement('#tab-sami h1', { timeout: 5000 })
     })
 
     it('should be able to open geography tab', async () => {
@@ -77,7 +77,7 @@ describe('Digabi Exam Help', () => {
         el.click()
       })
 
-      await expect(page).toMatchElement('#tab-geography h1')
+      await expect(page).toMatchElement('#tab-geography h1', { timeout: 5000 })
     })
   })
 
@@ -85,8 +85,8 @@ describe('Digabi Exam Help', () => {
     it('should show page in swedish', async () => {
       await page.goto('http://localhost:8080/build/index.html?sv')
 
-      await expect(page).toMatchElement('#tab-general h1.sv')
-      await expect(page).not.toMatchElement('#tab-general h1.fi')
+      await expect(page).toMatchElement('#tab-general h1.sv', { timeout: 5000 })
+      await expect(page).not.toMatchElement('#tab-general h1.fi', { timeout: 5000 })
     })
   })
 })
