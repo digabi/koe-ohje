@@ -8,7 +8,8 @@ interface SearchRecord {
 
 const fuseOptions: Fuse.IFuseOptions<SearchRecord> = {
   keys: ['text'],
-  threshold: 0.4
+  threshold: 0.4,
+  ignoreLocation: true
 }
 
 let fuse: Fuse<SearchRecord, Fuse.IFuseOptions<SearchRecord>>
