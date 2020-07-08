@@ -1,12 +1,6 @@
 import Fuse from 'fuse.js'
 import { debounce } from '../../util/debounce'
 
-declare global {
-  interface Window {
-    MathJax: any
-  }
-}
-
 interface SearchRecord {
   text: string
   elementRef: HTMLElement
@@ -52,7 +46,7 @@ const createSearchItem = (searchRecrod: SearchRecord): HTMLElement => {
     window.scrollTo({ top: scrollTop, behavior: 'smooth' })
   })
 
-  result.innerText = searchRecrod.text
+  result.innerHTML = searchRecrod.elementRef.innerHTML
 
   if (searchRecrod.elementRef.tagName === 'H2' || searchRecrod.elementRef.tagName === 'H3') {
     result.innerText = ` \u2261 ${result.innerText}`
@@ -76,8 +70,6 @@ const renderSearchResults = () => {
   results.slice(0, 10).forEach(resultItem => {
     resultContainer.appendChild(createSearchItem(resultItem.item))
   })
-
-  window.MathJax.Hub.Queue(['Typeset', window.MathJax.Hub, 'js-search-result'])
 }
 
 export const clearSearch = () => {
