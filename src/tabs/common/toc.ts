@@ -79,6 +79,7 @@ export const initializeToc = () => {
     collapseDepth: 6,
     positionFixedSelector: '.js-toc',
     fixedSidebarOffset: 'auto',
+    orderedList: false,
     onClick: () => {
       if (isMobileToc) {
         hideTocMenu()

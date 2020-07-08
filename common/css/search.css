@@ -1,7 +1,12 @@
 #js-search-input {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  width: 265px;
+  width: 100%;
+  padding: 5px;
+}
+
+#js-search-result {
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  padding-bottom: 10px;
 }
 
 #js-search-result ul {

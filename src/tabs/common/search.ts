@@ -39,7 +39,7 @@ export const createSearchIndex = () => {
 }
 
 const createSearchItem = (searchRecrod: SearchRecord): HTMLElement => {
-  const result = document.createElement('li')
+  const result = document.createElement('div')
   result.classList.add('search-result-item')
 
   result.addEventListener('click', () => {
