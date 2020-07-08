@@ -41,15 +41,22 @@ export const createSearchIndex = () => {
 const createSearchItem = (searchRecrod: SearchRecord): HTMLElement => {
   const result = document.createElement('div')
   result.classList.add('search-result-item')
+  const isTitle = searchRecrod.elementRef.tagName === 'H2' || searchRecrod.elementRef.tagName === 'H3'
 
   result.addEventListener('click', () => {
-    const scrollTop = searchRecrod.elementRef.getBoundingClientRect().y + window.scrollY - 50
+    let scrollTop = searchRecrod.elementRef.getBoundingClientRect().y + window.scrollY
+
+    // Top navigation offset in headers is already done with css
+    if (!isTitle) {
+      scrollTop = scrollTop - 50
+    }
+
     window.scrollTo({ top: scrollTop, behavior: 'smooth' })
   })
 
   result.innerHTML = searchRecrod.elementRef.innerHTML
 
-  if (searchRecrod.elementRef.tagName === 'H2' || searchRecrod.elementRef.tagName === 'H3') {
+  if (isTitle) {
     result.innerText = ` \u2261 ${result.innerText}`
   }
 
