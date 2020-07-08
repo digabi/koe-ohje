@@ -71,13 +71,18 @@ const renderSearchResults = () => {
     resultContainer.removeChild(resultContainer.firstChild)
   }
 
-  if (!fuse) return
-
-  const results = fuse.search(searchInput.value)
+  const results = fuse?.search(searchInput.value) ?? []
 
   results.slice(0, 10).forEach(resultItem => {
     resultContainer.appendChild(createSearchItem(resultItem.item))
   })
+
+  const resultHeading = document.getElementById('js-search-result-heading')
+  if (results.length === 0) {
+    resultHeading.style.display = 'none'
+  } else {
+    resultHeading.style.display = 'block'
+  }
 }
 
 export const clearSearch = () => {
