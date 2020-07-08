@@ -1,7 +1,12 @@
 #js-search-input {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  width: 265px;
+  width: 100%;
+  padding: 5px;
+}
+
+#js-search-result {
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  padding-bottom: 10px;
 }
 
 #js-search-result ul {
@@ -10,8 +15,7 @@
 }
 
 #js-search-result-heading {
-  margin-top: 10px;
-  padding-inline-start: 10px;
+  margin: 10px 0 5px;
   color: black;
   font-weight: 700;
 }
@@ -20,7 +24,7 @@
   font-size: 16px;
   list-style-type: none;
   text-decoration: none;
-  padding: 5px 5px 5px 10px;
+  padding: 5px 0;
 }
 
 .search-result-item:hover {
@@ -39,4 +43,9 @@
 
 .search-result-item span.mjpage {
   margin: 0;
+}
+
+.search-result-item li,
+.search-result-item img {
+  display: none;
 }

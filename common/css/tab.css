@@ -6,6 +6,11 @@ body {
   font-size: 1em;
 }
 
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
 .scrollwrap {
   overflow-x: auto;
 }
@@ -167,7 +172,6 @@ button {
   position: fixed;
   width: 300px;
   display: block;
-  padding-top: 20px;
   font-size: 20px;
   border-right: 2px #359bb7;
   overflow-y: auto;
@@ -176,6 +180,8 @@ button {
 
   opacity: 1;
   transition: left ease-in-out 0.2s, opacity linear 0.2s;
+
+  padding: 10px;
 }
 
 .js-toc.hidden {
@@ -208,6 +214,10 @@ button {
 .js-toc .toc-list {
   list-style-type: none;
   color: #43464b;
+}
+
+.js-toc > .js-toc-result > .toc-list {
+  padding: 10px 0 0;
 }
 
 .js-toc .is-active-link {
@@ -342,10 +352,6 @@ table.row-highlight tr:nth-child(odd) {
 }
 
 /* Keyboard buttons*/
-* {
-  outline: none;
-}
-
 .key a,
 .key a:visited,
 .key a:hover,

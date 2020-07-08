@@ -1,12 +1,6 @@
 import Fuse from 'fuse.js'
 import { debounce } from '../../util/debounce'
 
-declare global {
-  interface Window {
-    MathJax: any
-  }
-}
-
 interface SearchRecord {
   text: string
   elementRef: HTMLElement
@@ -14,7 +8,8 @@ interface SearchRecord {
 
 const fuseOptions: Fuse.IFuseOptions<SearchRecord> = {
   keys: ['text'],
-  threshold: 0.4
+  threshold: 0.4,
+  ignoreLocation: true
 }
 
 let fuse: Fuse<SearchRecord, Fuse.IFuseOptions<SearchRecord>>
@@ -44,17 +39,24 @@ export const createSearchIndex = () => {
 }
 
 const createSearchItem = (searchRecrod: SearchRecord): HTMLElement => {
-  const result = document.createElement('li')
+  const result = document.createElement('div')
   result.classList.add('search-result-item')
+  const isTitle = searchRecrod.elementRef.tagName === 'H2' || searchRecrod.elementRef.tagName === 'H3'
 
   result.addEventListener('click', () => {
-    const scrollTop = searchRecrod.elementRef.getBoundingClientRect().y + window.scrollY - 50
+    let scrollTop = searchRecrod.elementRef.getBoundingClientRect().y + window.scrollY
+
+    // Top navigation offset in headers is already done with css
+    if (!isTitle) {
+      scrollTop = scrollTop - 50
+    }
+
     window.scrollTo({ top: scrollTop, behavior: 'smooth' })
   })
 
-  result.innerText = searchRecrod.text
+  result.innerHTML = searchRecrod.elementRef.innerHTML
 
-  if (searchRecrod.elementRef.tagName === 'H2' || searchRecrod.elementRef.tagName === 'H3') {
+  if (isTitle) {
     result.innerText = ` \u2261 ${result.innerText}`
   }
 
@@ -69,15 +71,18 @@ const renderSearchResults = () => {
     resultContainer.removeChild(resultContainer.firstChild)
   }
 
-  if (!fuse) return
-
-  const results = fuse.search(searchInput.value)
+  const results = fuse?.search(searchInput.value) ?? []
 
   results.slice(0, 10).forEach(resultItem => {
     resultContainer.appendChild(createSearchItem(resultItem.item))
   })
 
-  window.MathJax.Hub.Queue(['Typeset', window.MathJax.Hub, 'js-search-result'])
+  const resultHeading = document.getElementById('js-search-result-heading')
+  if (results.length === 0) {
+    resultHeading.style.display = 'none'
+  } else {
+    resultHeading.style.display = 'block'
+  }
 }
 
 export const clearSearch = () => {
