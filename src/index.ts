@@ -1,7 +1,7 @@
 import './polyfills'
 import { initializeCopyToClipboard } from './tabs/common/clipboard'
 import { initializeGeographyTab } from './tabs/geography'
-import { applyTablesorter } from './util/tablesorter'
+import { applyTablesorter } from './tabs/common/tablesorter'
 import { initializeLanguage } from './util/language'
 import { initializeTabs } from './tabs/tabs'
 import { initializeTocEventListeners } from './tabs/common/toc'

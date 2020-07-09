@@ -1,6 +1,6 @@
 import { initializeLanguage } from '../util/language'
 import { initializeCopyToClipboard } from './common/clipboard'
-import { applyTablesorter } from '../util/tablesorter'
+import { applyTablesorter } from './common/tablesorter'
 import { initializeGeographyTab } from './geography'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'

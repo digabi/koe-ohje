@@ -1,4 +1,4 @@
-import { Tab } from '../tabs/tabs'
+import { Tab } from '../tabs'
 import { TablesorterConfiguration } from 'tablesorter'
 
 type SorterConfigurations = {
