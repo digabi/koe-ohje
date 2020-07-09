@@ -18,11 +18,13 @@ export const getCurrentLanguage = () => {
 }
 
 export const initializeLanguage = () => {
-  $('.helpvideo').each(function() {
-    const src = `../common/videos/${getCurrentLanguage()}/${$(this).attr('data-src')}`
-    $(this).attr('src', src)
+  const videos = document.querySelectorAll<HTMLElement>('.helpvideo')
+  videos.forEach(video => {
+    const src = `/common/videos/${getCurrentLanguage()}/${video.dataset.src}`
+    video.setAttribute('src', src)
   })
 
   const languageToRemove = getCurrentLanguage() === Language.finnish ? Language.swedish : Language.finnish
-  $(`.${languageToRemove}`).remove()
+  const wrongLanguageElements = document.querySelectorAll(`.${languageToRemove}`)
+  wrongLanguageElements.forEach(element => element.parentNode.removeChild(element))
 }
