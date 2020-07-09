@@ -17,7 +17,7 @@ window.legacyIntegration.initializeCopyToClipboard = initializeCopyToClipboard
 window.legacyIntegration.initializeLanguage = initializeLanguage
 window.legacyIntegration.initializeGeographyTab = initializeGeographyTab
 
-$(document).ready(() => {
+window.addEventListener('load', () => {
   initializeLanguage()
   initializeTabs()
   initializeTocEventListeners()
