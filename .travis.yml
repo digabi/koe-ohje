@@ -21,6 +21,8 @@ script:
   - yarn test
 
 before_deploy:
+  - rm -rf build
+  - yarn build
   - mkdir release
   - cp -r common release
   - cp -r build release
