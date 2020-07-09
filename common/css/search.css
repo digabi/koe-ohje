@@ -49,3 +49,7 @@
 .search-result-item img {
   display: none;
 }
+
+.search-result-item .mjpage {
+  pointer-events: none;
+}
