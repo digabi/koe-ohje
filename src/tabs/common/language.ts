@@ -1,4 +1,4 @@
-import { isAbikitBrowser } from './abikit'
+import { isAbikitBrowser } from '../../util/abikit'
 
 export enum Language {
   finnish = 'fi',

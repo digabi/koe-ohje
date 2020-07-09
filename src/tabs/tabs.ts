@@ -1,4 +1,4 @@
-import { initializeLanguage } from '../util/language'
+import { initializeLanguage } from './common/language'
 import { initializeCopyToClipboard } from './common/clipboard'
 import { applyTablesorter } from './common/tablesorter'
 import { initializeGeographyTab } from './geography'
