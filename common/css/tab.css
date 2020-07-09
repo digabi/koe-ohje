@@ -96,7 +96,7 @@ button {
   background: #359bb7;
   color: #ffffff;
   border-style: none;
-  z-index: 10;
+  z-index: 2000;
 }
 
 .tab-menu-option {
@@ -176,7 +176,7 @@ button {
   border-right: 2px #359bb7;
   overflow-y: auto;
   background: white;
-  z-index: 9;
+  z-index: 2000;
 
   opacity: 1;
   transition: left ease-in-out 0.2s, opacity linear 0.2s;
@@ -431,7 +431,7 @@ table.row-highlight tr:nth-child(odd) {
   display: block;
   opacity: 0.9;
   background-color: #fff;
-  z-index: 99;
+  z-index: 2100;
   text-align: center;
 }
 
@@ -450,7 +450,7 @@ table.row-highlight tr:nth-child(odd) {
   margin-left: -100px;
   margin-top: -50px;
   text-align: center;
-  z-index: 100;
+  z-index: 2101;
   background-color: white;
   font-weight: bold;
 }
@@ -460,7 +460,7 @@ table.row-highlight tr:nth-child(odd) {
   margin: 10px;
   background-color: #14586b;
   position: fixed;
-  z-index: 99;
+  z-index: 2050;
 
   opacity: 0;
   top: -100px;
