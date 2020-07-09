@@ -1,7 +1,7 @@
 import { createWorldMap, createTerrainMap } from '@digabi/maps'
 import { isAbikitBrowser } from '../util/abikit'
 import { log } from '../util/debug'
-import { getCurrentLanguage, Language } from '../util/language'
+import { getCurrentLanguage, Language } from './common/language'
 
 import './geography.css'
 import 'leaflet/dist/leaflet.css'

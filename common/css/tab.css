@@ -435,6 +435,12 @@ table.row-highlight tr:nth-child(odd) {
   text-align: center;
 }
 
+#loading.hidden {
+  left: 100%;
+  opacity: 0;
+  transition: left 0s 0.3s, opacity linear 0.3s;
+}
+
 #loading-text {
   width: 200px;
   height: 100px;
@@ -450,13 +456,18 @@ table.row-highlight tr:nth-child(odd) {
 }
 
 .copying-box {
-  display: none;
-  width: 100%;
-  top: 0;
+  padding: 10px;
+  margin: 10px;
+  background-color: #14586b;
   position: fixed;
-  height: 40px;
-  background-color: #359bb7;
   z-index: 99;
+
+  opacity: 0;
+  top: -100px;
+}
+
+.copying-box.animate {
+  animation: copyingBoxFade 2s;
 }
 
 .copy-text {
@@ -464,6 +475,23 @@ table.row-highlight tr:nth-child(odd) {
   margin: 8px;
   text-align: center;
   color: white;
+}
+
+@keyframes copyingBoxFade {
+  0% {
+    opacity: 100%;
+    top: 0;
+  }
+  50% {
+    opacity: 100%;
+  }
+  90% {
+    top: 0;
+  }
+  100% {
+    opacity: 0%;
+    top: -100px;
+  }
 }
 
 /*
