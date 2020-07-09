@@ -1,5 +1,14 @@
 import { isAbikitBrowser } from './util/abikit'
-import jQuery from 'jquery'
+
+const showSuccess = (boxId: string) => {
+  const box = document.getElementById(boxId)
+  const boxCopy = <HTMLElement>box.cloneNode(true)
+  box.parentNode.replaceChild(boxCopy, box)
+
+  if (!boxCopy.classList.contains('animate')) {
+    boxCopy.classList.add('animate')
+  }
+}
 
 const copyTextToClipboard = (text: string): Promise<void> => {
   return new Promise((resolve, reject) => {
@@ -30,9 +39,7 @@ const copyText = (event: MouseEvent) => {
 
   copyTextToClipboard(text)
     .then(() => {
-      jQuery('#copying_box_kbd')
-        .show()
-        .fadeOut(3000)
+      showSuccess('copying_box_kbd')
     })
     .catch(() => {
       alert('Copying to clipboard is not supported on your browser.')
@@ -59,9 +66,7 @@ const copyEquation = (event: MouseEvent) => {
 
   if (selectedEquation) {
     selectedEquation.style.backgroundColor = 'transparent'
-    jQuery('#copying_box')
-      .stop()
-      .animate({ opacity: '100' })
+    showSuccess('copying_box')
   }
 
   selectedEquation = target
@@ -86,9 +91,7 @@ const copyEquation = (event: MouseEvent) => {
 
   document.body.removeChild(mathImage)
 
-  $('#copying_box')
-    .show()
-    .fadeOut(3000)
+  showSuccess('copying_box')
 }
 
 export const initializeCopyToClipboard = () => {
