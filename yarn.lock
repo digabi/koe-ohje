@@ -550,11 +550,6 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/cldrjs@*":
-  version "0.4.22"
-  resolved "https://registry.yarnpkg.com/@types/cldrjs/-/cldrjs-0.4.22.tgz#24e31cdf15a4ea806ca0a774b024150d1066fea1"
-  integrity sha512-YyzxXZ5s9xwPWznXnI3++X14JGnomDdDAlin7kWZvxX/MzirC9BNFcDSQ0yR8YG2M/xNMn0nXsCGkgbFVyXjGw==
-
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
@@ -591,13 +586,6 @@
     "@types/events" "*"
     "@types/minimatch" "*"
     "@types/node" "*"
-
-"@types/globalize@*":
-  version "0.0.36"
-  resolved "https://registry.yarnpkg.com/@types/globalize/-/globalize-0.0.36.tgz#7423abfccfe1be30775a601d5d467c4cc87ac650"
-  integrity sha512-aWfUbL8clQAeE9wa1qiEEgfJlCWAMaoO19AqjvYPnq9gdqS2rQ+rODiT4wc0PNJ1vTnMqBiR8WThE80y3InQNA==
-  dependencies:
-    "@types/cldrjs" "*"
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.1"
@@ -638,27 +626,6 @@
     jest-diff "^25.1.0"
     pretty-format "^25.1.0"
 
-"@types/jquery@*":
-  version "3.3.38"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.38.tgz#6385f1e1b30bd2bff55ae8ee75ea42a999cc3608"
-  integrity sha512-nkDvmx7x/6kDM5guu/YpXkGZ/Xj/IwGiLDdKM99YA5Vag7pjGyTJ8BNUh/6hxEn/sEu5DKtyRgnONJ7EmOoKrA==
-  dependencies:
-    "@types/sizzle" "*"
-
-"@types/jquery@^3.3.34":
-  version "3.3.34"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.34.tgz#0d3b94057063d3854adaeb579652048fec07ba6c"
-  integrity sha512-lW9vsVL53Xu/Nj4gi2hNmHGc4u3KKghjqTkAlO0kF5GIOPxbqqnQpgqJBzmn3yXLrPqHb6cmNJ6URnS23Vtvbg==
-  dependencies:
-    "@types/sizzle" "*"
-
-"@types/jqueryui@*":
-  version "1.12.10"
-  resolved "https://registry.yarnpkg.com/@types/jqueryui/-/jqueryui-1.12.10.tgz#39ebe4c391fb3b9f623521b4d803d9d4804883fa"
-  integrity sha512-T8sctslWIiLl/2EHEQQfKCB92S9bMKBaeE3+iBRbSERMK/1gzyfqjaIEksduB4eUEsKq+Ji0Y+qVbiXQwI2Mwg==
-  dependencies:
-    "@types/jquery" "*"
-
 "@types/json-schema@^7.0.3":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
@@ -698,38 +665,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/requirejs@*":
-  version "2.1.31"
-  resolved "https://registry.yarnpkg.com/@types/requirejs/-/requirejs-2.1.31.tgz#a24eaa0ee4f6b84feb8f521ca6550d48490b2bc6"
-  integrity sha512-b2soeyuU76rMbcRJ4e0hEl0tbMhFwZeTC0VZnfuWlfGlk6BwWNsev6kFu/twKABPX29wkX84wU2o+cEJoXsiTw==
-
-"@types/select2@*":
-  version "4.0.48"
-  resolved "https://registry.yarnpkg.com/@types/select2/-/select2-4.0.48.tgz#068af9ed46e6455e74eaaafa78f85d201b3e72d7"
-  integrity sha512-C1cUbfwKBqlO+/3OWQKMajA4D/d5SvI9rSGoXCa7FQI9B1p1iRqZzetkfpGPY44BP1Y8emHL17rdUJYZEyzN+Q==
-  dependencies:
-    "@types/jquery" "*"
-    "@types/requirejs" "*"
-
-"@types/sizzle@*":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
-  integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
-
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
-
-"@types/tablesorter@^2.31.1":
-  version "2.31.1"
-  resolved "https://registry.yarnpkg.com/@types/tablesorter/-/tablesorter-2.31.1.tgz#30a59ed63b0cd231d79884cf2ea4e9886ce874ee"
-  integrity sha512-jlneoF2dNN4JTTMoXqVVUD+jQ03fxSAI2Sd1dh5kVcgiTBnzP4LaJKW6XCCoFTTFeZJuK73syOWeLdR1dU+hhA==
-  dependencies:
-    "@types/globalize" "*"
-    "@types/jquery" "*"
-    "@types/jqueryui" "*"
-    "@types/select2" "*"
 
 "@types/yargs-parser@*":
   version "15.0.0"
