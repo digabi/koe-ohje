@@ -1,6 +1,6 @@
 import { initializeLanguage } from './common/language'
 import { initializeCopyToClipboard } from './common/clipboard'
-import { applyTablesorter } from './common/tablesorter'
+import { initializeTablesorter } from './common/tablesorter'
 import { initializeGeographyTab } from './geography'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
@@ -44,7 +44,7 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
     $(`#tab-${newTab}`).load(`tab-${newTab}.html`, () => {
       initializeLanguage()
       initializeCopyToClipboard()
-      applyTablesorter(newTab)
+      initializeTablesorter()
       createSearchIndex()
 
       if (newTab === Tab.Geography) {

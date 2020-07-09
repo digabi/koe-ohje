@@ -1,117 +1,63 @@
-import { Tab } from '../tabs'
-import { TablesorterConfiguration } from 'tablesorter'
+import './tablesorter.css'
 
-type SorterConfigurations = {
-  [key: string]: TablesorterConfiguration
-}
-
-type TabConfigurations = {
-  [key in Tab]?: SorterConfigurations
-}
-
-export const applyTablesorter = (tab: Tab) => {
-  const tabConfigurations = sorterConfigurations[tab]
-  if (!tabConfigurations) return
-
-  Object.entries(tabConfigurations).forEach(([tableId, sorterConfiguration]) => {
-    const table = document.getElementById(tableId)
-    if (!table) return
-    // Use old jQuery reference with the old local copy of tablesorter
-    $(`#${tableId}`).tablesorter(sorterConfiguration)
+const resetSort = (table: HTMLElement) => {
+  const headers = table.querySelectorAll<HTMLElement>('th[data-sortable]')
+  headers.forEach(header => {
+    header.dataset.sorted = 'asc'
+    header.classList.remove('active')
   })
 }
 
-const sorterConfigurations: TabConfigurations = {
-  [Tab.Chemistry]: {
-    'table-nimet_ja_symbolit': {
-      headers: {
-        0: { sorter: 'digit' },
-        1: { sorter: false },
-        2: { sorter: 'text' },
-        3: { sorter: 'text' },
-        4: { sorter: 'text' }
-      },
-      sortList: [[0, 0]]
-    },
-    'table-aineiden_liukoisuus_veteen': {
-      headers: {
-        0: { sorter: 'text' },
-        1: { sorter: false },
-        2: { sorter: false },
-        3: { sorter: false },
-        4: { sorter: false },
-        5: { sorter: false },
-        6: { sorter: false },
-        7: { sorter: false },
-        8: { sorter: false },
-        9: { sorter: false },
-        10: { sorter: false },
-        11: { sorter: false },
-        12: { sorter: false }
-      },
-      sortList: [[0, 0]]
-    }
-  },
-  [Tab.Physics]: {
-    'table-kiinteat_alkuaineet': {
-      headers: {
-        0: { sorter: 'digit' },
-        1: { sorter: false },
-        2: { sorter: false },
-        3: { sorter: false },
-        4: { sorter: false },
-        5: { sorter: false },
-        6: { sorter: false },
-        7: { sorter: false },
-        8: { sorter: false },
-        9: { sorter: false }
-      },
-      sortList: [[0, 0]]
-    },
-    'table-metalliseokset': {
-      headers: {
-        0: { sorter: 'text' },
-        1: { sorter: false },
-        2: { sorter: false },
-        3: { sorter: false },
-        4: { sorter: false },
-        5: { sorter: false },
-        6: { sorter: false }
-      },
-      sortList: [[0, 0]]
-    },
-    'table-muita_kiinteita_aineita': {
-      headers: {
-        0: { sorter: 'text' },
-        1: { sorter: false },
-        2: { sorter: false },
-        3: { sorter: false },
-        4: { sorter: false }
-      },
-      sortList: [[0, 0]]
-    },
-    'table-nesteet': {
-      headers: {
-        0: { sorter: 'text' },
-        1: { sorter: false },
-        2: { sorter: false },
-        3: { sorter: false },
-        4: { sorter: false },
-        5: { sorter: false }
-      },
-      sortList: [[0, 0]]
-    },
-    'table-kaasut': {
-      headers: {
-        0: { sorter: 'text' },
-        1: { sorter: false },
-        2: { sorter: false },
-        3: { sorter: false },
-        4: { sorter: false },
-        5: { sorter: false },
-        6: { sorter: false }
-      },
-      sortList: [[0, 0]]
-    }
+const getCellValue = (row: HTMLElement, index: number): string =>
+  (<HTMLElement>row.children[index]).innerText || row.children[index].textContent
+
+const comparer = (index: number, asc: boolean) => (a: HTMLElement, b: HTMLElement): number => {
+  const value1 = getCellValue(asc ? a : b, index)
+  const value2 = getCellValue(asc ? b : a, index)
+
+  return value1.localeCompare(value2, undefined, {
+    numeric: true,
+    sensitivity: 'base'
+  })
+}
+
+const sort = (table: HTMLElement, header: HTMLTableHeaderCellElement) => {
+  const tbody = table.querySelector('tbody')
+  const columnIndex = header.cellIndex
+  const sortAsc = header.dataset.sorted === 'asc'
+
+  Array.from(tbody.children)
+    .sort(comparer(columnIndex, sortAsc))
+    .forEach(row => tbody.appendChild(row))
+}
+
+const handleHeaderClick = (event: MouseEvent) => {
+  const target = <HTMLTableHeaderCellElement>event.target
+  const table = target.closest('table')
+
+  let newOrder = 'asc'
+  if (target.classList.contains('active')) {
+    newOrder = target.dataset.sorted === 'asc' ? 'desc' : 'asc'
   }
+
+  resetSort(table)
+
+  target.dataset.sorted = newOrder
+  target.classList.add('active')
+
+  sort(table, target)
+}
+
+export const initializeTablesorter = () => {
+  const sortableTables = document.querySelectorAll<HTMLElement>('table.sortable')
+  sortableTables.forEach(table => {
+    const headers = table.querySelectorAll<HTMLTableHeaderCellElement>('th[data-sortable]')
+    headers.forEach(header => {
+      header.addEventListener('click', handleHeaderClick)
+
+      if (header.classList.contains('active')) {
+        sort(table, header)
+      }
+    })
+  })
 }
