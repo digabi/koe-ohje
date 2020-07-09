@@ -435,6 +435,12 @@ table.row-highlight tr:nth-child(odd) {
   text-align: center;
 }
 
+#loading.hidden {
+  left: 100%;
+  opacity: 0;
+  transition: left 0s 0.3s, opacity linear 0.3s;
+}
+
 #loading-text {
   width: 200px;
   height: 100px;

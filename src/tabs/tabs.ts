@@ -24,9 +24,10 @@ declare global {
 }
 
 const loadTab = (oldTab: Tab, newTab: Tab) => {
-  $('#loading').show()
-  window.location.hash = ''
+  const loadingScreen = document.getElementById('loading')
+  loadingScreen.classList.remove('hidden')
 
+  window.location.hash = ''
   clearSearch()
 
   // This timeout makes sure that the loading screen renders before executing the load tab code
@@ -52,7 +53,7 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
 
       initializeToc()
 
-      $('#loading').fadeOut(300)
+      loadingScreen.classList.add('hidden')
     })
   }, 0)
 }
