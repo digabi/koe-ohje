@@ -1,4 +1,4 @@
-import { isAbikitBrowser } from './util/abikit'
+import { isAbikitBrowser } from '../../util/abikit'
 
 const showSuccess = (boxId: string) => {
   const box = document.getElementById(boxId)

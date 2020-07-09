@@ -1,5 +1,5 @@
 import { initializeLanguage } from '../util/language'
-import { initializeCopyToClipboard } from '../clipboard'
+import { initializeCopyToClipboard } from './common/clipboard'
 import { applyTablesorter } from '../util/tablesorter'
 import { initializeGeographyTab } from './geography'
 import { initializeToc } from './common/toc'
