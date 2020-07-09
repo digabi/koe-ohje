@@ -4,6 +4,7 @@ import { initializeTablesorter } from './common/tablesorter'
 import { initializeGeographyTab } from './geography'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
+import { loadHtml } from '../util/loadHtml'
 
 export enum Tab {
   Chemistry = 'chemistry',
@@ -31,30 +32,31 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
   clearSearch()
 
   // This timeout makes sure that the loading screen renders before executing the load tab code
-  setTimeout(() => {
-    const oldTabElement = document.querySelector(`#tab-${oldTab}`)
+  setTimeout(async () => {
+    const oldTabElement = document.getElementById(`tab-${oldTab}`)
     oldTabElement.classList.remove('active')
     while (oldTabElement.firstChild) {
       oldTabElement.removeChild(oldTabElement.firstChild)
     }
 
-    const newTabElement = document.querySelector(`#tab-${newTab}`)
+    const newTabElement = document.getElementById(`tab-${newTab}`)
     newTabElement.classList.add('active')
 
-    $(`#tab-${newTab}`).load(`tab-${newTab}.html`, () => {
-      initializeLanguage()
-      initializeCopyToClipboard()
-      initializeTablesorter()
-      createSearchIndex()
+    const tabHtml = await loadHtml(`tab-${newTab}.html`)
+    newTabElement.innerHTML = tabHtml
 
-      if (newTab === Tab.Geography) {
-        initializeGeographyTab()
-      }
+    initializeLanguage()
+    initializeCopyToClipboard()
+    initializeTablesorter()
+    createSearchIndex()
 
-      initializeToc()
+    if (newTab === Tab.Geography) {
+      initializeGeographyTab()
+    }
 
-      loadingScreen.classList.add('hidden')
-    })
+    initializeToc()
+
+    loadingScreen.classList.add('hidden')
   }, 0)
 }
 
