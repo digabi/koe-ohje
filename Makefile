@@ -5,9 +5,6 @@ all:
 build: content/*
 	yarn build
 
-update-mathjax:
-	cp -r node_modules/mathjax/ common/
-
 deb:
 	if [ -d deb-root ]; then rm -fR deb-root/; fi
 
