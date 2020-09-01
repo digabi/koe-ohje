@@ -5,7 +5,7 @@ all:
 build: content/*
 	yarn build
 
-deb:
+deb: build
 	if [ -d deb-root ]; then rm -fR deb-root/; fi
 
 	# Executable
