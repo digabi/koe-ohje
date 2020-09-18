@@ -23,7 +23,7 @@
   "dependencies": {
     "@digabi/maps": "^0.3.4",
     "core-js": "^3.6.5",
-    "fuse.js": "^6.4.0",
+    "fuse.js": "^6.4.1",
     "leaflet": "~1.6",
     "tocbot": "^4.12.0"
   },
