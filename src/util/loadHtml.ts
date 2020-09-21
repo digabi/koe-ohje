@@ -1,6 +1,6 @@
 export const loadHtml = (url: string): Promise<string> => {
-  return new Promise(function(resolve, reject) {
-    let request = new XMLHttpRequest()
+  return new Promise(function (resolve, reject) {
+    const request = new XMLHttpRequest()
     request.open('GET', url)
     request.onload = () => {
       if (request.status >= 200 && request.status < 300) {
@@ -8,14 +8,14 @@ export const loadHtml = (url: string): Promise<string> => {
       } else {
         reject({
           status: request.status,
-          statusText: request.statusText
+          statusText: request.statusText,
         })
       }
     }
-    request.onerror = function() {
+    request.onerror = function () {
       reject({
         status: request.status,
-        statusText: request.statusText
+        statusText: request.statusText,
       })
     }
     request.send()

@@ -19,6 +19,7 @@ before_install:
 script:
   - yarn build
   - yarn test
+  - yarn lint
 
 before_deploy:
   - rm -rf build

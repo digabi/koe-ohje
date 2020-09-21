@@ -21,7 +21,7 @@ const setupWorldMap = () => {
     if (mapContainer) {
       createWorldMap({
         container: mapContainer,
-        mapUrl
+        mapUrl,
       })
     }
   }
@@ -37,7 +37,7 @@ const setupTerrainMap = () => {
     if (mapContainer) {
       createTerrainMap({
         container: mapContainer,
-        mapUrl
+        mapUrl,
       })
     }
   }

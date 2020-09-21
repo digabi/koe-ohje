@@ -8,6 +8,7 @@
     "start": "webpack-dev-server",
     "start:abikit": "./digabi-koe-ohje-dev.sh",
     "build": "node index.js && webpack --mode production",
+    "lint": "eslint . --ext .ts,.js",
     "test": "jest test/"
   },
   "repository": {

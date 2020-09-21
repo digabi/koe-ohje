@@ -15,7 +15,7 @@ export enum Tab {
   Math = 'math',
   Physics = 'physics',
   Sami = 'sami',
-  Spanish = 'spanish'
+  Spanish = 'spanish',
 }
 
 declare global {
@@ -32,6 +32,7 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
   clearSearch()
 
   // This timeout makes sure that the loading screen renders before executing the load tab code
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   setTimeout(async () => {
     const oldTabElement = document.getElementById(`tab-${oldTab}`)
     oldTabElement.classList.remove('active')
@@ -76,7 +77,7 @@ const handleChangeTab = (event: MouseEvent) => {
 
 export const initializeTabs = () => {
   const menuItems = Array.from(document.querySelectorAll('#tab-menu .tab-menu-option'))
-  menuItems.forEach(element => element.addEventListener('click', handleChangeTab))
+  menuItems.forEach((element) => element.addEventListener('click', handleChangeTab))
 
   loadTab(Tab.General, Tab.General)
 }

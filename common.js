@@ -1,29 +1,28 @@
-const mjpage = require("mathjax-node-page").mjpage
+const mjpage = require('mathjax-node-page').mjpage
 
 const pageConfig = {
-  format: ["TeX"],
+  format: ['TeX'],
   singleDollars: true,
-  output: "svg",
+  output: 'svg',
   MathJax: {
     SVG: {
-      font: "STIX-Web",
-      undefinedFamily: "STIXGeneral",
-	  minScaleAdjust: 110
-
+      font: 'STIX-Web',
+      undefinedFamily: 'STIXGeneral',
+      minScaleAdjust: 110,
     },
     imageFont: null,
     CommonHTML: {
-      scale: 110
-    }
-  }
+      scale: 110,
+    },
+  },
 }
 
 const nodeConfig = {
   svg: true,
-  linebreaks: true
+  linebreaks: true,
 }
 
-const formatLatex = input => {
+const formatLatex = (input) => {
   return new Promise((resolve, reject) => {
     mjpage(input, pageConfig, nodeConfig, (output, err) => {
       if (err) {
@@ -35,11 +34,11 @@ const formatLatex = input => {
   })
 }
 
-const replaceInPath = path => {
-  return path.replace(/taulukot/g, "build")
+const replaceInPath = (path) => {
+  return path.replace(/taulukot/g, 'build')
 }
 
 module.exports = {
   formatLatex,
-  replaceInPath
+  replaceInPath,
 }
