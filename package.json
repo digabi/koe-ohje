@@ -33,7 +33,7 @@
     "@types/jest": "^26.0.14",
     "@types/jest-environment-puppeteer": "^4.3.2",
     "@types/leaflet": "^1.5.12",
-    "@types/puppeteer": "^2.0.1",
+    "@types/puppeteer": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.34.0",
     "css-loader": "^4.3.0",
