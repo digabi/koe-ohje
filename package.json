@@ -15,8 +15,8 @@
     "type": "git",
     "url": "git+https://github.com/digabi/koe-ohje.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Matriculation Examination Board, Finland",
+  "license": "EUPL-1.1",
   "bugs": {
     "url": "https://github.com/digabi/koe-ohje/issues"
   },
