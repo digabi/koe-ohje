@@ -70,13 +70,6 @@ ffmpeg -i "/home/user/input_video.mpg" -codec:v libvpx -quality good -cpu-used 0
 
 Tuloksena on `output.webm`
 
-## Lisenssi
-
-This work is double licensed under:
-
-- Creative Commons No Rights Reserved License ([CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode))
-- [The MIT License](https://opensource.org/licenses/MIT).
-
 ## Kiitämme
 
 - Videot: Peter Ahlroos
