@@ -1,8 +1,8 @@
 # koe-ohje
 
-Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle WebKit-selaimella (ks. https://github.com/digabi/abikit-browser).
+Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle Firefox-selaimella.
 
-Kokeissa käytettävä versio ohjeesta löytyy osoitteesta https://cheat.abitti.fi/ (release haara). Nykyinen versio löytyy testi ympäristöstä (master haara) https://cheat.test.abitti.fi.
+Kokeissa käytettävä versio ohjeesta löytyy osoitteesta https://cheat.abitti.fi/ (release haara). Nykyinen versio löytyy testiympäristöstä (master haara) https://cheat.test.abitti.fi.
 
 ## Projektin käynnistäminen
 
@@ -13,8 +13,6 @@ Projektin kehitystä varten tarvitset Yarn paketinhallintatyökalun https://yarn
 3. Tämän jälkeen voit ajaa projektia lokaalisti komennolla `yarn start`. Lokaalin koe-ohjeen löydät osoitteesta http://localhost:8080
 
 TypeScript muutokset näkyvät selaimessa automaattisesti kun projekti on käynnissä. Jotta HTML tiedostojen muutokset tulevat näkyviin, pitää ne generoida uudelleen `yarn build` komennolla.
-
-Jos koneellesi on asennettu abikit selain, voit testata koe-ohjetta sillä ajamalla komennon `yarn start:abikit` komennon. Huomioithan että koneeltasi löytyvä `pyqt5` versio on sama kuin digabios:n versio. Lisätietoja abikit selaimesta: https://github.com/digabi/abikit-browser
 
 ## Ohjeet muutosten ehdottamiseen
 
@@ -27,7 +25,6 @@ YTL ottaa vastaan muutosehdotuksia. Ennen isompaa muutosta kannattaa ensin kesku
 ### Huomioitavaa muutosehdotuskesta
 
 - Ohje on kaksikielinen (käännöksiin saa tarvittaessa apua muutosehdotuksen yhteydessä tai GitHub issuen kautta)
-- Ohjeen tulee toimia koe ympäristön abikit selaimella (https://github.com/digabi/abikit-browser)
 
 ### HTML-struktuuri
 

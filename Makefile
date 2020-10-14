@@ -16,12 +16,12 @@ deb: build
 
 	# Executable
 	mkdir -p deb-root/usr/local/bin/
-	cp digabi-koe-ohje.sh deb-root/usr/local/bin/digabi-koe-ohje
+	cp digabi-koe-ohje-firefox-esr deb-root/usr/local/bin/digabi-koe-ohje-firefox-esr
 	chmod 755 deb-root/usr/local/bin/*
 
 	# Desktop entry
 	mkdir -p deb-root/usr/share/applications/
-	cp digabi-koe-ohje.desktop deb-root/usr/share/applications/
+	cp digabi-koe-ohje-firefox-esr.desktop deb-root/usr/share/applications/
 
 	# Content
 	mkdir -p deb-root/usr/local/share/digabi-koe-ohje
@@ -33,4 +33,4 @@ deb: build
 	cp build/index.html deb-root/usr/local/share/digabi-koe-ohje/build/index-sv.html
 
 	if [ "x$(BUILD_NUMBER)" = "x" ]; then BUILD_NUMBER=$(default_build_number); echo "Using default build number $$BUILD_NUMBER"; fi; \
-	fpm -C deb-root/ -s dir --name digabi-koe-ohje --architecture native -t deb --version "1.1.$$BUILD_NUMBER" --depends abikit-browser .
+	fpm -C deb-root/ -s dir --name digabi-koe-ohje --architecture native -t deb --version "1.1.$$BUILD_NUMBER" .

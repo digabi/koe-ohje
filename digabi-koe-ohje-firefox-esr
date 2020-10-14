@@ -1,0 +1,24 @@
+#!/bin/bash
+
+TEMPDIR="/home/digabi/Lataukset-Nedladdningar"
+
+IS_FI=`echo "$LANG" | grep -P "^fi"`
+IS_SV=`echo "$LANG" | grep -P "^sv"`
+
+# Defaults to Finnish
+DOC_LANG=fi
+
+if [ "${IS_FI}" != "" ]; then
+	DOC_LANG=fi
+elif [ "${IS_SV}" != "" ]; then
+	DOC_LANG=sv
+	if [ ! -f /usr/local/share/digabi-koe-ohje/build/index-${DOC_LANG}.html ]; then
+		DOC_LANG=fi
+	fi
+
+mkdir -p "${TEMPDIR}"
+chmod 0700 "${TEMPDIR}"
+
+env TEMP="${TEMPDIR}" TMP="${TEMPDIR}" firefox-esr \
+-app /usr/lib/firefox-esr/browser/application.ini \
+http://localhost/help/build/index.html?${DOC_LANG}
