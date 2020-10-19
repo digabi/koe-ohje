@@ -1,0 +1,21 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Web Browser
+Name[fi]=Koeympäristön ohjeet
+Name[sv]=Instruktioner
+Comment=Open instructions
+Comment[fi]=Avaa ohjeet
+Comment[sv]=Öppna instruktionerna
+GenericName=Web Browser
+X-GNOME-FullName=Firefox ESR Web Browser
+Exec=/usr/local/bin/digabi-koe-ohje-firefox-esr
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/usr/local/share/digabi-koe-ohje/help-browser.svg
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=Firefox
+StartupNotify=true
+X-XFCE-Source=file:///usr/share/applications/firefox-esr.desktop
+Path=

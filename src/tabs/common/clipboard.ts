@@ -1,5 +1,3 @@
-import { isAbikitBrowser } from '../../util/abikit'
-
 const showSuccess = (boxId: string) => {
   const box = document.getElementById(boxId)
   const boxCopy = <HTMLElement>box.cloneNode(true)
@@ -12,11 +10,6 @@ const showSuccess = (boxId: string) => {
 
 const copyTextToClipboard = (text: string): Promise<void> => {
   return new Promise((resolve, reject) => {
-    if (isAbikitBrowser()) {
-      window.sharedclass.copy_text_to_clipboard(text)
-      return resolve()
-    }
-
     let success = false
 
     const listener = (event: ClipboardEvent) => {
@@ -76,21 +69,14 @@ const copyEquation = (event: MouseEvent) => {
   mathImage.setAttribute('alt', latex)
   mathImage.setAttribute('src', `${getMathDemoUrl()}/math.svg?latex=${encodeURIComponent(latex)}`)
   document.body.appendChild(mathImage)
-
-  if (isAbikitBrowser()) {
-    window.sharedclass.copy_html_to_clipboard(mathImage.outerHTML)
-  } else {
-    const range = document.createRange()
-    range.selectNode(mathImage)
-
-    const selection = window.getSelection()
-    selection.removeAllRanges()
-    selection.addRange(range)
-    document.execCommand('copy')
-  }
-
+  const range = document.createRange()
+  range.selectNode(mathImage)
+  const selection = window.getSelection()
+  selection.removeAllRanges()
+  selection.addRange(range)
+  document.execCommand('copy')
   document.body.removeChild(mathImage)
-
+  
   showSuccess('copying_box')
 }
 
