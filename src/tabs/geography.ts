@@ -5,6 +5,7 @@ import './geography.css'
 import 'leaflet/dist/leaflet.css'
 
 const mapTilesUrl = process.env.MAP_TILES_URL
+
 const setupWorldMap = () => {
   const mapUrlSv = `${mapTilesUrl}/world/sv/{z}/{x}/{y}.png`
   const mapUrlFi = `${mapTilesUrl}/world/fi/{z}/{x}/{y}.png`
@@ -16,6 +17,7 @@ const setupWorldMap = () => {
     createWorldMap({
       container: mapContainer,
       mapUrl,
+      attribution: '&copy; Leaflet OpenStreetMap',
     })
   }
 }
@@ -28,6 +30,7 @@ const setupTerrainMap = () => {
     createTerrainMap({
       container: mapContainer,
       mapUrl,
+      attribution: '&copy; Leaflet Maanmittauslaitos',
     })
   }
 }
