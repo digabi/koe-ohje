@@ -326,10 +326,10 @@
   resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-0.1.0.tgz#5b745dd3653b71dea35ac213e6eb8378050ab163"
   integrity sha512-pMhROu7rPcFLo5sbvyg5FYiFDeDtCr+XJWn/jotwS6t4Cvd46bm5+JKNeVJxeP6nA9vFdxL5Tg99PsdX1UqaTA==
 
-"@digabi/maps@^0.3.4":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@digabi/maps/-/maps-0.3.4.tgz#b8f46e0e1cf517b4ddcfc33c4534283a8a649f2a"
-  integrity sha512-7/6vvBeJL+pVDWsFycUj9JsZRhrurdtT/dVrTyF9lo0IMQCom1bscsF5cjepUiLyzK+y8gQ+2Qf4TML38bl0ww==
+"@digabi/maps@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@digabi/maps/-/maps-0.4.0.tgz#81ebeade080b7db9559ab6b74135b5127deca820"
+  integrity sha512-mzFLsGynKiHgZo74NwYF4xqbxFuhkx7MNwHjZf07elhPRdiIwSxEXn1ZRgE4YUHUSb2RwDTZjJ/1s4gyBMbmyg==
   dependencies:
     leaflet.tilelayer.fallback "^1.0.4"
 
