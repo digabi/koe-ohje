@@ -16,7 +16,7 @@ deb: build
 
 	# Executable
 	mkdir -p deb-root/usr/local/bin/
-	cp digabi-koe-ohje-firefox-esr deb-root/usr/local/bin/digabi-koe-ohje-firefox-esr
+	cp digabi-koe-ohje-firefox-esr deb-root/usr/local/bin/
 	chmod 755 deb-root/usr/local/bin/*
 
 	# Desktop entry
