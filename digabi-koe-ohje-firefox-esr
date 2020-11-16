@@ -1,7 +1,5 @@
 #!/bin/bash
 
-TEMPDIR="/home/digabi/Lataukset-Nedladdningar"
-
 IS_FI=`echo "$LANG" | grep -P "^fi"`
 IS_SV=`echo "$LANG" | grep -P "^sv"`
 
@@ -17,9 +15,6 @@ elif [ "${IS_SV}" != "" ]; then
 	fi
 fi
 
-mkdir -p "${TEMPDIR}"
-chmod 0700 "${TEMPDIR}"
-
-env TEMP="${TEMPDIR}" TMP="${TEMPDIR}" firefox-esr \
+firefox-esr \
 -app /usr/lib/firefox-esr/browser/application.ini \
 http://localhost/help/build/index.html?${DOC_LANG}
