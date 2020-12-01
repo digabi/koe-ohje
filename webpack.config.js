@@ -43,6 +43,8 @@ module.exports = (env, argv) => {
           process.env.DEPLOYMENT_ENV === 'koe'
             ? JSON.stringify('http://localhost/tiles')
             : JSON.stringify('https://s3.eu-north-1.amazonaws.com/maptiles-cheat.abitti.fi-cheat.abitti-test'),
+        'process.env.MATH_DEMO_URL':
+          process.env.DEPLOYMENT_ENV === 'koe' ? JSON.stringify('') : JSON.stringify('https://math-demo.abitti.fi'),
       }),
     ],
     output: {
