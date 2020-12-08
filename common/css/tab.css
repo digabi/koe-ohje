@@ -230,12 +230,7 @@ button {
 }
 
 .js-toc .toc-list li.is-active-li {
-  background-color: rgba(53,155,183,1.0);
-  color: white !important;
-}
-
-.js-toc .toc-list li.is-active-li .toc-link {
-  color: white !important;
+  background-color: rgba(224, 244, 254, 0.9);
 }
 
 .is-active-link {
