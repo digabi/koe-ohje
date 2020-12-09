@@ -214,14 +214,37 @@ button {
 .js-toc .toc-list {
   list-style-type: none;
   color: #43464b;
+  padding-top: 10px;
+}
+
+.js-toc .toc-list li {
+  margin-bottom: 6px;
+  padding: 7px;
+  font-size: 16px;
+  background-color: rgba(0,0,0,0.05);
+  transition: background-color 0.07s;
+}
+
+.js-toc .toc-list li:hover { 
+  background-color: rgba(0,0,0,0.1);
+}
+
+.js-toc .toc-list li.is-active-li {
+  background-color: rgba(224, 244, 254, 0.9);
+}
+
+.is-active-link {
+  font-weight: normal !important;
+}
+
+.toc-link {
+  /* gives a bigger area to click on */
+  display: inline-block;
+  width: 100%;
 }
 
 .js-toc > .js-toc-result > .toc-list {
   padding: 10px 0 0;
-}
-
-.js-toc .is-active-link {
-  color: black;
 }
 
 .js-toc > ul > li {
@@ -235,10 +258,6 @@ button {
 
 .is-active-link::before {
   background-color: #359bb7 !important;
-}
-
-a.toc-link:hover {
-  color: black;
 }
 
 a.toc-link:before {
