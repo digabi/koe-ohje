@@ -93,8 +93,7 @@ button {
   float: left;
   position: fixed;
   text-transform: uppercase;
-  background: #359bb7;
-  color: #ffffff;
+  background: #e0f4fe;
   border-style: none;
   z-index: 2000;
 }
@@ -108,9 +107,8 @@ button {
 
 .tab-menu-option.active {
   font-weight: bold;
-  color: #ffffff;
   border-width: 0px 0px 4px 0px;
-  border-bottom-color: #1e5075;
+  border-bottom-color: #1e4f75;
   border-style: solid;
   padding-bottom: 10px;
 }
@@ -200,7 +198,7 @@ button {
 }
 
 .js-toc::-webkit-scrollbar-thumb {
-  background-color: #359bb7;
+  background-color: #c1c1c1;
 }
 
 .js-toc-content {
@@ -221,12 +219,12 @@ button {
   margin-bottom: 6px;
   padding: 7px;
   font-size: 16px;
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0, 0, 0, 0.05);
   transition: background-color 0.07s;
 }
 
-.js-toc .toc-list li:hover { 
-  background-color: rgba(0,0,0,0.1);
+.js-toc .toc-list li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .js-toc .toc-list li.is-active-li {
@@ -297,7 +295,7 @@ a.toc-link:before {
 h1 {
   font-size: 3em;
   font-weight: 500;
-  color: #359bb7;
+  color: #282828;
   margin: 0;
   padding: 30px 0px 20px 0px;
 }
