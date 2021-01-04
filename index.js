@@ -10,7 +10,7 @@ const readFromPath = (path) => {
   return fs
     .readFile(contentPath + path)
     .then((file) => {
-      return formatLatex(file)
+      return formatLatex(file.toString())
     })
     .then((output) => {
       return fs.writeFile(buildPath + path, output)
