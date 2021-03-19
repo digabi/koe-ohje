@@ -41,7 +41,7 @@ module.exports = (env, argv) => {
       new webpack.DefinePlugin({
         'process.env.MAP_TILES_URL':
           process.env.DEPLOYMENT_ENV === 'koe'
-            ? JSON.stringify('http://localhost/tiles')
+            ? JSON.stringify('/tiles')
             : JSON.stringify('https://s3.eu-north-1.amazonaws.com/maptiles-cheat.abitti.fi-cheat.abitti-test'),
         'process.env.MATH_DEMO_URL':
           process.env.DEPLOYMENT_ENV === 'koe' ? JSON.stringify('') : JSON.stringify('https://math-demo.abitti.fi'),
