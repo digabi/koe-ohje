@@ -8,3 +8,4 @@ deb-root/
 .vscode/
 *.log
 build/
+.idea/
