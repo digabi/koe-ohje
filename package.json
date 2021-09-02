@@ -26,7 +26,7 @@
     "core-js": "^3.17.1",
     "fuse.js": "^6.4.6",
     "leaflet": "~1.7",
-    "tocbot": "^4.13.2"
+    "tocbot": "^4.13.3"
   },
   "devDependencies": {
     "@digabi/eslint-config": "^0.1.0",
