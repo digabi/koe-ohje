@@ -51,7 +51,7 @@
     "mathjax-node-page": "^3.2.0",
     "prettier": "^2.4.1",
     "puppeteer": "^9.1.1",
-    "style-loader": "^2.0.0",
+    "style-loader": "^3.2.1",
     "ts-jest": "^25.5.1",
     "ts-loader": "^9.2.6",
     "typescript": "^3.9.10",
