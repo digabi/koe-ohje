@@ -26,6 +26,7 @@
     "core-js": "^3.19.1",
     "fuse.js": "^6.4.6",
     "leaflet": "~1.7",
+    "skulpt": "^1.2.0",
     "tocbot": "^4.16.0"
   },
   "devDependencies": {

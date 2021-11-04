@@ -1,0 +1,23 @@
+#code-editor {
+  width: 500px;
+  height: 10em;
+  display: block;
+}
+
+#code-output, #code-error {
+  width: 500px;
+  height: 10em;
+  display: block;
+  overflow-x: auto;
+  overflow-y: auto;
+  padding: 5px;
+  resize: both;
+}
+
+#code-output {
+  background-color: lightgrey;
+}
+
+#code-error {
+  background-color: red;
+}

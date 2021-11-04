@@ -2,6 +2,7 @@ import { initializeLanguage } from './common/language'
 import { initializeCopyToClipboard } from './common/clipboard'
 import { initializeTablesorter } from './common/tablesorter'
 import { initializeGeographyTab } from './geography'
+import { initializeProgrammingTab } from './programming'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
 import { loadHtml } from '../util/loadHtml'
@@ -14,6 +15,7 @@ export enum Tab {
   Germany = 'germany',
   Math = 'math',
   Physics = 'physics',
+  Programming = 'programming',
   Sami = 'sami',
   Spanish = 'spanish',
 }
@@ -51,8 +53,13 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
     initializeTablesorter()
     createSearchIndex()
 
-    if (newTab === Tab.Geography) {
-      initializeGeographyTab()
+    switch (newTab) {
+      case Tab.Geography:
+        initializeGeographyTab()
+        break
+      case Tab.Programming:
+        initializeProgrammingTab()
+        break
     }
 
     initializeToc()
