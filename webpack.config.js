@@ -3,7 +3,13 @@ const webpack = require('webpack')
 const devServer = {
   compress: true,
   port: 8080,
-  writeToDisk: true,
+  static: {
+    directory: __dirname,
+    watch: false
+  },
+  devMiddleware: {
+    writeToDisk: true
+  }
 }
 
 module.exports = (env, argv) => {
