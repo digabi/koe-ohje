@@ -23,6 +23,7 @@
   "homepage": "https://github.com/digabi/koe-ohje#readme",
   "dependencies": {
     "@digabi/maps": "^0.4.0",
+    "client-side-python-runner": "^1.6.6",
     "core-js": "^3.19.1",
     "fuse.js": "^6.4.6",
     "leaflet": "~1.7",
