@@ -1,6 +1,5 @@
 import './programming.css'
-import 'skulpt/dist/skulpt'
-import 'skulpt/dist/skulpt-stdlib'
+import { runCode, setEngine, setOptions } from 'client-side-python-runner'
 
 const codeEditorId = "code-editor"
 const outputId = "code-output"
@@ -16,48 +15,48 @@ const showOutputArea = () => {
   document.getElementById(errorId).style.display = 'none'
 }
 
-const showError = (errorMessage: string) => {
+const printStderr = (error: any) => {
+  var text = "#"+error.lineNumber+": "+error.message+"\n\n"+error.error.message
+
   showErrorArea()
-  document.getElementById(errorId).innerHTML = errorMessage
+  var errorElement = document.getElementById(errorId).innerHTML = text
 }
 
-const executeStdout = (text: string) => {
+const printStdout = (text: string) => {
   showOutputArea()
   var outputElement = document.getElementById(outputId)
   text = text.replace(/</g, '&lt;');
   outputElement.innerHTML = outputElement.innerHTML + text;
 }
 
-const executeCode = () => {
+const executeCode = async() => {
   var code = document.getElementById(codeEditorId).value
   var outputElement = document.getElementById(outputId)
   outputElement.innerHTML = ''
 
-  console.log("foo")
-  try {
-    Sk.importMainWithBody("<stdin>", false, code)
-  } catch (e) {
-    showError(e)
-  }
+  await runCode(code)
 }
 
-const builtinRead = (x) => {
-  console.log(x)
-  if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-    throw "File not found: '" + x + "'";
-  return Sk.builtinFiles["files"][x];
-}
+const initializePythonEngine = async() => {
+  setOptions({
+    output: printStdout, // Output from print(...)-functions
+    error: printStderr, // Throws an exception unless this is set to a function
+    input: prompt, // How to feed the input(...)-function
+    pythonVersion: 3, // Preferred version
+    loadVariablesBeforeRun: false,
+    storeVariablesAfterRun: false,
+    onLoading: (engine) => {},
+    onLoaded: (engine) => {},
+  });
 
-const initializeSkupt = () => {
-  Sk.configure({
-    output: executeStdout
-  })
-  showOutputArea()
+  setEngine('pyodide')
 }
 
 export const initializeProgrammingTab = () => {
-  initializeSkupt()
+  initializePythonEngine()
 
   const executeButtons = Array.from(document.querySelectorAll('.code-editor-execute'))
   executeButtons.forEach((element) => element.addEventListener('click', executeCode))
+
+  showOutputArea()
 }
