@@ -21,3 +21,10 @@
 #code-error {
   background-color: red;
 }
+
+.code-clickable {
+  background: lightgrey;
+  padding: 5px;
+  border: 1px;
+  border-style: solid;
+}
