@@ -39,6 +39,19 @@ const copyText = (event: MouseEvent) => {
     })
 }
 
+const copyCode = (event: MouseEvent) => {
+  const target = event.target as HTMLElement
+  const text = target.textContent
+
+  copyTextToClipboard(text)
+    .then(() => {
+      showSuccess('copying_box_code')
+    })
+    .catch(() => {
+      alert('Copying to clipboard is not supported on your browser.')
+    })
+}
+
 let selectedEquation: HTMLElement
 const copyEquation = (event: MouseEvent) => {
   const target = event.target as HTMLElement
@@ -66,13 +79,16 @@ const copyEquation = (event: MouseEvent) => {
   selection.addRange(range)
   document.execCommand('copy')
   document.body.removeChild(mathImage)
-  
+
   showSuccess('copying_box')
 }
 
 export const initializeCopyToClipboard = () => {
   const copyableElements = Array.from(document.querySelectorAll('.clickable'))
   copyableElements.forEach(element => element.addEventListener('click', copyText))
+
+  const copyableElements = Array.from(document.querySelectorAll('.code-clickable'))
+  copyableElements.forEach(element => element.addEventListener('click', copyCode))
 
   const equationElements = Array.from(document.querySelectorAll('svg'))
   equationElements.forEach(element => element.addEventListener('click', copyEquation))

@@ -8,3 +8,66 @@
 
 <pre id="code-output"></pre>
 <pre id="code-error"></pre>
+
+<h1 class="fi">Ohjelmointi</h1>
+<h1 class="sv">Programmering</h1>
+
+<h2 class="fi">Tulostaminen</h2>
+
+<pre class="code-clickable">
+print("Hello world!")
+</pre>
+
+<h2 class="fi">Muuttuja</h2>
+
+<p class="fi">
+  Erilaisia muuttujia ja niiden tulostaminen: kokonaisluku, liukuluku (desimaaliluku) ja merkkijono.
+  Ensin tulostetaan pelkät muuttujat ja seuraavaksi samat muuttujat osana merkkijonoa.
+</p>
+
+<pre class="code-clickable">
+a=1
+b=1.01
+c="one"
+
+print(a)
+print(b)
+print(c)
+
+print("a equals to %d" % a)
+print("b equals to %f" % b)
+print("c equals to %s" % c)
+</pre>
+
+<p class="fi">Yhdessä tulostuslauseessa voidaan tulostaa useita muuttujia.</p>
+
+<pre class="code-clickable">
+a=1
+c="one"
+
+print("a equals to %d and c equals to %s" % (a, c))
+</pre>
+
+<h2 class="fi">Ehtolause</h2>
+
+<p class="fi">Yksinkertainen ehtolause (jos - muuten).</p>
+
+<pre class="code-clickable">
+a=1
+if a==1:
+  print("a is equal to one")
+else:
+  print("a is something else than one")
+</pre>
+
+<p class="fi">Ehtolause, jossa useita haaroja (jos 1 - jos 2 - muuten).</p>
+
+<pre class="code-clickable">
+a=1
+if a==1:
+  print("a is equal to one")
+elif a==2
+  print("a is equal to two")
+else:
+  print("a is neither one or two")
+</pre>
