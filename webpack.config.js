@@ -5,11 +5,11 @@ const devServer = {
   port: 8080,
   static: {
     directory: __dirname,
-    watch: false
+    watch: false,
   },
   devMiddleware: {
-    writeToDisk: true
-  }
+    writeToDisk: true,
+  },
 }
 
 module.exports = (env, argv) => {
