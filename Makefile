@@ -34,3 +34,22 @@ deb: build
 
 	if [ "x$(BUILD_NUMBER)" = "x" ]; then BUILD_NUMBER=$(default_build_number); echo "Using default build number $$BUILD_NUMBER"; fi; \
 	fpm -C deb-root/ -s dir --name digabi-koe-ohje --architecture native -t deb --version "1.1.$$BUILD_NUMBER" .
+
+pyodide-build.tar.bz2:
+	wget -O pyodide-build.tar.bz2 https://github.com/pyodide/pyodide/releases/download/0.18.1/pyodide-build-0.18.1.tar.bz2
+
+update-pyodide: pyodide-build.tar.bz2
+	-rm -fR common/pyodide/
+	-rm -fR common/pyodide-temp/
+	cd common; tar --get -j <../pyodide-build.tar.bz2
+	mv common/pyodide/ common/pyodide-temp/
+	mkdir common/pyodide/
+	# Copy common Pyodide stuff we want to take to production
+	cp common/pyodide-temp/*.ts common/pyodide/
+	cp common/pyodide-temp/pyodide* common/pyodide/
+	cd common/pyodide-temp; cp packages.json ../pyodide/
+	# Copy required libraries
+	cd common/pyodide-temp; cp numpy.* distutils.* ../pyodide/
+
+	# Remove temp
+	rm -fR common/pyodide-temp/
