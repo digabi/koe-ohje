@@ -9,8 +9,9 @@ Kokeissa käytettävä versio ohjeesta löytyy osoitteesta https://cheat.abitti.
 Projektin kehitystä varten tarvitset Yarn paketinhallintatyökalun https://yarnpkg.com/ sekä Node.js version 12 https://nodejs.org/en/ (tarkempi versio löytyy `.nvmrc` tiedostosta)
 
 1. Asenna projektin riippuvuudet komennolla `yarn install`
-2. Generoi HTML tiedostot komennolla `yarn build:internet` (varsinaisen koetilanteen versio käyttää `yarn build`)
-3. Tämän jälkeen voit ajaa projektia lokaalisti komennolla `yarn start`. Lokaalin koe-ohjeen löydät osoitteesta http://localhost:8080
+1. Jos käsittelet ohjelmointivälilehteä, aja myös `make update-pyodide`
+1. Generoi HTML tiedostot komennolla `yarn build:internet` (varsinaisen koetilanteen versio käyttää `yarn build`)
+1. Tämän jälkeen voit ajaa projektia lokaalisti komennolla `yarn start`. Lokaalin koe-ohjeen löydät osoitteesta http://localhost:8080
 
 TypeScript muutokset näkyvät selaimessa automaattisesti kun projekti on käynnissä. Jotta HTML tiedostojen muutokset tulevat näkyviin, pitää ne generoida uudelleen `yarn build:internet` komennolla.
 
