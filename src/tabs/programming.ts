@@ -1,9 +1,10 @@
 import './programming.css'
-import { runCode, setEngine, setOptions } from 'client-side-python-runner'
 
 const codeEditorId = "code-editor"
 const outputId = "code-output"
 const errorId = "code-error"
+
+var pyodide
 
 const showErrorArea = () => {
   document.getElementById(outputId).style.display = 'none'
@@ -15,41 +16,46 @@ const showOutputArea = () => {
   document.getElementById(errorId).style.display = 'none'
 }
 
-const printStderr = (error: any) => {
-  var text = "#"+error.lineNumber+": "+error.message+"\n\n"+error.error.message
-
+const printStderr = (text: string) => {
   showErrorArea()
-  var errorElement = document.getElementById(errorId).innerHTML = text
+  document.getElementById(errorId).innerHTML = text
+}
+
+const clearStdout = () => {
+  document.getElementById(outputId).innerHTML = ""
 }
 
 const printStdout = (text: string) => {
+  console.log(text)
   showOutputArea()
   var outputElement = document.getElementById(outputId)
   text = text.replace(/</g, '&lt;');
-  outputElement.innerHTML = outputElement.innerHTML + text;
+  outputElement.innerHTML = outputElement.innerHTML + text + "\n";
 }
 
 const executeCode = async() => {
-  var code = document.getElementById(codeEditorId).value
-  var outputElement = document.getElementById(outputId)
-  outputElement.innerHTML = ''
+  clearStdout()
 
-  await runCode(code)
+  var code = document.getElementById(codeEditorId).value
+
+  try {
+    pyodide.runPython(code)
+  }
+  catch (err) {
+    console.log(err)
+    printStderr(err.toString())
+  }
 }
 
 const initializePythonEngine = async() => {
-  setOptions({
-    output: printStdout, // Output from print(...)-functions
-    error: printStderr, // Throws an exception unless this is set to a function
-    input: prompt, // How to feed the input(...)-function
-    pythonVersion: 3, // Preferred version
-    loadVariablesBeforeRun: false,
-    storeVariablesAfterRun: false,
-    onLoading: (engine) => {},
-    onLoaded: (engine) => {},
-  });
+  pyodide = await loadPyodide({
+    indexURL : "/common/pyodide/",  // FIXME: ../common/pyodide/ will be interpreted as common/common/pyodide
+    stdin: () => prompt(),
+    stdout: (text) => printStdout(text),
+    stderr: (text) => printStderr(text),
+  })
 
-  setEngine('pyodide')
+  pyodide.loadPackage("numpy")
 }
 
 export const initializeProgrammingTab = () => {
