@@ -1,31 +1,45 @@
-<h1 class="fi">Ohjelmointi</h1>
-<h1 class="sv">Programmering</h1>
+<div id="tab-programming-container">
 
-<textarea id="code-editor"></textarea>
+  <div id="tab-programming-ide-container">
+    <p class="fi">Python 3 -ohjelmakoodi:</p>
 
-<button class="code-editor-execute fi">Suorita ohjelma</button>
-<button class="code-editor-execute sv">Kör program</button>
+    <textarea id="code-editor"></textarea>
 
-<pre id="code-output"></pre>
-<pre id="code-error"></pre>
+    <button class="code-editor-execute fi">Suorita ohjelma</button>
+    <button class="code-editor-execute sv">Kör program</button>
 
-<h1 class="fi">Ohjelmointi</h1>
-<h1 class="sv">Programmering</h1>
+    <p class="fi">Tulosteet/virheet:</p>
+    <pre id="code-output"></pre>
+    <pre id="code-error"></pre>
+  </div>
 
-<h2 class="fi">Tulostaminen</h2>
+  <div id="tab-programming-doc-container">
+    <h1 class="fi">Ohjelmointi</h1>
+    <h1 class="sv">Programmering</h1>
 
-<pre class="code-clickable">
+    <div class="fi">
+      <ul>
+        <li>Voit selata ohjelmoinnin lähdemateriaalia</li>
+        <li>Voit kopioida lähdemateriaalissa olevia ohjelmakoodeja leikepöydälle klikkaamalla haluamaasi esimerkkikoodia</li>
+        <li>Liitä leikepöydälle kopioimasi koodi klikkaamalla ohjelmakoodi-ikkunaa ja painamalla Ctrl-V</li>
+        <li>Suorita ohjelmakoodi-ikkunassa oleva koodi klikkaamalla Suorita ohjelma -painiketta.</li>
+      </ul>
+    </div>
+
+    <h2 class="fi">Tulostaminen</h2>
+
+    <pre class="code-clickable">
 print("Hello world!")
-</pre>
+    </pre>
 
-<h2 class="fi">Muuttuja</h2>
+    <h2 class="fi">Muuttuja</h2>
 
-<p class="fi">
-  Erilaisia muuttujia ja niiden tulostaminen: kokonaisluku, liukuluku (desimaaliluku) ja merkkijono.
-  Ensin tulostetaan pelkät muuttujat ja seuraavaksi samat muuttujat osana merkkijonoa.
-</p>
+    <p class="fi">
+      Erilaisia muuttujia ja niiden tulostaminen: kokonaisluku, liukuluku (desimaaliluku) ja merkkijono.
+      Ensin tulostetaan pelkät muuttujat ja seuraavaksi samat muuttujat osana merkkijonoa.
+    </p>
 
-<pre class="code-clickable">
+    <pre class="code-clickable">
 a=1
 b=1.01
 c="one"
@@ -37,32 +51,32 @@ print(c)
 print("a equals to %d" % a)
 print("b equals to %f" % b)
 print("c equals to %s" % c)
-</pre>
+    </pre>
 
-<p class="fi">Yhdessä tulostuslauseessa voidaan tulostaa useita muuttujia.</p>
+    <p class="fi">Yhdessä tulostuslauseessa voidaan tulostaa useita muuttujia.</p>
 
-<pre class="code-clickable">
+    <pre class="code-clickable">
 a=1
 c="one"
 
 print("a equals to %d and c equals to %s" % (a, c))
-</pre>
+    </pre>
 
-<h2 class="fi">Ehtolause</h2>
+    <h2 class="fi">Ehtolause</h2>
 
-<p class="fi">Yksinkertainen ehtolause (jos - muuten).</p>
+    <p class="fi">Yksinkertainen ehtolause (jos - muuten).</p>
 
-<pre class="code-clickable">
+    <pre class="code-clickable">
 a=1
 if a==1:
   print("a is equal to one")
 else:
   print("a is something else than one")
-</pre>
+    </pre>
 
-<p class="fi">Ehtolause, jossa useita haaroja (jos 1 - jos 2 - muuten).</p>
+    <p class="fi">Ehtolause, jossa useita haaroja (jos 1 - jos 2 - muuten).</p>
 
-<pre class="code-clickable">
+    <pre class="code-clickable">
 a=1
 if a==1:
   print("a is equal to one")
@@ -70,4 +84,7 @@ elif a==2
   print("a is equal to two")
 else:
   print("a is neither one or two")
-</pre>
+    </pre>
+  </div>
+
+</div>
