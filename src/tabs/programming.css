@@ -1,21 +1,22 @@
 #code-editor {
-  width: 500px;
+  width: 100%;
   height: 10em;
   display: block;
+  resize: vertical
 }
 
 #code-output, #code-error {
-  width: 500px;
+  width: 100%;
   height: 10em;
   display: block;
   overflow-x: auto;
   overflow-y: auto;
   padding: 5px;
-  resize: both;
 }
 
 #code-output {
   background-color: lightgrey;
+  resize: vertical;
 }
 
 #code-error {
@@ -27,4 +28,26 @@
   padding: 5px;
   border: 1px;
   border-style: solid;
+}
+
+#tab-programming-container {
+  display: flex;
+  flex-flow: row-reverse wrap;
+}
+
+#tab-programming-ide-container {
+  flex-basis: 400px;
+  flex-grow: 1;
+  position: -webkit-sticky;
+  position: sticky;
+  align-self: flex-start;
+  top: 70px;
+  padding: 10px 5px 5px 5px;
+  background-color: #fafafa;
+}
+
+#tab-programming-doc-container {
+  flex-basis: 400px;
+  flex-grow: 1;
+  padding: 5px;
 }
