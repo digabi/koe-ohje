@@ -1,4 +1,5 @@
 import './programming.css'
+import { initializeMonacoEditor, getCode, resetEditorLayout } from './common/monaco-editor'
 
 const codeEditorId = "code-editor"
 const outputId = "code-output"
@@ -36,7 +37,7 @@ const printStdout = (text: string) => {
 const executeCode = async() => {
   clearStdout()
 
-  var code = document.getElementById(codeEditorId).value
+  var code = getCode()
 
   try {
     pyodide.runPython(code)
@@ -59,6 +60,7 @@ const initializePythonEngine = async() => {
 }
 
 export const initializeProgrammingTab = () => {
+  initializeMonacoEditor(codeEditorId)
   initializePythonEngine()
 
   const executeButtons = Array.from(document.querySelectorAll('.code-editor-execute'))
