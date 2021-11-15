@@ -9,7 +9,10 @@ const devServer = {
 module.exports = (env, argv) => {
   const isProduction = argv && argv.mode === 'production'
   return {
-    entry: './src/index.ts',
+    entry: {
+      app: './src/index.ts',
+      'editor.worker': 'monaco-editor/esm/vs/editor/editor.worker.js',
+    },
     devtool: isProduction ? 'cheap-module-source-map' : 'inline-source-map',
     mode: isProduction ? 'production' : 'development',
     module: {
@@ -32,6 +35,10 @@ module.exports = (env, argv) => {
           test: /\.(png|jpe?g|gif)$/i,
           use: [{ loader: 'file-loader' }],
         },
+        {
+          test: /\.ttf$/,
+          use: [{ loader: 'file-loader' }],
+        },
       ],
     },
     resolve: {
@@ -48,7 +55,8 @@ module.exports = (env, argv) => {
       }),
     ],
     output: {
-      filename: 'bundle.js',
+      globalObject: 'self',
+      filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'build'),
     },
     devServer: isProduction ? undefined : devServer,
