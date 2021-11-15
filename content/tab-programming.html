@@ -14,77 +14,926 @@
   </div>
 
   <div id="tab-programming-doc-container">
-    <h1 class="fi">Ohjelmointi</h1>
-    <h1 class="sv">Programmering</h1>
+<h1 class="fi">Ohjelmointi</h1>
+<h1 class="sv">Programmering</h1>
 
-    <div class="fi">
-      <ul>
-        <li>Voit selata ohjelmoinnin lähdemateriaalia</li>
-        <li>Voit kopioida lähdemateriaalissa olevia ohjelmakoodeja leikepöydälle klikkaamalla haluamaasi esimerkkikoodia</li>
-        <li>Liitä leikepöydälle kopioimasi koodi klikkaamalla ohjelmakoodi-ikkunaa ja painamalla Ctrl-V</li>
-        <li>Suorita ohjelmakoodi-ikkunassa oleva koodi klikkaamalla Suorita ohjelma -painiketta.</li>
-      </ul>
-    </div>
+<ul class="fi">
+  <li>Voit selata ohjelmoinnin lähdemateriaalia.</li>
+  <li>Voit kopioida lähdemateriaalissa olevia ohjelmakoodeja leikepöydälle klikkaamalla haluamaasi esimerkkikoodia.</li>
+  <li>Liitä leikepöydälle kopioimasi koodi klikkaamalla ohjelmakoodi-ikkunaa ja painamalla ctrl-v.</li>
+  <li>Suorita ohjelmakoodi-ikkunassa oleva koodi klikkaamalla Suorita ohjelma -painiketta.</li>
+</ul>
 
-    <h2 class="fi">Tulostaminen</h2>
+<h2 class="fi">Tekstin tulostaminen</h2>
 
-    <pre class="code-clickable">
+<pre class="code-clickable">
 print("Hello world!")
-    </pre>
+</pre>
 
-    <h2 class="fi">Muuttuja</h2>
+<pre class="execution-output">
+Hello world!
+</pre>
 
-    <p class="fi">
-      Erilaisia muuttujia ja niiden tulostaminen: kokonaisluku, liukuluku (desimaaliluku) ja merkkijono.
-      Ensin tulostetaan pelkät muuttujat ja seuraavaksi samat muuttujat osana merkkijonoa.
-    </p>
+<h2 class="fi">Kommentointi</h2>
 
-    <pre class="code-clickable">
-a=1
-b=1.01
-c="one"
+<p class="fi">Kommenttirivi alkaa <code>#</code>-merkillä. Kun kone suorittaa koodin, se hyppää yli kaikki kommentit.</p>
+
+<pre class="code-clickable">
+#This is a comment
+
+#This is a
+#multiline comment
+
+"""
+This is also
+
+a multiline comment
+"""
+</pre>
+
+<p class="fi">Kommentointi koodirivillä</p>
+
+<pre class="code-clickable">
+name = “Onni”   #Set the value “Onni” to variable name
+</pre>
+
+<h2 class="fi">Muuttujat</h2>
+
+<ul class="fi">
+  <li>Muuttujan nimessä saa olla vain yksi sana.</li>
+  <li>Muuttujan nimessä saa olla vain kirjaimia, numeroita ja <code>_</code>-merkki</li>
+  <li>Muuttujan nimi ei voi alkaa numerolla</li>
+</ul>
+
+<pre class="code-clickable">
+a = 84
+b = 356
+name = "Anna"
+numbers = [1,2,3,4,5]
+
+print("Welcome", name)
+
+print("Value of variable:", a)
+
+print("Sum of variables:", a+b)
+
+print("A list of numbers:", numbers)
+</pre>
+
+<pre class="execution-output">
+Welcome Anna
+Value of variable: 84
+Sum of variables: 440
+A list of numbers: [1, 2, 3, 4, 5]
+</pre>
+
+<h2 class="fi">Muuttujien tyypit</h2>
+
+<pre class="code-clickable">
+name = "Lisa"				# string
+age = 34            # integer
+lenght = 168.5      # floating point number "decimal number"
+is_prime = True     # boolean
+numbers = [4,5,6,7] # list
+</pre>
+
+<p class="fi">Python valitsee automaattisesti parhaaksi arvaamansa tietotyypin. Tyypin voi tarkistaa komennolla <code>type()</code>.</p>
+
+<pre class="code-clickable">
+print(type(name))
+print(type(age))
+print(type(lenght))
+print(type(is_prime))
+print(type(numbers))
+</pre>
+
+<pre class="execution-output">
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'bool'&gt;
+&lt;class 'list'&gt;
+</pre>
+
+<p class="fi">Muuttujan tyyppiä voi muuttaa tarpeen mukaan:</p>
+
+<pre class="code-clickable">
+a = 7
+b = float(a)
+c = str(a)
+
+print(2*a)
+print(2*b)
+print(2*c)
+</pre>
+
+<pre class="execution-output">
+14
+14.0
+77
+</pre>
+
+<h2 class="fi">Moduulin tai paketin lisääminen</h2>
+
+<p class="fi">
+  Osa komennoista löytyy erillisistä moduuleista tai laajemmista paketeista, jotka täytyy erikseen ottaa käyttöön.
+  Esimerkiksi neliöjuuren laskeva funktio <code>sqrt()</code> tai vakio <code>pi</code> löytyvät moduulista <code>math</code>.
+</p>
+<p class="fi">
+  Moduuli otetaan käyttöön <code>import</code>-komennolla. Tapoja on erilaisia.
+</p>
+
+<pre class="code-clickable">
+import math
+
+print(math.sqrt(5))
+print(math.pi)
+</pre>
+
+<pre class="execution-output">
+2.23606797749979
+3.141592653589793
+</pre>
+
+<pre class="code-clickable">
+from math import sqrt
+
+print(sqrt(5))
+</pre>
+
+<pre class="execution-output">
+2.23606797749979
+</pre>
+
+<p class="fi">Moduulin kaikki komennot kaikki komennot saa käyttöön <code>import *</code> -komennolla:</p>
+
+<pre class="code-clickable">
+from math import *
+
+print(sqrt(5))
+print(sin(5))
+</pre>
+
+<pre class="execution-output">
+2.23606797749979
+-0.9589242746631385
+</pre>
+
+<h2 class="fi">Laskutoimitukset</h2>
+
+<h3 class="fi">Yleisimmät laskutoimitukset</h3>
+
+<p class="fi">Yhteen-, vähennys-, kerto- ja jakolasku sekä potenssi ja itseisarvo:</p>
+
+<pre class="code-clickable">
+print( 2+3 )
+print( 2-3 )
+print( 2*3 )
+print( 2/3 )
+print( 2**3 )
+print( abs(-5) )
+</pre>
+
+<pre class="execution-output">
+5
+-1
+6
+0.6666666666666666
+8
+5
+</pre>
+
+<p class="fi">Jakolaskun kokonaisosa ja jakojäännös:</p>
+
+<pre class="code-clickable">
+print(7//3)
+print(7%3)
+</pre>
+
+<pre class="execution-output">
+2
+1
+</pre>
+
+<h3 class="fi">Pyöristäminen</h3>
+
+<p class="fi">Pyöristäminen tapahtuu <code>round()</code>-funktiolla</p>
+
+<pre class="code-clickable">
+a = 2/3
+
+print(a)
+
+print(round(a,2))
+</pre>
+
+<pre class="execution-output">
+0.6666666666666666
+0.67
+</pre>
+
+<h3 class="fi">Trigonometria</h3>
+
+<p class="fi">Kulman yksikkö on radiaani.</p>
+
+<pre class="code-clickable">
+import math
+
+x = math.cos(1.2)
+y = math.sin(1.2)
+z = math.tan(1.2)
+
+print(x)
+print(y)
+print(z)
+</pre>
+
+<pre class="execution-output">
+0.3623577544766736
+0.9320390859672263
+2.5721516221263188
+</pre>
+
+<pre class="code-clickable">
+import math
+
+alpha = math.asin(1)
+beta = math.acos(1)
+gamma = math.atan(1)
+
+print(alpha)
+print(beta)
+print(gamma)
+</pre>
+
+<pre class="execution-output">
+1.5707963267948966
+0.0
+0.7853981633974483
+</pre>
+
+<p class="fi">Radiaanit ja asteet:</p>
+
+<pre class="code-clickable">
+import math
+
+x = math.pi
+deg = math.degrees(x)
+
+print(x, "radians is", deg, "degrees.")
+
+print(60, "degrees is", math.radians(60), "radians.")
+</pre>
+
+<pre class="execution-output">
+3.141592653589793 radians is 180.0 degrees.
+60 degrees is 1.0471975511965976 radians.
+</pre>
+
+<h3 class="fi">Juuret</h3>
+
+<p class="fi">Neliöjuurelle löytyy oma komento <code>math</code>-moduulista. Muille juurille voi käyttää murtopotenssia.</p>
+
+<pre class="code-clickable">
+import math
+
+print(math.sqrt(5))
+print(8**(1/3))
+</pre>
+
+<pre class="execution-output">
+2.23606797749979
+2.0
+</pre>
+
+<h3 class="fi">Logaritmit</h3>
+
+<p class="fi">Seuraavassa esimerkissä esiintyvät luonnollinen logaritmi sekä logaritmit, joiden kantaluvut ovat 10, 2 ja 3.</p>
+
+<pre class="code-clickable">
+import math
+
+a = math.log(10)
+b = math.log10(1000)
+c = math.log2(8)
+d = math.log(81,3)
 
 print(a)
 print(b)
 print(c)
+print(d)
+</pre>
 
-print("a equals to %d" % a)
-print("b equals to %f" % b)
-print("c equals to %s" % c)
-    </pre>
+<pre class="execution-output">
+2.302585092994046
+3.0
+3.0
+4.0
+</pre>
 
-    <p class="fi">Yhdessä tulostuslauseessa voidaan tulostaa useita muuttujia.</p>
+<h3 class="fi">Eksponenttifunktio</h3>
 
-    <pre class="code-clickable">
-a=1
-c="one"
+<p class="fi">Funktio e<sup>x</sup> löytyy komennolla <code>exp(x)</code>:</p>
 
-print("a equals to %d and c equals to %s" % (a, c))
-    </pre>
+<pre class="code-clickable">
+import math
 
-    <h2 class="fi">Ehtolause</h2>
+a = math.exp(2)
+b = math.exp(0)
 
-    <p class="fi">Yksinkertainen ehtolause (jos - muuten).</p>
+print(a)
+print(b)
+</pre>
 
-    <pre class="code-clickable">
-a=1
-if a==1:
-  print("a is equal to one")
+<pre class="execution-output">
+7.38905609893065
+1.0
+</pre>
+
+<h2 class="fi">Lukuteoriaa</h2>
+
+<h3 class="fi">Jakolaskun kokonaisosa ja jakojäännös</h3>
+
+<pre class="code-clickable">
+print(7//3)
+print(7%3)
+</pre>
+
+<pre class="execution-output">
+2
+1
+</pre>
+
+<h3 class="fi">Suurin yhteinen tekijä</h3>
+
+<pre class="code-clickable">
+import math
+
+d = math.gcd(6,9)
+
+print(d)
+</pre>
+
+<pre class="execution-output">
+3
+</pre>
+
+<h3 class="fi">Pienin yhteinen monikerta</h3>
+
+<pre class="code-clickable">
+import numpy
+
+m = numpy.lcm(6,9)
+
+print(m)
+</pre>
+
+<pre class="execution-output">
+18
+</pre>
+
+<h2 class="fi">Syötteen lukeminen</h2>
+
+<pre class="code-clickable">
+name = input("What is your name: ")
+
+print("It is good to meet you", name)
+</pre>
+
+<pre class="execution-output">
+What is your name: Anna
+It is good to meet you Anna
+</pre>
+
+<p class="fi">
+  Komento <code>input</code> palauttama arvo on tyypiltään merkkijono.
+  Jos arvosta halutaan kokonais- tai desimaaliluku, on tehtävä muunnos komennoilla <code>int()</code> tai <code>float()</code>.
+</p>
+
+<pre class="code-clickable">
+name = input("What is your name: ")
+
+age = int(input("How old are you? "))
+
+print("Hello",name)
+print("Next year you are",age+1,"years old.")
+</pre>
+
+<pre class="execution-output">
+What is your name: Anna
+
+How old are you? 16
+Hello Anna
+Next year you are 17 years old.
+</pre>
+
+<h2 class="fi">Ehtolauseet</h2>
+
+<h3 class="fi">if-lause</h3>
+
+<p class="fi">
+  If-ehtorakenteessa avainsanaa <code>if</code> seuraa jokin ehto, kuten esimerkiksi kahden arvon vertailu.
+  Ehtolause päättyy kaksoispisteeseen <code>:</code>.
+</p>
+<p class="fi">
+  If-ehtorakenteessa ehdon jälkeen tulevan lohkon koodi suoritetaan vain, kun annettu ehto on tosi (<code>True</code>).
+</p>
+
+<pre class="code-clickable">
+name = "Anna"
+
+if name == "Anna":
+print("Hello Anna!")
+</pre>
+
+<pre class="execution-output">
+Hello Anna!
+</pre>
+
+<h3 class="fi">Sisentäminen</h3>
+
+<p class="fi">
+  Python tunnistaa ehtorakenteen sisällä olevan koodin siitä, että lohkon
+  sisällä jokainen rivi on sisennetty samalla tavalla.
+</p>
+
+<pre class="code-clickable">
+password = input("What is the password? ")
+
+if password == "nyancat":
+  print("Correct password.")
+  print("Welcome user.")
+  print("Have a nice day.")
+</pre>
+
+<h3 class="fi">Vertailuoperaattorit</h3>
+
+<pre>
+==   yhtäsuuri
+!=   erisuuri
+>    suurempi kuin
+<    pienempi kuin
+>=   suurempi tai yhtäsuuri
+<=   pienempi tai yhtäsuuri
+</pre>
+
+<p class="fi">Esimerkkejä:</p>
+
+<pre>
+42 == 42
+22 != 55
+88 &gt; 11
+34 &lt; 78
+33 != "33"
+"hello" == "hello"
+"dog" != "cat"
+</pre>
+
+<p class="fi">Loogiset konnektiivit:</p>
+
+<pre>
+and		ja
+or		tai
+not		ei
+</pre>
+
+<h3 class="fi">if-else</h3>
+
+<p class="fi">
+  If-else-rakenteessa suoritetaan aina jompikumpi vaihtoehtoisista lohkoista.
+  <code>if</code>-lohko suoritetaan vain jos ehto on tosi ja kaikissa muissa tapauksissa suoritetaan <code>else</code>-lohko.
+</p>
+
+<pre class="code-clickable">
+number = 5
+
+if number % 2 == 0:
+  print("Your number is even.")
 else:
-  print("a is something else than one")
-    </pre>
+  print("Your number is odd.")
+</pre>
 
-    <p class="fi">Ehtolause, jossa useita haaroja (jos 1 - jos 2 - muuten).</p>
+<pre class="execution-output">
+Your number is odd.
+</pre>
 
-    <pre class="code-clickable">
-a=1
-if a==1:
-  print("a is equal to one")
-elif a==2
-  print("a is equal to two")
+<h3 class="fi">if-elif-else</h3>
+
+<p class="fi">
+  Usein vertailussa vaihtoehtoja saattaa olla enemmän kuin kaksi, kuten esimerkiksi suurempi, yhtäsuuri tai pienempi.
+  <code>elif</code>-haara on vaihtoehtona alkuperäiselle <code>if</code>-ehdolle.
+  <code>elif</code>-haaroja voi olla useampi ja niistä suoritetaan vain se jonka arvo on tosi.
+</p>
+
+<pre class="code-clickable">
+number = 30
+
+if number == 0:
+  print("Your number is zero.")
+
+elif number &lt; 0:
+  print("Your number is negative.")
+
 else:
-  print("a is neither one or two")
-    </pre>
+  print("Your number is positive.")
+</pre>
+
+<pre class="execution-output">
+Your number is positive.
+</pre>
+
+<h2 class="fi">Toisto</h2>
+
+<h3 class="fi">for-silmukka</h3>
+
+<p class="fi"><code>for k in range(k, n)</code> käy läpi arvot k, k +1, … , n - 1.</p>
+
+<pre class="code-clickable">
+for i in range(1,5):
+  print(i)
+</pre>
+
+<pre class="execution-output">
+1
+2
+3
+4
+</pre>
+
+<p class="fi"><code>range(n)</code> käy läpi arvot 0, 1, … , n - 1</p>
+
+<pre class="code-clickable">
+for i in range(5):
+  print(i)
+</pre>
+
+<pre class="execution-output">
+0
+1
+2
+3
+4
+</pre>
+
+<p class="fi"><code>range()</code> -funktiolla voidaan antaa kolme argumenttia: <code>range(start, stop, step)</code>.</p>
+
+<pre class="code-clickable">
+for i in range(1,15,2):
+  print(i)
+</pre>
+
+<pre class="execution-output">
+1
+3
+5
+7
+9
+11
+13
+</pre>
+
+<h3 class="fi">while-silmukka</h3>
+
+<p class="fi"><code>while</code>-silmukka toistaa lohkoa niin kauan kuin ehto on voimassa.</p>
+
+<pre class="code-clickable">
+number = 1
+
+while number &lt; 1000:
+  print(number)
+  number = number * 2
+</pre>
+
+<pre class="execution-output">
+1
+2
+4
+8
+16
+32
+64
+128
+256
+512
+</pre>
+
+<p class="fi">Silmukan voi lopettaa myös <code>break</code>-komennolla:</p>
+
+<pre class="code-clickable">
+number = 1
+
+while True:
+  print(number)
+  number = number * 2
+  if number > 1000:
+    break
+</pre>
+
+<pre class="execution-output">
+1
+2
+4
+8
+16
+32
+64
+128
+256
+512
+</pre>
+
+<h2 class="fi">Satunnaisuus</h2>
+
+<h3 class="fi">Satunnaisluvut</h3>
+
+<p class="fi">
+  Pseudosatunnaislukuja tuottavia funktioita löytyy moduulista <code>random</code>.
+</p>
+
+<pre class="code-clickable">
+import random
+
+# Random decimal number in [0,1[
+a = random.random()
+
+# Random decimal number in [-2,2]
+b = random.uniform(-2,2)
+
+# Random integer in [1,6]
+c = random.randint(1,6)
+
+print(a)
+print(b)
+print(c)
+</pre>
+
+Tuloste:
+0.14820514048869093
+-1.4189076926953894
+6
+
+<h3 class="fi">Satunnaisuus ja listat</h3>
+
+<p class="fi">Satunnainen alkio listalta:</p>
+
+<pre class="code-clickable">
+import random
+
+a = random.choice([2,5,7,9,100])
+
+print(a)
+</pre>
+
+<pre class="execution-output">
+5
+</pre>
+
+<p class="fi">Listan sekoittaminen:</p>
+
+<pre class="code-clickable">
+import random
+
+numbers = [1, 2, 3, 4, 5, 10]
+
+print(numbers)
+
+random.shuffle(numbers)
+
+print(numbers)
+</pre>
+
+<pre class="execution-output">
+[1, 2, 3, 4, 5, 10]
+[4, 1, 10, 5, 3, 2]
+</pre>
+
+<h2 class="fi">Merkkijonot</h2>
+
+<p class="fi">Merkkijonojen yhdistäminen:</p>
+
+<pre class="code-clickable">
+word1 = "cat"
+word2 = "dog"
+
+words = word1 + word2
+
+print(words)
+</pre>
+
+<pre class="execution-output">
+catdog
+</pre>
+
+<p class="fi">Merkkijonon toistaminen:</p>
+
+<pre class="code-clickable">
+print(5*"cat")
+</pre>
+
+<pre class="execution-output">
+catcatcatcatcat
+</pre>
+
+<p class="fi">Yksittäisen merkin poimiminen. Indeksointi alkaa nollasta.<p>
+
+<pre class="code-clickable">
+word = "monkey"
+
+print(word[0])
+
+print(word[3])
+</pre>
+
+<pre class="execution-output">
+m
+k
+</pre>
+
+<p class="fi">Indeksien avulla voi valita osan sanasta:</p>
+
+<pre class="code-clickable">
+word = "monkey"
+
+print(word[0:3])
+print(word[1:4])
+</pre>
+
+<pre class="execution-output">
+mon
+onk
+</pre>
+
+<p class="fi">Merkkijonoja voi myös iteroida:</p>
+
+<pre class="code-clickable">
+word = "monkey"
+
+for letter in word:
+  print(letter)
+</pre>
+
+<pre class="execution-output">
+m
+o
+n
+k
+e
+y
+</pre>
+
+<p class="fi">Merkkijonon pituuden saa komennolla <code>len()</code>:</p>
+
+<pre class="code-clickable">
+word = "monkey"
+
+print(len(word))
+</pre>
+
+<pre class="execution-output">
+6
+</pre>
+
+<h2 class="fi">Listat</h2>
+
+<p class="fi">Lista merkitään hakasuluilla. Listan alkioihin viitataan indekseillä. Indeksointi alkaa nollasta.</p>
+
+<pre class="code-clickable">
+numbers = [3,7,8,11]
+
+print(numbers[0])
+print(numbers[1])
+</pre>
+
+<pre class="execution-output">
+3
+7
+</pre>
+
+<p class="fi">Alkioiden korvaaminen, lisääminen ja  poistaminen:</p>
+
+<pre class="code-clickable">
+numbers = [3,7,8,11]
+print(numbers)
+
+# Change value at index 0
+numbers[0] = 4
+print(numbers)
+
+# Add numbers 8 to the end of the list
+numbers.append(8)
+print(numbers)
+
+# Remove 7 from list
+numbers.remove(7)
+print(numbers)
+
+# Remove value at index 0
+numbers.pop(0)
+print(numbers)
+</pre>
+
+<pre class="execution-output">
+[3, 7, 8, 11]
+[4, 7, 8, 11]
+[4, 7, 8, 11, 8]
+[4, 8, 11, 8]
+[8, 11, 8]
+</pre>
+
+<h3 class="fi">Listan pituus</h3>
+
+<pre class="code-clickable">
+numbers = [1, 3, 6, 7, 3, 2]
+
+n = len(numbers)
+
+print(n)
+</pre>
+
+<pre class="execution-output">
+6
+</pre>
+
+<h3 class="fi">Järjestäminen</h3>
+
+<pre class="code-clickable">
+numbers = [4, 11, -2, 8, 4]
+
+print(numbers)
+
+numbers.sort()
+
+print(numbers)
+</pre>
+
+<pre class="execution-output">
+[4, 11, -2, 8, 4]
+[-2, 4, 4, 8, 11]
+</pre>
+
+<h3 class="fi">Listan iterointi</h3>
+
+<p class="fi">Listan voi käydä läpi <code>for</code>-silmukalla.</p>
+
+<pre class="code-clickable">
+numbers = [1, 3, 6, 7, 3, 2]
+
+for number in numbers:
+  print(number)
+</pre>
+
+<pre class="execution-output">
+1
+3
+6
+7
+3
+2
+</pre>
+
+<h2 class="fi">Omat funktiot</h2>
+
+<p class="fi">Oma funktio määritellään komennolla <code>def</code>:</p>
+
+<pre class="code-clickable">
+def f(x):
+  return x**2 + 1
+
+print( f(1) )
+print( f(3) )
+</pre>
+
+<pre class="execution-output">
+2
+10
+</pre>
+
+<p class="fi">Funktioon syötettäviä parametreja voi olla useampi kuin yksi:</p>
+
+<pre class="code-clickable">
+def f(x,y):
+  return x**2 + y**2
+
+print( f(3,4) )
+</pre>
+
+<pre class="execution-output">
+25
+</pre>
+
+<p class="fi">Funktiossa ei välttämättä tarvita parametria:</p>
+
+<pre class="code-clickable">
+def say_hello():
+  print("Hello there!")
+
+say_hello()
+</pre>
+
+<pre class="execution-output">
+Hello there!
+</pre>
+
   </div>
 
 </div>

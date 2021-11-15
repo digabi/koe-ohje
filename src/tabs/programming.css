@@ -71,3 +71,11 @@
   border: 1px;
   border-style: solid;
 }
+
+code {
+  font-family: monospace;
+  background-color: lightgrey;
+  padding-left: 2px;
+  padding-right: 2px;
+  white-space: nowrap;
+}
