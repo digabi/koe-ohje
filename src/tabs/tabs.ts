@@ -9,15 +9,12 @@ import { loadHtml } from '../util/loadHtml'
 
 export enum Tab {
   Chemistry = 'chemistry',
-  French = 'french',
   General = 'general',
   Geography = 'geography',
-  Germany = 'germany',
+  Keyboard = 'keyboard'.
   Math = 'math',
   Physics = 'physics',
   Programming = 'programming',
-  Sami = 'sami',
-  Spanish = 'spanish',
 }
 
 declare global {
