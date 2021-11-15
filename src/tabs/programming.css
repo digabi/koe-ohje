@@ -1,11 +1,13 @@
 #code-editor {
+  min-height: 3em;
   height: 10em;
   display: block;
-  resize: vertical
+  resize: vertical;
+  overflow: auto;
 }
 
 #code-output, #code-error {
-  width: 100%;
+  min-height: 3em;
   height: 10em;
   display: block;
   overflow-x: auto;
@@ -22,31 +24,50 @@
   background-color: red;
 }
 
+#tab-programming-ide-container {
+  top: 70px;
+  padding: 10px 5px 5px 15px;
+  background-color: #fafafa;
+}
+
+#tab-programming-doc-container {
+  padding: 5px;
+}
+
+@media only screen and (max-width: 1024px) {
+  #tab-programming-ide-container {
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30px;
+    margin-top: 0;
+    padding-top: 30px;
+  }
+
+  #tab-programming-doc-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  #tab-programming-ide-container {
+    width: calc((100% - 400px) / 2);
+    position: fixed;
+    left: calc((100% / 2) + 180px);
+
+  }
+
+  #tab-programming-doc-container {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
 .code-clickable {
   background: lightgrey;
   padding: 5px;
   border: 1px;
   border-style: solid;
-}
-
-#tab-programming-container {
-  display: flex;
-  flex-flow: row-reverse wrap;
-}
-
-#tab-programming-ide-container {
-  flex-basis: 400px;
-  flex-grow: 1;
-  position: -webkit-sticky;
-  position: sticky;
-  align-self: flex-start;
-  top: 70px;
-  padding: 10px 5px 5px 5px;
-  background-color: #fafafa;
-}
-
-#tab-programming-doc-container {
-  flex-basis: 400px;
-  flex-grow: 1;
-  padding: 5px;
 }
