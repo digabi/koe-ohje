@@ -5,7 +5,7 @@ const codeEditorId = "code-editor"
 const outputId = "code-output"
 const errorId = "code-error"
 
-var pyodide
+var pyodide = null
 
 const showErrorArea = () => {
   document.getElementById(outputId).style.display = 'none'
@@ -54,6 +54,10 @@ const getUrlPath = () => {
 }
 
 const initializePythonEngine = async() => {
+  if (pyodide != null) {
+    return
+  }
+
   pyodide = await loadPyodide({
     indexURL : getUrlPath()+"common/pyodide/",  // Pydiode does not handle .. as part of the path
     stdin: () => prompt(),
