@@ -33,6 +33,10 @@ const printStderr = (text: string) => {
   document.getElementById(errorId).innerHTML = text
 }
 
+const getInput = (): string => {
+  return prompt("Enter input string")
+}
+
 const clearStdout = () => {
   document.getElementById(outputId).innerHTML = ""
 }
@@ -82,10 +86,12 @@ const initializePythonEngine = async() => {
 
   pyodide = await loadPyodide({
     indexURL : getUrlPath()+"common/pyodide/",  // Pydiode does not handle .. as part of the path
-    stdin: () => prompt(),
+    stdin: getInput,
     stdout: (text) => printStdout(text),
     stderr: (text) => printStderr(text),
   })
+
+  pyodide.runPython("import js\ndef input(prompt):\n  return js.prompt(prompt)\n\n")
 
   pyodide.loadPackage("numpy")
 
