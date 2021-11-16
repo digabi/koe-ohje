@@ -4,6 +4,7 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js';
 import 'monaco-editor/esm/vs/basic-languages/python/python.contribution.js';
 
 var editor
+var lastCode = ""
 
 // @ts-ignore
 self.MonacoEnvironment = {
@@ -26,6 +27,11 @@ export const initializeMonacoEditor = (codeEditorId) => {
     scrollBeyondLastLine: false,
     tabSize: 3,
     renderWhitespace: 'all',
+		value: lastCode,
     wordWrap: 'on',
   })
+
+	document.getElementById(codeEditorId).addEventListener('keyup', () => {
+		lastCode = editor.getValue()
+	})
 }
