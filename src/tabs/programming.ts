@@ -4,8 +4,15 @@ import { initializeMonacoEditor, getCode, resetEditorLayout } from './common/mon
 const codeEditorId = "code-editor"
 const outputId = "code-output"
 const errorId = "code-error"
+const executeButtonId = "code-editor-execute"
 
 var pyodide = null
+var pyodideInitializing
+
+const hideBothAreas = () => {
+  document.getElementById(outputId).style.display = 'none'
+  document.getElementById(errorId).style.display = 'none'
+}
 
 const showErrorArea = () => {
   document.getElementById(outputId).style.display = 'none'
@@ -18,6 +25,10 @@ const showOutputArea = () => {
 }
 
 const printStderr = (text: string) => {
+  if (pyodideInitializing) {
+    return
+  }
+
   showErrorArea()
   document.getElementById(errorId).innerHTML = text
 }
@@ -27,6 +38,10 @@ const clearStdout = () => {
 }
 
 const printStdout = (text: string) => {
+  if (pyodideInitializing) {
+    return
+  }
+
   console.log(text)
   showOutputArea()
   var outputElement = document.getElementById(outputId)
@@ -55,8 +70,15 @@ const getUrlPath = () => {
 
 const initializePythonEngine = async() => {
   if (pyodide != null) {
+    // Pyodide is already initialized, we're coming back from another tab
+    document.getElementById(codeEditorId).disabled = false;
+    showOutputArea()
     return
   }
+
+  document.getElementById(codeEditorId).disabled = true;
+  hideBothAreas()
+  pyodideInitializing = true
 
   pyodide = await loadPyodide({
     indexURL : getUrlPath()+"common/pyodide/",  // Pydiode does not handle .. as part of the path
@@ -66,6 +88,10 @@ const initializePythonEngine = async() => {
   })
 
   pyodide.loadPackage("numpy")
+
+  document.getElementById(codeEditorId).disabled = false;
+  showOutputArea()
+  pyodideInitializing = false
 }
 
 export const initializeProgrammingTab = () => {
@@ -74,6 +100,4 @@ export const initializeProgrammingTab = () => {
 
   const executeButtons = Array.from(document.querySelectorAll('.code-editor-execute'))
   executeButtons.forEach((element) => element.addEventListener('click', executeCode))
-
-  showOutputArea()
 }
