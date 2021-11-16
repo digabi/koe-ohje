@@ -48,9 +48,14 @@ const executeCode = async() => {
   }
 }
 
+const getUrlPath = () => {
+  const pathname = window.location.pathname
+  return pathname.replace(/build\/.*$/, '')
+}
+
 const initializePythonEngine = async() => {
   pyodide = await loadPyodide({
-    indexURL : "/common/pyodide/",  // FIXME: ../common/pyodide/ will be interpreted as common/common/pyodide
+    indexURL : getUrlPath()+"common/pyodide/",  // Pydiode does not handle .. as part of the path
     stdin: () => prompt(),
     stdout: (text) => printStdout(text),
     stderr: (text) => printStderr(text),
