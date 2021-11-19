@@ -8,15 +8,6 @@ describe('Digabi Exam Help', () => {
       await expect(page).toMatch('Yleisohjeet', { timeout: 5000 })
     })
 
-    it('should be able to open spanish tabs', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=spanish]')
-        el.click()
-      })
-
-      await expect(page).toMatchElement('#tab-spanish h1', { timeout: 5000 })
-    })
-
     it('should be able to open physics tab', async () => {
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=physics]')
@@ -44,33 +35,6 @@ describe('Digabi Exam Help', () => {
       await expect(page).toMatchElement('#tab-math h1', { timeout: 5000 })
     })
 
-    it('should be able to open french tab', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=french]')
-        el.click()
-      })
-
-      await expect(page).toMatchElement('#tab-french h1', { timeout: 5000 })
-    })
-
-    it('should be able to open german tab', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=german]')
-        el.click()
-      })
-
-      await expect(page).toMatchElement('#tab-german h1', { timeout: 5000 })
-    })
-
-    it('should be able to open sami tab', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=sami]')
-        el.click()
-      })
-
-      await expect(page).toMatchElement('#tab-sami h1', { timeout: 5000 })
-    })
-
     it('should be able to open geography tab', async () => {
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=geography]')
@@ -78,6 +42,24 @@ describe('Digabi Exam Help', () => {
       })
 
       await expect(page).toMatchElement('#tab-geography h1', { timeout: 5000 })
+    })
+
+    it('should be able to open keyboard tab', async () => {
+      await page.evaluate(() => {
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=keyboard]')
+        el.click()
+      })
+
+      await expect(page).toMatchElement('#tab-keyboard h1', { timeout: 5000 })
+    })
+
+    it('should be able to open programming tab', async () => {
+      await page.evaluate(() => {
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=programming]')
+        el.click()
+      })
+
+      await expect(page).toMatchElement('#tab-programming h1', { timeout: 5000 })
     })
   })
 

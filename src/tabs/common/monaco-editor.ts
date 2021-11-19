@@ -34,4 +34,8 @@ export const initializeMonacoEditor = (codeEditorId) => {
 	document.getElementById(codeEditorId).addEventListener('keyup', () => {
 		lastCode = editor.getValue()
 	})
+
+	document.getElementById("tab-programming-ide-container").addEventListener('replaceEditorTextForTestingPurposes', (event) => {
+		editor.setValue(event.detail.text)
+	})
 }
