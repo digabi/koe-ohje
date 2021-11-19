@@ -29,8 +29,8 @@ const printStderr = (text: string) => {
     return
   }
 
-  showErrorArea()
   document.getElementById(errorId).innerHTML = text
+  showErrorArea()
 }
 
 const getInput = (): string => {
@@ -38,6 +38,7 @@ const getInput = (): string => {
 }
 
 const clearStdout = () => {
+  console.log("clearStdout")
   document.getElementById(outputId).innerHTML = ""
 }
 
