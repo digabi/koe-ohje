@@ -35,6 +35,9 @@ deb: build
 	if [ "x$(BUILD_NUMBER)" = "x" ]; then BUILD_NUMBER=$(default_build_number); echo "Using default build number $$BUILD_NUMBER"; fi; \
 	fpm -C deb-root/ -s dir --name digabi-koe-ohje --architecture native -t deb --version "1.1.$$BUILD_NUMBER" .
 
+zip: build
+	zip -ry9 koe-ohje index.html LICENSE common/ build/
+
 pyodide-build.tar.bz2:
 	wget -O pyodide-build.tar.bz2 https://github.com/pyodide/pyodide/releases/download/0.18.1/pyodide-build-0.18.1.tar.bz2
 
