@@ -27,7 +27,6 @@ describe('Python', () => {
   describe('Python Code Execution', () => {
     beforeEach(async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
-      await page.reload
 
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=programming]')
@@ -42,13 +41,15 @@ describe('Python', () => {
       // Insert code
       await page.evaluate(() => {
         const codeToInsert = 'print("Result=%d" % (1+3))'
-        const el = document.querySelector<HTMLElement>("#tab-programming-ide-container")
-        el.dispatchEvent(new CustomEvent("replaceEditorTextForTestingPurposes", {bubbles: false, detail: { text: codeToInsert }}))
+        const el = document.querySelector<HTMLElement>('#tab-programming-ide-container')
+        el.dispatchEvent(
+          new CustomEvent('replaceEditorTextForTestingPurposes', { bubbles: false, detail: { text: codeToInsert } })
+        )
       })
 
       // Click execute button
       await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>(".code-editor-execute")
+        const el = document.querySelector<HTMLElement>('.code-editor-execute')
         el.click()
       })
 
@@ -57,28 +58,30 @@ describe('Python', () => {
 
       // Check output
       const stdout = await page.evaluate(() => {
-        return document.querySelector<HTMLElement>("#code-output").innerHTML
+        return document.querySelector<HTMLElement>('#code-output').innerHTML
       })
-      expect(stdout).toBe("Result=4\n")
+      expect(stdout).toBe('Result=4\n')
 
       // Check errors
       const stderr = await page.evaluate(() => {
-        return document.querySelector<HTMLElement>("#code-error").innerHTML
+        return document.querySelector<HTMLElement>('#code-error').innerHTML
       })
-      expect(stderr).toBe("")
+      expect(stderr).toBe('')
     })
 
     it('should show an error', async () => {
       // Insert code
       await page.evaluate(() => {
         const codeToInsert = 'foobar'
-        const el = document.querySelector<HTMLElement>("#tab-programming-ide-container")
-        el.dispatchEvent(new CustomEvent("replaceEditorTextForTestingPurposes", {bubbles: false, detail: { text: codeToInsert }}))
+        const el = document.querySelector<HTMLElement>('#tab-programming-ide-container')
+        el.dispatchEvent(
+          new CustomEvent('replaceEditorTextForTestingPurposes', { bubbles: false, detail: { text: codeToInsert } })
+        )
       })
 
       // Click execute button
       await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>(".code-editor-execute")
+        const el = document.querySelector<HTMLElement>('.code-editor-execute')
         el.click()
       })
 
@@ -87,17 +90,16 @@ describe('Python', () => {
 
       // Check output
       const stdout = await page.evaluate(() => {
-        return document.querySelector<HTMLElement>("#code-output").innerHTML
+        return document.querySelector<HTMLElement>('#code-output').innerHTML
       })
-      expect(stdout).toBe("")
+      expect(stdout).toBe('')
 
       // Check errors
       const stderr = await page.evaluate(() => {
-        return document.querySelector<HTMLElement>("#code-error").innerHTML
+        return document.querySelector<HTMLElement>('#code-error').innerHTML
       })
       expect(stderr).toMatch(/PythonError: Traceback \(most recent call last\):/)
       expect(stderr).toMatch(/NameError: name 'foobar' is not defined/)
     })
   })
-
 })

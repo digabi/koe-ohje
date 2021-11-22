@@ -11,7 +11,7 @@ export enum Tab {
   Chemistry = 'chemistry',
   General = 'general',
   Geography = 'geography',
-  Keyboard = 'keyboard'.
+  Keyboard = 'keyboard',
   Math = 'math',
   Physics = 'physics',
   Programming = 'programming',

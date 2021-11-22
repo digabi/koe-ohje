@@ -1,13 +1,13 @@
 import './programming.css'
-import { initializeMonacoEditor, getCode, resetEditorLayout } from './common/monaco-editor'
+import { initializeMonacoEditor, getCode } from './common/monaco-editor'
 
-const codeEditorId = "code-editor"
-const outputId = "code-output"
-const errorId = "code-error"
-const executeButtonId = "code-editor-execute"
+const codeEditorId = 'code-editor'
+const outputId = 'code-output'
+const errorId = 'code-error'
+const executeButtonSelector = '.code-editor-execute'
 
-var pyodide = null
-var pyodideInitializing
+let pyodide = null
+let pyodideInitializing
 
 const hideBothAreas = () => {
   document.getElementById(outputId).style.display = 'none'
@@ -34,12 +34,11 @@ const printStderr = (text: string) => {
 }
 
 const getInput = (): string => {
-  return prompt("Enter input string")
+  return prompt('Enter input string')
 }
 
 const clearStdout = () => {
-  console.log("clearStdout")
-  document.getElementById(outputId).innerHTML = ""
+  document.getElementById(outputId).innerHTML = ''
 }
 
 const printStdout = (text: string) => {
@@ -49,20 +48,19 @@ const printStdout = (text: string) => {
 
   console.log(text)
   showOutputArea()
-  var outputElement = document.getElementById(outputId)
-  text = text.replace(/</g, '&lt;');
-  outputElement.innerHTML = outputElement.innerHTML + text + "\n";
+  const outputElement = document.getElementById(outputId)
+  text = text.replace(/</g, '&lt;')
+  outputElement.innerHTML = outputElement.innerHTML + text + '\n'
 }
 
-const executeCode = async() => {
+const executeCode = () => {
   clearStdout()
 
-  var code = getCode()
+  const code = getCode()
 
   try {
     pyodide.runPython(code)
-  }
-  catch (err) {
+  } catch (err) {
     console.log(err)
     printStderr(err.toString())
   }
@@ -73,30 +71,30 @@ const getUrlPath = () => {
   return pathname.replace(/build\/.*$/, '')
 }
 
-const initializePythonEngine = async() => {
+const initializePythonEngine = async () => {
   if (pyodide != null) {
     // Pyodide is already initialized, we're coming back from another tab
-    document.getElementById(codeEditorId).disabled = false;
+    document.getElementById(codeEditorId).disabled = false
     showOutputArea()
     return
   }
 
-  document.getElementById(codeEditorId).disabled = true;
+  document.getElementById(codeEditorId).disabled = true
   hideBothAreas()
   pyodideInitializing = true
 
   pyodide = await loadPyodide({
-    indexURL : getUrlPath()+"common/pyodide/",  // Pydiode does not handle .. as part of the path
+    indexURL: getUrlPath() + 'common/pyodide/', // Pydiode does not handle .. as part of the path
     stdin: getInput,
     stdout: (text) => printStdout(text),
     stderr: (text) => printStderr(text),
   })
 
-  pyodide.runPython("import js\ndef input(prompt):\n  return js.prompt(prompt)\n\n")
+  pyodide.runPython('import js\ndef input(prompt):\n  return js.prompt(prompt)\n\n')
 
-  pyodide.loadPackage("numpy")
+  pyodide.loadPackage('numpy')
 
-  document.getElementById(codeEditorId).disabled = false;
+  document.getElementById(codeEditorId).disabled = false
   showOutputArea()
   pyodideInitializing = false
 }
@@ -105,6 +103,6 @@ export const initializeProgrammingTab = () => {
   initializeMonacoEditor(codeEditorId)
   initializePythonEngine()
 
-  const executeButtons = Array.from(document.querySelectorAll('.code-editor-execute'))
+  const executeButtons = Array.from(document.querySelectorAll(executeButtonSelector))
   executeButtons.forEach((element) => element.addEventListener('click', executeCode))
 }
