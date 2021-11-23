@@ -11,12 +11,10 @@ describe('Python', () => {
 
     it('should activate stdout window', async () => {
       await expect(page).toMatchElement('#code-output[style="display: block;"]', { timeout: 10000 })
-      await expect(page).not.toMatchElement('#code-output[style="display: none;"]', { timeout: 10000 })
     })
 
     it('should have hidden stderr window', async () => {
       await expect(page).toMatchElement('#code-error[style="display: none;"]', { timeout: 10000 })
-      await expect(page).not.toMatchElement('#code-error[style="display: block;"]', { timeout: 10000 })
     })
 
     it('should show ide', async () => {
