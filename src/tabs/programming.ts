@@ -7,7 +7,7 @@ const errorId = 'code-error'
 const executeButtonSelector = '.code-editor-execute'
 
 let pyodide = null
-let pyodideInitializing
+let pyodideInitializing = true
 
 const hideBothAreas = () => {
   document.getElementById(outputId).style.display = 'none'
@@ -46,7 +46,6 @@ const printStdout = (text: string) => {
     return
   }
 
-  console.log(text)
   showOutputArea()
   const outputElement = document.getElementById(outputId)
   text = text.replace(/</g, '&lt;')
@@ -61,7 +60,6 @@ const executeCode = () => {
   try {
     pyodide.runPython(code)
   } catch (err) {
-    console.log(err)
     printStderr(err.toString())
   }
 }
