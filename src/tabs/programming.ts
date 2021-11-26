@@ -5,6 +5,16 @@ const codeEditorId = 'code-editor'
 const outputId = 'code-output'
 const errorId = 'code-error'
 const executeButtonSelector = '.code-editor-execute'
+const boilerplateErrorstrings = {
+  'PythonError: Traceback \\(most recent call last\\):\n\
+\\s*File "\\/lib\\/python3.9\\/site-packages\\/_pyodide\\/_base.py", line 415, in eval_code\n\
+\\s*CodeRunner\\(\\n\
+\\s*File "\\/lib\\/python3.9\\/site-packages\\/_pyodide\\/_base.py", line 296, in run\n\
+\\s*coroutine = eval\\(self.code, globals, locals\\)\n': '',
+  '\\s*File "<exec>", line (\\d+), in <module>\n': 'Line $1:\n',
+
+//'PythonError: Traceback': '',
+}
 
 let pyodide = null
 let pyodideInitializing = true
@@ -29,8 +39,19 @@ const printStderr = (text: string) => {
     return
   }
 
+  text = removeBoilerplateErrorstrings(text)
+
   document.getElementById(errorId).innerHTML = text
   showErrorArea()
+}
+
+const removeBoilerplateErrorstrings = (text: string):string => {
+  Object.keys(boilerplateErrorstrings).forEach(thisErrorstring => {
+    let re = new RegExp(thisErrorstring)
+    text = text.replace(re, boilerplateErrorstrings[thisErrorstring])
+  })
+
+  return text
 }
 
 const getInput = (): string => {
