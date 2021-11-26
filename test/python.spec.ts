@@ -70,7 +70,7 @@ describe('Python', () => {
     it('should show an error', async () => {
       // Insert code
       await page.evaluate(() => {
-        const codeToInsert = 'foobar'
+        const codeToInsert = 'print("This is valid Python")\nfoobar'
         const el = document.querySelector<HTMLElement>('#tab-programming-ide-container')
         el.dispatchEvent(
           new CustomEvent('replaceEditorTextForTestingPurposes', { bubbles: false, detail: { text: codeToInsert } })
@@ -90,14 +90,13 @@ describe('Python', () => {
       const stdout = await page.evaluate(() => {
         return document.querySelector<HTMLElement>('#code-output').innerHTML
       })
-      expect(stdout).toBe('')
+      expect(stdout).toBe('This is valid Python\n')
 
       // Check errors
       const stderr = await page.evaluate(() => {
         return document.querySelector<HTMLElement>('#code-error').innerHTML
       })
-      expect(stderr).toMatch(/PythonError: Traceback \(most recent call last\):/)
-      expect(stderr).toMatch(/NameError: name 'foobar' is not defined/)
+      expect(stderr).toBe('Line 2:\nNameError: name \'foobar\' is not defined\n')
     })
   })
 })
