@@ -96,7 +96,7 @@ describe('Python', () => {
       const stderr = await page.evaluate(() => {
         return document.querySelector<HTMLElement>('#code-error').innerHTML
       })
-      expect(stderr).toBe('Line 2:\nNameError: name \'foobar\' is not defined\n')
+      expect(stderr).toBe("Line 2:\nNameError: name 'foobar' is not defined\n")
     })
   })
 })
