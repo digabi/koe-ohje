@@ -8,6 +8,7 @@
 
 #code-output, #code-error {
   min-height: 3em;
+  height: 10em;
   display: block;
   overflow-x: auto;
   overflow-y: auto;
@@ -26,7 +27,7 @@
 }
 
 #tab-programming-ide-container {
-  top: 60px;
+  top: 70px;
   padding: 10px 15px 5px 15px;
   background-color: #eee;
 }
@@ -41,7 +42,7 @@
   color: #fff;
   border: none;
   cursor: pointer;
-  margin: 10px 0 10px;
+  margin-top: 10px;
 }
 
 .code-editor-execute:hover, .code-editor-execute:active {
