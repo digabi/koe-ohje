@@ -10,10 +10,9 @@ const boilerplateErrorstrings = {
 \\s*File "\\/lib\\/python3.9\\/site-packages\\/_pyodide\\/_base.py", line 415, in eval_code\n\
 \\s*CodeRunner\\(\\n\
 \\s*File "\\/lib\\/python3.9\\/site-packages\\/_pyodide\\/_base.py", line 296, in run\n\
-\\s*coroutine = eval\\(self.code, globals, locals\\)\n': '',
+\\s*coroutine = eval\\(self.code, globals, locals\\)\n':
+    '',
   '\\s*File "<exec>", line (\\d+), in <module>\n': 'Line $1:\n',
-
-//'PythonError: Traceback': '',
 }
 
 let pyodide = null
@@ -45,9 +44,9 @@ const printStderr = (text: string) => {
   showErrorArea()
 }
 
-const removeBoilerplateErrorstrings = (text: string):string => {
-  Object.keys(boilerplateErrorstrings).forEach(thisErrorstring => {
-    let re = new RegExp(thisErrorstring)
+const removeBoilerplateErrorstrings = (text: string): string => {
+  Object.keys(boilerplateErrorstrings).forEach((thisErrorstring) => {
+    const re = new RegExp(thisErrorstring)
     text = text.replace(re, boilerplateErrorstrings[thisErrorstring])
   })
 
