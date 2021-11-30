@@ -2,6 +2,7 @@ import { initializeLanguage } from './common/language'
 import { initializeCopyToClipboard } from './common/clipboard'
 import { initializeTablesorter } from './common/tablesorter'
 import { initializeGeographyTab } from './geography'
+import { initializeMuzakTab } from './muzak'
 import { initializeProgrammingTab } from './programming'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
@@ -13,6 +14,7 @@ export enum Tab {
   Geography = 'geography',
   Keyboard = 'keyboard',
   Math = 'math',
+  Muzak = 'muzak',
   Physics = 'physics',
   Programming = 'programming',
 }
@@ -53,6 +55,9 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
     switch (newTab) {
       case Tab.Geography:
         initializeGeographyTab()
+        break
+      case Tab.Muzak:
+        initializeMuzakTab()
         break
       case Tab.Programming:
         initializeProgrammingTab()
