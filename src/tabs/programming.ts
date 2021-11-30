@@ -5,15 +5,21 @@ const codeEditorId = 'code-editor'
 const outputId = 'code-output'
 const errorId = 'code-error'
 const executeButtonSelector = '.code-editor-execute'
-const boilerplateErrorstrings = {
-  'PythonError: Traceback \\(most recent call last\\):\n\
+const boilerplateErrorstrings = [
+  {
+    errorString:
+      'PythonError: Traceback \\(most recent call last\\):\n\
 \\s*File "\\/lib\\/python3.9\\/site-packages\\/_pyodide\\/_base.py", line 415, in eval_code\n\
 \\s*CodeRunner\\(\\n\
 \\s*File "\\/lib\\/python3.9\\/site-packages\\/_pyodide\\/_base.py", line 296, in run\n\
-\\s*coroutine = eval\\(self.code, globals, locals\\)\n':
-    '',
-  '\\s*File "<exec>", line (\\d+), in <module>\n': 'Line $1:\n',
-}
+\\s*coroutine = eval\\(self.code, globals, locals\\)\n',
+    replaceWith: '',
+  },
+  {
+    errorString: '\\s*File "<exec>", line (\\d+), in <module>\n',
+    replaceWith: 'Line $1:\n',
+  },
+]
 
 let pyodide = null
 let pyodideInitializing = true
@@ -45,9 +51,9 @@ const printStderr = (text: string) => {
 }
 
 const removeBoilerplateErrorstrings = (text: string): string => {
-  Object.keys(boilerplateErrorstrings).forEach((thisErrorstring) => {
-    const re = new RegExp(thisErrorstring)
-    text = text.replace(re, boilerplateErrorstrings[thisErrorstring])
+  boilerplateErrorstrings.forEach((replaceError) => {
+    const re = new RegExp(replaceError.errorString)
+    text = text.replace(re, replaceError.replaceWith)
   })
 
   return text
