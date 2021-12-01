@@ -20,7 +20,7 @@
 <h1 class="sv">Programmering</h1>
 
 <ul class="fi">
-  <li>Voit selata ohjelmoinnin lähdemateriaalia.</li>
+  <li>Voit selata ohjelmoinnin lähdemateriaalia (Python 3).</li>
   <li>Voit kopioida lähdemateriaalissa olevia ohjelmakoodeja leikepöydälle klikkaamalla haluamaasi esimerkkikoodia.</li>
   <li>Liitä leikepöydälle kopioimasi koodi klikkaamalla ohjelmakoodi-ikkunaa ja painamalla ctrl-v.</li>
   <li>Suorita ohjelmakoodi-ikkunassa oleva koodi klikkaamalla Suorita ohjelma -painiketta.</li>
@@ -56,14 +56,16 @@ a multiline comment
 <p class="fi">Kommentointi koodirivillä</p>
 
 <pre class="code-clickable">
-name = “Onni”   #Set the value “Onni” to variable name
+name = "Onni"   # Set the value "Onni" to variable name
 </pre>
 
 <h2 class="fi">Muuttujat</h2>
 
 <ul class="fi">
-  <li>Muuttujan nimessä saa olla vain yksi sana.</li>
-  <li>Muuttujan nimessä saa olla vain kirjaimia, numeroita ja <code>_</code>-merkki</li>
+  <li>
+    Muuttujan nimessä saa olla vain kirjaimia, numeroita ja <code>_</code>-merkki
+    (esim. <code>a</code>, <code>alkuluvut</code>, <code>pieninYhteinenTekijä</code> tai <code>suurin_kulmakerroin</code>)
+  </li>
   <li>Muuttujan nimi ei voi alkaa numerolla</li>
 </ul>
 
@@ -91,20 +93,18 @@ A list of numbers: [1, 2, 3, 4, 5]
 
 <h2 class="fi">Muuttujien tyypit</h2>
 
-<pre class="code-clickable">
-name = "Lisa"				# string
-age = 34            # integer
-lenght = 168.5      # floating point number "decimal number"
-is_prime = True     # boolean
-numbers = [4,5,6,7] # list
-</pre>
-
 <p class="fi">Python valitsee automaattisesti parhaaksi arvaamansa tietotyypin. Tyypin voi tarkistaa komennolla <code>type()</code>.</p>
 
 <pre class="code-clickable">
+name = "Lisa"       # string
+age = 34            # integer
+length = 168.5      # floating point number "decimal number"
+is_prime = True     # boolean
+numbers = [4,5,6,7] # list
+
 print(type(name))
 print(type(age))
-print(type(lenght))
+print(type(length))
 print(type(is_prime))
 print(type(numbers))
 </pre>
@@ -117,7 +117,7 @@ print(type(numbers))
 &lt;class 'list'&gt;
 </pre>
 
-<p class="fi">Muuttujan tyyppiä voi muuttaa tarpeen mukaan:</p>
+<p class="fi">Muuttujan tyypin voi valita tarpeen mukaan:</p>
 
 <pre class="code-clickable">
 a = 7
@@ -205,7 +205,7 @@ print( abs(-5) )
 5
 </pre>
 
-<p class="fi">Jakolaskun kokonaisosa ja jakojäännös:</p>
+<p class="fi">Kokonaislukujen jakolaskun kokonaisosa ja jakojäännös:</p>
 
 <pre class="code-clickable">
 print(7//3)
@@ -330,7 +330,7 @@ print(d)
 2.302585092994046
 3.0
 3.0
-4.0
+4.000000000000001
 </pre>
 
 <h3 class="fi">Eksponenttifunktio</h3>
@@ -445,7 +445,7 @@ Next year you are 17 years old.
 name = "Anna"
 
 if name == "Anna":
-print("Hello Anna!")
+  print("Hello Anna!")
 </pre>
 
 <pre class="execution-output">
@@ -524,7 +524,7 @@ Your number is odd.
 <p class="fi">
   Usein vertailussa vaihtoehtoja saattaa olla enemmän kuin kaksi, kuten esimerkiksi suurempi, yhtäsuuri tai pienempi.
   <code>elif</code>-haara on vaihtoehtona alkuperäiselle <code>if</code>-ehdolle.
-  <code>elif</code>-haaroja voi olla useampi ja niistä suoritetaan vain se jonka arvo on tosi.
+  <code>elif</code>-haaroja voi olla useampi ja niistä suoritetaan ensimmäinen, jonka arvo on tosi.
 </p>
 
 <pre class="code-clickable">
@@ -627,7 +627,7 @@ number = 1
 while True:
   print(number)
   number = number * 2
-  if number > 1000:
+  if number >= 1000:
     break
 </pre>
 
@@ -669,10 +669,13 @@ print(b)
 print(c)
 </pre>
 
-Tuloste:
+Tulostus esimerkiksi:
+
+<pre class="execution-output">
 0.14820514048869093
 -1.4189076926953894
 6
+</pre>
 
 <h3 class="fi">Satunnaisuus ja listat</h3>
 
@@ -821,15 +824,15 @@ print(numbers)
 numbers[0] = 4
 print(numbers)
 
-# Add numbers 8 to the end of the list
+# Add number 8 to the end of the list
 numbers.append(8)
 print(numbers)
 
-# Remove 7 from list
+# Remove number 7 from the list
 numbers.remove(7)
 print(numbers)
 
-# Remove value at index 0
+# Remove value from the index 0
 numbers.pop(0)
 print(numbers)
 </pre>
