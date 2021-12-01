@@ -7,13 +7,8 @@ const errorId = 'code-error'
 const executeButtonSelector = '.code-editor-execute'
 const boilerplateErrorstrings = [
   {
-    errorString:
-      'PythonError: Traceback \\(most recent call last\\):\n\
-\\s*File "\\/lib\\/python3.9\\/site-packages\\/_pyodide\\/_base.py", line 415, in eval_code\n\
-\\s*CodeRunner\\(\\n\
-\\s*File "\\/lib\\/python3.9\\/site-packages\\/_pyodide\\/_base.py", line 296, in run\n\
-\\s*coroutine = eval\\(self.code, globals, locals\\)\n',
-    replaceWith: '',
+    errorString: 'PythonError: Traceback \\(most recent call last\\)[.,:"=\\-_\\/\\(\\)\\|\\n\\s\\w]+(File "<exec>")',
+    replaceWith: '$1',
   },
   {
     errorString: '\\s*File "<exec>", line (\\d+), in <module>\n',
