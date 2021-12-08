@@ -1,10 +1,12 @@
 import './programming.css'
 import { initializeMonacoEditor, getCode } from './common/monaco-editor'
+import { setCodeToClipboard } from './common/clipboard'
 
 const codeEditorId = 'code-editor'
 const outputId = 'code-output'
 const errorId = 'code-error'
 const executeButtonSelector = '.code-editor-execute'
+const copyCodeToClipboardButtonSelector = '.code-editor-copy'
 const boilerplateErrorstrings = [
   {
     errorString: 'PythonError: Traceback \\(most recent call last\\)[.,:"=\\-_\\/\\(\\)\\|\\n\\s\\w]+(File "<exec>")',
@@ -85,6 +87,10 @@ const executeCode = () => {
   }
 }
 
+const copyCodeToClipboard = () => {
+  setCodeToClipboard(getCode())
+}
+
 const getUrlPath = () => {
   const pathname = window.location.pathname
   return pathname.replace(/build\/.*$/, '')
@@ -124,4 +130,7 @@ export const initializeProgrammingTab = () => {
 
   const executeButtons = Array.from(document.querySelectorAll(executeButtonSelector))
   executeButtons.forEach((element) => element.addEventListener('click', executeCode))
+
+  const copyToClipboardButtons = Array.from(document.querySelectorAll(copyCodeToClipboardButtonSelector))
+  copyToClipboardButtons.forEach((element) => element.addEventListener('click', copyCodeToClipboard))
 }

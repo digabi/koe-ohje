@@ -39,10 +39,7 @@ const copyText = (event: MouseEvent) => {
     })
 }
 
-const copyCode = (event: MouseEvent) => {
-  const target = event.target as HTMLElement
-  const text = target.textContent
-
+export const setCodeToClipboard = (text: string) => {
   copyTextToClipboard(text)
     .then(() => {
       showSuccess('copying_box_code')
@@ -50,6 +47,11 @@ const copyCode = (event: MouseEvent) => {
     .catch(() => {
       alert('Copying to clipboard is not supported on your browser.')
     })
+}
+
+const copyCode = (event: MouseEvent) => {
+  const target = event.target as HTMLElement
+  setCodeToClipboard(target.textContent)
 }
 
 let selectedEquation: HTMLElement
