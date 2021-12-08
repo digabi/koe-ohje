@@ -26,6 +26,7 @@ export const initializeMonacoEditor = (codeEditorId: string) => {
   editor = monaco.editor.create(document.getElementById(codeEditorId), {
     automaticLayout: true,
   	language: 'python',
+    lineNumbersMinChars: 2,
     minimap: {
       enabled: false,
     },
