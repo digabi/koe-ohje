@@ -35,7 +35,7 @@
   padding: 5px;
 }
 
-.code-editor-execute {
+.code-editor-button {
   background-color: #1E5075;
   padding: 10px;
   color: #fff;
@@ -44,7 +44,7 @@
   margin: 10px 0 10px;
 }
 
-.code-editor-execute:hover, .code-editor-execute:active {
+.code-editor-button:hover, .code-editor-button:active {
   padding: 10px;
   background-color: #359BB7;
 }
