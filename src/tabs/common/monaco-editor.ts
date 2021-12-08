@@ -4,7 +4,6 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js';
 import 'monaco-editor/esm/vs/basic-languages/python/python.contribution.js';
 
 var editor: monaco.editor.IStandaloneCodeEditor
-var lastCode = ""
 
 declare global {
   interface Window {
@@ -16,6 +15,20 @@ self.MonacoEnvironment = {
 	getWorkerUrl: function (moduleId, label) {
 		return './editor.worker.bundle.js'
 	}
+}
+
+const setLastCode = (code: string) => {
+  if (window.localStorage) {
+    window.localStorage.setItem('monaco-editor-lastcode', code)
+  }
+}
+
+const getLastCode = (): string => {
+  if (window.localStorage && window.localStorage.getItem('monaco-editor-lastcode')) {
+    return window.localStorage.getItem('monaco-editor-lastcode')
+  }
+
+  return ""
 }
 
 export const getCode = () => {
@@ -33,12 +46,12 @@ export const initializeMonacoEditor = (codeEditorId: string) => {
     scrollBeyondLastLine: false,
     tabSize: 3,
     renderWhitespace: 'all',
-		value: lastCode,
+		value: getLastCode(),
     wordWrap: 'on',
   })
 
 	document.getElementById(codeEditorId).addEventListener('keyup', () => {
-		lastCode = editor.getValue()
+		setLastCode(editor.getValue())
 	})
 
 	document.getElementById("tab-programming-ide-container").addEventListener('replaceEditorTextForTestingPurposes', (event) => {
