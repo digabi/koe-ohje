@@ -27,7 +27,7 @@
     "core-js": "^3.19.3",
     "fuse.js": "^6.4.6",
     "leaflet": "~1.7",
-    "monaco-editor": "0.31.0",
+    "monaco-editor": "0.31.1",
     "skulpt": "^1.2.0",
     "tocbot": "^4.17.3"
   },
