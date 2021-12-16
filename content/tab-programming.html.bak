@@ -674,8 +674,8 @@ for i in range(5):
 4
 </pre>
 
-<p class="fi"><code>range()</code>-funktiolla voi olla kolme parametria: <code>range(start, stop, step)</code>.</p>
-<p class="sv">Funktionen <code>range()</code> kan ha tre parametrar: <code>range(start, stop, step)</code>.</p>
+<p class="fi"><code>range()</code>-funktiolle voidaan antaa kolme argumenttia: <code>range(start, stop, step)</code>.</p>
+<p class="sv">Funktionen <code>range()</code> kan ges tre argument: <code>range(start, stopp, step)</code>.</p>
 
 <pre class="code-clickable">
 for i in range(1,15,2):
@@ -1040,8 +1040,8 @@ print( f(3) )
 10
 </pre>
 
-<p class="fi">Funktiolla voi olla useampi kuin yksi parametri:</p>
-<p class="sv">En funktion kan ha fler än en parameter: </p>
+<p class="fi">Funktiolle annettavia parametreja voi olla useampi kuin yksi:</p>
+<p class="sv">Det kan finnas mer än en parameter för att gå in i en funktion: </p>
 
 <pre class="code-clickable">
 def f(x,y):
