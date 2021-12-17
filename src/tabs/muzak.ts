@@ -50,9 +50,9 @@ export const initializeMuzakTab = () => {
   const AudioContext = window.AudioContext || window.webkitAudioContext
   audioCtx = new AudioContext()
 
-  const playButtons = Array.from(document.querySelectorAll('.tabMuzakPlay'))
+  const playButtons = Array.from(document.querySelectorAll('.tab-muzak-play'))
   playButtons.forEach((element) => element.addEventListener('click', playButtonClicked))
 
-  const stopButtons = Array.from(document.querySelectorAll('.tabMuzakStop'))
+  const stopButtons = Array.from(document.querySelectorAll('.tab-muzak-stop'))
   stopButtons.forEach((element) => element.addEventListener('click', stopButtonClicked))
 }
