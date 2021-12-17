@@ -1,0 +1,18 @@
+.tab-muzak-playbuttons {
+  display: grid;
+  grid-template-columns: fit-content(100%) auto;
+  align-items: center;
+  grid-column-gap: 10px;
+}
+
+.tab-muzak-play, .tab-muzak-stop {
+  background-color: #1E5075;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.tab-muzak-description {
+  font-size: 13.33px;
+}
