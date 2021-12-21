@@ -5,14 +5,28 @@
   grid-column-gap: 10px;
 }
 
-.tab-muzak-play, .tab-muzak-stop {
+.tab-muzak-play {
+  background-color: #fff;
+  padding: 10px;
+  color: #1E5075;
+  border: none;
+  cursor: pointer;
+  margin: 5px 0 5px 0;
+}
+
+.tab-muzak-pause {
   background-color: #1E5075;
   padding: 10px;
   color: #fff;
   border: none;
   cursor: pointer;
+  margin: 5px 0 5px 0;
 }
 
 .tab-muzak-description {
   font-size: 13.33px;
+}
+
+a {
+  color: #1E5075;
 }
