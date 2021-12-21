@@ -72,5 +72,6 @@ Tuloksena on `output.webm`
 
 - Videot: Peter Ahlroos
 - Matematiikka: Lotta Oinonen
-- Fysiikka: Riitta Salmenoja, Ville Havu, Krisitan Meinander
+- Fysiikka: Riitta Salmenoja, Ville Havu, Kristian Meinander
 - Kemia: Katariina Tammi
+- [FontAwesome 5](https://github.com/FortAwesome/Font-Awesome)
