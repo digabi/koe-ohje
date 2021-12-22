@@ -65,13 +65,21 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
   }, 0)
 }
 
+export const getCurrentTab = (): Tab => {
+  const currentTabButton = document.querySelector<HTMLElement>('.tab-menu-option.active')
+  const currentTab = currentTabButton?.dataset.tabId as Tab
+
+  return currentTab
+}
+
 const handleChangeTab = (event: MouseEvent) => {
   const clickedTabButton = event.currentTarget as HTMLElement
   const clickedTab = clickedTabButton?.dataset.tabId as Tab
 
-  const currentTabButton = document.querySelector<HTMLElement>('.tab-menu-option.active')
-  const currentTab = currentTabButton?.dataset.tabId as Tab
+  const currentTab = getCurrentTab()
   if (currentTab === clickedTab) return
+
+  const currentTabButton = document.querySelector<HTMLElement>('.tab-menu-option.active')
 
   clickedTabButton.classList.add('active')
   currentTabButton.classList.remove('active')

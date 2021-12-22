@@ -98,19 +98,23 @@ button {
   z-index: 2000;
 }
 
-.tab-menu-option {
+.tab-menu-option, .tab-menu-language-option {
   margin: 0.5em 0.5em 0 0.5em;
   float: left;
   cursor: pointer;
   font-size: 0.9em;
 }
 
-.tab-menu-option.active {
+.tab-menu-option.active, .tab-menu-language-option.active {
   font-weight: bold;
   border-width: 0px 0px 4px 0px;
   border-bottom-color: #1e4f75;
   border-style: solid;
   padding-bottom: 10px;
+}
+
+.tab-menu-language-selection {
+  float: right;
 }
 
 .tab-menu-opennavi {
