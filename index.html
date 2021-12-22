@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="common/css/leaflet.css" type="text/css" media="screen" />
     <script language="JavaScript">
       function addTabParameter() {
-        const tabParameter = location.href.indexOf("?") == -1 ? "" : location.href.substr(location.href.indexOf("?")+1);
+        const tabParameter = location.href.indexOf("?") == -1 ? "" : "&" + location.href.substr(location.href.indexOf("?")+1);
 
         const linkElements = document.querySelectorAll(".link");
         linkElements.forEach(function(element) {
-          element.setAttribute('href', element.getAttribute('href') + "&" + tabParameter);
+          element.setAttribute('href', element.getAttribute('href') + tabParameter);
         });
       }
     </script>
