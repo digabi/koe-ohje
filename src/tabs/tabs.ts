@@ -79,9 +79,21 @@ const handleChangeTab = (event: MouseEvent) => {
   loadTab(currentTab, clickedTab)
 }
 
+const getDefaultTab = (): Tab => {
+  const url = new URL(window.location.href)
+  var defaultTab = Tab.General;
+
+  Object.keys(Tab).filter(tab => {
+    if (url.searchParams.get(Tab[tab]) !== null) defaultTab = Tab[tab]
+  })
+
+  return defaultTab
+}
+
 export const initializeTabs = () => {
   const menuItems = Array.from(document.querySelectorAll('#tab-menu .tab-menu-option'))
   menuItems.forEach((element) => element.addEventListener('click', handleChangeTab))
 
-  loadTab(Tab.General, Tab.General)
+  const defaultTab = getDefaultTab()
+  loadTab(defaultTab, defaultTab)
 }
