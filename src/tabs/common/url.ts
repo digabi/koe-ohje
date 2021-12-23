@@ -28,7 +28,10 @@ export const updateUrl = (): URL => {
   url.search = '?' + getCurrentLanguage() + '&' + getCurrentTab()
   url.hash = ""
 
-  history.pushState({}, document.title, url);
+  // Modify history stack only if not a back-button-case
+  if (window.location.href != url.toString()) {
+    history.pushState({}, document.title, url)
+  }
 
   return url
 }

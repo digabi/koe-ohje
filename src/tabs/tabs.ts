@@ -5,7 +5,8 @@ import { initializeGeographyTab } from './geography'
 import { initializeProgrammingTab } from './programming'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
-import { getTabFromUrl, updateUrl } from './common/url'
+import { getTabFromUrl, getLanguageFromUrl, updateUrl } from './common/url'
+import { changeLanguage, getCurrentLanguage } from './common/language'
 import { loadHtml } from '../util/loadHtml'
 
 export enum Tab {
@@ -98,11 +99,32 @@ const handleChangeTab = (event: MouseEvent) => {
   loadTab(currentTab, clickedTab)
 }
 
+const handleBackButton = () => {
+  const languageFromUrl = getLanguageFromUrl()
+  const currentLanguage = getCurrentLanguage()
+
+  if (currentLanguage !== languageFromUrl) {
+    changeLanguage(languageFromUrl)
+    return
+  }
+
+  const tabFromUrl = getTabFromUrl()
+  const currentTab = getCurrentTab()
+
+  if (currentTab === tabFromUrl) return
+
+  if (tabFromUrl) {
+    loadTab(currentTab, tabFromUrl)
+  } else {
+    loadTab(currentTab, Tab.General)
+  }
+}
+
 export const initializeTabs = () => {
   const menuItems = Array.from(document.querySelectorAll('#tab-menu .tab-menu-option'))
   menuItems.forEach((element) => element.addEventListener('click', handleChangeTab))
 
-  window.onpopstate = ((event) => { console.log("onpopstate") })
+  window.onpopstate = (() => handleBackButton())
 
   const defaultTab = getTabFromUrl()
   if (defaultTab) {
@@ -110,5 +132,4 @@ export const initializeTabs = () => {
   } else {
     loadTab(Tab.General, Tab.General)
   }
-
 }

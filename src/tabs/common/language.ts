@@ -44,21 +44,24 @@ export const guessLanguageForSession = () => {
   return Language.finnish
 }
 
-const handleChangeLanguage = (event: MouseEvent) => {
-  const clickedLanguageButton = event.currentTarget as HTMLElement
-  const clickedLanguage = clickedLanguageButton?.dataset.langId as Language
-
-  console.log('handleChangeLanguage', getCurrentLanguage(), clickedLanguage)
-  if (getCurrentLanguage() == clickedLanguage) {
-    return
-  }
-
-  setCurrentLanguage(clickedLanguage)
+export const changeLanguage = (newLanguage: Language) => {
+  setCurrentLanguage(newLanguage)
   const url = updateUrl()
 
   // We have to reload the page as the unselected language elements have been
   // deleted to make the page lighter
   window.location = url
+}
+
+const handleChangeLanguage = (event: MouseEvent) => {
+  const clickedLanguageButton = event.currentTarget as HTMLElement
+  const clickedLanguage = clickedLanguageButton?.dataset.langId as Language
+
+  if (getCurrentLanguage() == clickedLanguage) {
+    return
+  }
+
+  changeLanguage(clickedLanguage)
 }
 
 export const initializeLanguage = () => {
