@@ -23,10 +23,17 @@ export const getTabFromUrl = (): Tab => {
   return urlTab
 }
 
+export const getHashFromUrl = (): string => {
+  const url = new URL(window.location.href)
+
+  if (url.hash) return url.hash.substr(1)
+
+  return null
+}
+
 export const updateUrl = (): URL => {
   const url = new URL(window.location.href)
   url.search = '?' + getCurrentLanguage() + '&' + getCurrentTab()
-  url.hash = ""
 
   // Modify history stack only if not a back-button-case
   if (window.location.href != url.toString()) {

@@ -5,7 +5,7 @@ import { initializeGeographyTab } from './geography'
 import { initializeProgrammingTab } from './programming'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
-import { getTabFromUrl, getLanguageFromUrl, updateUrl } from './common/url'
+import { getTabFromUrl, getLanguageFromUrl, getHashFromUrl, updateUrl } from './common/url'
 import { changeLanguage, getCurrentLanguage } from './common/language'
 import { loadHtml } from '../util/loadHtml'
 
@@ -25,11 +25,13 @@ declare global {
   }
 }
 
-const loadTab = (oldTab: Tab, newTab: Tab) => {
+const loadTab = (oldTab: Tab, newTab: Tab, targetHash: string) => {
   const loadingScreen = document.getElementById('loading')
   loadingScreen.classList.remove('hidden')
 
-  window.location.hash = ''
+  if (! targetHash) {
+    window.location.hash = ""
+  }
   clearSearch()
 
   // This timeout makes sure that the loading screen renders before executing the load tab code
@@ -66,6 +68,12 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
     initializeToc()
 
     updateUrl()
+
+    if (targetHash) {
+      var targetElement = document.getElementById<HTMLElement>(targetHash)
+      if (targetElement)
+        targetElement.scrollIntoView()
+    }
 
     loadingScreen.classList.add('hidden')
   }, 0)
@@ -114,7 +122,7 @@ const handleBackButton = () => {
   if (currentTab === tabFromUrl) return
 
   if (tabFromUrl) {
-    loadTab(currentTab, tabFromUrl)
+    loadTab(currentTab, tabFromUrl, getHashFromUrl())
   } else {
     loadTab(currentTab, Tab.General)
   }
@@ -128,7 +136,7 @@ export const initializeTabs = () => {
 
   const defaultTab = getTabFromUrl()
   if (defaultTab) {
-    loadTab(Tab.General, defaultTab)
+    loadTab(Tab.General, defaultTab, getHashFromUrl())
   } else {
     loadTab(Tab.General, Tab.General)
   }
