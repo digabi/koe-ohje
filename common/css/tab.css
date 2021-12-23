@@ -553,16 +553,6 @@ table.row-highlight tr:nth-child(odd) {
   }
 
   .tab-menu-option-short {
-    display: none;
-  }
-
-  .tab-menu-option-long {
-    display: inline;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .tab-menu-option-short {
     display: inline;
   }
 
