@@ -5,6 +5,7 @@ import { initializeGeographyTab } from './geography'
 import { initializeProgrammingTab } from './programming'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
+import { getTabFromUrl, updateUrl } from './common/url'
 import { loadHtml } from '../util/loadHtml'
 
 export enum Tab {
@@ -59,7 +60,11 @@ const loadTab = (oldTab: Tab, newTab: Tab) => {
         break
     }
 
+    updateActiveTabInNavigation()
+
     initializeToc()
+
+    updateUrl()
 
     loadingScreen.classList.add('hidden')
   }, 0)
@@ -72,6 +77,17 @@ export const getCurrentTab = (): Tab => {
   return currentTab
 }
 
+const updateActiveTabInNavigation = () => {
+  const oldActiveTabButtons = document.querySelectorAll<HTMLElement>('.tab-menu-option.active')
+  oldActiveTabButtons.forEach((element) => element.classList.remove('active'))
+
+  const activeTab = document.querySelector<HTMLElement>('.tab-content.active')
+  var tabName = activeTab.id.substr(4)
+
+  const activeTabElements = document.querySelectorAll<HTMLElement>('[data-tab-id="'+tabName+'"]')
+  activeTabElements.forEach((element) => element.classList.add('active'))
+}
+
 const handleChangeTab = (event: MouseEvent) => {
   const clickedTabButton = event.currentTarget as HTMLElement
   const clickedTab = clickedTabButton?.dataset.tabId as Tab
@@ -79,29 +95,20 @@ const handleChangeTab = (event: MouseEvent) => {
   const currentTab = getCurrentTab()
   if (currentTab === clickedTab) return
 
-  const currentTabButton = document.querySelector<HTMLElement>('.tab-menu-option.active')
-
-  clickedTabButton.classList.add('active')
-  currentTabButton.classList.remove('active')
-
   loadTab(currentTab, clickedTab)
-}
-
-const getDefaultTab = (): Tab => {
-  const url = new URL(window.location.href)
-  var defaultTab = Tab.General;
-
-  Object.keys(Tab).filter(tab => {
-    if (url.searchParams.get(Tab[tab]) !== null) defaultTab = Tab[tab]
-  })
-
-  return defaultTab
 }
 
 export const initializeTabs = () => {
   const menuItems = Array.from(document.querySelectorAll('#tab-menu .tab-menu-option'))
   menuItems.forEach((element) => element.addEventListener('click', handleChangeTab))
 
-  const defaultTab = getDefaultTab()
-  loadTab(defaultTab, defaultTab)
+  window.onpopstate = ((event) => { console.log("onpopstate") })
+
+  const defaultTab = getTabFromUrl()
+  if (defaultTab) {
+    loadTab(Tab.General, defaultTab)
+  } else {
+    loadTab(Tab.General, Tab.General)
+  }
+
 }

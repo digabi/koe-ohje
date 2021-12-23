@@ -1,4 +1,5 @@
 import { getCurrentTab } from '../tabs'
+import { getLanguageFromUrl, updateUrl } from './url'
 
 export enum Language {
   finnish = 'fi',
@@ -6,6 +7,16 @@ export enum Language {
 }
 
 const localStorageLanguageKey = 'digabi-koe-ohje-last-language'
+let currentLanguage: Language = null
+
+export const getCurrentLanguage = (): Language => {
+  return currentLanguage
+}
+
+const setCurrentLanguage = (newLanguage: Language) => {
+  currentLanguage = newLanguage
+  setPreviousLanguage(newLanguage)
+}
 
 const setPreviousLanguage = (language: Language) => {
   window.localStorage.setItem(localStorageLanguageKey, language)
@@ -15,16 +26,11 @@ const getPreviousLanguage = (): Language => {
   return window.localStorage.getItem(localStorageLanguageKey)
 }
 
-export const getCurrentLanguage = () => {
+export const guessLanguageForSession = () => {
   // Check language from the URL
-  const url = new URL(window.location.href)
-  if (url.searchParams.get(Language.finnish) !== null) {
-    setPreviousLanguage(Language.finnish)
-    return Language.finnish
-  }
-  if (url.searchParams.get(Language.swedish) !== null) {
-    setPreviousLanguage(Language.swedish)
-    return Language.swedish
+  const languageFromUrl = getLanguageFromUrl()
+  if (languageFromUrl) {
+    return languageFromUrl
   }
 
   // Try to get previous language code
@@ -42,14 +48,13 @@ const handleChangeLanguage = (event: MouseEvent) => {
   const clickedLanguageButton = event.currentTarget as HTMLElement
   const clickedLanguage = clickedLanguageButton?.dataset.langId as Language
 
+  console.log('handleChangeLanguage', getCurrentLanguage(), clickedLanguage)
   if (getCurrentLanguage() == clickedLanguage) {
     return
   }
 
-  let url = new URL(window.location.href)
-  url.search = "?" + getCurrentTab()
-
-  setPreviousLanguage(clickedLanguage)
+  setCurrentLanguage(clickedLanguage)
+  const url = updateUrl()
 
   // We have to reload the page as the unselected language elements have been
   // deleted to make the page lighter
@@ -63,6 +68,7 @@ export const initializeLanguage = () => {
     video.setAttribute('src', src)
   })
 
+  setCurrentLanguage(guessLanguageForSession())
   const languageToRemove = getCurrentLanguage() === Language.finnish ? Language.swedish : Language.finnish
   const wrongLanguageElements = document.querySelectorAll(`.${languageToRemove}`)
   wrongLanguageElements.forEach(element => element.parentNode.removeChild(element))
