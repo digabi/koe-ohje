@@ -12,7 +12,7 @@ declare global {
 }
 
 self.MonacoEnvironment = {
-	getWorkerUrl: function (moduleId, label) {
+	getWorkerUrl: function () {
 		return './editor.worker.bundle.js'
 	}
 }
