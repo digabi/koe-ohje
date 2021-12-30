@@ -35,6 +35,10 @@ export const getCode = () => {
   return editor.getValue()
 }
 
+export const setMonacoReadOnly = (readOnly: boolean) => {
+  editor.updateOptions({readOnly: readOnly})
+}
+
 export const initializeMonacoEditor = (codeEditorId: string) => {
   editor = monaco.editor.create(document.getElementById(codeEditorId), {
     automaticLayout: true,

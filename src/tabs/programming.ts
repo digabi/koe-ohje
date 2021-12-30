@@ -1,5 +1,5 @@
 import './programming.css'
-import { initializeMonacoEditor, getCode } from './common/monaco-editor'
+import { initializeMonacoEditor, getCode, setMonacoReadOnly } from './common/monaco-editor'
 import { setCodeToClipboard } from './common/clipboard'
 
 const codeEditorId = 'code-editor'
@@ -99,12 +99,12 @@ const getUrlPath = () => {
 const initializePythonEngine = async () => {
   if (pyodide != null) {
     // Pyodide is already initialized, we're coming back from another tab
-    document.getElementById(codeEditorId).disabled = false
+    setMonacoReadOnly(false)
     showOutputArea()
     return
   }
 
-  document.getElementById(codeEditorId).disabled = true
+  setMonacoReadOnly(true)
   hideBothAreas()
   pyodideInitializing = true
 
@@ -119,7 +119,7 @@ const initializePythonEngine = async () => {
 
   pyodide.loadPackage('numpy')
 
-  document.getElementById(codeEditorId).disabled = false
+  setMonacoReadOnly(false)
   showOutputArea()
   pyodideInitializing = false
 }
