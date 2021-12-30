@@ -12,7 +12,7 @@ const fuseOptions: Fuse.IFuseOptions<SearchRecord> = {
   ignoreLocation: true
 }
 
-let fuse: Fuse<SearchRecord, Fuse.IFuseOptions<SearchRecord>>
+let fuse: Fuse<SearchRecord>
 
 export const createSearchIndex = () => {
   const contentElement = document.querySelector('.js-toc-content')
