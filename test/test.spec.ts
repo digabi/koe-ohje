@@ -8,7 +8,7 @@ describe('Digabi Exam Help', () => {
       await expect(page).toMatch('Yleisohjeet', { timeout: 5000 })
     })
 
-    it('should be able to open physics tab', async () => {
+    it('should be able to open physics tab when clicked', async () => {
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=physics]')
         el.click()
@@ -17,7 +17,7 @@ describe('Digabi Exam Help', () => {
       await expect(page).toMatchElement('#tab-physics h1', { timeout: 5000 })
     })
 
-    it('should be able to open chemistry tab', async () => {
+    it('should be able to open chemistry tab when clicked', async () => {
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=chemistry]')
         el.click()
@@ -26,7 +26,7 @@ describe('Digabi Exam Help', () => {
       await expect(page).toMatchElement('#tab-chemistry h1', { timeout: 5000 })
     })
 
-    it('should be able to open math tab', async () => {
+    it('should be able to open math tab when clicked', async () => {
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=math]')
         el.click()
@@ -35,7 +35,7 @@ describe('Digabi Exam Help', () => {
       await expect(page).toMatchElement('#tab-math h1', { timeout: 5000 })
     })
 
-    it('should be able to open geography tab', async () => {
+    it('should be able to open geography tab when clicked', async () => {
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=geography]')
         el.click()
@@ -44,7 +44,7 @@ describe('Digabi Exam Help', () => {
       await expect(page).toMatchElement('#tab-geography h1', { timeout: 5000 })
     })
 
-    it('should be able to open keyboard tab', async () => {
+    it('should be able to open keyboard tab when clicked', async () => {
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=keyboard]')
         el.click()
@@ -53,7 +53,7 @@ describe('Digabi Exam Help', () => {
       await expect(page).toMatchElement('#tab-keyboard h1', { timeout: 5000 })
     })
 
-    it('should be able to open programming tab', async () => {
+    it('should be able to open programming tab when clicked', async () => {
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=programming]')
         el.click()
@@ -61,10 +61,8 @@ describe('Digabi Exam Help', () => {
 
       await expect(page).toMatchElement('#tab-programming h1', { timeout: 5000 })
     })
-  })
 
-  describe('Language', () => {
-    it('should show page in swedish', async () => {
+    it('should show default page in swedish', async () => {
       await page.goto('http://localhost:8080/build/index.html?sv')
 
       await expect(page).toMatchElement('#tab-general h1.sv', { timeout: 5000 })
