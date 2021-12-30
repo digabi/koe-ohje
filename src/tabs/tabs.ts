@@ -1,4 +1,4 @@
-import { initializeLanguage } from './common/language'
+import { initializeLanguage, changeLanguage, getCurrentLanguage } from './common/language'
 import { initializeCopyToClipboard } from './common/clipboard'
 import { initializeTablesorter } from './common/tablesorter'
 import { initializeGeographyTab } from './geography'
@@ -6,7 +6,6 @@ import { initializeProgrammingTab } from './programming'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
 import { getTabFromUrl, getLanguageFromUrl, getHashFromUrl, updateUrl } from './common/url'
-import { changeLanguage, getCurrentLanguage } from './common/language'
 import { loadHtml } from '../util/loadHtml'
 
 export enum Tab {
@@ -29,8 +28,8 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash: string) => {
   const loadingScreen = document.getElementById('loading')
   loadingScreen.classList.remove('hidden')
 
-  if (! targetHash) {
-    window.location.hash = ""
+  if (!targetHash) {
+    window.location.hash = ''
   }
   clearSearch()
 
@@ -70,9 +69,8 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash: string) => {
     updateUrl()
 
     if (targetHash) {
-      var targetElement = document.getElementById<HTMLElement>(targetHash)
-      if (targetElement)
-        targetElement.scrollIntoView()
+      const targetElement = document.getElementById<HTMLElement>(targetHash)
+      if (targetElement) targetElement.scrollIntoView()
     }
 
     loadingScreen.classList.add('hidden')
@@ -91,9 +89,9 @@ const updateActiveTabInNavigation = () => {
   oldActiveTabButtons.forEach((element) => element.classList.remove('active'))
 
   const activeTab = document.querySelector<HTMLElement>('.tab-content.active')
-  var tabName = activeTab.id.substr(4)
+  const tabName = activeTab.id.substr(4)
 
-  const activeTabElements = document.querySelectorAll<HTMLElement>('[data-tab-id="'+tabName+'"]')
+  const activeTabElements = document.querySelectorAll<HTMLElement>('[data-tab-id="' + tabName + '"]')
   activeTabElements.forEach((element) => element.classList.add('active'))
 }
 
@@ -132,7 +130,7 @@ export const initializeTabs = () => {
   const menuItems = Array.from(document.querySelectorAll('#tab-menu .tab-menu-option'))
   menuItems.forEach((element) => element.addEventListener('click', handleChangeTab))
 
-  window.onpopstate = (() => handleBackButton())
+  window.onpopstate = () => handleBackButton()
 
   const defaultTab = getTabFromUrl()
   if (defaultTab) {
