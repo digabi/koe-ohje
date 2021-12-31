@@ -3,12 +3,16 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faPlay } from '@fortawesome/free-solid-svg-icons/faPlay'
 import { faPause } from '@fortawesome/free-solid-svg-icons/faPause'
 
-const audioCtx = {}
-const audioElement
+type AudioCtx = {
+  [key: string]: AudioContext
+}
+
+const audioCtx: AudioCtx = {}
+let audioElement: HTMLAudioElement
 let currentMuzakId = ''
 
-const createAudioContext = (audioId) => {
-  audioElement = document.getElementById(audioId)
+const createAudioContext = (audioId: string) => {
+  audioElement = document.getElementById(audioId) as HTMLAudioElement
   audioElement.loop = true
 
   if (audioCtx[audioId] == undefined) {
@@ -21,17 +25,17 @@ const createAudioContext = (audioId) => {
   currentMuzakId = audioId
 }
 
-const getMuzakId = (element): string => {
+const getMuzakId = (element: Element): string => {
   let muzakId = element.getAttribute('data-muzakid')
 
   if (muzakId == null) {
-    muzakId = getMuzakId(element.parentNode)
+    muzakId = getMuzakId(element.parentElement)
   }
 
   return muzakId
 }
 
-const setButtonIconPause = (buttonId) => {
+const setButtonIconPause = (buttonId: string) => {
   const buttons = Array.from(document.querySelectorAll('[data-muzakid="' + buttonId + '"]'))
   buttons.forEach((element) => {
     element.innerHTML = '<i class="fas fa-pause"></i>'
@@ -39,7 +43,7 @@ const setButtonIconPause = (buttonId) => {
   })
 }
 
-const setButtonIconPlay = (buttonId) => {
+const setButtonIconPlay = (buttonId: string) => {
   const buttons = Array.from(document.querySelectorAll('[data-muzakid="' + buttonId + '"]'))
   buttons.forEach((element) => {
     element.innerHTML = '<i class="fas fa-play"></i>'
@@ -47,8 +51,8 @@ const setButtonIconPlay = (buttonId) => {
   })
 }
 
-const playButtonClicked = (event) => {
-  const audioId = getMuzakId(event.target)
+const playButtonClicked = (event: Event) => {
+  const audioId = getMuzakId(event.target as Element)
 
   if (audioId != currentMuzakId) {
     if (audioElement) {
