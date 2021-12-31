@@ -58,7 +58,7 @@ export const initializeMonacoEditor = (codeEditorId: string) => {
 		setLastCode(editor.getValue())
 	})
 
-	document.getElementById("tab-programming-ide-container").addEventListener('replaceEditorTextForTestingPurposes', (event) => {
+	document.getElementById("tab-programming-ide-container").addEventListener('replaceEditorTextForTestingPurposes', (event: CustomEvent) => {
 		editor.setValue(event.detail.text)
 	})
 }
