@@ -12,7 +12,7 @@ declare global {
 }
 
 self.MonacoEnvironment = {
-	getWorkerUrl: function (moduleId, label) {
+	getWorkerUrl: function () {
 		return './editor.worker.bundle.js'
 	}
 }
@@ -35,6 +35,10 @@ export const getCode = () => {
   return editor.getValue()
 }
 
+export const setMonacoReadOnly = (readOnly: boolean) => {
+  editor.updateOptions({readOnly: readOnly})
+}
+
 export const initializeMonacoEditor = (codeEditorId: string) => {
   editor = monaco.editor.create(document.getElementById(codeEditorId), {
     automaticLayout: true,
@@ -54,7 +58,7 @@ export const initializeMonacoEditor = (codeEditorId: string) => {
 		setLastCode(editor.getValue())
 	})
 
-	document.getElementById("tab-programming-ide-container").addEventListener('replaceEditorTextForTestingPurposes', (event) => {
+	document.getElementById("tab-programming-ide-container").addEventListener('replaceEditorTextForTestingPurposes', (event: CustomEvent) => {
 		editor.setValue(event.detail.text)
 	})
 }

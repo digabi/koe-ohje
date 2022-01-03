@@ -12,7 +12,7 @@ const fuseOptions: Fuse.IFuseOptions<SearchRecord> = {
   ignoreLocation: true
 }
 
-let fuse: Fuse<SearchRecord, Fuse.IFuseOptions<SearchRecord>>
+let fuse: Fuse<SearchRecord>
 
 export const createSearchIndex = () => {
   const contentElement = document.querySelector('.js-toc-content')
@@ -38,13 +38,13 @@ export const createSearchIndex = () => {
   fuse = new Fuse(searchIndex, fuseOptions)
 }
 
-const createSearchItem = (searchRecrod: SearchRecord): HTMLElement => {
+const createSearchItem = (searchRecord: SearchRecord): HTMLElement => {
   const result = document.createElement('div')
   result.classList.add('search-result-item')
-  const isTitle = searchRecrod.elementRef.tagName === 'H2' || searchRecrod.elementRef.tagName === 'H3'
+  const isTitle = searchRecord.elementRef.tagName === 'H2' || searchRecord.elementRef.tagName === 'H3'
 
   result.addEventListener('click', () => {
-    let scrollTop = searchRecrod.elementRef.getBoundingClientRect().y + window.scrollY
+    let scrollTop = searchRecord.elementRef.getBoundingClientRect().y + window.scrollY
 
     // Top navigation offset in headers is already done with css
     if (!isTitle) {
@@ -54,7 +54,7 @@ const createSearchItem = (searchRecrod: SearchRecord): HTMLElement => {
     window.scrollTo({ top: scrollTop, behavior: 'smooth' })
   })
 
-  result.innerHTML = searchRecrod.elementRef.innerHTML
+  result.innerHTML = searchRecord.elementRef.innerHTML
 
   if (isTitle) {
     result.innerText = ` \u2261 ${result.innerText}`

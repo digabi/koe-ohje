@@ -89,8 +89,8 @@ export const initializeCopyToClipboard = () => {
   const copyableElements = Array.from(document.querySelectorAll('.clickable'))
   copyableElements.forEach(element => element.addEventListener('click', copyText))
 
-  const copyableElements = Array.from(document.querySelectorAll('.code-clickable'))
-  copyableElements.forEach(element => element.addEventListener('click', copyCode))
+  const copyableCodeElements = Array.from(document.querySelectorAll('.code-clickable'))
+  copyableCodeElements.forEach(element => element.addEventListener('click', copyCode))
 
   const equationElements = Array.from(document.querySelectorAll('svg'))
   equationElements.forEach(element => element.addEventListener('click', copyEquation))
