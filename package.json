@@ -26,7 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "client-side-python-runner": "^1.6.6",
-    "core-js": "^3.20.1",
+    "core-js": "^3.20.2",
     "fuse.js": "^6.5.3",
     "leaflet": "~1.7",
     "monaco-editor": "0.31.1",
