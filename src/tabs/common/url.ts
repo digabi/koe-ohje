@@ -5,8 +5,8 @@ export const getLanguageFromUrl = (): Language => {
   const url = new URL(window.location.href)
   var urlLanguage = null
 
-  Object.keys(Language).filter(language => {
-    if (url.searchParams.get(Language[language]) !== null) urlLanguage = Language[language]
+  Object.values(Language).forEach(language => {
+    if (url.searchParams.get(language) !== null) urlLanguage = language
   })
 
   return urlLanguage
@@ -16,8 +16,8 @@ export const getTabFromUrl = (): Tab => {
   const url = new URL(window.location.href)
   var urlTab = null;
 
-  Object.keys(Tab).filter(tab => {
-    if (url.searchParams.get(Tab[tab]) !== null) urlTab = Tab[tab]
+  Object.values(Tab).forEach(tab => {
+    if (url.searchParams.get(tab) !== null) urlTab = tab
   })
 
   return urlTab
@@ -37,7 +37,7 @@ export const updateUrl = (): URL => {
 
   // Modify history stack only if not a back-button-case
   if (window.location.href != url.toString()) {
-    history.pushState({}, document.title, url)
+    history.pushState({}, document.title, url.toString())
   }
 
   return url

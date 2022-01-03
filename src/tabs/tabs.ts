@@ -24,7 +24,7 @@ declare global {
   }
 }
 
-const loadTab = (oldTab: Tab, newTab: Tab, targetHash: string) => {
+const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
   const loadingScreen = document.getElementById('loading')
   loadingScreen.classList.remove('hidden')
 
@@ -69,7 +69,7 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash: string) => {
     updateUrl()
 
     if (targetHash) {
-      const targetElement = document.getElementById<HTMLElement>(targetHash)
+      const targetElement = document.getElementById(targetHash)
       if (targetElement) targetElement.scrollIntoView()
     }
 
