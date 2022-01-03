@@ -5,6 +5,12 @@ const generateId = (text: string) => {
     .trim()
     .toLowerCase()
     .replace(/[\s\(\)]/g, '-')
+    .replace(/ä/g, 'ae')
+    .replace(/Ä/g, 'AE')
+    .replace(/å/g, 'ao')
+    .replace(/Å/g, 'AO')
+    .replace(/ö/g, 'oe')
+    .replace(/Ö/g, 'OE')
 }
 
 const setHeaderIds = () => {

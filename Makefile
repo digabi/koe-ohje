@@ -44,7 +44,7 @@ pyodide-build.tar.bz2:
 update-pyodide: pyodide-build.tar.bz2
 	-rm -fR common/pyodide/
 	-rm -fR common/pyodide-temp/
-	cd common; tar --get -j <../pyodide-build.tar.bz2
+	cd common; tar --extract -j <../pyodide-build.tar.bz2
 	mv common/pyodide/ common/pyodide-temp/
 	mkdir common/pyodide/
 	# Copy common Pyodide stuff we want to take to production
