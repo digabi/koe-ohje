@@ -36,6 +36,7 @@ deploy:
     bucket: $TEST_BUCKET
     local-dir: release
     region: eu-north-1
+    cache_control: "max-age=3600"
     on:
       branch: master
     skip_cleanup: true
@@ -45,6 +46,7 @@ deploy:
     bucket: $PROD_BUCKET
     local-dir: release
     region: eu-north-1
+    cache_control: "max-age=3600"
     on:
       branch: release
     skip_cleanup: true
