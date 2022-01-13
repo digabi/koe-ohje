@@ -51,6 +51,9 @@ export const changeLanguage = (newLanguage: Language) => {
   // We have to reload the page as the unselected language elements have been
   // deleted to make the page lighter
   window.location.href = url.toString()
+  // Since window.location.href does not redirect page to itself we have to
+  // reload the page manually
+  location.reload()
 }
 
 const handleChangeLanguage = (event: MouseEvent) => {
