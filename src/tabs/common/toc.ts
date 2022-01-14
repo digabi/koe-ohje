@@ -1,7 +1,7 @@
 import * as tocbot from 'tocbot'
 
 const generateId = (text: string) => {
-  return text
+  return "_" + text
     .trim()
     .toLowerCase()
     .replace(/[\s\(\)]/g, '-')
@@ -16,7 +16,9 @@ const generateId = (text: string) => {
 const setHeaderIds = () => {
   const headers = document.querySelectorAll<HTMLElement>('.js-toc-content h2, .js-toc-content h3')
   headers.forEach(element => {
-    element.setAttribute('id', generateId(element.innerText))
+    if (element.getAttribute('id') == null) {
+      element.setAttribute('id', generateId(element.innerText))
+    }
   })
 }
 
