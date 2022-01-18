@@ -115,33 +115,33 @@ describe('Table-of-contents', () => {
     })
   })
 
-  describe('Finnish and Swedish tabs have equal list of ids', () => {
-    const getIdList = async (tab: string, language: string): Promise<string[]> => {
-      const pageNew = await browser.newPage()
-      await pageNew.goto('http://localhost:8080/build/index.html?' + language + '&' + tab)
-      await expect(pageNew).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
+  const getIdList = async (tab: string, language: string): Promise<string[]> => {
+    const pageNew = await browser.newPage()
+    await pageNew.goto('http://localhost:8080/build/index.html?' + language + '&' + tab)
+    await expect(pageNew).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
 
-      const idList = await pageNew.evaluate(() => {
-        const ids: string[] = []
-        document.querySelectorAll('h2[id], h3[id]').forEach(function (e) {
-          ids.push(e.getAttribute('id'))
-        })
-        return ids
+    const idList = await pageNew.evaluate(() => {
+      const ids: string[] = []
+      document.querySelectorAll('h2[id], h3[id]').forEach(function (e) {
+        ids.push(e.getAttribute('id'))
       })
+      return ids
+    })
 
-      return idList
+    return idList
+  }
+
+  const ifDuplicateEntry = (list: string[]): string[] => {
+    const s = new Set(list)
+    if (list.length !== s.size) {
+      list.sort()
+      return list
     }
 
-    const ifDuplicateEntry = (list: string[]): string[] => {
-      const s = new Set(list)
-      if (list.length !== s.size) {
-        list.sort()
-        return list
-      }
+    return []
+  }
 
-      return []
-    }
-
+  describe('Finnish and Swedish tabs have equal list of ids (chemistry)', () => {
     it('should have an equal/unique list of ids on chemistry tab', async () => {
       const idsFi = await getIdList('chemistry', 'fi')
       const idsSv = await getIdList('chemistry', 'sv')
@@ -151,7 +151,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
+  })
 
+  describe('Finnish and Swedish tabs have equal list of ids (general)', () => {
     it('should have an equal/unique list of ids on general tab', async () => {
       const idsFi = await getIdList('general', 'fi')
       const idsSv = await getIdList('general', 'sv')
@@ -161,7 +163,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
+  })
 
+  describe('Finnish and Swedish tabs have equal list of ids (geography)', () => {
     it('should have an equal/unique list of ids on geography tab', async () => {
       const idsFi = await getIdList('geography', 'fi')
       const idsSv = await getIdList('geography', 'sv')
@@ -171,7 +175,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
+  })
 
+  describe('Finnish and Swedish tabs have equal list of ids (keyboard)', () => {
     it('should have an equal/unique list of ids on keyboard tab', async () => {
       const idsFi = await getIdList('keyboard', 'fi')
       const idsSv = await getIdList('keyboard', 'sv')
@@ -181,7 +187,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
+  })
 
+  describe('Finnish and Swedish tabs have equal list of ids (math)', () => {
     it('should have an equal/unique list of ids on math tab', async () => {
       const idsFi = await getIdList('math', 'fi')
       const idsSv = await getIdList('math', 'sv')
@@ -191,7 +199,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
+  })
 
+  describe('Finnish and Swedish tabs have equal list of ids (muzak)', () => {
     it('should have an equal/unique list of ids on muzak tab', async () => {
       const idsFi = await getIdList('muzak', 'fi')
       const idsSv = await getIdList('muzak', 'sv')
@@ -201,7 +211,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
+  })
 
+  describe('Finnish and Swedish tabs have equal list of ids (geography)', () => {
     it('should have an equal/unique list of ids on physics tab', async () => {
       const idsFi = await getIdList('physics', 'fi')
       const idsSv = await getIdList('physics', 'sv')
@@ -211,7 +223,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
+  })
 
+  describe('Finnish and Swedish tabs have equal list of ids (programming)', () => {
     it('should have an equal/unique list of ids on programming tab', async () => {
       const idsFi = await getIdList('programming', 'fi')
       const idsSv = await getIdList('programming', 'sv')
