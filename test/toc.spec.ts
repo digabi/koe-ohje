@@ -1,56 +1,56 @@
+import { Page } from '../node_modules/puppeteer'
+
 describe('Table-of-contents', () => {
+  const changeTab = (tab: string) => {
+    const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=' + tab + ']')
+    el.click()
+  }
+
+  const changeLanguage = (language: string) => {
+    const el = document.querySelector<HTMLElement>('#tab-menu div[data-lang-id=' + language + ']')
+    el.click()
+  }
+
   describe('Missing heading IDs on Finnish tabs', () => {
-    it('should have zero default ids on finnish chemistry tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&chemistry')
+    it('should have zero default ids on finnish tabs', async () => {
+      await page.goto('http://localhost:8080/build/index.html?fi')
+
+      await page.evaluate(changeTab, 'chemistry')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on finnish general tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&general')
+      await page.evaluate(changeTab, 'general')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on finnish geography tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&geography')
+      await page.evaluate(changeTab, 'geography')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on finnish keyboard tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&keyboard')
+      await page.evaluate(changeTab, 'keyboard')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on finnish math tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&math')
+      await page.evaluate(changeTab, 'math')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on finnish muzak tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&muzak')
+      await page.evaluate(changeTab, 'muzak')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on finnish physics tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&physics')
+      await page.evaluate(changeTab, 'muzak')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on finnish programming tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&programming')
+      await page.evaluate(changeTab, 'programming')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
@@ -58,177 +58,132 @@ describe('Table-of-contents', () => {
   })
 
   describe('Missing heading IDs on Swedish tabs', () => {
-    it('should have zero default ids on swedish chemistry tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&chemistry')
+    it('should have zero default ids on swedish tabs', async () => {
+      await page.goto('http://localhost:8080/build/index.html?sv')
+
+      await page.evaluate(changeTab, 'chemistry')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on swedish general tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&general')
+      await page.evaluate(changeTab, 'general')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on swedish geography tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&geography')
+      await page.evaluate(changeTab, 'geography')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on swedish keyboard tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&keyboard')
+      await page.evaluate(changeTab, 'keyboard')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on swedish math tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&math')
+      await page.evaluate(changeTab, 'math')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on swedish muzak tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&muzak')
+      await page.evaluate(changeTab, 'muzak')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on swedish physics tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&physics')
+      await page.evaluate(changeTab, 'physics')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-    })
 
-    it('should have zero default ids on swedish programming tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&programming')
+      await page.evaluate(changeTab, 'programming')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
     })
   })
 
-  const getIdList = async (tab: string, language: string): Promise<string[]> => {
-    const pageNew = await browser.newPage()
-    await pageNew.goto('http://localhost:8080/build/index.html?' + language + '&' + tab)
-    await expect(pageNew).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-
-    const idList = await pageNew.evaluate(() => {
+  describe('Finnish and Swedish tabs have equal list of ids', () => {
+    const getCurrentIdList = (): string[] => {
       const ids: string[] = []
       document.querySelectorAll('h2[id], h3[id]').forEach(function (e) {
         ids.push(e.getAttribute('id'))
       })
       return ids
-    })
-
-    return idList
-  }
-
-  const ifDuplicateEntry = (list: string[]): string[] => {
-    const s = new Set(list)
-    if (list.length !== s.size) {
-      list.sort()
-      return list
     }
 
-    return []
-  }
+    const ifDuplicateEntry = (list: string[]): string[] => {
+      const s = new Set(list)
+      if (list.length !== s.size) {
+        list.sort()
+        return list
+      }
 
-  describe('Finnish and Swedish tabs have equal list of ids (chemistry)', () => {
+      return []
+    }
+
+    const getTabIdList = async (pTab: string, pIdPrefix: string, pLanguage: string, pPage: Page): Promise<string[]> => {
+      await pPage.evaluate(changeLanguage, pLanguage)
+      await pPage.waitForNavigation()
+      await expect(pPage).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
+      await pPage.evaluate(changeTab, pTab)
+      await expect(pPage).toMatchElement('[id^=' + pIdPrefix + ']', { timeout: 5000 })
+      return await pPage.evaluate(getCurrentIdList)
+    }
+
     it('should have an equal/unique list of ids on chemistry tab', async () => {
-      const idsFi = await getIdList('chemistry', 'fi')
-      const idsSv = await getIdList('chemistry', 'sv')
+      const idsFi = await getTabIdList('chemistry', 'toc-chem-', 'fi', page)
+      const idsSv = await getTabIdList('chemistry', 'toc-chem-', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
-  })
 
-  describe('Finnish and Swedish tabs have equal list of ids (general)', () => {
     it('should have an equal/unique list of ids on general tab', async () => {
-      const idsFi = await getIdList('general', 'fi')
-      const idsSv = await getIdList('general', 'sv')
+      const idsFi = await getTabIdList('general', 'toc-gen-', 'fi', page)
+      const idsSv = await getTabIdList('general', 'toc-gen-', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
-  })
 
-  describe('Finnish and Swedish tabs have equal list of ids (geography)', () => {
-    it('should have an equal/unique list of ids on geography tab', async () => {
-      const idsFi = await getIdList('geography', 'fi')
-      const idsSv = await getIdList('geography', 'sv')
-
-      expect(idsSv).toEqual(idsFi)
-
-      expect(ifDuplicateEntry(idsFi)).toEqual([])
-      expect(ifDuplicateEntry(idsSv)).toEqual([])
-    })
-  })
-
-  describe('Finnish and Swedish tabs have equal list of ids (keyboard)', () => {
     it('should have an equal/unique list of ids on keyboard tab', async () => {
-      const idsFi = await getIdList('keyboard', 'fi')
-      const idsSv = await getIdList('keyboard', 'sv')
+      const idsFi = await getTabIdList('keyboard', 'toc-kbd-', 'fi', page)
+      const idsSv = await getTabIdList('keyboard', 'toc-kbd-', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
-  })
 
-  describe('Finnish and Swedish tabs have equal list of ids (math)', () => {
     it('should have an equal/unique list of ids on math tab', async () => {
-      const idsFi = await getIdList('math', 'fi')
-      const idsSv = await getIdList('math', 'sv')
+      const idsFi = await getTabIdList('math', 'toc-math-', 'fi', page)
+      const idsSv = await getTabIdList('math', 'toc-math-', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
-  })
 
-  describe('Finnish and Swedish tabs have equal list of ids (muzak)', () => {
-    it('should have an equal/unique list of ids on muzak tab', async () => {
-      const idsFi = await getIdList('muzak', 'fi')
-      const idsSv = await getIdList('muzak', 'sv')
-
-      expect(idsSv).toEqual(idsFi)
-
-      expect(ifDuplicateEntry(idsFi)).toEqual([])
-      expect(ifDuplicateEntry(idsSv)).toEqual([])
-    })
-  })
-
-  describe('Finnish and Swedish tabs have equal list of ids (geography)', () => {
     it('should have an equal/unique list of ids on physics tab', async () => {
-      const idsFi = await getIdList('physics', 'fi')
-      const idsSv = await getIdList('physics', 'sv')
+      const idsFi = await getTabIdList('physics', 'toc-phy-', 'fi', page)
+      const idsSv = await getTabIdList('physics', 'toc-phy-', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
-  })
 
-  describe('Finnish and Swedish tabs have equal list of ids (programming)', () => {
     it('should have an equal/unique list of ids on programming tab', async () => {
-      const idsFi = await getIdList('programming', 'fi')
-      const idsSv = await getIdList('programming', 'sv')
+      const idsFi = await getTabIdList('programming', 'toc-prog-', 'fi', page)
+      const idsSv = await getTabIdList('programming', 'toc-prog-', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
