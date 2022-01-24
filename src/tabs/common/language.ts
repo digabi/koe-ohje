@@ -23,7 +23,7 @@ const setPreviousLanguage = (language: Language) => {
 }
 
 const getPreviousLanguage = (): Language => {
-  return window.localStorage.getItem(localStorageLanguageKey)
+  return <Language>window.localStorage.getItem(localStorageLanguageKey)
 }
 
 export const guessLanguageForSession = () => {
@@ -50,7 +50,10 @@ export const changeLanguage = (newLanguage: Language) => {
 
   // We have to reload the page as the unselected language elements have been
   // deleted to make the page lighter
-  window.location = url
+  window.location.href = url.toString()
+  // Since window.location.href does not redirect page to itself we have to
+  // reload the page manually
+  location.reload()
 }
 
 const handleChangeLanguage = (event: MouseEvent) => {

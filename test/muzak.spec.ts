@@ -13,6 +13,8 @@ describe('Muzak', () => {
     })
 
     it('should contain fontawesome play icon', async () => {
+      await expect(page).toMatchElement('.svg-inline--fa.fa-play', { timeout: 5000 })
+
       const buttonHTML = await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('[data-muzakid="tab-muzak-music1"]')
         return el.innerHTML
@@ -25,6 +27,8 @@ describe('Muzak', () => {
         const el = document.querySelector<HTMLElement>('[data-muzakid="tab-muzak-music1"]')
         el.click()
       })
+
+      await expect(page).toMatchElement('.svg-inline--fa.fa-pause', { timeout: 5000 })
 
       const buttonHTML = await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('[data-muzakid="tab-muzak-music1"]')

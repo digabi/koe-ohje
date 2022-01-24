@@ -111,8 +111,8 @@ const initializePythonEngine = async () => {
   pyodide = await loadPyodide({
     indexURL: getUrlPath() + 'common/pyodide/', // Pydiode does not handle .. as part of the path
     stdin: getInput,
-    stdout: (text) => printStdout(text),
-    stderr: (text) => printStderr(text),
+    stdout: (text: string) => printStdout(text),
+    stderr: (text: string) => printStderr(text),
   })
 
   pyodide.runPython('import js\ndef input(prompt):\n  return js.prompt(prompt)\n\n')
