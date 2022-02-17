@@ -342,10 +342,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@digabi/eslint-config@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-0.1.0.tgz#5b745dd3653b71dea35ac213e6eb8378050ab163"
-  integrity sha512-pMhROu7rPcFLo5sbvyg5FYiFDeDtCr+XJWn/jotwS6t4Cvd46bm5+JKNeVJxeP6nA9vFdxL5Tg99PsdX1UqaTA==
+"@digabi/eslint-config@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-1.2.0.tgz#0f1e6aee45a8aa980d9074c26b8c5a4a20e4fb95"
+  integrity sha512-PS+HLmFz7E0sDOyRFDvsxfWzIp9pxG8sc3AO4Bvjvd6MeDWKEK12MH8U95dmpHTt0qqSeiQMaO/dErvM7Ldy2Q==
 
 "@digabi/maps@^0.4.0":
   version "0.4.0"
