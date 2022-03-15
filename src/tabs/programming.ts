@@ -115,7 +115,7 @@ const initializePythonEngine = async () => {
     stderr: (text: string) => printStderr(text),
   })
 
-  pyodide.runPython('import js\ndef input(prompt):\n  return js.prompt(prompt)\n\n')
+  pyodide.runPython("import js\ndef input(prompt=''):\n  return js.prompt(prompt)\n\n")
 
   pyodide.loadPackage('numpy')
 
