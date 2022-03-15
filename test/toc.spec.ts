@@ -1,4 +1,4 @@
-import { Page } from '../node_modules/puppeteer'
+import { Page } from 'puppeteer/index'
 
 describe('Table-of-contents', () => {
   const changeTab = (tab: string) => {
