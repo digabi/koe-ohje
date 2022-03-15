@@ -39,7 +39,7 @@ zip: build
 	zip -ry9 koe-ohje index.html LICENSE common/ build/
 
 pyodide-build.tar.bz2:
-	wget -O pyodide-build.tar.bz2 https://github.com/pyodide/pyodide/releases/download/0.18.1/pyodide-build-0.18.1.tar.bz2
+	wget -O pyodide-build.tar.bz2 https://github.com/pyodide/pyodide/releases/download/0.19.1/pyodide-build-0.19.1.tar.bz2
 
 update-pyodide: pyodide-build.tar.bz2
 	-rm -fR common/pyodide/
