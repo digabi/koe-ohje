@@ -64,6 +64,10 @@ const clearStdout = () => {
   document.getElementById(outputId).innerHTML = ''
 }
 
+const clearStderr = () => {
+  document.getElementById(errorId).innerHTML = ''
+}
+
 const printStdout = (text: string) => {
   if (pyodideInitializing) {
     return
@@ -77,6 +81,8 @@ const printStdout = (text: string) => {
 
 const executeCode = () => {
   clearStdout()
+  clearStderr()
+  hideBothAreas()
 
   const code = getCode()
 
