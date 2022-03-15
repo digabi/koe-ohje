@@ -18,7 +18,7 @@ const boilerplateErrorstrings = [
   },
 ]
 
-let pyodide = null
+let pyodide: any = null
 let pyodideInitializing = true
 
 const hideBothAreas = () => {
