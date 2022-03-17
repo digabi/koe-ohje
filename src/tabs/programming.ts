@@ -22,46 +22,35 @@ const boilerplateErrorstrings = [
 let pyodide: any = null
 let pyodideInitializing = true
 
-const isSingleColumn = (): boolean => {
-  const editorWidth = document.getElementById(codeEditorWrapperId).offsetWidth
-  if (window.innerWidth / 2 > editorWidth) {
-    return false
-  }
+const isSingleColumn = () => window.innerWidth / 2 <= document.getElementById(codeEditorWrapperId).offsetWidth
 
-  return true
+const getEditorBottom = () => {
+  const rect = document.getElementById(codeEditorWrapperId).getBoundingClientRect()
+  return rect.top + rect.height
 }
 
-const getEditorHeight = (): number => {
-  return document.getElementById(codeEditorWrapperId).offsetHeight
+const getSuggestedOutputAndErrorHeight = () => {
+  const singleColumnReservedSpaceBottom = 200
+  const twoColumnReservedSpaceBottom = 50
+
+  const bottomMargin = isSingleColumn() ? singleColumnReservedSpaceBottom : twoColumnReservedSpaceBottom
+
+  return window.innerHeight - getEditorBottom() - bottomMargin
 }
 
 const setOutputAndErrorHeight = (elementId: string) => {
-  const windowHeight = window.innerHeight
-  const editorHeight = getEditorHeight()
+  const suggestedHeight = getSuggestedOutputAndErrorHeight()
 
-  let newHeight: number = windowHeight - editorHeight
+  const setHeight = (newHeight: number) => (document.getElementById(elementId).style.height = newHeight + 'px')
 
-  if (isSingleColumn()) {
-    if (newHeight > 300) {
-      newHeight = newHeight - 200
-    } else {
-      newHeight = newHeight - 100
-    }
+  setHeight(0)
+
+  const contentHeight = document.getElementById(elementId).scrollHeight
+  if (contentHeight > suggestedHeight) {
+    setHeight(suggestedHeight)
   } else {
-    if (newHeight > 300) {
-      newHeight = newHeight - 140
-    }
-  }
-
-  const element = document.getElementById(elementId)
-  if (element) {
-    element.style.height = '0'
-
-    if (element.scrollHeight > newHeight) {
-      element.style.height = newHeight.toString() + 'px'
-    } else {
-      element.style.height = element.scrollHeight + 20 + 'px'
-    }
+    // We need to add 20px padding to avoid vertical scroll bar
+    setHeight(contentHeight + 20)
   }
 }
 
