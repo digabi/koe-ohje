@@ -84,8 +84,8 @@ const showOutputArea = () => {
   setOutputAndErrorHeight(outputId)
 }
 
-const printStderr = (text: string) => {
-  if (pyodideInitializing) {
+const printStderr = (text: string, printEvenPyodideIsInitializing?: boolean) => {
+  if (pyodideInitializing && !printEvenPyodideIsInitializing) {
     return
   }
 
@@ -162,12 +162,24 @@ const initializePythonEngine = async () => {
   hideBothAreas()
   pyodideInitializing = true
 
-  pyodide = await loadPyodide({
-    indexURL: getUrlPath() + 'common/pyodide/', // Pydiode does not handle .. as part of the path
-    stdin: getInput,
-    stdout: (text: string) => printStdout(text),
-    stderr: (text: string) => printStderr(text),
-  })
+  try {
+    pyodide = await loadPyodide({
+      indexURL: getUrlPath() + 'common/pyodide/', // Pydiode does not handle .. as part of the path
+      stdin: getInput,
+      stdout: (text: string) => printStdout(text),
+      stderr: (text: string) => printStderr(text),
+    })
+  } catch (error) {
+    console.error('Error while initiating Pyodide', error)
+    showErrorArea()
+    printStderr(
+      `Could not start the Python engine.
+      \nTry closing the browser page and navigating back here.`,
+      true
+    )
+
+    return
+  }
 
   pyodide.runPython("import js\ndef input(prompt=''):\n  return js.prompt(prompt)\n\n")
 
