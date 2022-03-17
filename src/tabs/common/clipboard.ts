@@ -26,13 +26,13 @@ const copyTextToClipboard = (text: string): Promise<void> => {
   })
 }
 
-const copyText = (event: MouseEvent) => {
+const copyTextContent = (event: MouseEvent, successElementId: string) => {
   const target = event.target as HTMLElement
   const text = target.textContent
 
   copyTextToClipboard(text)
     .then(() => {
-      showSuccess('copying_box_kbd')
+      showSuccess(successElementId)
     })
     .catch(() => {
       alert('Copying to clipboard is not supported on your browser.')
@@ -47,11 +47,6 @@ export const setCodeToClipboard = (text: string) => {
     .catch(() => {
       alert('Copying to clipboard is not supported on your browser.')
     })
-}
-
-const copyCode = (event: MouseEvent) => {
-  const target = event.target as HTMLElement
-  setCodeToClipboard(target.textContent)
 }
 
 let selectedEquation: HTMLElement
@@ -87,10 +82,13 @@ const copyEquation = (event: MouseEvent) => {
 
 export const initializeCopyToClipboard = () => {
   const copyableElements = Array.from(document.querySelectorAll('.clickable'))
-  copyableElements.forEach(element => element.addEventListener('click', copyText))
+  copyableElements.forEach(element => element.addEventListener('click', (event: MouseEvent) => { copyTextContent(event, 'copying_box_kbd') } ))
 
   const copyableCodeElements = Array.from(document.querySelectorAll('.code-clickable'))
-  copyableCodeElements.forEach(element => element.addEventListener('click', copyCode))
+  copyableCodeElements.forEach(element => element.addEventListener('click', (event: MouseEvent) => { copyTextContent(event, 'copying_box_code') } ))
+
+  const copyableCodeOutputElements = Array.from(document.querySelectorAll('.code-output-clickable'))
+  copyableCodeOutputElements.forEach(element => element.addEventListener('click', (event: MouseEvent) => { copyTextContent(event, 'copying_box_code_output') } ))
 
   const equationElements = Array.from(document.querySelectorAll('svg'))
   equationElements.forEach(element => element.addEventListener('click', copyEquation))
