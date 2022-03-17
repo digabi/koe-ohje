@@ -12,11 +12,11 @@
   overflow-x: auto;
   overflow-y: auto;
   padding: 5px;
+  resize: vertical;
 }
 
 #code-output {
   background-color: lightgrey;
-  resize: vertical;
 }
 
 #code-error {

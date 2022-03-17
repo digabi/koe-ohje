@@ -2,6 +2,7 @@ import './programming.css'
 import { initializeMonacoEditor, getCode, setMonacoReadOnly } from './common/monaco-editor'
 import { setCodeToClipboard } from './common/clipboard'
 
+const codeEditorWrapperId = 'tab-programming-editor-wrapper'
 const codeEditorId = 'code-editor'
 const outputId = 'code-output'
 const errorId = 'code-error'
@@ -21,6 +22,49 @@ const boilerplateErrorstrings = [
 let pyodide: any = null
 let pyodideInitializing = true
 
+const isSingleColumn = (): boolean => {
+  const editorWidth = document.getElementById(codeEditorWrapperId).offsetWidth
+  if (window.innerWidth / 2 > editorWidth) {
+    return false
+  }
+
+  return true
+}
+
+const getEditorHeight = (): number => {
+  return document.getElementById(codeEditorWrapperId).offsetHeight
+}
+
+const setOutputAndErrorHeight = (elementId: string) => {
+  const windowHeight = window.innerHeight
+  const editorHeight = getEditorHeight()
+
+  let newHeight: number = windowHeight - editorHeight
+
+  if (isSingleColumn()) {
+    if (newHeight > 300) {
+      newHeight = newHeight - 200
+    } else {
+      newHeight = newHeight - 100
+    }
+  } else {
+    if (newHeight > 300) {
+      newHeight = newHeight - 140
+    }
+  }
+
+  const element = document.getElementById(elementId)
+  if (element) {
+    element.style.height = '0'
+
+    if (element.scrollHeight > newHeight) {
+      element.style.height = newHeight.toString() + 'px'
+    } else {
+      element.style.height = element.scrollHeight + 20 + 'px'
+    }
+  }
+}
+
 const hideBothAreas = () => {
   document.getElementById(outputId).style.display = 'none'
   document.getElementById(errorId).style.display = 'none'
@@ -29,11 +73,15 @@ const hideBothAreas = () => {
 const showErrorArea = () => {
   document.getElementById(outputId).style.display = 'none'
   document.getElementById(errorId).style.display = 'block'
+
+  setOutputAndErrorHeight(errorId)
 }
 
 const showOutputArea = () => {
   document.getElementById(outputId).style.display = 'block'
   document.getElementById(errorId).style.display = 'none'
+
+  setOutputAndErrorHeight(outputId)
 }
 
 const printStderr = (text: string) => {
