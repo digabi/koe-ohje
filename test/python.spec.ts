@@ -10,11 +10,11 @@ describe('Python', () => {
     })
 
     it('should activate stdout window', async () => {
-      await expect(page).toMatchElement('#code-output[style="display: block;"]', { timeout: 10000 })
+      await expect(page).toMatchElement('#code-output[style*="display: block;"]', { timeout: 10000 })
     })
 
     it('should have hidden stderr window', async () => {
-      await expect(page).toMatchElement('#code-error[style="display: none;"]', { timeout: 10000 })
+      await expect(page).toMatchElement('#code-error[style*="display: none;"]', { timeout: 10000 })
     })
 
     it('should show ide', async () => {
@@ -32,7 +32,7 @@ describe('Python', () => {
       })
 
       // Wait for Pydiode
-      await expect(page).toMatchElement('#code-output[style="display: block;"]', { timeout: 10000 })
+      await expect(page).toMatchElement('#code-output[style*="display: block;"]', { timeout: 10000 })
     })
 
     it('should be able to calculate 1+3', async () => {
@@ -52,7 +52,7 @@ describe('Python', () => {
       })
 
       // Output element should be active
-      await expect(page).toMatchElement('#code-output[style="display: block;"]', { timeout: 10000 })
+      await expect(page).toMatchElement('#code-output[style*="display: block;"]', { timeout: 10000 })
 
       // Check output
       const stdout = await page.evaluate(() => {
@@ -84,7 +84,7 @@ describe('Python', () => {
       })
 
       // Error element should be active
-      await expect(page).toMatchElement('#code-error[style="display: block;"]', { timeout: 10000 })
+      await expect(page).toMatchElement('#code-error[style*="display: block;"]', { timeout: 10000 })
 
       // Check output
       const stdout = await page.evaluate(() => {
