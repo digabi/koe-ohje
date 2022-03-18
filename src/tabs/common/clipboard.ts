@@ -26,13 +26,33 @@ const copyTextToClipboard = (text: string): Promise<void> => {
   })
 }
 
-const copyTextContent = (event: MouseEvent, successElementId: string) => {
+const getCopyTextContentSuccessElementId = (element: HTMLElement): string => {
+  if (element.classList.contains('clickable')) {
+    return 'copying_box_kbd'
+  }
+
+  if (element.classList.contains('code-clickable')) {
+    return 'copying_box_code'
+  }
+
+  if (element.classList.contains('code-output-clickable')) {
+    return 'copying_box_code_output'
+  }
+
+  return undefined
+}
+
+const copyTextContent = (event: MouseEvent) => {
   const target = event.target as HTMLElement
   const text = target.textContent
 
+  const successElementId = getCopyTextContentSuccessElementId(event.target as HTMLElement)
+
   copyTextToClipboard(text)
     .then(() => {
-      showSuccess(successElementId)
+      if (successElementId) {
+        showSuccess(successElementId)
+      }
     })
     .catch(() => {
       alert('Copying to clipboard is not supported on your browser.')
@@ -81,14 +101,12 @@ const copyEquation = (event: MouseEvent) => {
 }
 
 export const initializeCopyToClipboard = () => {
-  const copyableElements = Array.from(document.querySelectorAll('.clickable'))
-  copyableElements.forEach(element => element.addEventListener('click', (event: MouseEvent) => { copyTextContent(event, 'copying_box_kbd') } ))
-
-  const copyableCodeElements = Array.from(document.querySelectorAll('.code-clickable'))
-  copyableCodeElements.forEach(element => element.addEventListener('click', (event: MouseEvent) => { copyTextContent(event, 'copying_box_code') } ))
-
-  const copyableCodeOutputElements = Array.from(document.querySelectorAll('.code-output-clickable'))
-  copyableCodeOutputElements.forEach(element => element.addEventListener('click', (event: MouseEvent) => { copyTextContent(event, 'copying_box_code_output') } ))
+  const copyableElements: Element[] = [].concat(
+    Array.from(document.querySelectorAll('.clickable')),
+    Array.from(document.querySelectorAll('.code-clickable')),
+    Array.from(document.querySelectorAll('.code-output-clickable')),
+  )
+  copyableElements.forEach(element => element.addEventListener('click', copyTextContent ))
 
   const equationElements = Array.from(document.querySelectorAll('svg'))
   equationElements.forEach(element => element.addEventListener('click', copyEquation))
