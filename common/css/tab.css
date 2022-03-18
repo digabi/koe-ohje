@@ -401,8 +401,7 @@ table.row-highlight tr:nth-child(odd) {
   height: 37px;
   padding: 1px;
   margin: 10px;
-}
-.key > span {
+
   background-color: rgb(244, 249, 255);
   display: block;
   width: 35px;
@@ -417,7 +416,7 @@ table.row-highlight tr:nth-child(odd) {
   box-shadow: 0px 3px 0px -2px rgb(234, 222, 222), 0px 2px 0px 0px rgba(169, 169, 169, 1);
 }
 
-.key.clickable > span:hover {
+.key.clickable:hover {
   background-color: #75b4fb;
   border: 1px solid #5a88c5;
   color: #fff;
@@ -426,17 +425,12 @@ table.row-highlight tr:nth-child(odd) {
   cursor: pointer;
 }
 
-.key.clickable > span:active,
+.key.clickable:active,
 .mjpage svg:active {
-  margin-top: 2px;
   box-shadow: none;
 }
 
-.mjpage svg:active {
-  margin-bottom: -2px;
-}
-
-.key.keyboard > span {
+.key.keyboard {
   padding-top: 15px;
   font-size: 11px;
 }

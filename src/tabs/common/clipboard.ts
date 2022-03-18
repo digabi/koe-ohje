@@ -27,6 +27,10 @@ const copyTextToClipboard = (text: string): Promise<void> => {
 }
 
 const getCopyTextContentSuccessElementId = (element: HTMLElement): string => {
+  if (element.tagName == 'svg') {
+    return undefined
+  }
+
   if (element.classList.contains('clickable')) {
     return 'copying_box_kbd'
   }
@@ -48,15 +52,17 @@ const copyTextContent = (event: MouseEvent) => {
 
   const successElementId = getCopyTextContentSuccessElementId(event.target as HTMLElement)
 
-  copyTextToClipboard(text)
-    .then(() => {
-      if (successElementId) {
-        showSuccess(successElementId)
-      }
-    })
-    .catch(() => {
-      alert('Copying to clipboard is not supported on your browser.')
-    })
+  if (successElementId) {
+    copyTextToClipboard(text)
+      .then(() => {
+        if (successElementId) {
+          showSuccess(successElementId)
+        }
+      })
+      .catch(() => {
+        alert('Copying to clipboard is not supported on your browser.')
+      })
+  }
 }
 
 export const setCodeToClipboard = (text: string) => {
@@ -101,12 +107,7 @@ const copyEquation = (event: MouseEvent) => {
 }
 
 export const initializeCopyToClipboard = () => {
-  const copyableElements: Element[] = [].concat(
-    Array.from(document.querySelectorAll('.clickable')),
-    Array.from(document.querySelectorAll('.code-clickable')),
-    Array.from(document.querySelectorAll('.code-output-clickable')),
-  )
-  copyableElements.forEach(element => element.addEventListener('click', copyTextContent ))
+  document.addEventListener('click', copyTextContent )
 
   const equationElements = Array.from(document.querySelectorAll('svg'))
   equationElements.forEach(element => element.addEventListener('click', copyEquation))
