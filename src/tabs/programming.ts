@@ -38,20 +38,18 @@ const getSuggestedOutputAndErrorHeight = () => {
   return window.innerHeight - getEditorBottom() - bottomMargin
 }
 
-const setOutputAndErrorHeight = (elementId: string) => {
+const calculateHeight = (element: HTMLElement) => {
   const suggestedHeight = getSuggestedOutputAndErrorHeight()
+  const contentHeight = element.scrollHeight
+  return contentHeight > suggestedHeight ? suggestedHeight : contentHeight + 20
+}
 
-  const setHeight = (newHeight: number) => (document.getElementById(elementId).style.height = newHeight + 'px')
+const setOutputAndErrorHeight = (elementId: string) => {
+  const element = document.getElementById(elementId)!
+  const setHeight = (newHeight: number) => (element.style.height = newHeight + 'px')
 
   setHeight(0)
-
-  const contentHeight = document.getElementById(elementId).scrollHeight
-  if (contentHeight > suggestedHeight) {
-    setHeight(suggestedHeight)
-  } else {
-    // We need to add 20px padding to avoid vertical scroll bar
-    setHeight(contentHeight + 20)
-  }
+  setHeight(calculateHeight(element))
 }
 
 const hideBothAreas = () => {
