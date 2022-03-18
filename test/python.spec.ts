@@ -18,7 +18,7 @@ describe('Python', () => {
     })
 
     it('should show ide', async () => {
-      await expect(page).toMatchElement('#tab-programming-ide-container')
+      await expect(page).toMatchElement('#tab-programming-ide-container', { timeout: 10000 })
     })
   })
 
