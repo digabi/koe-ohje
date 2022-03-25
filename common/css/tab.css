@@ -57,9 +57,6 @@ table {
   visibility: hidden;
   display: block;
 }
-.firstcolumn {
-  padding-right: 50px;
-}
 
 .note {
   font-weight: 500;
@@ -142,6 +139,7 @@ button {
   padding-top: 30px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 30px;
 }
 
 .tab-content.active {
@@ -340,7 +338,7 @@ h3 {
 }
 
 .formulae th,
-td {
+.formulae td {
   margin: 0.5em 1em;
   border: 1px solid #c8c8c8;
   display: table-cell;
@@ -353,30 +351,6 @@ td {
   transition: all 0.2s ease-in-out;
 }
 
-table.borderless,
-table.borderless th,
-table.borderless td {
-  border: 0;
-}
-
-table.row-highlight tr:nth-child(even) {
-  background: #eee;
-}
-
-table.row-highlight img {
-  vertical-align: middle;
-  padding: 0 8px 0 8px;
-}
-
-table.row-highlight tr:nth-child(odd) {
-  background: #fff;
-}
-
-/* Keyboard buttons*/
-.key a,
-.key a:visited,
-.key a:hover,
-.key a:active,
 .mjpage a,
 .mjpage a:visited,
 .mjpage a:hover,
@@ -394,45 +368,6 @@ table.row-highlight tr:nth-child(odd) {
 .mjpage svg:hover {
   border: 1px solid #a9a9a9;
   box-shadow: 0px 3px 0px -2px rgb(234, 222, 222), 0px 2px 0px 0px rgba(169, 169, 169, 1);
-}
-
-.key {
-  width: 35px;
-  height: 37px;
-  padding: 1px;
-  margin: 10px;
-
-  background-color: rgb(244, 249, 255);
-  display: block;
-  width: 35px;
-  height: 35px;
-  border: 1px solid #a9a9a9;
-  border-radius: 4px;
-  font-size: 14px;
-  box-sizing: border-box !important;
-  text-align: center;
-  padding-top: 10px;
-  color: #7c7c7c;
-  box-shadow: 0px 3px 0px -2px rgb(234, 222, 222), 0px 2px 0px 0px rgba(169, 169, 169, 1);
-}
-
-.key.clickable:hover {
-  background-color: #75b4fb;
-  border: 1px solid #5a88c5;
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 3px 0px -2px rgba(117, 180, 251, 1), 0px 2px 0px 0px rgba(90, 136, 197, 1);
-  cursor: pointer;
-}
-
-.key.clickable:active,
-.mjpage svg:active {
-  box-shadow: none;
-}
-
-.key.keyboard {
-  padding-top: 15px;
-  font-size: 11px;
 }
 
 /* Ajax loader */
