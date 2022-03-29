@@ -1,7 +1,7 @@
 import { initializeLanguage, changeLanguage, getCurrentLanguage } from './common/language'
 import { initializeCopyToClipboard } from './common/clipboard'
 import { initializeTablesorter } from './common/tablesorter'
-import { initializeGeographyTab } from './geography'
+import { initializeMapsTab } from './maps'
 import { initializeMuzakTab } from './muzak'
 import { initializeProgrammingTab } from './programming'
 import './keyboard'
@@ -13,8 +13,8 @@ import { loadHtml } from '../util/loadHtml'
 export enum Tab {
   Chemistry = 'chemistry',
   General = 'general',
-  Geography = 'geography',
   Keyboard = 'keyboard',
+  Maps = 'maps',
   Math = 'math',
   Muzak = 'muzak',
   Physics = 'physics',
@@ -57,8 +57,8 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
     createSearchIndex()
 
     switch (newTab) {
-      case Tab.Geography:
-        initializeGeographyTab()
+      case Tab.Maps:
+        initializeMapsTab()
         break
       case Tab.Muzak:
         initializeMuzakTab()

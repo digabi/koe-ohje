@@ -60,26 +60,26 @@ describe('Language', () => {
       expect(text).toBe('Kemi')
     })
 
-    it('should show geography tab in finnish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&geography')
+    it('should show maps tab in finnish', async () => {
+      await page.goto('http://localhost:8080/build/index.html?fi&maps')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 })
 
       const text = await page.evaluate(() => {
         return document.querySelector<HTMLElement>('h1').innerText
       })
-      expect(text).toBe('Maantiede')
+      expect(text).toBe('Kartat')
     })
 
-    it('should show geography tab in swedish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&geography')
+    it('should show maps tab in swedish', async () => {
+      await page.goto('http://localhost:8080/build/index.html?sv&maps')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 })
 
       const text = await page.evaluate(() => {
         return document.querySelector<HTMLElement>('h1').innerText
       })
-      expect(text).toBe('Geografi')
+      expect(text).toBe('Kartor')
     })
 
     it('should show keyboard tab in finnish', async () => {

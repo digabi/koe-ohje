@@ -25,17 +25,17 @@ describe('Table-of-contents', () => {
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
-      await page.evaluate(changeTab, 'geography')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
       await page.evaluate(changeTab, 'keyboard')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'math')
+
+      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
+      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
+
+      await page.evaluate(changeTab, 'maps')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
@@ -71,17 +71,17 @@ describe('Table-of-contents', () => {
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
-      await page.evaluate(changeTab, 'geography')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
       await page.evaluate(changeTab, 'keyboard')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'math')
+
+      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
+      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
+
+      await page.evaluate(changeTab, 'maps')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
