@@ -35,13 +35,13 @@ describe('Digabi Exam Help', () => {
       await expect(page).toMatchElement('#tab-math h1', { timeout: 5000 })
     })
 
-    it('should be able to open geography tab when clicked', async () => {
+    it('should be able to open maps tab when clicked', async () => {
       await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=geography]')
+        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=maps]')
         el.click()
       })
 
-      await expect(page).toMatchElement('#tab-geography h1', { timeout: 5000 })
+      await expect(page).toMatchElement('#tab-maps h1', { timeout: 5000 })
     })
 
     it('should be able to open keyboard tab when clicked', async () => {

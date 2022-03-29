@@ -1,7 +1,7 @@
 import { createWorldMap, createTerrainMap } from '@digabi/maps'
 import { getCurrentLanguage, Language } from './common/language'
 
-import './geography.css'
+import './maps.css'
 import 'leaflet/dist/leaflet.css'
 
 const mapTilesUrl = process.env.MAP_TILES_URL
@@ -35,7 +35,7 @@ const setupTerrainMap = () => {
   }
 }
 
-export const initializeGeographyTab = () => {
+export const initializeMapsTab = () => {
   setupWorldMap()
   setupTerrainMap()
 }
