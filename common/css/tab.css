@@ -492,7 +492,7 @@ h3 {
 
 @media screen and (max-width: 600px) {
   .formulae th,
-  td {
+  .formulae td {
     margin: 0.5em 1em;
     border: 1px solid #c8c8c8;
     display: table-cell;
