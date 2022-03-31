@@ -44,6 +44,10 @@
   font-size: 11px;
 }
 
+table.row-highlight {
+  white-space: nowrap;
+}
+
 table.row-highlight tr:nth-child(even) {
   background: #eee;
 }
