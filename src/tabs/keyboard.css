@@ -50,11 +50,15 @@ table.row-highlight tr:nth-child(even) {
 
 table.row-highlight img {
   vertical-align: middle;
-  padding: 0 8px 0 8px;
+  padding: 0;
 }
 
 table.row-highlight tr:nth-child(odd) {
   background: #fff;
+}
+
+table.row-highlight .plus {
+  margin: 0 4px 0 4px;
 }
 
 .firstcolumn {
