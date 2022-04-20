@@ -24,7 +24,7 @@
   "dependencies": {
     "@digabi/maps": "^0.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.1.0",
-    "@fortawesome/free-solid-svg-icons": "^6.1.0",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "client-side-python-runner": "^1.6.6",
     "core-js": "^3.21.0",
     "follow-redirects": "^1.14.9",
