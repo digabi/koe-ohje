@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/digabi/koe-ohje#readme",
   "dependencies": {
-    "@digabi/maps": "^0.4.0",
+    "@digabi/maps": "^0.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.1.0",
     "client-side-python-runner": "^1.6.6",
