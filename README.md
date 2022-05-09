@@ -1,3 +1,5 @@
+[![CI](https://github.com/digabi/koe-ohje/actions/workflows/ci.yml/badge.svg)](https://github.com/digabi/koe-ohje/actions/workflows/ci.yml)
+
 # koe-ohje
 
 Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle Firefox-selaimella.
