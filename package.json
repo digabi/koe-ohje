@@ -26,7 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "client-side-python-runner": "^1.6.6",
-    "core-js": "^3.22.5",
+    "core-js": "^3.22.6",
     "follow-redirects": "^1.15.0",
     "fuse.js": "^6.6.2",
     "leaflet": "~1.8.0",
