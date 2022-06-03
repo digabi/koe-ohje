@@ -56,7 +56,7 @@
     "jest-puppeteer": "^6.1.0",
     "mathjax-node-page": "^3.2.0",
     "prettier": "^2.6.2",
-    "puppeteer": "^14.1.1",
+    "puppeteer": "^14.2.1",
     "style-loader": "^3.3.1",
     "ts-jest": "^26.x",
     "ts-loader": "^9.3.0",
