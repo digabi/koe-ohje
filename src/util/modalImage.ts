@@ -10,6 +10,8 @@ export const activateModalImage = (elementLink: Element) => {
   elementModal.id = 'modal-image-id-' + elementLink.id
   elementModal.className = 'modal-image-fullscreen'
   elementModal.innerHTML = `<img class="modal-image-fullscreen-image" src="${elementLink.getAttribute('src')}">`
+  // This is defined here to make testing easier
+  elementModal.style.display = 'none'
 
   elementLink.parentNode.insertBefore(elementModal, elementLink.nextSibling)
 
