@@ -1,6 +1,7 @@
 import { initializeLanguage, changeLanguage, getCurrentLanguage } from './common/language'
 import { initializeCopyToClipboard } from './common/clipboard'
 import { initializeTablesorter } from './common/tablesorter'
+import { initializeGeneralTab } from './general'
 import { initializeMapsTab } from './maps'
 import { initializeMuzakTab } from './muzak'
 import { initializeProgrammingTab } from './programming'
@@ -57,6 +58,9 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
     createSearchIndex()
 
     switch (newTab) {
+      case Tab.General:
+        initializeGeneralTab()
+        break
       case Tab.Maps:
         initializeMapsTab()
         break
