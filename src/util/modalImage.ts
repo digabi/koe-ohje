@@ -22,8 +22,7 @@ export const activateModalImage = (elementLink: Element) => {
   elementModal.appendChild(elementClose)
 
   elementLink.addEventListener('click', openModalImage)
-  elementClose.addEventListener('click', closeModalByButton)
-  elementModal.addEventListener('click', closeModalByLayer)
+  elementModal.addEventListener('click', closeModal)
 }
 
 const openModalImage = (event: MouseEvent) => {
@@ -35,17 +34,15 @@ const openModalImage = (event: MouseEvent) => {
   elementModal.style.display = 'block'
 }
 
-const closeModalByLayer = (event: MouseEvent) => {
+const closeModal = (event: MouseEvent) => {
   event.stopPropagation()
 
-  const elementModal = event.target as HTMLElement
-  elementModal.style.display = 'none'
-}
+  const element = event.target as HTMLElement
+  const elementParent = element.parentNode as HTMLElement
 
-const closeModalByButton = (event: MouseEvent) => {
-  event.stopPropagation()
-
-  const elementClose = event.target as HTMLElement
-  const elementModal = elementClose.parentNode as HTMLElement
-  elementModal.style.display = 'none'
+  if (element.classList.contains('modal-image-fullscreen')) {
+    element.style.display = 'none'
+  } else if (elementParent.classList.contains('modal-image-fullscreen')) {
+    elementParent.style.display = 'none'
+  }
 }
