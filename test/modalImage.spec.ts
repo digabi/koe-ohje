@@ -34,5 +34,53 @@ describe('ModalImages', () => {
         timeout: 10000,
       })
     })
+
+    it('should close the modal when close button is clicked', async () => {
+      await page.evaluate(() => {
+        const el = document.querySelector<HTMLElement>('#tab-gen-sampleimage-1') // Must equal TEST_IMAGE_ID
+        el.click()
+      })
+
+      await page.waitForSelector('.modal-image-fullscreen[style*="display: block;"]')
+
+      await page.evaluate(() => {
+        const el = document.querySelector<HTMLElement>('.modal-image-close')
+        el.click()
+      })
+
+      await expect(page).not.toMatchElement('.modal-image-fullscreen[style*="display: block;"]')
+    })
+
+    it('should close the modal when fullscreen image is clicked', async () => {
+      await page.evaluate(() => {
+        const el = document.querySelector<HTMLElement>('#tab-gen-sampleimage-1') // Must equal TEST_IMAGE_ID
+        el.click()
+      })
+
+      await page.waitForSelector('.modal-image-fullscreen[style*="display: block;"]')
+
+      await page.evaluate(() => {
+        const el = document.querySelector<HTMLElement>('.modal-image-fullscreen-image')
+        el.click()
+      })
+
+      await expect(page).not.toMatchElement('.modal-image-fullscreen[style*="display: block;"]')
+    })
+
+    it('should close the modal when modal background is clicked', async () => {
+      await page.evaluate(() => {
+        const el = document.querySelector<HTMLElement>('#tab-gen-sampleimage-1') // Must equal TEST_IMAGE_ID
+        el.click()
+      })
+
+      await page.waitForSelector('.modal-image-fullscreen[style*="display: block;"]')
+
+      await page.evaluate(() => {
+        const el = document.querySelector<HTMLElement>('.modal-image-fullscreen')
+        el.click()
+      })
+
+      await expect(page).not.toMatchElement('.modal-image-fullscreen[style*="display: block;"]')
+    })
   })
 })
