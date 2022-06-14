@@ -2,6 +2,7 @@ describe('Python', () => {
   describe('Python Environment', () => {
     beforeEach(async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
+      await page.waitForNavigation()
 
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=programming]')
@@ -25,6 +26,7 @@ describe('Python', () => {
   describe('Python Code Execution', () => {
     beforeEach(async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
+      await page.waitForNavigation()
 
       await page.evaluate(() => {
         const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=programming]')
