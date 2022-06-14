@@ -14,6 +14,7 @@ describe('Table-of-contents', () => {
   describe('Missing heading IDs on Finnish tabs', () => {
     it('should have zero default ids on finnish tabs', async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
+      await page.waitForNavigation()
 
       await page.evaluate(changeTab, 'chemistry')
 
@@ -60,6 +61,7 @@ describe('Table-of-contents', () => {
   describe('Missing heading IDs on Swedish tabs', () => {
     it('should have zero default ids on swedish tabs', async () => {
       await page.goto('http://localhost:8080/build/index.html?sv')
+      await page.waitForNavigation()
 
       await page.evaluate(changeTab, 'chemistry')
 

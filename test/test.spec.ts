@@ -2,6 +2,7 @@ describe('Digabi Exam Help', () => {
   describe('Tabs in Finnish', () => {
     beforeEach(async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
+      await page.waitForNavigation()
     })
 
     it('should render abitti as initial tab', async () => {
@@ -64,11 +65,10 @@ describe('Digabi Exam Help', () => {
   })
 
   describe('Tabs in Swedish', () => {
-    beforeEach(async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv')
-    })
-
     it('should show default page in swedish', async () => {
+      await page.goto('http://localhost:8080/build/index.html?sv')
+      await page.waitForNavigation()
+
       await expect(page).toMatchElement('#tab-general h1.sv', { timeout: 5000 })
       await expect(page).not.toMatchElement('#tab-general h1.fi', { timeout: 5000 })
     })
