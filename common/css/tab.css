@@ -15,12 +15,6 @@ body {
   overflow-x: auto;
 }
 
-.scrollwrap h2,
-h3,
-h4 {
-  display: inline-block;
-}
-
 .boxed,
 table.formulae {
   background-color: white;
