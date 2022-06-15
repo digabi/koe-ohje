@@ -25,6 +25,7 @@
 
 .modal-image-fullscreen-image {
   margin: auto;
+  margin-bottom: 35px;
   display: block;
   width: 80%;
   max-width: 800px;
