@@ -2,8 +2,10 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  max-width: 30%;
+  max-width: 40%;
   min-width: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .modal-image-icon:hover {
@@ -25,6 +27,7 @@
 
 .modal-image-fullscreen-image {
   margin: auto;
+  margin-bottom: 35px;
   display: block;
   width: 80%;
   max-width: 800px;

@@ -1,6 +1,6 @@
 describe('ModalImages', () => {
   describe('ModalImages', () => {
-    const TEST_IMAGE_ID = 'tab-gen-sampleimage-1'
+    const TEST_IMAGE_ID = 'tab-gen-image-03'
 
     beforeEach(async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
@@ -26,7 +26,7 @@ describe('ModalImages', () => {
 
     it('should make the modal layer visible when image is clicked', async () => {
       await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-gen-sampleimage-1') // Must equal TEST_IMAGE_ID
+        const el = document.querySelector<HTMLElement>('#tab-gen-image-03') // Must equal TEST_IMAGE_ID
         el.click()
       })
 
@@ -37,7 +37,7 @@ describe('ModalImages', () => {
 
     it('should close the modal when close button is clicked', async () => {
       await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-gen-sampleimage-1') // Must equal TEST_IMAGE_ID
+        const el = document.querySelector<HTMLElement>('#tab-gen-image-03') // Must equal TEST_IMAGE_ID
         el.click()
       })
 
@@ -53,7 +53,7 @@ describe('ModalImages', () => {
 
     it('should close the modal when fullscreen image is clicked', async () => {
       await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-gen-sampleimage-1') // Must equal TEST_IMAGE_ID
+        const el = document.querySelector<HTMLElement>('#tab-gen-image-03') // Must equal TEST_IMAGE_ID
         el.click()
       })
 
@@ -69,7 +69,7 @@ describe('ModalImages', () => {
 
     it('should close the modal when modal background is clicked', async () => {
       await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-gen-sampleimage-1') // Must equal TEST_IMAGE_ID
+        const el = document.querySelector<HTMLElement>('#tab-gen-image-03') // Must equal TEST_IMAGE_ID
         el.click()
       })
 

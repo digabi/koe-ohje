@@ -15,12 +15,6 @@ body {
   overflow-x: auto;
 }
 
-.scrollwrap h2,
-h3,
-h4 {
-  display: inline-block;
-}
-
 .boxed,
 table.formulae {
   background-color: white;
@@ -140,7 +134,12 @@ button {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 30px;
+  line-height: 1.5;
 }
+
+.tab-content img {
+  vertical-align: middle;
+ }
 
 .tab-content.active {
   display: block;

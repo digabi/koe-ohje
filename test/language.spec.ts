@@ -62,12 +62,12 @@ describe('Language', () => {
 
     it('should show keyboard tab in finnish', async () => {
       const text = await getHeadingText('http://localhost:8080/build/index.html?fi&keyboard', page)
-      expect(text).toBe('Erikoismerkit')
+      expect(text).toBe('Näppäimistö')
     })
 
     it('should show keyboard tab in swedish', async () => {
       const text = await getHeadingText('http://localhost:8080/build/index.html?sv&keyboard', page)
-      expect(text).toBe('Specialtecken')
+      expect(text).toBe('Tangentbord')
     })
 
     it('should show math tab in finnish', async () => {
