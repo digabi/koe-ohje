@@ -33,7 +33,7 @@
   <ul class="sv">
     <li>Om du kan välja flera ljudkällor i ljudtestet kan du prova att byta källa.</li>
     <li>Om du inte ser ljudkällorna ska du stänga av datorn genom att trycka på strömknappsikonen uppe till höger på skärmen och starta systemet med ett annat alternativ i startmenyn.</li>
-    <li>Använd USB-hörlurar om ljudkällan i pluggmodell inte fungerar.</li>
+    <li>Använd USB-hörlurar om hörlurar av pluggmodell inte fungerar.</li>
     <li>Du kan justera volymen under provet genom att starta ljudtestet med hjälp av hörlursikonen uppe till höger på skärmen <img src="../common/images/tab-general/01_kuulokekuvake.png"></li>
     <li>Kontakta övervakaren om du inte får ljudet på datorn att fungera. Börja inte provet.</li>
   </ul>
@@ -136,7 +136,7 @@
   <h2 class="sv" id="toc-gen-mxud">Så här svarar du på provet</h2>
 
   <ol class="fi">
-    <li>Merkitse vastaukseksesi sille varattuun tilaan. Koejärjestelmä tallentaa vastauskentässä olevat vastauksesi automaattisesti.</li>
+    <li>Merkitse vastauksesi sille varattuun tilaan. Koejärjestelmä tallentaa vastauskentässä olevat vastauksesi automaattisesti. Vastauskentän alapuolella näkyy käyttämiesi merkkien määrä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään. Jos vastauskentän merkkimäärä on rajoitettu ja määrä ylittyy, antaa järjestelmä virheilmoituksen.</li>
     <li>Voit tehdä muistiinpanoja ja luonnostella vastaustasi järjestelmän ohjelmilla tai paperille kokeen aikana. Tallenna ohjelmilla tekemäsi tiedostot säännöllisesti, jotta ne varmuuskopioidaan palvelimelle. Vastaus täytyy kuitenkin liittää vastauskenttään, jotta se arvostellaan.</li>
     <li>Koevastaukseen voi liittää erikoismerkkejä, matemaattisia kaavoja ja kuvakaappauksia. Ohjeet löytyvät alta.</li>
     <li>
@@ -162,7 +162,7 @@
   </ol>
 
   <ol class="sv">
-    <li>Markera svaret i fältet som reserverats för det. Provsystemet sparar automatiskt dina svar i svarsfältet.</li>
+    <li>Markera svaret i fältet som reserverats för det. Provsystemet sparar automatiskt dina svar i svarsfältet. Nedanför svarsfältet ser du antalet tecken du har använt. Mellanslag och radbyten räknas inte in i teckenantalet. Ifall svarsfältets teckenantal är begränsat får du ett felmeddelande.</li>
     <li>Du kan göra anteckningar och göra utkast på ditt svar med systemets program eller på papper under provet. Spara de filer du skapat med programmet regelbundet så att de säkerhetskopieras till servern. Svaret måste dock fogas till svarsfältet för att det ska kunna bedömas.</li>
     <li>Det går att bifoga specialtecken, matematiska formler och skärmdumpar till provsvaren. Anvisningar finns nedan.</li>
     <li>
@@ -174,7 +174,7 @@
       </ul>
     </li>
     <li>
-      Starta inspelningen av hörförståelseuppgiften genom att klicka på play (&#25B6;).
+      Spela upp inspelningen i hörförståelseuppgiften genom att klicka på play (&#25B6;).
       <ul>
         <li>
           Be övervakaren komma om du inte hör ljudet av inspelningen. Om inspelningens lyssningsgånger är begränsade ser du hur många gånger du har kvar att lyssna till höger i spelaren.
@@ -503,14 +503,18 @@
   <p class="sv">Kontrollera att svarsfälten är helt tomma för de frågor som du inte vill svara på.</p>
 
   <p class="fi">
-    Jos olet palauttamassa liian monta vastausta arvosteltavaksi, saat asiasta varoituksen. Varoitus näkyy sivun alalaidassa punaisella tekstipohjalla. Esimerkki varoituksesta:
+    Jos olet palauttamassa liian monta vastausta arvosteltavaksi tai ylittämässä vastaukselle asetetun merkkimäärärajoituksen, saat asiasta varoituksen. Varoitus näkyy sivun alalaidassa punaisella tekstipohjalla. Esimerkki varoituksesta:
     <br/>
     <img id="tab-gen-image-23" class="fi tab-gen-modal-image modal-image-icon" src="../common/images/tab-general/23_varoitus_fi.png">
+    <br/>
+    Varoitus poistuu, kun tyhjennät ylimääräisen tekstivastauskentän tai lyhennät vastaustasi.
   </p>
   <p class="sv">
-    Om du returnerar för många svar för bedömning får du en varning. Varningen syns på sidans nedre kant på en röd textbotten. Exempel på varning:
+    Om du returnerar för många svar för bedömning eller överskrider teckenantalsbegränsningen i svarsfältet får du en varning. Varningen syns på sidans nedre kant på rött textbotten. Exempel på varning:
     <br/>
     <img id="tab-gen-image-23" class="sv tab-gen-modal-image modal-image-icon" src="../common/images/tab-general/23_varoitus_sv.png">
+    <br/>
+    Varningen försvinner då du tömmer det överflödiga svarsfältet eller då du förkortar ditt svar.
   </p>
 
   <p class="fi">Päätä koe klikkaamalla tehtäväsivun alareunassa olevaa Päätä koe -painiketta.</p>
@@ -804,41 +808,6 @@
 
     <video id="video-03" class="helpvideo" data-src="3.webm" controls=""></video>
 
-
-    <h2 class="fi" id="toc-gen-bjak">Näppäimistöasettelun vaihtaminen ja näppäimistökartta</h2>
-    <h2 class="sv" id="toc-gen-bjak">Byte av tangentbordslayout och tangenbordslayout</h2>
-
-    <div class="scrollwrap">
-      <p class="fi">Näppäimistöasettelu on oletuksena suomenkielinen. Voit vaihtaa näppäimistöasettelua klikkaamalla yläpalkin näppäimistösymbolia ja valitsemalla haluamasi näppäimistöasettelun. Näppäimistökartan kuvan saat näkyviin
-        sovellusvalikosta.</p>
-      <p class="sv">Standardalternativet för tangentbordslayouten är finska. Du kan byta tangentbordslayouten genom att klicka på tangentbordssymbolen i den övre balken och välja den önskade tangentbordslayouten. Du hittar bilder på
-        tangentbordslayouten i programmenyn.</p>
-
-      <p class="fi">Käytettävissä ovat seuraavat näppäimistöasettelut:</p>
-      <p class="sv">Följande tangentbordslayouter finns till förfogande:</p>
-      <ul>
-        <li class="fi">suomi</li>
-        <li class="sv">finska</li>
-        <li class="fi">ruotsi</li>
-        <li class="sv">svenska</li>
-        <li class="fi">englanti (Yhdysvallat)</li>
-        <li class="sv">engelska (Förenta staterna)</li>
-        <li class="fi">ranska</li>
-        <li class="sv">franska</li>
-        <li class="fi">espanja</li>
-        <li class="sv">spanska</li>
-        <li class="fi">venäjä</li>
-        <li class="sv">ryska</li>
-        <li class="fi">RuSlav (venäjä)</li>
-        <li class="sv">RuSlav (ryska)</li>
-        <li class="fi">pohjoissaame</li>
-        <li class="sv">nordsamiska</li>
-        <li class="fi">inarinsaame</li>
-        <li class="sv">enaresamiska</li>
-        <li class="fi">koltansaame</li>
-        <li class="sv">skoltsamiska</li>
-      </ul>
-    </div>
 </body>
 
 </html>
