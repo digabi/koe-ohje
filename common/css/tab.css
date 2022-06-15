@@ -137,6 +137,10 @@ button {
   line-height: 1.5;
 }
 
+.tab-content img {
+  vertical-align: middle;
+ }
+
 .tab-content.active {
   display: block;
 }
