@@ -134,6 +134,7 @@ button {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 30px;
+  line-height: 1.5;
 }
 
 .tab-content.active {
