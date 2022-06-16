@@ -14,39 +14,46 @@ describe('Table-of-contents', () => {
   describe('Missing heading IDs on Finnish tabs', () => {
     it('should have zero default ids on finnish tabs', async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
-      await page.waitForNavigation()
+      await page.waitForSelector('h1')
 
       await page.evaluate(changeTab, 'chemistry')
+      await page.waitForSelector('#tab-chemistry h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'general')
+      await page.waitForSelector('#tab-general h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'keyboard')
+      await page.waitForSelector('#tab-keyboard h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'math')
+      await page.waitForSelector('#tab-math h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'maps')
+      await page.waitForSelector('#tab-maps h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'muzak')
+      await page.waitForSelector('#tab-muzak h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'programming')
+      await page.waitForSelector('#tab-programming h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
@@ -56,44 +63,52 @@ describe('Table-of-contents', () => {
   describe('Missing heading IDs on Swedish tabs', () => {
     it('should have zero default ids on swedish tabs', async () => {
       await page.goto('http://localhost:8080/build/index.html?sv')
-      await page.waitForNavigation()
+      await page.waitForSelector('h1')
 
       await page.evaluate(changeTab, 'chemistry')
+      await page.waitForSelector('#tab-chemistry h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'general')
+      await page.waitForSelector('#tab-general h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'keyboard')
+      await page.waitForSelector('#tab-keyboard h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'math')
+      await page.waitForSelector('#tab-math h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'maps')
+      await page.waitForSelector('#tab-maps h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'muzak')
+      await page.waitForSelector('#tab-muzak h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'physics')
+      await page.waitForSelector('#tab-physics h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
 
       await page.evaluate(changeTab, 'programming')
+      await page.waitForSelector('#tab-programming h1')
 
       await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
       await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
