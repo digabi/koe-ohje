@@ -118,7 +118,7 @@ button {
 .tab-menu-opennavi:after,
 .tab-menu-opennavi:before,
 .tab-menu-opennavi div {
-  background-color: #fff;
+  background-color: #333;
   border-radius: 3px;
   content: '';
   display: block;
