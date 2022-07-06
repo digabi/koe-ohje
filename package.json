@@ -53,7 +53,7 @@
     "file-loader": "^6.2.0",
     "fs-extra": "^10.1.0",
     "jest": "^26.x",
-    "jest-puppeteer": "^6.1.0",
+    "jest-puppeteer": "^6.1.1",
     "mathjax-node-page": "^3.2.0",
     "prettier": "^2.7.1",
     "puppeteer": "^14.4.1",
