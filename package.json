@@ -32,6 +32,7 @@
     "leaflet": "~1.8.0",
     "monaco-editor": "0.33.0",
     "skulpt": "^1.2.0",
+    "terser": "5.14.2",
     "tocbot": "^4.18.0"
   },
   "devDependencies": {
