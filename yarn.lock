@@ -5846,10 +5846,10 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-puppeteer@^16.1.0:
-  version "16.1.0"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-16.1.0.tgz#06a32dc347c94642601017fbf83e1d37379b9651"
-  integrity sha512-lhykJLbH2bbBaP3NfYI2Vj0T4ctrdfVdEVf8glZITPnLfqrJ0nfUzAYuIz5YcA79k5lmFKANIhEXex+jQChU3g==
+puppeteer@^16.1.1:
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-16.1.1.tgz#1bb8ec3b86f755c34b913421b81e9cd2cfad3588"
+  integrity sha512-lBneizsNF0zi1/iog9c0ogVnvDHJG4IWpkdIAgE2oiDKhr0MJRV8JeM2xbhUwCwhDJXjjVS2TNCZdLsMp9Ojdg==
   dependencies:
     cross-fetch "3.1.5"
     debug "4.3.4"
@@ -7633,7 +7633,7 @@ write@1.0.3:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@8.8.1:
+ws@8.8.1, ws@^8.4.2:
   version "8.8.1"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.1.tgz#5dbad0feb7ade8ecc99b830c1d77c913d4955ff0"
   integrity sha512-bGy2JzvzkPowEJV++hF07hAD6niYSr0JzBNo/J29WsB57A2r7Wlc1UFcTR9IzrPvuNVO4B8LGqF8qcpsVOhJCA==
@@ -7649,11 +7649,6 @@ ws@^7.4.6:
   version "7.5.7"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.7.tgz#9e0ac77ee50af70d58326ecff7e85eb3fa375e67"
   integrity sha512-KMvVuFzpKBuiIXW3E4u3mySRO2/mCHSyZDJQM5NQ9Q9KHWHWh0NHgfbRMLLrceUK5qAL4ytALJbpRMjixFZh8A==
-
-ws@^8.4.2:
-  version "8.8.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.0.tgz#8e71c75e2f6348dbf8d78005107297056cb77769"
-  integrity sha512-JDAgSYQ1ksuwqfChJusw1LSJ8BizJ2e/vVu5Lxjq3YvNJNlROv1ui4i+c/kUUrPheBvQl4c5UbERhTwKa6QBJQ==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
