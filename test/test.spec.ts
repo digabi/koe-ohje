@@ -1,76 +1,84 @@
+import { Page, expect } from '@playwright/test'
+import { newPage, newBrowserContext } from './utils'
+
 describe('Digabi Exam Help', () => {
+  let page: Page
+
+  beforeEach(async () => {
+    page = await newPage(await newBrowserContext())
+  })
+
+  afterEach(async () => {
+    await page.close()
+  })
+
   describe('Tabs in Finnish', () => {
-    beforeEach(async () => {
+    it('should render finnish general as initial tab', async () => {
+      await page.goto('http://localhost:8080/build/index.html')
+      await expect(page.locator('h1')).toHaveText('Yleisohjeet', { timeout: 10000 })
+    })
+
+    it('should be able to open tabs when clicked', async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
-      await page.waitForNavigation()
-    })
 
-    it('should render abitti as initial tab', async () => {
-      await expect(page).toMatch('Yleisohjeet', { timeout: 5000 })
-    })
+      await page.click('text=FYSIIKKA')
+      await expect(page.locator('h1')).toHaveText('Fysiikka')
 
-    it('should be able to open physics tab when clicked', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=physics]')
-        el.click()
-      })
+      await page.click('text=KARTAT')
+      await expect(page.locator('h1')).toHaveText('Kartat')
 
-      await expect(page).toMatchElement('#tab-physics h1', { timeout: 5000 })
-    })
+      await page.click('text=KEMIA')
+      await expect(page.locator('h1')).toHaveText('Kemia')
 
-    it('should be able to open chemistry tab when clicked', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=chemistry]')
-        el.click()
-      })
+      await page.click('text=MATEMATIIKKA')
+      await expect(page.locator('h1')).toHaveText('Matematiikka')
 
-      await expect(page).toMatchElement('#tab-chemistry h1', { timeout: 5000 })
-    })
+      await page.click('text=MUSIIKKI')
+      await expect(page.locator('h1')).toHaveText('Musiikki')
 
-    it('should be able to open math tab when clicked', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=math]')
-        el.click()
-      })
+      await page.click('text=NÄPPÄIMISTÖ')
+      await expect(page.locator('h1')).toHaveText('Näppäimistö')
 
-      await expect(page).toMatchElement('#tab-math h1', { timeout: 5000 })
-    })
+      await page.click('text=OHJELMOINTI')
+      await expect(page.locator('h1')).toHaveText('Ohjelmointi')
 
-    it('should be able to open maps tab when clicked', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=maps]')
-        el.click()
-      })
-
-      await expect(page).toMatchElement('#tab-maps h1', { timeout: 5000 })
-    })
-
-    it('should be able to open keyboard tab when clicked', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=keyboard]')
-        el.click()
-      })
-
-      await expect(page).toMatchElement('#tab-keyboard h1', { timeout: 5000 })
-    })
-
-    it('should be able to open programming tab when clicked', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=programming]')
-        el.click()
-      })
-
-      await expect(page).toMatchElement('#tab-programming h1', { timeout: 5000 })
+      await page.click('text=YLEISOHJEET')
+      await expect(page.locator('h1')).toHaveText('Yleisohjeet')
     })
   })
 
   describe('Tabs in Swedish', () => {
-    it('should show default page in swedish', async () => {
+    it('should render general as initial tab', async () => {
       await page.goto('http://localhost:8080/build/index.html?sv')
-      await page.waitForNavigation()
+      await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
+    })
 
-      await expect(page).toMatchElement('#tab-general h1.sv', { timeout: 5000 })
-      await expect(page).not.toMatchElement('#tab-general h1.fi', { timeout: 5000 })
+    it('should be able to open tabs when clicked', async () => {
+      await page.goto('http://localhost:8080/build/index.html?sv')
+
+      await page.click('text=FYSIK')
+      await expect(page.locator('h1')).toHaveText('Fysik')
+
+      await page.click('text=KARTOR')
+      await expect(page.locator('h1')).toHaveText('Kartor')
+
+      await page.click('text=KEMI')
+      await expect(page.locator('h1')).toHaveText('Kemi')
+
+      await page.click('text=MATEMATIK')
+      await expect(page.locator('h1')).toHaveText('Matematik')
+
+      await page.click('text=MUSIK')
+      await expect(page.locator('h1')).toHaveText('Musik')
+
+      await page.click('text=PROGRAMMERING')
+      await expect(page.locator('h1')).toHaveText('Programmering')
+
+      await page.click('text=TANGENTBORD')
+      await expect(page.locator('h1')).toHaveText('Tangentbord')
+
+      await page.click('text=ALLMÄNNA INSTRUKTIONER')
+      await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
     })
   })
 })

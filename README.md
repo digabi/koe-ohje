@@ -14,6 +14,7 @@ Projektin kehitystä varten tarvitset Yarn paketinhallintatyökalun https://yarn
 1. Jos käsittelet ohjelmointivälilehteä, aja myös `make update-pyodide`
 1. Generoi HTML tiedostot komennolla `yarn build:internet` (varsinaisen koetilanteen versio käyttää `yarn build`)
 1. Tämän jälkeen voit ajaa projektia lokaalisti komennolla `yarn start`. Lokaalin koe-ohjeen löydät osoitteesta http://localhost:8080
+1. Testien ajamiseksi pysäytä yllä mainittu paikallinen kehityspalvelin, jonka käynnistit `yarn start` -komennolla. Käynnistä testit `yarn test`. Jos haluat nähdä selaimen, lisää `package.json` -tiedostoon `scripts.test` -muuttujan arvoon ympäristömuuttuja `PUPPETEER_DEBUG=1`.
 
 TypeScript muutokset näkyvät selaimessa automaattisesti kun projekti on käynnissä. Jotta HTML tiedostojen muutokset tulevat näkyviin, pitää ne generoida uudelleen `yarn build:internet` komennolla.
 

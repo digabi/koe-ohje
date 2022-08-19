@@ -17,6 +17,7 @@ const readFromPath = (path) => {
     })
     .then(() => {
       console.log('Done with ' + path)
+      return
     })
 }
 
@@ -44,7 +45,9 @@ const build = () => {
 build()
   .then(() => {
     console.log('Finished')
+    return
   })
   .catch((err) => {
     console.error(err)
+    return
   })

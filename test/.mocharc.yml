@@ -1,0 +1,7 @@
+recursive: true
+reporter: 'spec'
+timeout: 60000
+slow: 1000
+file: test/utils/mochaGlobalHooks.ts
+require:
+  - 'ts-node/register'
