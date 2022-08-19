@@ -1,41 +1,48 @@
+import { Page, expect } from '@playwright/test'
+import { newPage, newBrowserContext } from './utils'
+
 describe('Muzak', () => {
+  let page: Page
+
+  beforeEach(async () => {
+    page = await newPage(await newBrowserContext())
+  })
+
+  afterEach(async () => {
+    await page.close()
+  })
+
   describe('Muzak Player', () => {
     beforeEach(async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
-      await page.waitForNavigation()
-
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=muzak]')
-        el.click()
-      })
-
-      // Wait for tab change
-      await expect(page).toMatchElement('#tab-muzak h1', { timeout: 5000 })
+      await page.click('text=MUSIIKKI')
     })
 
-    it('should contain fontawesome play icon', async () => {
-      await expect(page).toMatchElement('.svg-inline--fa.fa-play', { timeout: 5000 })
+    it('should contain fontawesome play icon for every title', async () => {
+      await expect(page.locator('.svg-inline--fa.fa-play')).toHaveCount(8)
+      await expect(page.locator('.svg-inline--fa.fa-pause')).toHaveCount(0)
 
-      const buttonHTML = await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('[data-muzakid="tab-muzak-music1"]')
-        return el.innerHTML
-      })
-      expect(buttonHTML).toContain('<!-- <i class="fas fa-play"></i> Font Awesome fontawesome.com -->')
+      await expect(page.locator('[data-muzakid="tab-muzak-music1"] .svg-inline--fa.fa-play')).toHaveAttribute(
+        'data-icon',
+        'play'
+      )
     })
 
-    it('should change play button to pause', async () => {
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('[data-muzakid="tab-muzak-music1"]')
-        el.click()
-      })
+    it('should change play button to pause to again to play', async () => {
+      await page.click('[data-muzakid="tab-muzak-music1"]')
 
-      await expect(page).toMatchElement('.svg-inline--fa.fa-pause', { timeout: 5000 })
+      await expect(page.locator('.svg-inline--fa.fa-play')).toHaveCount(7)
+      await expect(page.locator('.svg-inline--fa.fa-pause')).toHaveCount(1)
 
-      const buttonHTML = await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('[data-muzakid="tab-muzak-music1"]')
-        return el.innerHTML
-      })
-      expect(buttonHTML).toContain('<!-- <i class="fas fa-pause"></i> Font Awesome fontawesome.com -->')
+      await expect(page.locator('[data-muzakid="tab-muzak-music1"] .svg-inline--fa.fa-pause')).toHaveAttribute(
+        'data-icon',
+        'pause'
+      )
+
+      await page.click('[data-muzakid="tab-muzak-music1"]')
+
+      await expect(page.locator('.svg-inline--fa.fa-play')).toHaveCount(8)
+      await expect(page.locator('.svg-inline--fa.fa-pause')).toHaveCount(0)
     })
   })
 })

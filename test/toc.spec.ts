@@ -1,121 +1,80 @@
-import { Page } from 'puppeteer/index'
+import { Page, expect } from '@playwright/test'
+import { newPage, newBrowserContext } from './utils'
 
 describe('Table-of-contents', () => {
-  const changeTab = (tab: string) => {
-    const el = document.querySelector<HTMLElement>('#tab-menu div[data-tab-id=' + tab + ']')
-    el.click()
-  }
+  let page: Page
 
-  const changeLanguage = (language: string) => {
-    const el = document.querySelector<HTMLElement>('#tab-menu div[data-lang-id=' + language + ']')
-    el.click()
-  }
+  beforeEach(async () => {
+    page = await newPage(await newBrowserContext())
+  })
+
+  afterEach(async () => {
+    await page.close()
+  })
 
   describe('Missing heading IDs on Finnish tabs', () => {
-    it('should have zero default ids on finnish tabs', async () => {
+    it('should have zero default toc-lib-generated ids on finnish tabs', async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
-      await page.waitForSelector('h1')
 
-      await page.evaluate(changeTab, 'chemistry')
-      await page.waitForSelector('#tab-chemistry h1')
+      const TABS = [
+        'FYSIIKKA',
+        'KARTAT',
+        'KEMIA',
+        'MATEMATIIKKA',
+        'MUSIIKKI',
+        'NÄPPÄIMISTÖ',
+        'OHJELMOINTI',
+        'YLEISOHJEET',
+      ]
 
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
+      for (const tab of TABS) {
+        // Dump progress so we know in which tab the error exists
+        // console.debug('Now processing tab ' + tab)
+        await page.click('text=' + tab)
 
-      await page.evaluate(changeTab, 'general')
-      await page.waitForSelector('#tab-general h1')
+        // Make sure the toc library has processed all h2/h3 tags and there are no empty ids
+        await expect(page.locator('h2:not([id])')).toHaveCount(0)
+        await expect(page.locator('h3:not([id])')).toHaveCount(0)
 
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'keyboard')
-      await page.waitForSelector('#tab-keyboard h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'math')
-      await page.waitForSelector('#tab-math h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'maps')
-      await page.waitForSelector('#tab-maps h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'muzak')
-      await page.waitForSelector('#tab-muzak h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'programming')
-      await page.waitForSelector('#tab-programming h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
+        await expect(page.locator('h2[id^=_], h3[id^=_]')).toHaveCount(0)
+      }
     })
   })
 
   describe('Missing heading IDs on Swedish tabs', () => {
-    it('should have zero default ids on swedish tabs', async () => {
+    it('should have zero default toc-lib-generated ids on swedish tabs', async () => {
       await page.goto('http://localhost:8080/build/index.html?sv')
-      await page.waitForSelector('h1')
 
-      await page.evaluate(changeTab, 'chemistry')
-      await page.waitForSelector('#tab-chemistry h1')
+      const TABS = [
+        'FYSIK',
+        'KARTOR',
+        'KEMI',
+        'MATEMATIK',
+        'MUSIK',
+        'PROGRAMMERING',
+        'TANGENTBORD',
+        'ALLMÄNNA INSTRUKTIONER',
+      ]
 
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
+      for (const tab of TABS) {
+        // Dump progress so we know in which tab the error exists
+        // sconsole.debug('Now processing tab ' + tab)
+        await page.click('text=' + tab)
 
-      await page.evaluate(changeTab, 'general')
-      await page.waitForSelector('#tab-general h1')
+        // Make sure the toc library has processed all h2/h3 tags and there are no empty ids
+        await expect(page.locator('h2:not([id])')).toHaveCount(0)
+        await expect(page.locator('h3:not([id])')).toHaveCount(0)
 
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'keyboard')
-      await page.waitForSelector('#tab-keyboard h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'math')
-      await page.waitForSelector('#tab-math h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'maps')
-      await page.waitForSelector('#tab-maps h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'muzak')
-      await page.waitForSelector('#tab-muzak h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'physics')
-      await page.waitForSelector('#tab-physics h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
-
-      await page.evaluate(changeTab, 'programming')
-      await page.waitForSelector('#tab-programming h1')
-
-      await expect(page).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await expect(page).not.toMatchElement('h2[id^=_], h3[id^=_]', { timeout: 5000 }) // Beef
+        await expect(page.locator('h2[id^=_], h3[id^=_]')).toHaveCount(0)
+      }
     })
   })
 
   describe('Finnish and Swedish tabs have equal list of ids', () => {
+    beforeEach(async () => {
+      await page.goto('http://localhost:8080/build/index.html?fi')
+    })
+
     const getCurrentIdList = (): string[] => {
       const ids: string[] = []
       document.querySelectorAll('h2[id], h3[id]').forEach(function (e) {
@@ -134,28 +93,29 @@ describe('Table-of-contents', () => {
       return []
     }
 
-    const getTabIdList = async (pTab: string, pIdPrefix: string, pLanguage: string, pPage: Page): Promise<string[]> => {
-      await pPage.evaluate(changeLanguage, pLanguage)
-      await pPage.waitForNavigation()
-      await expect(pPage).toMatchElement('h1', { timeout: 5000 }) // Wait for tab to load
-      await pPage.evaluate(changeTab, pTab)
-      await expect(pPage).toMatchElement('[id^=' + pIdPrefix + ']', { timeout: 5000 })
+    const getTabIdList = async (pTab: string, pLanguage: string, pPage: Page): Promise<string[]> => {
+      await page.click('[data-lang-id="' + pLanguage + '"]')
+      await page.click('[data-tab-id="' + pTab + '"]')
+
+      await expect(pPage.locator('h1')).toHaveCount(1)
+
       return await pPage.evaluate(getCurrentIdList)
     }
 
     it('should have an equal/unique list of ids on chemistry tab', async () => {
-      const idsFi = await getTabIdList('chemistry', 'toc-chem-', 'fi', page)
-      const idsSv = await getTabIdList('chemistry', 'toc-chem-', 'sv', page)
+      const idsFi = await getTabIdList('chemistry', 'fi', page)
+      const idsSv = await getTabIdList('chemistry', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
+      // Show the duplicate ID
       expect(ifDuplicateEntry(idsFi)).toEqual([])
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
 
     it('should have an equal/unique list of ids on general tab', async () => {
-      const idsFi = await getTabIdList('general', 'toc-gen-', 'fi', page)
-      const idsSv = await getTabIdList('general', 'toc-gen-', 'sv', page)
+      const idsFi = await getTabIdList('general', 'fi', page)
+      const idsSv = await getTabIdList('general', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
@@ -164,8 +124,8 @@ describe('Table-of-contents', () => {
     })
 
     it('should have an equal/unique list of ids on keyboard tab', async () => {
-      const idsFi = await getTabIdList('keyboard', 'toc-kbd-', 'fi', page)
-      const idsSv = await getTabIdList('keyboard', 'toc-kbd-', 'sv', page)
+      const idsFi = await getTabIdList('keyboard', 'fi', page)
+      const idsSv = await getTabIdList('keyboard', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
@@ -174,8 +134,8 @@ describe('Table-of-contents', () => {
     })
 
     it('should have an equal/unique list of ids on math tab', async () => {
-      const idsFi = await getTabIdList('math', 'toc-math-', 'fi', page)
-      const idsSv = await getTabIdList('math', 'toc-math-', 'sv', page)
+      const idsFi = await getTabIdList('math', 'fi', page)
+      const idsSv = await getTabIdList('math', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
@@ -184,8 +144,8 @@ describe('Table-of-contents', () => {
     })
 
     it('should have an equal/unique list of ids on physics tab', async () => {
-      const idsFi = await getTabIdList('physics', 'toc-phy-', 'fi', page)
-      const idsSv = await getTabIdList('physics', 'toc-phy-', 'sv', page)
+      const idsFi = await getTabIdList('physics', 'fi', page)
+      const idsSv = await getTabIdList('physics', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 
@@ -194,8 +154,8 @@ describe('Table-of-contents', () => {
     })
 
     it('should have an equal/unique list of ids on programming tab', async () => {
-      const idsFi = await getTabIdList('programming', 'toc-prog-', 'fi', page)
-      const idsSv = await getTabIdList('programming', 'toc-prog-', 'sv', page)
+      const idsFi = await getTabIdList('programming', 'fi', page)
+      const idsSv = await getTabIdList('programming', 'sv', page)
 
       expect(idsSv).toEqual(idsFi)
 

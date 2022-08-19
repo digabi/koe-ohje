@@ -1,103 +1,102 @@
-import { Page } from 'puppeteer/index'
+import { Page, expect } from '@playwright/test'
+import { newPage, newBrowserContext } from './utils'
 
 describe('Language', () => {
+  let page: Page
+
+  beforeEach(async () => {
+    page = await newPage(await newBrowserContext())
+  })
+
+  afterEach(async () => {
+    await page.close()
+  })
+
   describe('Initial language selection', () => {
     it('should highlight finnish in navbar', async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
-      await page.waitForNavigation()
 
-      await expect(page).toMatchElement('.tab-menu-language-fi.active', { timeout: 5000 })
-      await expect(page).not.toMatchElement('.tab-menu-language-sv.active', { timeout: 5000 })
+      await expect(page.locator('.tab-menu-language-fi.active')).toBeVisible()
+      await expect(page.locator('.tab-menu-language-sv.active')).not.toBeVisible()
     })
 
     it('should highlight swedish in navbar', async () => {
       await page.goto('http://localhost:8080/build/index.html?sv')
-      await page.waitForNavigation()
 
-      await expect(page).not.toMatchElement('.tab-menu-language-fi.active', { timeout: 5000 })
-      await expect(page).toMatchElement('.tab-menu-language-sv.active', { timeout: 5000 })
+      await expect(page.locator('.tab-menu-language-fi.active')).not.toBeVisible()
+      await expect(page.locator('.tab-menu-language-sv.active')).toBeVisible()
     })
   })
 
   describe('Default tab', () => {
-    const getHeadingText = async (pUrl: string, pPage: Page): Promise<string> => {
-      await Promise.all([pPage.waitForNavigation(), pPage.goto(pUrl), pPage.waitForSelector('h1')])
-
-      const text = await pPage.evaluate(() => {
-        return document.querySelector<HTMLElement>('h1').innerText
-      })
-
-      return text
-    }
-
     it('should show general tab in finnish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?fi&general', page)
-      expect(text).toBe('Yleisohjeet')
+      await page.goto('http://localhost:8080/build/index.html?fi&general')
+      await expect(page.locator('h1')).toHaveText('Yleisohjeet')
     })
 
     it('should show general tab in swedish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?sv&general', page)
-      expect(text).toBe('Allmänna instruktioner')
+      await page.goto('http://localhost:8080/build/index.html?sv&general')
+      await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
     })
 
     it('should show chemistry tab in finnish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?fi&chemistry', page)
-      expect(text).toBe('Kemia')
+      await page.goto('http://localhost:8080/build/index.html?fi&chemistry')
+      await expect(page.locator('h1')).toHaveText('Kemia')
     })
 
     it('should show chemistry tab in swedish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?sv&chemistry', page)
-      expect(text).toBe('Kemi')
+      await page.goto('http://localhost:8080/build/index.html?sv&chemistry')
+      await expect(page.locator('h1')).toHaveText('Kemi')
     })
 
     it('should show maps tab in finnish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?fi&maps', page)
-      expect(text).toBe('Kartat')
+      await page.goto('http://localhost:8080/build/index.html?fi&maps')
+      await expect(page.locator('h1')).toHaveText('Kartat')
     })
 
     it('should show maps tab in swedish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?sv&maps', page)
-      expect(text).toBe('Kartor')
+      await page.goto('http://localhost:8080/build/index.html?sv&maps')
+      await expect(page.locator('h1')).toHaveText('Kartor')
     })
 
     it('should show keyboard tab in finnish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?fi&keyboard', page)
-      expect(text).toBe('Näppäimistö')
+      await page.goto('http://localhost:8080/build/index.html?fi&keyboard')
+      await expect(page.locator('h1')).toHaveText('Näppäimistö')
     })
 
     it('should show keyboard tab in swedish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?sv&keyboard', page)
-      expect(text).toBe('Tangentbord')
+      await page.goto('http://localhost:8080/build/index.html?sv&keyboard')
+      await expect(page.locator('h1')).toHaveText('Tangentbord')
     })
 
     it('should show math tab in finnish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?fi&math', page)
-      expect(text).toBe('Matematiikka')
+      await page.goto('http://localhost:8080/build/index.html?fi&math')
+      await expect(page.locator('h1')).toHaveText('Matematiikka')
     })
 
     it('should show math tab in swedish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?sv&math', page)
-      expect(text).toBe('Matematik')
+      await page.goto('http://localhost:8080/build/index.html?sv&math')
+      await expect(page.locator('h1')).toHaveText('Matematik')
     })
 
     it('should show physics tab in finnish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?fi&physics', page)
-      expect(text).toBe('Fysiikka')
+      await page.goto('http://localhost:8080/build/index.html?fi&physics')
+      await expect(page.locator('h1')).toHaveText('Fysiikka')
     })
 
     it('should show physics tab in swedish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?sv&physics', page)
-      expect(text).toBe('Fysik')
+      await page.goto('http://localhost:8080/build/index.html?sv&physics')
+      await expect(page.locator('h1')).toHaveText('Fysik')
     })
 
     it('should show programming tab in finnish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?fi&programming', page)
-      expect(text).toBe('Ohjelmointi')
+      await page.goto('http://localhost:8080/build/index.html?fi&programming')
+      await expect(page.locator('h1')).toHaveText('Ohjelmointi')
     })
 
     it('should show programming tab in swedish', async () => {
-      const text = await getHeadingText('http://localhost:8080/build/index.html?sv&programming', page)
-      expect(text).toBe('Programmering')
+      await page.goto('http://localhost:8080/build/index.html?sv&programming')
+      await expect(page.locator('h1')).toHaveText('Programmering')
     })
   })
 
@@ -105,51 +104,22 @@ describe('Language', () => {
     it('should change default page language from finnish to swedish when clicked', async () => {
       await page.goto('http://localhost:8080/build/index.html?fi&general')
 
-      await page.waitForSelector('h1.fi')
+      await expect(page.locator('h1')).toHaveText('Yleisohjeet')
 
-      const textFi = await page.evaluate(() => {
-        return document.querySelector<HTMLElement>('h1').innerText
-      })
-      expect(textFi).toBe('Yleisohjeet')
+      await page.click('.tab-menu-language-selection div[data-lang-id=sv]')
 
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('.tab-menu-language-selection div[data-lang-id=sv]')
-        el.click()
-      })
-
-      await page.waitForNavigation()
-
-      await page.waitForSelector('h1.sv')
-
-      const textSv = await page.evaluate(() => {
-        return document.querySelector<HTMLElement>('h1').innerText
-      })
-      expect(textSv).toBe('Allmänna instruktioner')
+      await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
     })
 
     it('should change default page language from swedish to finnish when clicked', async () => {
       await page.goto('http://localhost:8080/build/index.html?sv&general')
 
-      await page.waitForSelector('h1.sv')
+      await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
 
-      const textSv = await page.evaluate(() => {
-        return document.querySelector<HTMLElement>('h1').innerText
-      })
-      expect(textSv).toBe('Allmänna instruktioner')
+      await page.click('.tab-menu-language-selection div[data-lang-id=fi]')
+      //await page.locator('.tab-menu-language-selection div[data-lang-id=fi]').click()
 
-      await page.evaluate(() => {
-        const el = document.querySelector<HTMLElement>('.tab-menu-language-selection div[data-lang-id=fi]')
-        el.click()
-      })
-
-      await page.waitForNavigation()
-
-      await expect(page).toMatchElement('h1.fi', { timeout: 5000 })
-
-      const textFi = await page.evaluate(() => {
-        return document.querySelector<HTMLElement>('h1').innerText
-      })
-      expect(textFi).toBe('Yleisohjeet')
+      await expect(page.locator('h1')).toHaveText('Yleisohjeet')
     })
   })
 })
