@@ -16,8 +16,7 @@ const createAudioContext = (audioId: string) => {
   audioElement.loop = true
 
   if (audioCtx[audioId] == undefined) {
-    const AudioContext = window.AudioContext || window.webkitAudioContext
-    audioCtx[audioId] = new AudioContext()
+    audioCtx[audioId] = new window.AudioContext()
     const track = audioCtx[audioId].createMediaElementSource(audioElement)
     track.connect(audioCtx[audioId].destination)
   }
@@ -64,11 +63,11 @@ const playButtonClicked = (event: Event) => {
 
   // check if context is in suspended state (autoplay policy)
   if (audioCtx[audioId] != null && audioCtx[audioId].state === 'suspended') {
-    audioCtx[audioId].resume()
+    void audioCtx[audioId].resume()
   }
 
   if (audioElement.paused) {
-    audioElement.play()
+    void audioElement.play()
     setButtonIconPause(audioId)
   } else {
     audioElement.pause()

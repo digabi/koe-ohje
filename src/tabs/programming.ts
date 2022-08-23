@@ -46,7 +46,7 @@ const calculateHeight = (element: HTMLElement) => {
 
 const setOutputAndErrorHeight = (elementId: string) => {
   const element = document.getElementById(elementId)!
-  const setHeight = (newHeight: number) => (element.style.height = newHeight + 'px')
+  const setHeight = (newHeight: number) => (element.style.height = `{newHeight}px`)
 
   setHeight(0)
   setHeight(calculateHeight(element))
@@ -122,9 +122,13 @@ const executeCode = () => {
   const code = getCode()
 
   try {
+    // pyodide is imported by content/index.html
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     pyodide.runPython(code)
-  } catch (err) {
-    printStderr(err.toString())
+  } catch (err: any) {
+    if (err instanceof Error) {
+      printStderr(err.toString())
+    }
   }
 }
 
@@ -150,6 +154,8 @@ const initializePythonEngine = async () => {
   pyodideInitializing = true
 
   try {
+    // pyodide is imported by content/index.html
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     pyodide = await loadPyodide({
       indexURL: getUrlPath() + 'common/pyodide/', // Pydiode does not handle .. as part of the path
       stdin: getInput,
@@ -168,8 +174,12 @@ const initializePythonEngine = async () => {
     return
   }
 
+  // pyodide is imported by content/index.html
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
   pyodide.runPython("import js\ndef input(prompt=''):\n  return js.prompt(prompt)\n\n")
 
+  // pyodide is imported by content/index.html
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
   pyodide.loadPackage('numpy')
 
   setMonacoReadOnly(false)
@@ -179,7 +189,7 @@ const initializePythonEngine = async () => {
 
 export const initializeProgrammingTab = () => {
   initializeMonacoEditor(codeEditorId)
-  initializePythonEngine()
+  void initializePythonEngine()
 
   const executeButtons = Array.from(document.querySelectorAll(executeButtonSelector))
   executeButtons.forEach((element) => element.addEventListener('click', executeCode))
