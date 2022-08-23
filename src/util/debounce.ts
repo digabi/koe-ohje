@@ -1,7 +1,7 @@
 export const debounce = (func: () => void, wait: number, immediate?: boolean) => {
   let timeout: number
   return function () {
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    // eslint-disable-next-line @typescript-eslint/no-this-alias, @typescript-eslint/no-unsafe-assignment
     const context = this
     // eslint-disable-next-line prefer-rest-params
     const args = arguments
