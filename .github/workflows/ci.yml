@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn --frozen-lockfile
-      - run: npx playwright install-deps
+      - run: npx playwright install
       - run: yarn build:internet
       - run: yarn test
       - run: yarn lint
