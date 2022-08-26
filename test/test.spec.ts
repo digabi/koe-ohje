@@ -15,7 +15,7 @@ describe('Digabi Exam Help', () => {
   describe('Tabs in Finnish', () => {
     it('should render finnish general as initial tab', async () => {
       await page.goto('http://localhost:8080/build/index.html')
-      await expect(page.locator('h1')).toHaveText('Yleisohjeet', { timeout: 10000 })
+      await expect(page.locator('h1')).toHaveText('Yleisohjeet')
     })
 
     it('should be able to open tabs when clicked', async () => {
