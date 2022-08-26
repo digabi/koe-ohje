@@ -117,7 +117,6 @@ describe('Language', () => {
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
 
       await page.click('.tab-menu-language-selection div[data-lang-id=fi]')
-      //await page.locator('.tab-menu-language-selection div[data-lang-id=fi]').click()
 
       await expect(page.locator('h1')).toHaveText('Yleisohjeet')
     })
