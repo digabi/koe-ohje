@@ -82,9 +82,9 @@
     "@fortawesome/fontawesome-common-types" "6.2.0"
 
 "@humanwhocodes/config-array@^0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.10.4.tgz#01e7366e57d2ad104feea63e72248f22015c520c"
-  integrity sha512-mXAIHxZT3Vcpg83opl1wGlVZ9xydbfZO3r5YfRSH6Gpp2J/PfdBP0wbDa2sO6/qRbcalpoevVyW6A/fI6LfeMw==
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.10.5.tgz#bb679745224745fff1e9a41961c1d45a49f81c04"
+  integrity sha512-XVVDtp+dVvRxMoxSiSfasYaG02VEe1qH5cKgMQJWhol6HwzbcqoCMJi8dAGoYAO57jhUyhI6cWuRiTcRaDaYug==
   dependencies:
     "@humanwhocodes/object-schema" "^1.2.1"
     debug "^4.1.1"
@@ -1131,9 +1131,9 @@ camelcase@^6.0.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001400:
-  version "1.0.30001407"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001407.tgz#92281a6ee67cb90bfd8a6a1201fcc2dc19b60a15"
-  integrity sha512-4ydV+t4P7X3zH83fQWNDX/mQEzYomossfpViCOx9zHBSMV+rIe3LFqglHHtVyvNl1FhTNxPxs3jei82iqOW04w==
+  version "1.0.30001409"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001409.tgz#6135da9dcab34cd9761d9cdb12a68e6740c5e96e"
+  integrity sha512-V0mnJ5dwarmhYv8/MzhJ//aW68UpvnQBXv8lJ2QUsvn2pHcmAuNtu8hQEDz37XnA1iE+lRR9CIfGWWpgJ5QedQ==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -3865,9 +3865,9 @@ punycode@^2.1.0, punycode@^2.1.1:
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
 puppeteer@^18.0.2:
-  version "18.0.3"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-18.0.3.tgz#3f06b649d3ceef191318b8cb1193c1eaf23eba52"
-  integrity sha512-IiW4Zz0xbphl1lQEAB7grPucbk/aM+GND4aJ7I8gOzOSp7Ika1bz35maox4FbELpPL8sqXsVQRNrXQnzBMiCzQ==
+  version "18.0.4"
+  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-18.0.4.tgz#0fd8840840dde9147e7db4b2a796aa27f3ecf0ee"
+  integrity sha512-42WMdCu2wJdrkWijox/ZWsgNdv3+H+9xhLmiIl7KZIvDwMJWGz28HMgG1Ey5J6xb8wcwzjF9uI1Iw4UNyXXf5A==
   dependencies:
     cross-fetch "3.1.5"
     debug "4.3.4"
