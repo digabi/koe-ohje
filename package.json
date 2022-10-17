@@ -60,7 +60,7 @@
     "fs-extra": "^10.1.0",
     "mathjax-node-page": "^3.2.0",
     "prettier": "^2.7.1",
-    "puppeteer": "^18.0.2",
+    "puppeteer": "^19.0.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1",
     "typescript": "^4.8.3",
