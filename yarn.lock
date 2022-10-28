@@ -1133,9 +1133,9 @@ camelcase@^6.0.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001400:
-  version "1.0.30001425"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001425.tgz#52917791a453eb3265143d2cd08d80629e82c735"
-  integrity sha512-/pzFv0OmNG6W0ym80P3NtapU0QEiDS3VuYAZMGoLLqiC7f6FJFe1MjpQDREGApeenD9wloeytmVDj+JLXPC6qw==
+  version "1.0.30001426"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001426.tgz#58da20446ccd0cb1dfebd11d2350c907ee7c2eaa"
+  integrity sha512-n7cosrHLl8AWt0wwZw/PJZgUg3lV0gk9LMI7ikGJwhyhgsd2Nb65vKvmSexCqq/J7rbH3mFG6yZZiPR5dLPW5A==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -1190,9 +1190,9 @@ ci-info@^3.2.0:
   integrity sha512-yH4RezKOGlOhxkmhbeNuC4eYZKAUsEaGtBuBzDDP1eFUKiccDWzBABxBfOx31IDwDIXMTxWuwAxUGModvkbuVw==
 
 client-side-python-runner@^1.6.6:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/client-side-python-runner/-/client-side-python-runner-1.7.0.tgz#241979698dc1161fe2dff2a3ee5d873bb4e743f2"
-  integrity sha512-JmxxloCe4ZGWobEq2ZlTDHHtzlljUqxEE5qlKtxNuopZbvV+gWbMBHTw00mWQbN983EZDEzc6RfjydOP/ytqHg==
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/client-side-python-runner/-/client-side-python-runner-1.7.1.tgz#19fe8cccdd35c432ef84d91f738cfa84069eae99"
+  integrity sha512-wsNtpVmSsg0IeOsA23hSTHrKIWm86JwXC+lp3YJsvZaDztsdWCJr7jwTEXAjQIW4wibO/Fd4vRQ89d842Ap6AA==
 
 cliui@^4.0.0:
   version "4.1.0"
