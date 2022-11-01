@@ -28,18 +28,16 @@ const replaceTaulukkoWithBuild = (file) => {
   })
 }
 
-const getFilesFromDir = (path) => {
-  return fs.readdir(path)
+const getFileNamesFromDir = async (path) => {
+  const dirents = await fs.readdir(path, { withFileTypes: true })
+  return dirents.filter(dirent => dirent.isFile()).map(dirent => dirent.name)
 }
 
-const build = () => {
-  return fs
-    .ensureDir(buildPath)
-    .then(() => replaceTaulukkoWithBuild(indexHtml))
-    .then(() => getFilesFromDir(contentPath))
-    .then((files) => {
-      return Promise.all(files.map(readFromPath))
-    })
+const build = async () => {
+  await fs.ensureDir(buildPath)
+  await replaceTaulukkoWithBuild(indexHtml)
+  const contentFileNames = await getFileNamesFromDir(contentPath)
+  return Promise.all(contentFileNames.map(readFromPath))
 }
 
 build()
