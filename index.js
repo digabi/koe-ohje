@@ -30,7 +30,7 @@ const replaceTaulukkoWithBuild = (file) => {
 
 const getFileNamesFromDir = async (path) => {
   const dirents = await fs.readdir(path, { withFileTypes: true })
-  return dirents.filter(dirent => dirent.isFile()).map(dirent => dirent.name)
+  return dirents.filter((dirent) => dirent.isFile()).map((dirent) => dirent.name)
 }
 
 const build = async () => {
