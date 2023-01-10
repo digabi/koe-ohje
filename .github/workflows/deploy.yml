@@ -38,3 +38,11 @@ jobs:
           aws-region: eu-north-1
       - name: Test aws s3
         run: aws s3 ls s3://abitti-test.abitti-test-cdk.cheat.abitti.fi
+      - name: Move release files into release dir
+        run: >
+          mkdir -p release
+          cp -r common release/
+          cp -r build release/
+          cp -r index.html release/
+      - name: Sync release files into the bucket
+        run: aws s3 sync release/ s3://abitti-test.abitti-test-cdk.cheat.abitti.fi
