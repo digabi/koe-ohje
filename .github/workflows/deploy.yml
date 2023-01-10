@@ -1,13 +1,11 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: CI
+name: Deploy
 
 on:
-  pull_request:
+  push:
     branches: [master]
-  schedule:
-    - cron: '0 5 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,3 +27,12 @@ jobs:
       - run: yarn build:internet
       - run: yarn test
       - run: yarn lint
+
+			- name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: arn:aws:iam::044235078644:role/GithubActionsAccessRole
+          aws-region: eu-north-1
+
+      - name: Test aws s3
+        run: aws s3 ls s3://abitti-test.abitti-test-cdk.cheat.abitti.fi
