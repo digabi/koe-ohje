@@ -30,7 +30,7 @@ describe('Table-of-contents', () => {
       for (const tab of TABS) {
         // Dump progress so we know in which tab the error exists
         // console.debug('Now processing tab ' + tab)
-        await page.click('text=' + tab)
+        await page.click(`text=${tab}`)
 
         // Make sure the toc library has processed all h2/h3 tags and there are no empty ids
         await expect(page.locator('h2:not([id])')).toHaveCount(0)
@@ -57,7 +57,7 @@ describe('Table-of-contents', () => {
       ]
 
       for (const tab of TABS) {
-        await page.click('text=' + tab)
+        await page.click(`text=${tab}`)
 
         // Make sure the toc library has processed all h2/h3 tags and there are no empty ids
         await expect(page.locator('h2:not([id])')).toHaveCount(0)
@@ -75,7 +75,7 @@ describe('Table-of-contents', () => {
 
     const getCurrentIdList = (): string[] => {
       const ids: string[] = []
-      document.querySelectorAll('h2[id], h3[id]').forEach(function (e) {
+      document.querySelectorAll('h2[id], h3[id]').forEach((e) => {
         ids.push(e.getAttribute('id'))
       })
       return ids

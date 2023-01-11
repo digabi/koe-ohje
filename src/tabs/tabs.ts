@@ -101,7 +101,7 @@ const updateActiveTabInNavigation = () => {
   const activeTab = document.querySelector<HTMLElement>('.tab-content.active')
   const tabName = activeTab.id.substr(4)
 
-  const activeTabElements = document.querySelectorAll<HTMLElement>('[data-tab-id="' + tabName + '"]')
+  const activeTabElements = document.querySelectorAll<HTMLElement>(`[data-tab-id="${tabName}"]`)
   activeTabElements.forEach((element) => element.classList.add('active'))
 }
 

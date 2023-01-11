@@ -7,7 +7,7 @@ export const activateModalImage = (elementLink: Element) => {
   }
 
   const elementModal = document.createElement('div')
-  elementModal.id = 'modal-image-id-' + elementLink.id
+  elementModal.id = `modal-image-id-${elementLink.id}`
   elementModal.className = 'modal-image-fullscreen'
   elementModal.innerHTML = `<img class="modal-image-fullscreen-image" src="${elementLink.getAttribute('src')}">`
   // This is defined here to make testing easier
@@ -28,7 +28,7 @@ export const activateModalImage = (elementLink: Element) => {
 const openModalImage = (event: MouseEvent) => {
   const elementLink = event.target as HTMLElement
   const eventId = elementLink.id
-  const modalId = 'modal-image-id-' + eventId
+  const modalId = `modal-image-id-${eventId}`
 
   const elementModal = document.getElementById(modalId)
   elementModal.style.display = 'block'

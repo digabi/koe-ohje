@@ -35,7 +35,7 @@ const getMuzakId = (element: Element): string => {
 }
 
 const setButtonIconPause = (buttonId: string) => {
-  const buttons = Array.from(document.querySelectorAll('[data-muzakid="' + buttonId + '"]'))
+  const buttons = Array.from(document.querySelectorAll(`[data-muzakid="${buttonId}"]`))
   buttons.forEach((element) => {
     element.innerHTML = '<i class="fas fa-pause"></i>'
     element.className = element.className.replace('tab-muzak-play', 'tab-muzak-pause')
@@ -43,7 +43,7 @@ const setButtonIconPause = (buttonId: string) => {
 }
 
 const setButtonIconPlay = (buttonId: string) => {
-  const buttons = Array.from(document.querySelectorAll('[data-muzakid="' + buttonId + '"]'))
+  const buttons = Array.from(document.querySelectorAll(`[data-muzakid="${buttonId}"]`))
   buttons.forEach((element) => {
     element.innerHTML = '<i class="fas fa-play"></i>'
     element.className = element.className.replace('tab-muzak-pause', 'tab-muzak-play')

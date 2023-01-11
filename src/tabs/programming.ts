@@ -91,9 +91,7 @@ const removeBoilerplateErrorstrings = (text: string): string => {
   return text
 }
 
-const getInput = (): string => {
-  return prompt('Enter input string')
-}
+const getInput = (): string => prompt('Enter input string')
 
 const clearStdout = () => {
   document.getElementById(outputId).innerHTML = ''
@@ -111,7 +109,7 @@ const printStdout = (text: string) => {
   showOutputArea()
   const outputElement = document.getElementById(outputId)
   text = text.replace(/</g, '&lt;')
-  outputElement.innerHTML = outputElement.innerHTML + text + '\n'
+  outputElement.innerHTML = `${outputElement.innerHTML + text}\n`
 }
 
 const executeCode = () => {
@@ -157,7 +155,7 @@ const initializePythonEngine = async () => {
     // pyodide is imported by content/index.html
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     pyodide = await loadPyodide({
-      indexURL: getUrlPath() + 'common/pyodide/', // Pydiode does not handle .. as part of the path
+      indexURL: `${getUrlPath()}common/pyodide/`, // Pydiode does not handle .. as part of the path
       stdin: getInput,
       stdout: (text: string) => printStdout(text),
       stderr: (text: string) => printStderr(text),

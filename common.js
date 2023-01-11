@@ -22,8 +22,8 @@ const nodeConfig = {
   linebreaks: true,
 }
 
-const formatLatex = (input) => {
-  return new Promise((resolve, reject) => {
+const formatLatex = (input) =>
+  new Promise((resolve, reject) => {
     mjpage(input, pageConfig, nodeConfig, (output, err) => {
       if (err) {
         reject(err)
@@ -32,11 +32,8 @@ const formatLatex = (input) => {
       }
     })
   })
-}
 
-const replaceInPath = (path) => {
-  return path.replace(/taulukot/g, 'build')
-}
+const replaceInPath = (path) => path.replace(/taulukot/g, 'build')
 
 module.exports = {
   formatLatex,

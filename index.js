@@ -6,27 +6,21 @@ const buildPath = './build/'
 
 const indexHtml = 'index.html'
 
-const readFromPath = (path) => {
-  return fs
+const readFromPath = (path) =>
+  fs
     .readFile(contentPath + path)
-    .then((file) => {
-      return formatLatex(file.toString())
-    })
-    .then((output) => {
-      return fs.writeFile(buildPath + path, output)
-    })
+    .then((file) => formatLatex(file.toString()))
+    .then((output) => fs.writeFile(buildPath + path, output))
     .then(() => {
-      console.log('Done with ' + path)
+      console.log(`Done with ${path}`)
       return
     })
-}
 
-const replaceTaulukkoWithBuild = (file) => {
-  return fs.readFile(file).then((data) => {
+const replaceTaulukkoWithBuild = (file) =>
+  fs.readFile(file).then((data) => {
     var path = replaceInPath(data.toString())
     return fs.writeFile(file, path, 'utf8')
   })
-}
 
 const getFileNamesFromDir = async (path) => {
   const dirents = await fs.readdir(path, { withFileTypes: true })

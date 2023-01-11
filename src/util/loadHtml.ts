@@ -1,5 +1,5 @@
-export const loadHtml = (url: string): Promise<string> => {
-  return new Promise(function (resolve, reject) {
+export const loadHtml = (url: string): Promise<string> =>
+  new Promise((resolve, reject) => {
     const request = new XMLHttpRequest()
     request.open('GET', url)
     request.onload = () => {
@@ -20,4 +20,3 @@ export const loadHtml = (url: string): Promise<string> => {
     }
     request.send()
   })
-}
