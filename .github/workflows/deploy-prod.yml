@@ -34,7 +34,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
-          role-to-assume: arn:aws:iam::128059457614:role/GithubActionsAccessRole
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT_ID }}:role/GithubActionsAccessRole
           aws-region: eu-north-1
       - name: Move release files into release dir
         run: |
@@ -43,4 +43,4 @@ jobs:
           cp -r build release/
           cp -r index.html release/
       - name: Sync release files into the test bucket
-        run: aws s3 sync release/ s3://abitti-prod.abitti-prod-cdk.cheat.abitti.fi
+        run: aws s3 sync release/ s3://${{ secrets.PROD_DEPLOY_BUCKET_NAME }}
