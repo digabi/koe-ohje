@@ -34,7 +34,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
-          role-to-assume: arn:aws:iam::044235078644:role/GithubActionsAccessRole
+          role-to-assume: arn:aws:iam::${{ secrets.TEST_ACCOUNT_ID }}:role/GithubActionsAccessRole
           aws-region: eu-north-1
       - name: Move release files into release dir
         run: |
