@@ -1,11 +1,11 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Deploy
+name: Deploy Prod
 
 on:
   push:
-    branches: [master]
+    branches: [release]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,15 +34,13 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
-          role-to-assume: arn:aws:iam::044235078644:role/GithubActionsAccessRole
+          role-to-assume: arn:aws:iam::128059457614:role/GithubActionsAccessRole
           aws-region: eu-north-1
-      - name: Test aws s3
-        run: aws s3 ls s3://abitti-test.abitti-test-cdk.cheat.abitti.fi
       - name: Move release files into release dir
         run: |
           mkdir -p release
           cp -r common release/
           cp -r build release/
           cp -r index.html release/
-      - name: Sync release files into the bucket
-        run: aws s3 sync release/ s3://abitti-test.abitti-test-cdk.cheat.abitti.fi
+      - name: Sync release files into the test bucket
+        run: aws s3 sync release/ s3://abitti-prod.abitti-prod-cdk.cheat.abitti.fi

@@ -1,0 +1,46 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Deploy Test
+
+on:
+  push:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Increase file watchers
+        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn --frozen-lockfile
+      - run: npx playwright install
+      - run: yarn build:internet
+      - run: yarn test
+      - run: yarn lint
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: arn:aws:iam::044235078644:role/GithubActionsAccessRole
+          aws-region: eu-north-1
+      - name: Move release files into release dir
+        run: |
+          mkdir -p release
+          cp -r common release/
+          cp -r build release/
+          cp -r index.html release/
+      - name: Sync release files into the test bucket
+        run: aws s3 sync release/ "s3://${{ secrets.TEST_DEPLOY_BUCKET }}"
