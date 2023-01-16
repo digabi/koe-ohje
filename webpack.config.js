@@ -55,7 +55,7 @@ module.exports = (env, argv) => {
         'process.env.MAP_TILES_URL':
           process.env.DEPLOYMENT_ENV === 'koe'
             ? JSON.stringify('/tiles')
-            : JSON.stringify('https://s3.eu-north-1.amazonaws.com/abitti-test.abitti-test-cdk.maptiles.abitti.fi'),
+            : JSON.stringify('https://s3.eu-north-1.amazonaws.com/abitti-prod.abitti-prod-cdk.maptiles.abitti.fi'),
         'process.env.MATH_DEMO_URL':
           process.env.DEPLOYMENT_ENV === 'koe' ? JSON.stringify('') : JSON.stringify('https://math-demo.abitti.fi'),
       }),
