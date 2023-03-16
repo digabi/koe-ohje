@@ -174,11 +174,11 @@ const initializePythonEngine = async () => {
 
   // pyodide is imported by content/index.html
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  pyodide.runPython("import js\ndef input(prompt=''):\n  return js.prompt(prompt)\n\n")
+  await pyodide.loadPackage('numpy')
 
   // pyodide is imported by content/index.html
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  pyodide.loadPackage('numpy')
+  pyodide.runPython("import js\ndef input(prompt=''):\n  return js.prompt(prompt)\n\n")
 
   setMonacoReadOnly(false)
   showOutputArea()
