@@ -55,6 +55,30 @@ describe('Python', () => {
       await expect(page.locator('#code-error')).toBeEmpty()
     })
 
+    it('should be able to do things with numpy library', async () => {
+      await page.evaluate(() => {
+        console.log('Hello world!')
+      })
+
+      await page.evaluate(() => {
+        const codeToInsert = `import numpy
+m = numpy.lcm(6,9)
+print(m)`
+        const el = document.querySelector<HTMLElement>('#tab-programming-ide-container')
+        el.dispatchEvent(
+          new CustomEvent('replaceEditorTextForTestingPurposes', { bubbles: false, detail: { text: codeToInsert } })
+        )
+      })
+
+      await page.click('.code-editor-execute')
+
+      // Timeout is needed as it takes time to run Pyodide
+      await expect(page.locator('#code-output')).toBeVisible({ timeout: 20000 })
+      await expect(page.locator('#code-output')).toContainText('18')
+
+      await expect(page.locator('#code-error')).toBeEmpty()
+    })
+
     it('should show an error', async () => {
       // We need to use a custom event as page.fill() cannot be used with Monaco editor
 
