@@ -106,7 +106,7 @@ describe('Language', () => {
 
       await expect(page.locator('h1')).toHaveText('Yleisohjeet')
 
-      await page.click('.tab-menu-language-selection div[data-lang-id=sv]')
+      await page.click('.tab-menu-language-selection a[data-lang-id=sv]')
 
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
     })
@@ -116,7 +116,7 @@ describe('Language', () => {
 
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
 
-      await page.click('.tab-menu-language-selection div[data-lang-id=fi]')
+      await page.click('.tab-menu-language-selection a[data-lang-id=fi]')
 
       await expect(page.locator('h1')).toHaveText('Yleisohjeet')
     })

@@ -17,88 +17,97 @@
   <body>
     <div id="tab-container">
       <div id="tab-menu">
-        <a id="menu" class="tab-menu-opennavi"><div></div></a>
+        <a href="#" id="menu" class="fi tab-menu-opennavi" aria-label="Avaa sivun navigointi"><div></div></a>
+        <a href="#" id="menu" class="sv tab-menu-opennavi" aria-label="Öppna sidnavigeringen"><div></div></a>
 
-        <div class="fi">
-          <div data-tab-id="physics" class="tab-menu-option">
-            <span class="tab-menu-option-long">Fysiikka</span><span class="tab-menu-option-short">FY</span>
-          </div>
-          <div data-tab-id="maps" class="tab-menu-option">
-            <span class="tab-menu-option-long">Kartat</span><span class="tab-menu-option-short">KAR</span>
-          </div>
-          <div data-tab-id="chemistry" class="tab-menu-option">
-            <span class="tab-menu-option-long">Kemia</span><span class="tab-menu-option-short">KE</span>
-          </div>
-          <div data-tab-id="math" class="tab-menu-option">
-            <span class="tab-menu-option-long">Matematiikka</span><span class="tab-menu-option-short">MA</span>
-          </div>
-          <div data-tab-id="muzak" class="tab-menu-option">
-            <span class="tab-menu-option-long">Musiikki</span><span class="tab-menu-option-short">MU</span>
-          </div>
-          <div data-tab-id="keyboard" class="tab-menu-option">
-            <span class="tab-menu-option-long">Näppäimistö</span><span class="tab-menu-option-short">NÄP</span>
-          </div>
-          <div data-tab-id="programming" class="tab-menu-option">
-            <span class="tab-menu-option-long">Ohjelmointi</span><span class="tab-menu-option-short">ATK</span>
-          </div>
-          <div data-tab-id="general" class="tab-menu-option active">
-            <span class="tab-menu-option-long">Yleisohjeet</span><span class="tab-menu-option-short">YL</span>
-          </div>
+        <nav class="fi" role="navigation" aria-label="Välilehdet">
+          <a href="#" data-tab-id="physics" class="tab-menu-option" accesskey="m">
+            <span class="tab-menu-option-long">Fysiikka</span><span class="tab-menu-option-short" aria-label="Fysiikka">FY</span>
+          </a>
+          <a href="#" data-tab-id="maps" class="tab-menu-option">
+            <span class="tab-menu-option-long">Kartat</span><span class="tab-menu-option-short" aria-label="Kartat">KAR</span>
+          </a>
+          <a href="#" data-tab-id="chemistry" class="tab-menu-option">
+            <span class="tab-menu-option-long">Kemia</span><span class="tab-menu-option-short" aria-label="Kemia">KE</span>
+          </a>
+          <a href="#" data-tab-id="math" class="tab-menu-option">
+            <span class="tab-menu-option-long">Matematiikka</span><span class="tab-menu-option-short" aria-label="Matematiikka">MA</span>
+          </a>
+          <a href="#" data-tab-id="muzak" class="tab-menu-option">
+            <span class="tab-menu-option-long">Musiikki</span><span class="tab-menu-option-short" aria-label="Musiikki">MU</span>
+          </a>
+          <a href="#" data-tab-id="keyboard" class="tab-menu-option">
+            <span class="tab-menu-option-long">Näppäimistö</span><span class="tab-menu-option-short" aria-label="Näppäimistö">NÄP</span>
+          </a>
+          <a href="#" data-tab-id="programming" class="tab-menu-option">
+            <span class="tab-menu-option-long">Ohjelmointi</span><span class="tab-menu-option-short" aria-label="Ohjelmointi">ATK</span>
+          </a>
+          <a href="#" data-tab-id="general" class="tab-menu-option active">
+            <span class="tab-menu-option-long">Yleisohjeet</span><span class="tab-menu-option-short" aria-label="Yleisohjeet">YL</span>
+          </a>
           <div class="tab-menu-language-selection">
-            <div data-lang-id="sv" class="tab-menu-language-option tab-menu-language-sv">
-              <span class="tab-menu-option-long">På svenska</span><span class="tab-menu-option-short">SV</span>
-            </div>
-            <div data-lang-id="fi" class="tab-menu-language-option tab-menu-language-fi active">
-              <span class="tab-menu-option-long">Suomeksi</span><span class="tab-menu-option-short">FI</span>
-            </div>
+            <a href="#" data-lang-id="sv" class="tab-menu-language-option tab-menu-language-sv">
+              <span class="tab-menu-option-long">På svenska</span><span class="tab-menu-option-short" aria-label="På svenska">SV</span>
+            </a>
+            <a href="#" data-lang-id="fi" class="tab-menu-language-option tab-menu-language-fi active">
+              <span class="tab-menu-option-long">Suomeksi</span><span class="tab-menu-option-short" aria-label="Suomeksi">FI</span>
+            </a>
           </div>
-        </div>
-        <div class="sv">
-          <div data-tab-id="physics" class="tab-menu-option">
-            <span class="tab-menu-option-long">Fysik</span><span class="tab-menu-option-short">FY</span>
-          </div>
-          <div data-tab-id="maps" class="tab-menu-option">
-            <span class="tab-menu-option-long">Kartor</span><span class="tab-menu-option-short">KAR</span>
-          </div>
-          <div data-tab-id="chemistry" class="tab-menu-option">
-            <span class="tab-menu-option-long">Kemi</span><span class="tab-menu-option-short">KE</span>
-          </div>
-          <div data-tab-id="math" class="tab-menu-option">
-            <span class="tab-menu-option-long">Matematik</span><span class="tab-menu-option-short">MA</span>
-          </div>
-          <div data-tab-id="muzak" class="tab-menu-option">
-            <span class="tab-menu-option-long">Musik</span><span class="tab-menu-option-short">MU</span>
-          </div>
-          <div data-tab-id="programming" class="tab-menu-option">
-            <span class="tab-menu-option-long">Programmering</span><span class="tab-menu-option-short">ADB</span>
-          </div>
-          <div data-tab-id="keyboard" class="tab-menu-option">
-            <span class="tab-menu-option-long">Tangentbord</span><span class="tab-menu-option-short">TAN</span>
-          </div>
-          <div data-tab-id="general" class="tab-menu-option active">
-            <span class="tab-menu-option-long">Allmänna instruktioner</span><span class="tab-menu-option-short">AI</span>
-          </div>
+        </nav>
+        <nav class="sv" role="navigation" aria-label="Flikarna">
+          <a href="#" data-tab-id="physics" class="tab-menu-option">
+            <span class="tab-menu-option-long">Fysik</span><span class="tab-menu-option-short" aria-label="Fysik">FY</span>
+          </a>
+          <a href="#" data-tab-id="maps" class="tab-menu-option">
+            <span class="tab-menu-option-long">Kartor</span><span class="tab-menu-option-short" aria-label="Kartor">KAR</span>
+          </a>
+          <a href="#" data-tab-id="chemistry" class="tab-menu-option">
+            <span class="tab-menu-option-long">Kemi</span><span class="tab-menu-option-short" aria-label="Kemi">KE</span>
+          </a>
+          <a href="#" data-tab-id="math" class="tab-menu-option">
+            <span class="tab-menu-option-long">Matematik</span><span class="tab-menu-option-short" aria-label="Matematik">MA</span>
+          </a>
+          <a href="#" data-tab-id="muzak" class="tab-menu-option">
+            <span class="tab-menu-option-long">Musik</span><span class="tab-menu-option-short" aria-label="Musik">MU</span>
+          </a>
+          <a href="#" data-tab-id="programming" class="tab-menu-option">
+            <span class="tab-menu-option-long">Programmering</span><span class="tab-menu-option-short" aria-label="Programmering">ADB</span>
+          </a>
+          <a href="#" data-tab-id="keyboard" class="tab-menu-option">
+            <span class="tab-menu-option-long">Tangentbord</span><span class="tab-menu-option-short" aria-label="Tangentbord">TAN</span>
+          </a>
+          <a href="#" data-tab-id="general" class="tab-menu-option active">
+            <span class="tab-menu-option-long">Allmänna instruktioner</span><span class="tab-menu-option-short" aria-label="Allmänna instruktioner">AI</span>
+          </a>
           <div class="tab-menu-language-selection">
-            <div data-lang-id="sv" class="tab-menu-language-option tab-menu-language-sv active">
-              <span class="tab-menu-option-long">På svenska</span><span class="tab-menu-option-short">SV</span>
-            </div>
-            <div data-lang-id="fi" class="tab-menu-language-option tab-menu-language-fi">
-              <span class="tab-menu-option-long">Suomeksi</span><span class="tab-menu-option-short">FI</span>
-            </div>
+            <a href="#" data-lang-id="sv" class="tab-menu-language-option tab-menu-language-sv active">
+              <span class="tab-menu-option-long">På svenska</span><span class="tab-menu-option-short" aria-label="På svenska">SV</span>
+            </a>
+            <a href="#" data-lang-id="fi" class="tab-menu-language-option tab-menu-language-fi">
+              <span class="tab-menu-option-long">Suomeksi</span><span class="tab-menu-option-short" aria-label="Suomeksi">FI</span>
+            </a>
           </div>
-        </div>
+        </nav>
       </div>
       <div class="tab-view">
         <div class="js-toc">
-          <div class="js-search">
-            <input type="search" id="js-search-input" placeholder="Hae/Sök" />
-            <div id="js-search-result-heading" style="display:none">
+          <div class="js-search" aria-role="presentation">
+            <label for="js-search-input" class="fi js-search-label" aria-role="presentation" accesskey="f" aria-label="Hae sivulta">
+              Hae
+              <input type="search" id="js-search-input"  />
+            </label>
+            <label for="js-search-input" class="sv js-search-label" aria-role="presentation" accesskey="f" aria-label="Sök från sidan">
+              Sök
+              <input type="search" id="js-search-input" />
+            </label>
+            <div id="js-search-result-heading" style="display:none" aria-role="presentation">
               <span class="fi">Hakutulokset</span>
               <span class="sv">Sökresultat</span>
             </div>
             <div id="js-search-result"></div>
           </div>
-          <div class="js-toc-result"></div>
+          <nav class="fi js-toc-result" aria-label="Sivun navigaatio"></nav>
+          <nav class="sv js-toc-result" aria-label="Sidnavigering"></nav>
         </div>
         <div class="js-toc-content">
           <div id="tab-general" class="tab-content active"></div>
