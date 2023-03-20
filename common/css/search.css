@@ -35,6 +35,7 @@
   list-style-type: none;
   text-decoration: none;
   padding: 5px 0;
+  display: block;
 }
 
 .search-result-item:hover {

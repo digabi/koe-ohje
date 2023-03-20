@@ -1,6 +1,8 @@
 import Fuse from 'fuse.js'
 import { debounce } from '../../util/debounce'
 
+import { getCurrentLanguage } from './language'
+
 interface SearchRecord {
   text: string
   elementRef: HTMLElement
@@ -38,12 +40,27 @@ export const createSearchIndex = () => {
   fuse = new Fuse(searchIndex, fuseOptions)
 }
 
+const getSearchItemAriaLabelPrefix = (): string => {
+  if (getCurrentLanguage() == 'fi') {
+    return 'Hakutulos: '
+  }
+  if (getCurrentLanguage() == 'sv') {
+    return 'Sökresult: '
+  }
+
+  return ''
+}
+
 const createSearchItem = (searchRecord: SearchRecord): HTMLElement => {
-  const result = document.createElement('div')
+  const result = document.createElement('a')
+  result.setAttribute('href', '#')
+  result.setAttribute('aria-label', getSearchItemAriaLabelPrefix() + searchRecord.text)
   result.classList.add('search-result-item')
   const isTitle = searchRecord.elementRef.tagName === 'H2' || searchRecord.elementRef.tagName === 'H3'
 
-  result.addEventListener('click', () => {
+  result.addEventListener('click', (event: Event) => {
+    event.preventDefault()
+
     let scrollTop = searchRecord.elementRef.getBoundingClientRect().y + window.scrollY
 
     // Top navigation offset in headers is already done with css
@@ -65,7 +82,6 @@ const createSearchItem = (searchRecord: SearchRecord): HTMLElement => {
 
 const renderSearchResults = () => {
   const searchInput = <HTMLInputElement>document.getElementById('js-search-input')
-
   const resultContainer = document.getElementById('js-search-result')
   while (resultContainer.firstChild) {
     resultContainer.removeChild(resultContainer.firstChild)
