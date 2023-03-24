@@ -9,7 +9,6 @@
   background-color: #fff;
   padding: 10px;
   color: #1E5075;
-  border: none;
   cursor: pointer;
   margin: 5px 0 5px 0;
 }
@@ -18,7 +17,6 @@
   background-color: #1E5075;
   padding: 10px;
   color: #fff;
-  border: none;
   cursor: pointer;
   margin: 5px 0 5px 0;
 }
@@ -29,4 +27,16 @@
 
 a {
   color: #1E5075;
+}
+
+a:focus {
+  color: black;
+}
+
+button {
+  border: transparent 2px solid;
+}
+
+button:focus {
+  border: black 2px solid;
 }

@@ -3,8 +3,20 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faPlay } from '@fortawesome/free-solid-svg-icons/faPlay'
 import { faPause } from '@fortawesome/free-solid-svg-icons/faPause'
 
+import { getCurrentLanguage } from './common/language'
+
 type AudioCtx = {
   [key: string]: AudioContext
+}
+
+const ariaLabelPlay = {
+  'fi': 'Soita',
+  'sv': 'Spela'
+}
+
+const ariaLabelPause = {
+  'fi': 'Pysäytä',
+  'sv': 'Pausa'
 }
 
 const audioCtx: AudioCtx = {}
@@ -39,6 +51,7 @@ const setButtonIconPause = (buttonId: string) => {
   buttons.forEach((element) => {
     element.innerHTML = '<i class="fas fa-pause"></i>'
     element.className = element.className.replace('tab-muzak-play', 'tab-muzak-pause')
+    element.setAttribute('aria-label', ariaLabelPause[getCurrentLanguage()])
   })
 }
 
@@ -47,6 +60,7 @@ const setButtonIconPlay = (buttonId: string) => {
   buttons.forEach((element) => {
     element.innerHTML = '<i class="fas fa-play"></i>'
     element.className = element.className.replace('tab-muzak-pause', 'tab-muzak-play')
+    element.setAttribute('aria-label', ariaLabelPlay[getCurrentLanguage()])
   })
 }
 
