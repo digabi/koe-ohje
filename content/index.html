@@ -21,8 +21,8 @@
         <a href="#" id="menu" class="fi tab-menu-opennavi" aria-label="Avaa sivun navigointi"><div></div></a>
         <a href="#" id="menu" class="sv tab-menu-opennavi" aria-label="Öppna sidnavigeringen"><div></div></a>
 
-        <nav class="fi" role="navigation" aria-label="Välilehdet">
-          <a href="#" data-tab-id="physics" class="tab-menu-option" accesskey="m">
+        <nav class="fi" role="navigation" aria-label="Välilehdet" title="Alt+T">
+          <a href="#" data-tab-id="physics" class="tab-menu-option">
             <span class="tab-menu-option-long">Fysiikka</span><span class="tab-menu-option-short" aria-label="Fysiikka">FY</span>
           </a>
           <a href="#" data-tab-id="maps" class="tab-menu-option">
@@ -55,7 +55,7 @@
             </a>
           </div>
         </nav>
-        <nav class="sv" role="navigation" aria-label="Flikarna">
+        <nav class="sv" role="navigation" aria-label="Flikarna" title="Alt+T">
           <a href="#" data-tab-id="physics" class="tab-menu-option">
             <span class="tab-menu-option-long">Fysik</span><span class="tab-menu-option-short" aria-label="Fysik">FY</span>
           </a>
@@ -93,11 +93,11 @@
       <div class="tab-view">
         <div class="js-toc">
           <div class="js-search" aria-role="presentation">
-            <label for="js-search-input" class="fi js-search-label" aria-role="presentation" accesskey="f" aria-label="Hae sivulta">
+            <label for="js-search-input" class="fi js-search-label" aria-role="presentation" aria-label="Hae sivulta, Alt+S" title="Alt+S">
               Hae
               <input type="search" id="js-search-input"  />
             </label>
-            <label for="js-search-input" class="sv js-search-label" aria-role="presentation" accesskey="f" aria-label="Sök från sidan">
+            <label for="js-search-input" class="sv js-search-label" aria-role="presentation" aria-label="Sök från sidan, Alt+S" title="Alt+S">
               Sök
               <input type="search" id="js-search-input" />
             </label>
@@ -108,8 +108,8 @@
             <nav id="js-search-result" class="fi" aria-label="Hakutulokset"></nav>
             <nav id="js-search-result" class="sv" aria-label="Sökresultat"></nav>
           </div>
-          <nav class="fi js-toc-result" aria-label="Sivun navigaatio"></nav>
-          <nav class="sv js-toc-result" aria-label="Sidnavigering"></nav>
+          <nav class="fi js-toc-result" aria-label="Sivun navigaatio, Alt+M" title="Alt+M"></nav>
+          <nav class="sv js-toc-result" aria-label="Sidnavigering, Alt+M" title="Alt+M"></nav>
         </div>
         <div class="js-toc-content">
           <div id="tab-general" class="tab-content active"></div>
@@ -128,17 +128,17 @@
     </div>
     <div id="copying_box" class="copying-box">
       <div id="copy-text" class="copy-text">
-        <span class="fi">Kaava kopioitu leikepöydälle.</span
-        ><span class="sv">Formeln har kopierats till urklippet</span>
+        <span class="fi">Kaava kopioitu leikepöydälle.</span>
+        <span class="sv">Formeln har kopierats till urklippet</span>
       </div>
     </div>
     <div id="copying_box_kbd" class="copying-box">
       <div id="copy-text-kbd" class="copy-text">
-        <span class="fi">Merkki kopioitu leikepöydälle.</span
-        ><span class="sv">Tecknet har kopierats till urklippet</span>
+        <span class="fi">Merkki kopioitu leikepöydälle.</span>
+        <span class="sv">Tecknet har kopierats till urklippet</span>
       </div>
     </div>
-    <div id="copying_box_code" class="copying-box">
+    <div id="copying_box_code" class="copying-box" aria-live="polite">
       <div id="copy-text-code" class="copy-text">
         <span class="fi">Ohjelmakoodi kopioitu leikepöydälle.</span>
         <span class="sv">Programkod har kopierats till urklippet</span>
@@ -150,6 +150,8 @@
         <span class="sv">Programutskriften har kopierats till urklippet</span>
       </div>
     </div>
+    <div id="screenreader-talk-polite" class="screenreader-only" aria-live="polite"></div>
+    
     <audio id="tab-muzak-loop1" src="../common/muzak/loop_1.mp3"></audio>
     <audio id="tab-muzak-loop2" src="../common/muzak/loop_2.mp3"></audio>
     <audio id="tab-muzak-loop3" src="../common/muzak/loop_3.mp3"></audio>

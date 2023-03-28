@@ -9,9 +9,9 @@ declare global {
 }
 
 self.MonacoEnvironment = {
-	getWorkerUrl: function () {
-		return './editor.worker.bundle.js'
-	}
+  getWorkerUrl: function () {
+    return './editor.worker.bundle.js'
+  }
 }
 
 const setLastCode = (code: string) => {
@@ -33,13 +33,17 @@ export const getCode = () => {
 }
 
 export const setMonacoReadOnly = (readOnly: boolean) => {
-  editor.updateOptions({readOnly: readOnly})
+  editor.updateOptions({ readOnly: readOnly })
 }
 
-export const initializeMonacoEditor = (codeEditorId: string) => {
+export const setFocusToMonacoEditor = () => {
+  editor.focus()
+}
+
+export const initializeMonacoEditor = (codeEditorId: string, fnExitFromMonaco: Function) => {
   editor = monaco.editor.create(document.getElementById(codeEditorId), {
     automaticLayout: true,
-  	language: 'python',
+    language: 'python',
     lineNumbersMinChars: 2,
     minimap: {
       enabled: false,
@@ -47,15 +51,22 @@ export const initializeMonacoEditor = (codeEditorId: string) => {
     scrollBeyondLastLine: false,
     tabSize: 3,
     renderWhitespace: 'all',
-		value: getLastCode(),
+    value: getLastCode(),
     wordWrap: 'on',
   })
 
-	document.getElementById(codeEditorId).addEventListener('keyup', () => {
-		setLastCode(editor.getValue())
-	})
+  editor.addAction({
+    id: 'koe-ohje-exit',
+    label: 'Execute',
+    keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.KeyX],
+    run: () => { fnExitFromMonaco() }
+  })
 
-	document.getElementById("tab-programming-ide-container").addEventListener('replaceEditorTextForTestingPurposes', (event: CustomEvent) => {
-		editor.setValue(event.detail.text)
-	})
+  document.getElementById(codeEditorId).addEventListener('keyup', () => {
+    setLastCode(editor.getValue())
+  })
+
+  document.getElementById("tab-programming-ide-container").addEventListener('replaceEditorTextForTestingPurposes', (event: CustomEvent) => {
+    editor.setValue(event.detail.text)
+  })
 }

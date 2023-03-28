@@ -7,18 +7,18 @@
 
       <div id="code-editor"></div>
 
-      <button class="code-editor-button code-editor-execute fi">Suorita ohjelma</button>
-      <button class="code-editor-button code-editor-execute sv">Kör programmet</button>
+      <button id="tab-programming-execute-code" class="code-editor-button code-editor-execute fi" title="Alt+R" aria-label="Suorita ohjelma, Alt+R">Suorita ohjelma</button>
+      <button id="tab-programming-execute-code" class="code-editor-button code-editor-execute sv" title="Alt+R" aria-label="Kör programmet, Alt+R">Kör programmet</button>
 
-      <button class="code-editor-button code-editor-copy fi">Kopioi leikepöydälle</button>
-      <button class="code-editor-button code-editor-copy sv">Kopiera till urklippet</button>
+      <button id="tab-programming-copy-code" class="code-editor-button code-editor-copy fi" title="Alt+C" aria-label="Kopioi leikepöydälle, Alt+C">Kopioi leikepöydälle</button>
+      <button id="tab-programming-copy-code" class="code-editor-button code-editor-copy sv" title="Alt+C" aria-label="Kopiera till urklippet, Alt+C">Kopiera till urklippet</button>
 
-      <p class="fi">Tulosteet / virheet:</p>
-      <p class="sv">Utskrift / felen:</p>
+      <p id="tab-programming-execution-result" class="fi" tabindex="0">Tulosteet / virheet:</p>
+      <p id="tab-programming-execution-result" class="sv" tabindex="0">Utskrift / felen:</p>
     </div>
 
-    <pre id="code-output" class="code-output-clickable"></pre>
-    <pre id="code-error" class="code-output-clickable"></pre>
+    <pre id="code-output" class="code-output-clickable" tabindex="0"></pre>
+    <pre id="code-error" class="code-output-clickable" tabindex="0"></pre>
   </div>
 
   <div id="tab-programming-doc-container">
@@ -42,7 +42,7 @@
 <h2 class="fi" id="toc-prog-cnyk">Tekstin tulostaminen</h2>
 <h2 class="sv" id="toc-prog-cnyk">Skriva ut text</h2>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 print("Hello world!")
 </pre>
 
@@ -56,7 +56,7 @@ Hello world!
 <p class="fi">Kommenttirivi alkaa <code>#</code>-merkillä. Kun koodi suoritetaan, hypätään kaikkien kommenttien yli.</p>
 <p class="sv">Kommentarsraden börjar med ett <code>#</code> tecken. När koden körs, hoppar man över alla kommentarer.</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 #This is a comment
 
 #This is a
@@ -72,7 +72,7 @@ a multiline comment
 <p class="fi">Kommentointi koodirivillä</p>
 <p class="sv">Kommentering på kodraden</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 name = "Onni"   # Set the value "Onni" to variable name
 </pre>
 
@@ -92,7 +92,7 @@ name = "Onni"   # Set the value "Onni" to variable name
   <li class="sv">Variabelnamn kan inte börja med en siffra</li>
 </ul>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 a = 84
 b = 356
 name = "Anna"
@@ -120,7 +120,7 @@ A list of numbers: [1, 2, 3, 4, 5]
 <p class="fi">Python valitsee automaattisesti parhaaksi arvaamansa tietotyypin. Tyypin voi tarkistaa komennolla <code>type()</code>.</p>
 <p class="sv">Python väljer automatiskt datatypen den gissar är bäst. Du kan kontrollera typen med kommandot <code>type()</code>.</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 name = "Lisa"       # string
 age = 34            # integer
 length = 168.5      # floating point number "decimal number"
@@ -145,7 +145,7 @@ print(type(numbers))
 <p class="fi">Muuttujan tyypin voi valita tarpeen mukaan:</p>
 <p class="sv">Datatypen av variabeln kan väljas efter behov:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 a = 7
 b = float(a)
 c = str(a)
@@ -179,7 +179,7 @@ print(2*c)
   Modulen tas i bruk med kommandot <code>import</code>. Det finns olika sätt.
 </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import math
 
 print(math.sqrt(5))
@@ -191,7 +191,7 @@ print(math.pi)
 3.141592653589793
 </pre>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 from math import sqrt
 
 print(sqrt(5))
@@ -204,7 +204,7 @@ print(sqrt(5))
 <p class="fi">Moduulin kaikki komennot saa käyttöön <code>import *</code> -komennolla:</p>
 <p class="sv">Alla kommandon i modulen kan tas i bruk med kommandot <code>import *</code>: </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 from math import *
 
 print(sqrt(5))
@@ -226,7 +226,7 @@ print(sin(5))
 <p class="fi">Yhteen-, vähennys-, kerto- ja jakolasku sekä potenssi ja itseisarvo:</p>
 <p class="sv">Addition, subtraktion, multiplikation och division samt potens och absolutvärde:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 print( 2+3 )
 print( 2-3 )
 print( 2*3 )
@@ -247,7 +247,7 @@ print( abs(-5) )
 <p class="fi">Kokonaislukujen jakolaskun kokonaisosa ja jakojäännös:</p>
 <p class="sv">Heltalsdelen och resten av divisionen av heltal:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 print(7//3)
 print(7%3)
 </pre>
@@ -263,7 +263,7 @@ print(7%3)
 <p class="fi">Pyöristäminen tapahtuu <code>round()</code>-funktiolla</p>
 <p class="sv">Avrundning görs med funktionen <code>round()</code> </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 a = 2/3
 
 print(a)
@@ -282,7 +282,7 @@ print(round(a,2))
 <p class="fi">Kulman yksikkö on radiaani.</p>
 <p class="sv">Vinkelenheten är radianer.</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import math
 
 x = math.cos(1.2)
@@ -300,7 +300,7 @@ print(z)
 2.5721516221263188
 </pre>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import math
 
 alpha = math.asin(1)
@@ -321,7 +321,7 @@ print(gamma)
 <p class="fi">Radiaanit ja asteet:</p>
 <p class="sv">Radianer och grader:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import math
 
 x = math.pi
@@ -343,7 +343,7 @@ print(60, "degrees is", math.radians(60), "radians.")
 <p class="fi">Neliöjuurelle löytyy oma komento <code>math</code>-moduulista. Muille juurille voi käyttää murtopotenssia.</p>
 <p class="sv">Kvadratroten har sitt eget kommando i modulen <code>math</code>. För andra rötter kan man använda potenser med exponenter i bråkform.</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import math
 
 print(math.sqrt(5))
@@ -361,7 +361,7 @@ print(8**(1/3))
 <p class="fi">Seuraavassa esimerkissä esiintyvät luonnollinen logaritmi sekä logaritmit, joiden kantaluvut ovat 10, 2 ja 3.</p>
 <p class="sv">Följande exempel visar en naturlig logaritm samt logaritmer med baserna 10, 2 och 3. </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import math
 
 a = math.log(10)
@@ -388,7 +388,7 @@ print(d)
 <p class="fi">Funktio e<sup>x</sup> löytyy komennolla <code>exp(x)</code>:</p>
 <p class="sv">Funktionen e<sup>x</sup> hittas med kommandot <code>exp(x)</code>:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import math
 
 a = math.exp(2)
@@ -409,7 +409,7 @@ print(b)
 <h3 class="fi" id="toc-prog-gcd">Suurin yhteinen tekijä</h3>
 <h3 class="sv" id="toc-prog-gcd">Den största gemensamma faktorn</h3>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import math
 
 d = math.gcd(6,9)
@@ -424,7 +424,7 @@ print(d)
 <h3 class="fi" id="toc-prog-lcm">Pienin yhteinen monikerta</h3>
 <h3 class="sv" id="toc-prog-lcm">Den minsta gemensamma multipeln</h3>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import numpy
 
 m = numpy.lcm(6,9)
@@ -439,7 +439,7 @@ print(m)
 <h2 class="fi" id="toc-prog-wniu">Syötteen lukeminen</h2>
 <h2 class="sv" id="toc-prog-wniu">Läsa inmatningar</h2>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 name = input("What is your name: ")
 
 print("It is good to meet you", name)
@@ -460,7 +460,7 @@ It is good to meet you Anna
 </p>
 
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 name = input("What is your name: ")
 
 age = int(input("How old are you? "))
@@ -497,7 +497,7 @@ Next year you are 17 years old.
   I If-villkorsstrukturen körs koden i blocket efter villkoret endast när det givna villkoret är sant (<code>True</code>).
 </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 name = "Anna"
 
 if name == "Anna":
@@ -520,7 +520,7 @@ Hello Anna!
    är varje rad indraget på samma sätt.
 </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 password = input("What is the password? ")
 
 if password == "nyancat":
@@ -582,7 +582,7 @@ not		ei		icke
   I if-else-strukturen körs alltid något av de alternativa blocken.
    Blocket <code>if</code> körs endast om villkoret är sant, och i alla andra fall körs blocket <code>else</code>.</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 number = 5
 
 if number % 2 == 0:
@@ -609,7 +609,7 @@ Your number is odd.
    Det kan finnas mer än en <code>elif</code>-gren, och den första som är sann körs.
 </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 number = 30
 
 if number == 0:
@@ -635,7 +635,7 @@ Your number is positive.
 <p class="fi"><code>for k in range(k, n)</code> käy läpi arvot \(k, k +1,\ldots , n - 1\).</p>
 <p class="fi"><code>for k in range(k, n)</code> går igenom värdena \(k, k +1,\ldots, n - 1\).</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 for i in range(1,5):
   print(i)
 </pre>
@@ -650,7 +650,7 @@ for i in range(1,5):
 <p class="fi"><code>range(n)</code> käy läpi arvot \(0, 1,\ldots , n - 1\).</p>
 <p class="sv"><code>range(n)</code> går igenom värdena \(0, 1,\ldots , n - 1\).</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 for i in range(5):
   print(i)
 </pre>
@@ -666,7 +666,7 @@ for i in range(5):
 <p class="fi"><code>range()</code>-funktiolla voi olla kolme parametria: <code>range(start, stop, step)</code>.</p>
 <p class="sv">Funktionen <code>range()</code> kan ha tre parametrar: <code>range(start, stop, step)</code>.</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 for i in range(1,15,2):
   print(i)
 </pre>
@@ -687,7 +687,7 @@ for i in range(1,15,2):
 <p class="fi"><code>while</code>-silmukka toistaa lohkoa niin kauan kuin ehto on voimassa.</p>
 <p class="sv"><code>while</code>-loopen upprepar blocket så länge villkoret är giltigt. </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 number = 1
 
 while number &lt; 1000:
@@ -711,7 +711,7 @@ while number &lt; 1000:
 <p class="fi">Silmukan voi lopettaa <code>break</code>-komennolla:</p>
 <p class="sv">Loopen kan avslutas med kommandot <code>break</code>:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 number = 1
 
 while True:
@@ -748,7 +748,7 @@ while True:
   Funktioner som producerar pseudoslumptal finns i modulen <code>random</code>.
 </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import random
 
 # Random decimal number in [0,1[
@@ -780,7 +780,7 @@ print(c)
 <p class="fi">Satunnainen alkio listalta:</p>
 <p class="sv">Slumpmässigt element från lista:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import random
 
 a = random.choice([2,5,7,9,100])
@@ -795,7 +795,7 @@ print(a)
 <p class="fi">Listan sekoittaminen:</p>
 <p class="sv">Blanda lista:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 import random
 
 numbers = [1, 2, 3, 4, 5, 10]
@@ -818,7 +818,7 @@ print(numbers)
 <p class="fi">Merkkijonojen yhdistäminen:</p>
 <p class="sv">Sätta ihop strängar:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 word1 = "cat"
 word2 = "dog"
 
@@ -834,7 +834,7 @@ catdog
 <p class="fi">Merkkijonon toistaminen:</p>
 <p class="sv">Upprepning av sträng:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 print(5*"cat")
 </pre>
 
@@ -845,7 +845,7 @@ catcatcatcatcat
 <p class="fi">Yksittäisen merkin poimiminen. Indeksointi alkaa nollasta.<p>
 <p class="sv">Plocka enstaka tecken. Indexeringer börjar från noll.<p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 word = "monkey"
 
 print(word[0])
@@ -861,7 +861,7 @@ k
 <p class="fi">Indeksien avulla voi valita osan merkkijonosta:</p>
 <p class="sv">Med hjälp av index kan man välja delar av strängar:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 word = "monkey"
 
 print(word[0:3])
@@ -876,7 +876,7 @@ onk
 <p class="fi">Merkkijonoja voi iteroida:</p>
 <p class="sv">Strängar kan itereras:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 word = "monkey"
 
 for letter in word:
@@ -895,7 +895,7 @@ y
 <p class="fi">Merkkijonon pituuden saa komennolla <code>len()</code>:</p>
 <p class="sv">Strängens längd kan erhållas med kommandot <code>len ()</code>: </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 word = "monkey"
 
 print(len(word))
@@ -911,7 +911,7 @@ print(len(word))
 <p class="fi">Lista merkitään hakasuluilla. Listan alkioihin viitataan indekseillä. Indeksointi alkaa nollasta.</p>
 <p class="sv">Listor betecknas med hakparenteser. Element i listan refereras genom index. Indexeringen börjar från noll.</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 numbers = [3,7,8,11]
 
 print(numbers[0])
@@ -926,7 +926,7 @@ print(numbers[1])
 <p class="fi">Alkioiden korvaaminen, lisääminen ja poistaminen:</p>
 <p class="sv">Ersätta, lägga till och avlägsna element:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 numbers = [3,7,8,11]
 print(numbers)
 
@@ -958,7 +958,7 @@ print(numbers)
 <h3 class="fi" id="toc-prog-fnrq">Listan pituus</h3>
 <h3 class="sv" id="toc-prog-fnrq">Listans längd</h3>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 numbers = [1, 3, 6, 7, 3, 2]
 
 n = len(numbers)
@@ -973,7 +973,7 @@ print(n)
 <h3 class="fi" id="toc-prog-sort">Järjestäminen</h3>
 <h3 class="sv" id="toc-prog-sort">Sortering</h3>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 numbers = [4, 11, -2, 8, 4]
 
 print(numbers)
@@ -994,7 +994,7 @@ print(numbers)
 <p class="fi">Listan voi käydä läpi <code>for</code>-silmukalla.</p>
 <p class="sv">Listan kan gås igenom med en <code>for</code>-loop. p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 numbers = [1, 3, 6, 7, 3, 2]
 
 for number in numbers:
@@ -1016,7 +1016,7 @@ for number in numbers:
 <p class="fi">Oma funktio määritellään komennolla <code>def</code>:</p>
 <p class="sv">Kommandot <code>def</code> används för att definiera egna funktioner:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 def f(x):
   return x**2 + 1
 
@@ -1032,7 +1032,7 @@ print( f(3) )
 <p class="fi">Funktiolla voi olla useampi kuin yksi parametri:</p>
 <p class="sv">En funktion kan ha fler än en parameter: </p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 def f(x,y):
   return x**2 + y**2
 
@@ -1046,7 +1046,7 @@ print( f(3,4) )
 <p class="fi">Funktiossa ei välttämättä tarvita parametria:</p>
 <p class="sv">Funktionen behöver inte nödvändigtvis en parameter:</p>
 
-<pre class="code-clickable">
+<pre class="code-clickable" tabindex="0">
 def say_hello():
   print("Hello there!")
 
