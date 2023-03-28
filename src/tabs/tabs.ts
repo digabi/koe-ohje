@@ -4,7 +4,7 @@ import { initializeTablesorter } from './common/tablesorter'
 import { initializeGeneralTab } from './general'
 import { initializeMapsTab } from './maps'
 import { initializeMuzakTab } from './muzak'
-import { initializeProgrammingTab } from './programming'
+import { initializeProgrammingTab, teardownProgrammingTab } from './programming'
 import './keyboard'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
@@ -56,6 +56,12 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
     initializeCopyToClipboard()
     initializeTablesorter()
     createSearchIndex()
+
+    switch (oldTab) {
+      case Tab.Programming:
+        teardownProgrammingTab()
+        break
+    }
 
     switch (newTab) {
       case Tab.General:
@@ -136,7 +142,36 @@ const handleBackButton = () => {
   }
 }
 
+const processGlobalKeybindings = (event: KeyboardEvent) => {
+  if (event.code === 'KeyT' && event.altKey) {
+    event.preventDefault()
+    const el = document.getElementsByClassName('tab-menu-option')[0] as HTMLElement
+    if (el) {
+      el.focus()
+    }
+    return
+  }
+
+  if (event.code === 'KeyS' && event.altKey) {
+    event.preventDefault()
+    const el = document.getElementById('js-search-input')
+    el.focus()
+    return
+  }
+
+  if (event.code === 'KeyM' && event.altKey) {
+    event.preventDefault()
+    const el = document.getElementsByClassName('toc-link')[0] as HTMLElement
+    if (el) {
+      el.focus()
+    }
+    return
+  }
+}
+
 export const initializeTabs = () => {
+  document.addEventListener('keydown', processGlobalKeybindings)
+
   const menuItems = Array.from(document.querySelectorAll('#tab-menu .tab-menu-option'))
   menuItems.forEach((element) => element.addEventListener('click', handleChangeTab))
 

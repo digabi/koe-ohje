@@ -1,8 +1,11 @@
 import './programming.css'
-import { initializeMonacoEditor, getCode, setMonacoReadOnly } from './common/monaco-editor'
-import { setCodeToClipboard } from './common/clipboard'
+import { initializeMonacoEditor, getCode, setMonacoReadOnly, setFocusToMonacoEditor } from './common/monaco-editor'
+import { setCodeToClipboard, setCodeOutputToClipboard } from './common/clipboard'
+import { screenReaderTalkPolite } from './common/screenreader'
+import { getCurrentLanguage } from './common/language'
 
 const codeEditorWrapperId = 'tab-programming-editor-wrapper'
+const codeExecutionResultId = 'tab-programming-execution-result'
 const codeEditorId = 'code-editor'
 const outputId = 'code-output'
 const errorId = 'code-error'
@@ -128,6 +131,8 @@ const executeCode = () => {
       printStderr(err.toString())
     }
   }
+
+  focusOutputOrError()
 }
 
 const copyCodeToClipboard = () => {
@@ -185,8 +190,71 @@ const initializePythonEngine = async () => {
   pyodideInitializing = false
 }
 
+const focusButtonExecuteCode = () => {
+  const el = document.getElementById('tab-programming-execute-code')
+  el.focus()
+}
+
+const focusButtonCopyCode = () => {
+  const el = document.getElementById('tab-programming-copy-code')
+  el.focus()
+}
+
+const focusOutputOrError = () => {
+  const el = document.getElementById('tab-programming-execution-result')
+  el.focus()
+}
+
+const processAccessibilityKeybindings = (event: KeyboardEvent) => {
+  if (event.code == 'KeyE' && event.altKey) {
+    event.preventDefault()
+    setFocusToMonacoEditor()
+    return
+  }
+
+  if (event.code == 'KeyR' && event.altKey) {
+    event.preventDefault()
+    focusButtonExecuteCode()
+    return
+  }
+
+  if (event.code === 'KeyC' && event.altKey) {
+    event.preventDefault()
+    focusButtonCopyCode()
+    return
+  }
+
+  if (event.code === 'Enter') {
+    const el = event.target as HTMLElement
+    if (el.className === 'code-clickable') {
+      setCodeToClipboard(el.innerText)
+      return
+    }
+    if (['code-output', 'code-error'].includes(el.id)) {
+      setCodeOutputToClipboard(el.innerText)
+      return
+    }
+    if (el.nodeName === 'BODY') {
+      switch (getCurrentLanguage()) {
+        case 'fi': {
+          screenReaderTalkPolite('Et ole koodialueella. Paina Tab tai Shift + Tab siirtyäksesi koodialueelle.')
+          break
+        }
+        case 'sv': {
+          screenReaderTalkPolite('FIXME:Et ole koodialueella. Paina Tab tai Shift + Tab siirtyäksesi koodialueelle.')
+          break
+        }
+      }
+    }
+  }
+}
+
 export const initializeProgrammingTab = () => {
-  initializeMonacoEditor(codeEditorId)
+  const monacoExitAction = (actionType: string) => {
+    focusButtonExecuteCode()
+  }
+
+  initializeMonacoEditor(codeEditorId, monacoExitAction)
   void initializePythonEngine()
 
   const executeButtons = Array.from(document.querySelectorAll(executeButtonSelector))
@@ -194,4 +262,10 @@ export const initializeProgrammingTab = () => {
 
   const copyToClipboardButtons = Array.from(document.querySelectorAll(copyCodeToClipboardButtonSelector))
   copyToClipboardButtons.forEach((element) => element.addEventListener('click', copyCodeToClipboard))
+
+  document.addEventListener('keydown', processAccessibilityKeybindings)
+}
+
+export const teardownProgrammingTab = () => {
+  document.removeEventListener('keydown', processAccessibilityKeybindings)
 }

@@ -1,3 +1,5 @@
+import { screenReaderTalkPolite } from './screenreader'
+
 const showSuccess = (boxId: string) => {
   const box = document.getElementById(boxId)
   const boxCopy = <HTMLElement>box.cloneNode(true)
@@ -6,6 +8,9 @@ const showSuccess = (boxId: string) => {
   if (!boxCopy.classList.contains('animate')) {
     boxCopy.classList.add('animate')
   }
+
+  const messageText = box.innerText
+  screenReaderTalkPolite(messageText)
 }
 
 const copyTextToClipboard = (text: string): Promise<void> => {
@@ -65,14 +70,22 @@ const copyTextContent = (event: MouseEvent) => {
   }
 }
 
-export const setCodeToClipboard = (text: string) => {
+const setTextToClipboard = (text: string, successMessageId: string) => {
   copyTextToClipboard(text)
     .then(() => {
-      showSuccess('copying_box_code')
+      showSuccess(successMessageId)
     })
     .catch(() => {
       alert('Copying to clipboard is not supported on your browser.')
     })
+}
+
+export const setCodeToClipboard = (text: string) => {
+  setTextToClipboard(text, 'copying_box_code')
+}
+
+export const setCodeOutputToClipboard = (text: string) => {
+  setTextToClipboard(text, 'copying_box_code_output')
 }
 
 let selectedEquation: HTMLElement
@@ -107,7 +120,7 @@ const copyEquation = (event: MouseEvent) => {
 }
 
 export const initializeCopyToClipboard = () => {
-  document.addEventListener('click', copyTextContent )
+  document.addEventListener('click', copyTextContent)
 
   const equationElements = Array.from(document.querySelectorAll('svg'))
   equationElements.forEach(element => element.addEventListener('click', copyEquation))
