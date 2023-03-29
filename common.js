@@ -33,9 +33,15 @@ const formatLatex = (input) =>
     })
   })
 
+const replaceFormulaSpansWithButtons = (pageText) => {
+  const fixedPageText = pageText.replace(/<span class="mjpage">(.*?aria-labelledby="(.*?)">.*?)<\/span>/gs, '<button class="mjpage" role="math" aria-labelledby="$2">$1</button>')
+  return fixedPageText
+}
+
 const replaceInPath = (path) => path.replace(/taulukot/g, 'build')
 
 module.exports = {
   formatLatex,
+  replaceFormulaSpansWithButtons,
   replaceInPath,
 }

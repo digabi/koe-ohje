@@ -34,8 +34,7 @@
   cursor: pointer;
 }
 
-.key.clickable:active,
-.mjpage svg:active {
+.key.clickable:active {
   box-shadow: none;
 }
 
@@ -69,7 +68,8 @@ table.row-highlight .plus {
   border: 0;
 }
 
-.tab-keyboard-pc, .tab-keyboard-mac {
+.tab-keyboard-pc,
+.tab-keyboard-mac {
   border-top-width: 0;
   border-right-width: 0;
   border-bottom-width: 0;

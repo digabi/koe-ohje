@@ -1,5 +1,5 @@
 const fs = require('fs-extra')
-const { formatLatex, replaceInPath } = require('./common')
+const { formatLatex, replaceFormulaSpansWithButtons, replaceInPath } = require('./common')
 
 const contentPath = './content/'
 const buildPath = './build/'
@@ -10,6 +10,7 @@ const readFromPath = (path) =>
   fs
     .readFile(contentPath + path)
     .then((file) => formatLatex(file.toString()))
+    .then((output) => replaceFormulaSpansWithButtons(output))
     .then((output) => fs.writeFile(buildPath + path, output))
     .then(() => {
       console.log(`Done with ${path}`)
