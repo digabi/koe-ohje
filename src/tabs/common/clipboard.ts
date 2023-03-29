@@ -1,3 +1,4 @@
+import { Keyboard } from 'puppeteer'
 import { screenReaderTalkPolite } from './screenreader'
 
 const showSuccess = (boxId: string) => {
@@ -89,8 +90,7 @@ export const setCodeOutputToClipboard = (text: string) => {
 }
 
 let selectedEquation: HTMLElement
-const copyEquation = (event: MouseEvent) => {
-  const target = event.target as HTMLElement
+const copyEquation = (event: MouseEvent | KeyboardEvent, target: HTMLElement) => {
   const latex = target.querySelector('title').textContent
   if (!latex) return
 
@@ -119,9 +119,26 @@ const copyEquation = (event: MouseEvent) => {
   showSuccess('copying_box')
 }
 
+const copyEquationClickHandler = (event: MouseEvent) => {
+  const targetElement = event.target as HTMLElement
+  copyEquation(event, targetElement)
+}
+
+const copyEquationKeyboardHandler = (event: KeyboardEvent) => {
+  if (event.code === 'Enter') {
+    const el = event.target as HTMLElement
+
+    if (el.tagName === 'BUTTON' && el.className === 'mjpage') {
+      copyEquation(event, el)
+    }
+  }
+}
+
 export const initializeCopyToClipboard = () => {
   document.addEventListener('click', copyTextContent)
 
   const equationElements = Array.from(document.querySelectorAll('svg'))
-  equationElements.forEach(element => element.addEventListener('click', copyEquation))
+  equationElements.forEach(element => element.addEventListener('click', copyEquationClickHandler))
+
+  document.addEventListener('keydown', copyEquationKeyboardHandler)
 }
