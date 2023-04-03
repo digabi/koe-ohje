@@ -1,10 +1,14 @@
+import { Keyboard } from 'puppeteer'
 import './tablesorter.css'
+import { screenReaderTalkPolite } from './screenreader'
+import { getCurrentLanguage } from './language'
 
 const resetSort = (table: HTMLElement) => {
   const headers = table.querySelectorAll<HTMLElement>('th[data-sortable]')
   headers.forEach(header => {
     header.dataset.sorted = 'asc'
     header.classList.remove('active')
+    header.removeAttribute('aria-sort')
   })
 }
 
@@ -21,7 +25,7 @@ const comparer = (index: number, asc: boolean) => (a: HTMLElement, b: HTMLElemen
   })
 }
 
-const sort = (table: HTMLElement, header: HTMLTableHeaderCellElement) => {
+const sort = (table: HTMLElement, header: HTMLTableCellElement) => {
   const tbody = table.querySelector('tbody')
   const columnIndex = header.cellIndex
   const sortAsc = header.dataset.sorted === 'asc'
@@ -31,33 +35,58 @@ const sort = (table: HTMLElement, header: HTMLTableHeaderCellElement) => {
     .forEach(row => tbody.appendChild(row))
 }
 
-const handleHeaderClick = (event: MouseEvent) => {
-  const target = <HTMLTableHeaderCellElement>event.target
+const handleHeaderClick = (target: HTMLTableCellElement) => {
   const table = target.closest('table')
 
   let newOrder = 'asc'
+  let newOrderAriaSort = ''
   if (target.classList.contains('active')) {
     newOrder = target.dataset.sorted === 'asc' ? 'desc' : 'asc'
+    newOrderAriaSort = target.dataset.sorted === 'asc' ? 'descending' : 'ascending'
   }
 
   resetSort(table)
 
   target.dataset.sorted = newOrder
+  target.setAttribute('aria-sort', newOrderAriaSort)
   target.classList.add('active')
 
   sort(table, target)
 }
 
+const handleHeaderMouseClick = (event: MouseEvent) => {
+  const target = event.target as HTMLTableCellElement
+  handleHeaderClick(target)
+}
+
+const handleKeyboardEvents = (event: KeyboardEvent) => {
+  if (event.code === 'Enter') {
+    const target = event.target as HTMLTableCellElement
+
+    if (target.tagName === 'TH' && target.hasAttribute('data-sortable')) {
+      if (getCurrentLanguage() === 'fi') {
+        screenReaderTalkPolite(`Järjestetään taulukko uudelleen sarakkeen ${target.innerText} mukaan`)
+      }
+      if (getCurrentLanguage() === 'sv') {
+        screenReaderTalkPolite('FIXME:Järjestetään taulukko uudelleen')
+      }
+      handleHeaderClick(target)
+    }
+  }
+}
+
 export const initializeTablesorter = () => {
   const sortableTables = document.querySelectorAll<HTMLElement>('table.sortable')
   sortableTables.forEach(table => {
-    const headers = table.querySelectorAll<HTMLTableHeaderCellElement>('th[data-sortable]')
+    const headers = table.querySelectorAll('th[data-sortable]')
     headers.forEach(header => {
-      header.addEventListener('click', handleHeaderClick)
+      header.addEventListener('click', handleHeaderMouseClick)
 
       if (header.classList.contains('active')) {
         sort(table, header)
       }
     })
   })
+
+  document.addEventListener('keydown', handleKeyboardEvents)
 }

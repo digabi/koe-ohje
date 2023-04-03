@@ -24,20 +24,15 @@ table.sortable th[data-sortable] {
   background-position: center right;
 }
 
+table.sortable th[data-sortable]:focus {
+  padding: calc(0.5em - 2px);
+  border: 3px solid black;
+}
+
 table.sortable th.active[data-sorted='asc'] {
   background-image: url(/common/images/tablesorter/asc.gif);
 }
 
 table.sortable th.active[data-sorted='desc'] {
   background-image: url(/common/images/tablesorter/desc.gif);
-}
-
-table.sortable th::after {
-  content: '...';
-  color: white;
-}
-
-table.sortable th.active::after {
-  content: '...';
-  color: #359bb7;
 }
