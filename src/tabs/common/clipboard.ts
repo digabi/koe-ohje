@@ -128,7 +128,7 @@ const copyEquationKeyboardHandler = (event: KeyboardEvent) => {
   if (event.code === 'Enter') {
     const el = event.target as HTMLElement
 
-    if (el.tagName === 'BUTTON' && el.className === 'mjpage') {
+    if (el.tagName === 'BUTTON' && el.classList.contains('mjpage')) {
       copyEquation(event, el)
     }
   }
@@ -137,7 +137,7 @@ const copyEquationKeyboardHandler = (event: KeyboardEvent) => {
 export const initializeCopyToClipboard = () => {
   document.addEventListener('click', copyTextContent)
 
-  const equationElements = Array.from(document.querySelectorAll('svg'))
+  const equationElements = Array.from(document.querySelectorAll('button.mjpage'))
   equationElements.forEach(element => element.addEventListener('click', copyEquationClickHandler))
 
   document.addEventListener('keydown', copyEquationKeyboardHandler)
