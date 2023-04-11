@@ -34,8 +34,15 @@ const formatLatex = (input) =>
   })
 
 const replaceFormulaSpansWithButtons = (pageText) => {
-  const fixedPageText = pageText.replace(/<span class="mjpage">(.*?aria-labelledby="(.*?)">.*?)<\/span>/gs, '<button class="mjpage" role="math" aria-labelledby="$2">$1</button>')
-  return fixedPageText
+  const inlineFormulasReplacedPageText = pageText.replace(
+    /<span class="mjpage">(.*?aria-labelledby="(.*?)">.*?)<\/span>/gs,
+    '<button class="mjpage" role="math" aria-labelledby="$2">$1</button>'
+  )
+  const blockFormulasReplacedPageText = inlineFormulasReplacedPageText.replace(
+    /<span class="mjpage mjpage__block">(.*?aria-labelledby="(.*?)">.*?)<\/span>/gs,
+    '<button class="mjpage mjpage__block" role="math" aria-labelledby="$2">$1</button>'
+  )
+  return blockFormulasReplacedPageText
 }
 
 const replaceInPath = (path) => path.replace(/taulukot/g, 'build')

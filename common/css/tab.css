@@ -376,6 +376,10 @@ h3 {
   transition: all 0.2s ease-in-out;
 }
 
+.mjpage {
+  margin: 2px;
+}
+
 .mjpage a,
 .mjpage a:visited,
 .mjpage a:hover,
@@ -402,6 +406,16 @@ button.mjpage {
 
 button.mjpage:focus {
   margin: 0;
+}
+
+button.mjpage__block,
+button.mjpage__block:focus {
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+button.mjpage__block {
+  border: transparent 2px solid;
 }
 
 /* Ajax loader */
