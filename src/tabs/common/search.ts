@@ -3,6 +3,8 @@ import { debounce } from '../../util/debounce'
 
 import { getCurrentLanguage } from './language'
 
+import './search.css'
+
 interface SearchRecord {
   text: string
   elementRef: HTMLElement
@@ -61,6 +63,9 @@ const createSearchItem = (searchRecord: SearchRecord): HTMLElement => {
   result.addEventListener('click', (event: Event) => {
     event.preventDefault()
 
+    searchRecord.elementRef.setAttribute("tabindex", "0")
+    searchRecord.elementRef.focus()
+
     let scrollTop = searchRecord.elementRef.getBoundingClientRect().y + window.scrollY
 
     // Top navigation offset in headers is already done with css
@@ -69,6 +74,8 @@ const createSearchItem = (searchRecord: SearchRecord): HTMLElement => {
     }
 
     window.scrollTo({ top: scrollTop, behavior: 'smooth' })
+
+    setTimeout(() => { searchRecord.elementRef.removeAttribute("tabindex") }, 0)
   })
 
   result.innerHTML = searchRecord.elementRef.innerHTML

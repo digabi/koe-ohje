@@ -1,6 +1,33 @@
 import { Page, expect } from '@playwright/test'
 import { newPage, newBrowserContext } from './utils'
 
+const waitElementToAppearInViewport = async (page: Page, elementId: string, timeout: number): Promise<Boolean> => {
+  const delay = (ms: number) => new Promise(res => setTimeout(res, ms))
+
+  const endTime = timeout + Date.now()
+
+  while (Date.now() < endTime) {
+    const elTop = await page.evaluate((elementId) => {
+      const el = document.querySelector(elementId)
+
+      if (!el) {
+        return -1
+      }
+
+      const rect = el.getBoundingClientRect()
+      return rect.top
+    }, elementId)
+
+    if (elTop > 0 && elTop <= page.viewportSize().height) {
+      return true
+    }
+
+    await delay(100)
+  }
+
+  return false
+}
+
 describe('Search', () => {
   let page: Page
 
@@ -73,6 +100,34 @@ describe('Search', () => {
           await expect(page.locator('.search-result-item').first()).toHaveAttribute('aria-label', ariaLabelPrefix)
         }
       }
+    })
+  })
+
+  describe('Navigation in search results', () => {
+    it('moves page focus when clicking on the search result', async () => {
+      await page.goto('http://localhost:8080/build/index.html?fi&math#')
+      await page.type('#js-search-input', 'suorakulmio')
+
+      page.locator('.search-result-item').nth(1).click()
+
+      const elementFound = await waitElementToAppearInViewport(page, '#toc-math-wlfe', 5000)
+      expect(elementFound).toBeTruthy()
+    })
+
+    it('moves page gocus when navigating by keyboard among search results', async () => {
+      await page.goto('http://localhost:8080/build/index.html?fi&math#')
+
+      await page.focus('#js-search-input')
+      await expect(page.locator('#js-search-input')).toBeFocused()
+
+      await page.keyboard.type('suorakulmio', { delay: 500 })
+
+      await page.keyboard.press('Tab', { delay: 500 })
+      await page.keyboard.press('Tab', { delay: 500 })
+      await page.keyboard.press('Enter', { delay: 500 })
+
+      const elementFound = await waitElementToAppearInViewport(page, '#toc-math-wlfe', 5000)
+      expect(elementFound).toBeTruthy()
     })
   })
 })
