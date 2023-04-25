@@ -57,8 +57,15 @@ export const initializeMonacoEditor = (codeEditorId: string, fnExitFromMonaco: F
 
   editor.addAction({
     id: 'koe-ohje-exit',
-    label: 'Execute',
+    label: 'Exit from editor',
     keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.KeyX],
+    run: () => { fnExitFromMonaco() }
+  })
+
+  editor.addAction({
+    id: 'koe-ohje-run',
+    label: 'Exit from editor',
+    keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.KeyR],
     run: () => { fnExitFromMonaco() }
   })
 
