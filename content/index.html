@@ -18,10 +18,10 @@
   <body>
     <div id="tab-container">
       <div id="tab-menu">
-        <a href="#" id="menu" class="fi tab-menu-opennavi" aria-label="Avaa sivun navigointi"><div></div></a>
-        <a href="#" id="menu" class="sv tab-menu-opennavi" aria-label="Öppna sidnavigeringen"><div></div></a>
+        <a href="#" id="menu" lang="fi" class="tab-menu-opennavi" aria-label="Avaa sivun navigointi"><div></div></a>
+        <a href="#" id="menu" lang="sv" class="tab-menu-opennavi" aria-label="Öppna sidnavigeringen"><div></div></a>
 
-        <nav class="fi" role="navigation" aria-label="Välilehdet" title="Alt+T" aria-keyshortcuts="Alt+t">
+        <nav lang="fi" role="navigation" aria-label="Välilehdet" title="Alt+T" aria-keyshortcuts="Alt+t">
           <a href="#" data-tab-id="physics" class="tab-menu-option">
             <span class="tab-menu-option-long">Fysiikka</span><span class="tab-menu-option-short" aria-label="Fysiikka">FY</span>
           </a>
@@ -55,7 +55,7 @@
             </a>
           </div>
         </nav>
-        <nav class="sv" role="navigation" aria-label="Flikarna" title="Alt+T" aria-keyshortcuts="Alt+t">
+        <nav lang="sv" role="navigation" aria-label="Flikarna" title="Alt+T" aria-keyshortcuts="Alt+t">
           <a href="#" data-tab-id="physics" class="tab-menu-option">
             <span class="tab-menu-option-long">Fysik</span><span class="tab-menu-option-short" aria-label="Fysik">FY</span>
           </a>
@@ -93,23 +93,23 @@
       <div class="tab-view">
         <div class="js-toc">
           <div class="js-search" aria-role="presentation">
-            <label for="js-search-input" class="fi js-search-label" aria-role="presentation" aria-label="Hae sivulta, Alt+S" title="Alt+S" aria-keyshortcuts="Alt+s">
+            <label for="js-search-input" lang="fi" class="js-search-label" aria-role="presentation" aria-label="Hae sivulta, Alt+S" title="Alt+S" aria-keyshortcuts="Alt+s">
               Hae
               <input type="search" id="js-search-input"  />
             </label>
-            <label for="js-search-input" class="sv js-search-label" aria-role="presentation" aria-label="Sök från sidan, Alt+S" title="Alt+S" aria-keyshortcuts="Alt+s">
+            <label for="js-search-input" lang="sv" class="js-search-label" aria-role="presentation" aria-label="Sök från sidan, Alt+S" title="Alt+S" aria-keyshortcuts="Alt+s">
               Sök
               <input type="search" id="js-search-input" />
             </label>
             <div id="js-search-result-heading" style="display:none" aria-role="presentation">
-              <span class="fi">Hakutulokset</span>
-              <span class="sv">Sökresultat</span>
+              <span lang="fi">Hakutulokset</span>
+              <span lang="sv">Sökresultat</span>
             </div>
-            <nav id="js-search-result" class="fi" aria-label="Hakutulokset"></nav>
-            <nav id="js-search-result" class="sv" aria-label="Sökresultat"></nav>
+            <nav id="js-search-result" lang="fi" aria-label="Hakutulokset"></nav>
+            <nav id="js-search-result" lang="sv" aria-label="Sökresultat"></nav>
           </div>
-          <nav class="fi js-toc-result" aria-label="Sivun navigaatio, Alt+M" title="Alt+M" aria-keyshortcuts="Alt+m"></nav>
-          <nav class="sv js-toc-result" aria-label="Sidnavigering, Alt+M" title="Alt+M" aria-keyshortcuts="Alt+m"></nav>
+          <nav lang="fi" class="js-toc-result" aria-label="Sivun navigaatio, Alt+M" title="Alt+M" aria-keyshortcuts="Alt+m"></nav>
+          <nav lang="sv" class="js-toc-result" aria-label="Sidnavigering, Alt+M" title="Alt+M" aria-keyshortcuts="Alt+m"></nav>
         </div>
         <div class="js-toc-content">
           <div id="tab-general" class="tab-content active"></div>
@@ -124,30 +124,30 @@
       </div>
     </div>
     <div id="loading">
-      <div id="loading-text"><span class="fi">Ladataan...</span><span class="sv">Laddas...</span></div>
+      <div id="loading-text"><span lang="fi">Ladataan...</span><span lang="sv">Laddas...</span></div>
     </div>
     <div id="copying_box" class="copying-box">
       <div id="copy-text" class="copy-text">
-        <span class="fi">Kaava kopioitu leikepöydälle.</span>
-        <span class="sv">Formeln har kopierats till urklippet</span>
+        <span lang="fi">Kaava kopioitu leikepöydälle.</span>
+        <span lang="sv">Formeln har kopierats till urklippet</span>
       </div>
     </div>
     <div id="copying_box_kbd" class="copying-box">
       <div id="copy-text-kbd" class="copy-text">
-        <span class="fi">Merkki kopioitu leikepöydälle.</span>
-        <span class="sv">Tecknet har kopierats till urklippet</span>
+        <span lang="fi">Merkki kopioitu leikepöydälle.</span>
+        <span lang="sv">Tecknet har kopierats till urklippet</span>
       </div>
     </div>
     <div id="copying_box_code" class="copying-box" aria-live="polite">
       <div id="copy-text-code" class="copy-text">
-        <span class="fi">Ohjelmakoodi kopioitu leikepöydälle.</span>
-        <span class="sv">Programkod har kopierats till urklippet</span>
+        <span lang="fi">Ohjelmakoodi kopioitu leikepöydälle.</span>
+        <span lang="sv">Programkod har kopierats till urklippet</span>
       </div>
     </div>
     <div id="copying_box_code_output" class="copying-box">
       <div id="copy-text-code-output" class="copy-text">
-        <span class="fi">Ohjelman tulostus kopioitu leikepöydälle.</span>
-        <span class="sv">Programutskriften har kopierats till urklippet</span>
+        <span lang="fi">Ohjelman tulostus kopioitu leikepöydälle.</span>
+        <span lang="sv">Programutskriften har kopierats till urklippet</span>
       </div>
     </div>
     <div id="screenreader-talk-polite" class="screenreader-only" aria-live="polite"></div>

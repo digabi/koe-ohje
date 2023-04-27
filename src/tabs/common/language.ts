@@ -76,7 +76,7 @@ export const initializeLanguage = () => {
 
   setCurrentLanguage(guessLanguageForSession())
   const languageToRemove = getCurrentLanguage() === Language.finnish ? Language.swedish : Language.finnish
-  const wrongLanguageElements = document.querySelectorAll(`.${languageToRemove}`)
+  const wrongLanguageElements = document.querySelectorAll(`[lang='${languageToRemove}']`)
   wrongLanguageElements.forEach(element => element.parentNode.removeChild(element))
 
   const languageItems = Array.from(document.querySelectorAll('.tab-menu-language-option'))
