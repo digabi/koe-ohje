@@ -16,6 +16,7 @@ export const getCurrentLanguage = (): Language => {
 const setCurrentLanguage = (newLanguage: Language) => {
   currentLanguage = newLanguage
   setPreviousLanguage(newLanguage)
+  setLocalisedPageTitle(newLanguage)
 }
 
 const setPreviousLanguage = (language: Language) => {
@@ -24,6 +25,12 @@ const setPreviousLanguage = (language: Language) => {
 
 const getPreviousLanguage = (): Language => {
   return <Language>window.localStorage.getItem(localStorageLanguageKey)
+}
+
+const setLocalisedPageTitle = (language: Language) => {
+  const headingElement = document.head.querySelector(`[property~=title-${language}][content]`) as HTMLMetaElement
+  const localisedTitle = headingElement.content
+  document.title = localisedTitle
 }
 
 export const guessLanguageForSession = () => {
