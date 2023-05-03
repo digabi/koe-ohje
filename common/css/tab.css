@@ -65,14 +65,8 @@ a {
 }
 
 button {
-  font-weight: 700;
-  margin: 20px 0px 20px 0px;
-  background-color: #eee;
+  background-color: white;
   border-radius: 5px;
-  border: 1px solid #ddc;
-  padding: 5px 5px 5px 5px;
-  color: #9999a7;
-  border-width: 1px;
 }
 
 #tab-container {
