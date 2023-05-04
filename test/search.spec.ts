@@ -2,7 +2,7 @@ import { Page, expect } from '@playwright/test'
 import { newPage, newBrowserContext } from './utils'
 
 const waitElementToAppearInViewport = async (page: Page, elementId: string, timeout: number): Promise<Boolean> => {
-  const delay = (ms: number) => new Promise(res => setTimeout(res, ms))
+  const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
   const endTime = timeout + Date.now()
 
@@ -46,42 +46,42 @@ describe('Search', () => {
           lang: 'fi',
           tabSelector: 'text=FYSIIKKA',
           searchTerm: 'kilogramma',
-          expectedHits: 3
+          expectedHits: 3,
         },
         {
           lang: 'sv',
           tabSelector: 'text=FYSIK',
           searchTerm: 'kilogram',
-          expectedHits: 6
+          expectedHits: 6,
         },
         {
           lang: 'fi',
           tabSelector: 'text=KEMIA',
           searchTerm: 'fosfori',
-          expectedHits: 3
+          expectedHits: 3,
         },
         {
           lang: 'sv',
           tabSelector: 'text=KEMI',
           searchTerm: 'foobaryeah',
-          expectedHits: 0
+          expectedHits: 0,
         },
         {
           lang: 'fi',
           tabSelector: 'text=MATEMATIIKKA',
           searchTerm: 'd(x)',
-          expectedHits: 10
+          expectedHits: 10,
         },
         {
           lang: 'sv',
           tabSelector: 'text=MATEMATIK',
           searchTerm: '\\mathrm',
-          expectedHits: 10
-        }
+          expectedHits: 10,
+        },
       ]
 
       for (const testCase of testGrid) {
-        await page.goto('http://localhost:8080/build/index.html?' + testCase.lang)
+        await page.goto(`http://localhost:8080/build/index.html?${testCase.lang}`)
         await page.click(testCase.tabSelector)
         await page.type('#js-search-input', testCase.searchTerm)
 
@@ -108,9 +108,10 @@ describe('Search', () => {
       await page.goto('http://localhost:8080/build/index.html?fi&math#')
       await page.type('#js-search-input', 'suorakulmio')
 
-      page.locator('.search-result-item').nth(1).click()
+      await page.locator('.search-result-item').nth(1).click()
 
       const elementFound = await waitElementToAppearInViewport(page, '#toc-math-wlfe', 5000)
+
       expect(elementFound).toBeTruthy()
     })
 

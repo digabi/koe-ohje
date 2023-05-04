@@ -10,13 +10,13 @@ type AudioCtx = {
 }
 
 const ariaLabelPlay = {
-  'fi': 'Soita',
-  'sv': 'Spela'
+  fi: 'Soita',
+  sv: 'Spela',
 }
 
 const ariaLabelPause = {
-  'fi': 'Pysäytä',
-  'sv': 'Pausa'
+  fi: 'Pysäytä',
+  sv: 'Pausa',
 }
 
 const audioCtx: AudioCtx = {}
