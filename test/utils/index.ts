@@ -6,7 +6,7 @@ let browser: ChromiumBrowser
 // eslint-disable-next-line mocha/no-exports
 export const isInDebugMode = (process.env.PUPPETEER_DEBUG || '') === '1'
 
-// eslint-disable-next-line mocha/handle-done-callback
+// eslint-disable-next-line mocha/handle-done-callback, mocha/no-top-level-hooks
 before(async function (this: mocha.Context) {
   if (isInDebugMode && this.currentTest) {
     this.currentTest.timeout(0)
@@ -14,6 +14,7 @@ before(async function (this: mocha.Context) {
   browser = await launchBrowser()
 })
 
+// eslint-disable-next-line mocha/no-top-level-hooks
 after(async () => {
   await browser.close()
 })

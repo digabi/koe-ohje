@@ -29,10 +29,10 @@ describe('Language', () => {
 
     it('should have correct page title', async () => {
       await page.goto('http://localhost:8080/build/index.html?fi')
-      await expect(page).toHaveTitle("Koeympäristön ohjeet")
+      await expect(page).toHaveTitle('Koeympäristön ohjeet')
 
       await page.goto('http://localhost:8080/build/index.html?sv')
-      await expect(page).toHaveTitle("Provmiljöns instruktioner")
+      await expect(page).toHaveTitle('Provmiljöns instruktioner')
     })
   })
 
