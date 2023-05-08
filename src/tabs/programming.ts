@@ -241,7 +241,9 @@ const processAccessibilityKeybindings = (event: KeyboardEvent) => {
           break
         }
         case 'sv': {
-          screenReaderTalkPolite('FIXME:Et ole koodialueella. Paina Tab tai Shift + Tab siirtyäksesi koodialueelle.')
+          screenReaderTalkPolite(
+            'Ni är inte på kodområdet. Tryck på Tab eller Shift + Tab för att byta till kodområdet.'
+          )
           break
         }
       }
