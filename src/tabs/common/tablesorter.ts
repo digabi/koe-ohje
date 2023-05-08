@@ -68,7 +68,7 @@ const handleKeyboardEvents = (event: KeyboardEvent) => {
         screenReaderTalkPolite(`Järjestetään taulukko uudelleen sarakkeen ${target.innerText} mukaan`)
       }
       if (getCurrentLanguage() === 'sv') {
-        screenReaderTalkPolite('FIXME:Järjestetään taulukko uudelleen')
+        screenReaderTalkPolite(`Tabellen arrangeras på nytt efter kolumn ${target.innerText}`)
       }
       handleHeaderClick(target)
     }
