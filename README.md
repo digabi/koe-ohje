@@ -78,3 +78,4 @@ Tuloksena on `output.webm`
 - Fysiikka: Riitta Salmenoja, Ville Havu, Kristian Meinander
 - Kemia: Katariina Tammi
 - [FontAwesome 5](https://github.com/FortAwesome/Font-Awesome)
+
