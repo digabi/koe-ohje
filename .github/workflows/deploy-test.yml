@@ -41,6 +41,6 @@ jobs:
           mkdir -p release
           cp -r common release/
           cp -r build release/
-          cp -r index.html release/
+          cp -r index.html accessibility-fi.html accessibility-sv.html release/
       - name: Sync release files into the test bucket
         run: aws s3 sync release/ s3://${{ secrets.TEST_DEPLOY_BUCKET_NAME }}
