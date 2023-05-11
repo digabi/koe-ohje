@@ -44,3 +44,5 @@ jobs:
           cp -r index.html accessibility-fi.html accessibility-sv.html release/
       - name: Sync release files into the test bucket
         run: aws s3 sync release/ s3://${{ secrets.TEST_DEPLOY_BUCKET_NAME }}
+      - name: Invalidate Cloudfront
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.TEST_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
