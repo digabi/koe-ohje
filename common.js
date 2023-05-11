@@ -47,8 +47,14 @@ const replaceFormulaSpansWithButtons = (pageText) => {
 
 const replaceInPath = (path) => path.replace(/taulukot/g, 'build')
 
+const replaceTagRandom = (pageText) => {
+  const randomString = Date.now()
+  return pageText.replace(/###RANDOM###/g, randomString)
+}
+
 module.exports = {
   formatLatex,
   replaceFormulaSpansWithButtons,
   replaceInPath,
+  replaceTagRandom,
 }
