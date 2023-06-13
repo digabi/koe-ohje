@@ -1,10 +1,9 @@
 import { createWorldMap, createTerrainMap } from '@digabi/maps'
 import { getCurrentLanguage, Language } from './common/language'
+import { mapTilesUrl } from './tabs'
 
 import './maps.css'
 import 'leaflet/dist/leaflet.css'
-
-const mapTilesUrl = process.env.MAP_TILES_URL
 
 const setupWorldMap = () => {
   const mapUrlSv = `${mapTilesUrl}/world/sv/{z}/{x}/{y}.png`
