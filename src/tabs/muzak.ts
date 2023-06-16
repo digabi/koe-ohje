@@ -4,10 +4,36 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons/faPlay'
 import { faPause } from '@fortawesome/free-solid-svg-icons/faPause'
 
 import { getCurrentLanguage } from './common/language'
+import { mapTilesUrl } from './tabs'
 
 type AudioCtx = {
   [key: string]: AudioContext
 }
+
+type AudioResource = {
+  id: string
+  src: string
+}
+
+const audioResources: AudioResource[] = [
+  { id: 'tab-muzak-music-xa', src: 'canton_white_noise_and_heartbeat.mp3' },
+  { id: 'tab-muzak-music-bc', src: 'scott_hamster_haven.mp3' },
+  { id: 'tab-muzak-music-hg', src: 'novarina_minimalism_n10_notre_envol_ii.mp3' },
+  { id: 'tab-muzak-music-fk', src: 'chopin_eliogu_op55_no1.mp3' },
+  { id: 'tab-muzak-music-ef', src: 'mozart_robineau_fantasie_en_re_mineur_k_397.mp3' },
+  { id: 'tab-muzak-music-df', src: 'bluewhales_uplifting_orchestra.mp3' },
+  { id: 'tab-muzak-music-we', src: 'obrien_inspiration_strikes.mp3' },
+  { id: 'tab-muzak-music-ht', src: 'romansenykmusic_inspiring_acousting_uplifting_soft_background.mp3' },
+  { id: 'tab-muzak-music-ws', src: 'trow_acoustic_guitar_arrangement_for_song.mp3' },
+  { id: 'tab-muzak-music-lh', src: 'hyde_acoustically_driven_instrumental.mp3' },
+  { id: 'tab-muzak-music-kj', src: 'teoh_lucky_break.mp3' },
+  { id: 'tab-muzak-music-jj', src: 'mbryan_yokoo_oneness.mp3' },
+  { id: 'tab-muzak-music-uf', src: 'whitenoiseaudio_diorama.mp3' },
+  { id: 'tab-muzak-music-lo', src: 'whitenoiseaudio_kfuc120.mp3' },
+  { id: 'tab-muzak-music-qw', src: 'whitenoiseaudio_bleepy103.mp3' },
+  { id: 'tab-muzak-music-lk', src: 'unwrittenstories_its_simple.mp3' },
+  { id: 'tab-muzak-music-xd', src: 'maddirtmonkey_electronic_happy_song.mp3' },
+]
 
 const ariaLabelPlay = {
   fi: 'Soita',
@@ -88,11 +114,28 @@ const playButtonClicked = (event: Event) => {
     setButtonIconPlay(audioId)
   }
 }
+const createAudioElements = (audioResources: AudioResource[]) => {
+  const el = document.getElementById('tab-muzak-audio-content')
+
+  while (el.firstChild) {
+    el.removeChild(el.lastChild)
+  }
+
+  audioResources.forEach((audioResource) => {
+    const audioEl = document.createElement('audio')
+    audioEl.setAttribute('id', audioResource.id)
+    audioEl.setAttribute('src', `${mapTilesUrl}/muzak/${audioResource.src}`)
+    audioEl.setAttribute('crossorigin', 'anonymous')
+    el.appendChild(audioEl)
+  })
+}
 
 export const initializeMuzakTab = () => {
   library.add(faPlay)
   library.add(faPause)
   dom.watch()
+
+  createAudioElements(audioResources)
 
   const playButtons = Array.from(document.querySelectorAll('.tab-muzak-play'))
   playButtons.forEach((element) => element.addEventListener('click', playButtonClicked))

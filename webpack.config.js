@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const devServer = {
   compress: true,
-  host: 'local-ip',
   port: 8080,
   devMiddleware: {
     writeToDisk: true,
