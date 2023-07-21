@@ -171,7 +171,7 @@ const initializePythonEngine = async () => {
     printStderr(
       `Could not start the Python engine.
       \nTry closing the browser page and navigating back here.`,
-      true
+      true,
     )
 
     return
@@ -242,7 +242,7 @@ const processAccessibilityKeybindings = (event: KeyboardEvent) => {
         }
         case 'sv': {
           screenReaderTalkPolite(
-            'Ni är inte på kodområdet. Tryck på Tab eller Shift + Tab för att byta till kodområdet.'
+            'Ni är inte på kodområdet. Tryck på Tab eller Shift + Tab för att byta till kodområdet.',
           )
           break
         }

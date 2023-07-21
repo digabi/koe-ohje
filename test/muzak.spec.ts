@@ -32,7 +32,7 @@ describe('Muzak', () => {
 
       await expect(page.locator(`${testAudioClipPlayButtonSelector} .svg-inline--fa.fa-play`)).toHaveAttribute(
         'data-icon',
-        'play'
+        'play',
       )
 
       await page.click(testAudioClipPlayButtonSelector)
@@ -42,7 +42,7 @@ describe('Muzak', () => {
 
       await expect(page.locator(`${testAudioClipPlayButtonSelector} .svg-inline--fa.fa-pause`)).toHaveAttribute(
         'data-icon',
-        'pause'
+        'pause',
       )
 
       await page.click(testAudioClipPlayButtonSelector)
@@ -56,21 +56,21 @@ describe('Muzak', () => {
 
       await expect(page.locator(`${testAudioClipPlayButtonSelector} .svg-inline--fa.fa-play`)).toHaveAttribute(
         'data-icon',
-        'play'
+        'play',
       )
 
       await page.click(testAudioClipPlayButtonSelector)
 
       await expect(page.locator(`${testAudioClipPlayButtonSelector} .svg-inline--fa.fa-pause`)).toHaveAttribute(
         'data-icon',
-        'pause'
+        'pause',
       )
 
       await page.click(testAudioClipPlayButtonSelector)
 
       await expect(page.locator(`${testAudioClipPlayButtonSelector} .svg-inline--fa.fa-play`)).toHaveAttribute(
         'data-icon',
-        'play'
+        'play',
       )
     })
 
@@ -80,36 +80,36 @@ describe('Muzak', () => {
 
       await expect(page.locator(`${testAudioClipPlayButtonSelector} .svg-inline--fa.fa-play`)).toHaveAttribute(
         'data-icon',
-        'play'
+        'play',
       )
 
       await expect(page.locator(`${testAudioClipAnotherPlayButtonSelector} .svg-inline--fa.fa-play`)).toHaveAttribute(
         'data-icon',
-        'play'
+        'play',
       )
 
       await page.click(testAudioClipPlayButtonSelector)
 
       await expect(page.locator(`${testAudioClipPlayButtonSelector} .svg-inline--fa.fa-pause`)).toHaveAttribute(
         'data-icon',
-        'pause'
+        'pause',
       )
 
       await expect(page.locator(`${testAudioClipAnotherPlayButtonSelector} .svg-inline--fa.fa-play`)).toHaveAttribute(
         'data-icon',
-        'play'
+        'play',
       )
 
       await page.click(testAudioClipAnotherPlayButtonSelector)
 
       await expect(page.locator(`${testAudioClipPlayButtonSelector} .svg-inline--fa.fa-play`)).toHaveAttribute(
         'data-icon',
-        'play'
+        'play',
       )
 
       await expect(page.locator(`${testAudioClipAnotherPlayButtonSelector} .svg-inline--fa.fa-pause`)).toHaveAttribute(
         'data-icon',
-        'pause'
+        'pause',
       )
     })
   })
