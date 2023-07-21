@@ -42,7 +42,7 @@ describe('Python', () => {
         const codeToInsert = 'print("Result=%d" % (1+3))'
         const el = document.querySelector<HTMLElement>('#tab-programming-ide-container')
         el.dispatchEvent(
-          new CustomEvent('replaceEditorTextForTestingPurposes', { bubbles: false, detail: { text: codeToInsert } })
+          new CustomEvent('replaceEditorTextForTestingPurposes', { bubbles: false, detail: { text: codeToInsert } }),
         )
       })
 
@@ -66,7 +66,7 @@ m = numpy.lcm(6,9)
 print(m)`
         const el = document.querySelector<HTMLElement>('#tab-programming-ide-container')
         el.dispatchEvent(
-          new CustomEvent('replaceEditorTextForTestingPurposes', { bubbles: false, detail: { text: codeToInsert } })
+          new CustomEvent('replaceEditorTextForTestingPurposes', { bubbles: false, detail: { text: codeToInsert } }),
         )
       })
 
@@ -86,7 +86,7 @@ print(m)`
         const codeToInsert = 'print("This is valid Python")\nfoobar'
         const el = document.querySelector<HTMLElement>('#tab-programming-ide-container')
         el.dispatchEvent(
-          new CustomEvent('replaceEditorTextForTestingPurposes', { bubbles: false, detail: { text: codeToInsert } })
+          new CustomEvent('replaceEditorTextForTestingPurposes', { bubbles: false, detail: { text: codeToInsert } }),
         )
       })
 
