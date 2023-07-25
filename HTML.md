@@ -58,8 +58,8 @@ Tallenna kuvat aina `.svg`-muodossa ja kansioon `content/images`. Katso testisiv
 
 ### Kielet
 
-Suomen ja ruotsin kielen tuki on toteutettu niin, että lisäämällä mille tahansa HTML-elementille luokan `class="fi"` tai vastaavasti
-`class="sv"`, saadaan eriteltyä suomenkieliset ja ruotsinkieliset kaavat. Kerrallaan on valittuna aina yksi kieli sivustolla, jolloin esimerkiksi
+Suomen ja ruotsin kielen tuki on toteutettu niin, että lisäämällä mille tahansa HTML-elementille attribuutin `lang="fi"` tai vastaavasti
+`lang="sv"`, saadaan eriteltyä suomenkieliset ja ruotsinkieliset kaavat. Kerrallaan on valittuna aina yksi kieli sivustolla, jolloin esimerkiksi
 suomenkielinen valinta piilottaa automaattisesti kaikki ruotsinkieliset elementit.
 
 ### Muuta
