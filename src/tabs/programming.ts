@@ -103,12 +103,11 @@ const printStdout = (text: string) => printOutput(text)
 
 const digabiPythonModule = {
   input: (__prompt: any = '') => {
-    // HACK: Call object's __str__ method instead of using .toString() as Pyodide's .toString() calls __repr__
-    // This behaviour mimics the builtin input more closely.
-    const promptText = __prompt.__str__()
+    // HACK: Call object's __str__ method instead of using .toString() as Pyodide's .toString() calls __repr__ which is incorrect behaviour for input()
+    // Fallback on .toString() since some Pyodide objects don't seem to have a __str__ function.
+    const promptText: string = __prompt.__str__ ? __prompt.__str__() : __prompt.toString()
 
     const inputText = prompt(promptText)
-
     if (inputText == null) {
       throw 'Input operation cancelled.'
     }
