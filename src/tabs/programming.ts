@@ -252,7 +252,7 @@ const processAccessibilityKeybindings = (event: KeyboardEvent) => {
       setCodeToClipboard(el.innerText)
       return
     }
-    if (['code-output'].includes(el.id)) {
+    if ('code-output' === el.id) {
       setCodeOutputToClipboard(el.innerText)
       return
     }
