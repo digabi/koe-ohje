@@ -203,7 +203,9 @@ const initializePythonEngine = async () => {
 
   // pyodide is imported by content/index.html
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  pyodide.runPython('from digabi import input\n__builtins__.input = input') // Load our custom javascript input function and override it as builtin.
+  pyodide.runPython('import builtins\nimport digabi\nbuiltins.input = digabi.input\ndel builtins, digabi')
+  // Load our custom javascript input function and override it as builtin.
+  // Unbind builtins and digabi so that, to the user, the environment looks like new.
 
   setMonacoReadOnly(false)
   showOutput()
