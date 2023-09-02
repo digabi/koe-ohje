@@ -102,9 +102,12 @@ const printStderr = (text: string, printEvenPyodideIsInitializing?: boolean) => 
 const printStdout = (text: string) => printOutput(text)
 
 const digabiPythonModule = {
+  // By far the easiest way to get coloured input messages to the output was to use JavaScript
+  // as the output cannot be formatted in Python without some dirty code and crazy hacks.
+  // This module can be used to expose other functionality to the user in the future.
   input: (__prompt: any = '') => {
     // HACK: Call object's __str__ method instead of using .toString() as Pyodide's .toString() calls __repr__ which is incorrect behaviour for input()
-    // Fallback on .toString() since some Pyodide objects don't seem to have a __str__ function.
+    // Fallback on .toString() since some Pyodide objects don't seem to have a __str__ function (notably str itself).
     const promptText: string = __prompt.__str__ ? __prompt.__str__() : __prompt.toString()
 
     const inputText = prompt(promptText)
