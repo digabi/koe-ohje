@@ -178,7 +178,7 @@ const initializePythonEngine = async () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     pyodide = await loadPyodide({
       indexURL: `${getUrlPath()}common/pyodide/`, // Pydiode does not handle .. as part of the path
-      stdin: () => prompt('Enter input string'), // This should very rarely run since we override the builtin input function
+      stdin: () => prompt('Enter stdin text'), // This should very rarely run since we override the builtin input function
       stdout: (text: string) => printStdout(text),
       stderr: (text: string) => printStderr(text),
     })
