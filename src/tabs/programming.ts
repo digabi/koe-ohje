@@ -35,7 +35,7 @@ const getEditorBottom = () => {
   return rect.top + rect.height
 }
 
-const getSuggestedOutputAndErrorHeight = () => {
+const getSuggestedOutputHeight = () => {
   const singleColumnReservedSpaceBottom = 200
   const twoColumnReservedSpaceBottom = 50
 
@@ -45,13 +45,13 @@ const getSuggestedOutputAndErrorHeight = () => {
 }
 
 const calculateHeight = (element: HTMLElement) => {
-  const suggestedHeight = getSuggestedOutputAndErrorHeight()
+  const suggestedHeight = getSuggestedOutputHeight()
   const contentHeight = element.scrollHeight
   return contentHeight > suggestedHeight ? suggestedHeight : contentHeight + 20
 }
 
-const setOutputAndErrorHeight = (elementId: string) => {
-  const element = document.getElementById(elementId)!
+const setOutputHeight = () => {
+  const element = document.getElementById(outputId)!
   const setHeight = (newHeight: number) => (element.style.height = `{newHeight}px`)
 
   setHeight(0)
@@ -70,7 +70,7 @@ const hideOutput = () => {
 
 const showOutput = () => {
   document.getElementById(outputId).style.display = 'block'
-  setOutputAndErrorHeight(outputId)
+  setOutputHeight()
 }
 
 const changeOutputToError = () => {
@@ -102,15 +102,21 @@ const printStderr = (text: string, printEvenPyodideIsInitializing?: boolean) => 
 const printStdout = (text: string) => printOutput(text)
 
 const digabiPythonModule = {
-  input: (text: string = '') => {
-    const inputText = prompt(text)
+  input: (__prompt: any = '') => {
+    // HACK: Call object's __str__ method instead of using .toString() as Pyodide's .toString() calls __repr__
+    // This behaviour mimics the builtin input more closely.
+    const promptText = __prompt.__str__()
+
+    const inputText = prompt(promptText)
 
     if (inputText == null) {
       throw 'Input operation cancelled.'
     }
 
-    printOutput(text + inputText, codeInputColor)
+    printOutput(promptText + inputText, codeInputColor)
+
     // TODO: raise auditing events for input as defined in https://docs.python.org/3/library/functions.html#input
+
     return inputText
   }
 }
@@ -191,7 +197,7 @@ const initializePythonEngine = async () => {
 
   // pyodide is imported by content/index.html
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  pyodide.registerJsModule('digabi', digabiPythonModule)
+  pyodide.registerJsModule('digabi', digabiPythonModule) // Enable custom digabi methods (custom input function for example)
 
   // pyodide is imported by content/index.html
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
