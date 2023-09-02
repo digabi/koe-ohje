@@ -8,7 +8,7 @@ const codeEditorWrapperId = 'tab-programming-editor-wrapper'
 const codeExecutionResultId = 'tab-programming-execution-result'
 const codeEditorId = 'code-editor'
 const outputId = 'code-output'
-const errorId = 'code-error'
+const addErrorId = 'code-error'
 const executeButtonSelector = '.code-editor-execute'
 const copyCodeToClipboardButtonSelector = '.code-editor-copy'
 const boilerplateErrorstrings = [
@@ -21,6 +21,9 @@ const boilerplateErrorstrings = [
     replaceWith: 'Line $1:\n',
   },
 ]
+
+const codeErrorColor = 'red'
+const codeInputColor = 'cyan'
 
 let pyodide: any = null
 let pyodideInitializing = true
@@ -55,35 +58,48 @@ const setOutputAndErrorHeight = (elementId: string) => {
   setHeight(calculateHeight(element))
 }
 
-const hideBothAreas = () => {
-  document.getElementById(outputId).style.display = 'none'
-  document.getElementById(errorId).style.display = 'none'
+const resetOutput = () => {
+  const outputElement = document.getElementById(outputId)
+  outputElement.classList.remove(addErrorId)
+  outputElement.innerHTML = ''
 }
 
-const showErrorArea = () => {
+const hideOutput = () => {
   document.getElementById(outputId).style.display = 'none'
-  document.getElementById(errorId).style.display = 'block'
-
-  setOutputAndErrorHeight(errorId)
 }
 
-const showOutputArea = () => {
+const showOutput = () => {
   document.getElementById(outputId).style.display = 'block'
-  document.getElementById(errorId).style.display = 'none'
-
   setOutputAndErrorHeight(outputId)
 }
 
-const printStderr = (text: string, printEvenPyodideIsInitializing?: boolean) => {
+const changeOutputToError = () => {
+  document.getElementById(outputId).classList.add(addErrorId)
+}
+
+const printOutput = (text: string, color?: string, printEvenPyodideIsInitializing?: boolean) => {
   if (pyodideInitializing && !printEvenPyodideIsInitializing) {
     return
   }
 
-  text = removeBoilerplateErrorstrings(text)
+  showOutput()
+  const outputElement = document.getElementById(outputId)
+  text = text.replace(/</g, '&lt;')
 
-  document.getElementById(errorId).innerHTML = text
-  showErrorArea()
+  if (color) {
+    text = "<span style='color:" + color + "'>" + text + "</span>"
+  }
+
+  outputElement.innerHTML = `${outputElement.innerHTML + text}\n`
 }
+
+const printStderr = (text: string, printEvenPyodideIsInitializing?: boolean) => {
+  text = removeBoilerplateErrorstrings(text)
+  printOutput(text, codeErrorColor)
+  changeOutputToError()
+}
+
+const printStdout = (text: string) => printOutput(text)
 
 const removeBoilerplateErrorstrings = (text: string): string => {
   boilerplateErrorstrings.forEach((replaceError) => {
@@ -94,31 +110,9 @@ const removeBoilerplateErrorstrings = (text: string): string => {
   return text
 }
 
-const getInput = (): string => prompt('Enter input string')
-
-const clearStdout = () => {
-  document.getElementById(outputId).innerHTML = ''
-}
-
-const clearStderr = () => {
-  document.getElementById(errorId).innerHTML = ''
-}
-
-const printStdout = (text: string) => {
-  if (pyodideInitializing) {
-    return
-  }
-
-  showOutputArea()
-  const outputElement = document.getElementById(outputId)
-  text = text.replace(/</g, '&lt;')
-  outputElement.innerHTML = `${outputElement.innerHTML + text}\n`
-}
-
 const executeCode = () => {
-  clearStdout()
-  clearStderr()
-  hideBothAreas()
+  resetOutput()
+  hideOutput()
 
   const code = getCode()
 
@@ -148,26 +142,26 @@ const initializePythonEngine = async () => {
   if (pyodide != null) {
     // Pyodide is already initialized, we're coming back from another tab
     setMonacoReadOnly(false)
-    showOutputArea()
+    showOutput()
     return
   }
 
   setMonacoReadOnly(true)
-  hideBothAreas()
+  hideOutput()
   pyodideInitializing = true
 
   try {
     // pyodide is imported by content/index.html
+    // @ts-ignore
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     pyodide = await loadPyodide({
       indexURL: `${getUrlPath()}common/pyodide/`, // Pydiode does not handle .. as part of the path
-      stdin: getInput,
+      // stdin: getInput,  // stdin is handled in Python.
       stdout: (text: string) => printStdout(text),
       stderr: (text: string) => printStderr(text),
     })
   } catch (error) {
     console.error('Error while initiating Pyodide', error)
-    showErrorArea()
     printStderr(
       `Could not start the Python engine.
       \nTry closing the browser page and navigating back here.`,
@@ -186,7 +180,7 @@ const initializePythonEngine = async () => {
   pyodide.runPython("import js\ndef input(prompt=''):\n  return js.prompt(prompt)\n\n")
 
   setMonacoReadOnly(false)
-  showOutputArea()
+  showOutput()
   pyodideInitializing = false
 }
 
@@ -230,7 +224,7 @@ const processAccessibilityKeybindings = (event: KeyboardEvent) => {
       setCodeToClipboard(el.innerText)
       return
     }
-    if (['code-output', 'code-error'].includes(el.id)) {
+    if (['code-output'].includes(el.id)) {
       setCodeOutputToClipboard(el.innerText)
       return
     }
