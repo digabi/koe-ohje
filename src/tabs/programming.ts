@@ -23,7 +23,7 @@ const boilerplateErrorstrings = [
 ]
 
 const codeErrorColor = 'red'
-const codeInputColor = 'cyan'
+const codeInputColor = 'blue'
 
 let pyodide: any = null
 let pyodideInitializing = true
@@ -95,11 +95,25 @@ const printOutput = (text: string, color?: string, printEvenPyodideIsInitializin
 
 const printStderr = (text: string, printEvenPyodideIsInitializing?: boolean) => {
   text = removeBoilerplateErrorstrings(text)
-  printOutput(text, codeErrorColor)
+  printOutput(text, codeErrorColor, printEvenPyodideIsInitializing)
   changeOutputToError()
 }
 
 const printStdout = (text: string) => printOutput(text)
+
+const digabiPythonModule = {
+  input: (text: string = '') => {
+    const inputText = prompt(text)
+
+    if (inputText == null) {
+      throw 'Input operation cancelled.'
+    }
+
+    printOutput(text + inputText, codeInputColor)
+    // TODO: raise auditing events for input as defined in https://docs.python.org/3/library/functions.html#input
+    return inputText
+  }
+}
 
 const removeBoilerplateErrorstrings = (text: string): string => {
   boilerplateErrorstrings.forEach((replaceError) => {
@@ -156,7 +170,7 @@ const initializePythonEngine = async () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     pyodide = await loadPyodide({
       indexURL: `${getUrlPath()}common/pyodide/`, // Pydiode does not handle .. as part of the path
-      // stdin: getInput,  // stdin is handled in Python.
+      stdin: () => prompt('Enter input string'), // This should very rarely run since we override the builtin input function
       stdout: (text: string) => printStdout(text),
       stderr: (text: string) => printStderr(text),
     })
@@ -177,7 +191,11 @@ const initializePythonEngine = async () => {
 
   // pyodide is imported by content/index.html
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  pyodide.runPython("import js\ndef input(prompt=''):\n  return js.prompt(prompt)\n\n")
+  pyodide.registerJsModule('digabi', digabiPythonModule)
+
+  // pyodide is imported by content/index.html
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+  pyodide.runPython('from digabi import input\n__builtins__.input = input') // Load our custom javascript input function and override it as builtin.
 
   setMonacoReadOnly(false)
   showOutput()
