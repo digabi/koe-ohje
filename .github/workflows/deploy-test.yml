@@ -26,11 +26,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn --frozen-lockfile
+      - run: npm ci
       - run: npx playwright install
-      - run: yarn build:internet
-      - run: yarn test
-      - run: yarn lint
+      - run: npm run build:internet
+      - run: npm run test
+      - run: npm run lint
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
