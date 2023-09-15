@@ -17,15 +17,15 @@ jobs:
         node-version: [18.x]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Increase file watchers
         run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn --frozen-lockfile
+      - run: npm ci
       - run: npx playwright install
-      - run: yarn build:internet
-      - run: yarn test
-      - run: yarn lint
+      - run: npm run build:internet
+      - run: npm run test
+      - run: npm run lint

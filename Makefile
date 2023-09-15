@@ -1,15 +1,15 @@
 default_build_number=1
 
 NODE_PATH = ~/.nvm/versions/node/v$(shell cat .nvmrc)/bin
-YARN = PATH=$(NODE_PATH):$(PATH) $(NODE_PATH)/yarn
+NPM = PATH=$(NODE_PATH):$(PATH) $(NODE_PATH)/npm
 
 all:
 
 node_modules: package.json
-	$(YARN) install
+	$(NPM) install
 
 build: content/* node_modules
-	$(YARN) build
+	$(NPM) run build
 
 deb: build
 	if [ -d deb-root ]; then rm -fR deb-root/; fi
