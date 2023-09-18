@@ -1,7 +1,7 @@
 import { Page, expect } from '@playwright/test'
 import { newPage, newBrowserContext } from './utils'
 
-const waitElementToAppearInViewport = async (page: Page, elementId: string, timeout: number): Promise<Boolean> => {
+const waitElementToAppearInViewport = async (page: Page, elementId: string, timeout: number): Promise<boolean> => {
   const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
   const endTime = timeout + Date.now()
