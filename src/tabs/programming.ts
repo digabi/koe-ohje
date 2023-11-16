@@ -1,8 +1,8 @@
 import './programming.css'
-import { initializeMonacoEditor, getCode, setMonacoReadOnly, setFocusToMonacoEditor } from './common/monaco-editor'
-import { setCodeToClipboard, setCodeOutputToClipboard } from './common/clipboard'
+import { getCode, initializeMonacoEditor, setFocusToMonacoEditor, setMonacoReadOnly } from './common/monaco-editor'
+import { setCodeOutputToClipboard, setCodeToClipboard } from './common/clipboard'
 import { screenReaderTalkPolite } from './common/screenreader'
-import { getCurrentLanguage } from './common/language'
+import { getCurrentLanguage, Language } from './common/language'
 
 const codeEditorWrapperId = 'tab-programming-editor-wrapper'
 const codeExecutionResultId = 'tab-programming-execution-result'
@@ -236,11 +236,11 @@ const processAccessibilityKeybindings = (event: KeyboardEvent) => {
     }
     if (el.nodeName === 'BODY') {
       switch (getCurrentLanguage()) {
-        case 'fi': {
+        case Language.finnish: {
           screenReaderTalkPolite('Et ole koodialueella. Paina Tab tai Shift + Tab siirtyäksesi koodialueelle.')
           break
         }
-        case 'sv': {
+        case Language.swedish: {
           screenReaderTalkPolite(
             'Ni är inte på kodområdet. Tryck på Tab eller Shift + Tab för att byta till kodområdet.',
           )
