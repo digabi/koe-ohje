@@ -6,23 +6,14 @@
   overflow: auto;
 }
 
-#code-output, #code-error {
+#code-output {
   min-height: 3em;
   display: block;
   overflow-x: auto;
   overflow-y: auto;
   padding: 5px;
   resize: vertical;
-}
-
-#code-output {
   background-color: lightgrey;
-}
-
-#code-error {
-  border-color: red;
-  border-width: 2px;
-  border-style: solid;
 }
 
 #tab-programming-ide-container {
@@ -79,6 +70,12 @@
     top: 0;
     left: 0;
   }
+}
+
+.code-error {
+  border-color: red;
+  border-width: 2px;
+  border-style: solid;
 }
 
 .code-clickable {

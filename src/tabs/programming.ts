@@ -8,7 +8,7 @@ const codeEditorWrapperId = 'tab-programming-editor-wrapper'
 const codeExecutionResultId = 'tab-programming-execution-result'
 const codeEditorId = 'code-editor'
 const outputId = 'code-output'
-const errorId = 'code-error'
+const addErrorId = 'code-error'
 const executeButtonSelector = '.code-editor-execute'
 const copyCodeToClipboardButtonSelector = '.code-editor-copy'
 const boilerplateErrorstrings = [
@@ -22,6 +22,9 @@ const boilerplateErrorstrings = [
   },
 ]
 
+const codeErrorColor = 'red'
+const codeInputColor = 'blue'
+
 let pyodide: any = null
 let pyodideInitializing = true
 
@@ -32,7 +35,7 @@ const getEditorBottom = () => {
   return rect.top + rect.height
 }
 
-const getSuggestedOutputAndErrorHeight = () => {
+const getSuggestedOutputHeight = () => {
   const singleColumnReservedSpaceBottom = 200
   const twoColumnReservedSpaceBottom = 50
 
@@ -42,47 +45,82 @@ const getSuggestedOutputAndErrorHeight = () => {
 }
 
 const calculateHeight = (element: HTMLElement) => {
-  const suggestedHeight = getSuggestedOutputAndErrorHeight()
+  const suggestedHeight = getSuggestedOutputHeight()
   const contentHeight = element.scrollHeight
   return contentHeight > suggestedHeight ? suggestedHeight : contentHeight + 20
 }
 
-const setOutputAndErrorHeight = (elementId: string) => {
-  const element = document.getElementById(elementId)!
+const setOutputHeight = () => {
+  const element = document.getElementById(outputId)!
   const setHeight = (newHeight: number) => (element.style.height = `{newHeight}px`)
 
   setHeight(0)
   setHeight(calculateHeight(element))
 }
 
-const hideBothAreas = () => {
-  document.getElementById(outputId).style.display = 'none'
-  document.getElementById(errorId).style.display = 'none'
+const resetOutput = () => {
+  const outputElement = document.getElementById(outputId)
+  outputElement.classList.remove(addErrorId)
+  outputElement.innerHTML = ''
 }
 
-const showErrorArea = () => {
+const hideOutput = () => {
   document.getElementById(outputId).style.display = 'none'
-  document.getElementById(errorId).style.display = 'block'
-
-  setOutputAndErrorHeight(errorId)
 }
 
-const showOutputArea = () => {
+const showOutput = () => {
   document.getElementById(outputId).style.display = 'block'
-  document.getElementById(errorId).style.display = 'none'
-
-  setOutputAndErrorHeight(outputId)
+  setOutputHeight()
 }
 
-const printStderr = (text: string, printEvenPyodideIsInitializing?: boolean) => {
+const changeOutputToError = () => {
+  document.getElementById(outputId).classList.add(addErrorId)
+}
+
+const printOutput = (text: string, color?: string, printEvenPyodideIsInitializing?: boolean) => {
   if (pyodideInitializing && !printEvenPyodideIsInitializing) {
     return
   }
 
-  text = removeBoilerplateErrorstrings(text)
+  showOutput()
+  const outputElement = document.getElementById(outputId)
+  text = text.replace(/</g, '&lt;')
 
-  document.getElementById(errorId).innerHTML = text
-  showErrorArea()
+  if (color) {
+    text = "<span style='color:" + color + "'>" + text + "</span>"
+  }
+
+  outputElement.innerHTML = `${outputElement.innerHTML + text}\n`
+}
+
+const printStderr = (text: string, printEvenPyodideIsInitializing?: boolean) => {
+  text = removeBoilerplateErrorstrings(text)
+  printOutput(text, codeErrorColor, printEvenPyodideIsInitializing)
+  changeOutputToError()
+}
+
+const printStdout = (text: string) => printOutput(text)
+
+const digabiPythonModule = {
+  // By far the easiest way to get coloured input messages to the output was to use JavaScript
+  // as the output cannot be formatted in Python without some dirty code and crazy hacks.
+  // This module can be used to expose other functionality to the user in the future.
+  input: (__prompt: any = '') => {
+    // HACK: Call object's __str__ method instead of using .toString() as Pyodide's .toString() calls __repr__ which is incorrect behaviour for input()
+    // Fallback on .toString() since some Pyodide objects don't seem to have a __str__ function (notably str itself).
+    const promptText: string = __prompt.__str__ ? __prompt.__str__() : __prompt.toString()
+
+    const inputText = prompt(promptText)
+    if (inputText == null) {
+      throw 'Input operation cancelled.'
+    }
+
+    printOutput(promptText + inputText, codeInputColor)
+
+    // TODO: raise auditing events for input as defined in https://docs.python.org/3/library/functions.html#input
+
+    return inputText
+  }
 }
 
 const removeBoilerplateErrorstrings = (text: string): string => {
@@ -94,31 +132,9 @@ const removeBoilerplateErrorstrings = (text: string): string => {
   return text
 }
 
-const getInput = (): string => prompt('Enter input string')
-
-const clearStdout = () => {
-  document.getElementById(outputId).innerHTML = ''
-}
-
-const clearStderr = () => {
-  document.getElementById(errorId).innerHTML = ''
-}
-
-const printStdout = (text: string) => {
-  if (pyodideInitializing) {
-    return
-  }
-
-  showOutputArea()
-  const outputElement = document.getElementById(outputId)
-  text = text.replace(/</g, '&lt;')
-  outputElement.innerHTML = `${outputElement.innerHTML + text}\n`
-}
-
 const executeCode = () => {
-  clearStdout()
-  clearStderr()
-  hideBothAreas()
+  resetOutput()
+  hideOutput()
 
   const code = getCode()
 
@@ -148,26 +164,26 @@ const initializePythonEngine = async () => {
   if (pyodide != null) {
     // Pyodide is already initialized, we're coming back from another tab
     setMonacoReadOnly(false)
-    showOutputArea()
+    showOutput()
     return
   }
 
   setMonacoReadOnly(true)
-  hideBothAreas()
+  hideOutput()
   pyodideInitializing = true
 
   try {
     // pyodide is imported by content/index.html
+    // @ts-ignore
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     pyodide = await loadPyodide({
       indexURL: `${getUrlPath()}common/pyodide/`, // Pydiode does not handle .. as part of the path
-      stdin: getInput,
+      stdin: () => prompt('Enter stdin text'), // This should very rarely run since we override the builtin input function
       stdout: (text: string) => printStdout(text),
       stderr: (text: string) => printStderr(text),
     })
   } catch (error) {
     console.error('Error while initiating Pyodide', error)
-    showErrorArea()
     printStderr(
       `Could not start the Python engine.
       \nTry closing the browser page and navigating back here.`,
@@ -183,10 +199,16 @@ const initializePythonEngine = async () => {
 
   // pyodide is imported by content/index.html
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  pyodide.runPython("import js\ndef input(prompt=''):\n  return js.prompt(prompt)\n\n")
+  pyodide.registerJsModule('digabi', digabiPythonModule) // Enable custom digabi methods (custom input function for example)
+
+  // pyodide is imported by content/index.html
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+  pyodide.runPython('import builtins\nimport digabi\nbuiltins.input = digabi.input\ndel builtins, digabi')
+  // Load our custom javascript input function and override it as builtin.
+  // Unbind builtins and digabi so that, to the user, the environment looks like new.
 
   setMonacoReadOnly(false)
-  showOutputArea()
+  showOutput()
   pyodideInitializing = false
 }
 
@@ -230,7 +252,7 @@ const processAccessibilityKeybindings = (event: KeyboardEvent) => {
       setCodeToClipboard(el.innerText)
       return
     }
-    if (['code-output', 'code-error'].includes(el.id)) {
+    if ('code-output' === el.id) {
       setCodeOutputToClipboard(el.innerText)
       return
     }
