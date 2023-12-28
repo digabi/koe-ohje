@@ -1,6 +1,23 @@
-const mjpage = require('mathjax-node-page').mjpage
+import * as Mjpage from 'mathjax-node-page'
 
-const pageConfig = {
+interface PageConfig {
+  format: [string],
+  singleDollars: boolean,
+  output: string,
+  MathJax: {
+    SVG: {
+      font: string,
+      undefinedFamily: string,
+      minScaleAdjust: number
+    },
+    imageFont: string|null,
+    CommonHTML: {
+      scale: number,
+    }
+  }
+
+}
+const pageConfig: PageConfig = {
   format: ['TeX'],
   singleDollars: true,
   output: 'svg',
@@ -22,9 +39,9 @@ const nodeConfig = {
   linebreaks: true,
 }
 
-const formatLatex = (input) =>
+export const formatLatex = (input: string): Promise<string> =>
   new Promise((resolve, reject) => {
-    mjpage(input, pageConfig, nodeConfig, (output, err) => {
+    Mjpage.mjpage(input, pageConfig, nodeConfig, (output: string, err: string) => {
       if (err) {
         reject(err)
       } else {
@@ -33,7 +50,7 @@ const formatLatex = (input) =>
     })
   })
 
-const replaceFormulaSpansWithButtons = (pageText) => {
+export const replaceFormulaSpansWithButtons = (pageText: string) => {
   const inlineFormulasReplacedPageText = pageText.replace(
     /<span class="mjpage">(.*?aria-labelledby="(.*?)">.*?)<\/span>/gs,
     '<button class="mjpage" role="math" aria-labelledby="$2">$1</button>',
@@ -45,16 +62,9 @@ const replaceFormulaSpansWithButtons = (pageText) => {
   return blockFormulasReplacedPageText
 }
 
-const replaceInPath = (path) => path.replace(/taulukot/g, 'build')
+export const replaceInPath = (path: string) => path.replace(/taulukot/g, 'build')
 
-const replaceTagRandom = (pageText) => {
-  const randomString = Date.now()
-  return pageText.replace(/###RANDOM###/g, randomString)
-}
-
-module.exports = {
-  formatLatex,
-  replaceFormulaSpansWithButtons,
-  replaceInPath,
-  replaceTagRandom,
+export const replaceTagRandom = (pageText: string) => {
+  const randomNumber = Date.now()
+  return pageText.replace(/###RANDOM###/g, randomNumber.toString())
 }

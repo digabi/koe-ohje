@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle Firefox-selaimella.",
   "private": true,
-  "main": "index.js",
+  "type": "module",
+  "main": "index.ts",
   "scripts": {
     "start": "webpack serve",
-    "build": "node index.js && DEPLOYMENT_ENV=koe webpack --mode production",
-    "build:internet": "node index.js && DEPLOYMENT_ENV=internet webpack --mode production",
-    "lint": "eslint . --ext .ts,.js",
+    "build": "npx ts-node index.ts && DEPLOYMENT_ENV=koe webpack --mode production",
+    "build:internet": "npx ts-node index.ts && DEPLOYMENT_ENV=internet webpack --mode production",
+    "lint": "eslint . --ext .ts",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\", \"target\": \"es2020\"}' mocha --config test/.mocharc.yml 'test/*.spec.ts'"
   },
   "repository": {
@@ -37,12 +38,12 @@
     "monaco-editor": "^0.34.0",
     "skulpt": "^1.2.0",
     "terser": "5.15.0",
-    "tocbot": "^4.18.0",
-    "ts-node": "^10.8.0"
+    "tocbot": "^4.18.0"
   },
   "devDependencies": {
     "@digabi/eslint-config": "^3.0.0",
     "@types/expect-puppeteer": "^5.0.1",
+    "@types/fs-extra": "^11.0.4",
     "@types/http-server": "^0.12.1",
     "@types/leaflet": "^1.7.11",
     "@types/puppeteer": "^7.0.4",
@@ -63,6 +64,7 @@
     "puppeteer": "^21.0.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.2",
     "webpack": "^5.74.0",
     "webpack-cli": "^5.0.0",
