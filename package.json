@@ -3,7 +3,8 @@
   "version": "2.5.0",
   "description": "Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle Firefox-selaimella.",
   "private": true,
-  "main": "index.js",
+  "type": "module",
+  "main": "index.ts",
   "scripts": {
     "build": "node index.js && DEPLOYMENT_ENV=koe node --experimental-strip-types esbuild.ts",
     "build:internet": "node index.js && node --experimental-strip-types esbuild.ts",

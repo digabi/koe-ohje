@@ -1,30 +1,30 @@
-const fs = require('fs-extra')
-const { formatLatex, replaceFormulaSpansWithButtons, replaceInPath, replaceTagRandom } = require('./common')
+import fs from 'fs-extra'
+import { formatLatex, replaceFormulaSpansWithButtons, replaceInPath, replaceTagRandom }  from './common'
 
 const contentPath = './content/'
 const buildPath = './build/'
 
 const indexHtml = 'index.html'
 
-const readFromPath = (path) =>
+const readFromPath = (path: string) =>
   fs
     .readFile(contentPath + path)
-    .then((file) => formatLatex(file.toString()))
-    .then((output) => replaceFormulaSpansWithButtons(output))
-    .then((output) => replaceTagRandom(output))
-    .then((output) => fs.writeFile(buildPath + path, output))
+    .then((file: Buffer) => formatLatex(file.toString()))
+    .then((output: string) => replaceFormulaSpansWithButtons(output))
+    .then((output: string) => replaceTagRandom(output))
+    .then((output: string) => fs.writeFile(buildPath + path, output))
     .then(() => {
       console.log(`Done with ${path}`)
       return
     })
 
-const replaceTaulukkoWithBuild = (file) =>
+const replaceTaulukkoWithBuild = (file: string) =>
   fs.readFile(file).then((data) => {
     var path = replaceInPath(data.toString())
     return fs.writeFile(file, path, 'utf8')
   })
 
-const getFileNamesFromDir = async (path) => {
+const getFileNamesFromDir = async (path: string) => {
   const dirents = await fs.readdir(path, { withFileTypes: true })
   return dirents.filter((dirent) => dirent.isFile()).map((dirent) => dirent.name)
 }
