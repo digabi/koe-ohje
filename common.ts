@@ -1,65 +1,85 @@
-import * as Mjpage from 'mathjax-node-page'
+import * as MathJaxNode from 'mathjax-node'
 
-interface PageConfig {
-  format: [string],
-  singleDollars: boolean,
-  output: string,
-  MathJax: {
-    SVG: {
-      font: string,
-      undefinedFamily: string,
-      minScaleAdjust: number
-    },
-    imageFont: string|null,
-    CommonHTML: {
-      scale: number,
+const fixSvgAttributes = (svg: string): string => svg.replace(/aria-labelledby=".+"/, 'aria-hidden="true"')
+
+const fixMathMLAttributes = (mml: string): string => mml.replace(/display="block"/, 'class="screenreader-only"')
+
+const getButtonHTML = (latex: string, svg: string, mathml: string, buttonClass: string): string =>
+  `<button class="${buttonClass}" data-latexformula="${latex}">
+  ${fixSvgAttributes(svg)}
+  ${fixMathMLAttributes(mathml)}
+  </button>`
+
+const formatLatexWorker = async (
+  htmlPage: string,
+  formulaRe: RegExp,
+  formulaTemplate: string,
+  buttonClass: string,
+): Promise<string> => {
+  const latexFormulas = Array.from(htmlPage.matchAll(formulaRe), (m) => m[1])
+
+  let formattedHtmlPage = htmlPage
+
+  for (const latexFormula of latexFormulas) {
+    let svg: MathJaxNode.MathjaxNodeTypesetResponse = {}
+    try {
+      svg = await MathJaxNode.typeset({
+        math: latexFormula,
+        format: 'TeX',
+        linebreaks: true,
+        width: 100,
+        svg: true,
+      })
+    } catch (e) {
+      console.error(`Error while processing ${latexFormula}`, e)
+      svg.svg = 'ERROR'
     }
+
+    let mathml: MathJaxNode.MathjaxNodeTypesetResponse = {}
+    try {
+      mathml = await MathJaxNode.typeset({
+        math: latexFormula,
+        format: 'TeX',
+        mml: true,
+      })
+    } catch (e) {
+      console.error(`Error while processing ${latexFormula}`, e)
+      mathml.mml = 'ERROR'
+    }
+
+    const buttonHtml = getButtonHTML(latexFormula, svg['svg'], mathml['mml'], buttonClass)
+    const searchTerm = formulaTemplate.replace('#', latexFormula)
+
+    formattedHtmlPage = formattedHtmlPage.replace(searchTerm, buttonHtml)
   }
 
-}
-const pageConfig: PageConfig = {
-  format: ['TeX'],
-  singleDollars: true,
-  output: 'svg',
-  MathJax: {
-    SVG: {
-      font: 'STIX-Web',
-      undefinedFamily: 'STIXGeneral',
-      minScaleAdjust: 110,
-    },
-    imageFont: null,
-    CommonHTML: {
-      scale: 110,
-    },
-  },
+  return formattedHtmlPage
 }
 
-const nodeConfig = {
-  svg: true,
-  linebreaks: true,
-}
-
-export const formatLatex = (input: string): Promise<string> =>
-  new Promise((resolve, reject) => {
-    Mjpage.mjpage(input, pageConfig, nodeConfig, (output: string, err: string) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(output)
-      }
-    })
+export const formatLatex = async (htmlPage: string) => {
+  MathJaxNode.config({
+    MathJax: {
+      SVG: {
+        font: 'STIX-Web',
+        undefinedFamily: 'STIXGeneral',
+        minScaleAdjust: 110,
+      },
+      imageFont: null,
+      CommonHTML: {
+        scale: 110,
+      },
+    },
   })
 
-export const replaceFormulaSpansWithButtons = (pageText: string) => {
-  const inlineFormulasReplacedPageText = pageText.replace(
-    /<span class="mjpage">(.*?aria-labelledby="(.*?)">.*?)<\/span>/gs,
-    '<button class="mjpage" role="math" aria-labelledby="$2">$1</button>',
+  const inlineFormulaeFormattedHtml = await formatLatexWorker(htmlPage, /\\\((.+?)\\\)/g, `\\(#\\)`, 'mjpage')
+  const centeredFormlulaeFormattedHtml = await formatLatexWorker(
+    inlineFormulaeFormattedHtml,
+    /\\\[(.+?)\\\]/g,
+    `\\[#\\]`,
+    'mjpage mjpage__block',
   )
-  const blockFormulasReplacedPageText = inlineFormulasReplacedPageText.replace(
-    /<span class="mjpage mjpage__block">(.*?aria-labelledby="(.*?)">.*?)<\/span>/gs,
-    '<button class="mjpage mjpage__block" role="math" aria-labelledby="$2">$1</button>',
-  )
-  return blockFormulasReplacedPageText
+
+  return centeredFormlulaeFormattedHtml
 }
 
 export const replaceInPath = (path: string) => path.replace(/taulukot/g, 'build')

@@ -91,7 +91,10 @@ export const setCodeOutputToClipboard = (text: string) => {
 
 let selectedEquation: HTMLElement
 const copyEquation = (event: MouseEvent | KeyboardEvent, target: HTMLElement) => {
-  const latex = target.querySelector('title').textContent
+  const elParentWithLatex = target.closest('button[data-latexformula]') as HTMLElement
+  if (!elParentWithLatex) return
+
+  const latex = elParentWithLatex.dataset.latexformula
   if (!latex) return
 
   event.preventDefault()

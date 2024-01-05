@@ -47,6 +47,22 @@ file tab-<aine>.html // antaa nykyisen enkoodauksen
 iconv -f ISO-8859-1 -t UTF-8 tab-<aine>.html > tab-math.html // korvaa nykyisen ISO-enkoodauksen UTF-8
 ```
 
+### Kaavat näkövammaisille
+
+Matemaattiset kaavat generoidaan näkövammaisille MathML-muodossa, joka voidaan kuunnella NVDA:n MathCAT-fi -laajennoksella.
+
+1. Asenna [NVDA](https://www.nvaccess.org/download/) (vain Windowsille)
+1. Seuraa Celian [testausohjeita](https://github.com/samimaattaCelia/MathCAT-fi#testaa-suomenkielist%C3%A4-mathcat-lis%C3%A4osaa-nvda-ruudunlukijalla) ja asenna MathCAT ja MathCAT-fi.
+    * NVDA menu (keypad insert + n) > Tools > Add-on store > Available add-ons > MathCAT > Actions > Install
+    * Sulje NVDA ja käynnistä se uudelleen
+    * Kopioi Languages-hakemiston sisältö testausohjeessa mainitulla tavalla
+    * Käynnistä NVDA uudelleen: keypad insert + n > Exit > Alasvetovalikosta "Restart" > OK
+    * NVDA:n kieleksi suomi: keypad insert + n > Preferences > Settings > General > NVDA Language: Finnish > Restart now
+    * NVDA:n syntetisaattori suomi: keypad insert + n > Asetukset > Asetukset > Puhe > Syntetisaattori "eSpeak NG" > Vaihda
+    * MathCATin asetukset suomi: keypad insert + n > Asetukset > MathCATin asetukset > Kieli: Suomi (fi) > OK
+
+SVG-muotoiset kaavat on peitetty näkövammaisilta
+
 ## Vinkkejä
 
 - Varsinainen aputiedosto löytyy `content/index.html`. Välilehdet löytyvät `content/tab-*.html`.
