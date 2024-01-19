@@ -48,7 +48,7 @@ const calculateHeight = (element: HTMLElement) => {
 }
 
 const setOutputAndErrorHeight = (elementId: string) => {
-  const element = document.getElementById(elementId)!
+  const element = document.getElementById(elementId)
   const setHeight = (newHeight: number) => (element.style.height = `{newHeight}px`)
 
   setHeight(0)
