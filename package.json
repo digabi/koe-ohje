@@ -8,6 +8,7 @@
     "start": "webpack serve",
     "build": "node index.js && DEPLOYMENT_ENV=koe webpack --mode production",
     "build:internet": "node index.js && DEPLOYMENT_ENV=internet webpack --mode production",
+    "build:docker": "docker build . -t koe-ohje -f docker/Dockerfile",
     "lint": "eslint . --ext .ts,.js",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\", \"target\": \"es2020\"}' mocha --config test/.mocharc.yml 'test/*.spec.ts'"
   },
