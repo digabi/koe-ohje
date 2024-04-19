@@ -37,7 +37,7 @@ read -r answer
 
 # Commit and push changes if the user answered y
 if [ "$answer" = "y" ]; then
-  git add "$FILES_TO_INCLUDE_IN_RELEASE_COMMITS"
+  git add $FILES_TO_INCLUDE_IN_RELEASE_COMMITS
   git commit -m "Release $NEW_NPM_VERSION"
   if ! git tag -m "Release $NEW_NPM_VERSION" "$NEW_NPM_VERSION"; then
     git reset --soft HEAD~1
