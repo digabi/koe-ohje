@@ -1,0 +1,36 @@
+name: 'Digabi2 App Dev Release'
+
+on:
+  push:
+    tags: '**'
+
+jobs:
+  dev-release:
+    name: Release to private ECR
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.UTILITY_ACCOUNT_ID }}:role/Digabi2PrivateEcrGithubActionsAccessRole
+          aws-region: eu-north-1
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: ${{ steps.login-ecr.outputs.registry }}/static-cheat:${{ github.ref_name }}
+          provenance: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
