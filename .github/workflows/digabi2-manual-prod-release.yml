@@ -3,10 +3,10 @@ name: 'Manual Production Release'
 on:
   workflow_dispatch:
     inputs:
-        tag:
-          description: "Tag"
-          required: true
-          type: string
+      tag:
+        description: 'Tag'
+        required: true
+        type: string
 
 env:
   IMAGE_NAME: static-cheat
@@ -22,7 +22,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.UTILITY_ACCOUNT_ID }}:role/Digabi2PrivateEcrGithubActionsAccessRole
+          role-to-assume: arn:aws:iam::${{ secrets.UTILITY_ACCOUNT_ID }}:role/CheatGithubActionsAccessRole
           aws-region: eu-north-1
       - name: Login to Amazon ECR
         id: login-ecr
@@ -32,7 +32,7 @@ jobs:
       - name: Configure Public ECR AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.UTILITY_ACCOUNT_ID }}:role/Digabi2PublicEcrGithubActionsAccessRole
+          role-to-assume: arn:aws:iam::${{ secrets.UTILITY_ACCOUNT_ID }}:role/CheatPublicGithubActionsAccessRole
           aws-region: us-east-1
       - name: Login to Amazon ECR
         id: login-public-ecr
