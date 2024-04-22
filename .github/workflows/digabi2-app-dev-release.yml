@@ -21,6 +21,10 @@ jobs:
         with:
           repository: digabi/map-tiles
           path: map-tiles
+      - name: ls
+        run: ls -la
+      - name: ls map-tiles
+        run: ls -la map-tiles
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
