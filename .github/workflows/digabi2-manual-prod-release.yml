@@ -9,7 +9,7 @@ on:
         type: string
 
 env:
-  IMAGE_NAME: static-cheat
+  IMAGE_NAME: cheat
 
 jobs:
   release:
@@ -40,9 +40,9 @@ jobs:
         with:
           registry-type: public
       - name: Tag image
-        run: docker tag ${{ steps.login-ecr.outputs.registry }}/$IMAGE_NAME:${{ inputs.tag }} ${{ steps.login-public-ecr.outputs.registry }}/u3p9b9p9/$IMAGE_NAME-public:${{ inputs.tag }}
+        run: docker tag ${{ steps.login-ecr.outputs.registry }}/$IMAGE_NAME:${{ inputs.tag }} ${{ steps.login-public-ecr.outputs.registry }}/u3p9b9p9/$IMAGE_NAME:${{ inputs.tag }}
       - name: Push image
-        run: docker push ${{ steps.login-public-ecr.outputs.registry }}/u3p9b9p9/$IMAGE_NAME-public:${{ inputs.tag }}
+        run: docker push ${{ steps.login-public-ecr.outputs.registry }}/u3p9b9p9/$IMAGE_NAME:${{ inputs.tag }}
       - name: Create Github Release
         uses: softprops/action-gh-release@9d7c94cfd0a1f3ed45544c887983e9fa900f0564 # Pin to commit hash to prevent compromise of third party action
         with:
