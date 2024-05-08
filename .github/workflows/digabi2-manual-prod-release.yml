@@ -8,8 +8,13 @@ on:
         required: true
         type: string
 
+concurrency:
+  group: ${{ inputs.tag }}
+
 env:
-  IMAGE_NAME: cheat
+  DEV_IMAGE_NAME: cheat
+  PROD_IMAGE_NAME: cheat-prod
+  GITHUB_ACCESS_ROLE: CheatGithubActionsAccessRole
 
 jobs:
   release:
@@ -22,27 +27,17 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.UTILITY_ACCOUNT_ID }}:role/CheatGithubActionsAccessRole
+          role-to-assume: arn:aws:iam::${{ secrets.UTILITY_ACCOUNT_ID }}:role/${{ env.GITHUB_ACCESS_ROLE }}
           aws-region: eu-north-1
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
       - name: Pull private image
-        run: docker pull ${{ steps.login-ecr.outputs.registry }}/$IMAGE_NAME:${{ inputs.tag }}
-      - name: Configure Public ECR AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::${{ secrets.UTILITY_ACCOUNT_ID }}:role/CheatPublicGithubActionsAccessRole
-          aws-region: us-east-1
-      - name: Login to Amazon ECR
-        id: login-public-ecr
-        uses: aws-actions/amazon-ecr-login@v2
-        with:
-          registry-type: public
+        run: docker pull ${{ steps.login-ecr.outputs.registry }}/$DEV_IMAGE_NAME:${{ inputs.tag }}
       - name: Tag image
-        run: docker tag ${{ steps.login-ecr.outputs.registry }}/$IMAGE_NAME:${{ inputs.tag }} ${{ steps.login-public-ecr.outputs.registry }}/u3p9b9p9/$IMAGE_NAME:${{ inputs.tag }}
+        run: docker tag ${{ steps.login-ecr.outputs.registry }}/$DEV_IMAGE_NAME:${{ inputs.tag }} ${{ steps.login-ecr.outputs.registry }}/$PROD_IMAGE_NAME:${{ inputs.tag }}
       - name: Push image
-        run: docker push ${{ steps.login-public-ecr.outputs.registry }}/u3p9b9p9/$IMAGE_NAME:${{ inputs.tag }}
+        run: docker push ${{ steps.login-ecr.outputs.registry }}/$PROD_IMAGE_NAME:${{ inputs.tag }}
       - name: Create Github Release
         uses: softprops/action-gh-release@9d7c94cfd0a1f3ed45544c887983e9fa900f0564 # Pin to commit hash to prevent compromise of third party action
         with:

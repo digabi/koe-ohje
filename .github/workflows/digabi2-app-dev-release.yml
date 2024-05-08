@@ -4,6 +4,9 @@ on:
   push:
     tags: '**'
 
+concurrency:
+  group: ${{ github.ref_name }}
+
 jobs:
   dev-release:
     name: Release to private ECR
