@@ -1,6 +1,6 @@
 {
   "name": "koe-ohje",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Kokelaan käyttöympäristön ohje, joka näytetään YTL:n digitaalisen ylioppilaskokeen kokelaalle Firefox-selaimella.",
   "private": true,
   "main": "index.js",
