@@ -21,4 +21,4 @@ fi
 
 echo "Running release workflow for "$tag_to_release""
 # using github cli trigger manual workflow with the tag to release as the tag parameter
-gh workflow run digabi2-manual-prod-release.yml -f tag="$tag_to_release"
+gh workflow run digabi2-manual-prod-release.yml -f tag="$tag_to_release" --ref feature/abitti2
