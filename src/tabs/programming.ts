@@ -162,9 +162,17 @@ const initializePythonEngine = async () => {
     pyodide = await loadPyodide({
       indexURL: `${getUrlPath()}common/pyodide/`, // Pydiode does not handle .. as part of the path
       stdin: getInput,
-      stdout: (text: string) => printStdout(text),
       stderr: (text: string) => printStderr(text),
     })
+    let decoder = new TextDecoder()
+    pyodide.setStdout({
+      write: buf => {
+        console.log(decoder.decode(buf))
+        printStdout(decoder.decode(buf))
+        return buf.length
+      }
+    });
+
   } catch (error) {
     console.error('Error while initiating Pyodide', error)
     showErrorArea()
