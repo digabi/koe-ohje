@@ -17,7 +17,6 @@ module.exports = (env, argv) => {
   return {
     entry: {
       app: './src/index.ts',
-      'editor.worker': 'monaco-editor/esm/vs/editor/editor.worker.js',
     },
     devtool: isProduction ? 'cheap-module-source-map' : 'inline-source-map',
     mode: isProduction ? 'production' : 'development',

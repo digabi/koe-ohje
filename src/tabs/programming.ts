@@ -1,11 +1,10 @@
 import './programming.css'
-import { getCode, initializeMonacoEditor, setFocusToMonacoEditor, setMonacoReadOnly } from './common/monaco-editor'
+import { getCode, initializeEditor, setFocusToEditor, setEditorReadOnly } from './common/codemirror-editor'
 import { setCodeOutputToClipboard, setCodeToClipboard } from './common/clipboard'
 import { screenReaderTalkPolite } from './common/screenreader'
 import { getCurrentLanguage, Language } from './common/language'
 
 const codeEditorWrapperId = 'tab-programming-editor-wrapper'
-const codeExecutionResultId = 'tab-programming-execution-result'
 const codeEditorId = 'code-editor'
 const outputId = 'code-output'
 const errorId = 'code-error'
@@ -24,6 +23,7 @@ const boilerplateErrorstrings = [
 
 let pyodide: any = null
 let pyodideInitializing = true
+let programmingTabActive = false
 
 const isSingleColumn = () => window.innerWidth / 2 <= document.getElementById(codeEditorWrapperId).offsetWidth
 
@@ -68,6 +68,9 @@ const showErrorArea = () => {
 }
 
 const showOutputArea = () => {
+  if (!programmingTabActive) {
+    return
+  }
   document.getElementById(outputId).style.display = 'block'
   document.getElementById(errorId).style.display = 'none'
 
@@ -147,12 +150,12 @@ const getUrlPath = () => {
 const initializePythonEngine = async () => {
   if (pyodide != null) {
     // Pyodide is already initialized, we're coming back from another tab
-    setMonacoReadOnly(false)
+    setEditorReadOnly(false)
     showOutputArea()
     return
   }
 
-  setMonacoReadOnly(true)
+  setEditorReadOnly(true)
   hideBothAreas()
   pyodideInitializing = true
 
@@ -185,7 +188,7 @@ const initializePythonEngine = async () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
   pyodide.runPython("import js\ndef input(prompt=''):\n  return js.prompt(prompt)\n\n")
 
-  setMonacoReadOnly(false)
+  setEditorReadOnly(false)
   showOutputArea()
   pyodideInitializing = false
 }
@@ -208,7 +211,7 @@ const focusOutputOrError = () => {
 const processAccessibilityKeybindings = (event: KeyboardEvent) => {
   if (event.code == 'KeyE' && event.altKey) {
     event.preventDefault()
-    setFocusToMonacoEditor()
+    setFocusToEditor()
     return
   }
 
@@ -252,11 +255,13 @@ const processAccessibilityKeybindings = (event: KeyboardEvent) => {
 }
 
 export const initializeProgrammingTab = () => {
-  const monacoExitAction = (actionType: string) => {
+  programmingTabActive = true
+  const editorExitAction = () => {
     focusButtonExecuteCode()
+    return true
   }
 
-  initializeMonacoEditor(codeEditorId, monacoExitAction)
+  initializeEditor(codeEditorId, editorExitAction)
   void initializePythonEngine()
 
   const executeButtons = Array.from(document.querySelectorAll(executeButtonSelector))
@@ -269,5 +274,6 @@ export const initializeProgrammingTab = () => {
 }
 
 export const teardownProgrammingTab = () => {
+  programmingTabActive = false
   document.removeEventListener('keydown', processAccessibilityKeybindings)
 }

@@ -95,3 +95,7 @@ code {
   padding-right: 2px;
   white-space: nowrap;
 }
+
+.cm-highlightSpace {
+  opacity: 0.2;
+}
