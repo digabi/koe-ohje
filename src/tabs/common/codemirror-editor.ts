@@ -1,10 +1,24 @@
-import { basicSetup } from 'codemirror'
-import { keymap, EditorView, highlightWhitespace } from "@codemirror/view";
-import { Compartment } from '@codemirror/state'
-import { indentWithTab } from "@codemirror/commands"
-import { indentUnit } from "@codemirror/language"
-
+import { closeBrackets, autocompletion, closeBracketsKeymap, completionKeymap } from '@codemirror/autocomplete'
+import { history, defaultKeymap, historyKeymap, indentWithTab } from '@codemirror/commands'
 import { python } from '@codemirror/lang-python'
+  import {
+  bracketMatching,
+  defaultHighlightStyle,
+  indentOnInput,
+  indentUnit,
+  syntaxHighlighting
+} from "@codemirror/language"
+import { highlightSelectionMatches, searchKeymap } from '@codemirror/search'
+import { Compartment } from "@codemirror/state"
+import {
+  keymap,
+  EditorView,
+  highlightWhitespace,
+  lineNumbers,
+  highlightActiveLineGutter,
+  highlightSpecialChars, drawSelection, dropCursor, highlightActiveLine
+} from "@codemirror/view"
+
 
 let codeMirrorEditor: EditorView
 const editableCompartment = new Compartment()
@@ -54,7 +68,26 @@ export const initializeEditor = (codeEditorId: string, editorExitAction: () => b
   codeMirrorEditor = new EditorView({
     doc: getLastCode(),
     extensions: [
-      basicSetup,
+      lineNumbers(),
+      highlightActiveLineGutter(),
+      highlightSpecialChars(),
+      history(),
+      drawSelection(),
+      dropCursor(),
+      indentOnInput(),
+      syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
+      bracketMatching(),
+      closeBrackets(),
+      autocompletion(),
+      highlightActiveLine(),
+      highlightSelectionMatches(),
+      keymap.of([
+        ...closeBracketsKeymap,
+        ...defaultKeymap,
+        ...searchKeymap,
+        ...historyKeymap,
+        ...completionKeymap,
+      ]),
       keymap.of([
         {
           key: 'Alt-x',
