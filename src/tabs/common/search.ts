@@ -1,4 +1,4 @@
-import Fuse from 'fuse.js'
+import Fuse, { IFuseOptions } from 'fuse.js'
 import { debounce } from '../../util/debounce'
 
 import { getCurrentLanguage } from './language'
@@ -10,7 +10,7 @@ interface SearchRecord {
   elementRef: HTMLElement
 }
 
-const fuseOptions: Fuse.IFuseOptions<SearchRecord> = {
+const fuseOptions: IFuseOptions<SearchRecord> = {
   keys: ['text'],
   threshold: 0.4,
   ignoreLocation: true
