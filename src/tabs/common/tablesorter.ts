@@ -1,4 +1,3 @@
-import { Keyboard } from 'puppeteer'
 import './tablesorter.css'
 import { screenReaderTalkPolite } from './screenreader'
 import { getCurrentLanguage } from './language'
