@@ -77,7 +77,7 @@ const handleKeyboardEvents = (event: KeyboardEvent) => {
 export const initializeTablesorter = () => {
   const sortableTables = document.querySelectorAll<HTMLElement>('table.sortable')
   sortableTables.forEach(table => {
-    const headers = table.querySelectorAll('th[data-sortable]')
+    const headers = table.querySelectorAll('th[data-sortable]') as NodeListOf<HTMLTableCellElement>
     headers.forEach(header => {
       header.addEventListener('click', handleHeaderMouseClick)
 
