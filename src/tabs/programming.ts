@@ -161,7 +161,7 @@ const initializePythonEngine = async () => {
   pyodideInitializing = true
 
   try {
-    // pyodide is imported by content/index.html
+    // @ts-expect-error pyodide is imported by content/index.html
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     pyodide = await loadPyodide({
       indexURL: `${getUrlPath()}common/pyodide/`, // Pydiode does not handle .. as part of the path
