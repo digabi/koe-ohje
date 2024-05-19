@@ -6,7 +6,8 @@
   overflow: auto;
 }
 
-#code-output, #code-error {
+#code-output,
+#code-error {
   min-height: 3em;
   display: block;
   overflow-x: auto;
@@ -36,7 +37,7 @@
 }
 
 .code-editor-button {
-  background-color: #1E5075;
+  background-color: #1e5075;
   padding: 10px;
   color: #fff;
   border: none;
@@ -44,9 +45,10 @@
   margin: 10px 0 10px;
 }
 
-.code-editor-button:hover, .code-editor-button:active {
+.code-editor-button:hover,
+.code-editor-button:active {
   padding: 10px;
-  background-color: #359BB7;
+  background-color: #359bb7;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -62,7 +64,6 @@
   #tab-programming-doc-container {
     width: 100%;
   }
-
 }
 
 @media only screen and (min-width: 1025px) {

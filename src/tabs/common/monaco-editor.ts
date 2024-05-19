@@ -11,7 +11,7 @@ declare global {
 self.MonacoEnvironment = {
   getWorkerUrl: function () {
     return './editor.worker.bundle.js'
-  }
+  },
 }
 
 const setLastCode = (code: string) => {
@@ -25,7 +25,7 @@ const getLastCode = (): string => {
     return window.localStorage.getItem('monaco-editor-lastcode')
   }
 
-  return ""
+  return ''
 }
 
 export const getCode = () => {
@@ -59,21 +59,27 @@ export const initializeMonacoEditor = (codeEditorId: string, fnExitFromMonaco: F
     id: 'koe-ohje-exit',
     label: 'Exit from editor',
     keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.KeyX],
-    run: () => { fnExitFromMonaco() }
+    run: () => {
+      fnExitFromMonaco()
+    },
   })
 
   editor.addAction({
     id: 'koe-ohje-run',
     label: 'Exit from editor',
     keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.KeyR],
-    run: () => { fnExitFromMonaco() }
+    run: () => {
+      fnExitFromMonaco()
+    },
   })
 
   document.getElementById(codeEditorId).addEventListener('keyup', () => {
     setLastCode(editor.getValue())
   })
 
-  document.getElementById("tab-programming-ide-container").addEventListener('replaceEditorTextForTestingPurposes', (event: CustomEvent) => {
-    editor.setValue(event.detail.text)
-  })
+  document
+    .getElementById('tab-programming-ide-container')
+    .addEventListener('replaceEditorTextForTestingPurposes', (event: CustomEvent) => {
+      editor.setValue(event.detail.text)
+    })
 }

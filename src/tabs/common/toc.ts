@@ -1,21 +1,24 @@
 import * as tocbot from 'tocbot'
 
 const generateId = (text: string) => {
-  return "_" + text
-    .trim()
-    .toLowerCase()
-    .replace(/[\s\(\)]/g, '-')
-    .replace(/ä/g, 'ae')
-    .replace(/Ä/g, 'AE')
-    .replace(/å/g, 'ao')
-    .replace(/Å/g, 'AO')
-    .replace(/ö/g, 'oe')
-    .replace(/Ö/g, 'OE')
+  return (
+    '_' +
+    text
+      .trim()
+      .toLowerCase()
+      .replace(/[\s\(\)]/g, '-')
+      .replace(/ä/g, 'ae')
+      .replace(/Ä/g, 'AE')
+      .replace(/å/g, 'ao')
+      .replace(/Å/g, 'AO')
+      .replace(/ö/g, 'oe')
+      .replace(/Ö/g, 'OE')
+  )
 }
 
 const setHeaderIds = () => {
   const headers = document.querySelectorAll<HTMLElement>('.js-toc-content h2, .js-toc-content h3')
-  headers.forEach(element => {
+  headers.forEach((element) => {
     if (element.getAttribute('id') == null) {
       element.setAttribute('id', generateId(element.innerText))
     }
@@ -92,6 +95,6 @@ export const initializeToc = () => {
       if (isMobileToc) {
         hideTocMenu()
       }
-    }
+    },
   })
 }

@@ -3,7 +3,7 @@ import { getLanguageFromUrl, updateUrl } from './url'
 
 export enum Language {
   finnish = 'fi',
-  swedish = 'sv'
+  swedish = 'sv',
 }
 
 const localStorageLanguageKey = 'digabi-koe-ohje-last-language'
@@ -76,7 +76,7 @@ const handleChangeLanguage = (event: MouseEvent) => {
 
 export const initializeLanguage = () => {
   const videos = document.querySelectorAll<HTMLElement>('.helpvideo')
-  videos.forEach(video => {
+  videos.forEach((video) => {
     const src = `../common/videos/${getCurrentLanguage()}/${video.dataset.src}`
     video.setAttribute('src', src)
   })
@@ -84,7 +84,7 @@ export const initializeLanguage = () => {
   setCurrentLanguage(guessLanguageForSession())
   const languageToRemove = getCurrentLanguage() === Language.finnish ? Language.swedish : Language.finnish
   const wrongLanguageElements = document.querySelectorAll(`[lang='${languageToRemove}']`)
-  wrongLanguageElements.forEach(element => element.parentNode.removeChild(element))
+  wrongLanguageElements.forEach((element) => element.parentNode.removeChild(element))
 
   const languageItems = Array.from(document.querySelectorAll('.tab-menu-language-option'))
   languageItems.forEach((element) => element.addEventListener('click', handleChangeLanguage))

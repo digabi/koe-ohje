@@ -4,7 +4,7 @@ import { getCurrentLanguage } from './language'
 
 const resetSort = (table: HTMLElement) => {
   const headers = table.querySelectorAll<HTMLElement>('th[data-sortable]')
-  headers.forEach(header => {
+  headers.forEach((header) => {
     header.dataset.sorted = 'asc'
     header.classList.remove('active')
     header.removeAttribute('aria-sort')
@@ -14,15 +14,17 @@ const resetSort = (table: HTMLElement) => {
 const getCellValue = (row: HTMLElement, index: number): string =>
   (<HTMLElement>row.children[index]).innerText || row.children[index].textContent
 
-const comparer = (index: number, asc: boolean) => (a: HTMLElement, b: HTMLElement): number => {
-  const value1 = getCellValue(asc ? a : b, index)
-  const value2 = getCellValue(asc ? b : a, index)
+const comparer =
+  (index: number, asc: boolean) =>
+  (a: HTMLElement, b: HTMLElement): number => {
+    const value1 = getCellValue(asc ? a : b, index)
+    const value2 = getCellValue(asc ? b : a, index)
 
-  return value1.localeCompare(value2, undefined, {
-    numeric: true,
-    sensitivity: 'base'
-  })
-}
+    return value1.localeCompare(value2, undefined, {
+      numeric: true,
+      sensitivity: 'base',
+    })
+  }
 
 const sort = (table: HTMLElement, header: HTMLTableCellElement) => {
   const tbody = table.querySelector('tbody')
@@ -31,7 +33,7 @@ const sort = (table: HTMLElement, header: HTMLTableCellElement) => {
 
   Array.from(tbody.children)
     .sort(comparer(columnIndex, sortAsc))
-    .forEach(row => tbody.appendChild(row))
+    .forEach((row) => tbody.appendChild(row))
 }
 
 const handleHeaderClick = (target: HTMLTableCellElement) => {
@@ -76,9 +78,9 @@ const handleKeyboardEvents = (event: KeyboardEvent) => {
 
 export const initializeTablesorter = () => {
   const sortableTables = document.querySelectorAll<HTMLElement>('table.sortable')
-  sortableTables.forEach(table => {
+  sortableTables.forEach((table) => {
     const headers = table.querySelectorAll('th[data-sortable]') as NodeListOf<HTMLTableCellElement>
-    headers.forEach(header => {
+    headers.forEach((header) => {
       header.addEventListener('click', handleHeaderMouseClick)
 
       if (header.classList.contains('active')) {

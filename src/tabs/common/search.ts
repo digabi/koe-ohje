@@ -13,7 +13,7 @@ interface SearchRecord {
 const fuseOptions: IFuseOptions<SearchRecord> = {
   keys: ['text'],
   threshold: 0.4,
-  ignoreLocation: true
+  ignoreLocation: true,
 }
 
 let fuse: Fuse<SearchRecord>
@@ -25,12 +25,12 @@ export const createSearchIndex = () => {
 
   const searchIndex: SearchRecord[] = []
 
-  searchableContent.forEach(element => {
+  searchableContent.forEach((element) => {
     const record: SearchRecord = { text: '', elementRef: element }
 
     const elementClone = <HTMLElement>element.cloneNode(true)
     const equations = elementClone.querySelectorAll('.mjpage')
-    equations.forEach(equation => {
+    equations.forEach((equation) => {
       equation.innerHTML = `\\(${equation.textContent.trim()}\\)`
     })
 
@@ -63,7 +63,7 @@ const createSearchItem = (searchRecord: SearchRecord): HTMLElement => {
   result.addEventListener('click', (event: Event) => {
     event.preventDefault()
 
-    searchRecord.elementRef.setAttribute("tabindex", "0")
+    searchRecord.elementRef.setAttribute('tabindex', '0')
     searchRecord.elementRef.focus()
 
     let scrollTop = searchRecord.elementRef.getBoundingClientRect().y + window.scrollY
@@ -75,7 +75,9 @@ const createSearchItem = (searchRecord: SearchRecord): HTMLElement => {
 
     window.scrollTo({ top: scrollTop, behavior: 'smooth' })
 
-    setTimeout(() => { searchRecord.elementRef.removeAttribute("tabindex") }, 0)
+    setTimeout(() => {
+      searchRecord.elementRef.removeAttribute('tabindex')
+    }, 0)
   })
 
   result.innerHTML = searchRecord.elementRef.innerHTML
@@ -96,7 +98,7 @@ const renderSearchResults = () => {
 
   const results = fuse?.search(searchInput.value) ?? []
 
-  results.slice(0, 10).forEach(resultItem => {
+  results.slice(0, 10).forEach((resultItem) => {
     resultContainer.appendChild(createSearchItem(resultItem.item))
   })
 
