@@ -26,8 +26,8 @@ deb: build
 	# Content
 	mkdir -p deb-root/usr/local/share/digabi-koe-ohje
 	cp help-browser.svg deb-root/usr/local/share/digabi-koe-ohje/
-	cp -r common/ deb-root/usr/local/share/digabi-koe-ohje/
-	cp -r build/ deb-root/usr/local/share/digabi-koe-ohje/
+	cp -R common deb-root/usr/local/share/digabi-koe-ohje/
+	cp -R build deb-root/usr/local/share/digabi-koe-ohje/
 
 	cp build/index.html deb-root/usr/local/share/digabi-koe-ohje/build/index-fi.html
 	cp build/index.html deb-root/usr/local/share/digabi-koe-ohje/build/index-sv.html

@@ -24,6 +24,7 @@ const boilerplateErrorstrings = [
 
 let pyodide: any = null
 let pyodideInitializing = true
+let programmingTabActive = false
 
 const isSingleColumn = () => window.innerWidth / 2 <= document.getElementById(codeEditorWrapperId).offsetWidth
 
@@ -68,6 +69,9 @@ const showErrorArea = () => {
 }
 
 const showOutputArea = () => {
+  if (!programmingTabActive) {
+    return
+  }
   document.getElementById(outputId).style.display = 'block'
   document.getElementById(errorId).style.display = 'none'
 
@@ -157,7 +161,7 @@ const initializePythonEngine = async () => {
   pyodideInitializing = true
 
   try {
-    // pyodide is imported by content/index.html
+    // @ts-expect-error pyodide is imported by content/index.html
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     pyodide = await loadPyodide({
       indexURL: `${getUrlPath()}common/pyodide/`, // Pydiode does not handle .. as part of the path
@@ -252,6 +256,7 @@ const processAccessibilityKeybindings = (event: KeyboardEvent) => {
 }
 
 export const initializeProgrammingTab = () => {
+  programmingTabActive = true
   const monacoExitAction = (actionType: string) => {
     focusButtonExecuteCode()
   }
@@ -269,5 +274,6 @@ export const initializeProgrammingTab = () => {
 }
 
 export const teardownProgrammingTab = () => {
+  programmingTabActive = false
   document.removeEventListener('keydown', processAccessibilityKeybindings)
 }

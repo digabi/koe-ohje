@@ -1,4 +1,3 @@
-import { Keyboard } from 'puppeteer'
 import { screenReaderTalkPolite } from './screenreader'
 
 const showSuccess = (boxId: string) => {
@@ -138,7 +137,7 @@ export const initializeCopyToClipboard = () => {
   document.addEventListener('click', copyTextContent)
 
   const equationElements = Array.from(document.querySelectorAll('button.mjpage'))
-  equationElements.forEach(element => element.addEventListener('click', copyEquationClickHandler))
+  equationElements.forEach((element) => element.addEventListener('click', copyEquationClickHandler))
 
   document.addEventListener('keydown', copyEquationKeyboardHandler)
 }
