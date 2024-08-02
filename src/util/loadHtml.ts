@@ -6,17 +6,11 @@ export const loadHtml = (url: string): Promise<string> =>
       if (request.status >= 200 && request.status < 300) {
         resolve(request.responseText)
       } else {
-        reject({
-          status: request.status,
-          statusText: request.statusText,
-        })
+        reject(new Error(`${request.status}, ${request.statusText}`))
       }
     }
     request.onerror = function () {
-      reject({
-        status: request.status,
-        statusText: request.statusText,
-      })
+      reject(new Error(`${request.status}, ${request.statusText}`))
     }
     request.send()
   })
