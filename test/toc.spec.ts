@@ -1,20 +1,9 @@
-import { Page, expect } from '@playwright/test'
-import { newPage, newBrowserContext } from './utils'
+import { Page, test, expect } from '@playwright/test'
 
-describe('Table-of-contents', () => {
-  let page: Page
-
-  beforeEach(async () => {
-    page = await newPage(await newBrowserContext())
-  })
-
-  afterEach(async () => {
-    await page.close()
-  })
-
-  describe('Missing heading IDs on Finnish tabs', () => {
-    it('should have zero default toc-lib-generated ids on finnish tabs', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi')
+test.describe('Table-of-contents', () => {
+  test.describe('Missing heading IDs on Finnish tabs', () => {
+    test('should have zero default toc-lib-generated ids on finnish tabs', async ({ page }) => {
+      await page.goto('/build?fi')
 
       const TABS = [
         'FYSIIKKA',
@@ -41,9 +30,9 @@ describe('Table-of-contents', () => {
     })
   })
 
-  describe('Missing heading IDs on Swedish tabs', () => {
-    it('should have zero default toc-lib-generated ids on swedish tabs', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv')
+  test.describe('Missing heading IDs on Swedish tabs', () => {
+    test('should have zero default toc-lib-generated ids on swedish tabs', async ({ page }) => {
+      await page.goto('/build?sv')
 
       const TABS = [
         'FYSIK',
@@ -68,9 +57,9 @@ describe('Table-of-contents', () => {
     })
   })
 
-  describe('Finnish and Swedish tabs have equal list of ids', () => {
-    beforeEach(async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi')
+  test.describe('Finnish and Swedish tabs have equal list of ids', () => {
+    test.beforeEach(async ({ page }) => {
+      await page.goto('/build?fi')
     })
 
     const getCurrentIdList = (): string[] => {
@@ -91,7 +80,7 @@ describe('Table-of-contents', () => {
       return []
     }
 
-    const getTabIdList = async (tab: string, language: string): Promise<string[]> => {
+    const getTabIdList = async (page: Page, tab: string, language: string): Promise<string[]> => {
       await page.click(`[data-lang-id="${language}"]`)
       await page.click(`[data-tab-id="${tab}"]`)
 
@@ -100,9 +89,9 @@ describe('Table-of-contents', () => {
       return await page.evaluate(getCurrentIdList)
     }
 
-    it('should have an equal/unique list of ids on chemistry tab', async () => {
-      const idsFi = await getTabIdList('chemistry', 'fi')
-      const idsSv = await getTabIdList('chemistry', 'sv')
+    test('should have an equal/unique list of ids on chemistry tab', async ({ page }) => {
+      const idsFi = await getTabIdList(page, 'chemistry', 'fi')
+      const idsSv = await getTabIdList(page, 'chemistry', 'sv')
 
       expect(idsSv).toEqual(idsFi)
 
@@ -111,9 +100,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
 
-    it('should have an equal/unique list of ids on general tab', async () => {
-      const idsFi = await getTabIdList('general', 'fi')
-      const idsSv = await getTabIdList('general', 'sv')
+    test('should have an equal/unique list of ids on general tab', async ({ page }) => {
+      const idsFi = await getTabIdList(page, 'general', 'fi')
+      const idsSv = await getTabIdList(page, 'general', 'sv')
 
       expect(idsSv).toEqual(idsFi)
 
@@ -121,9 +110,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
 
-    it('should have an equal/unique list of ids on keyboard tab', async () => {
-      const idsFi = await getTabIdList('keyboard', 'fi')
-      const idsSv = await getTabIdList('keyboard', 'sv')
+    test('should have an equal/unique list of ids on keyboard tab', async ({ page }) => {
+      const idsFi = await getTabIdList(page, 'keyboard', 'fi')
+      const idsSv = await getTabIdList(page, 'keyboard', 'sv')
 
       expect(idsSv).toEqual(idsFi)
 
@@ -131,9 +120,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
 
-    it('should have an equal/unique list of ids on math tab', async () => {
-      const idsFi = await getTabIdList('math', 'fi')
-      const idsSv = await getTabIdList('math', 'sv')
+    test('should have an equal/unique list of ids on math tab', async ({ page }) => {
+      const idsFi = await getTabIdList(page, 'math', 'fi')
+      const idsSv = await getTabIdList(page, 'math', 'sv')
 
       expect(idsSv).toEqual(idsFi)
 
@@ -141,9 +130,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
 
-    it('should have an equal/unique list of ids on physics tab', async () => {
-      const idsFi = await getTabIdList('physics', 'fi')
-      const idsSv = await getTabIdList('physics', 'sv')
+    test('should have an equal/unique list of ids on physics tab', async ({ page }) => {
+      const idsFi = await getTabIdList(page, 'physics', 'fi')
+      const idsSv = await getTabIdList(page, 'physics', 'sv')
 
       expect(idsSv).toEqual(idsFi)
 
@@ -151,9 +140,9 @@ describe('Table-of-contents', () => {
       expect(ifDuplicateEntry(idsSv)).toEqual([])
     })
 
-    it('should have an equal/unique list of ids on programming tab', async () => {
-      const idsFi = await getTabIdList('programming', 'fi')
-      const idsSv = await getTabIdList('programming', 'sv')
+    test('should have an equal/unique list of ids on programming tab', async ({ page }) => {
+      const idsFi = await getTabIdList(page, 'programming', 'fi')
+      const idsSv = await getTabIdList(page, 'programming', 'sv')
 
       expect(idsSv).toEqual(idsFi)
 

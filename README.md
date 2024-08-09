@@ -14,7 +14,7 @@ Projektin kehitystä varten tarvitset Node.js version 18 https://nodejs.org/en/ 
 1. Jos käsittelet ohjelmointivälilehteä, aja myös `make update-pyodide`
 1. Generoi HTML tiedostot komennolla `npm run build:internet` (varsinaisen koetilanteen versio käyttää `npm run build`)
 1. Tämän jälkeen voit ajaa projektia lokaalisti komennolla `npm run start`. Lokaalin koe-ohjeen löydät osoitteesta http://localhost:8080
-1. Testien ajamiseksi pysäytä yllä mainittu paikallinen kehityspalvelin, jonka käynnistit `npm run start` -komennolla. Käynnistä testit `npm run test`. Jos haluat nähdä selaimen, aja testit `PUPPETEER_DEBUG=1 npm run test`.
+1. Testien ajamiseksi pysäytä yllä mainittu paikallinen kehityspalvelin, jonka käynnistit `npm run start` -komennolla. Käynnistä testit `npm run test`. Jos haluat nähdä selaimen, aja testit `npm run test -- --ui`.
 
 TypeScript muutokset näkyvät selaimessa automaattisesti kun projekti on käynnissä. Jotta HTML tiedostojen muutokset tulevat näkyviin, pitää ne generoida uudelleen `npm run build:internet` komennolla.
 

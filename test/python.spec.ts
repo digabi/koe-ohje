@@ -1,20 +1,9 @@
-import { Page, expect } from '@playwright/test'
-import { newPage, newBrowserContext } from './utils'
+import { test, expect } from '@playwright/test'
 
-describe('Python', () => {
-  let page: Page
-
-  beforeEach(async () => {
-    page = await newPage(await newBrowserContext())
-  })
-
-  afterEach(async () => {
-    await page.close()
-  })
-
-  describe('Python Environment', () => {
-    it('should have certain elements visible and hidden', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi')
+test.describe('Python', () => {
+  test.describe('Python Environment', () => {
+    test('should have certain elements visible and hidden', async ({ page }) => {
+      await page.goto('/build?fi')
       await page.click('text=OHJELMOINTI')
 
       await expect(page.locator('#code-output')).toBeVisible()
@@ -23,9 +12,9 @@ describe('Python', () => {
     })
   })
 
-  describe('Python Code Execution', () => {
-    beforeEach(async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi')
+  test.describe('Python Code Execution', () => {
+    test.beforeEach(async ({ page }) => {
+      await page.goto('/build?fi')
       await page.click('text=OHJELMOINTI')
 
       // Make sure the page rendering is finished
@@ -34,7 +23,7 @@ describe('Python', () => {
       await expect(page.locator('#code-output')).toBeVisible()
     })
 
-    it('should be able to calculate 1+3', async () => {
+    test('should be able to calculate 1+3', async ({ page }) => {
       // We need to use a custom event as page.fill() cannot be used with Monaco editor
       // page.dispatchEvent() does not dispatch custom events
 
@@ -55,7 +44,7 @@ describe('Python', () => {
       await expect(page.locator('#code-error')).toBeEmpty()
     })
 
-    it('should be able to do things with numpy library', async () => {
+    test('should be able to do things with numpy library', async ({ page }) => {
       await page.evaluate(() => {
         console.log('Hello world!')
       })
@@ -79,7 +68,7 @@ print(m)`
       await expect(page.locator('#code-error')).toBeEmpty()
     })
 
-    it('should show an error', async () => {
+    test('should show an error', async ({ page }) => {
       // We need to use a custom event as page.fill() cannot be used with Monaco editor
 
       await page.evaluate(() => {

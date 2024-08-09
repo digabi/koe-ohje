@@ -8,7 +8,9 @@ const devServer = {
   },
   static: {
     directory: path.join(__dirname, './'),
-    watch: true,
+    watch: {
+      ignored: /playwright.*/,
+    },
   },
 }
 

@@ -1,33 +1,22 @@
-import { Page, expect } from '@playwright/test'
-import { newPage, newBrowserContext } from './utils'
+import { test, expect } from '@playwright/test'
 
 const numberOfAudioClips = 17
 const testAudioClipPlayButtonSelector = '[data-muzakid="tab-muzak-music-ef"]'
 const testAudioClipAnotherPlayButtonSelector = '[data-muzakid="tab-muzak-music-lo"]'
 
-describe('Muzak', () => {
-  let page: Page
-
-  beforeEach(async () => {
-    page = await newPage(await newBrowserContext())
-  })
-
-  afterEach(async () => {
-    await page.close()
-  })
-
-  describe('Muzak Player', () => {
-    beforeEach(async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi')
+test.describe('Muzak', () => {
+  test.describe('Muzak Player', () => {
+    test.beforeEach(async ({ page }) => {
+      await page.goto('/build?fi')
       await page.click('text=MUSIIKKI')
     })
 
-    it('should contain fontawesome play icon for every title', async () => {
+    test('should contain fontawesome play icon for every title', async ({ page }) => {
       await expect(page.locator('.svg-inline--fa.fa-play')).toHaveCount(numberOfAudioClips)
       await expect(page.locator('.svg-inline--fa.fa-pause')).toHaveCount(0)
     })
 
-    it('should change play button to pause to again to play', async () => {
+    test('should change play button to pause to again to play', async ({ page }) => {
       await expect(page.locator(testAudioClipPlayButtonSelector)).toHaveCount(1)
 
       await expect(page.locator(`${testAudioClipPlayButtonSelector} .svg-inline--fa.fa-play`)).toHaveAttribute(
@@ -51,7 +40,7 @@ describe('Muzak', () => {
       await expect(page.locator('.svg-inline--fa.fa-pause')).toHaveCount(0)
     })
 
-    it('should stop playing if button is clicked when playing', async () => {
+    test('should stop playing if button is clicked when playing', async ({ page }) => {
       await expect(page.locator(testAudioClipPlayButtonSelector)).toHaveCount(1)
 
       await expect(page.locator(`${testAudioClipPlayButtonSelector} .svg-inline--fa.fa-play`)).toHaveAttribute(
@@ -74,7 +63,7 @@ describe('Muzak', () => {
       )
     })
 
-    it('should pause previous audio clip if another is played', async () => {
+    test('should pause previous audio clip if another is played', async ({ page }) => {
       await expect(page.locator(testAudioClipPlayButtonSelector)).toHaveCount(1)
       await expect(page.locator(testAudioClipAnotherPlayButtonSelector)).toHaveCount(1)
 

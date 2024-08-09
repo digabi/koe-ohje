@@ -1,4 +1,3 @@
-import { Keyboard } from 'puppeteer'
 import { screenReaderTalkPolite } from './screenreader'
 
 const showSuccess = (boxId: string) => {

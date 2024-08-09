@@ -1,116 +1,105 @@
-import { Page, expect } from '@playwright/test'
-import { newPage, newBrowserContext } from './utils'
+import { test, expect } from '@playwright/test'
 
-describe('Language', () => {
-  let page: Page
-
-  beforeEach(async () => {
-    page = await newPage(await newBrowserContext())
-  })
-
-  afterEach(async () => {
-    await page.close()
-  })
-
-  describe('Initial language selection', () => {
-    it('should highlight finnish in navbar', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi')
+test.describe('Language', () => {
+  test.describe('Initial language selection', () => {
+    test('should highlight finnish in navbar', async ({ page }) => {
+      await page.goto('/build?fi')
 
       await expect(page.locator('.tab-menu-language-fi.active')).toBeVisible()
       await expect(page.locator('.tab-menu-language-sv.active')).not.toBeVisible()
     })
 
-    it('should highlight swedish in navbar', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv')
+    test('should highlight swedish in navbar', async ({ page }) => {
+      await page.goto('/build?sv')
 
       await expect(page.locator('.tab-menu-language-fi.active')).not.toBeVisible()
       await expect(page.locator('.tab-menu-language-sv.active')).toBeVisible()
     })
 
-    it('should have correct page title', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi')
+    test('should have correct page title', async ({ page }) => {
+      await page.goto('/build?fi')
       await expect(page).toHaveTitle('Koeympäristön ohjeet')
 
-      await page.goto('http://localhost:8080/build/index.html?sv')
+      await page.goto('/build?sv')
       await expect(page).toHaveTitle('Provmiljöns instruktioner')
     })
   })
 
-  describe('Default tab', () => {
-    it('should show general tab in finnish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&general')
+  test.describe('Default tab', () => {
+    test('should show general tab in finnish', async ({ page }) => {
+      await page.goto('/build?fi&general')
       await expect(page.locator('h1')).toHaveText('Yleisohjeet')
     })
 
-    it('should show general tab in swedish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&general')
+    test('should show general tab in swedish', async ({ page }) => {
+      await page.goto('/build?sv&general')
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
     })
 
-    it('should show chemistry tab in finnish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&chemistry')
+    test('should show chemistry tab in finnish', async ({ page }) => {
+      await page.goto('/build?fi&chemistry')
       await expect(page.locator('h1')).toHaveText('Kemia')
     })
 
-    it('should show chemistry tab in swedish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&chemistry')
+    test('should show chemistry tab in swedish', async ({ page }) => {
+      await page.goto('/build?sv&chemistry')
       await expect(page.locator('h1')).toHaveText('Kemi')
     })
 
-    it('should show maps tab in finnish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&maps')
+    test('should show maps tab in finnish', async ({ page }) => {
+      await page.goto('/build?fi&maps')
       await expect(page.locator('h1')).toHaveText('Kartat')
     })
 
-    it('should show maps tab in swedish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&maps')
+    test('should show maps tab in swedish', async ({ page }) => {
+      await page.goto('/build?sv&maps')
       await expect(page.locator('h1')).toHaveText('Kartor')
     })
 
-    it('should show keyboard tab in finnish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&keyboard')
+    test('should show keyboard tab in finnish', async ({ page }) => {
+      await page.goto('/build?fi&keyboard')
       await expect(page.locator('h1')).toHaveText('Näppäimistö')
     })
 
-    it('should show keyboard tab in swedish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&keyboard')
+    test('should show keyboard tab in swedish', async ({ page }) => {
+      await page.goto('/build?sv&keyboard')
       await expect(page.locator('h1')).toHaveText('Tangentbord')
     })
 
-    it('should show math tab in finnish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&math')
+    test('should show math tab in finnish', async ({ page }) => {
+      await page.goto('/build?fi&math')
       await expect(page.locator('h1')).toHaveText('Matematiikka')
     })
 
-    it('should show math tab in swedish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&math')
+    test('should show math tab in swedish', async ({ page }) => {
+      await page.goto('/build?sv&math')
       await expect(page.locator('h1')).toHaveText('Matematik')
     })
 
-    it('should show physics tab in finnish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&physics')
+    test('should show physics tab in finnish', async ({ page }) => {
+      await page.goto('/build?fi&physics')
       await expect(page.locator('h1')).toHaveText('Fysiikka')
     })
 
-    it('should show physics tab in swedish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&physics')
+    test('should show physics tab in swedish', async ({ page }) => {
+      await page.goto('/build?sv&physics')
       await expect(page.locator('h1')).toHaveText('Fysik')
     })
 
-    it('should show programming tab in finnish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&programming')
+    test('should show programming tab in finnish', async ({ page }) => {
+      await page.goto('/build?fi&programming')
       await expect(page.locator('h1')).toHaveText('Ohjelmointi')
     })
 
-    it('should show programming tab in swedish', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&programming')
+    test('should show programming tab in swedish', async ({ page }) => {
+      await page.goto('/build?sv&programming')
       await expect(page.locator('h1')).toHaveText('Programmering')
     })
   })
 
-  describe('Changing language', () => {
-    it('should change default page language from finnish to swedish when clicked', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi&general')
+  test.describe('Changing language', () => {
+    test('should change default page language from finnish to swedish when clicked', async ({ page }) => {
+      await page.goto('/build?fi&general')
 
       await expect(page.locator('h1')).toHaveText('Yleisohjeet')
 
@@ -119,8 +108,8 @@ describe('Language', () => {
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
     })
 
-    it('should change default page language from swedish to finnish when clicked', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv&general')
+    test('should change default page language from swedish to finnish when clicked', async ({ page }) => {
+      await page.goto('/build?sv&general')
 
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
 
