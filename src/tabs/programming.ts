@@ -49,28 +49,48 @@ const calculateHeight = (element: HTMLElement) => {
 
 const setOutputAndErrorHeight = (elementId: string) => {
   const element = document.getElementById(elementId)
-  const setHeight = (newHeight: number) => (element.style.height = `{newHeight}px`)
+  const setHeight = (newHeight: number) => {
+    if (element) {
+      element.style.height = `{newHeight}px`
+    }
+  }
 
   setHeight(0)
   setHeight(calculateHeight(element))
 }
 
 const hideBothAreas = () => {
-  document.getElementById(outputId).style.display = 'none'
-  document.getElementById(errorId).style.display = 'none'
+  const outputElement = document.getElementById(outputId)
+  const errorElement = document.getElementById(errorId)
+  if (outputElement) {
+    outputElement.style.display = 'none'
+  }
+  if (errorElement) {
+    errorElement.style.display = 'none'
+  }
 }
 
 const showErrorArea = () => {
-  document.getElementById(outputId).style.display = 'none'
-  document.getElementById(errorId).style.display = 'block'
-
+  const outputElement = document.getElementById(outputId)
+  const errorElement = document.getElementById(errorId)
+  if (outputElement) {
+    outputElement.style.display = 'none'
+  }
+  if (errorElement) {
+    errorElement.style.display = 'block'
+  }
   setOutputAndErrorHeight(errorId)
 }
 
 const showOutputArea = () => {
-  document.getElementById(outputId).style.display = 'block'
-  document.getElementById(errorId).style.display = 'none'
-
+  const outputElement = document.getElementById(outputId)
+  const errorElement = document.getElementById(errorId)
+  if (outputElement) {
+    outputElement.style.display = 'block'
+  }
+  if (errorElement) {
+    errorElement.style.display = 'none'
+  }
   setOutputAndErrorHeight(outputId)
 }
 

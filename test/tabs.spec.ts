@@ -1,26 +1,17 @@
-import { Page, expect } from '@playwright/test'
-import { newPage, newBrowserContext } from './utils'
+import { test, expect, Page } from '@playwright/test'
 
-describe('Digabi Exam Help', () => {
-  let page: Page
+test.describe('Digabi Exam Help', () => {
+  test.describe('Tabs in Finnish', () => {
+    test.beforeEach(async ({ page }) => {
+      await page.goto('/build?fi')
+    })
 
-  beforeEach(async () => {
-    page = await newPage(await newBrowserContext())
-  })
-
-  afterEach(async () => {
-    await page.close()
-  })
-
-  describe('Tabs in Finnish', () => {
-    it('should render finnish general as initial tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html')
+    test('should render finnish general as initial tab', async ({ page }) => {
+      await expect(page.locator('h1')).toBeVisible()
       await expect(page.locator('h1')).toHaveText('Yleisohjeet')
     })
 
-    it('should be able to open tabs when clicked', async () => {
-      await page.goto('http://localhost:8080/build/index.html?fi')
-
+    test('should be able to open tabs when clicked (fi)', async ({ page }) => {
       await page.click('text=FYSIIKKA')
       await expect(page.locator('h1')).toHaveText('Fysiikka')
 
@@ -47,15 +38,16 @@ describe('Digabi Exam Help', () => {
     })
   })
 
-  describe('Tabs in Swedish', () => {
-    it('should render general as initial tab', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv')
+  test.describe('Tabs in Swedish', () => {
+    test.beforeEach(async ({ page }) => {
+      await page.goto('/build?sv')
+    })
+
+    test('should render general as initial tab', async ({ page }) => {
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
     })
 
-    it('should be able to open tabs when clicked', async () => {
-      await page.goto('http://localhost:8080/build/index.html?sv')
-
+    test('should be able to open tabs when clicked (sv)', async ({ page }) => {
       await page.click('text=FYSIK')
       await expect(page.locator('h1')).toHaveText('Fysik')
 
