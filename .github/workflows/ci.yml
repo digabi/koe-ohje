@@ -12,19 +12,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
       - uses: actions/checkout@v4
       - name: Increase file watchers
         run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: '.nvmrc'
+          cache: 'npm'
       - run: npm ci
       - run: npx playwright install
       - run: npm run build:internet
