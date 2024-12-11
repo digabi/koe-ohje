@@ -8,6 +8,7 @@
     "start": "webpack serve --config webpack-dev.config.js",
     "build": "node index.js && DEPLOYMENT_ENV=koe webpack --mode production",
     "build:internet": "node index.js && DEPLOYMENT_ENV=internet webpack --mode production",
+    "esbuild:internet": "node index.js && DEPLOYMENT_ENV=internet ts-node esbuild.ts",
     "lint": "eslint . --ext .ts,.js",
     "test": "npx playwright test"
   },
@@ -45,6 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "css-loader": "^7.0.0",
+    "esbuild": "^0.24.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.27.5",
