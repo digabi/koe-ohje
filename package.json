@@ -9,6 +9,7 @@
     "build": "node index.js && DEPLOYMENT_ENV=koe webpack --mode production",
     "build:internet": "node index.js && DEPLOYMENT_ENV=internet webpack --mode production",
     "esbuild:internet": "node index.js && DEPLOYMENT_ENV=internet ts-node esbuild.ts",
+    "esbuild:watch": "ts-node esbuild.ts --watch",
     "lint": "eslint . --ext .ts,.js",
     "test": "npx playwright test"
   },

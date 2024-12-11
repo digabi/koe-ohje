@@ -1,10 +1,14 @@
 const esbuild = require('esbuild')
 
-esbuild.build({
+const isWatchMode = process.argv.includes("--watch")
+
+const buildOptions = {
   entryPoints:[
     {in: './src/index.ts', out: 'app.bundle'},
     {in: 'monaco-editor/esm/vs/editor/editor.worker.js', out: 'editor.worker.bundle'}
   ],
+  sourcemap: !isWatchMode,
+  minify: !isWatchMode,
   bundle: true,
   outdir: 'build',
   loader: {
@@ -20,5 +24,24 @@ esbuild.build({
         : JSON.stringify('https://s3.eu-north-1.amazonaws.com/abitti-prod.abitti-prod-cdk.maptiles.abitti.fi'),
     'process.env.MATH_DEMO_URL':
       process.env.DEPLOYMENT_ENV === 'koe' ? JSON.stringify('') : JSON.stringify('https://math-demo.abitti.fi'),
+    'process.env.WATCH': isWatchMode.toString()
   },
-}).then(() => console.log('esbuild done')).catch(console.error)
+}
+
+const watch = async () => {
+  const buildContext = await esbuild.context(buildOptions)
+
+  await buildContext.watch()
+
+  await buildContext.serve({
+    servedir: ".",
+    port: 8080
+  })
+  console.log('Watching for changes, serving in port 8080.')
+}
+
+if (isWatchMode) {
+  watch().catch(console.error)
+} else {
+  esbuild.build(buildOptions).then(() => console.log('esbuild done')).catch(console.error)
+}
