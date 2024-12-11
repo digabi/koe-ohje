@@ -70,7 +70,7 @@ test.describe('Search', () => {
       ]
 
       for (const testCase of testGrid) {
-        await page.goto(`/build?${testCase.lang}`)
+        await page.goto(`/build/?${testCase.lang}`)
         await page.click(testCase.tabSelector)
         await page.type('#js-search-input', testCase.searchTerm)
 
@@ -94,7 +94,7 @@ test.describe('Search', () => {
 
   test.describe('Navigation in search results', () => {
     test('moves page focus when clicking on the search result', async ({ page }) => {
-      await page.goto('/build?fi&math#')
+      await page.goto('/build/?fi&math#')
       await page.type('#js-search-input', 'suorakulmio')
 
       await page.locator('.search-result-item').nth(1).click()
@@ -105,7 +105,7 @@ test.describe('Search', () => {
     })
 
     test('moves page gocus when navigating by keyboard among search results', async ({ page }) => {
-      await page.goto('/build?fi&math#')
+      await page.goto('/build/?fi&math#')
 
       await page.focus('#js-search-input')
       await expect(page.locator('#js-search-input')).toBeFocused()

@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test'
 test.describe('Python', () => {
   test.describe('Python Environment', () => {
     test('should have certain elements visible and hidden', async ({ page }) => {
-      await page.goto('/build?fi')
+      await page.goto('/build/?fi')
       await page.click('text=OHJELMOINTI')
 
       await expect(page.locator('#code-output')).toBeVisible()
@@ -14,7 +14,7 @@ test.describe('Python', () => {
 
   test.describe('Python Code Execution', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/build?fi')
+      await page.goto('/build/?fi')
       await page.click('text=OHJELMOINTI')
 
       // Make sure the page rendering is finished

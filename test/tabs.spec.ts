@@ -3,7 +3,7 @@ import { test, expect, Page } from '@playwright/test'
 test.describe('Digabi Exam Help', () => {
   test.describe('Tabs in Finnish', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/build?fi')
+      await page.goto('/build/?fi')
     })
 
     test('should render finnish general as initial tab', async ({ page }) => {
@@ -40,7 +40,7 @@ test.describe('Digabi Exam Help', () => {
 
   test.describe('Tabs in Swedish', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/build?sv')
+      await page.goto('/build/?sv')
     })
 
     test('should render general as initial tab', async ({ page }) => {

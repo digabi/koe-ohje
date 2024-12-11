@@ -4,7 +4,7 @@ test.describe('ModalImages', () => {
   test.describe('ModalImages', () => {
     const TEST_IMAGE_ID = 'tab-gen-image-03'
 
-    test.beforeEach(async ({ page }) => await page.goto('/build?fi'))
+    test.beforeEach(async ({ page }) => await page.goto('/build/?fi'))
 
     test('should have the modal layer hidden before the thumbnail image is clicked', async ({ page }) => {
       await expect(page.locator(`#modal-image-id-${TEST_IMAGE_ID}`)).toBeHidden()

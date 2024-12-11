@@ -8,7 +8,7 @@ declare global {
   }
 }
 
-self.MonacoEnvironment = {
+window.MonacoEnvironment = {
   getWorkerUrl: function () {
     return './editor.worker.bundle.js'
   }

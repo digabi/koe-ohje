@@ -4,6 +4,10 @@ import { initializeTabs } from './tabs/tabs'
 import { initializeTocEventListeners } from './tabs/common/toc'
 import { initializeSearchEventListeners } from './tabs/common/search'
 
+if (process.env.WATCH) {
+  new EventSource('/esbuild').addEventListener('change', () => location.reload())
+}
+
 window.addEventListener('load', () => {
   initializeLanguage()
   initializeTabs()

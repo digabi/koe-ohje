@@ -3,7 +3,7 @@ import { Page, test, expect } from '@playwright/test'
 test.describe('Table-of-contents', () => {
   test.describe('Missing heading IDs on Finnish tabs', () => {
     test('should have zero default toc-lib-generated ids on finnish tabs', async ({ page }) => {
-      await page.goto('/build?fi')
+      await page.goto('/build/?fi')
 
       const TABS = [
         'FYSIIKKA',
@@ -32,7 +32,7 @@ test.describe('Table-of-contents', () => {
 
   test.describe('Missing heading IDs on Swedish tabs', () => {
     test('should have zero default toc-lib-generated ids on swedish tabs', async ({ page }) => {
-      await page.goto('/build?sv')
+      await page.goto('/build/?sv')
 
       const TABS = [
         'FYSIK',
@@ -59,7 +59,7 @@ test.describe('Table-of-contents', () => {
 
   test.describe('Finnish and Swedish tabs have equal list of ids', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/build?fi')
+      await page.goto('/build/?fi')
     })
 
     const getCurrentIdList = (): string[] => {

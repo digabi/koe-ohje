@@ -7,7 +7,7 @@ const testAudioClipAnotherPlayButtonSelector = '[data-muzakid="tab-muzak-music-l
 test.describe('Muzak', () => {
   test.describe('Muzak Player', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/build?fi')
+      await page.goto('/build/?fi')
       await page.click('text=MUSIIKKI')
     })
 

@@ -2,3 +2,4 @@ node_modules/
 common/
 build/
 playwright.config.ts
+esbuild.ts
