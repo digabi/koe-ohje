@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 const esbuild = require('esbuild')
 
 const isWatchMode = process.argv.includes("--watch")
