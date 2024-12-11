@@ -2,6 +2,10 @@ const esbuild = require('esbuild')
 
 const isWatchMode = process.argv.includes("--watch")
 
+/* `koe` build version is the one to be run in actual test environment,
+ * the `else` option is the cheat app hosted in S3 for public internet usage */
+const isKoeBuild = process.env.DEPLOYMENT_ENV === 'koe'
+
 const buildOptions = {
   entryPoints:[
     {in: './src/index.ts', out: 'app.bundle'},
@@ -19,11 +23,11 @@ const buildOptions = {
   },
   define: {
     'process.env.MAP_TILES_URL':
-      process.env.DEPLOYMENT_ENV === 'koe'
+      isKoeBuild
         ? JSON.stringify('/tiles')
         : JSON.stringify('https://s3.eu-north-1.amazonaws.com/abitti-prod.abitti-prod-cdk.maptiles.abitti.fi'),
     'process.env.MATH_DEMO_URL':
-      process.env.DEPLOYMENT_ENV === 'koe' ? JSON.stringify('') : JSON.stringify('https://math-demo.abitti.fi'),
+      isKoeBuild ? JSON.stringify('') : JSON.stringify('https://math-demo.abitti.fi'),
     'process.env.WATCH': isWatchMode.toString()
   },
 }
