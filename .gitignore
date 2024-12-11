@@ -10,3 +10,4 @@ deb-root/
 build/
 .idea/
 pyodide-build.tar.bz2
+playwright*
