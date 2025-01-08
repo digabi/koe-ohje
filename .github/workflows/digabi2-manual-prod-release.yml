@@ -48,6 +48,6 @@ jobs:
       - name: Push image
         run: docker push ${{ steps.login-public-ecr.outputs.registry }}/u3p9b9p9/$IMAGE_NAME-public:${{ inputs.tag }}
       - name: Create Github Release
-        uses: softprops/action-gh-release@7b4da11513bf3f43f9999e90eabced41ab8bb048 # Pin to commit hash to prevent compromise of third party action
+        uses: softprops/action-gh-release@c95fe1489396fe8a9eb87c0abf8aa5b2ef267fda # Pin to commit hash to prevent compromise of third party action
         with:
           tag_name: ${{ inputs.tag }}
