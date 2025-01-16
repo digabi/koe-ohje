@@ -1,5 +1,5 @@
 #two step build where we first build the react app and then copy the build folder to nginx image
-FROM node:18.17.0 as builder
+FROM node:22.12.0 as builder
 WORKDIR '/app'
 COPY package-lock.json .
 COPY package.json .
@@ -9,7 +9,7 @@ RUN npm run build
 
 FROM nginx:alpine as prod
 COPY --from=builder /app/build /usr/share/nginx/html/build
-# Map tiles are do not exist in this repository. They are instead checked out from the map-tiles repository by Github Actions during dev-release workflow. 
+# Map tiles are do not exist in this repository. They are instead checked out from the map-tiles repository by Github Actions during dev-release workflow.
 COPY ./map-tiles/tiles /usr/share/nginx/html/tiles
 COPY ./index.html /usr/share/nginx/html
 COPY ./accessibility-fi.html /usr/share/nginx/html
