@@ -1,4 +1,4 @@
-#two step build where we first build the react app and then copy the build folder to nginx image
+#two step build where we first build the app and then copy the build folder to nginx image
 FROM node:22.12.0 as builder
 WORKDIR '/app'
 COPY package-lock.json .
