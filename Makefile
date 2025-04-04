@@ -37,23 +37,3 @@ deb: build
 
 zip: build
 	zip -ry9 koe-ohje index.html LICENSE common/ build/
-
-pyodide-build.tar.bz2:
-	wget -O pyodide-build.tar.bz2 https://github.com/pyodide/pyodide/releases/download/0.22.1/pyodide-0.22.1.tar.bz2
-
-update-pyodide: pyodide-build.tar.bz2
-	-rm -fR common/pyodide/
-	-rm -fR common/pyodide-temp/
-	cd common; tar --extract -j <../pyodide-build.tar.bz2
-	mv common/pyodide/ common/pyodide-temp/
-	mkdir common/pyodide/
-	# Copy common Pyodide stuff we want to take to production
-	cp common/pyodide-temp/*.ts common/pyodide/
-	cp common/pyodide-temp/*.json common/pyodide/
-	cp common/pyodide-temp/pyodide.* common/pyodide/
-	cp common/pyodide-temp/pyodide_py.tar common/pyodide/
-	# Copy required libraries
-	cp common/pyodide-temp/numpy*.whl common/pyodide/
-
-	# Remove temp
-	rm -fR common/pyodide-temp/

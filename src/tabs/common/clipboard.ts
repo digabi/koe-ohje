@@ -84,10 +84,6 @@ export const setCodeToClipboard = (text: string) => {
   setTextToClipboard(text, 'copying_box_code')
 }
 
-export const setCodeOutputToClipboard = (text: string) => {
-  setTextToClipboard(text, 'copying_box_code_output')
-}
-
 let selectedEquation: HTMLElement
 const copyEquation = (event: MouseEvent | KeyboardEvent, target: HTMLElement) => {
   const latex = target.querySelector('title').textContent

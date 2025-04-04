@@ -8,10 +8,7 @@ const isWatchMode = process.argv.includes("--watch")
 const isKoeBuild = process.env.DEPLOYMENT_ENV === 'koe'
 
 const buildOptions = {
-  entryPoints:[
-    {in: './src/index.ts', out: 'app.bundle'},
-    {in: 'monaco-editor/esm/vs/editor/editor.worker.js', out: 'editor.worker.bundle'}
-  ],
+  entryPoints: [{ in: './src/index.ts', out: 'app.bundle' }],
   sourcemap: !isWatchMode,
   minify: !isWatchMode,
   bundle: true,

@@ -9,5 +9,4 @@ deb-root/
 *.log
 build/
 .idea/
-pyodide-build.tar.bz2
 playwright*

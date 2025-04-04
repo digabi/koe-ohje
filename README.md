@@ -11,7 +11,6 @@ Kokeissa käytettävä versio ohjeesta löytyy osoitteesta https://cheat.abitti.
 Projektin kehitystä varten tarvitset Node.js version 18 https://nodejs.org/en/ (tarkempi versio löytyy `.nvmrc` tiedostosta)
 
 1. Asenna projektin riippuvuudet komennolla `npm install`
-1. Jos käsittelet ohjelmointivälilehteä, aja myös `make update-pyodide`
 1. Generoi HTML tiedostot komennolla `npm run build:internet` (varsinaisen koetilanteen versio käyttää `npm run build`)
 1. Tämän jälkeen voit ajaa projektia lokaalisti komennolla `npm run watch`. Lokaalin koe-ohjeen löydät osoitteesta http://localhost:8080
 1. Käynnistä testit `npm run test`. Jos haluat nähdä selaimen, aja testit `npm run test -- --ui`.
@@ -78,4 +77,3 @@ Tuloksena on `output.webm`
 - Fysiikka: Riitta Salmenoja, Ville Havu, Kristian Meinander
 - Kemia: Katariina Tammi
 - [FontAwesome 5](https://github.com/FortAwesome/Font-Awesome)
-
