@@ -20,6 +20,7 @@ const buildOptions = {
 
   },
   define: {
+    'process.env.ABICODE_URL': isKoeBuild ? JSON.stringify('') : JSON.stringify('https://abicode.abitti.fi'),
     'process.env.MAP_TILES_URL':
       isKoeBuild
         ? JSON.stringify('/tiles')

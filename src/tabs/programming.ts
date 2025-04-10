@@ -11,8 +11,22 @@ const processAccessibilityKeybindings = (event: KeyboardEvent) => {
   }
 }
 
+const convertToAbicodeLinks = () => {
+  if (process.env.ABICODE_URL) {
+    const els = document.querySelectorAll('#abicode')
+    els.forEach((el) => {
+      const a = document.createElement('a')
+      a.textContent = el.textContent
+      a.href = process.env.ABICODE_URL
+      a.target = '_blank'
+      el.parentNode.replaceChild(a, el)
+    })
+  }
+}
+
 export const initializeProgrammingTab = () => {
   document.addEventListener('keydown', processAccessibilityKeybindings)
+  convertToAbicodeLinks()
 }
 
 export const teardownProgrammingTab = () => {
