@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node index.js && DEPLOYMENT_ENV=koe node --experimental-strip-types esbuild.ts",
+    "build:a2": "node index.js && DEPLOYMENT_ENV=a2 node --experimental-strip-types esbuild.ts",
     "build:internet": "node index.js && node --experimental-strip-types esbuild.ts",
     "watch": "node --experimental-strip-types esbuild.ts --watch",
     "lint": "eslint . --ext .ts,.js",
