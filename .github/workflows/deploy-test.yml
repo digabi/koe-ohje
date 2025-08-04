@@ -31,11 +31,10 @@ jobs:
       - run: npm run test
         env:
           CI: true
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@master
+      - name: Assume AWS role
+        uses: digabi/workflows-common/actions/assume-digabi-aws-role@main
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.TEST_ACCOUNT_ID }}:role/GithubActionsAccessRole
-          aws-region: eu-north-1
+          aws-account-id: ${{ secrets.TEST_ACCOUNT_ID }}
       - name: Move release files into release dir
         run: |
           mkdir -p release
