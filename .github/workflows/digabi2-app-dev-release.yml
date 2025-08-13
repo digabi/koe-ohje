@@ -16,11 +16,11 @@ jobs:
       contents: read
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout map tiles
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: digabi/map-tiles
           path: map-tiles
