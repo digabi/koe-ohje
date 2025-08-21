@@ -10,13 +10,15 @@ updates:
     schedule:
       interval: 'daily'
       time: '01:00'
+    cooldown:
+      default-days: 7
+      exclude:
+        - "@digabi/*"
     labels: [ ]
-    open-pull-requests-limit: 1
+    open-pull-requests-limit: 99
     ignore:
       # eslint-plugin-import does not support yet eslint 9. Disable update for now
       - dependency-name: "eslint"
-      - dependency-name: "*"
-        update-types: [ "version-update:semver-patch", "version-update:semver-minor" ]
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
