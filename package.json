@@ -37,7 +37,7 @@
     "@digabi/eslint-config": "^3.0.0",
     "@types/leaflet": "^1.7.11",
     "@types/node": "^24.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
     "@typescript-eslint/parser": "^8.41.0",
     "esbuild": "^0.25.0",
     "eslint": "^8.45.0",
