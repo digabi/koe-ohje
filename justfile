@@ -4,6 +4,7 @@ gh := require("gh")
 jq := require("jq")
 
 build: fetch
+    if [[ ! -d "map-tiles" ]]; then gh repo clone digabi/map-tiles; fi
     @just digabi2-companion-app build
 
 dev-release version: fetch
