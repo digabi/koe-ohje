@@ -84,6 +84,8 @@ test.describe('Table-of-contents', () => {
       await page.click(`[data-lang-id="${language}"]`)
       await page.click(`[data-tab-id="${tab}"]`)
 
+      await expect(page.locator(`#tab-${tab}`)).toBeVisible()
+
       await expect(page.locator('h1')).toHaveCount(1)
 
       return await page.evaluate(getCurrentIdList)
