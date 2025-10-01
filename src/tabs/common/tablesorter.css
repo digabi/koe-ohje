@@ -12,8 +12,7 @@ table.sortable tbody tr:nth-child(odd) td {
 }
 
 table.sortable th.active {
-  background-color: #359bb7;
-  color: #fff;
+  background-color: #a6c7ff;
 }
 
 table.sortable th[data-sortable] {

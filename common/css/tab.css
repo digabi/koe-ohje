@@ -4,6 +4,13 @@ body {
   margin: 0 auto;
   text-rendering: optimizeLegibility;
   font-size: 1em;
+
+  --blue-050: #e6efff;
+  --blue-200: #a6c7ff;
+  --blue-400: #6694e3;
+  --blue-600: #466fb5;
+  --blue-800: #204d99;
+  --blue-900: #173e82;
 }
 
 * {
@@ -62,6 +69,7 @@ table {
 
 a {
   text-decoration: none;
+  color: var(--blue-800);
 }
 
 button {
@@ -80,7 +88,7 @@ button {
   display: block;
   float: left;
   position: fixed;
-  background: #e0f4fe;
+  background: var(--blue-050);
   border-style: none;
   z-index: 2000;
 }
@@ -90,7 +98,6 @@ button {
   margin: 0.5em 0.5em 0px 0.5em;
   float: left;
   cursor: pointer;
-  font-size: 0.9em;
 }
 
 .tab-menu-option:focus-visible,
@@ -103,7 +110,7 @@ button {
 .tab-menu-language-option.active {
   font-weight: bold;
   border-width: 0px 0px 4px 0px;
-  border-bottom-color: #1e4f75;
+  border-bottom-color: var(--blue-900);
   border-style: solid;
   padding-bottom: 10px;
 }
@@ -190,7 +197,9 @@ button {
   z-index: 2000;
 
   opacity: 1;
-  transition: left ease-in-out 0.2s, opacity linear 0.2s;
+  transition:
+    left ease-in-out 0.2s,
+    opacity linear 0.2s;
 
   padding: 10px;
 }
@@ -225,23 +234,32 @@ button {
 .js-toc .toc-list {
   list-style-type: none;
   color: #43464b;
-  padding-top: 10px;
+  padding-left: 0.5rem;
+  border-left: 3px solid #c6d5f4;
+  margin-left: 0.5rem;
 }
 
 .js-toc .toc-list li {
-  margin-bottom: 6px;
-  padding: 6px;
   font-size: 16px;
-  background-color: rgba(0, 0, 0, 0.05);
   transition: background-color 0.07s;
+  border-radius: 3px;
 }
 
-.js-toc .toc-list li:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+li:not(li li) {
+  margin-top: 0.5rem;
 }
 
-.js-toc .toc-list li.is-active-li {
-  background-color: rgba(224, 244, 254, 0.9);
+.js-toc .toc-list li a {
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.toc-list a:hover {
+  background-color: var(--blue-050);
+}
+
+.js-toc .toc-list li.is-active-li > a {
+  background-color: var(--blue-050);
 }
 
 .is-active-link {
@@ -260,11 +278,13 @@ button {
   border: black 1px solid;
 }
 
-.js-toc>.js-toc-result>.toc-list {
+.js-toc > .js-toc-result > .toc-list {
   padding: 10px 0 0;
+  border-left: none;
+  margin-left: 0;
 }
 
-.js-toc>ul>li {
+.js-toc > ul > li {
   margin-bottom: 15px;
   font-size: 16px;
 }
@@ -274,7 +294,7 @@ button {
 }
 
 .is-active-link::before {
-  background-color: #359bb7 !important;
+  background-color: var(--blue-400) !important;
 }
 
 a.toc-link:before {
@@ -298,7 +318,7 @@ a.toc-link:before {
 .charpc-menu-option-active,
 .charmac-menu-option-active {
   border-width: 0px 0px 2px 0px;
-  border-bottom-color: #359bb7;
+  border-bottom-color: var(--blue-400);
   border-style: solid;
 }
 
@@ -389,7 +409,9 @@ h3 {
 
 .mjpage svg:hover {
   border: 1px solid #a9a9a9;
-  box-shadow: 0px 3px 0px -2px rgb(234, 222, 222), 0px 2px 0px 0px rgba(169, 169, 169, 1);
+  box-shadow:
+    0px 3px 0px -2px rgb(234, 222, 222),
+    0px 2px 0px 0px rgba(169, 169, 169, 1);
 }
 
 button.mjpage {
@@ -429,7 +451,9 @@ button.mjpage__block {
 #loading.hidden {
   left: 100%;
   opacity: 0;
-  transition: left 0s 0.3s, opacity linear 0.3s;
+  transition:
+    left 0s 0.3s,
+    opacity linear 0.3s;
 }
 
 #loading-text {
@@ -535,7 +559,6 @@ button.mjpage__block {
 }
 
 @media screen and (max-width: 600px) {
-
   .formulae th,
   .formulae td {
     margin: 0.5em 1em;
@@ -549,4 +572,38 @@ button.mjpage__block {
 video {
   width: 100% !important;
   height: auto !important;
+}
+
+.abitti-version-content {
+  display: none;
+}
+
+.abitti-version-content.active {
+  display: block;
+}
+
+/* Abitti-version navigaatio */
+.abitti-version-selector {
+  display: flex;
+  gap: 2rem;
+}
+
+.abitti-version-button {
+  cursor: pointer;
+  font-size: 1em;
+  font-family: 'Source Sans Pro', Arial, Verdana, Helvetica, sans-serif;
+  color: #333;
+  padding-bottom: 10px;
+}
+
+.abitti-version-button.active {
+  font-weight: bold;
+  border-width: 0px 0px 4px 0px;
+  border-bottom-color: #1e4f75;
+  border-style: solid;
+}
+
+.abitti-version-button:focus-visible {
+  outline: 2px solid #5a88c5;
+  outline-offset: 2px;
 }
