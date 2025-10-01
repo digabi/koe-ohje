@@ -1,17 +1,17 @@
 import { loadHtml } from '../../util/loadHtml'
 import { activateModalImage } from '../../util/modalImage'
 import { initializeLanguage } from './language'
+import { initializeToc } from './toc'
 
 type Version = '1' | '2'
 
-export const initializeVersionSelector = (tabName: string): void => {
+export const initializeVersionSelector = (tabName: string) => {
   let currentVersion: Version = '1'
 
-  void loadVersion('1')
-
   async function loadVersion(version: Version): Promise<void> {
-    const contentElement = document.getElementById(`content-abitti-${version}`)
+    const contentElement = document.getElementById(`content-instructions-${tabName}`)
     if (contentElement) {
+      contentElement.innerHTML = ''
       const html = await loadHtml(`tab-${tabName}-a${version}.html`)
       contentElement.innerHTML = html
 
@@ -38,16 +38,15 @@ export const initializeVersionSelector = (tabName: string): void => {
         void switchVersion((button as HTMLElement).dataset.abittiVersion as Version)
       })
     })
+    void switchVersion('1')
   }
 
   async function switchVersion(version: Version): Promise<void> {
-    if (currentVersion === version) return
-
     currentVersion = version
     await loadVersion(version)
 
-    document.querySelectorAll('.abitti-version-content').forEach((c) => c.classList.remove('active'))
-    document.getElementById(`content-abitti-${version}`)?.classList.add('active')
+    initializeToc()
+
     document.querySelectorAll('.abitti-version-button').forEach((b) => b.classList.remove('active'))
     document.querySelector(`[data-abitti-version="${version}"]`)?.classList.add('active')
   }
