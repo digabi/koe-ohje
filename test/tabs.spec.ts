@@ -73,4 +73,43 @@ test.describe('Digabi Exam Help', () => {
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
     })
   })
+
+  test.describe('Versioned content', () => {
+    const tabsWithVersionedContent = ['general', 'keyboard']
+
+    test('should render content for both Abitti 1 and 2 versions', async ({ page }) => {
+      for (const tab of tabsWithVersionedContent) {
+        await test.step(`tab ${tab}: should render content for both Abitti 1 and 2 versions`, async () => {
+          await page.goto('/build/?fi')
+          await page.click(`[data-tab-id="${tab}"]`)
+
+          await page.click(`[data-abitti-version="1"]`)
+          await expect(page.locator('#content-abitti-1')).toBeVisible()
+          await expect(page.locator('#content-abitti-2')).not.toBeVisible()
+
+          await page.click(`[data-abitti-version="2"]`)
+          await expect(page.locator('#content-abitti-1')).not.toBeVisible()
+          await expect(page.locator('#content-abitti-2')).toBeVisible()
+        })
+
+        await test.step(`tab ${tab}: should render content for Abitti 1 only`, async () => {
+          await page.goto('/build/?fi&abittiVersion=1')
+          await page.click(`[data-tab-id="${tab}"]`)
+
+          await expect(page.locator('.abitti-version-selector')).not.toBeVisible()
+          await expect(page.locator('#content-abitti-1')).toBeVisible()
+          await expect(page.locator('#content-abitti-2')).not.toBeVisible()
+        })
+
+        await test.step(`tab${tab}: should render content for Abitti 2 only`, async () => {
+          await page.goto('/build/?fi&abittiVersion=2')
+          await page.click(`[data-tab-id="${tab}"]`)
+
+          await expect(page.locator('.abitti-version-selector')).not.toBeVisible()
+          await expect(page.locator('#content-abitti-1')).not.toBeVisible()
+          await expect(page.locator('#content-abitti-2')).toBeVisible()
+        })
+      }
+    })
+  })
 })

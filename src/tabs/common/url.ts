@@ -5,7 +5,7 @@ export const getLanguageFromUrl = (): Language => {
   const url = new URL(window.location.href)
   var urlLanguage = null
 
-  Object.values(Language).forEach(language => {
+  Object.values(Language).forEach((language) => {
     if (url.searchParams.get(language) !== null) urlLanguage = language
   })
 
@@ -14,9 +14,9 @@ export const getLanguageFromUrl = (): Language => {
 
 export const getTabFromUrl = (): Tab => {
   const url = new URL(window.location.href)
-  var urlTab = null;
+  var urlTab = null
 
-  Object.values(Tab).forEach(tab => {
+  Object.values(Tab).forEach((tab) => {
     if (url.searchParams.get(tab) !== null) urlTab = tab
   })
 
@@ -34,14 +34,9 @@ export const getHashFromUrl = (): string => {
 export const updateUrl = (): URL => {
   const url = new URL(window.location.href)
 
-  // Säilytä abittiVersion parametri jos se on olemassa
   const abittiVersion = url.searchParams.get('abittiVersion')
 
   url.search = '?' + getCurrentLanguage() + '&' + getCurrentTab()
-
-  console.log('tab', getCurrentTab())
-
-  //  url.searchParams.set(getCurrentLanguage(), getCurrentTab())
 
   if (abittiVersion) {
     url.searchParams.set('abittiVersion', abittiVersion)
