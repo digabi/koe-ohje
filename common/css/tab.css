@@ -80,7 +80,6 @@ button {
   display: block;
   float: left;
   position: fixed;
-  text-transform: uppercase;
   background: #e0f4fe;
   border-style: none;
   z-index: 2000;

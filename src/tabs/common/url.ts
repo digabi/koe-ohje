@@ -33,7 +33,19 @@ export const getHashFromUrl = (): string => {
 
 export const updateUrl = (): URL => {
   const url = new URL(window.location.href)
+
+  // Säilytä abittiVersion parametri jos se on olemassa
+  const abittiVersion = url.searchParams.get('abittiVersion')
+
   url.search = '?' + getCurrentLanguage() + '&' + getCurrentTab()
+
+  console.log('tab', getCurrentTab())
+
+  //  url.searchParams.set(getCurrentLanguage(), getCurrentTab())
+
+  if (abittiVersion) {
+    url.searchParams.set('abittiVersion', abittiVersion)
+  }
 
   // Modify history stack only if not a back-button-case
   if (window.location.href != url.toString()) {

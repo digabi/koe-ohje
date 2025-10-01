@@ -80,3 +80,37 @@ table.row-highlight .plus {
   padding-right: 10px;
   padding-left: 10px;
 }
+
+/* Abitti-version navigaatio */
+.abitti-version-selector {
+  display: flex;
+  gap: 2rem;
+}
+
+.abitti-version-button {
+  cursor: pointer;
+  font-size: 1em;
+  font-family: 'Source Sans Pro', Arial, Verdana, Helvetica, sans-serif;
+  color: #333;
+  padding-bottom: 10px;
+}
+
+.abitti-version-button.active {
+  font-weight: bold;
+  border-width: 0px 0px 4px 0px;
+  border-bottom-color: #1e4f75;
+  border-style: solid;
+}
+
+.abitti-version-button:focus-visible {
+  outline: 2px solid #5a88c5;
+  outline-offset: 2px;
+}
+
+.keyboard-version-content {
+  display: none;
+}
+
+.keyboard-version-content.active {
+  display: block;
+}

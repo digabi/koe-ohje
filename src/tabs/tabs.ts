@@ -5,7 +5,7 @@ import { initializeGeneralTab } from './general'
 import { initializeMapsTab } from './maps'
 import { initializeMuzakTab } from './muzak'
 import { initializeProgrammingTab, teardownProgrammingTab } from './programming'
-import './keyboard'
+import { initializeKeyboardVersionSelector } from './keyboard'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
 import { getTabFromUrl, getLanguageFromUrl, getHashFromUrl, updateUrl } from './common/url'
@@ -68,6 +68,10 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
     switch (newTab) {
       case Tab.General:
         initializeGeneralTab()
+        break
+      case Tab.Keyboard:
+        console.log('initializeKeyboardVersionSelector')
+        initializeKeyboardVersionSelector()
         break
       case Tab.Maps:
         initializeMapsTab()
