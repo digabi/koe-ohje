@@ -1,15 +1,15 @@
 import { initializeLanguage, changeLanguage, getCurrentLanguage } from './common/language'
 import { initializeCopyToClipboard } from './common/clipboard'
 import { initializeTablesorter } from './common/tablesorter'
-import { initializeGeneralTab } from './general'
 import { initializeMapsTab } from './maps'
 import { initializeMuzakTab } from './muzak'
 import { initializeProgrammingTab, teardownProgrammingTab } from './programming'
-import { initializeKeyboardVersionSelector } from './keyboard'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
 import { getTabFromUrl, getLanguageFromUrl, getHashFromUrl, updateUrl } from './common/url'
 import { loadHtml } from '../util/loadHtml'
+import { initializeVersionSelector } from './common/versionSelector'
+import './keyboard.css'
 
 export enum Tab {
   Chemistry = 'chemistry',
@@ -67,11 +67,12 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
 
     switch (newTab) {
       case Tab.General:
-        initializeGeneralTab()
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        initializeVersionSelector('general')
         break
       case Tab.Keyboard:
-        console.log('initializeKeyboardVersionSelector')
-        initializeKeyboardVersionSelector()
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        initializeVersionSelector('keyboard')
         break
       case Tab.Maps:
         initializeMapsTab()
