@@ -7,10 +7,7 @@
 }
 
 .key {
-  width: 35px;
-  height: 37px;
-  margin: 10px;
-
+  margin: 5px;
   background-color: #e6efff;
   display: block;
   width: 35px;
@@ -94,5 +91,17 @@ table.row-highlight .plus {
   tbody {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  tr {
+    background-color: transparent;
+  }
+
+  td:not(:has(button)) {
+    display: none;
+  }
+
+  button {
+    margin: 3px;
   }
 }
