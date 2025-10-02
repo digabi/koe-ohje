@@ -5,7 +5,7 @@ COPY package-lock.json .
 COPY package.json .
 RUN npm ci
 COPY . .
-RUN npm run build:a2
+RUN npm run build
 
 FROM nginx:alpine as prod
 COPY --from=builder /app/build /usr/share/nginx/html/build

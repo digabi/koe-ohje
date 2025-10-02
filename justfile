@@ -2,6 +2,7 @@ mod? digabi2-companion-app
 
 gh := require("gh")
 jq := require("jq")
+git-lfs := require("git-lfs")
 
 build: fetch
     if [[ ! -d "map-tiles" ]]; then gh repo clone digabi/map-tiles; fi
