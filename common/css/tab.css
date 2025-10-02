@@ -35,11 +35,6 @@ table.formulae {
   margin-bottom: 8px;
 }
 
-.tab-view .boxed h3 {
-  margin-top: 10px;
-  margin-bottom: 0px;
-}
-
 .boxed img {
   display: block;
   margin: auto;
@@ -347,12 +342,10 @@ h1 {
   padding: 30px 0px 20px 0px;
 }
 
-h2 {
-  color: black;
-}
-
+h2,
 h3 {
-  color: black;
+  margin-top: -2rem;
+  padding-top: 3rem;
 }
 
 .infotext {
