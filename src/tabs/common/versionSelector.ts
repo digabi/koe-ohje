@@ -26,6 +26,9 @@ export const initializeVersionSelector = (tabName: string) => {
         contentElement.innerHTML = html
       }
 
+      const hiddenElements = contentElement.querySelectorAll<HTMLElement>(`.hide-abitti-${version}`)
+      hiddenElements.forEach((element) => element.parentNode?.removeChild(element))
+
       initializeLanguage()
     }
   }

@@ -76,14 +76,14 @@ test.describe('Digabi Exam Help', () => {
 
   test.describe('Versioned content', () => {
     const tabsWithVersionedContent = ['general', 'keyboard'] as const
-    const contentTexts: Record<string, { a1: string; a2: string }> = {
+    const contentTexts: Record<string, { headerCountA1: number; headerCountA2: number }> = {
       general: {
-        a1: 'Ohjeet verkossa ja Abitissa',
-        a2: 'A2-ohjeet tulossa...',
+        headerCountA1: 13,
+        headerCountA2: 1,
       },
       keyboard: {
-        a1: 'Näppäimistöasettelun vaihtaminen',
-        a2: 'Tästä puuttuu sisältö...',
+        headerCountA1: 8,
+        headerCountA2: 7,
       },
     }
 
@@ -94,10 +94,14 @@ test.describe('Digabi Exam Help', () => {
           await page.click(`[data-tab-id="${tab}"]`)
 
           await page.click(`[data-abitti-version="1"]`)
-          await expect(page.locator(`#content-instructions-${tab}`)).toContainText(contentTexts[tab].a1)
+          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
+            contentTexts[tab].headerCountA1,
+          )
 
           await page.click(`[data-abitti-version="2"]`)
-          await expect(page.locator(`#content-instructions-${tab}`)).toContainText(contentTexts[tab].a2)
+          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
+            contentTexts[tab].headerCountA2,
+          )
         })
 
         await test.step(`tab ${tab}: should render content for Abitti 1 only`, async () => {
@@ -105,7 +109,9 @@ test.describe('Digabi Exam Help', () => {
           await page.click(`[data-tab-id="${tab}"]`)
 
           await expect(page.locator('.abitti-version-selector')).not.toBeVisible()
-          await expect(page.locator(`#content-instructions-${tab}`)).toContainText(contentTexts[tab].a1)
+          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
+            contentTexts[tab].headerCountA1,
+          )
         })
 
         await test.step(`tab${tab}: should render content for Abitti 2 only`, async () => {
@@ -113,7 +119,9 @@ test.describe('Digabi Exam Help', () => {
           await page.click(`[data-tab-id="${tab}"]`)
 
           await expect(page.locator('.abitti-version-selector')).not.toBeVisible()
-          await expect(page.locator(`#content-instructions-${tab}`)).toContainText(contentTexts[tab].a2)
+          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
+            contentTexts[tab].headerCountA2,
+          )
         })
       }
     })
