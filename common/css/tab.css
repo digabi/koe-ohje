@@ -166,6 +166,7 @@ button {
   margin-right: 10px;
   margin-bottom: 30px;
   line-height: 1.5;
+  padding-bottom: 2rem;
 }
 
 .tab-content img {
@@ -182,13 +183,7 @@ button {
 }
 
 .tab-view h2 {
-  font-size: 30px;
-  padding-top: 50px;
-}
-
-.tab-view h3 {
-  font-size: 24px;
-  padding-top: 50px;
+  padding-top: 1rem;
 }
 
 .tab-view h4 {
@@ -591,14 +586,6 @@ button.mjpage__block {
 video {
   width: 100% !important;
   height: auto !important;
-}
-
-.abitti-version-content {
-  display: block;
-}
-
-.abitti-version-content.hidden {
-  display: none;
 }
 
 /* Abitti-version navigaatio */

@@ -83,3 +83,17 @@ table.row-highlight .plus {
   padding-right: 10px;
   padding-left: 10px;
 }
+
+#tab-keyboard .abitti-2 {
+  .hide-abitti-2,
+  th,
+  .tab-keyboard-mac,
+  .tab-keyboard-pc {
+    display: none;
+  }
+
+  tbody {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
