@@ -1,12 +1,11 @@
 // eslint-disable-next-line
 const esbuild = require('esbuild')
 
-const isWatchMode = process.argv.includes('--watch')
+const isWatchMode = process.argv.includes("--watch")
 
 /* `koe` build version is the one to be run in actual test environment,
  * the `else` option is the cheat app hosted in S3 for public internet usage */
 const isKoeBuild = process.env.DEPLOYMENT_ENV === 'koe'
-const isA2Build = process.env.DEPLOYMENT_ENV === 'a2'
 
 const buildOptions = {
   entryPoints: [{ in: './src/index.ts', out: 'app.bundle' }],
@@ -18,16 +17,17 @@ const buildOptions = {
     '.png': 'file',
     '.gif': 'file',
     '.ttf': 'file',
+
   },
   define: {
     'process.env.ABICODE_URL': isKoeBuild ? JSON.stringify('') : JSON.stringify('https://abicode.abitti.fi'),
-    'process.env.MAP_TILES_URL': isKoeBuild
-      ? JSON.stringify('/tiles')
-      : isA2Build
-        ? JSON.stringify('/apps/cheat/tiles')
+    'process.env.MAP_TILES_URL':
+      isKoeBuild
+        ? JSON.stringify('/tiles')
         : JSON.stringify('https://s3.eu-north-1.amazonaws.com/abitti-prod.abitti-prod-cdk.maptiles.abitti.fi'),
-    'process.env.MATH_DEMO_URL': isKoeBuild ? JSON.stringify('') : JSON.stringify('https://math-demo.abitti.fi'),
-    'process.env.WATCH': isWatchMode.toString(),
+    'process.env.MATH_DEMO_URL':
+      isKoeBuild ? JSON.stringify('') : JSON.stringify('https://math-demo.abitti.fi'),
+    'process.env.WATCH': isWatchMode.toString()
   },
 }
 
@@ -37,8 +37,8 @@ const watch = async () => {
   await buildContext.watch()
 
   await buildContext.serve({
-    servedir: '.',
-    port: 8080,
+    servedir: ".",
+    port: 8080
   })
   console.log('Watching for changes, serving in port 8080.')
 }
@@ -46,8 +46,5 @@ const watch = async () => {
 if (isWatchMode) {
   watch().catch(console.error)
 } else {
-  esbuild
-    .build(buildOptions)
-    .then(() => console.log('esbuild done'))
-    .catch(console.error)
+  esbuild.build(buildOptions).then(() => console.log('esbuild done')).catch(console.error)
 }
