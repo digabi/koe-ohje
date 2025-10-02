@@ -14,3 +14,7 @@ window.addEventListener('load', () => {
   initializeTocEventListeners()
   initializeSearchEventListeners()
 })
+
+window.addEventListener('wheel', () => {
+  window.location.hash = ''
+})
