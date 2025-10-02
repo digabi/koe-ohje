@@ -5,8 +5,8 @@
 
 .code-clickable {
   background: #e6efff;
-  padding: 5px;
-  border: 1px;
+  padding: 0.5rem;
+  border: 1px solid var(--blue-400);
   border-style: solid;
   max-width: calc(10px + 80ch);
 }

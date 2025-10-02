@@ -21,29 +21,31 @@
   box-shadow:
     0px 3px 0px -2px rgb(234, 222, 222),
     0px 2px 0px 0px rgba(169, 169, 169, 1);
+
+  &.keyboard {
+    padding-top: 15px;
+    font-size: 11px;
+  }
+
+  &.clickable {
+    &:hover {
+      background-color: #75b4fb;
+      border: 1px solid #5a88c5;
+      color: #fff;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+      box-shadow:
+        0px 3px 0px -2px rgba(117, 180, 251, 1),
+        0px 2px 0px 0px rgba(90, 136, 197, 1);
+      cursor: pointer;
+
+      &:active {
+        box-shadow: none;
+      }
+    }
+  }
 }
 
-.key.clickable:hover {
-  background-color: #75b4fb;
-  border: 1px solid #5a88c5;
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  box-shadow:
-    0px 3px 0px -2px rgba(117, 180, 251, 1),
-    0px 2px 0px 0px rgba(90, 136, 197, 1);
-  cursor: pointer;
-}
-
-.key.clickable:active {
-  box-shadow: none;
-}
-
-.key.keyboard {
-  padding-top: 15px;
-  font-size: 11px;
-}
-
-table.row-highlight {
+.key table.row-highlight {
   white-space: nowrap;
 }
 

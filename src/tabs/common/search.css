@@ -1,8 +1,8 @@
 .search-result-item {
-    border: transparent 1px solid;
-    padding: 1px;
-}
+  border: transparent 1px solid;
+  padding: 1px;
 
-.search-result-item:focus-visible {
+  &:focus-visible {
     border: black 1px solid;
+  }
 }
