@@ -4,6 +4,8 @@ gh := require("gh")
 jq := require("jq")
 git-lfs := require("git-lfs")
 
+export BRANCH_TO_RELEASE_FROM := "master"
+
 build: fetch
     if [[ ! -d "map-tiles" ]]; then gh repo clone digabi/map-tiles; fi
     @just digabi2-companion-app build cheat
