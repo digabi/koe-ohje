@@ -26,12 +26,14 @@ body {
 table.formulae {
   background-color: white;
   border: 1px solid #dfdfdf;
-  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.15);
-  margin: 10px;
-  padding: 10px;
+  margin: 1em 0;
+  border-collapse: collapse;
+  min-width: 300px;
 }
 
 .boxed {
+  padding: 10px;
+
   li {
     margin-bottom: 8px;
   }
@@ -39,6 +41,31 @@ table.formulae {
   img {
     display: block;
     margin: auto;
+  }
+}
+
+table.formulae {
+  th {
+    font-weight: bold;
+    vertical-align: top;
+  }
+
+  td {
+    background-color: #fafafa;
+  }
+
+  th,
+  td {
+    margin: 0.5em 1em;
+    border: 1px solid #c8c8c8;
+    display: table-cell;
+    padding: 0.5em;
+    font-size: 14px;
+  }
+
+  svg {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
   }
 }
 
@@ -119,7 +146,7 @@ button {
 }
 
 .tab-menu-option {
-  &:hover {
+  &:hover:not(.active) {
     background-color: var(--blue-200);
   }
 }
@@ -308,39 +335,6 @@ h3 {
   margin-top: 30px;
   margin-bottom: 30px;
   line-height: 1.7em;
-}
-
-.formulae {
-  border: 1px solid #c8c8c8;
-  border-collapse: collapse;
-  vertical-align: middle;
-  table-layout: fixed;
-  margin: 1em 0;
-  min-width: 300px;
-
-  th {
-    background-color: #fefefe;
-    font-weight: bold;
-    vertical-align: top;
-  }
-
-  td {
-    background-color: #fafafa;
-  }
-
-  th,
-  td {
-    margin: 0.5em 1em;
-    border: 1px solid #c8c8c8;
-    display: table-cell;
-    padding: 0.5em;
-    font-size: 14px;
-  }
-
-  svg {
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-  }
 }
 
 .mjpage {
