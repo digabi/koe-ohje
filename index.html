@@ -11,6 +11,17 @@
     <link rel="stylesheet" href="common/css/landing_page.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="common/css/leaflet.css" type="text/css" media="screen" />
     <script language="JavaScript">
+      function checkAbittiVersionRedirect() {
+        const params = new URLSearchParams(window.location.search);
+        const abittiVersion = params.get('abittiVersion');
+        
+        if (abittiVersion) {
+          const searchString = window.location.search;
+          const lang = searchString.includes('sv') ? 'sv' : 'fi';
+          window.location.href = `build/index.html?${lang}&abittiVersion=${abittiVersion}`;
+        }
+      }
+
       function addTabParameter() {
         const tabParameter = location.href.indexOf("?") == -1 ? "" : "&" + location.href.substr(location.href.indexOf("?")+1);
 
@@ -19,6 +30,8 @@
           element.setAttribute('href', element.getAttribute('href') + tabParameter);
         });
       }
+      
+      checkAbittiVersionRedirect();
     </script>
   </head>
   <body onLoad="addTabParameter()">
