@@ -90,7 +90,7 @@ test.describe('Digabi Exam Help', () => {
     test('should render content for both Abitti 1 and 2 versions', async ({ page }) => {
       for (const tab of tabsWithVersionedContent) {
         await test.step(`tab ${tab}: should render content for both Abitti 1 and 2 versions`, async () => {
-          await page.goto('/build/?fi')
+          await page.goto('/build?lang=fi')
           await page.click(`[data-tab-id="${tab}"]`)
 
           await page.click(`[data-abitti-version="1"]`)
@@ -105,7 +105,7 @@ test.describe('Digabi Exam Help', () => {
         })
 
         await test.step(`tab ${tab}: should render content for Abitti 1 only`, async () => {
-          await page.goto('/build/?fi&abittiVersion=1')
+          await page.goto('/build?lang=fi&abittiVersion=1')
           await page.click(`[data-tab-id="${tab}"]`)
 
           await expect(page.locator('.abitti-version-selector')).not.toBeVisible()
@@ -115,7 +115,7 @@ test.describe('Digabi Exam Help', () => {
         })
 
         await test.step(`tab${tab}: should render content for Abitti 2 only`, async () => {
-          await page.goto('/build/?fi&abittiVersion=2')
+          await page.goto('/build?lang=fi&abittiVersion=2')
           await page.click(`[data-tab-id="${tab}"]`)
 
           await expect(page.locator('.abitti-version-selector')).not.toBeVisible()
