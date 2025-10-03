@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8" />
@@ -12,41 +12,40 @@
     <link rel="stylesheet" href="common/css/leaflet.css" type="text/css" media="screen" />
     <script language="JavaScript">
       function checkAbittiVersionRedirect() {
-        const params = new URLSearchParams(window.location.search);
-        const abittiVersion = params.get('abittiVersion');
-        
+        const params = new URLSearchParams(window.location.search)
+        const abittiVersion = params.get('abittiVersion')
+
         if (abittiVersion) {
-          const searchString = window.location.search;
-          const lang = searchString.includes('sv') ? 'sv' : 'fi';
-          window.location.href = `build/index.html?${lang}&abittiVersion=${abittiVersion}`;
+          const searchString = window.location.search
+          const lang = searchString.includes('sv') ? 'sv' : 'fi'
+          window.location.href = `build/index.html?lang=${lang}&abittiVersion=${abittiVersion}`
         }
       }
 
       function addTabParameter() {
-        const tabParameter = location.href.indexOf("?") == -1 ? "" : "&" + location.href.substr(location.href.indexOf("?")+1);
+        const tabParameter =
+          location.href.indexOf('?') == -1 ? '' : '&' + location.href.substr(location.href.indexOf('?') + 1)
 
-        const linkElements = document.querySelectorAll(".link");
-        linkElements.forEach(function(element) {
-          element.setAttribute('href', element.getAttribute('href') + tabParameter);
-        });
+        const linkElements = document.querySelectorAll('.link')
+        linkElements.forEach(function (element) {
+          element.setAttribute('href', element.getAttribute('href') + tabParameter)
+        })
       }
-      
-      checkAbittiVersionRedirect();
+
+      checkAbittiVersionRedirect()
     </script>
   </head>
   <body onLoad="addTabParameter()">
     <div id="tab-container">
       <div id="tab-menu">
-        <div id="menu_common" class="tab-menu-option active">
-          KOEYMPÄRISTÖN OHJEET / PROVMILJÖNS INSTRUKTIONER
-        </div>
+        <div id="menu_common" class="tab-menu-option active">KOEYMPÄRISTÖN OHJEET / PROVMILJÖNS INSTRUKTIONER</div>
       </div>
 
       <div id="tab-menu_common" class="tab-content active">
         <h1><span lang="fi">Valitse kieli</span> / <span lang="sv">Välj språk</span></h1>
         <ul>
           <li id="goFI" class="linkEntry" lang="fi">
-            <p><a href="build/index.html?fi" class="link">Koeympäristön ohjeet suomeksi</a></p>
+            <p><a href="build/index.html?lang=fi" class="link">Koeympäristön ohjeet suomeksi</a></p>
             <p>
               Cheat on Ylioppilastutkintolautakunnan laatima ohje, joka sisältää koeympäristöön ja kokeisiin liittyvää
               oheismateriaalia. Nimi viittaa englanninkieliseen termiin Cheat Sheet, joka tarkoittaa tiivistä
@@ -57,7 +56,7 @@
             </p>
           </li>
           <li id="goSV" class="linkEntry" lang="sv">
-            <p><a href="build/index.html?sv" class="link">Provmiljöns instruktioner på svenska</a></p>
+            <p><a href="build/index.html?lang=sv" class="link">Provmiljöns instruktioner på svenska</a></p>
             <p>
               Cheat är Studentexamensnämndens anvisningar, som innehåller följematerial som ansluter sig till provmiljön
               och proven. Namnet hänvisar till den engelska termen Cheat Sheet, som syftar till koncisa anteckningar.

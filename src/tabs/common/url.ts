@@ -3,24 +3,24 @@ import { Language, getCurrentLanguage } from './language'
 
 export const getLanguageFromUrl = (): Language => {
   const url = new URL(window.location.href)
-  var urlLanguage = null
+  const langParam = url.searchParams.get('lang')
 
-  Object.values(Language).forEach((language) => {
-    if (url.searchParams.get(language) !== null) urlLanguage = language
-  })
+  if (langParam && Object.values(Language).includes(langParam as Language)) {
+    return langParam as Language
+  }
 
-  return urlLanguage
+  return null
 }
 
 export const getTabFromUrl = (): Tab => {
   const url = new URL(window.location.href)
-  var urlTab = null
+  const tabParam = url.searchParams.get('tab')
 
-  Object.values(Tab).forEach((tab) => {
-    if (url.searchParams.get(tab) !== null) urlTab = tab
-  })
+  if (tabParam && Object.values(Tab).includes(tabParam as Tab)) {
+    return tabParam as Tab
+  }
 
-  return urlTab
+  return null
 }
 
 export const getHashFromUrl = (): string => {
@@ -34,10 +34,9 @@ export const getHashFromUrl = (): string => {
 export const updateUrl = (): URL => {
   const url = new URL(window.location.href)
 
+  url.searchParams.set('lang', getCurrentLanguage())
+  url.searchParams.set('tab', getCurrentTab())
   const abittiVersion = url.searchParams.get('abittiVersion')
-
-  url.search = '?' + getCurrentLanguage() + '&' + getCurrentTab()
-
   if (abittiVersion) {
     url.searchParams.set('abittiVersion', abittiVersion)
   }
