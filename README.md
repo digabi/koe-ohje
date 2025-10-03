@@ -51,7 +51,7 @@ iconv -f ISO-8859-1 -t UTF-8 tab-<aine>.html > tab-math.html // korvaa nykyisen 
 - Varsinainen aputiedosto löytyy `content/index.html`. Välilehdet löytyvät `content/tab-*.html`.
 - Testisivu kaavojen luomiselle löytyy `content/test/testpage.html`.
 - Lopulliset näytettävät tiedostot löytyvät `content/build` -kansion alta ja sen alaisia tiedostoja ei pidä muokata käsin (nämä generoidaan automaattisesti ja eivät ole versionhallinnassa).
-- Voit katsoa rakentamatonta sivua lataamalla selaimeen `content/index.html`-tiedoston (lokaalin tiedoston avaavat oikein Firefox/Safari). Ruotsinkielisen tiedoston voit ladata lisäämällä URL:iin `?sv` eli näin: `file:///polku-omalla-levyllasi/content/index.html?sv`
+- Voit katsoa rakentamatonta sivua lataamalla selaimeen `content/index.html`-tiedoston (lokaalin tiedoston avaavat oikein Firefox/Safari). Ruotsinkielisen tiedoston voit ladata lisäämällä URL:iin `?lang=sv` eli näin: `file:///polku-omalla-levyllasi/content/index.html?lang=sv`
 
 ## Videoiden lisääminen
 

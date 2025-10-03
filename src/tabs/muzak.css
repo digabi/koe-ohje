@@ -6,27 +6,19 @@
 }
 
 .tab-muzak-play {
-  background-color: #fff;
+  background-color: #e6efff;
   padding: 10px;
-  color: #1E5075;
+  color: #173e82;
   cursor: pointer;
   margin: 5px 0 5px 0;
 }
 
 .tab-muzak-pause {
-  background-color: #1E5075;
+  background-color: #466fb5;
   padding: 10px;
   color: #fff;
   cursor: pointer;
   margin: 5px 0 5px 0;
-}
-
-.tab-muzak-description {
-  font-size: 13.33px;
-}
-
-a {
-  color: #1E5075;
 }
 
 a:focus {

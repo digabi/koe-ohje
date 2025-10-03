@@ -3,7 +3,7 @@ import { test, expect, Page } from '@playwright/test'
 test.describe('Digabi Exam Help', () => {
   test.describe('Tabs in Finnish', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/build/?fi')
+      await page.goto('/build/?lang=fi')
     })
 
     test('should render finnish general as initial tab', async ({ page }) => {
@@ -40,7 +40,7 @@ test.describe('Digabi Exam Help', () => {
 
   test.describe('Tabs in Swedish', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/build/?sv')
+      await page.goto('/build/?lang=sv')
     })
 
     test('should render general as initial tab', async ({ page }) => {
@@ -71,6 +71,59 @@ test.describe('Digabi Exam Help', () => {
 
       await page.click('text=ALLMÄNNA INSTRUKTIONER')
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
+    })
+  })
+
+  test.describe('Versioned content', () => {
+    const tabsWithVersionedContent = ['general', 'keyboard'] as const
+    const contentTexts: Record<string, { headerCountA1: number; headerCountA2: number }> = {
+      general: {
+        headerCountA1: 13,
+        headerCountA2: 14,
+      },
+      keyboard: {
+        headerCountA1: 8,
+        headerCountA2: 7,
+      },
+    }
+
+    test('should render content for both Abitti 1 and 2 versions', async ({ page }) => {
+      for (const tab of tabsWithVersionedContent) {
+        await test.step(`tab ${tab}: should render content for both Abitti 1 and 2 versions`, async () => {
+          await page.goto('/build/?lang=fi')
+          await page.click(`[data-tab-id="${tab}"]`)
+
+          await page.click(`[data-abitti-version="1"]`)
+          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
+            contentTexts[tab].headerCountA1,
+          )
+
+          await page.click(`[data-abitti-version="2"]`)
+          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
+            contentTexts[tab].headerCountA2,
+          )
+        })
+
+        await test.step(`tab ${tab}: should render content for Abitti 1 only`, async () => {
+          await page.goto('/build/?lang=fi&abittiVersion=1')
+          await page.click(`[data-tab-id="${tab}"]`)
+
+          await expect(page.locator('.abitti-version-selector')).not.toBeVisible()
+          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
+            contentTexts[tab].headerCountA1,
+          )
+        })
+
+        await test.step(`tab${tab}: should render content for Abitti 2 only`, async () => {
+          await page.goto('/build/?lang=fi&abittiVersion=2')
+          await page.click(`[data-tab-id="${tab}"]`)
+
+          await expect(page.locator('.abitti-version-selector')).not.toBeVisible()
+          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
+            contentTexts[tab].headerCountA2,
+          )
+        })
+      }
     })
   })
 })

@@ -3,7 +3,7 @@ import { Page, test, expect } from '@playwright/test'
 test.describe('Table-of-contents', () => {
   test.describe('Missing heading IDs on Finnish tabs', () => {
     test('should have zero default toc-lib-generated ids on finnish tabs', async ({ page }) => {
-      await page.goto('/build/?fi')
+      await page.goto('/build/?lang=fi')
 
       const TABS = [
         'FYSIIKKA',
@@ -32,7 +32,7 @@ test.describe('Table-of-contents', () => {
 
   test.describe('Missing heading IDs on Swedish tabs', () => {
     test('should have zero default toc-lib-generated ids on swedish tabs', async ({ page }) => {
-      await page.goto('/build/?sv')
+      await page.goto('/build/?lang=sv')
 
       const TABS = [
         'FYSIK',
@@ -83,6 +83,8 @@ test.describe('Table-of-contents', () => {
     const getTabIdList = async (page: Page, tab: string, language: string): Promise<string[]> => {
       await page.click(`[data-lang-id="${language}"]`)
       await page.click(`[data-tab-id="${tab}"]`)
+
+      await expect(page.locator(`#tab-${tab}`)).toBeVisible()
 
       await expect(page.locator('h1')).toHaveCount(1)
 

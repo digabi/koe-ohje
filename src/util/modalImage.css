@@ -2,8 +2,9 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  max-width: 40%;
+  max-width: 100%;
   min-width: 200px;
+  max-height: 400px;
   padding-top: 15px;
   padding-bottom: 15px;
 }

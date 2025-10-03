@@ -1,15 +1,15 @@
 import { initializeLanguage, changeLanguage, getCurrentLanguage } from './common/language'
 import { initializeCopyToClipboard } from './common/clipboard'
 import { initializeTablesorter } from './common/tablesorter'
-import { initializeGeneralTab } from './general'
 import { initializeMapsTab } from './maps'
 import { initializeMuzakTab } from './muzak'
 import { initializeProgrammingTab, teardownProgrammingTab } from './programming'
-import './keyboard'
 import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
 import { getTabFromUrl, getLanguageFromUrl, getHashFromUrl, updateUrl } from './common/url'
 import { loadHtml } from '../util/loadHtml'
+import { initializeVersionSelector } from './common/versionSelector'
+import './keyboard.css'
 
 export enum Tab {
   Chemistry = 'chemistry',
@@ -57,7 +57,6 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
     initializeLanguage()
     initializeCopyToClipboard()
     initializeTablesorter()
-    createSearchIndex()
 
     switch (oldTab) {
       case Tab.Programming:
@@ -67,7 +66,10 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
 
     switch (newTab) {
       case Tab.General:
-        initializeGeneralTab()
+        await initializeVersionSelector('general')
+        break
+      case Tab.Keyboard:
+        await initializeVersionSelector('keyboard')
         break
       case Tab.Maps:
         initializeMapsTab()
@@ -90,6 +92,8 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
       const targetElement = document.getElementById(targetHash)
       if (targetElement) targetElement.scrollIntoView()
     }
+
+    createSearchIndex()
 
     loadingScreen.classList.add('hidden')
   }, 0)

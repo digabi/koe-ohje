@@ -17,4 +17,4 @@ fi
 
 firefox-esr \
 -app /usr/lib/firefox-esr/browser/application.ini \
-http://localhost/help/build/index.html?${DOC_LANG}
+http://localhost/help/build/index.html?lang=${DOC_LANG}&abittiVersion=1
