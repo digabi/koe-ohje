@@ -16,5 +16,11 @@ window.addEventListener('load', () => {
 })
 
 window.addEventListener('wheel', () => {
-  window.location.hash = ''
+  try {
+    if (window.location.hash !== '') {
+      window.location.hash = ''
+    }
+  } catch (e) {
+    // Ignore security errors when clearing hash
+  }
 })
