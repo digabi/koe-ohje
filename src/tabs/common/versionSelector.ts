@@ -4,8 +4,9 @@ import { initializeLanguage } from './language'
 import { initializeToc } from './toc'
 
 type Version = '1' | '2'
+type TabName = 'general' | 'keyboard'
 
-export const initializeVersionSelector = (tabName: string) => {
+export const initializeVersionSelector = (tabName: TabName): void => {
   const queryParams = new URLSearchParams(window.location.search)
   const abittiVersion = queryParams.get('abittiVersion')
   const buttons = document.querySelectorAll('.abitti-version-button')

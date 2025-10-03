@@ -67,11 +67,9 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
 
     switch (newTab) {
       case Tab.General:
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         initializeVersionSelector('general')
         break
       case Tab.Keyboard:
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         initializeVersionSelector('keyboard')
         break
       case Tab.Maps:
