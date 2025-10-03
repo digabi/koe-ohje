@@ -57,7 +57,6 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
     initializeLanguage()
     initializeCopyToClipboard()
     initializeTablesorter()
-    createSearchIndex()
 
     switch (oldTab) {
       case Tab.Programming:
@@ -67,10 +66,10 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
 
     switch (newTab) {
       case Tab.General:
-        initializeVersionSelector('general')
+        await initializeVersionSelector('general')
         break
       case Tab.Keyboard:
-        initializeVersionSelector('keyboard')
+        await initializeVersionSelector('keyboard')
         break
       case Tab.Maps:
         initializeMapsTab()
@@ -93,6 +92,8 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
       const targetElement = document.getElementById(targetHash)
       if (targetElement) targetElement.scrollIntoView()
     }
+
+    createSearchIndex()
 
     loadingScreen.classList.add('hidden')
   }, 0)

@@ -1,27 +1,29 @@
 import { loadHtml } from '../../util/loadHtml'
 import { activateModalImage } from '../../util/modalImage'
 import { initializeLanguage } from './language'
+import { createSearchIndex } from './search'
 import { initializeToc } from './toc'
 
 type Version = '1' | '2'
 type TabName = 'general' | 'keyboard'
 
-export const initializeVersionSelector = (tabName: TabName): void => {
+export const initializeVersionSelector = async (tabName: TabName): Promise<void> => {
   const queryParams = new URLSearchParams(window.location.search)
   const abittiVersion = queryParams.get('abittiVersion')
   const buttons = document.querySelectorAll('.abitti-version-button')
 
   if (abittiVersion) {
-    void switchVersion(abittiVersion as Version)
+    await switchVersion(abittiVersion as Version)
     buttons.forEach((button) => button.parentNode?.removeChild(button))
   } else {
     buttons.forEach((button) => {
-      button.addEventListener('click', (e) => {
+      button.addEventListener('click', async (e) => {
         e.preventDefault()
-        void switchVersion((button as HTMLElement).dataset.abittiVersion as Version)
+        await switchVersion((button as HTMLElement).dataset.abittiVersion as Version)
+        createSearchIndex()
       })
     })
-    void switchVersion('1')
+    await switchVersion('1')
   }
 
   async function switchVersion(version: Version): Promise<void> {
