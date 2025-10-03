@@ -23,12 +23,11 @@
       }
 
       function addTabParameter() {
-        const tabParameter =
+        const parameters =
           location.href.indexOf('?') == -1 ? '' : '&' + location.href.substr(location.href.indexOf('?') + 1)
-
         const linkElements = document.querySelectorAll('.link')
         linkElements.forEach(function (element) {
-          element.setAttribute('href', element.getAttribute('href') + tabParameter)
+          element.setAttribute('href', element.getAttribute('href') + parameters)
         })
       }
 
