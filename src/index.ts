@@ -14,13 +14,3 @@ window.addEventListener('load', () => {
   initializeTocEventListeners()
   initializeSearchEventListeners()
 })
-
-window.addEventListener('wheel', () => {
-  try {
-    if (window.location.hash !== '') {
-      window.location.hash = ''
-    }
-  } catch (e) {
-    // Ignore security errors when clearing hash
-  }
-})
