@@ -79,7 +79,7 @@ test.describe('Digabi Exam Help', () => {
     const contentTexts: Record<string, { headerCountA1: number; headerCountA2: number }> = {
       general: {
         headerCountA1: 13,
-        headerCountA2: 1,
+        headerCountA2: 13,
       },
       keyboard: {
         headerCountA1: 8,

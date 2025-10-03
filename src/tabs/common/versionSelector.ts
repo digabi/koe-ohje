@@ -4,10 +4,7 @@ import { initializeLanguage } from './language'
 import { initializeToc } from './toc'
 
 type Version = '1' | '2'
-
 export const initializeVersionSelector = (tabName: string) => {
-  let currentVersion: Version = '1'
-
   async function loadVersion(version: Version): Promise<void> {
     const contentElement = document.getElementById(`content-instructions-${tabName}`)
     if (contentElement) {
@@ -51,9 +48,7 @@ export const initializeVersionSelector = (tabName: string) => {
   }
 
   async function switchVersion(version: Version): Promise<void> {
-    currentVersion = version
     await loadVersion(version)
-
     initializeToc()
 
     document.querySelectorAll('.abitti-version-button').forEach((b) => b.classList.remove('active'))
