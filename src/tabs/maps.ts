@@ -1,4 +1,4 @@
-import { createWorldMap, createTerrainMap } from '@digabi/maps'
+import { createTerrainMap, createWorldMap } from '../maps'
 import { getCurrentLanguage, Language } from './common/language'
 import { mapTilesUrl } from './tabs'
 

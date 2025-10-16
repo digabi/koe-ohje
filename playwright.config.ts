@@ -3,7 +3,7 @@ import { defineConfig } from '@playwright/test'
 export default defineConfig({
   reporter: [['list'], ['html', { open: 'never' }], ['junit', { outputFile: 'playwright-report.xml' }]],
   webServer: {
-    command: process.env.CI ? 'npx http-server': 'npm run watch',
+    command: process.env.CI ? 'npx http-server' : 'npm run watch',
     url: 'http://localhost:8080',
     reuseExistingServer: !process.env.CI,
     stdout: 'ignore',
@@ -12,11 +12,12 @@ export default defineConfig({
   retries: 1,
   use: {
     baseURL: 'http://localhost:8080',
+    viewport: { width: 1600, height: 1200 },
     screenshot: 'only-on-failure',
     trace: 'on-first-retry',
-    video: 'on-first-retry'
+    video: 'on-first-retry',
   },
   outputDir: './playwright-results',
   testDir: './test',
-  workers: 1
+  workers: 1,
 })
