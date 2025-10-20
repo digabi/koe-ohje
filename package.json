@@ -24,7 +24,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.1",
     "@fortawesome/free-solid-svg-icons": "^7.0.1",
-    "@playwright/test": "^1.25.2",
+    "@playwright/test": "^1.56.1",
     "core-js": "^3.25.1",
     "fuse.js": "^7.0.0",
     "http-server": "^14.1.1",
