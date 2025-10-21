@@ -15,7 +15,7 @@ updates:
       exclude:
         - "@digabi/*"
     labels: []
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 99
     ignore:
       # eslint-plugin-import does not support yet eslint 9. Disable update for now
       - dependency-name: "eslint"
