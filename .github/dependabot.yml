@@ -17,8 +17,24 @@ updates:
     labels: []
     open-pull-requests-limit: 99
     ignore:
-      # eslint-plugin-import does not support yet eslint 9. Disable update for now
-      - dependency-name: "eslint"
+      - dependency-name: react
+        update-types:
+          - version-update:semver-major
+      - dependency-name: '@types/react'
+        update-types:
+          - version-update:semver-major
+      - dependency-name: react-dom
+        update-types:
+          - version-update:semver-major
+      - dependency-name: '@types/react-dom'
+        update-types:
+          - version-update:semver-major
+      - dependency-name: eslint
+        update-types:
+          - version-update:semver-major
+      - dependency-name: eslint-plugin-mocha
+        update-types:
+          - version-update:semver-major
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
