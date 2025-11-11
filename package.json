@@ -37,7 +37,7 @@
     "@types/leaflet": "^1.9.21",
     "@types/node": "^24.9.2",
     "@typescript-eslint/eslint-plugin": "^8.46.2",
-    "@typescript-eslint/parser": "^8.41.0",
+    "@typescript-eslint/parser": "^8.46.3",
     "esbuild": "^0.25.12",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^10.0.1",
