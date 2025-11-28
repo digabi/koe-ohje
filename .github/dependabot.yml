@@ -38,6 +38,10 @@ updates:
       - dependency-name: '@types/node'
         update-types:
           - version-update:semver-major
+    groups:
+      exam-engine:
+        patterns:
+          - '@digabi/exam-engine-*'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
