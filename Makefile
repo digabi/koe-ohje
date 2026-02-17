@@ -1,6 +1,6 @@
 default_build_number=1
 
-NODE_PATH=$(shell ls -d ~/.nvm/versions/node/v$(shell cat /.nvmrc).*/bin 2>/dev/null | sort -V | tail -1)
+NODE_PATH=$(shell ls -d ~/.nvm/versions/node/v$(shell cat .nvmrc).*/bin 2>/dev/null | sort -V | tail -1)
 NPM = PATH=$(NODE_PATH):$(PATH) $(NODE_PATH)/npm
 
 all:
