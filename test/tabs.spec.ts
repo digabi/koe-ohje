@@ -83,7 +83,7 @@ test.describe('Digabi Exam Help', () => {
       },
       keyboard: {
         headerCountA1: 8,
-        headerCountA2: 7,
+        headerCountA2: 8,
       },
     }
 
