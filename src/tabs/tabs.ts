@@ -8,8 +8,8 @@ import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
 import { getTabFromUrl, getLanguageFromUrl, getHashFromUrl, updateUrl } from './common/url'
 import { loadHtml } from '../util/loadHtml'
-import { initializeVersionSelector } from './common/versionSelector'
 import './keyboard.css'
+import { initializeKeyboardTab } from './keyboard'
 
 export enum Tab {
   Chemistry = 'chemistry',
@@ -31,6 +31,7 @@ declare global {
 export const mapTilesUrl = process.env.MAP_TILES_URL
 
 const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
+  console.log({ oldTab, newTab, targetHash });
   const loadingScreen = document.getElementById('loading')
   loadingScreen.classList.remove('hidden')
 
@@ -66,10 +67,9 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
 
     switch (newTab) {
       case Tab.General:
-        await initializeVersionSelector('general')
         break
       case Tab.Keyboard:
-        await initializeVersionSelector('keyboard')
+        //await initializeKeyboardTab()
         break
       case Tab.Maps:
         initializeMapsTab()

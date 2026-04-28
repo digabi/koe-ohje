@@ -36,10 +36,6 @@ export const updateUrl = (): URL => {
 
   url.searchParams.set('lang', getCurrentLanguage())
   url.searchParams.set('tab', getCurrentTab())
-  const abittiVersion = url.searchParams.get('abittiVersion')
-  if (abittiVersion) {
-    url.searchParams.set('abittiVersion', abittiVersion)
-  }
 
   // Modify history stack only if not a back-button-case
   if (window.location.href != url.toString()) {

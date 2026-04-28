@@ -76,41 +76,32 @@ test.describe('Digabi Exam Help', () => {
 
   test.describe('Versioned content', () => {
     const tabsWithVersionedContent = ['general', 'keyboard'] as const
-    const contentTexts: Record<string, { headerCountA1: number; headerCountA2: number }> = {
+    const contentTexts: Record<string, { headerCountA2: number }> = {
       general: {
-        headerCountA1: 13,
         headerCountA2: 14,
       },
       keyboard: {
-        headerCountA1: 8,
         headerCountA2: 7,
       },
     }
 
-    test('should render content for both Abitti 1 and 2 versions', async ({ page }) => {
+    test('should have only Abitti2 content', async ({ page }) => {
       for (const tab of tabsWithVersionedContent) {
-        await test.step(`tab ${tab}: should render content for both Abitti 1 and 2 versions`, async () => {
+        await test.step(`tab ${tab}: should render only Abitti 2 content`, async () => {
           await page.goto('/build/?lang=fi')
           await page.click(`[data-tab-id="${tab}"]`)
 
-          await page.click(`[data-abitti-version="1"]`)
-          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
-            contentTexts[tab].headerCountA1,
-          )
-
-          await page.click(`[data-abitti-version="2"]`)
           await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
             contentTexts[tab].headerCountA2,
           )
         })
 
-        await test.step(`tab ${tab}: should render content for Abitti 1 only`, async () => {
+        await test.step(`tab ${tab}: should render content for Abitti 2 only, even with Abitti 1 version in URL`, async () => {
           await page.goto('/build/?lang=fi&abittiVersion=1')
           await page.click(`[data-tab-id="${tab}"]`)
 
-          await expect(page.locator('.abitti-version-selector')).not.toBeVisible()
           await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
-            contentTexts[tab].headerCountA1,
+            contentTexts[tab].headerCountA2,
           )
         })
 
@@ -118,7 +109,6 @@ test.describe('Digabi Exam Help', () => {
           await page.goto('/build/?lang=fi&abittiVersion=2')
           await page.click(`[data-tab-id="${tab}"]`)
 
-          await expect(page.locator('.abitti-version-selector')).not.toBeVisible()
           await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
             contentTexts[tab].headerCountA2,
           )
