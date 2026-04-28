@@ -19,7 +19,6 @@ const fuseOptions: Fuse.IFuseOptions<SearchRecord> = {
 let fuse: Fuse<SearchRecord>
 
 export const createSearchIndex = () => {
-  console.log("createSearchIndex");
   const contentElement = document.querySelector('.js-toc-content')
   const searchSelector = 'h1, h2, h3, h4, h5, h6, th, td, p, li'
   const searchableContent = contentElement.querySelectorAll<HTMLElement>(searchSelector)
@@ -95,8 +94,7 @@ const renderSearchResults = () => {
     resultContainer.removeChild(resultContainer.firstChild)
   }
 
-  const results = fuse?.search(searchInput.value) ?? []
-  console.log("renderSearchResults", results);
+  const results = searchInput.value != '' ? fuse?.search(searchInput.value) ?? [] : []
 
   results.slice(0, 10).forEach(resultItem => {
     resultContainer.appendChild(createSearchItem(resultItem.item))
@@ -111,7 +109,6 @@ const renderSearchResults = () => {
 }
 
 export const clearSearch = () => {
-  console.log("clearSearch");
   const searchInput = <HTMLInputElement>document.getElementById('js-search-input')
   searchInput.value = ''
   renderSearchResults()

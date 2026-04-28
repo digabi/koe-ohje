@@ -31,7 +31,6 @@ declare global {
 export const mapTilesUrl = process.env.MAP_TILES_URL
 
 const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
-  console.log({ oldTab, newTab, targetHash });
   const loadingScreen = document.getElementById('loading')
   loadingScreen.classList.remove('hidden')
 
