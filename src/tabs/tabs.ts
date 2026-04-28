@@ -9,7 +9,7 @@ import { clearSearch, createSearchIndex } from './common/search'
 import { getTabFromUrl, getLanguageFromUrl, getHashFromUrl, updateUrl } from './common/url'
 import { loadHtml } from '../util/loadHtml'
 import './keyboard.css'
-import { initializeKeyboardTab } from './keyboard'
+import { initializeGeneralTab } from './general'
 
 export enum Tab {
   Chemistry = 'chemistry',
@@ -67,9 +67,9 @@ const loadTab = (oldTab: Tab, newTab: Tab, targetHash?: string) => {
 
     switch (newTab) {
       case Tab.General:
+        initializeGeneralTab()
         break
       case Tab.Keyboard:
-        //await initializeKeyboardTab()
         break
       case Tab.Maps:
         initializeMapsTab()
