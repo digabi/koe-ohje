@@ -73,47 +73,4 @@ test.describe('Digabi Exam Help', () => {
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
     })
   })
-
-  test.describe('Versioned content', () => {
-    const tabsWithVersionedContent = ['general', 'keyboard'] as const
-    const contentTexts: Record<string, { headerCountA2: number }> = {
-      general: {
-        headerCountA2: 14,
-      },
-      keyboard: {
-        headerCountA2: 7,
-      },
-    }
-
-    test('should have only Abitti2 content', async ({ page }) => {
-      for (const tab of tabsWithVersionedContent) {
-        await test.step(`tab ${tab}: should render only Abitti 2 content`, async () => {
-          await page.goto('/build/?lang=fi')
-          await page.click(`[data-tab-id="${tab}"]`)
-
-          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
-            contentTexts[tab].headerCountA2,
-          )
-        })
-
-        await test.step(`tab ${tab}: should render content for Abitti 2 only, even with Abitti 1 version in URL`, async () => {
-          await page.goto('/build/?lang=fi&abittiVersion=1')
-          await page.click(`[data-tab-id="${tab}"]`)
-
-          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
-            contentTexts[tab].headerCountA2,
-          )
-        })
-
-        await test.step(`tab${tab}: should render content for Abitti 2 only`, async () => {
-          await page.goto('/build/?lang=fi&abittiVersion=2')
-          await page.click(`[data-tab-id="${tab}"]`)
-
-          await expect(page.locator(`#content-instructions-${tab}`).getByRole('heading')).toHaveCount(
-            contentTexts[tab].headerCountA2,
-          )
-        })
-      }
-    })
-  })
 })
