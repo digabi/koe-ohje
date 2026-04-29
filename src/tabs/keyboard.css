@@ -100,7 +100,19 @@ table.row-highlight .plus {
 }
 
 #common-combinations {
+  border-collapse: separate;
+  border-spacing: 0 3px;
+
   tbody {
-    display: block;
+    display: table-row-group;
+  }
+  .key {
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 10px 6px 3px 6px;
+    height: auto;
+  }
+  .ctrl {
+    width: 50px;
   }
 }
