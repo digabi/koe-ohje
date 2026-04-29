@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 
 test.describe('ModalImages', () => {
   test.describe('ModalImages', () => {
-    const TEST_IMAGE_ID = 'tab-gen-image-03'
+    const TEST_IMAGE_ID = 'tab-gen-image-00-fi'
 
     test.beforeEach(async ({ page }) => await page.goto('/build/?fi'))
 

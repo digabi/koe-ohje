@@ -94,7 +94,7 @@ const renderSearchResults = () => {
     resultContainer.removeChild(resultContainer.firstChild)
   }
 
-  const results = fuse?.search(searchInput.value) ?? []
+  const results = searchInput.value != '' ? fuse?.search(searchInput.value) ?? [] : []
 
   results.slice(0, 10).forEach(resultItem => {
     resultContainer.appendChild(createSearchItem(resultItem.item))
