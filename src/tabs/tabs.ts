@@ -8,8 +8,10 @@ import { initializeToc } from './common/toc'
 import { clearSearch, createSearchIndex } from './common/search'
 import { getTabFromUrl, getLanguageFromUrl, getHashFromUrl, updateUrl } from './common/url'
 import { loadHtml } from '../util/loadHtml'
-import './keyboard.css'
 import { initializeGeneralTab } from './general'
+
+import './keyboard.css'
+import './general.css'
 
 export enum Tab {
   Chemistry = 'chemistry',
