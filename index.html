@@ -20,6 +20,19 @@
         })
       }
 
+      function checkLanguageRedirect() {
+        const params = new URLSearchParams(window.location.search)
+        const lang = params.get('lang')
+
+        if (lang) {
+          const searchString = window.location.search
+          const finalLang = searchString.includes('sv') ? 'sv' : 'fi'
+          window.location.href = `build/index.html?lang=${finalLang}`
+        }
+      }
+
+      checkLanguageRedirect()
+
     </script>
   </head>
   <body onLoad="addTabParameter()">
