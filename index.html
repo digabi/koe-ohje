@@ -25,8 +25,7 @@
         const lang = params.get('lang')
 
         if (lang) {
-          const searchString = window.location.search
-          const finalLang = searchString.includes('sv') ? 'sv' : 'fi'
+          const finalLang = lang.includes('sv') ? 'sv' : 'fi'
           window.location.href = `build/index.html?lang=${finalLang}`
         }
       }
