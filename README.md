@@ -57,12 +57,12 @@ iconv -f ISO-8859-1 -t UTF-8 tab-<aine>.html > tab-math.html // korvaa nykyisen 
 
 ### cheat.abitti.fi
 
-- Muutos menee testiympäristöön [cheat.test.abitti.fi], kun master-haara päivittyy.
-- Muutos menee tuotantoon [cheat.abitti.fi], kun `release`-haara päivittyy.
+- Muutos menee testiympäristöön (cheat.test.abitti.fi), kun master-haara päivittyy.
+- Muutos menee tuotantoon (cheat.abitti.fi), kun `release`-haara päivittyy.
 
 ### Digabi2
 
-Katso (Digabi2-ohjeisohjelman julkaiseminen)[https://github.com/digabi/digabi2-companion-app-shared/wiki/Oheisohjelman-julkaiseminen]
+Katso [Digabi2-ohjeisohjelman julkaiseminen](https://github.com/digabi/digabi2-companion-app-shared/wiki/Oheisohjelman-julkaiseminen)
 
 ## Videoiden lisääminen
 
