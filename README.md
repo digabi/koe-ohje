@@ -53,6 +53,17 @@ iconv -f ISO-8859-1 -t UTF-8 tab-<aine>.html > tab-math.html // korvaa nykyisen 
 - Lopulliset näytettävät tiedostot löytyvät `content/build` -kansion alta ja sen alaisia tiedostoja ei pidä muokata käsin (nämä generoidaan automaattisesti ja eivät ole versionhallinnassa).
 - Voit katsoa rakentamatonta sivua lataamalla selaimeen `content/index.html`-tiedoston (lokaalin tiedoston avaavat oikein Firefox/Safari). Ruotsinkielisen tiedoston voit ladata lisäämällä URL:iin `?lang=sv` eli näin: `file:///polku-omalla-levyllasi/content/index.html?lang=sv`
 
+## Julkaiseminen
+
+### cheat.abitti.fi
+
+- Muutos menee testiympäristöön [cheat.test.abitti.fi], kun master-haara päivittyy.
+- Muutos menee tuotantoon [cheat.abitti.fi], kun `release`-haara päivittyy.
+
+### Digabi2
+
+Katso (Digabi2-ohjeisohjelman julkaiseminen)[https://github.com/digabi/digabi2-companion-app-shared/wiki/Oheisohjelman-julkaiseminen]
+
 ## Videoiden lisääminen
 
 Tutki ensin uuden videotiedoston äänenvoimakkuus:
