@@ -57,8 +57,8 @@ iconv -f ISO-8859-1 -t UTF-8 tab-<aine>.html > tab-math.html // korvaa nykyisen 
 
 ### cheat.abitti.fi
 
-- Muutos menee testiympäristöön cheat.test.abitti.fi, kun master-haara päivittyy.
-- Muutos menee tuotantoon cheat.abitti.fi, kun `release`-haara päivittyy.
+- Muutos menee testiympäristöön http://cheat.test.abitti.fi, kun master-haara päivittyy.
+- Muutos menee tuotantoon http://cheat.abitti.fi, kun `release`-haara päivittyy.
 
 ### Digabi2
 
