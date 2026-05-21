@@ -102,9 +102,14 @@ table.row-highlight .plus {
 #common-combinations {
   border-collapse: separate;
   border-spacing: 0 3px;
+  padding-top: 30px;
 
   tbody {
     display: table-row-group;
+  }
+  .os {
+    font-weight: 600;
+    padding-bottom: 5px;
   }
   .key {
     display: inline-block;
@@ -114,5 +119,11 @@ table.row-highlight .plus {
   }
   .ctrl {
     width: 50px;
+  }
+  .cmd {
+    width: 50px;
+  }
+  td:nth-child(2) {
+    padding-right: 60px;
   }
 }
