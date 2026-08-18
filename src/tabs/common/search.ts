@@ -50,6 +50,10 @@ const getSearchItemAriaLabelPrefix = (): string => {
     return 'Sökresult: '
   }
 
+  if (getCurrentLanguage() == 'en') {
+    return 'FIXME:Hakutulos: '
+  }
+
   return ''
 }
 

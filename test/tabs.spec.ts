@@ -73,4 +73,40 @@ test.describe('Digabi Exam Help', () => {
       await expect(page.locator('h1')).toHaveText('Allmänna instruktioner')
     })
   })
+
+  test.describe('Tabs in English', () => {
+    test.beforeEach(async ({ page }) => {
+      await page.goto('/build/?lang=en')
+    })
+
+    test('should render general as initial tab', async ({ page }) => {
+      await expect(page.locator('h1')).toHaveText('General Instructions')
+    })
+
+    test('should be able to open tabs when clicked (en)', async ({ page }) => {
+      await page.click('text=PHYSICS')
+      await expect(page.locator('h1')).toHaveText('Physics')
+
+      await page.click('text=MAPS')
+      await expect(page.locator('h1')).toHaveText('Maps')
+
+      await page.click('text=CHEMISTRY')
+      await expect(page.locator('h1')).toHaveText('Chemistry')
+
+      await page.click('text=MATHEMATICS')
+      await expect(page.locator('h1')).toHaveText('Mathematics')
+
+      await page.click('text=MUSIC')
+      await expect(page.locator('h1')).toHaveText('Music')
+
+      await page.click('text=PROGRAMMING')
+      await expect(page.locator('h1')).toHaveText('Programming')
+
+      await page.click('text=KEYBOARD')
+      await expect(page.locator('h1')).toHaveText('Keyboard')
+
+      await page.click('text=GENERAL INSTRUCTIONS')
+      await expect(page.locator('h1')).toHaveText('General Instructions')
+    })
+  })
 })

@@ -29,7 +29,7 @@ const waitElementToAppearInViewport = async (page: Page, elementId: string, time
 
 test.describe('Search', () => {
   test.describe('Search finds relevant number of results', () => {
-    test('from finnish and swedish pages', async ({ page }) => {
+    test('from finnish, swedish and english pages', async ({ page }) => {
       const testGrid = [
         {
           lang: 'fi',
@@ -42,6 +42,12 @@ test.describe('Search', () => {
           tabSelector: 'text=FYSIK',
           searchTerm: 'kilogram',
           expectedHits: 6,
+        },
+        {
+          lang: 'en',
+          tabSelector: 'text=INSTRUCTIONS',
+          searchTerm: 'collabora',
+          expectedHits: 2,
         },
         {
           lang: 'fi',
@@ -82,6 +88,9 @@ test.describe('Search', () => {
         }
         if (testCase.lang === 'sv') {
           ariaLabelPrefix = /^Sökresult: /
+        }
+        if (testCase.lang === 'en') {
+          ariaLabelPrefix = /^FIXME:Hakutulos: /
         }
 
         const searchResults = await page.locator('.search-result-item').count()
