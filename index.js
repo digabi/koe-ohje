@@ -1,4 +1,4 @@
-const fs = require('fs-extra')
+const fs = require('node:fs/promises')
 const { formatLatex, replaceFormulaSpansWithButtons, replaceInPath, replaceTagRandom } = require('./common')
 
 const contentPath = './content/'
@@ -30,7 +30,7 @@ const getFileNamesFromDir = async (path) => {
 }
 
 const build = async () => {
-  await fs.ensureDir(buildPath)
+  await fs.mkdir(buildPath, { recursive: true })
   await replaceTaulukkoWithBuild(indexHtml)
   const contentFileNames = await getFileNamesFromDir(contentPath)
   return Promise.all(contentFileNames.map(readFromPath))
