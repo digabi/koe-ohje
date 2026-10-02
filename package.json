@@ -25,7 +25,6 @@
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "fuse.js": "^7.5.0",
-    "http-server": "^14.1.1",
     "leaflet": "~1.9.4",
     "leaflet.tilelayer.fallback": "^1.0.4",
     "tocbot": "^4.36.8"
