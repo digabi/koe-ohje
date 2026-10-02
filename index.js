@@ -1,5 +1,5 @@
 const fs = require('node:fs/promises')
-const { formatLatex, replaceFormulaSpansWithButtons, replaceInPath, replaceTagRandom } = require('./common')
+const { formatLatex, replaceInPath, replaceTagRandom } = require('./common')
 
 const contentPath = './content/'
 const buildPath = './build/'
@@ -10,7 +10,6 @@ const readFromPath = (path) =>
   fs
     .readFile(contentPath + path)
     .then((file) => formatLatex(file.toString()))
-    .then((output) => replaceFormulaSpansWithButtons(output))
     .then((output) => replaceTagRandom(output))
     .then((output) => fs.writeFile(buildPath + path, output))
     .then(() => {
