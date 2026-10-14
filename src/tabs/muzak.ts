@@ -33,6 +33,7 @@ const audioResources: AudioResource[] = [
   { id: 'tab-muzak-music-qw', src: 'whitenoiseaudio_bleepy103.mp3' },
   { id: 'tab-muzak-music-lk', src: 'unwrittenstories_its_simple.mp3' },
   { id: 'tab-muzak-music-xd', src: 'maddirtmonkey_electronic_happy_song.mp3' },
+  { id: 'tab-muzak-music-xx', src: 'nettspend_shine_n_peace.mp3' },
 ]
 
 const ariaLabelPlay = {
