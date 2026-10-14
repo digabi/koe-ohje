@@ -2,7 +2,14 @@
 <html>
 
 <head>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            output: { font: 'mathjax-stix2', displayOverflow: 'linebreak', linebreaks: { inline: false, width: '100ex' } },
+            svg: { fontCache: 'none' }
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
     <link rel="stylesheet" href="../../common/css/tab.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../../common/css/tocbot.css" type="text/css" />
     <meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8" />

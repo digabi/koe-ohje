@@ -85,7 +85,7 @@ export const setCodeToClipboard = (text: string) => {
 }
 
 let selectedEquation: HTMLElement
-const copyEquation = (event: MouseEvent | KeyboardEvent, target: HTMLElement) => {
+const copyEquation = (event: MouseEvent, target: HTMLElement) => {
   const latex = target.querySelector('title').textContent
   if (!latex) return
 
@@ -115,18 +115,8 @@ const copyEquation = (event: MouseEvent | KeyboardEvent, target: HTMLElement) =>
 }
 
 const copyEquationClickHandler = (event: MouseEvent) => {
-  const targetElement = event.target as HTMLElement
+  const targetElement = event.currentTarget as HTMLElement
   copyEquation(event, targetElement)
-}
-
-const copyEquationKeyboardHandler = (event: KeyboardEvent) => {
-  if (event.code === 'Enter') {
-    const el = event.target as HTMLElement
-
-    if (el.tagName === 'BUTTON' && el.classList.contains('mjpage')) {
-      copyEquation(event, el)
-    }
-  }
 }
 
 export const initializeCopyToClipboard = () => {
@@ -134,6 +124,4 @@ export const initializeCopyToClipboard = () => {
 
   const equationElements = Array.from(document.querySelectorAll('button.mjpage'))
   equationElements.forEach(element => element.addEventListener('click', copyEquationClickHandler))
-
-  document.addEventListener('keydown', copyEquationKeyboardHandler)
 }

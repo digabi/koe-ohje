@@ -1,4 +1,3 @@
-import './polyfills'
 import { initializeLanguage } from './tabs/common/language'
 import { initializeTabs } from './tabs/tabs'
 import { initializeTocEventListeners } from './tabs/common/toc'

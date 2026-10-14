@@ -1,48 +1,55 @@
-const mjpage = require('mathjax-node-page').mjpage
+const MathJax = require('mathjax')
 
-const pageConfig = {
-  format: ['TeX'],
-  singleDollars: true,
-  output: 'svg',
-  MathJax: {
-    SVG: {
-      font: 'STIX-Web',
-      undefinedFamily: 'STIXGeneral',
-      minScaleAdjust: 110,
-    },
-    imageFont: null,
-    CommonHTML: {
-      scale: 110,
+const mathjaxInit = MathJax.init({
+  loader: {
+    load: ['input/tex', 'output/svg', 'input/mml/entities'],
+    failed: (err) => {
+      throw err
     },
   },
-}
+  tex: {
+    inlineMath: [
+      ['$', '$'],
+      ['\\(', '\\)'],
+    ],
+  },
+  output: {
+    font: 'mathjax-stix2',
+    displayOverflow: 'linebreak',
+    linebreaks: { inline: false, width: '100ex' },
+  },
+  svg: { fontCache: 'none' },
+  startup: { typeset: false },
+})
 
-const nodeConfig = {
-  svg: true,
-  linebreaks: true,
-}
-
-const formatLatex = (input) =>
-  new Promise((resolve, reject) => {
-    mjpage(input, pageConfig, nodeConfig, (output, err) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(output)
-      }
-    })
+const formatLatex = async (input) => {
+  await mathjaxInit
+  const adaptor = MathJax.startup.adaptor
+  const document = MathJax.startup.mathjax.document(input, {
+    InputJax: MathJax.startup.getInputJax(),
+    OutputJax: MathJax.startup.getOutputJax(),
   })
+  await document.renderPromise()
 
-const replaceFormulaSpansWithButtons = (pageText) => {
-  const inlineFormulasReplacedPageText = pageText.replace(
-    /<span class="mjpage">(.*?aria-labelledby="(.*?)">.*?)<\/span>/gs,
-    '<button class="mjpage" role="math" aria-labelledby="$2">$1</button>',
-  )
-  const blockFormulasReplacedPageText = inlineFormulasReplacedPageText.replace(
-    /<span class="mjpage mjpage__block">(.*?aria-labelledby="(.*?)">.*?)<\/span>/gs,
-    '<button class="mjpage mjpage__block" role="math" aria-labelledby="$2">$1</button>',
-  )
-  return blockFormulasReplacedPageText
+  for (const math of document.math) {
+    const container = math.typesetRoot
+    const svg = adaptor.tags(container, 'svg')[0]
+    if (!svg) continue
+
+    const title = adaptor.node('title', {}, [adaptor.text(math.math)], 'http://www.w3.org/2000/svg')
+    adaptor.insert(title, adaptor.firstChild(svg))
+
+    const button = adaptor.node('button', {
+      type: 'button',
+      class: math.display ? 'mjpage mjpage__block' : 'mjpage',
+      role: 'math',
+      'aria-label': math.math,
+    })
+    adaptor.replace(button, container)
+    adaptor.append(button, container)
+  }
+
+  return adaptor.doctype(document.document) + adaptor.outerHTML(adaptor.root(document.document))
 }
 
 const replaceInPath = (path) => path.replace(/taulukot/g, 'build')
@@ -54,7 +61,6 @@ const replaceTagRandom = (pageText) => {
 
 module.exports = {
   formatLatex,
-  replaceFormulaSpansWithButtons,
   replaceInPath,
   replaceTagRandom,
 }

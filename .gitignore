@@ -10,5 +10,6 @@ deb-root/
 build/
 .idea/
 playwright*
+!playwright.config.ts
 digabi2-companion-app.just
 map-tiles/
