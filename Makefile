@@ -37,3 +37,7 @@ deb: build
 
 zip: build
 	zip -ry9 koe-ohje index.html LICENSE common/ build/
+
+.PHONY: start
+start:
+	python3 -m http.server
