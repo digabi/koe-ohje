@@ -1,291 +1,252 @@
 <!doctype html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-    <title></title>
-    <meta property="title-fi" content="Koeympäristön ohjeet" />
-    <meta property="title-sv" content="Provmiljöns instruktioner" />
-    <meta property="title-en" content="Test Environment Instructions" />
-    <link rel="icon" href="../common/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./app.bundle.css?###RANDOM###" type="text/css" media="screen" />
-    <link rel="stylesheet" href="../common/css/tab.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="../common/css/tocbot.css" type="text/css" />
-    <link rel="stylesheet" href="../common/css/search.css" type="text/css" />
-    <link rel="stylesheet" href="../common/css/leaflet.css" type="text/css" />
-    <link rel="stylesheet" href="../common/css/visually_impaired.css" type="text/css" />
-    <script type="text/javascript" src="./app.bundle.js?###RANDOM###"></script>
-  </head>
 
-  <body>
-    <div id="tab-container">
-      <div id="tab-menu">
-        <a href="#" id="menu" lang="fi" class="tab-menu-opennavi" aria-label="Avaa sivun navigointi"><div></div></a>
-        <a href="#" id="menu" lang="sv" class="tab-menu-opennavi" aria-label="Öppna sidnavigeringen"><div></div></a>
-        <a href="#" id="menu" lang="en" class="tab-menu-opennavi" aria-label="FIXME:Avaa sivun navigointi"><div></div></a>
+<head>
+  <meta http-equiv="Content-Type" tab-content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title></title>
+  <meta property="title-fi" content="Koeympäristön ohjeet" />
+  <meta property="title-sv" content="Provmiljöns instruktioner" />
+  <meta property="title-en" content="Test Environment Instructions" />
+  <link rel="icon" href="../common/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./app.bundle.css?###RANDOM###" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../common/css/tab.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../common/css/tocbot.css" type="text/css" />
+  <link rel="stylesheet" href="../common/css/search.css" type="text/css" />
+  <link rel="stylesheet" href="../common/css/leaflet.css" type="text/css" />
+  <link rel="stylesheet" href="../common/css/visually_impaired.css" type="text/css" />
+  <script type="text/javascript" src="./app.bundle.js?###RANDOM###"></script>
+</head>
 
-        <nav lang="fi" role="navigation" aria-label="Välilehdet" title="Alt+T" aria-keyshortcuts="Alt+t">
-          <div class="tab-menu-option-group">
-            <a href="#" data-tab-id="physics" class="tab-menu-option" aria-label="Fysiikka">
-              <span>Fysiikka</span>
-            </a>
-            <a href="#" data-tab-id="maps" class="tab-menu-option" aria-label="Kartat">
-              <span>Kartat</span>
-            </a>
-            <a href="#" data-tab-id="chemistry" class="tab-menu-option" aria-label="Kemia">
-              <span>Kemia</span>
-            </a>
-            <a href="#" data-tab-id="math" class="tab-menu-option" aria-label="Matematiikka">
-              <span>Matematiikka</span>
-            </a>
-            <a href="#" data-tab-id="muzak" class="tab-menu-option" aria-label="Musiikki">
-              <span>Musiikki</span>
-            </a>
-            <a href="#" data-tab-id="programming" class="tab-menu-option" aria-label="Ohjelmointi">
-              <span>Ohjelmointi</span>
-            </a>
+<body>
+  <div id="tab-container">
+    <div id="tab-menu">
+      <a href="#" id="menu" lang="fi" class="tab-menu-opennavi" aria-label="Avaa sivun navigointi">
+        <div></div>
+      </a>
+      <a href="#" id="menu" lang="sv" class="tab-menu-opennavi" aria-label="Öppna sidnavigeringen">
+        <div></div>
+      </a>
+      <a href="#" id="menu" lang="en" class="tab-menu-opennavi" aria-label="FIXME:Avaa sivun navigointi">
+        <div></div>
+      </a>
 
-            <a href="#" data-tab-id="keyboard" class="tab-menu-option" aria-label="Näppäimistö">
-              <span>Näppäimistö</span>
-            </a>
+      <nav lang="fi" role="navigation" aria-label="Välilehdet" title="Alt+T" aria-keyshortcuts="Alt+t">
+        <div class="tab-menu-option-group">
+          <a href="#" data-tab-id="physics" class="tab-menu-option" aria-label="Fysiikka">
+            <span>Fysiikka</span>
+          </a>
+          <a href="#" data-tab-id="maps" class="tab-menu-option" aria-label="Kartat">
+            <span>Kartat</span>
+          </a>
+          <a href="#" data-tab-id="chemistry" class="tab-menu-option" aria-label="Kemia">
+            <span>Kemia</span>
+          </a>
+          <a href="#" data-tab-id="math" class="tab-menu-option" aria-label="Matematiikka">
+            <span>Matematiikka</span>
+          </a>
+          <a href="#" data-tab-id="muzak" class="tab-menu-option" aria-label="Musiikki">
+            <span>Musiikki</span>
+          </a>
+          <a href="#" data-tab-id="programming" class="tab-menu-option" aria-label="Ohjelmointi">
+            <span>Ohjelmointi</span>
+          </a>
 
-            <a href="#" data-tab-id="general" class="tab-menu-option active" aria-label="Yleisohjeet">
-              <span>Yleisohjeet </span>
-            </a>
-          </div>
-          <div class="tab-menu-language-selection">
-            <a
-              href="#"
-              data-lang-id="fi"
-              class="tab-menu-language-option tab-menu-language-fi active"
-              aria-label="Suomeksi"
-            >
-              <span class="tab-menu-option-long">Suomeksi</span>
-              <span class="tab-menu-option-short">FI</span>
-            </a>
-            <a href="#" data-lang-id="sv" class="tab-menu-language-option tab-menu-language-sv" aria-label="På svenska">
-              <span class="tab-menu-option-long">På svenska</span>
-              <span class="tab-menu-option-short">SV</span>
-            </a>
-            <a href="#" data-lang-id="en" class="tab-menu-language-option tab-menu-language-en" aria-label="In English">
-              <span class="tab-menu-option-long">In English</span>
-              <span class="tab-menu-option-short">EN</span>
-            </a>
-          </div>
-        </nav>
-        <nav lang="sv" role="navigation" aria-label="Flikarna" title="Alt+T" aria-keyshortcuts="Alt+t">
-          <div class="tab-menu-option-group">
-            <a href="#" data-tab-id="physics" class="tab-menu-option" aria-label="Fysik">
-              <span>Fysik</span>
-            </a>
-            <a href="#" data-tab-id="maps" class="tab-menu-option" aria-label="Kartor">
-              <span>Kartor</span>
-            </a>
-            <a href="#" data-tab-id="chemistry" class="tab-menu-option" aria-label="Kemi">
-              <span>Kemi</span>
-            </a>
-            <a href="#" data-tab-id="math" class="tab-menu-option" aria-label="Matematik">
-              <span>Matematik</span>
-            </a>
-            <a href="#" data-tab-id="muzak" class="tab-menu-option" aria-label="Musik">
-              <span>Musik</span>
-            </a>
-            <a href="#" data-tab-id="programming" class="tab-menu-option" aria-label="Programmering">
-              <span>Programmering</span>
-            </a>
-            <a href="#" data-tab-id="keyboard" class="tab-menu-option" aria-label="Tangentbord">
-              <span>Tangentbord</span>
-            </a>
-            <a href="#" data-tab-id="general" class="tab-menu-option active" aria-label="Allmänna instruktioner">
-              <span>Allmänna instruktioner</span>
-            </a>
-          </div>
-          <div class="tab-menu-language-selection">
-            <a href="#" data-lang-id="fi" class="tab-menu-language-option tab-menu-language-fi" aria-label="Suomeksi">
-              <span class="tab-menu-option-long">Suomeksi</span>
-              <span class="tab-menu-option-short">FI</span>
-            </a>
-            <a
-              href="#"
-              data-lang-id="sv"
-              class="tab-menu-language-option tab-menu-language-sv active"
-              aria-label="På svenska"
-            >
-              <span class="tab-menu-option-long">På svenska</span>
-              <span class="tab-menu-option-short">SV</span>
-            </a>
-            <a href="#" data-lang-id="en" class="tab-menu-language-option tab-menu-language-en" aria-label="In English">
-              <span class="tab-menu-option-long">In English</span>
-              <span class="tab-menu-option-short">EN</span>
-            </a>
-          </div>
-        </nav>
-        <nav lang="en" role="navigation" aria-label="Välilehdet" title="Alt+T" aria-keyshortcuts="Alt+t">
-          <div class="tab-menu-option-group">
-            <a href="#" data-tab-id="physics" class="tab-menu-option" aria-label="FIXME:Fysiikka">
-              <span>Physics</span>
-            </a>
-            <a href="#" data-tab-id="maps" class="tab-menu-option" aria-label="FIXME:Kartat">
-              <span>Maps</span>
-            </a>
-            <a href="#" data-tab-id="chemistry" class="tab-menu-option" aria-label="FIXME:Kemia">
-              <span>Chemistry</span>
-            </a>
-            <a href="#" data-tab-id="math" class="tab-menu-option" aria-label="FIXME:Matematiikka">
-              <span>Mathematics</span>
-            </a>
-            <a href="#" data-tab-id="muzak" class="tab-menu-option" aria-label="FIXME:Musiikki">
-              <span>Music</span>
-            </a>
-            <a href="#" data-tab-id="programming" class="tab-menu-option" aria-label="FIXME:Ohjelmointi">
-              <span>Programming</span>
-            </a>
+          <a href="#" data-tab-id="keyboard" class="tab-menu-option" aria-label="Näppäimistö">
+            <span>Näppäimistö</span>
+          </a>
 
-            <a href="#" data-tab-id="keyboard" class="tab-menu-option" aria-label="FIXME:Näppäimistö">
-              <span>Keyboard</span>
-            </a>
-
-            <a href="#" data-tab-id="general" class="tab-menu-option active" aria-label="FIXME:Yleisohjeet">
-              <span>General instructions</span>
-            </a>
-          </div>
-          <div class="tab-menu-language-selection">
-            <a href="#" data-lang-id="fi" class="tab-menu-language-option tab-menu-language-fi" aria-label="Suomeksi">
-              <span class="tab-menu-option-long">Suomeksi</span>
-              <span class="tab-menu-option-short">FI</span>
-            </a>
-            <a href="#" data-lang-id="sv" class="tab-menu-language-option tab-menu-language-sv" aria-label="På svenska">
-              <span class="tab-menu-option-long">På svenska</span>
-              <span class="tab-menu-option-short">SV</span>
-            </a>
-            <a
-              href="#"
-              data-lang-id="en"
-              class="tab-menu-language-option tab-menu-language-en active"
-              aria-label="In English"
-            >
-              <span class="tab-menu-option-long">In English</span>
-              <span class="tab-menu-option-short">EN</span>
-            </a>
-          </div>
-        </nav>
-      </div>
-      <div class="tab-view">
-        <div class="js-toc">
-          <div class="js-search" aria-role="presentation">
-            <label
-              for="js-search-input"
-              lang="fi"
-              class="js-search-label"
-              aria-role="presentation"
-              aria-label="Hae sivulta, Alt+S"
-              title="Alt+S"
-              aria-keyshortcuts="Alt+s"
-            >
-              Hae
-              <input type="search" id="js-search-input" />
-            </label>
-            <label
-              for="js-search-input"
-              lang="sv"
-              class="js-search-label"
-              aria-role="presentation"
-              aria-label="Sök från sidan, Alt+S"
-              title="Alt+S"
-              aria-keyshortcuts="Alt+s"
-            >
-              Sök
-              <input type="search" id="js-search-input" />
-            </label>
-            <label
-              for="js-search-input"
-              lang="en"
-              class="js-search-label"
-              aria-role="presentation"
-              aria-label="Search, Alt+S"
-              title="Alt+S"
-              aria-keyshortcuts="Alt+s"
-            >
-              FIXME:Search
-              <input type="search" id="js-search-input" />
-            </label>
-            <div id="js-search-result-heading" style="display: none" aria-role="presentation">
-              <span lang="fi">Hakutulokset</span>
-              <span lang="sv">Sökresultat</span>
-              <span lang="en">FIXME:Hakutulokset</span>
-            </div>
-            <nav id="js-search-result" lang="fi" aria-label="Hakutulokset"></nav>
-            <nav id="js-search-result" lang="sv" aria-label="Sökresultat"></nav>
-            <nav id="js-search-result" lang="en" aria-label="FIXME:Hakutulokset"></nav>
-          </div>
-          <nav
-            lang="fi"
-            class="js-toc-result"
-            aria-label="Sivun navigaatio, Alt+M"
-            title="Alt+M"
-            aria-keyshortcuts="Alt+m"
-          ></nav>
-          <nav
-            lang="sv"
-            class="js-toc-result"
-            aria-label="Sidnavigering, Alt+M"
-            title="Alt+M"
-            aria-keyshortcuts="Alt+m"
-          ></nav>
-          <nav
-            lang="en"
-            class="js-toc-result"
-            aria-label="FIXME:Page navigation, Alt+M"
-            title="Alt+M"
-            aria-keyshortcuts="Alt+m"
-          ></nav>
+          <a href="#" data-tab-id="general" class="tab-menu-option active" aria-label="Yleisohjeet">
+            <span>Yleisohjeet </span>
+          </a>
         </div>
-        <div class="js-toc-content">
-          <div id="tab-general" class="tab-content active"></div>
-          <div id="tab-math" class="tab-content"></div>
-          <div id="tab-physics" class="tab-content"></div>
-          <div id="tab-chemistry" class="tab-content"></div>
-          <div id="tab-maps" class="tab-content"></div>
-          <div id="tab-programming" class="tab-content"></div>
-          <div id="tab-keyboard" class="tab-content"></div>
-          <div id="tab-muzak" class="tab-content"></div>
+        <div class="tab-menu-language-selection">
+          <a href="#" data-lang-id="fi" class="tab-menu-language-option tab-menu-language-fi active"
+            aria-label="Suomeksi">
+            <span class="tab-menu-option-long">Suomeksi</span>
+            <span class="tab-menu-option-short">FI</span>
+          </a>
+          <a href="#" data-lang-id="sv" class="tab-menu-language-option tab-menu-language-sv" aria-label="På svenska">
+            <span class="tab-menu-option-long">På svenska</span>
+            <span class="tab-menu-option-short">SV</span>
+          </a>
+          <a href="#" data-lang-id="en" class="tab-menu-language-option tab-menu-language-en" aria-label="In English">
+            <span class="tab-menu-option-long">In English</span>
+            <span class="tab-menu-option-short">EN</span>
+          </a>
         </div>
-      </div>
-    </div>
-    <div id="loading">
-      <div id="loading-text"><span lang="fi">Ladataan...</span><span lang="sv">Laddas...</span><span lang="en">FIXME:Loading...</span></div>
-    </div>
-    <div id="copying_box" class="copying-box">
-      <div id="copy-text" class="copy-text">
-        <span lang="fi">Kaava kopioitu leikepöydälle.</span>
-        <span lang="sv">Formeln har kopierats till urklippet</span>
-        <span lang="en">FIXME:Kaava kopioitu leikepöydälle.</span>
-      </div>
-    </div>
-    <div id="copying_box_kbd" class="copying-box">
-      <div id="copy-text-kbd" class="copy-text">
-        <span lang="fi">Merkki kopioitu leikepöydälle.</span>
-        <span lang="sv">Tecknet har kopierats till urklippet</span>
-        <span lang="en">FIXME:Merkki kopioitu leikepöydälle.</span>
-      </div>
-    </div>
-    <div id="copying_box_code" class="copying-box" aria-live="polite">
-      <div id="copy-text-code" class="copy-text">
-        <span lang="fi">Ohjelmakoodi kopioitu leikepöydälle.</span>
-        <span lang="sv">Programkod har kopierats till urklippet</span>
-        <span lang="en">FIXME:Ohjelmakoodi kopioitu leikepöydälle.</span>
-      </div>
-    </div>
-    <div id="copying_box_code_output" class="copying-box">
-      <div id="copy-text-code-output" class="copy-text">
-        <span lang="fi">Ohjelman tulostus kopioitu leikepöydälle.</span>
-        <span lang="sv">Programutskriften har kopierats till urklippet</span>
-        <span lang="en">FIXME:Ohjelman tulostus kopioitu leikepöydälle.</span>
-      </div>
-    </div>
-    <div id="screenreader-talk-polite" class="screenreader-only" aria-live="polite"></div>
+      </nav>
+      <nav lang="sv" role="navigation" aria-label="Flikarna" title="Alt+T" aria-keyshortcuts="Alt+t">
+        <div class="tab-menu-option-group">
+          <a href="#" data-tab-id="physics" class="tab-menu-option" aria-label="Fysik">
+            <span>Fysik</span>
+          </a>
+          <a href="#" data-tab-id="maps" class="tab-menu-option" aria-label="Kartor">
+            <span>Kartor</span>
+          </a>
+          <a href="#" data-tab-id="chemistry" class="tab-menu-option" aria-label="Kemi">
+            <span>Kemi</span>
+          </a>
+          <a href="#" data-tab-id="math" class="tab-menu-option" aria-label="Matematik">
+            <span>Matematik</span>
+          </a>
+          <a href="#" data-tab-id="muzak" class="tab-menu-option" aria-label="Musik">
+            <span>Musik</span>
+          </a>
+          <a href="#" data-tab-id="programming" class="tab-menu-option" aria-label="Programmering">
+            <span>Programmering</span>
+          </a>
+          <a href="#" data-tab-id="keyboard" class="tab-menu-option" aria-label="Tangentbord">
+            <span>Tangentbord</span>
+          </a>
+          <a href="#" data-tab-id="general" class="tab-menu-option active" aria-label="Allmänna instruktioner">
+            <span>Allmänna instruktioner</span>
+          </a>
+        </div>
+        <div class="tab-menu-language-selection">
+          <a href="#" data-lang-id="fi" class="tab-menu-language-option tab-menu-language-fi" aria-label="Suomeksi">
+            <span class="tab-menu-option-long">Suomeksi</span>
+            <span class="tab-menu-option-short">FI</span>
+          </a>
+          <a href="#" data-lang-id="sv" class="tab-menu-language-option tab-menu-language-sv active"
+            aria-label="På svenska">
+            <span class="tab-menu-option-long">På svenska</span>
+            <span class="tab-menu-option-short">SV</span>
+          </a>
+          <a href="#" data-lang-id="en" class="tab-menu-language-option tab-menu-language-en" aria-label="In English">
+            <span class="tab-menu-option-long">In English</span>
+            <span class="tab-menu-option-short">EN</span>
+          </a>
+        </div>
+      </nav>
+      <nav lang="en" role="navigation" aria-label="Välilehdet" title="Alt+T" aria-keyshortcuts="Alt+t">
+        <div class="tab-menu-option-group">
+          <a href="#" data-tab-id="physics" class="tab-menu-option" aria-label="FIXME:Fysiikka">
+            <span>Physics</span>
+          </a>
+          <a href="#" data-tab-id="maps" class="tab-menu-option" aria-label="FIXME:Kartat">
+            <span>Maps</span>
+          </a>
+          <a href="#" data-tab-id="chemistry" class="tab-menu-option" aria-label="FIXME:Kemia">
+            <span>Chemistry</span>
+          </a>
+          <a href="#" data-tab-id="math" class="tab-menu-option" aria-label="FIXME:Matematiikka">
+            <span>Mathematics</span>
+          </a>
+          <a href="#" data-tab-id="muzak" class="tab-menu-option" aria-label="FIXME:Musiikki">
+            <span>Music</span>
+          </a>
+          <a href="#" data-tab-id="programming" class="tab-menu-option" aria-label="FIXME:Ohjelmointi">
+            <span>Programming</span>
+          </a>
 
-    <div id="tab-muzak-audio-content"></div>
-  </body>
+          <a href="#" data-tab-id="keyboard" class="tab-menu-option" aria-label="FIXME:Näppäimistö">
+            <span>Keyboard</span>
+          </a>
+
+          <a href="#" data-tab-id="general" class="tab-menu-option active" aria-label="FIXME:Yleisohjeet">
+            <span>General instructions</span>
+          </a>
+        </div>
+        <div class="tab-menu-language-selection">
+          <a href="#" data-lang-id="fi" class="tab-menu-language-option tab-menu-language-fi" aria-label="Suomeksi">
+            <span class="tab-menu-option-long">Suomeksi</span>
+            <span class="tab-menu-option-short">FI</span>
+          </a>
+          <a href="#" data-lang-id="sv" class="tab-menu-language-option tab-menu-language-sv" aria-label="På svenska">
+            <span class="tab-menu-option-long">På svenska</span>
+            <span class="tab-menu-option-short">SV</span>
+          </a>
+          <a href="#" data-lang-id="en" class="tab-menu-language-option tab-menu-language-en active"
+            aria-label="In English">
+            <span class="tab-menu-option-long">In English</span>
+            <span class="tab-menu-option-short">EN</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <div class="tab-view">
+      <div class="js-toc">
+        <div class="js-search" aria-role="presentation">
+          <label for="js-search-input" lang="fi" class="js-search-label" aria-role="presentation"
+            aria-label="Hae sivulta, Alt+S" title="Alt+S" aria-keyshortcuts="Alt+s">
+            Hae
+            <input type="search" id="js-search-input" />
+          </label>
+          <label for="js-search-input" lang="sv" class="js-search-label" aria-role="presentation"
+            aria-label="Sök från sidan, Alt+S" title="Alt+S" aria-keyshortcuts="Alt+s">
+            Sök
+            <input type="search" id="js-search-input" />
+          </label>
+          <label for="js-search-input" lang="en" class="js-search-label" aria-role="presentation"
+            aria-label="Search, Alt+S" title="Alt+S" aria-keyshortcuts="Alt+s">
+            FIXME:Search
+            <input type="search" id="js-search-input" />
+          </label>
+          <div id="js-search-result-heading" style="display: none" aria-role="presentation">
+            <span lang="fi">Hakutulokset</span>
+            <span lang="sv">Sökresultat</span>
+            <span lang="en">FIXME:Hakutulokset</span>
+          </div>
+          <nav id="js-search-result" lang="fi" aria-label="Hakutulokset"></nav>
+          <nav id="js-search-result" lang="sv" aria-label="Sökresultat"></nav>
+          <nav id="js-search-result" lang="en" aria-label="FIXME:Hakutulokset"></nav>
+        </div>
+        <nav lang="fi" class="js-toc-result" aria-label="Sivun navigaatio, Alt+M" title="Alt+M"
+          aria-keyshortcuts="Alt+m"></nav>
+        <nav lang="sv" class="js-toc-result" aria-label="Sidnavigering, Alt+M" title="Alt+M" aria-keyshortcuts="Alt+m">
+        </nav>
+        <nav lang="en" class="js-toc-result" aria-label="FIXME:Page navigation, Alt+M" title="Alt+M"
+          aria-keyshortcuts="Alt+m"></nav>
+      </div>
+      <div class="js-toc-content">
+        <div id="tab-general" class="tab-content active"></div>
+        <div id="tab-math" class="tab-content"></div>
+        <div id="tab-physics" class="tab-content"></div>
+        <div id="tab-chemistry" class="tab-content"></div>
+        <div id="tab-maps" class="tab-content"></div>
+        <div id="tab-programming" class="tab-content"></div>
+        <div id="tab-keyboard" class="tab-content"></div>
+        <div id="tab-muzak" class="tab-content"></div>
+      </div>
+    </div>
+  </div>
+  <div id="loading">
+    <div id="loading-text"><span lang="fi">Ladataan...</span><span lang="sv">Laddas...</span><span
+        lang="en">FIXME:Loading...</span></div>
+  </div>
+  <div id="copying_box" class="copying-box">
+    <div id="copy-text" class="copy-text">
+      <span lang="fi">Kaava kopioitu leikepöydälle.</span>
+      <span lang="sv">Formeln har kopierats till urklippet</span>
+      <span lang="en">FIXME:Kaava kopioitu leikepöydälle.</span>
+    </div>
+  </div>
+  <div id="copying_box_kbd" class="copying-box">
+    <div id="copy-text-kbd" class="copy-text">
+      <span lang="fi">Merkki kopioitu leikepöydälle.</span>
+      <span lang="sv">Tecknet har kopierats till urklippet</span>
+      <span lang="en">FIXME:Merkki kopioitu leikepöydälle.</span>
+    </div>
+  </div>
+  <div id="copying_box_code" class="copying-box" aria-live="polite">
+    <div id="copy-text-code" class="copy-text">
+      <span lang="fi">Ohjelmakoodi kopioitu leikepöydälle.</span>
+      <span lang="sv">Programkod har kopierats till urklippet</span>
+      <span lang="en">FIXME:Ohjelmakoodi kopioitu leikepöydälle.</span>
+    </div>
+  </div>
+  <div id="copying_box_code_output" class="copying-box">
+    <div id="copy-text-code-output" class="copy-text">
+      <span lang="fi">Ohjelman tulostus kopioitu leikepöydälle.</span>
+      <span lang="sv">Programutskriften har kopierats till urklippet</span>
+      <span lang="en">FIXME:Ohjelman tulostus kopioitu leikepöydälle.</span>
+    </div>
+  </div>
+  <div id="screenreader-talk-polite" class="screenreader-only" aria-live="polite"></div>
+
+  <div id="tab-muzak-audio-content"></div>
+</body>
+
 </html>
