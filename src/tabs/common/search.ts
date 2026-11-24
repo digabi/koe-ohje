@@ -51,7 +51,7 @@ const getSearchItemAriaLabelPrefix = (): string => {
   }
 
   if (getCurrentLanguage() == 'en') {
-    return 'FIXME:Hakutulos: '
+    return 'Search result: '
   }
 
   return ''

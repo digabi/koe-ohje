@@ -568,11 +568,11 @@
 		<img src="../common/images/math/kolmion-pinta-ala.png" lang="fi" alt="Kolmion pinta-ala" />
 		<img src="../common/images/math/kolmion-pinta-ala.png" lang="sv" alt="Triangelns area" />
 		<img src="../common/images/math/kolmion-pinta-ala.png" lang="en" alt="Area of a triangle" />
-		<br><br>
+
 		<p lang="fi">Kolmion kulmien summa on 180°.</p>
 		<p lang="sv">Summan av vinklarna i en triangel är 180°.</p>
 		<p lang="en">The sum of the angles in a triangle is 180°.</p>
-		<br><br>
+
 		<p lang="fi"><strong>Pythagoraan lause:</strong> Suorakulmaisen kolmion kateettien \(a\), ja \(b\) neliöiden
 			summa on yhtä suuri kuin hypotenuusan \(c\) neliö:</p>
 		<p lang="sv"><strong>Pythagoras sats:</strong> I en rätvinklig triangel är summan av kvadraten på kateterna
@@ -580,7 +580,7 @@
 		<p lang="en"><strong>Pythagorean theorem:</strong> In a right-angled triangle, the sum of the squares of the
 			legs \(a\) and \(b\) equals the square of the hypotenuse \(c\):</p>
 		\[a^2+b^2=c^2\]
-		<br><br>
+
 		<p lang="fi">Suorakulmaisessa kolmiossa terävän kulman \(\alpha\) sini, kosini ja tangetti tarkoittavat kolmion
 			sivujen pituuksien suhteita.</p>
 		<p lang="sv">I en rätvinklig triangel betyder sinus, cosinus och tangens av en spetsig vinkel \(\alpha\)
@@ -1966,54 +1966,76 @@
 			<li lang="sv">summan av sannolikheterna \(p_i\) av fördelningen är 1, dvs. \(\sum_{i=1}^np_i=1\).</li>
 			<li lang="en">the sum of the point probabilities \(p_i\) of the distribution is 1, that is,
 				\(\sum_{i=1}^np_i=1\).</li>
+
 			<li lang="fi">jakauman kertymäfunktio on \(P(X\le k)=\sum_{i=0}^kp_i\).</li>
 			<li lang="sv">fördelningens (kumulativa) fördelningsfunktion är \(P(X\le k)=\sum_{i=0}^kp_i\).</li>
-			<li lang="en">the cumulative distribution function of the distribution is \(P(X\le k)=\sum_{i=0}^kp_i\).
-			</li>
+			<li lang="en">the cumulative distribution function of the distribution is \(P(X\le k)=\sum_{i=0}^kp_i\).</li>
+
 			<li lang="fi">satunnaismuuttujan \(X\) odotusarvo \(E(X)\) tai \(\mu\) on \(\sum_{i=1}^n p_ix_i\).</li>
 			<li lang="sv">väntevärdet \(E(X)\) eller \(\mu\) för den stokastiska variabeln \(X\) är \(\sum_{i=1}^n
 				p_ix_i\).</li>
 			<li lang="en">the expected value \(E(X)\), or \(\mu\), of the random variable \(X\) is \(\sum_{i=1}^n
 				p_ix_i\).</li>
+
 			<li lang="fi">satunnaismuuttujan \(X\) keskihajonta \(D(X)\) tai \(\sigma\) on \(\sqrt{\sum_{i=1}^n
 				p_i\left(x_i-\mu\right)^2}\).</li>
 			<li lang="sv">standardavvikelsen \(D(X)\) eller \(\sigma\)för den stokastiska variabeln \(X\) är
 				\(\sqrt{\sum_i^np_i\left(x_i-\mu\right)^2}\).</li>
 			<li lang="en">the standard deviation \(D(X)\), or \(\sigma\), of the random variable \(X\) is
 				\(\sqrt{\sum_{i=1}^n p_i\left(x_i-\mu\right)^2}\).</li>
+
 			<li lang="fi">satunnaismuuttujan \(X\) varianssi on \(\sigma^2\).</li>
 			<li lang="sv">variansen för den stokastiska variabeln \(X\) är \(\sigma^2\).</li>
 			<li lang="en">the variance of the random variable \(X\) is \(\sigma^2\).</li>
-			<li><span lang="fi">jos \(X\) noudattaa binomijakaumaa parametrein \(n\) ja \(p\), eli
+
+			<li>
+				<span lang="fi">jos \(X\) noudattaa binomijakaumaa parametrein \(n\) ja \(p\), eli
 					\(X\sim\mathrm{Bin}\left(n{,}p\right)\), niin</span>
 				<span lang="sv">om \(X\) följer binomialfördelningen med parametrarna \(n\) och \(p\), dvs.
-					\(X\sim\mathrm{Bin}\left(n{,}p\right)\), så gäller att</span><span lang="en">if \(X\) follows a
+					\(X\sim\mathrm{Bin}\left(n{,}p\right)\), så gäller att</span>
+				<span lang="en">if \(X\) follows a
 					binomial distribution with parameters \(n\) and \(p\), that is,
 					\(X\sim\mathrm{Bin}\left(n{,}p\right)\), then</span>
 				<ul>
-					<li><span lang="fi">pistetodennäköisyys on</span><span lang="sv">sannolikheterna är</span><span
-							lang="en">the point probability is</span> \(\binom{n}{k}p^k\left(1-p\right)^{n-k}\),</li>
+					<li>
+						<span lang="fi">pistetodennäköisyys on</span>
+						<span lang="sv">sannolikheterna är</span>
+						<span lang="en">the point probability is</span>
+						\(\binom{n}{k}p^k\left(1-p\right)^{n-k}\),
+					</li>
 					<li>\(\mu=np\),</li>
 					<li>\(\sigma=\sqrt{np\left(1-p\right)}\),</li>
-					<li><span lang="fi">kertymäfunktio</span><span lang="sv">den kumulativa fördelningsfunktionen
-							är</span><span lang="en">the cumulative distribution function is</span> \(P(X\le
-						k)=\sum_{i=0}^{\left|k\right|}\binom{n}{i}p^i(1-p)^{n-i}\).</li>
+					<li>
+						<span lang="fi">kertymäfunktio</span>
+						<span lang="sv">den kumulativa fördelningsfunktionen är</span>
+						<span lang="en">the cumulative distribution function is</span>
+						\(P(X\le k)=\sum_{i=0}^{\left|k\right|}\binom{n}{i}p^i(1-p)^{n-i}\).
+					</li>
 				</ul>
 			</li>
-			<li><span lang="fi">jos \(X\) noudattaa geometrista jakaumaa parametrillä \(p\), eli
+			<li>
+				<span lang="fi">jos \(X\) noudattaa geometrista jakaumaa parametrillä \(p\), eli
 					\(X\sim\mathrm{Geom}\left(p\right)\), niin</span>
 				<span lang="sv">om \(X\) följer den geometriska fördelningen med parametern \(p\), dvs.
-					\(X\sim\mathrm{Geom}\left(p\right)\), så gäller att</span><span lang="en">if \(X\) follows a
+					\(X\sim\mathrm{Geom}\left(p\right)\), så gäller att</span>
+				<span lang="en">if \(X\) follows a
 					geometric distribution with parameter \(p\), that is, \(X\sim\mathrm{Geom}\left(p\right)\),
 					then</span>
 				<ul>
-					<li><span lang="fi">pistetodennäköisyys on</span><span lang="sv">sannolikheterna är</span><span
-							lang="en">the point probability is</span> \(\left(p-1\right)^kp\),</li>
+					<li>
+						<span lang="fi">pistetodennäköisyys on</span>
+						<span lang="sv">sannolikheterna är</span>
+						<span lang="en">the point probability is</span>
+						\(\left(p-1\right)^kp\),
+					</li>
 					<li>\(\mu=\frac{q}{p}\),</li>
 					<li>\(\sigma=\frac{\sqrt{q}}{p}\),</li>
-					<li><span lang="fi">kertymäfunktio</span><span lang="sv">den kumulativa fördelningsfunktionen
-							är</span><span lang="en">the cumulative distribution function is</span> \(P(X\le
-						k)=1-(1-p)^{k+1}\).</li>
+					<li>
+						<span lang="fi">kertymäfunktio</span>
+						<span lang="sv">den kumulativa fördelningsfunktionen är</span>
+						<span lang="en">the cumulative distribution function is</span>
+						\(P(X\le k)=1-(1-p)^{k+1}\).
+					</li>
 				</ul>
 			</li>
 		</ul>
@@ -2035,36 +2057,42 @@
 				och \(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
 			<li lang="en">the values of the probability density function are non-negative and
 				\(\int_a^bf\left(x\right)\mathrm{d}x=1\).</li>
+
 			<li lang="fi">satunnaismuuttujan kertymäfunktio on \(F(x)\) on \(P(X\le
 				x)=\int_a^xf\left(t\right)\mathrm{d}t\).</li>
 			<li lang="sv">den (kumulativa) fördelningsfunktionen för funktionen \(F(x)\) är \(P(X\le
 				x)=\int_a^xf\left(t\right)\mathrm{d}t\).</li>
 			<li lang="en">the cumulative distribution function \(F(x)\) is \(P(X\le
 				x)=\int_a^xf\left(t\right)\mathrm{d}t\).</li>
+
 			<li lang="fi">jos \(A=\left[c, d\right] \subset I\), niin todennäköisyys \(P\left(A\right)\) on
 				\(\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
 			<li lang="sv">om \(A=\left[c, d\right] \subset I\), så är sannolikheten
 				\(P\left(A\right)=\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
 			<li lang="en">if \(A=\left[c, d\right] \subset I\), then the probability \(P\left(A\right)\) is
 				\(\int_c^df\left(x\right)\mathrm{d}x=F\left(d\right)-F\left(c\right)\).</li>
+
 			<li lang="fi">satunnaismuuttujan \(X\) odotusarvo \(E(X)\) tai \(\mu\) on \(\int_a^b x \
 				f\left(x\right)\mathrm{d}x\).</li>
 			<li lang="sv">väntevärdet \(E(X)\) eller \(\mu\) för den stokastiska variabeln \(X\) är \(\int_a^b x \
 				f\left(x\right)\mathrm{d}x\).</li>
 			<li lang="en">the expected value \(E(X)\), or \(\mu\), of the random variable \(X\) is \(\int_a^b x \
 				f\left(x\right)\mathrm{d}x\).</li>
+
 			<li lang="fi">satunnaismuuttujan \(X\) keskihajonta \(D(X)\) tai \(\sigma\) on \(\sqrt{\int_a^b
 				x^2f\left(x\right)\mathrm{d}x-\mu^2}\).</li>
 			<li lang="sv">standardavvikelsen \(D(X)\) eller \(\sigma\) för den stokastiska variabeln \(X\) är
 				\(\sqrt{\int_a^b x^2f\left(x\right)\mathrm{d}x-\mu^2}\).</li>
 			<li lang="en">the standard deviation \(D(X)\), or \(\sigma\), of the random variable \(X\) is
 				\(\sqrt{\int_a^b x^2f\left(x\right)\mathrm{d}x-\mu^2}\).</li>
+
 			<li lang="fi">satunnaismuuttujan \(X\) varianssi on \(\sigma^2\).</li>
 			<li lang="sv">variansen för den stokastiska variabeln \(X\) är \(\sigma^2\).</li>
 			<li lang="en">the variance of the random variable \(X\) is \(\sigma^2\).</li>
-			<li><span lang="fi">jos \(X\) on tasaisesti jakautunut, niin</span>
-				<span lang="sv">om \(X\) är likformigt fördelad, så gäller att</span><span lang="en">if \(X\) has a
-					uniform distribution, then</span>
+			<li>
+				<span lang="fi">jos \(X\) on tasaisesti jakautunut, niin</span>
+				<span lang="sv">om \(X\) är likformigt fördelad, så gäller att</span>
+				<span lang="en">if \(X\) has a uniform distribution, then</span>
 				<ul>
 					<li lang="fi">tiheysfunktio on \(\frac{1}{b-a}\),</li>
 					<li lang="sv">täthetsfunktionen är \(\frac{1}{b-a}\),</li>
@@ -2073,9 +2101,10 @@
 					<li>\(\sigma=\frac{b-a}{2\sqrt{3}}\),</li>
 					<li>\(F(x)=P(X\le x)=\frac{x-a}{b-a}\).</li>
 				</ul>
-			<li><span lang="fi">jos \(X\) on eksponentiaalisesti jakautunut, niin</span>
-				<span lang="sv">om \(X\) följer exponentialfördelningen, så gäller att</span><span lang="en">if \(X\)
-					follows an exponential distribution, then</span>
+			<li>
+				<span lang="fi">jos \(X\) on eksponentiaalisesti jakautunut, niin</span>
+				<span lang="sv">om \(X\) följer exponentialfördelningen, så gäller att</span>
+				<span lang="en">if \(X\) follows an exponential distribution, then</span>
 				<ul>
 					<li lang="fi">tiheysfunktio on \(ae^{-ax}\), missä \(a>0\),</li>
 					<li lang="sv">täthetsfunktionen är \(ae^{-ax}\), där \(a>0\),</li>
@@ -2085,19 +2114,25 @@
 					<li>\(F(x)=P(X\le x)=1-e^{-\frac{1}{\mu}x}\).</li>
 				</ul>
 			</li>
-			<li><span lang="fi">jos \(X\) on normaalijakautunut, eli \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\),
-					niin</span>
-				<span lang="sv">om \(X\) är normalfördelad, dvs. \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\), så gäller
-					att</span><span lang="en">if \(X\) is normally distributed, that is,
-					\(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\), then</span>
+			<li>
+				<span lang="fi">jos \(X\) on normaalijakautunut, eli \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\), niin</span>
+				<span lang="sv">om \(X\) är normalfördelad, dvs. \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\), så gäller att</span>
+				<span lang="en">if \(X\) is normally distributed, that is, \(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\), then</span>
 				<ul>
-					<li><span lang="fi">tiheysfunktio on</span><span lang="sv">täthetsfunktionen är</span><span
-							lang="en">the probability density function is</span> \(\frac{1}{\sigma\sqrt{2\pi }}e^{-\frac
-						{(x-\mu )^{2}}{2\sigma ^{2}}}\),</li>
-					<li><span lang="fi">kertymäfunktiolle pätee jos</span><span lang="sv">om det för
-							fördelningsfunktionen gäller att</span><span lang="en">for the cumulative distribution
-							function, if</span> \(\Phi(a)=P(x\leq a)\), <span lang="fi">niin</span><span lang="sv">så
-							är</span><span lang="en">then</span> \(\Phi(-a) = 1-\Phi(a)\).</li>
+					<li>
+						<span lang="fi">tiheysfunktio on</span>
+						<span lang="sv">täthetsfunktionen är</span>
+						<span lang="en">the probability density function is</span>
+						\(\frac{1}{\sigma\sqrt{2\pi }}e^{-\frac{(x-\mu )^{2}}{2\sigma ^{2}}}\),
+					</li>
+					<li>
+						<span lang="fi">kertymäfunktiolle pätee jos</span>
+						<span lang="sv">om det för fördelningsfunktionen gäller att</span>
+						<span lang="en">for the cumulative distribution function, if</span>
+						\(\Phi(a)=P(x\leq a)\),
+						<span lang="fi">niin</span><span lang="sv">så är</span><span lang="en">then</span>
+						\(\Phi(-a) = 1-\Phi(a)\).
+					</li>
 					<li lang="fi">kertymäfunktiota ei voi ratkaista analyyttisesti, mutta sen arvoja voidaan laskea
 						numeerisilla menetelmillä,</li>
 					<li lang="sv">fördelningsfunktionen kan inte lösas analytiskt, men dess värden kan beräknas med
@@ -2111,17 +2146,23 @@
 					\(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\). Tällöin</span>
 				<span lang="sv">ett specialfall av normalfördelningen är den standardiserade normalfördelningen
 					\(Z\sim\mathrm{N}\left(0{,}1\right)\), där \(Z=\frac{X-\mu}{\sigma}\) och
-					\(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\). För fördelningen gäller att</span><span lang="en">a
-					special case of the normal distribution is the standard normal distribution
+					\(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\). För fördelningen gäller att</span>
+				<span lang="en">a special case of the normal distribution is the standard normal distribution
 					\(Z\sim\mathrm{N}\left(0{,}1\right)\), where \(Z=\frac{X-\mu}{\sigma}\) and
 					\(X\sim\mathrm{N}\left(\mu{,}\sigma\right)\). Then</span>
 				<ul>
-					<li><span lang="fi">tiheysfunktio on</span><span lang="sv">täthetsfunktionen är</span><span
-							lang="en">the probability density function is</span> \(\frac{1}{\sqrt{2\pi
-						}}e^{-\frac{1}{2}x^{2}}\),</li>
-					<li><span lang="fi">kertymäfunktio on</span><span lang="sv">fördelningsfunktionen är</span><span
-							lang="en">the cumulative distribution function is</span> \(\Phi
-						(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty }^{x}e^{-\frac{t^{2}}{2}}\mathrm{d}t\),</li>
+					<li>
+						<span lang="fi">tiheysfunktio on</span>
+						<span lang="sv">täthetsfunktionen är</span>
+						<span lang="en">the probability density function is</span>
+						\(\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^{2}}\),
+					</li>
+					<li>
+						<span lang="fi">kertymäfunktio on</span>
+						<span lang="sv">fördelningsfunktionen är</span>
+						<span lang="en">the cumulative distribution function is</span>
+						\(\Phi(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty }^{x}e^{-\frac{t^{2}}{2}}\mathrm{d}t\),
+					</li>
 					<li>\(\mu=0\),</li>
 					<li>\(\sigma=1\).</li>
 				</ul>
